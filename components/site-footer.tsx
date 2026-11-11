@@ -1,64 +1,46 @@
-"use client";
-
 import Link from "next/link";
-import { useWhop } from "@/lib/whop-context";
+import { ASSETS } from "@/lib/market";
 
-interface FooterLink {
-  href: string;
-  label: string;
-  exclusive?: boolean;
-}
-
-const COLUMNS: { title: string; links: FooterLink[] }[] = [
+const COLUMNS = [
   {
-    title: "Coverage & Platforms",
+    title: "Coverage",
     links: [
-      { href: "/terminal", label: "Dual-Screen Pro Terminal", exclusive: true },
-      { href: "/openbb", label: "Quantitative Risk & VaR CLI", exclusive: true },
-      { href: "/gold-news", label: "News (100 Live Dossiers)", exclusive: true },
-      { href: "/wsj", label: "Market Center & Analysis", exclusive: true },
-      { href: "/markets", label: "S&P 500 & Nasdaq" },
-      { href: "/crypto", label: "Binance crypto", exclusive: true },
-      { href: "/meme-coins", label: "Pump.fun memes", exclusive: true },
-      { href: "/pipeline", label: "Data Pipeline & 2,000+ Scoring", exclusive: true },
-      { href: "/chat", label: "Live Trading Chat", exclusive: true },
+      { href: "/markets", label: "US equities" },
+      { href: "/crypto", label: "Digital assets" },
+      { href: "/meme-coins", label: "Meme coins" },
+      { href: "/ticker/BTC", label: "Bitcoin trend score" },
+      { href: "/ticker/NVDA", label: "NVIDIA trend score" },
     ],
   },
   {
     title: "Research",
     links: [
       { href: "/research", label: "All research" },
-      { href: "/research/ai-capex-cycle-second-derivative", label: "AI capex cycle" },
-      { href: "/research/bitcoin-liquidity-regime", label: "Bitcoin & liquidity" },
-      { href: "/research/breadth-divergence-playbook", label: "Narrow market playbook" },
+      { href: "/research/the-ai-capex-cycle-is-now-a-second-derivative-trade", label: "AI capex cycle" },
+      { href: "/research/bitcoin-has-no-valuation-floor-it-has-a-liquidity-ceiling", label: "Bitcoin & liquidity" },
+      { href: "/research/the-breadth-divergence-playbook-when-five-mega-caps-carry-the-index", label: "Narrow market playbook" },
     ],
   },
   {
     title: "Academy",
     links: [
       { href: "/academy", label: "All courses" },
-      { href: "/academy/watch", label: "Watch Video Studio", exclusive: true },
       { href: "/academy/reading-trends", label: "Reading a Trend" },
       { href: "/academy/crypto-without-hype", label: "Crypto Without Hype" },
       { href: "/academy/portfolio-construction", label: "Portfolio Construction" },
     ],
   },
   {
-    title: "Tools & Company",
+    title: "Company",
     links: [
-      { href: "/calculator", label: "Position Sizing Calculator", exclusive: true },
-      { href: "/pipeline", label: "Pipeline Health & Feeds", exclusive: true },
       { href: "/pricing", label: "Plans & pricing" },
-      { href: "/chat", label: "Discord Community", exclusive: true },
-      { href: "/watchlist", label: "Your watchlist", exclusive: true },
+      { href: "/watchlist", label: "Your watchlist" },
       { href: "/disclaimer", label: "Disclaimer & methodology" },
     ],
   },
 ];
 
 export default function SiteFooter() {
-  const { badge } = useWhop();
-
   return (
     <footer className="mt-24 border-t border-line/70 bg-ink-900">
       <div className="mx-auto max-w-7xl px-5 py-14">
@@ -69,10 +51,10 @@ export default function SiteFooter() {
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
               Rules-based trend analysis and research across equities, digital assets and
-              speculative markets — plus real watchable video education and Discord live chat.
+              speculative markets — plus the education to use it responsibly.
             </p>
             <p className="mt-5 text-xs leading-relaxed text-muted/70">
-              2,000+ tracked assets · 6 research desks · 20 video masterclasses
+              {ASSETS.length.toLocaleString()} tracked assets · 44 research desks · 4 courses
             </p>
           </div>
 
@@ -86,14 +68,9 @@ export default function SiteFooter() {
                   <li key={link.href + link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-bone/75 transition-colors hover:text-gold-bright flex items-center gap-1.5"
+                      className="text-sm text-bone/75 transition-colors hover:text-gold-bright"
                     >
-                      <span>{link.label}</span>
-                      {link.exclusive && (
-                        <span className="font-mono text-[9px] uppercase tracking-wider text-gold/85 border border-gold/30 bg-gold/5 px-1 rounded">
-                          PRO
-                        </span>
-                      )}
+                      {link.label}
                     </Link>
                   </li>
                 ))}
