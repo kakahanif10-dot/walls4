@@ -1,0 +1,5 @@
+{
+  "name": "NextWall Street",
+  "description": "Rules-based trend analysis across equities, crypto, and meme coins with 2,000+ real-time assets, Real-Time News Stream & Query Wire, Vector RAG & Liquidity Radar, 516-Panel Macro & Perpetuals Suite, 9-Exchange Global Markets Hub, AI Allocator Agents & DCF Greeks, Quantitative Risk & VaR CLI, Dual-Screen Pro Terminal, News Action, and Market Center.",
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

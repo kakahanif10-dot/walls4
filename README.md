@@ -1,11 +1,60 @@
-<div align="center">
+# NextWall Street
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Market trend analysis, research and education across US equities, crypto and meme coins. Built with Next.js (App Router) and Tailwind, deployed to Freebuff Sites on Cloudflare Workers via OpenNext.
 
-  <h1>Built with AI Studio</h2>
+## Run locally
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build
+```
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Market data
 
-</div>
+All prices, charts and indicators are computed from real market data fetched server-side. There is
+no sample dataset and no client-side price simulation.
+
+| Asset class | Source | Notes |
+| --- | --- | --- |
+| US equities | `api.nasdaq.com` quote info + daily history | ~1 year of daily closes; quotes are delayed and show the last close outside US hours |
+| Crypto & meme coins | OKX `market/ticker` + daily candles | 24/7, 365 daily closes |
+| Crypto fallback | CoinGecko `coins/markets` + `market_chart` | used when OKX does not return a symbol |
+
+`lib/market-data.ts` fetches both classes concurrently with a small concurrency ceiling, retries
+transient failures, and caches quotes for 45 seconds and daily history for 6 hours. Responses are
+also cached by Next (`revalidate` 60s for quotes, 1h for history). Pages revalidate every two
+minutes (`app/layout.tsx`), so the rendered HTML refreshes rather than staying frozen at build time.
+
+`lib/market.ts` holds the asset universe and the scoring model. `setMarketData()` hands real daily
+closes to the model, so the 52-week range, realised volatility, moving averages, RSI and the trend
+score are all derived from actual closes. If a symbol has no history, `series()` returns an empty
+array, the model returns neutral values and the UI reports missing data instead of inventing one.
+
+No API keys are required. If you later add a licensed feed, wire it into `loadQuotes()` and
+`loadHistory()`; the rest of the site is source-agnostic.
+
+### Licensing
+
+Nasdaq's public endpoint and OKX's public API are fine for development and evaluation, but a paid
+product that redistributes quotes should use a licensed provider (for example a commercial Nasdaq
+or Polygon agreement). Add the licence terms to `/disclaimer` before charging for access.
+
+## Layout
+
+- `app/realtime-news/page.tsx` & `components/realtime-news-terminal.tsx` — Real-Time Financial News Stream & Query API (ported from https://github.com/janlukasschroeder/realtime-newsapi) with 10,000+ sources (Bloomberg, Reuters, WSJ, Seeking Alpha, SEC EDGAR Form 8-K, FDA Approvals), WebSocket streaming, ticker mapping, and Lucene query API
+- `lib/realtime-news-api.ts` & `app/api/newsfilter/route.ts` — Newsfilter.io public actions query API endpoint and filtering engine
+- `app/oraclex/page.tsx` & `components/oraclex-terminal.tsx` — Oracle-X Financial Intelligence Platform (ported from https://github.com/Yigtwxx/OracleX) with FastAPI + ChromaDB Vector RAG, 24h Advance/Decline market internals histogram, standing leverage liquidity ladder, and Borsa İstanbul (BIST 100 & KAP) realm
+- `lib/oraclex-platform.ts` — Oracle-X market internals engine, liquidity ladder calculator, divergence detection radar, and ChromaDB vector memory query store
+- `app/neuberg/page.tsx` & `components/neuberg-terminal.tsx` — Neuberg Terminal Platform (ported from https://github.com/KoNananachan/Neuberg) with 516 panels, Fear & Greed Index, Macro Regime Quadrant, 24/7 Hyperliquid stock/crypto perps, and Polymarket order books
+- `lib/neuberg-platform.ts` — Neuberg 516-panel catalog, Fear & Greed engine, macro quadrants, perpetual contracts, and Polymarket feeds
+- `app/openstock/page.tsx` & `components/openstock-hub.tsx` — OpenStock Global Platform (ported from https://github.com/Open-Dev-Society/OpenStock) across 9 markets, browser-style multi-tab ticker analysis, social sentiment radar (Reddit, X, Polymarket), and price alerts
+- `lib/openstock-platform.ts` — OpenStock 9 market definitions, market hours clock, and social sentiment engine
+- `app/fincept/page.tsx` & `components/fincept-terminal.tsx` — Fincept Terminal Platform (ported from https://github.com/Fincept-Corporation/FinceptTerminal) with 37 AI agents, DCF valuation, Black-Scholes options Greeks, 100+ connectors, and paper trading
+- `lib/fincept-platform.ts` — Fincept quantitative engine, agent evaluation logic, DCF models, and CLI command parser
+- `app/openbb/page.tsx` & `components/openbb-terminal.tsx` — OpenBB Quantitative Workspace & ODP platform
+- `lib/market.ts` — asset universe, scoring model, formatters, market model store
+- `lib/market-data.ts` — real data sources, caching, snapshot assembly
+- `lib/content.ts` — research articles, academy courses, pricing plans
+- `components/live-prices.tsx` — quote provider fed by `/api/quotes`, polled every 30s
+- `app/api/quotes/route.ts` — quotes endpoint (JSON, 30s CDN cache)
