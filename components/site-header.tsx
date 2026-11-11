@@ -23,11 +23,9 @@ import {
   TrendingUp,
   Coins,
   Flame,
-  MessageSquare,
-  Calculator,
-  CreditCard,
-  Activity,
   Bookmark,
+  ExternalLink,
+  Activity,
 } from "lucide-react";
 
 const SIMPLE_LINKS = [
@@ -40,46 +38,107 @@ const SIMPLE_LINKS = [
   { href: "/pricing", label: "Pricing" },
 ];
 
-const PUSTAKA_MAIN = [
-  { href: "/realtime-news", label: "News Wire", desc: "Real-time multi-source news wire & ticker query stream", icon: Radio, live: true },
-  { href: "/oraclex", label: "Vector RAG", desc: "Cross-asset semantic store, internals & liquidity ladder", icon: Compass },
-  { href: "/neuberg", label: "Macro & Perps", desc: "516-panel macro regime, Fear & Greed & 24/7 perpetuals", icon: Terminal },
-  { href: "/openstock", label: "Global Markets", desc: "9 global exchanges, multi-tab charts & sentiment radar", icon: Globe },
-  { href: "/fincept", label: "DCF & Agents", desc: "37 capital allocator models, DCF valuation & options Greeks", icon: Cpu },
-  { href: "/terminal", label: "Pro Terminal", desc: "Dual-screen charting, Level 2 depth & execution desk", icon: Terminal },
-  { href: "/openbb", label: "VaR & CLI", desc: "Parametric & Monte Carlo VaR, yield curves & portfolio CLI", icon: Database },
-  { href: "/gold-news", label: "News", desc: "100 live breaking action bulletins & trade directives", icon: Zap, live: true },
-  { href: "/wsj", label: "Market Center", desc: "Most active volume, Form 4 insiders & sector analysis", icon: FileText },
-  { href: "/chat", label: "Trading Floor", desc: "Live market commentary & member floor channels", icon: MessageSquare, live: true },
-  { href: "/desks", label: "44 Desks", desc: "Full catalog of 44 specialized quantitative research desks", icon: Cpu },
-  { href: "/markets", label: "Equities", desc: "S&P 500, Nasdaq & growth equity trend score board", icon: BarChart3 },
-  { href: "/crypto", label: "Crypto", desc: "Digital assets scored by flow, float & liquidity regime", icon: Coins },
-  { href: "/meme-coins", label: "Memes", desc: "Speculative bonding curve & attention-risk monitor", icon: Flame },
-  { href: "/calculator", label: "Calculator", desc: "Invalidation-anchored position sizing engine", icon: Calculator },
-  { href: "/pricing", label: "Pricing", desc: "Membership plans, trial details & feature comparison", icon: CreditCard },
-];
+export interface MainDirectoryItem {
+  href: string;
+  label: string;
+  desc: string;
+  icon: typeof Radio;
+  live?: boolean;
+}
 
-const PUSTAKA_DESKS = [
-  { href: "/realtime-news", label: "News Wire", desc: "Sub-second institutional wire & regulatory alerts", icon: Radio },
-  { href: "/oraclex", label: "Vector RAG", desc: "SEC filings & FOMC transcript semantic vector desk", icon: Compass },
-  { href: "/neuberg", label: "Macro & Perps", desc: "Macro regime quadrants & cross-exchange perpetuals", icon: Terminal },
-  { href: "/openstock", label: "Global Markets", desc: "International equity sessions & sector rotation radar", icon: Globe },
-  { href: "/fincept", label: "DCF & Agents", desc: "Quantitative valuation agents & option surface desk", icon: Cpu },
-  { href: "/terminal", label: "Pro Terminal", desc: "Multi-monitor order book & intraday execution desk", icon: Terminal },
-  { href: "/openbb", label: "VaR & CLI", desc: "Risk analytics, efficient frontier & macro CLI desk", icon: Database },
-  { href: "/gold-news", label: "News", desc: "Minute-by-minute catalyst & macro bulletin desk", icon: Zap },
-  { href: "/wsj", label: "Market Center", desc: "Insider Form 4 ledger & institutional equity breadth", icon: FileText },
-  { href: "/markets", label: "Wall Street Desk", desc: "Large-cap US equities & institutional flow coverage", icon: BarChart3 },
-  { href: "/calculator", label: "Day Trader Desk", desc: "Intraday invalidation levels & volatility position sizing", icon: TrendingUp },
-  { href: "/crypto", label: "Crypto Desk", desc: "Spot ETF flows, perpetual funding & on-chain float", icon: Coins },
-  { href: "/meme-coins", label: "Meme Desk", desc: "High-volatility speculative assets with strict 2% caps", icon: Flame },
-  { href: "/desks", label: "All 44 Desks", desc: "Complete 44-desk quantitative research directory", icon: Cpu },
+export const ALL_MAIN_ITEMS: MainDirectoryItem[] = [
+  {
+    href: "/realtime-news",
+    label: "News Wire",
+    desc: "Real-time multi-source news wire & ticker query stream",
+    icon: Radio,
+    live: true,
+  },
+  {
+    href: "/oraclex",
+    label: "Vector RAG",
+    desc: "Cross-asset semantic store, internals & liquidity ladder",
+    icon: Compass,
+  },
+  {
+    href: "/neuberg",
+    label: "Macro & Perps",
+    desc: "516-panel macro regime, Fear & Greed & 24/7 perpetuals",
+    icon: Terminal,
+  },
+  {
+    href: "/openstock",
+    label: "Global Markets",
+    desc: "9 global exchanges, multi-tab charts & sentiment radar",
+    icon: Globe,
+  },
+  {
+    href: "/fincept",
+    label: "DCF & Agents",
+    desc: "37 capital allocator models, DCF valuation & options Greeks",
+    icon: Cpu,
+  },
+  {
+    href: "/terminal",
+    label: "Pro Terminal",
+    desc: "Dual-screen charting, Level 2 depth & execution desk",
+    icon: Terminal,
+  },
+  {
+    href: "/openbb",
+    label: "VaR & CLI",
+    desc: "Parametric & Monte Carlo VaR, yield curves & portfolio CLI",
+    icon: Database,
+  },
+  {
+    href: "/gold-news",
+    label: "News",
+    desc: "100 live breaking action bulletins & trade directives",
+    icon: Zap,
+    live: true,
+  },
+  {
+    href: "/wsj",
+    label: "Market Center",
+    desc: "Most active volume, Form 4 insiders & sector analysis",
+    icon: FileText,
+  },
+  {
+    href: "/markets",
+    label: "Wall Street Desk",
+    desc: "Large-cap US equities & institutional flow coverage",
+    icon: BarChart3,
+  },
+  {
+    href: "/calculator",
+    label: "Day Trader Desk",
+    desc: "Intraday invalidation levels & volatility position sizing",
+    icon: TrendingUp,
+  },
+  {
+    href: "/crypto",
+    label: "Crypto Desk",
+    desc: "Spot ETF flows, perpetual funding & on-chain float",
+    icon: Coins,
+  },
+  {
+    href: "/meme-coins",
+    label: "Meme Desk",
+    desc: "High-volatility speculative assets with strict 2% caps",
+    icon: Flame,
+  },
+  {
+    href: "/desks",
+    label: "All 44 Desks",
+    desc: "Complete 44-desk quantitative research directory",
+    icon: Cpu,
+  },
 ];
 
 export default function SiteHeader() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [pustakaOpen, setPustakaOpen] = useState(false);
+  const [directoryOpen, setDirectoryOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
 
@@ -88,13 +147,13 @@ export default function SiteHeader() {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        setPustakaOpen(false);
+        setDirectoryOpen(false);
         setMobileOpen(false);
       }
     };
     const handlePointerDown = (e: MouseEvent) => {
       if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
-        setPustakaOpen(false);
+        setDirectoryOpen(false);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -107,15 +166,15 @@ export default function SiteHeader() {
 
   return (
     <>
-      <header ref={headerRef} className="sticky top-0 z-50 border-b border-line/70 bg-ink-950/85 backdrop-blur-md">
+      <header ref={headerRef} className="sticky top-0 z-50 border-b border-line/70 bg-ink-950/90 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-5">
-          {/* Simple Editorial Brand matching wallls */}
+          {/* Simple Editorial Brand */}
           <Link
             href="/"
             className="group flex shrink-0 items-baseline gap-2"
             onClick={() => {
               setMobileOpen(false);
-              setPustakaOpen(false);
+              setDirectoryOpen(false);
             }}
           >
             <span className="font-display text-[1.35rem] tracking-tight text-bone">
@@ -126,13 +185,13 @@ export default function SiteHeader() {
             </span>
           </Link>
 
-          {/* Simple Primary Navigation */}
+          {/* Primary Navigation */}
           <nav className="hidden items-center gap-0.5 xl:gap-1 lg:flex">
             {SIMPLE_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setPustakaOpen(false)}
+                onClick={() => setDirectoryOpen(false)}
                 className={`rounded-full px-2.5 xl:px-3 py-1.5 text-[13px] xl:text-sm whitespace-nowrap transition-colors ${
                   isActive(link.href)
                     ? "bg-ink-800 text-bone"
@@ -155,7 +214,7 @@ export default function SiteHeader() {
             <button
               type="button"
               onClick={() => {
-                setPustakaOpen(false);
+                setDirectoryOpen(false);
                 setSearchOpen(true);
               }}
               aria-label="Search assets, research, and analyst desks"
@@ -170,7 +229,7 @@ export default function SiteHeader() {
 
             <Link
               href="/watchlist"
-              onClick={() => setPustakaOpen(false)}
+              onClick={() => setDirectoryOpen(false)}
               className="text-[13px] xl:text-sm text-muted whitespace-nowrap transition-colors hover:text-bone"
             >
               Watchlist
@@ -178,33 +237,159 @@ export default function SiteHeader() {
 
             <Link
               href="/pricing"
-              onClick={() => setPustakaOpen(false)}
+              onClick={() => setDirectoryOpen(false)}
               className="rounded-full border border-gold/50 bg-gold/10 px-3.5 py-1.5 text-[13px] xl:text-sm font-medium whitespace-nowrap text-gold-bright transition-colors hover:bg-gold/20"
             >
               Subscribe
             </Link>
 
-            {/* All Main 3-line Menu / Pustaka Directory Button */}
-            <button
-              type="button"
-              onClick={() => setPustakaOpen((prev) => !prev)}
-              aria-expanded={pustakaOpen}
-              aria-controls="all-main-pustaka-menu"
-              aria-label={pustakaOpen ? "Close All Main directory" : "Open All Main directory"}
-              title="All Main · Pustaka Terminal & Analyst Desks"
-              className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-[13px] xl:text-sm font-medium whitespace-nowrap transition-colors ${
-                pustakaOpen
-                  ? "border-gold bg-gold/20 text-gold-bright"
-                  : "border-line bg-ink-900 text-bone hover:border-gold/50 hover:text-gold-bright"
-              }`}
-            >
-              {pustakaOpen ? (
-                <X className="h-4 w-4 text-gold-bright" aria-hidden="true" />
-              ) : (
-                <Menu className="h-4 w-4 text-gold-bright" aria-hidden="true" />
+            {/* All Main Popover Button & Floating Dropdown */}
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setDirectoryOpen((prev) => !prev)}
+                aria-expanded={directoryOpen}
+                aria-controls="all-main-directory-menu"
+                aria-label={directoryOpen ? "Close All Main directory" : "Open All Main directory"}
+                title="All Main · Directory & Desks"
+                className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-[13px] xl:text-sm font-medium whitespace-nowrap transition-all shadow-sm ${
+                  directoryOpen
+                    ? "border-gold bg-gold/20 text-gold-bright ring-1 ring-gold/40"
+                    : "border-line bg-ink-900 text-bone hover:border-gold/50 hover:text-gold-bright"
+                }`}
+              >
+                {directoryOpen ? (
+                  <X className="h-4 w-4 text-gold-bright" aria-hidden="true" />
+                ) : (
+                  <Menu className="h-4 w-4 text-gold-bright" aria-hidden="true" />
+                )}
+                <span>All Main</span>
+                <span className="rounded-full bg-gold/20 px-1.5 py-0.2 font-mono text-[10px] text-gold-bright">
+                  14
+                </span>
+              </button>
+
+              {/* Compact Elongated Popover Dropdown (Not Full Page) */}
+              {directoryOpen && (
+                <div
+                  id="all-main-directory-menu"
+                  role="menu"
+                  aria-label="All Main Directory"
+                  className="absolute right-0 top-full mt-2.5 z-50 w-[390px] sm:w-[420px] rounded-2xl border border-gold/35 bg-[#080a10]/98 p-3 shadow-[0_24px_60px_rgba(0,0,0,0.85)] backdrop-blur-2xl ring-1 ring-gold/20 animate-in fade-in zoom-in-95 duration-150"
+                >
+                  {/* Dropdown Header */}
+                  <div className="flex items-center justify-between border-b border-line/60 pb-2.5 px-2">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-gold-bright">
+                          All Main Directory
+                        </span>
+                        <span className="rounded-full bg-gold/15 border border-gold/40 px-1.5 py-0.2 font-mono text-[10px] text-gold-bright font-semibold">
+                          14 Desks
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-muted mt-0.5">
+                        Clicking an item opens in a new tab <span className="text-gold">↗</span>
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setDirectoryOpen(false)}
+                      className="rounded-lg p-1.5 text-muted hover:bg-ink-800 hover:text-bone transition-colors"
+                      title="Close directory"
+                      aria-label="Close"
+                    >
+                      <X className="h-4 w-4" />
+                    </button>
+                  </div>
+
+                  {/* Elongated Clean Scrollable Single List (14 items) */}
+                  <div className="mt-2 max-h-[62vh] sm:max-h-[520px] space-y-1 overflow-y-auto pr-1 overscroll-contain">
+                    {ALL_MAIN_ITEMS.map((item, idx) => {
+                      const Icon = item.icon;
+                      const active = isActive(item.href);
+                      return (
+                        <Link
+                          key={`all-main-${idx}-${item.label}`}
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => setDirectoryOpen(false)}
+                          className={`group flex items-center justify-between gap-3 rounded-xl px-2.5 py-2 text-xs transition-all ${
+                            active
+                              ? "bg-gold/15 text-gold-bright border border-gold/40 shadow-inner"
+                              : "text-bone/90 hover:bg-ink-850 hover:text-gold-bright border border-transparent hover:border-gold/25"
+                          }`}
+                        >
+                          <div className="flex min-w-0 items-center gap-2.5">
+                            <span className="w-5 shrink-0 font-mono text-[11px] font-semibold text-gold/75 tabular-nums">
+                              {String(idx + 1).padStart(2, "0")}
+                            </span>
+                            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-line/70 bg-ink-900 group-hover:border-gold/40 group-hover:bg-gold/10 transition-colors">
+                              <Icon className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
+                            </div>
+                            <div className="min-w-0">
+                              <div className="flex items-center gap-1.5">
+                                <span className="font-medium text-bone group-hover:text-gold-bright text-[12.5px] truncate">
+                                  {item.label}
+                                </span>
+                                {item.live && (
+                                  <span className="inline-flex items-center gap-1 rounded border border-emerald-400/30 bg-emerald-500/10 px-1.5 py-0.2 font-mono text-[9px] text-emerald-300">
+                                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                                    LIVE
+                                  </span>
+                                )}
+                              </div>
+                              <p className="truncate text-[10.5px] text-muted group-hover:text-muted/90">
+                                {item.desc}
+                              </p>
+                            </div>
+                          </div>
+                          <div className="flex shrink-0 items-center gap-1">
+                            <ExternalLink className="h-3 w-3 text-muted/50 group-hover:text-gold-bright transition-colors" />
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+
+                  {/* Dropdown Footer Quick Links */}
+                  <div className="mt-2.5 flex items-center justify-between border-t border-line/60 pt-2 px-1 text-[11px] text-muted">
+                    <div className="flex items-center gap-3">
+                      <Link
+                        href="/pipeline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setDirectoryOpen(false)}
+                        className="hover:text-gold-bright flex items-center gap-1 transition-colors"
+                      >
+                        <Activity className="h-3 w-3 text-gold" />
+                        <span>Pipeline ↗</span>
+                      </Link>
+                      <Link
+                        href="/watchlist"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setDirectoryOpen(false)}
+                        className="hover:text-gold-bright flex items-center gap-1 transition-colors"
+                      >
+                        <Bookmark className="h-3 w-3 text-gold" />
+                        <span>Watchlist ↗</span>
+                      </Link>
+                    </div>
+                    <Link
+                      href="/pricing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setDirectoryOpen(false)}
+                      className="font-medium text-gold-bright hover:underline"
+                    >
+                      Subscribe ↗
+                    </Link>
+                  </div>
+                </div>
               )}
-              <span>All Main</span>
-            </button>
+            </div>
           </div>
 
           {/* Mobile Actions: Search + 3-line Menu */}
@@ -237,153 +422,15 @@ export default function SiteHeader() {
           </div>
         </div>
 
-        {/* Desktop Pustaka / All Main Downward Drawer */}
-        {pustakaOpen && (
-          <div
-            id="all-main-pustaka-menu"
-            role="region"
-            aria-label="All Main and Analyst Desks Pustaka directory"
-            className="absolute inset-x-0 top-full z-50 hidden border-b border-gold/30 bg-ink-950/98 shadow-[0_24px_60px_rgba(0,0,0,0.85)] backdrop-blur-xl lg:block"
-          >
-            <div className="mx-auto max-w-7xl px-5 py-4">
-              <div className="mb-3 flex flex-wrap items-center justify-between gap-3 border-b border-line/60 pb-3">
-                <div>
-                  <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-bright">
-                    Pustaka · All Main Terminals &amp; Analyst Desks
-                  </p>
-                  <p className="mt-0.5 text-xs text-muted">
-                    Full institutional suite stacked in order — {PUSTAKA_MAIN.length} Main Platforms &amp;{" "}
-                    {PUSTAKA_DESKS.length} Analyst Desks.
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap items-center gap-2.5">
-                  <Link
-                    href="/pipeline"
-                    onClick={() => setPustakaOpen(false)}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-line bg-ink-900 px-3 py-1.5 text-xs text-muted transition hover:border-gold/40 hover:text-bone"
-                  >
-                    <Activity className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
-                    <span>Pipeline</span>
-                  </Link>
-                  <Link
-                    href="/watchlist"
-                    onClick={() => setPustakaOpen(false)}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-line bg-ink-900 px-3 py-1.5 text-xs text-muted transition hover:border-gold/40 hover:text-bone"
-                  >
-                    <Bookmark className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
-                    <span>Watchlist</span>
-                  </Link>
-                  <AuthButton />
-                  <button
-                    type="button"
-                    onClick={() => setPustakaOpen(false)}
-                    aria-label="Close All Main directory"
-                    className="inline-flex items-center gap-1 rounded-full border border-line bg-ink-900 px-3 py-1.5 text-xs font-mono text-muted hover:border-gold/40 hover:text-bone"
-                  >
-                    <X className="h-3.5 w-3.5" aria-hidden="true" />
-                    <span>Close</span>
-                  </button>
-                </div>
-              </div>
-
-              <div className="max-h-[70vh] space-y-6 overflow-y-auto pr-1">
-                {/* 1. Main Section (16) */}
-                <div>
-                  <h3 className="mb-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">
-                    Main Platforms &amp; Navigation ({PUSTAKA_MAIN.length})
-                  </h3>
-                  <ol className="flex flex-col divide-y divide-line/40 rounded-xl border border-line/70 bg-ink-900/70">
-                    {PUSTAKA_MAIN.map((item, idx) => {
-                      const Icon = item.icon;
-                      const active = isActive(item.href);
-                      return (
-                        <li key={`main-${idx}-${item.label}`}>
-                          <Link
-                            href={item.href}
-                            onClick={() => setPustakaOpen(false)}
-                            className={`flex items-center justify-between gap-4 px-4 py-2.5 transition ${
-                              active
-                                ? "bg-gold/15 text-gold-bright"
-                                : "text-bone/90 hover:bg-ink-850 hover:text-gold-bright"
-                            }`}
-                          >
-                            <div className="flex min-w-0 items-center gap-3">
-                              <span className="w-6 shrink-0 font-mono text-[11px] text-gold/80 tabular-nums">
-                                {String(idx + 1).padStart(2, "0")}
-                              </span>
-                              <Icon className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
-                              <span className="shrink-0 text-[13px] font-medium">{item.label}</span>
-                              <span className="hidden truncate text-xs text-muted sm:inline">
-                                — {item.desc}
-                              </span>
-                            </div>
-                            <div className="flex shrink-0 items-center gap-2">
-                              {item.live && (
-                                <span className="inline-flex items-center gap-1 rounded border border-emerald-400/30 bg-emerald-500/10 px-1.5 py-0.5 font-mono text-[10px] text-emerald-300">
-                                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                                  LIVE
-                                </span>
-                              )}
-                              <span className="font-mono text-[11px] text-muted">{item.href}</span>
-                            </div>
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ol>
-                </div>
-
-                {/* 2. Analyst Desks Section (14) */}
-                <div>
-                  <h3 className="mb-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">
-                    Analyst Desks ({PUSTAKA_DESKS.length})
-                  </h3>
-                  <ol className="flex flex-col divide-y divide-line/40 rounded-xl border border-line/70 bg-ink-900/70">
-                    {PUSTAKA_DESKS.map((desk, idx) => {
-                      const Icon = desk.icon;
-                      const active = isActive(desk.href);
-                      return (
-                        <li key={`desk-${idx}-${desk.label}`}>
-                          <Link
-                            href={desk.href}
-                            onClick={() => setPustakaOpen(false)}
-                            className={`flex items-center justify-between gap-4 px-4 py-2.5 transition ${
-                              active
-                                ? "bg-gold/15 text-gold-bright"
-                                : "text-bone/90 hover:bg-ink-850 hover:text-gold-bright"
-                            }`}
-                          >
-                            <div className="flex min-w-0 items-center gap-3">
-                              <span className="w-6 shrink-0 font-mono text-[11px] text-gold/80 tabular-nums">
-                                {String(idx + 1).padStart(2, "0")}
-                              </span>
-                              <Icon className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
-                              <span className="shrink-0 text-[13px] font-medium">{desk.label}</span>
-                              <span className="hidden truncate text-xs text-muted sm:inline">
-                                — {desk.desc}
-                              </span>
-                            </div>
-                            <span className="shrink-0 font-mono text-[11px] text-muted">{desk.href}</span>
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ol>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Mobile Drawer */}
+        {/* Mobile Drawer (Only Single Clean List with 14 Items, Opening in New Tab) */}
         {mobileOpen && (
-          <nav className="max-h-[82vh] overflow-y-auto border-t border-line/70 bg-ink-900 px-5 pb-6 pt-3 lg:hidden space-y-4">
+          <nav className="max-h-[84vh] overflow-y-auto border-t border-line/70 bg-ink-950 px-5 pb-6 pt-3 lg:hidden space-y-4">
             <div className="flex items-center justify-between border-b border-line/60 pb-3">
               <LiveClock />
               <FeedBadge className="text-[10px] uppercase tracking-[0.14em] text-muted" />
             </div>
 
+            {/* Standard Primary Navigation */}
             <div className="grid gap-1">
               {[...SIMPLE_LINKS, { href: "/watchlist", label: "Watchlist" }].map((link) => (
                 <Link
@@ -399,19 +446,25 @@ export default function SiteHeader() {
               ))}
             </div>
 
+            {/* Single Unified All Main Directory (14 items) */}
             <div className="border-t border-line/60 pt-3 space-y-1.5">
-              <p className="px-2 font-mono text-[10px] font-bold uppercase tracking-widest text-gold">
-                Pustaka · Main ({PUSTAKA_MAIN.length})
-              </p>
-              {PUSTAKA_MAIN.map((item, idx) => {
+              <div className="flex items-center justify-between px-2 pb-1">
+                <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-gold">
+                  Directory · All Main ({ALL_MAIN_ITEMS.length})
+                </p>
+                <span className="text-[10px] text-muted">Opens in new tab ↗</span>
+              </div>
+              {ALL_MAIN_ITEMS.map((item, idx) => {
                 const Icon = item.icon;
                 return (
                   <Link
                     key={`m-main-${idx}-${item.label}`}
                     href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => setMobileOpen(false)}
                     className={`flex items-center justify-between rounded-lg px-3 py-2 text-xs font-medium ${
-                      isActive(item.href) ? "bg-ink-800 text-bone" : "text-muted hover:text-bone"
+                      isActive(item.href) ? "bg-ink-800 text-gold-bright" : "text-bone/90 hover:bg-ink-900 hover:text-gold-bright"
                     }`}
                   >
                     <span className="flex items-center gap-2.5">
@@ -420,36 +473,13 @@ export default function SiteHeader() {
                       </span>
                       <Icon className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
                       <span>{item.label}</span>
+                      {item.live && (
+                        <span className="rounded bg-emerald-500/20 px-1 py-0.2 text-[9px] text-emerald-300">
+                          LIVE
+                        </span>
+                      )}
                     </span>
-                    <span className="font-mono text-[10px] text-muted/70">{item.href}</span>
-                  </Link>
-                );
-              })}
-            </div>
-
-            <div className="border-t border-line/60 pt-3 space-y-1.5">
-              <p className="px-2 font-mono text-[10px] font-bold uppercase tracking-widest text-gold">
-                Pustaka · Analyst Desks ({PUSTAKA_DESKS.length})
-              </p>
-              {PUSTAKA_DESKS.map((desk, idx) => {
-                const Icon = desk.icon;
-                return (
-                  <Link
-                    key={`m-desk-${idx}-${desk.label}`}
-                    href={desk.href}
-                    onClick={() => setMobileOpen(false)}
-                    className={`flex items-center justify-between rounded-lg px-3 py-2 text-xs font-medium ${
-                      isActive(desk.href) ? "bg-ink-800 text-bone" : "text-muted hover:text-bone"
-                    }`}
-                  >
-                    <span className="flex items-center gap-2.5">
-                      <span className="w-5 font-mono text-[10px] text-gold/75">
-                        {String(idx + 1).padStart(2, "0")}
-                      </span>
-                      <Icon className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
-                      <span>{desk.label}</span>
-                    </span>
-                    <span className="font-mono text-[10px] text-muted/70">{desk.href}</span>
+                    <ExternalLink className="h-3 w-3 text-muted/60" />
                   </Link>
                 );
               })}
