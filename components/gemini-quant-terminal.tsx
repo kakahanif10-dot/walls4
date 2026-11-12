@@ -29,7 +29,7 @@ import {
 } from "lucide-react";
 import WhopBadge from "@/components/whop-badge";
 
-export type GeminiModelKey = "gemini-4-carbon" | "gemini-4-argon" | "gemini-3.8-flash" | "gemini-3.1-flash-lite";
+export type NwsModelKey = "nws-titan-4.0" | "nws-olympus-4.0" | "nws-mercury-3.8" | "nws-velocity-3.1";
 
 interface ChatMessage {
   id: string;
@@ -41,7 +41,7 @@ interface ChatMessage {
 }
 
 const MODEL_OPTIONS: {
-  key: GeminiModelKey;
+  key: NwsModelKey;
   roleId: string;
   name: string;
   roleTitle: string;
@@ -50,7 +50,7 @@ const MODEL_OPTIONS: {
   badgeColor: string;
 }[] = [
   {
-    key: "gemini-4-carbon",
+    key: "nws-titan-4.0",
     roleId: "carbon",
     name: "NWS Titan 4.0",
     roleTitle: "NWS Titan 4.0 — Deep Quantitative Reasoning & Model Auditing Desk",
@@ -59,7 +59,7 @@ const MODEL_OPTIONS: {
     badgeColor: "border-purple-500/40 bg-purple-500/10 text-purple-300",
   },
   {
-    key: "gemini-4-argon",
+    key: "nws-olympus-4.0",
     roleId: "argon",
     name: "NWS Olympus 4.0",
     roleTitle: "NWS Olympus 4.0 — Multi-Asset Derivatives & Portfolio Structuring Desk",
@@ -68,7 +68,7 @@ const MODEL_OPTIONS: {
     badgeColor: "border-blue-500/40 bg-blue-500/10 text-blue-300",
   },
   {
-    key: "gemini-3.8-flash",
+    key: "nws-mercury-3.8",
     roleId: "flash",
     name: "NWS Mercury 3.8",
     roleTitle: "NWS Mercury 3.8 — Flow Desk & Market Intelligence Specialist",
@@ -77,7 +77,7 @@ const MODEL_OPTIONS: {
     badgeColor: "border-emerald-500/40 bg-emerald-500/10 text-emerald-300",
   },
   {
-    key: "gemini-3.1-flash-lite",
+    key: "nws-velocity-3.1",
     roleId: "flash-lite",
     name: "NWS Velocity 3.1",
     roleTitle: "NWS Velocity 3.1 — Execution Alerts & Sub-Second Tape Reader",
@@ -105,7 +105,7 @@ export default function GeminiQuantTerminal() {
   const [activeTab, setActiveTab] = useState<"chat" | "search" | "voice">("chat");
 
   // Chat State
-  const [selectedModel, setSelectedModel] = useState<GeminiModelKey>("gemini-3.8-flash");
+  const [selectedModel, setSelectedModel] = useState<NwsModelKey>("nws-mercury-3.8");
   const [inputMessage, setInputMessage] = useState("");
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([
     {
@@ -113,7 +113,7 @@ export default function GeminiQuantTerminal() {
       role: "assistant",
       text: "NextWall Street NWS AI Suite active. Selected: **NWS Mercury 3.8** (*Flow Desk & Market Intelligence*).\n\nAsk any quantitative model verification, multi-leg options structuring (NWS Olympus 4.0), or cross-asset tape query.",
       timestamp: "Live Feed",
-      modelUsed: "gemini-3.8-flash",
+      modelUsed: "NWS Mercury 3.8",
     },
   ]);
   const [isChatLoading, setIsChatLoading] = useState(false);
@@ -183,13 +183,13 @@ export default function GeminiQuantTerminal() {
         text: m.text,
       }));
 
-      const res = await fetch("/api/gemini/chat", {
+      const res = await fetch("/api/nws-ai/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           messages: messagesPayload,
           role: currentModelMeta.roleId,
-          modelOverride: selectedModel,
+          model: selectedModel,
         }),
       });
 
@@ -199,7 +199,7 @@ export default function GeminiQuantTerminal() {
         role: "assistant",
         text: data.reply || data.error || "No response generated.",
         timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
-        modelUsed: data.modelUsed || selectedModel,
+        modelUsed: data.modelUsed || currentModelMeta.name,
       };
 
       setChatHistory((prev) => [...prev, assistantMsg]);
@@ -211,7 +211,7 @@ export default function GeminiQuantTerminal() {
           role: "assistant",
           text: `**Terminal Notice:** Network handshake timeout. Fallback signal: Maintaining strict risk discipline and watching 20-day SMA slope.`,
           timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
-          modelUsed: selectedModel,
+          modelUsed: currentModelMeta.name,
         },
       ]);
     } finally {
@@ -230,7 +230,7 @@ export default function GeminiQuantTerminal() {
     setSearchQueriesUsed([]);
 
     try {
-      const res = await fetch("/api/gemini/search-grounding", {
+      const res = await fetch("/api/nws-ai/search-grounding", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: q }),
@@ -309,7 +309,7 @@ export default function GeminiQuantTerminal() {
       setIsVoiceProcessing(true);
 
       try {
-        const res = await fetch("/api/gemini/voice", {
+        const res = await fetch("/api/nws-ai/voice", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ transcript: queryToSend }),
@@ -535,7 +535,7 @@ export default function GeminiQuantTerminal() {
                   >
                     <div className="flex items-center justify-between gap-3 text-[10px] font-mono text-muted mb-1.5 border-b border-line/40 pb-1">
                       <span className="font-semibold text-gold">
-                        {isAssistant ? (msg.modelUsed || selectedModel) : "Trader"}
+                        {isAssistant ? (msg.modelUsed || currentModelMeta.name) : "Trader"}
                       </span>
                       <div className="flex items-center gap-2">
                         <span>{msg.timestamp}</span>

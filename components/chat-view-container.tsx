@@ -7,7 +7,7 @@ import WhopBadge from "@/components/whop-badge";
 import { Sparkles, Users, MessageSquare, Bot, Mic, Search, Globe } from "lucide-react";
 
 export default function ChatViewContainer() {
-  const [activeFloor, setActiveFloor] = useState<"gemini" | "discord">("gemini");
+  const [activeFloor, setActiveFloor] = useState<"nws-ai" | "discord">("nws-ai");
 
   return (
     <div className="space-y-5">
@@ -21,7 +21,7 @@ export default function ChatViewContainer() {
               <WhopBadge size="xs" />
             </div>
             <p className="text-muted text-[11px] mt-0.5">
-              Select between multi-turn NWS AI reasoning (NWS Titan 4.0, NWS Olympus 4.0, NWS Mercury, NWS Velocity) with search grounding &amp; 24kHz voice, or the community floor.
+              Select between multi-turn NWS AI reasoning (NWS Titan 4.0, NWS Olympus 4.0, NWS Mercury 3.8, NWS Velocity 3.1) with search grounding &amp; 24kHz voice, or the community floor.
             </p>
           </div>
         </div>
@@ -30,9 +30,9 @@ export default function ChatViewContainer() {
         <div className="flex items-center gap-1.5 rounded-xl border border-line bg-ink-950 p-1 shrink-0">
           <button
             type="button"
-            onClick={() => setActiveFloor("gemini")}
+            onClick={() => setActiveFloor("nws-ai")}
             className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-mono font-semibold transition-all ${
-              activeFloor === "gemini"
+              activeFloor === "nws-ai"
                 ? "bg-gold text-ink-950 shadow-sm"
                 : "text-muted hover:text-bone"
             }`}
@@ -55,7 +55,7 @@ export default function ChatViewContainer() {
         </div>
       </div>
 
-      {activeFloor === "gemini" ? (
+      {activeFloor === "nws-ai" ? (
         <GeminiQuantTerminal />
       ) : (
         <DiscordLiveChat />

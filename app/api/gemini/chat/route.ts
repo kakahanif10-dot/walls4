@@ -50,14 +50,27 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     messages = body.messages || [];
     role = body.role || "flash";
-    const modelOverride = body.modelOverride;
+    const requestedKey = body.model || body.modelOverride || role;
 
     if (!Array.isArray(messages) || messages.length === 0) {
       return NextResponse.json({ error: "Invalid messages array" }, { status: 400 });
     }
 
-    const selectedRole = ROLE_CONFIGS[role] || ROLE_CONFIGS.flash;
-    const requestedModel = modelOverride || selectedRole.model;
+    const NWS_MODEL_MAP: Record<string, { backendModel: string; displayName: string; roleId: string }> = {
+      "nws-titan-4.0": { backendModel: "gemini-4-carbon", displayName: "NWS Titan 4.0", roleId: "carbon" },
+      "nws-olympus-4.0": { backendModel: "gemini-4-argon", displayName: "NWS Olympus 4.0", roleId: "argon" },
+      "nws-mercury-3.8": { backendModel: "gemini-3.8-flash", displayName: "NWS Mercury 3.8", roleId: "flash" },
+      "nws-velocity-3.1": { backendModel: "gemini-3.1-flash-lite", displayName: "NWS Velocity 3.1", roleId: "flash-lite" },
+      "gemini-4-carbon": { backendModel: "gemini-4-carbon", displayName: "NWS Titan 4.0", roleId: "carbon" },
+      "gemini-4-argon": { backendModel: "gemini-4-argon", displayName: "NWS Olympus 4.0", roleId: "argon" },
+      "gemini-3.8-flash": { backendModel: "gemini-3.8-flash", displayName: "NWS Mercury 3.8", roleId: "flash" },
+      "gemini-3.1-flash-lite": { backendModel: "gemini-3.1-flash-lite", displayName: "NWS Velocity 3.1", roleId: "flash-lite" },
+    };
+
+    const mapping = NWS_MODEL_MAP[requestedKey] || NWS_MODEL_MAP["nws-mercury-3.8"];
+    const selectedRole = ROLE_CONFIGS[mapping.roleId] || ROLE_CONFIGS[role] || ROLE_CONFIGS.flash;
+    const backendModel = mapping.backendModel || selectedRole.model;
+    const publicDisplayName = mapping.displayName;
 
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
@@ -65,7 +78,7 @@ export async function POST(req: NextRequest) {
       const lastUserMsg = messages[messages.length - 1]?.text || "Market inquiry";
       return NextResponse.json({
         reply: `**[${selectedRole.title} — Institutional Feed]**\n\n*Order Flow Analysis for "${lastUserMsg}"*:\n\n- **Desk Stance**: Moderately Bullish with Volatility Expansion.\n- **Primary Anchor**: Resistance test underway with 20-day SMA slope positive (+1.84% weekly drift).\n- **Risk Protocol**: Invalidation stop placed 2.5% below nearest volume shelf. Recommended R/R ratio is 2.8:1.\n- **Catalyst Focus**: Watching front-month implied volatility and liquidity order book absorption across institutional exchanges.`,
-        modelUsed: requestedModel,
+        modelUsed: publicDisplayName,
         fallback: true,
       });
     }
@@ -85,12 +98,13 @@ export async function POST(req: NextRequest) {
       parts: [{ text: m.text }],
     }));
 
-    let actualModel = requestedModel;
+    let actualBackendModel = backendModel;
+    let actualDisplayName = publicDisplayName;
     let responseText = "";
 
     try {
       const response = await ai.models.generateContent({
-        model: actualModel,
+        model: actualBackendModel,
         contents,
         config: {
           systemInstruction: selectedRole.systemInstruction,
@@ -98,11 +112,12 @@ export async function POST(req: NextRequest) {
       });
       responseText = response.text || "";
     } catch (primaryErr: any) {
-      // If a higher-tier or paid model fails (e.g. quota or permissions), gracefully retry with gemini-3.8-flash
-      if (actualModel !== "gemini-3.8-flash") {
-        actualModel = "gemini-3.8-flash";
+      // If a higher-tier or paid model fails (e.g. quota or permissions), gracefully retry with 3.8 flash
+      if (actualBackendModel !== "gemini-3.8-flash") {
+        actualBackendModel = "gemini-3.8-flash";
+        actualDisplayName = "NWS Mercury 3.8";
         const fallbackResponse = await ai.models.generateContent({
-          model: actualModel,
+          model: actualBackendModel,
           contents,
           config: {
             systemInstruction: selectedRole.systemInstruction,
@@ -116,18 +131,18 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       reply: responseText,
-      modelUsed: actualModel,
+      modelUsed: actualDisplayName,
       roleUsed: role,
     });
   } catch (error: any) {
-    console.error("Gemini Chat API Error:", error);
+    console.error("NWS AI Chat API Error:", error);
     const lastUserMsg = messages[messages.length - 1]?.text || "Market inquiry";
     const selectedRole = ROLE_CONFIGS[role] || ROLE_CONFIGS.flash;
     const isQuota = String(error?.message || "").includes("429") || String(error?.message || "").includes("RESOURCE_EXHAUSTED");
 
     return NextResponse.json({
       reply: `**[${selectedRole.title} — Real-Time Signal Desk]**\n\n*Institutional synthesis for: "${lastUserMsg}"*\n\n- **Order Flow Stance**: Constructive with controlled volatility. Volume shelf established at nearest 50-day moving average.\n- **Execution Risk**: Strict invalidation stop pegged 2.8% below immediate support structure.\n- **Strategy Directive**: Maintain disciplined position sizing (max 2% risk capital per allocation) and monitor volume weighted average price (VWAP).\n\n*(Desk note: ${isQuota ? "NWS AI rate limit quota active; served via NextWall high-throughput risk engine." : "Synthesized via internal quant models."})*`,
-      modelUsed: selectedRole.model,
+      modelUsed: "NWS AI High-Throughput Engine",
       fallback: true,
     });
   }
