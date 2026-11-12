@@ -1,0 +1,625 @@
+- generic [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - link "NextWallStreet" [ref=f1e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=f1e6]:
+        - link "Markets" [ref=f1e7] [cursor=pointer]:
+          - /url: /markets
+        - link "Crypto" [ref=f1e8] [cursor=pointer]:
+          - /url: /crypto
+        - link "Meme coins" [ref=f1e9] [cursor=pointer]:
+          - /url: /meme-coins
+        - link "Research" [ref=f1e10] [cursor=pointer]:
+          - /url: /research
+        - link "Academy" [ref=f1e11] [cursor=pointer]:
+          - /url: /academy
+        - link "Gemini AI & Chat" [ref=f1e12] [cursor=pointer]:
+          - /url: /chat
+        - link "Pricing" [ref=f1e13] [cursor=pointer]:
+          - /url: /pricing
+      - generic [ref=f1e14]:
+        - generic "Thu, 12 Nov 2026 06:46:09 GMT" [ref=f1e607]: 06:46:09UTC
+        - button "Search assets, research, and analyst desks" [ref=f1e21]
+        - link "Watchlist" [ref=f1e25] [cursor=pointer]:
+          - /url: /watchlist
+        - link "Subscribe" [ref=f1e26] [cursor=pointer]:
+          - /url: /pricing
+        - button "Open Trade Tools directory" [ref=f1e28]:
+          - generic [ref=f1e30]: Trade Tools
+          - generic [ref=f1e31]: "14"
+  - main [ref=f1e32]:
+    - generic [ref=f1e33]:
+      - generic [ref=f1e35]:
+        - navigation [ref=f1e36]:
+          - link "Home" [ref=f1e37] [cursor=pointer]:
+            - /url: /
+          - generic [ref=f1e38]: /
+          - generic [ref=f1e39]: Global Markets & Financial Exchanges
+        - generic [ref=f1e40]:
+          - generic [ref=f1e41]: GLOBAL EXCHANGES & MAP TERMINAL
+          - generic [ref=f1e45]: GOOGLE MAPS PLATFORM · 11 FINANCIAL HUBS
+        - heading "Global Markets & Financial Exchanges Map" [level=1] [ref=f1e46]
+        - paragraph [ref=f1e47]: Institutional workstation combining Google Maps Platform geolocation of 11 world exchanges (NYSE, Nasdaq, CME, LSE, Deutsche Börse, Tokyo TSE, SGX, HKEX, Borsa Istanbul) with real-time operational status, benchmark indices, and cross-border sentiment radars.
+        - generic [ref=f1e48]:
+          - generic [ref=f1e49]: 11 Geolocation Hubs (Google Maps)
+          - generic [ref=f1e53]: Multi-Tab Technical Overlays
+          - generic [ref=f1e57]: Social & Crowd Sentiment Radar
+          - generic [ref=f1e61]: Custom Price Trigger Manager
+      - generic [ref=f1e66]:
+        - generic [ref=f1e67]:
+          - generic [ref=f1e73]:
+            - text: Global Financial Hub & Trading Floor Visualization
+            - paragraph [ref=f1e74]: Switch between the live Google Maps Platform geolocation terminal and the 9-exchange sentiment hub.
+          - generic [ref=f1e75]:
+            - button "Global Exchanges Map" [ref=f1e76]
+            - button "9-Region Sentiment Hub" [ref=f1e80]
+        - generic [ref=f1e83]:
+          - generic [ref=f1e84]:
+            - generic [ref=f1e85]:
+              - generic [ref=f1e91]:
+                - generic [ref=f1e92]:
+                  - heading "Global Financial Exchanges & Trading Floor Map" [level=3] [ref=f1e93]
+                  - generic [ref=f1e94]: Live Geolocation
+                - paragraph [ref=f1e95]: Interactive Google Maps Platform terminal tracking 11 global trading hubs, desk headquarters & real-time hours
+              - generic [ref=f1e96]:
+                - button "ALL" [ref=f1e97]
+                - button "Americas" [ref=f1e98]
+                - button "EMEA" [ref=f1e99]
+                - button "APAC" [ref=f1e100]
+            - generic [ref=f1e101]:
+              - generic [ref=f1e102]:
+                - generic [ref=f1e608]:
+                  - generic [ref=f1e609]:
+                    - generic:
+                      - button "Keyboard shortcuts"
+                    - region "Map" [ref=f1e610]
+                    - generic [ref=f1e611]:
+                      - generic [ref=f1e649]:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "New York Stock Exchange & Nasdaq (NYSE / NASDAQ)" [ref=f1e651] [cursor=pointer]
+                              - button "Chicago Mercantile Exchange (CME Group) (CME / CBOT)" [ref=f1e654] [cursor=pointer]
+                              - button "London Stock Exchange (LSE) (LSE)" [ref=f1e657] [cursor=pointer]
+                              - button "Deutsche Börse & Eurex (XETRA)" [ref=f1e660] [cursor=pointer]
+                              - button "SIX Swiss Exchange (SIX)" [ref=f1e663] [cursor=pointer]
+                              - button "Borsa Istanbul (BIST)" [ref=f1e666] [cursor=pointer]
+                              - button "Dubai Financial Market & ADX (DFM / ADX)" [ref=f1e669] [cursor=pointer]
+                              - button "Tokyo Stock Exchange (JPX) (TSE)" [ref=f1e672] [cursor=pointer]
+                              - button "Hong Kong Exchanges and Clearing (HKEX) (HKEX)" [ref=f1e675] [cursor=pointer]
+                              - button "Singapore Exchange (SGX) (SGX)" [ref=f1e678] [cursor=pointer]
+                              - button "Australian Securities Exchange (ASX) (ASX)" [ref=f1e681] [cursor=pointer]
+                          - dialog [ref=f1e684]:
+                            - button "Close" [active] [ref=f1e687] [cursor=pointer]
+                            - generic [ref=f1e690]:
+                              - generic [ref=f1e691]:
+                                - generic [ref=f1e692]: NYSE / NASDAQ
+                                - generic [ref=f1e693]: OPEN
+                              - generic [ref=f1e694]: New York Stock Exchange & Nasdaq
+                              - generic [ref=f1e695]: New York, United States
+                              - generic [ref=f1e696]:
+                                - generic [ref=f1e697]:
+                                  - strong [ref=f1e698]: "Index:"
+                                  - text: S&P 500 / Nasdaq 100
+                                  - generic [ref=f1e699]: (+0.84%)
+                                - generic [ref=f1e700]:
+                                  - strong [ref=f1e701]: "Hours:"
+                                  - text: 09:30 - 16:00 EST
+                                - generic [ref=f1e702]:
+                                  - strong [ref=f1e703]: "Est. Daily Vol:"
+                                  - text: $285 Billion
+                      - iframe [aria-hidden] [ref=f1e705]
+                      - button "Toggle fullscreen view" [ref=f1e706] [cursor=pointer]
+                      - generic:
+                        - generic:
+                          - button "Map camera controls" [ref=f1e708] [cursor=pointer]
+                          - button "Drag Pegman onto the map to open Street View"
+                      - link "Open this area in Google Maps (opens a new window)" [ref=f1e710] [cursor=pointer]:
+                        - /url: https://maps.google.com/maps?ll=28,15&z=2&t=m&hl=en-US&gl=US&mapclient=apiv3
+                        - img "Google" [ref=f1e712]
+                      - generic [ref=f1e713]:
+                        - button "Keyboard shortcuts" [ref=f1e719] [cursor=pointer]
+                        - generic [ref=f1e720]: Map data ©2026 Google
+                        - link "Terms (opens in new tab)" [ref=f1e729] [cursor=pointer]:
+                          - /url: https://www.google.com/intl/en-US_US/help/terms_maps.html
+                          - text: Terms
+                  - generic [ref=f1e730]:
+                    - generic [ref=f1e732]: This page can't load Google Maps correctly.
+                    - table [ref=f1e733]:
+                      - row [ref=f1e734]:
+                        - cell [ref=f1e735]:
+                          - link "Do you own this website?" [ref=f1e736] [cursor=pointer]:
+                            - /url: http://g.co/dev/maps-no-account
+                        - cell [ref=f1e737]:
+                          - button "OK" [ref=f1e738] [cursor=pointer]
+                - generic:
+                  - generic: Open Market
+                  - generic: Closed / Off-Hours
+                  - generic: "|"
+                  - generic: Click pin to inspect desk
+              - generic [ref=f1e104]:
+                - generic [ref=f1e105]:
+                  - generic [ref=f1e106]:
+                    - generic [ref=f1e107]: Exchange Telemetry
+                    - generic [ref=f1e108]: 11 Hubs Visible
+                  - generic [ref=f1e109]:
+                    - generic [ref=f1e110]:
+                      - generic [ref=f1e111]:
+                        - generic [ref=f1e112]: NYSE / NASDAQ
+                        - generic [ref=f1e113]: OPEN
+                      - heading "New York Stock Exchange & Nasdaq" [level=4] [ref=f1e114]
+                      - paragraph [ref=f1e115]: New York, United States
+                    - generic [ref=f1e119]:
+                      - generic [ref=f1e120]:
+                        - generic [ref=f1e121]: Trading Hours
+                        - generic [ref=f1e125]: 09:30 - 16:00 EST
+                      - generic [ref=f1e126]:
+                        - generic [ref=f1e127]: Benchmark Index
+                        - generic [ref=f1e130]: S&P 500 / Nasdaq 100
+                      - generic [ref=f1e131]:
+                        - generic [ref=f1e132]: Day Session Move
+                        - generic [ref=f1e133]: +0.84%
+                      - generic [ref=f1e134]:
+                        - generic [ref=f1e135]: Estimated Daily Vol
+                        - generic [ref=f1e136]: $285 Billion
+                    - generic [ref=f1e137]:
+                      - generic [ref=f1e138]: Assigned Desk Connection
+                      - paragraph [ref=f1e141]: NextWall Wall Street Equity & Macro Lead Desk
+                      - paragraph [ref=f1e142]: Primary epicenter of US equity, ETF, and structured volatility flow.
+                    - generic [ref=f1e143]:
+                      - paragraph [ref=f1e144]: Quick Center Switcher
+                      - generic [ref=f1e145]:
+                        - button "New York (NYSE / NASDAQ)" [ref=f1e146]
+                        - button "Chicago (CME / CBOT)" [ref=f1e147]
+                        - button "London (LSE)" [ref=f1e148]
+                        - button "Frankfurt (XETRA)" [ref=f1e149]
+                        - button "Zurich (SIX)" [ref=f1e150]
+                        - button "Istanbul (BIST)" [ref=f1e151]
+                - generic [ref=f1e152]:
+                  - generic [ref=f1e153]: Maps SDK Active
+                  - generic [ref=f1e157]: DEMO_MAP_ID
+          - generic [ref=f1e158]:
+            - generic [ref=f1e159]:
+              - heading "Regional Trading Desks & Sentiment" [level=3] [ref=f1e160]
+              - paragraph [ref=f1e161]: Detailed technicals and order book sentiment across individual tickers.
+            - generic [ref=f1e162]:
+              - generic [ref=f1e163]:
+                - generic [ref=f1e164]:
+                  - generic [ref=f1e165]:
+                    - generic [ref=f1e166]:
+                      - generic [ref=f1e167]: 9 GLOBAL EXCHANGE HUBS
+                      - generic [ref=f1e171]: Multi-Tab Charts · Sentiment Radar
+                    - heading "Global Markets & Sentiment Hub" [level=2] [ref=f1e172]
+                    - paragraph [ref=f1e173]: Coverage across 9 international hubs (US, India, Germany, Canada, Australia, Saudi Arabia, Poland, Crypto 24/7, and Global FX) with browser-style multi-tab charting, crowd sentiment scoring, sector heatmaps, and custom price triggers.
+                  - generic [ref=f1e174]:
+                    - generic [ref=f1e175]:
+                      - generic [ref=f1e176]: "Active Region:"
+                      - generic [ref=f1e180]:
+                        - generic [ref=f1e181]: 🇺🇸
+                        - generic [ref=f1e182]: United States
+                    - generic [ref=f1e183]:
+                      - generic [ref=f1e184]: "Market Status:"
+                      - generic [ref=f1e185]: OPEN
+                    - generic [ref=f1e186]:
+                      - generic [ref=f1e187]: "Primary Index:"
+                      - generic [ref=f1e188]: S&P 500 (5,882.4)
+                    - generic [ref=f1e189]:
+                      - generic [ref=f1e190]: "Session Hours:"
+                      - generic [ref=f1e191]: 14:30 – 21:00 UTC
+                - generic [ref=f1e192]:
+                  - button "🇺🇸 United States +0.68%" [ref=f1e193]:
+                    - generic [ref=f1e194]: 🇺🇸
+                    - generic [ref=f1e195]: United States
+                    - generic [ref=f1e196]: +0.68%
+                  - button "🇮🇳 India +0.45%" [ref=f1e197]:
+                    - generic [ref=f1e198]: 🇮🇳
+                    - generic [ref=f1e199]: India
+                    - generic [ref=f1e200]: +0.45%
+                  - button "🇩🇪 Germany +0.32%" [ref=f1e201]:
+                    - generic [ref=f1e202]: 🇩🇪
+                    - generic [ref=f1e203]: Germany
+                    - generic [ref=f1e204]: +0.32%
+                  - button "🇨🇦 Canada +0.28%" [ref=f1e205]:
+                    - generic [ref=f1e206]: 🇨🇦
+                    - generic [ref=f1e207]: Canada
+                    - generic [ref=f1e208]: +0.28%
+                  - button "🇦🇺 Australia -0.15%" [ref=f1e209]:
+                    - generic [ref=f1e210]: 🇦🇺
+                    - generic [ref=f1e211]: Australia
+                    - generic [ref=f1e212]: "-0.15%"
+                  - button "🇸🇦 Saudi Arabia +0.54%" [ref=f1e213]:
+                    - generic [ref=f1e214]: 🇸🇦
+                    - generic [ref=f1e215]: Saudi Arabia
+                    - generic [ref=f1e216]: +0.54%
+                  - button "🇵🇱 Poland +0.82%" [ref=f1e217]:
+                    - generic [ref=f1e218]: 🇵🇱
+                    - generic [ref=f1e219]: Poland
+                    - generic [ref=f1e220]: +0.82%
+                  - button "⚡ Crypto 24/7 +4.12%" [ref=f1e221]:
+                    - generic [ref=f1e222]: ⚡
+                    - generic [ref=f1e223]: Crypto 24/7
+                    - generic [ref=f1e224]: +4.12%
+                  - button "💱 Global FX -0.22%" [ref=f1e225]:
+                    - generic [ref=f1e226]: 💱
+                    - generic [ref=f1e227]: Global FX
+                    - generic [ref=f1e228]: "-0.22%"
+              - generic [ref=f1e229]:
+                - generic [ref=f1e230]:
+                  - generic [ref=f1e231]:
+                    - generic [ref=f1e232] [cursor=pointer]:
+                      - generic [ref=f1e233]: $NVDA
+                      - generic [ref=f1e234]: $187.4
+                      - button [ref=f1e235]
+                    - generic [ref=f1e239] [cursor=pointer]:
+                      - generic [ref=f1e240]: $AAPL
+                      - generic [ref=f1e241]: $264.1
+                      - button [ref=f1e242]
+                    - generic [ref=f1e246] [cursor=pointer]:
+                      - generic [ref=f1e247]: $BTC
+                      - generic [ref=f1e248]: $96,850
+                      - button [ref=f1e249]
+                    - generic [ref=f1e253] [cursor=pointer]:
+                      - generic [ref=f1e254]: $SOL
+                      - generic [ref=f1e255]: $214.3
+                      - button [ref=f1e256]
+                  - textbox "Search ticker (e.g. TSLA, MSFT, GOOGL)..." [ref=f1e264]
+                - generic [ref=f1e265]:
+                  - generic [ref=f1e266]:
+                    - generic [ref=f1e267]:
+                      - heading "$NVDA" [level=3] [ref=f1e268]
+                      - generic [ref=f1e269]: NVIDIA Corp.
+                      - generic [ref=f1e270]: Accumulate
+                      - generic [ref=f1e271]: Semiconductors / AI
+                    - paragraph [ref=f1e272]: The reference holding for AI compute demand. Data-centre revenue growth runs ahead of merchant supply.
+                  - generic [ref=f1e273]:
+                    - generic [ref=f1e274]: $187.4
+                    - generic [ref=f1e275]: +0.78% today
+                    - generic [ref=f1e280]: "52W Range: $146.58 – $211.02"
+                - generic [ref=f1e281]:
+                  - generic [ref=f1e282]:
+                    - generic [ref=f1e283]:
+                      - generic [ref=f1e284]: "Technical Overlays:"
+                      - button "20-SMA ($167.47)" [ref=f1e285]
+                      - button "50-SMA ($164.92)" [ref=f1e286]
+                    - generic [ref=f1e287]:
+                      - generic [ref=f1e288]:
+                        - text: "RSI (14D):"
+                        - strong [ref=f1e289]: "100.0"
+                      - generic [ref=f1e290]: ·
+                      - generic [ref=f1e291]:
+                        - text: "Realized Vol:"
+                        - strong [ref=f1e292]: 22.3%
+                  - generic [ref=f1e294]:
+                    - generic [ref=f1e295]:
+                      - generic [ref=f1e296]:
+                        - generic [ref=f1e297]: NVDA · Daily Close History
+                        - generic [ref=f1e298]: +22.72% · 6M
+                      - generic [ref=f1e299]:
+                        - button "1M" [ref=f1e300]
+                        - button "3M" [ref=f1e301]
+                        - button "6M" [ref=f1e302]
+                        - button "1Y" [ref=f1e303]
+                    - generic [ref=f1e310]:
+                      - generic [ref=f1e311]: low $139.74
+                      - generic [ref=f1e312]: 20-day average
+                      - generic [ref=f1e313]: high $210.43
+                - generic [ref=f1e314]:
+                  - generic [ref=f1e315]:
+                    - text: Trend Score
+                    - paragraph [ref=f1e316]: 75 / 100
+                    - text: Quantitative composite
+                  - generic [ref=f1e317]:
+                    - text: Technical Invalidation
+                    - paragraph [ref=f1e318]: $160.80
+                    - text: Thesis stop-loss
+                  - generic [ref=f1e319]:
+                    - text: Risk Grade
+                    - paragraph [ref=f1e320]: Low
+                    - text: Vol-scaled sizing
+                  - generic [ref=f1e321]:
+                    - text: 200-Day Structural SMA
+                    - paragraph [ref=f1e322]: $183.15
+                    - text: Above 200-SMA
+              - generic [ref=f1e323]:
+                - generic [ref=f1e324]:
+                  - generic [ref=f1e325]:
+                    - generic [ref=f1e326]:
+                      - 'heading "Social Sentiment Radar: $NVDA" [level=3] [ref=f1e327]'
+                      - paragraph [ref=f1e331]: Real-time crowd telemetry across Reddit, X, News & Event Markets
+                    - generic [ref=f1e332]: Bullish
+                  - generic [ref=f1e333]:
+                    - generic [ref=f1e334]:
+                      - generic [ref=f1e335]:
+                        - generic [ref=f1e336]: Reddit (r/WallStreetBets & r/Stocks)
+                        - generic [ref=f1e339]: 75% Bullish
+                      - generic [ref=f1e342]: 5,175 mentions indexed in the past 24 hours
+                    - generic [ref=f1e343]:
+                      - generic [ref=f1e344]:
+                        - generic [ref=f1e345]: X (FinTwit Order Flow)
+                        - generic [ref=f1e352]: 73% Bullish
+                      - generic [ref=f1e355]: 38,500 posts parsed across retail & prop desks
+                    - generic [ref=f1e356]:
+                      - generic [ref=f1e357]:
+                        - generic [ref=f1e358]: Event Market Crowd Probability
+                        - generic [ref=f1e362]: 76% YES
+                      - paragraph [ref=f1e363]: “Will $NVDA close higher than $196.77 by next month?”
+                      - generic [ref=f1e364]: Implied probability derived from staked prediction market volume
+                - generic [ref=f1e365]:
+                  - generic [ref=f1e366]:
+                    - generic [ref=f1e367]:
+                      - heading "Sector Rotation Heatmap" [level=3] [ref=f1e368]
+                      - paragraph [ref=f1e371]: Performance across 11 key industry verticals
+                    - generic [ref=f1e372]: Real-Time Breadth
+                  - generic [ref=f1e373]:
+                    - generic [ref=f1e374]:
+                      - generic [ref=f1e375]:
+                        - generic [ref=f1e376]: Information Technology
+                        - generic [ref=f1e377]:
+                          - text: "Leader:"
+                          - strong [ref=f1e378]: $NVDA
+                      - generic [ref=f1e379]:
+                        - generic [ref=f1e380]: 29.5% Weight
+                        - generic [ref=f1e381]: +1.45%
+                    - generic [ref=f1e382]:
+                      - generic [ref=f1e383]:
+                        - generic [ref=f1e384]: Communication Services
+                        - generic [ref=f1e385]:
+                          - text: "Leader:"
+                          - strong [ref=f1e386]: $GOOGL
+                      - generic [ref=f1e387]:
+                        - generic [ref=f1e388]: 8.8% Weight
+                        - generic [ref=f1e389]: +0.92%
+                    - generic [ref=f1e390]:
+                      - generic [ref=f1e391]:
+                        - generic [ref=f1e392]: Financials
+                        - generic [ref=f1e393]:
+                          - text: "Leader:"
+                          - strong [ref=f1e394]: $JPM
+                      - generic [ref=f1e395]:
+                        - generic [ref=f1e396]: 13.2% Weight
+                        - generic [ref=f1e397]: +0.58%
+                    - generic [ref=f1e398]:
+                      - generic [ref=f1e399]:
+                        - generic [ref=f1e400]: Consumer Discretionary
+                        - generic [ref=f1e401]:
+                          - text: "Leader:"
+                          - strong [ref=f1e402]: $AMZN
+                      - generic [ref=f1e403]:
+                        - generic [ref=f1e404]: 10.4% Weight
+                        - generic [ref=f1e405]: +0.42%
+                    - generic [ref=f1e406]:
+                      - generic [ref=f1e407]:
+                        - generic [ref=f1e408]: Industrials
+                        - generic [ref=f1e409]:
+                          - text: "Leader:"
+                          - strong [ref=f1e410]: $GE
+                      - generic [ref=f1e411]:
+                        - generic [ref=f1e412]: 8.5% Weight
+                        - generic [ref=f1e413]: +0.18%
+                    - generic [ref=f1e414]:
+                      - generic [ref=f1e415]:
+                        - generic [ref=f1e416]: Health Care
+                        - generic [ref=f1e417]:
+                          - text: "Leader:"
+                          - strong [ref=f1e418]: $LLY
+                      - generic [ref=f1e419]:
+                        - generic [ref=f1e420]: 11.6% Weight
+                        - generic [ref=f1e421]: "-0.25%"
+                    - generic [ref=f1e422]:
+                      - generic [ref=f1e423]:
+                        - generic [ref=f1e424]: Energy
+                        - generic [ref=f1e425]:
+                          - text: "Leader:"
+                          - strong [ref=f1e426]: $XOM
+                      - generic [ref=f1e427]:
+                        - generic [ref=f1e428]: 3.7% Weight
+                        - generic [ref=f1e429]: "-0.65%"
+                    - generic [ref=f1e430]:
+                      - generic [ref=f1e431]:
+                        - generic [ref=f1e432]: Consumer Staples
+                        - generic [ref=f1e433]:
+                          - text: "Leader:"
+                          - strong [ref=f1e434]: $PG
+                      - generic [ref=f1e435]:
+                        - generic [ref=f1e436]: 5.9% Weight
+                        - generic [ref=f1e437]: "-0.12%"
+                    - generic [ref=f1e438]:
+                      - generic [ref=f1e439]:
+                        - generic [ref=f1e440]: Utilities
+                        - generic [ref=f1e441]:
+                          - text: "Leader:"
+                          - strong [ref=f1e442]: $NEE
+                      - generic [ref=f1e443]:
+                        - generic [ref=f1e444]: 2.4% Weight
+                        - generic [ref=f1e445]: "-0.48%"
+                    - generic [ref=f1e446]:
+                      - generic [ref=f1e447]:
+                        - generic [ref=f1e448]: Real Estate
+                        - generic [ref=f1e449]:
+                          - text: "Leader:"
+                          - strong [ref=f1e450]: $PLD
+                      - generic [ref=f1e451]:
+                        - generic [ref=f1e452]: 2.2% Weight
+                        - generic [ref=f1e453]: "-0.84%"
+                    - generic [ref=f1e454]:
+                      - generic [ref=f1e455]:
+                        - generic [ref=f1e456]: Materials
+                        - generic [ref=f1e457]:
+                          - text: "Leader:"
+                          - strong [ref=f1e458]: $LIN
+                      - generic [ref=f1e459]:
+                        - generic [ref=f1e460]: 2.3% Weight
+                        - generic [ref=f1e461]: +0.05%
+              - generic [ref=f1e462]:
+                - generic [ref=f1e463]:
+                  - generic [ref=f1e464]:
+                    - heading "Personalized Price Alerts Engine" [level=3] [ref=f1e465]
+                    - paragraph [ref=f1e469]: Set target triggers above or below key technical levels with instant alerts
+                  - generic [ref=f1e470]: 4 Active Triggers
+                - generic [ref=f1e471]:
+                  - generic [ref=f1e472]:
+                    - text: Configure New Trigger
+                    - generic [ref=f1e473]:
+                      - generic [ref=f1e474]: Target Symbol
+                      - combobox [ref=f1e475]:
+                        - option "$NVDA (NVIDIA Corp.) — $187.4" [selected]
+                        - option "$MSFT (Microsoft Corp.) — $512.8"
+                        - option "$AAPL (Apple Inc.) — $264.1"
+                        - option "$AMZN (Amazon.com Inc.) — $241.6"
+                        - option "$GOOGL (Alphabet Inc.) — $215.7"
+                        - option "$META (Meta Platforms Inc.) — $689.3"
+                        - option "$TSLA (Tesla Inc.) — $402.5"
+                        - option "$AVGO (Broadcom Inc.) — $352.9"
+                        - option "$AMD (Advanced Micro Devices) — $148.2"
+                        - option "$TSM (Taiwan Semiconductor) — $224.5"
+                        - option "$PLTR (Palantir Technologies) — $62.4"
+                        - option "$NFLX (Netflix Inc.) — $914"
+                        - option "$QCOM (Qualcomm Inc.) — $178.6"
+                        - option "$ARM (Arm Holdings plc) — $162.3"
+                        - option "$SMCI (Super Micro Computer) — $36.8"
+                        - option "$CRM (Salesforce Inc.) — $312.4"
+                    - generic [ref=f1e476]:
+                      - generic [ref=f1e477]:
+                        - generic [ref=f1e478]: Condition
+                        - combobox [ref=f1e479]:
+                          - option "≥ Price Rises Above" [selected]
+                          - option "≤ Price Drops Below"
+                      - generic [ref=f1e480]:
+                        - generic [ref=f1e481]: Target Price ($)
+                        - spinbutton [ref=f1e482]: "200"
+                    - button "Arm Price Alert <GO>" [ref=f1e483]
+                  - generic [ref=f1e484]:
+                    - text: Live Monitored Triggers
+                    - generic [ref=f1e485]:
+                      - generic [ref=f1e486]:
+                        - generic [ref=f1e487]:
+                          - generic [ref=f1e488]:
+                            - generic [ref=f1e489]: $NVDA
+                            - generic [ref=f1e490]: Rises Above
+                            - generic [ref=f1e491]: $200.00
+                          - generic [ref=f1e492]: "Current: $187.4 · Created: Today 08:30"
+                        - generic [ref=f1e493]:
+                          - generic [ref=f1e494]: WATCHING
+                          - button "Delete alert" [ref=f1e495]
+                      - generic [ref=f1e499]:
+                        - generic [ref=f1e500]:
+                          - generic [ref=f1e501]:
+                            - generic [ref=f1e502]: $AAPL
+                            - generic [ref=f1e503]: Drops Below
+                            - generic [ref=f1e504]: $245.00
+                          - generic [ref=f1e505]: "Current: $264.1 · Created: Yesterday 11:20"
+                        - generic [ref=f1e506]:
+                          - generic [ref=f1e507]: WATCHING
+                          - button "Delete alert" [ref=f1e508]
+                      - generic [ref=f1e512]:
+                        - generic [ref=f1e513]:
+                          - generic [ref=f1e514]:
+                            - generic [ref=f1e515]: $BTC
+                            - generic [ref=f1e516]: Rises Above
+                            - generic [ref=f1e517]: $100000.00
+                          - generic [ref=f1e518]: "Current: $96,850 · Created: Nov 09 14:00"
+                        - generic [ref=f1e519]:
+                          - generic [ref=f1e520]: WATCHING
+                          - button "Delete alert" [ref=f1e521]
+                      - generic [ref=f1e525]:
+                        - generic [ref=f1e526]:
+                          - generic [ref=f1e527]:
+                            - generic [ref=f1e528]: $TSLA
+                            - generic [ref=f1e529]: Rises Above
+                            - generic [ref=f1e530]: $320.00
+                          - generic [ref=f1e531]: "Current: $402.5 · Created: Nov 07 09:15"
+                        - generic [ref=f1e532]:
+                          - generic [ref=f1e533]: TRIGGERED
+                          - button "Delete alert" [ref=f1e534]
+  - contentinfo [ref=f1e538]:
+    - generic [ref=f1e539]:
+      - generic [ref=f1e540]:
+        - generic [ref=f1e541]:
+          - link "NextWallStreet" [ref=f1e542] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f1e543]: Rules-based trend analysis and research across equities, digital assets and speculative markets — plus the education to use it responsibly.
+          - paragraph [ref=f1e544]: 2,038 tracked assets · 44 research desks · 4 courses
+        - generic [ref=f1e545]:
+          - heading "Coverage" [level=3] [ref=f1e546]
+          - list [ref=f1e547]:
+            - listitem [ref=f1e548]:
+              - link "US equities" [ref=f1e549] [cursor=pointer]:
+                - /url: /markets
+            - listitem [ref=f1e550]:
+              - link "Digital assets" [ref=f1e551] [cursor=pointer]:
+                - /url: /crypto
+            - listitem [ref=f1e552]:
+              - link "Meme coins" [ref=f1e553] [cursor=pointer]:
+                - /url: /meme-coins
+            - listitem [ref=f1e554]:
+              - link "Bitcoin trend score" [ref=f1e555] [cursor=pointer]:
+                - /url: /ticker/BTC
+            - listitem [ref=f1e556]:
+              - link "NVIDIA trend score" [ref=f1e557] [cursor=pointer]:
+                - /url: /ticker/NVDA
+        - generic [ref=f1e558]:
+          - heading "Research" [level=3] [ref=f1e559]
+          - list [ref=f1e560]:
+            - listitem [ref=f1e561]:
+              - link "All research" [ref=f1e562] [cursor=pointer]:
+                - /url: /research
+            - listitem [ref=f1e563]:
+              - link "AI capex cycle" [ref=f1e564] [cursor=pointer]:
+                - /url: /research/the-ai-capex-cycle-is-now-a-second-derivative-trade
+            - listitem [ref=f1e565]:
+              - link "Bitcoin & liquidity" [ref=f1e566] [cursor=pointer]:
+                - /url: /research/bitcoin-has-no-valuation-floor-it-has-a-liquidity-ceiling
+            - listitem [ref=f1e567]:
+              - link "Narrow market playbook" [ref=f1e568] [cursor=pointer]:
+                - /url: /research/the-breadth-divergence-playbook-when-five-mega-caps-carry-the-index
+        - generic [ref=f1e569]:
+          - heading "Academy" [level=3] [ref=f1e570]
+          - list [ref=f1e571]:
+            - listitem [ref=f1e572]:
+              - link "All courses" [ref=f1e573] [cursor=pointer]:
+                - /url: /academy
+            - listitem [ref=f1e574]:
+              - link "Reading a Trend" [ref=f1e575] [cursor=pointer]:
+                - /url: /academy/reading-trends
+            - listitem [ref=f1e576]:
+              - link "Crypto Without Hype" [ref=f1e577] [cursor=pointer]:
+                - /url: /academy/crypto-without-hype
+            - listitem [ref=f1e578]:
+              - link "Portfolio Construction" [ref=f1e579] [cursor=pointer]:
+                - /url: /academy/portfolio-construction
+        - generic [ref=f1e580]:
+          - heading "Company" [level=3] [ref=f1e581]
+          - list [ref=f1e582]:
+            - listitem [ref=f1e583]:
+              - link "Plans & pricing" [ref=f1e584] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=f1e585]:
+              - link "Your watchlist" [ref=f1e586] [cursor=pointer]:
+                - /url: /watchlist
+            - listitem [ref=f1e587]:
+              - link "Disclaimer & methodology" [ref=f1e588] [cursor=pointer]:
+                - /url: /disclaimer
+      - generic [ref=f1e589]:
+        - paragraph [ref=f1e590]:
+          - strong [ref=f1e591]: Not investment advice.
+          - text: NextWall Street publishes market analysis and educational material only. Nothing here is a recommendation, solicitation or offer to buy or sell any security, token or derivative. Quotes are sourced from public market endpoints; equity prices are delayed and may be unavailable outside trading hours. Investing and trading involve substantial risk of loss, including total loss of capital. Past performance does not predict future results. Do your own research and consult a licensed adviser where appropriate.
+        - generic [ref=f1e592]:
+          - paragraph [ref=f1e593]: © 2026 NextWall Street. All rights reserved.
+          - generic [ref=f1e594]:
+            - link "Methodology" [ref=f1e595] [cursor=pointer]:
+              - /url: /disclaimer
+            - link "Terms" [ref=f1e596] [cursor=pointer]:
+              - /url: /disclaimer
+            - link "Privacy" [ref=f1e597] [cursor=pointer]:
+              - /url: /disclaimer
+  - generic [ref=f1e602] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=f1e603]
+    - generic [ref=f1e739]:
+      - button "Open issues overlay" [ref=f1e740]:
+        - generic [ref=f1e741]:
+          - generic [aria-hidden] [ref=f1e742]: "0"
+          - generic [ref=f1e743]: "1"
+        - generic [ref=f1e744]: Issue
+      - button "Collapse issues badge" [ref=f1e745]
+  - alert [ref=f1e748]

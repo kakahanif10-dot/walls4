@@ -34,7 +34,7 @@ const SIMPLE_LINKS = [
   { href: "/meme-coins", label: "Meme coins" },
   { href: "/research", label: "Research" },
   { href: "/academy", label: "Academy" },
-  { href: "/chat", label: "Live chat" },
+  { href: "/nws-ai", label: "Nws AI & Community" },
   { href: "/pricing", label: "Pricing" },
 ];
 
@@ -48,57 +48,57 @@ export interface MainDirectoryItem {
 
 export const ALL_MAIN_ITEMS: MainDirectoryItem[] = [
   {
-    href: "/realtime-news",
+    href: "/news-wire",
     label: "News Wire",
     desc: "Real-time multi-source news wire & ticker query stream",
     icon: Radio,
     live: true,
   },
   {
-    href: "/oraclex",
+    href: "/vector-rag",
     label: "Vector RAG",
     desc: "Cross-asset semantic store, internals & liquidity ladder",
     icon: Compass,
   },
   {
-    href: "/neuberg",
+    href: "/macro-perps",
     label: "Macro & Perps",
     desc: "516-panel macro regime, Fear & Greed & 24/7 perpetuals",
     icon: Terminal,
   },
   {
-    href: "/openstock",
-    label: "Global Markets",
-    desc: "9 global exchanges, multi-tab charts & sentiment radar",
+    href: "/global-markets",
+    label: "Global Markets & Map",
+    desc: "Google Maps 11 global exchanges, multi-tab charts & radar",
     icon: Globe,
   },
   {
-    href: "/fincept",
+    href: "/dcf-agents",
     label: "DCF & Agents",
     desc: "37 capital allocator models, DCF valuation & options Greeks",
     icon: Cpu,
   },
   {
-    href: "/terminal",
+    href: "/pro-terminal",
     label: "Pro Terminal",
     desc: "Dual-screen charting, Level 2 depth & execution desk",
     icon: Terminal,
   },
   {
-    href: "/openbb",
+    href: "/var-cli",
     label: "VaR & CLI",
     desc: "Parametric & Monte Carlo VaR, yield curves & portfolio CLI",
     icon: Database,
   },
   {
-    href: "/gold-news",
+    href: "/news",
     label: "News",
     desc: "100 live breaking action bulletins & trade directives",
     icon: Zap,
     live: true,
   },
   {
-    href: "/wsj",
+    href: "/market-center",
     label: "Market Center",
     desc: "Most active volume, Form 4 insiders & sector analysis",
     icon: FileText,
@@ -219,12 +219,9 @@ export default function SiteHeader() {
               }}
               aria-label="Search assets, research, and analyst desks"
               title="Search (⌘K)"
-              className="inline-flex items-center gap-1.5 rounded-full border border-line bg-ink-900 px-2.5 py-1.5 text-xs text-muted transition hover:border-gold/40 hover:text-bone"
+              className="flex h-8 w-8 items-center justify-center rounded-full text-gold transition-colors hover:bg-ink-850 hover:text-gold-bright"
             >
-              <Search className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
-              <kbd className="hidden xl:inline font-mono text-[10px] text-muted">
-                ⌘K
-              </kbd>
+              <Search className="h-4 w-4" aria-hidden="true" />
             </button>
 
             <Link
@@ -243,15 +240,15 @@ export default function SiteHeader() {
               Subscribe
             </Link>
 
-            {/* All Main Popover Button & Floating Dropdown */}
+            {/* Trade Tools Popover Button & Floating Dropdown */}
             <div className="relative">
               <button
                 type="button"
                 onClick={() => setDirectoryOpen((prev) => !prev)}
                 aria-expanded={directoryOpen}
-                aria-controls="all-main-directory-menu"
-                aria-label={directoryOpen ? "Close All Main directory" : "Open All Main directory"}
-                title="All Main · Directory & Desks"
+                aria-controls="trade-tools-directory-menu"
+                aria-label={directoryOpen ? "Close Trade Tools directory" : "Open Trade Tools directory"}
+                title="Trade Tools · Directory & Desks"
                 className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-[13px] xl:text-sm font-medium whitespace-nowrap transition-all shadow-sm ${
                   directoryOpen
                     ? "border-gold bg-gold/20 text-gold-bright ring-1 ring-gold/40"
@@ -263,7 +260,7 @@ export default function SiteHeader() {
                 ) : (
                   <Menu className="h-4 w-4 text-gold-bright" aria-hidden="true" />
                 )}
-                <span>All Main</span>
+                <span>Trade Tools</span>
                 <span className="rounded-full bg-gold/20 px-1.5 py-0.2 font-mono text-[10px] text-gold-bright">
                   14
                 </span>
@@ -272,9 +269,9 @@ export default function SiteHeader() {
               {/* Compact Elongated Popover Dropdown (Not Full Page) */}
               {directoryOpen && (
                 <div
-                  id="all-main-directory-menu"
+                  id="trade-tools-directory-menu"
                   role="menu"
-                  aria-label="All Main Directory"
+                  aria-label="Trade Tools Directory"
                   className="absolute right-0 top-full mt-2.5 z-50 w-[390px] sm:w-[420px] rounded-2xl border border-gold/35 bg-[#080a10]/98 p-3 shadow-[0_24px_60px_rgba(0,0,0,0.85)] backdrop-blur-2xl ring-1 ring-gold/20 animate-in fade-in zoom-in-95 duration-150"
                 >
                   {/* Dropdown Header */}
@@ -282,7 +279,7 @@ export default function SiteHeader() {
                     <div>
                       <div className="flex items-center gap-2">
                         <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-gold-bright">
-                          All Main Directory
+                          Trade Tools Directory
                         </span>
                         <span className="rounded-full bg-gold/15 border border-gold/40 px-1.5 py-0.2 font-mono text-[10px] text-gold-bright font-semibold">
                           14 Desks
@@ -401,13 +398,13 @@ export default function SiteHeader() {
                 setMobileOpen(false);
                 setSearchOpen(true);
               }}
-              className="flex h-9 w-9 items-center justify-center rounded-md border border-line bg-ink-900 text-gold transition hover:border-gold/40"
+              className="flex h-9 w-9 items-center justify-center rounded-full text-gold transition-colors hover:bg-ink-850 hover:text-gold-bright"
             >
               <Search className="h-4 w-4" aria-hidden="true" />
             </button>
             <button
               type="button"
-              aria-label="Toggle navigation and All Main directory"
+              aria-label="Toggle navigation and Trade Tools directory"
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((v) => !v)}
               className="flex h-9 items-center gap-1.5 rounded-md border border-line bg-ink-900 px-2.5 text-xs font-medium text-bone hover:border-gold/40"
@@ -417,7 +414,7 @@ export default function SiteHeader() {
               ) : (
                 <Menu className="h-4 w-4 text-gold-bright" aria-hidden="true" />
               )}
-              <span>All Main</span>
+              <span>Trade Tools</span>
             </button>
           </div>
         </div>
@@ -446,11 +443,11 @@ export default function SiteHeader() {
               ))}
             </div>
 
-            {/* Single Unified All Main Directory (14 items) */}
+            {/* Single Unified Trade Tools Directory (14 items) */}
             <div className="border-t border-line/60 pt-3 space-y-1.5">
               <div className="flex items-center justify-between px-2 pb-1">
                 <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-gold">
-                  Directory · All Main ({ALL_MAIN_ITEMS.length})
+                  Directory · Trade Tools ({ALL_MAIN_ITEMS.length})
                 </p>
                 <span className="text-[10px] text-muted">Opens in new tab ↗</span>
               </div>

@@ -1,16 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import OpenStockHub from "@/components/openstock-hub";
+import GlobalMarketsView from "@/components/global-markets-view";
 import WhopBadge from "@/components/whop-badge";
-import { Globe, Sparkles, Bell, TrendingUp } from "lucide-react";
+import { Globe, Sparkles, Bell, TrendingUp, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Global Markets & Sentiment Hub — NextWall Street",
+  title: "Global Markets & Financial Exchanges Map — NextWall Street",
   description:
-    "Track 9 international market exchanges (US, India, Germany, Canada, Australia, Saudi Arabia, Poland, Crypto 24/7, Forex), multi-tab ticker exploration, crowd sentiment radar, sector heatmaps, and custom price alerts.",
+    "Track 11 global financial exchanges via Google Maps Platform, 9 international regions, multi-tab ticker exploration, crowd sentiment radar, and custom price alerts.",
 };
 
+import firebaseConfig from "@/firebase-applet-config.json";
+
 export default function OpenStockPage() {
+  const mapsApiKey =
+    process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ||
+    process.env.GOOGLE_MAPS_API_KEY ||
+    firebaseConfig.apiKey ||
+    "";
+
   return (
     <div className="min-h-screen bg-[#050609] text-[#f2efe8]">
       <section className="relative overflow-hidden border-b border-[#d8ab5a]/20 bg-gradient-to-b from-[#0b1210] via-[#080a0f] to-[#050609]">
@@ -19,31 +27,31 @@ export default function OpenStockPage() {
           <nav className="flex items-center gap-2 text-xs font-mono text-stone-400">
             <Link href="/" className="hover:text-[#f0c979] transition-colors">Home</Link>
             <span className="text-stone-600">/</span>
-            <span className="text-[#f0c979]">Global Markets &amp; Sentiment Hub</span>
+            <span className="text-[#f0c979]">Global Markets &amp; Financial Exchanges</span>
           </nav>
 
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <span className="inline-flex items-center gap-1.5 rounded-md border border-emerald-400/30 bg-emerald-500/10 px-2.5 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-emerald-300">
               <Globe className="h-3 w-3 text-emerald-400" />
-              GLOBAL EXCHANGE &amp; SENTIMENT HUB
+              GLOBAL EXCHANGES &amp; MAP TERMINAL
             </span>
             <span className="rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-[10px] font-mono text-stone-300">
-              9 INTERNATIONAL REGIONS · MULTI-TAB DESK
+              GOOGLE MAPS PLATFORM · 11 FINANCIAL HUBS
             </span>
             <WhopBadge size="xs" />
           </div>
 
           <h1 className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-[#f2efe8] tracking-tight">
-            Global Markets &amp; Sentiment Hub
+            Global Markets &amp; Financial Exchanges Map
           </h1>
           <p className="mt-4 max-w-3xl text-xs sm:text-sm leading-relaxed text-stone-300/90 font-sans">
-            Comprehensive global market workstation tracking 9 international trading hubs—US, India, Germany, Canada, Australia, Saudi Arabia, Poland, Crypto 24/7, and Global FX—paired with a multi-tab technical analyzer, crowd sentiment radar, sector rotation heatmaps, and real-time price trigger alerts.
+            Institutional workstation combining Google Maps Platform geolocation of 11 world exchanges (NYSE, Nasdaq, CME, LSE, Deutsche Börse, Tokyo TSE, SGX, HKEX, Borsa Istanbul) with real-time operational status, benchmark indices, and cross-border sentiment radars.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-mono text-stone-400">
             <span className="flex items-center gap-1.5 text-emerald-400">
-              <Globe className="h-3.5 w-3.5" />
-              9 Global Exchanges &amp; Clocks
+              <MapPin className="h-3.5 w-3.5" />
+              11 Geolocation Hubs (Google Maps)
             </span>
             <span className="flex items-center gap-1.5 text-[#f0c979]">
               <TrendingUp className="h-3.5 w-3.5 text-[#d8ab5a]" />
@@ -62,7 +70,7 @@ export default function OpenStockPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-10">
-        <OpenStockHub />
+        <GlobalMarketsView apiKey={mapsApiKey} />
       </section>
     </div>
   );

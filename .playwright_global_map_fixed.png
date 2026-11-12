@@ -1,0 +1,128 @@
+- generic [active] [ref=f5e1]:
+  - banner [ref=f5e2]:
+    - generic [ref=f5e3]:
+      - link "NextWallStreet" [ref=f5e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=f5e6]:
+        - link "Markets" [ref=f5e7] [cursor=pointer]:
+          - /url: /markets
+        - link "Crypto" [ref=f5e8] [cursor=pointer]:
+          - /url: /crypto
+        - link "Meme coins" [ref=f5e9] [cursor=pointer]:
+          - /url: /meme-coins
+        - link "Research" [ref=f5e10] [cursor=pointer]:
+          - /url: /research
+        - link "Academy" [ref=f5e11] [cursor=pointer]:
+          - /url: /academy
+        - link "Gemini AI & Chat" [ref=f5e12] [cursor=pointer]:
+          - /url: /chat
+        - link "Pricing" [ref=f5e13] [cursor=pointer]:
+          - /url: /pricing
+      - generic [ref=f5e14]:
+        - generic "Thu, 12 Nov 2026 06:47:26 GMT" [ref=f5e609]: 06:47:26UTC
+        - button "Search assets, research, and analyst desks" [ref=f5e21]
+        - link "Watchlist" [ref=f5e25] [cursor=pointer]:
+          - /url: /watchlist
+        - link "Subscribe" [ref=f5e26] [cursor=pointer]:
+          - /url: /pricing
+        - button "Open Trade Tools directory" [ref=f5e28]:
+          - generic [ref=f5e30]: Trade Tools
+          - generic [ref=f5e31]: "14"
+  - main [ref=f5e32]:
+    - generic [ref=f5e611]:
+      - heading "Something went wrong" [level=2] [ref=f5e612]
+      - paragraph [ref=f5e613]: Cannot read properties of undefined (reading 'getRootNode')
+      - button "Try again" [ref=f5e614]
+  - contentinfo [ref=f5e540]:
+    - generic [ref=f5e541]:
+      - generic [ref=f5e542]:
+        - generic [ref=f5e543]:
+          - link "NextWallStreet" [ref=f5e544] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f5e545]: Rules-based trend analysis and research across equities, digital assets and speculative markets — plus the education to use it responsibly.
+          - paragraph [ref=f5e546]: 2,038 tracked assets · 44 research desks · 4 courses
+        - generic [ref=f5e547]:
+          - heading "Coverage" [level=3] [ref=f5e548]
+          - list [ref=f5e549]:
+            - listitem [ref=f5e550]:
+              - link "US equities" [ref=f5e551] [cursor=pointer]:
+                - /url: /markets
+            - listitem [ref=f5e552]:
+              - link "Digital assets" [ref=f5e553] [cursor=pointer]:
+                - /url: /crypto
+            - listitem [ref=f5e554]:
+              - link "Meme coins" [ref=f5e555] [cursor=pointer]:
+                - /url: /meme-coins
+            - listitem [ref=f5e556]:
+              - link "Bitcoin trend score" [ref=f5e557] [cursor=pointer]:
+                - /url: /ticker/BTC
+            - listitem [ref=f5e558]:
+              - link "NVIDIA trend score" [ref=f5e559] [cursor=pointer]:
+                - /url: /ticker/NVDA
+        - generic [ref=f5e560]:
+          - heading "Research" [level=3] [ref=f5e561]
+          - list [ref=f5e562]:
+            - listitem [ref=f5e563]:
+              - link "All research" [ref=f5e564] [cursor=pointer]:
+                - /url: /research
+            - listitem [ref=f5e565]:
+              - link "AI capex cycle" [ref=f5e566] [cursor=pointer]:
+                - /url: /research/the-ai-capex-cycle-is-now-a-second-derivative-trade
+            - listitem [ref=f5e567]:
+              - link "Bitcoin & liquidity" [ref=f5e568] [cursor=pointer]:
+                - /url: /research/bitcoin-has-no-valuation-floor-it-has-a-liquidity-ceiling
+            - listitem [ref=f5e569]:
+              - link "Narrow market playbook" [ref=f5e570] [cursor=pointer]:
+                - /url: /research/the-breadth-divergence-playbook-when-five-mega-caps-carry-the-index
+        - generic [ref=f5e571]:
+          - heading "Academy" [level=3] [ref=f5e572]
+          - list [ref=f5e573]:
+            - listitem [ref=f5e574]:
+              - link "All courses" [ref=f5e575] [cursor=pointer]:
+                - /url: /academy
+            - listitem [ref=f5e576]:
+              - link "Reading a Trend" [ref=f5e577] [cursor=pointer]:
+                - /url: /academy/reading-trends
+            - listitem [ref=f5e578]:
+              - link "Crypto Without Hype" [ref=f5e579] [cursor=pointer]:
+                - /url: /academy/crypto-without-hype
+            - listitem [ref=f5e580]:
+              - link "Portfolio Construction" [ref=f5e581] [cursor=pointer]:
+                - /url: /academy/portfolio-construction
+        - generic [ref=f5e582]:
+          - heading "Company" [level=3] [ref=f5e583]
+          - list [ref=f5e584]:
+            - listitem [ref=f5e585]:
+              - link "Plans & pricing" [ref=f5e586] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=f5e587]:
+              - link "Your watchlist" [ref=f5e588] [cursor=pointer]:
+                - /url: /watchlist
+            - listitem [ref=f5e589]:
+              - link "Disclaimer & methodology" [ref=f5e590] [cursor=pointer]:
+                - /url: /disclaimer
+      - generic [ref=f5e591]:
+        - paragraph [ref=f5e592]:
+          - strong [ref=f5e593]: Not investment advice.
+          - text: NextWall Street publishes market analysis and educational material only. Nothing here is a recommendation, solicitation or offer to buy or sell any security, token or derivative. Quotes are sourced from public market endpoints; equity prices are delayed and may be unavailable outside trading hours. Investing and trading involve substantial risk of loss, including total loss of capital. Past performance does not predict future results. Do your own research and consult a licensed adviser where appropriate.
+        - generic [ref=f5e594]:
+          - paragraph [ref=f5e595]: © 2026 NextWall Street. All rights reserved.
+          - generic [ref=f5e596]:
+            - link "Methodology" [ref=f5e597] [cursor=pointer]:
+              - /url: /disclaimer
+            - link "Terms" [ref=f5e598] [cursor=pointer]:
+              - /url: /disclaimer
+            - link "Privacy" [ref=f5e599] [cursor=pointer]:
+              - /url: /disclaimer
+  - generic [ref=f5e604] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=f5e605]
+    - generic [ref=f5e615]:
+      - button "Open issues overlay" [ref=f5e616]:
+        - generic [ref=f5e617]:
+          - generic [aria-hidden] [ref=f5e618]: "3"
+          - generic [ref=f5e619]: "4"
+        - generic [ref=f5e620]:
+          - text: Issue
+          - generic [aria-hidden] [ref=f5e621]: s
+      - button "Collapse issues badge" [ref=f5e622]
+  - alert [ref=f5e625]
