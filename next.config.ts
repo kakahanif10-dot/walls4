@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
       { source: "/openbb", destination: "/var-cli", permanent: true },
       { source: "/gold-news", destination: "/news", permanent: true },
       { source: "/wsj", destination: "/market-center", permanent: true },
-      { source: "/chat", destination: "/nws-ai", permanent: true },
+      { source: "/chat", destination: "/community", permanent: true },
     ];
   },
 };

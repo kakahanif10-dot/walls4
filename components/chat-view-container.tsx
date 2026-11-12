@@ -6,8 +6,12 @@ import GeminiQuantTerminal from "@/components/gemini-quant-terminal";
 import WhopBadge from "@/components/whop-badge";
 import { Sparkles, Users, MessageSquare, Bot, Mic, Search, Globe } from "lucide-react";
 
-export default function ChatViewContainer() {
-  const [activeFloor, setActiveFloor] = useState<"nws-ai" | "discord">("nws-ai");
+interface ChatViewContainerProps {
+  initialFloor?: "nws-ai" | "discord";
+}
+
+export default function ChatViewContainer({ initialFloor = "nws-ai" }: ChatViewContainerProps) {
+  const [activeFloor, setActiveFloor] = useState<"nws-ai" | "discord">(initialFloor);
 
   return (
     <div className="space-y-5">
@@ -38,7 +42,7 @@ export default function ChatViewContainer() {
             }`}
           >
             <Sparkles className="h-3.5 w-3.5" />
-            Nws AI &amp; Community
+            NWS AI Terminal
           </button>
           <button
             type="button"

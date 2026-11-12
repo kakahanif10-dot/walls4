@@ -26,6 +26,7 @@ import {
   Bookmark,
   ExternalLink,
   Activity,
+  Sparkles,
 } from "lucide-react";
 
 const SIMPLE_LINKS = [
@@ -34,7 +35,7 @@ const SIMPLE_LINKS = [
   { href: "/meme-coins", label: "Meme coins" },
   { href: "/research", label: "Research" },
   { href: "/academy", label: "Academy" },
-  { href: "/nws-ai", label: "Nws AI & Community" },
+  { href: "/community", label: "Community" },
   { href: "/pricing", label: "Pricing" },
 ];
 
@@ -65,6 +66,13 @@ export const ALL_MAIN_ITEMS: MainDirectoryItem[] = [
     label: "Macro & Perps",
     desc: "516-panel macro regime, Fear & Greed & 24/7 perpetuals",
     icon: Terminal,
+  },
+  {
+    href: "/nws-ai",
+    label: "NWS AI",
+    desc: "Titan 4.0 reasoning, 24kHz voice & search grounding terminal",
+    icon: Sparkles,
+    live: true,
   },
   {
     href: "/global-markets",
@@ -262,7 +270,7 @@ export default function SiteHeader() {
                 )}
                 <span>Trade Tools</span>
                 <span className="rounded-full bg-gold/20 px-1.5 py-0.2 font-mono text-[10px] text-gold-bright">
-                  14
+                  {ALL_MAIN_ITEMS.length}
                 </span>
               </button>
 
@@ -282,7 +290,7 @@ export default function SiteHeader() {
                           Trade Tools Directory
                         </span>
                         <span className="rounded-full bg-gold/15 border border-gold/40 px-1.5 py-0.2 font-mono text-[10px] text-gold-bright font-semibold">
-                          14 Desks
+                          {ALL_MAIN_ITEMS.length} Desks
                         </span>
                       </div>
                       <p className="text-[11px] text-muted mt-0.5">
@@ -300,7 +308,7 @@ export default function SiteHeader() {
                     </button>
                   </div>
 
-                  {/* Elongated Clean Scrollable Single List (14 items) */}
+                  {/* Elongated Clean Scrollable Single List (15 items) */}
                   <div className="mt-2 max-h-[62vh] sm:max-h-[520px] space-y-1 overflow-y-auto pr-1 overscroll-contain">
                     {ALL_MAIN_ITEMS.map((item, idx) => {
                       const Icon = item.icon;
@@ -443,7 +451,7 @@ export default function SiteHeader() {
               ))}
             </div>
 
-            {/* Single Unified Trade Tools Directory (14 items) */}
+            {/* Single Unified Trade Tools Directory (15 items) */}
             <div className="border-t border-line/60 pt-3 space-y-1.5">
               <div className="flex items-center justify-between px-2 pb-1">
                 <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-gold">
