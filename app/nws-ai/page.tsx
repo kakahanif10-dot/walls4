@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function NwsAiPage() {
   return (
     <div className="mx-auto max-w-[1560px] px-3 py-4 sm:px-6 sm:py-6">
-      <ChatViewContainer />
+      <ChatViewContainer initialFloor="nws-ai" />
     </div>
   );
 }
