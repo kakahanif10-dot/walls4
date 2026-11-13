@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Check, ShieldCheck, Zap, Sparkles, CreditCard, ChevronDown, ChevronUp, CheckCircle, ArrowRight, Key } from "lucide-react";
+import { Check, ShieldCheck, Zap, Sparkles, ChevronDown, ChevronUp, CheckCircle, ArrowRight, Key } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
 import { useWhop } from "@/lib/whop-context";
 import WhopBadge from "@/components/whop-badge";
 import { PLANS } from "@/lib/content";
+import { getWhopCheckoutUrl, type PaidPlanId } from "@/lib/whop-checkout-links";
 
 const ACCOUNT_BILLING_FAQ = [
   {
@@ -49,19 +50,22 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
   const [faqCategory, setFaqCategory] = useState<"billing" | "general">("billing");
   const [expandedFaq, setExpandedFaq] = useState<number | null>(0);
   const [activeModalPlan, setActiveModalPlan] = useState<typeof PLANS[0] | null>(null);
-  const [paymentMethod, setPaymentMethod] = useState<"card" | "gpay" | "crypto">("card");
   const [isProcessing, setIsProcessing] = useState(false);
   const [successToast, setSuccessToast] = useState<string | null>(null);
   const [showFeatureMatrix, setShowFeatureMatrix] = useState(false);
 
   const currentPlan = profile?.plan || "reader";
+  const activeCheckoutUrl =
+    activeModalPlan && activeModalPlan.id !== "reader"
+      ? getWhopCheckoutUrl(activeModalPlan.id as PaidPlanId, cadence)
+      : null;
 
   const handleSelectPlan = (plan: typeof PLANS[0]) => {
     setActiveModalPlan(plan);
   };
 
   const handleConfirmSubscription = async () => {
-    if (!activeModalPlan) return;
+    if (!activeModalPlan || activeModalPlan.price > 0) return;
     setIsProcessing(true);
     try {
       const planKey = activeModalPlan.id as "reader" | "premium" | "institutional";
@@ -367,9 +371,15 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
       {/* MODAL: CHECKOUT & TIER ACTIVATION */}
       {activeModalPlan && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm animate-in fade-in">
-          <div className="relative w-full max-w-lg rounded-2xl border border-line bg-ink-900 p-6 shadow-2xl space-y-5">
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="pricing-dialog-title"
+            className="relative w-full max-w-lg rounded-2xl border border-line bg-ink-900 p-6 shadow-2xl space-y-5"
+          >
             <button
               type="button"
+              aria-label="Close pricing dialog"
               onClick={() => setActiveModalPlan(null)}
               className="absolute right-4 top-4 text-muted hover:text-bone text-lg"
             >
@@ -384,8 +394,10 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
                 <span className="text-[10px] font-bold uppercase tracking-wider text-gold">
                   Desk Subscription
                 </span>
-                <h3 className="font-display text-xl text-bone">
-                  Activate {activeModalPlan.name}
+                <h3 id="pricing-dialog-title" className="font-display text-xl text-bone">
+                  {activeModalPlan.price === 0
+                    ? `Activate ${activeModalPlan.name}`
+                    : `Continue to ${activeModalPlan.name} checkout`}
                 </h3>
               </div>
             </div>
@@ -416,56 +428,42 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
               </div>
             </div>
 
-            {/* Simulated Payment Selector */}
             {activeModalPlan.price > 0 && (
-              <div className="space-y-2">
-                <label className="text-[11px] font-semibold text-muted uppercase">Select Payment Rail</label>
-                <div className="grid grid-cols-3 gap-2">
-                  {[
-                    { id: "card", label: "Credit Card", icon: "💳" },
-                    { id: "gpay", label: "Google Pay", icon: "⚡" },
-                    { id: "crypto", label: "USDC Crypto", icon: "🪙" },
-                  ].map((m) => (
+              <p className="text-xs leading-relaxed text-muted">
+                Payment is completed securely on Whop. After checkout, return here and use your Whop key to activate your access.
+              </p>
+            )}
+
+            {activeModalPlan.price === 0 && (
+              <>
+                {!user ? (
+                  <div className="rounded-xl border border-amber-500/40 bg-amber-500/10 p-3 text-xs text-amber-200 space-y-2">
+                    <p>
+                      You are not currently signed in. You can activate this plan as a local guest or sign in with Google to permanently save it to your Firestore cloud profile.
+                    </p>
                     <button
-                      key={m.id}
                       type="button"
-                      onClick={() => setPaymentMethod(m.id as any)}
-                      className={`flex flex-col items-center justify-center rounded-xl border p-2.5 text-xs transition ${
-                        paymentMethod === m.id
-                          ? "border-gold bg-gold/15 text-gold-bright font-bold"
-                          : "border-line bg-ink-950 text-muted hover:text-bone"
-                      }`}
+                      onClick={() => signInWithGoogle()}
+                      className="rounded-lg bg-amber-400 px-3 py-1 text-xs font-bold text-ink-950 hover:bg-amber-300 transition"
                     >
-                      <span className="text-base">{m.icon}</span>
-                      <span className="mt-1 text-[11px]">{m.label}</span>
+                      Sign in with Google First
                     </button>
-                  ))}
-                </div>
-              </div>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-2 text-xs text-emerald-400">
+                    <ShieldCheck className="h-4 w-4 shrink-0" />
+                    <span>Syncs directly to your Firebase profile: <strong>{user.email}</strong></span>
+                  </div>
+                )}
+              </>
             )}
 
-            {/* User Account Sync Status */}
-            {!user ? (
-              <div className="rounded-xl border border-amber-500/40 bg-amber-500/10 p-3 text-xs text-amber-200 space-y-2">
-                <p>
-                  You are not currently signed in. You can activate this plan as a local guest or sign in with Google to permanently save it to your Firestore cloud profile.
-                </p>
-                <button
-                  type="button"
-                  onClick={() => signInWithGoogle()}
-                  className="rounded-lg bg-amber-400 px-3 py-1 text-xs font-bold text-ink-950 hover:bg-amber-300 transition"
-                >
-                  Sign in with Google First
-                </button>
-              </div>
-            ) : (
-              <div className="flex items-center gap-2 text-xs text-emerald-400">
-                <ShieldCheck className="h-4 w-4 shrink-0" />
-                <span>Syncs directly to your Firebase profile: <strong>{user.email}</strong></span>
-              </div>
+            {activeModalPlan.price > 0 && !activeCheckoutUrl && (
+              <p role="status" className="text-xs text-amber-200">
+                This checkout link is not configured yet. Add the matching NEXT_PUBLIC_WHOP_CHECKOUT_{activeModalPlan.id.toUpperCase()}_{cadence.toUpperCase()}_URL environment variable to enable it.
+              </p>
             )}
 
-            {/* Modal Buttons */}
             <div className="flex items-center justify-end gap-3 pt-3 border-t border-line/60">
               <button
                 type="button"
@@ -474,21 +472,42 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
               >
                 Cancel
               </button>
-              <button
-                type="button"
-                onClick={handleConfirmSubscription}
-                disabled={isProcessing}
-                className="flex items-center gap-2 rounded-full bg-gold px-6 py-2.5 text-xs font-bold text-ink-950 hover:bg-gold-bright transition shadow-lg disabled:opacity-50"
-              >
-                {isProcessing ? (
-                  <span>Activating Plan...</span>
-                ) : (
-                  <>
-                    <Zap className="h-3.5 w-3.5" />
-                    <span>Confirm &amp; Unlock {activeModalPlan.name}</span>
-                  </>
-                )}
-              </button>
+              {activeModalPlan.price === 0 ? (
+                <button
+                  type="button"
+                  onClick={handleConfirmSubscription}
+                  disabled={isProcessing}
+                  className="flex items-center gap-2 rounded-full bg-gold px-6 py-2.5 text-xs font-bold text-ink-950 hover:bg-gold-bright transition shadow-lg disabled:opacity-50"
+                >
+                  {isProcessing ? (
+                    <span>Activating Plan...</span>
+                  ) : (
+                    <>
+                      <Zap className="h-3.5 w-3.5" />
+                      <span>Activate {activeModalPlan.name}</span>
+                    </>
+                  )}
+                </button>
+              ) : activeCheckoutUrl ? (
+                <a
+                  href={activeCheckoutUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-2.5 text-xs font-bold text-ink-950 hover:bg-gold-bright transition shadow-lg"
+                >
+                  <Zap className="h-3.5 w-3.5" />
+                  <span>Continue to Whop</span>
+                </a>
+              ) : (
+                <button
+                  type="button"
+                  disabled
+                  className="flex items-center gap-2 rounded-full bg-gold px-6 py-2.5 text-xs font-bold text-ink-950 opacity-50"
+                >
+                  <Zap className="h-3.5 w-3.5" />
+                  <span>Checkout unavailable</span>
+                </button>
+              )}
             </div>
           </div>
         </div>
