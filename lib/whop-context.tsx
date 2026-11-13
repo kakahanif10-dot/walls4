@@ -89,7 +89,7 @@ export function WhopProvider({ children }: { children: ReactNode }) {
     setIsUnlocked(false);
     setFeedback({
       type: "success",
-      message: "Terminal access switched to Standard Reader tier.",
+      message: "Lifetime Premium access is no longer active in this session.",
     });
     setTimeout(() => setFeedback(null), 2500);
   }, []);

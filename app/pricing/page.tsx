@@ -5,7 +5,7 @@ import PricingPlans from "@/components/pricing-plans";
 export const metadata: Metadata = {
   title: "Plans and pricing",
   description:
-    "Reader is free. Lifetime Premium is a one-time $2,497 purchase with no recurring subscription.",
+    "One Lifetime Premium plan: a one-time $2,497 purchase with no recurring subscription."
 };
 
 const FAQ = [
@@ -27,7 +27,7 @@ const FAQ = [
   },
   {
     q: "When is access activated?",
-    a: "Access must be activated after the payment provider verifies the purchase. Checkout is unavailable until the lifetime Whop link is configured.",
+    a: "Lifetime access is activated only after Whop confirms the one-time payment. Account setup for verified purchasers is still being configured."
   },
 ];
 
@@ -41,7 +41,7 @@ export default function PricingPage() {
             Analysis you can audit. Pricing without theatre.
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-muted">
-            Choose the free Reader plan or make a single $2,497 purchase for lifetime Premium access. No recurring charges.
+            One plan. One $2,497 payment for lifetime Premium access. No recurring charges.
           </p>
         </div>
       </section>

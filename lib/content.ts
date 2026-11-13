@@ -251,21 +251,6 @@ export const COURSE_BY_SLUG: Record<string, Course> = Object.fromEntries(
 
 export const PLANS = [
   {
-    id: "reader",
-    name: "Reader",
-    price: 0,
-    cadence: "Free forever",
-    tagline: "For learning the framework.",
-    features: [
-      "Daily trend scores across 26 tracked assets",
-      "Two free research pieces per month",
-      "Foundation course: Reading a Trend",
-      "Weekly market pulse newsletter",
-    ],
-    cta: "Start free",
-    highlight: false,
-  },
-  {
     id: "premium",
     name: "Lifetime Premium",
     price: 2497,

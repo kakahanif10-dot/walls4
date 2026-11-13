@@ -163,7 +163,7 @@ export default function AuthButton() {
                   className="flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs text-bone hover:bg-ink-800 transition-colors"
                 >
                   <Award className="h-3.5 w-3.5 text-gold-bright" />
-                  <span>Plan: {isUnlocked ? "MEMBER ACCESS" : "FREE READER"}</span>
+                  <span>Plan: {isUnlocked ? "LIFETIME PREMIUM" : "NO ACTIVE PLAN"}</span>
                 </Link>
               </div>
 

@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Check, ShieldCheck, Zap, Sparkles, ChevronDown, ChevronUp, CheckCircle, ArrowRight, Key } from "lucide-react";
-import { useAuth } from "@/lib/auth-context";
+import { Check, Zap, Sparkles, ChevronDown, ChevronUp, ArrowRight, Key } from "lucide-react";
+import { useWhop } from "@/lib/whop-context";
 import WhopBadge from "@/components/whop-badge";
 import { PLANS } from "@/lib/content";
-import { getWhopCheckoutUrl, type PaidPlanId } from "@/lib/whop-checkout-links";
+import { getWhopCheckoutUrl } from "@/lib/whop-checkout-links";
 
 const ACCOUNT_BILLING_FAQ = [
   {
@@ -14,7 +14,7 @@ const ACCOUNT_BILLING_FAQ = [
   },
   {
     q: "How do I complete the purchase?",
-    a: "Choose Buy lifetime access to continue to the configured Whop checkout. Access is not granted by entering an email address or a license key on this site; payment must be verified by the membership service.",
+    a: "Once the Whop checkout link is available, complete the $2,497 one-time payment there. Access is enabled only after the payment is verified; entering an email address or license key here does not activate membership.",
   },
   {
     q: "Can I get a refund or transfer my purchase?",
@@ -27,49 +27,16 @@ interface PricingPlansProps {
 }
 
 export default function PricingPlans({ faqList }: PricingPlansProps) {
-  const { profile } = useAuth();
+  const { isUnlocked } = useWhop();
   const [faqCategory, setFaqCategory] = useState<"billing" | "general">("billing");
   const [expandedFaq, setExpandedFaq] = useState<number | null>(0);
   const [activeModalPlan, setActiveModalPlan] = useState<typeof PLANS[0] | null>(null);
-  const [successToast, setSuccessToast] = useState<string | null>(null);
-  const [showFeatureMatrix, setShowFeatureMatrix] = useState(false);
 
-  const currentPlan = profile?.plan || "reader";
-  const activeCheckoutUrl =
-    activeModalPlan && activeModalPlan.id !== "reader"
-      ? getWhopCheckoutUrl(activeModalPlan.id as PaidPlanId)
-      : null;
-
-  const handleSelectPlan = (plan: typeof PLANS[0]) => {
-    setActiveModalPlan(plan);
-  };
-
-  const handleConfirmSubscription = () => {
-    if (!activeModalPlan || activeModalPlan.price > 0) return;
-    setActiveModalPlan(null);
-    setSuccessToast("Reader is the free plan. No purchase or activation is required.");
-    setTimeout(() => setSuccessToast(null), 6000);
-  };
+  const activeCheckoutUrl = activeModalPlan ? getWhopCheckoutUrl("premium") : null;
+  const handleSelectPlan = (plan: typeof PLANS[0]) => setActiveModalPlan(plan);
 
   return (
     <div className="space-y-12">
-      {/* Toast Alert */}
-      {successToast && (
-        <div className="mx-auto max-w-2xl rounded-xl border border-emerald-500/50 bg-emerald-950/80 p-4 text-emerald-300 shadow-2xl backdrop-blur animate-in fade-in slide-in-from-top-4 flex items-center justify-between gap-3">
-          <div className="flex items-center gap-2.5">
-            <CheckCircle className="h-5 w-5 text-emerald-400 shrink-0" />
-            <p className="text-xs sm:text-sm font-medium">{successToast}</p>
-          </div>
-          <button
-            type="button"
-            onClick={() => setSuccessToast(null)}
-            className="text-emerald-400 hover:text-emerald-200 text-xs px-2 py-1"
-          >
-            ✕
-          </button>
-        </div>
-      )}
-
       <div className="flex flex-col items-center justify-center gap-3.5">
         <p className="rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-xs font-semibold text-gold-bright">
           One-time payment · Lifetime access · No renewal
@@ -79,10 +46,10 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
       </div>
 
       {/* Pricing Cards Grid */}
-      <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+      <div className="mx-auto grid max-w-2xl gap-6">
         {PLANS.map((plan) => {
-          const isCurrent = currentPlan === plan.id;
-          const displayPrice = plan.price;
+          const isCurrent = isUnlocked;
+          const displayPrice = plan.price.toLocaleString("en-US");
 
           return (
             <div
@@ -109,13 +76,13 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
 
               <h2 className="font-display text-2xl text-bone flex items-center">
                 <span>{plan.name}</span>
-                {plan.id !== "reader" && <WhopBadge className="ml-2 text-base" />}
+                <WhopBadge className="ml-2 text-base" />
               </h2>
               <p className="mt-1 text-xs text-muted">{plan.tagline}</p>
 
               <div className="mt-6 flex items-baseline gap-2">
                 <span className="font-display text-4xl font-bold text-bone">
-                  {displayPrice === 0 ? "Free" : `$${displayPrice.toLocaleString("en-US")}`}
+                  {`$${displayPrice}`}
                 </span>
                 <span className="text-xs text-muted">
                   {plan.cadence}
@@ -163,50 +130,6 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
         })}
       </div>
 
-      {/* Feature Matrix Toggle Button */}
-      <div className="flex justify-center pt-2">
-        <button
-          type="button"
-          onClick={() => setShowFeatureMatrix((v) => !v)}
-          className="flex items-center gap-2 rounded-full border border-line bg-ink-900 px-5 py-2.5 text-xs font-semibold text-muted hover:text-bone hover:border-gold/40 transition shadow"
-        >
-          <span>{showFeatureMatrix ? "Hide Detailed Feature Breakdown" : "View Complete Plan Comparison Matrix"}</span>
-          {showFeatureMatrix ? <ChevronUp className="h-3.5 w-3.5" /> : <ChevronDown className="h-3.5 w-3.5" />}
-        </button>
-      </div>
-
-      {/* Interactive Feature Matrix Table */}
-      {showFeatureMatrix && (
-        <div className="overflow-x-auto rounded-2xl border border-line bg-ink-900/60 p-5 animate-in fade-in">
-          <h3 className="font-display text-xl text-bone mb-4">Complete Plan Feature Matrix</h3>
-          <table className="w-full min-w-[640px] text-left text-xs">
-            <thead className="bg-ink-950 text-[10px] uppercase tracking-[0.14em] text-muted">
-              <tr>
-                <th className="px-4 py-3 font-medium">Feature</th>
-                <th className="px-4 py-3 text-center font-medium">Reader (Free)</th>
-                <th className="px-4 py-3 text-center font-medium text-gold">Lifetime Premium ($2,497 once)</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-line/60">
-              {[
-                ["Daily trend scores", "26 tracked assets", "26 tracked assets"],
-                ["Research library", "2 pieces per month", "All research pieces"],
-                ["Academy courses", "Foundation course", "All four courses"],
-                ["Crypto and meme-coin coverage", "Reader access", "Full coverage with risk grading"],
-                ["Market updates", "Weekly newsletter", "Score-change alerts"],
-                ["Model portfolios", "—", "Core, tactical, and digital assets"],
-              ].map(([feature, r, p]) => (
-                <tr key={feature} className="hover:bg-ink-850/40">
-                  <td className="px-4 py-3 text-bone font-medium">{feature}</td>
-                  <td className="px-4 py-3 text-center text-muted font-mono">{r}</td>
-                  <td className="px-4 py-3 text-center text-gold-bright font-mono font-semibold">{p}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
-
       {/* Interactive FAQ Accordion with Dedicated Account & Billing Section */}
       <div className="space-y-6 pt-6">
         <div className="text-center space-y-2">
@@ -215,7 +138,7 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
           </p>
           <h2 className="font-display text-2xl sm:text-3xl text-bone">Frequently asked questions</h2>
           <p className="text-xs text-muted max-w-lg mx-auto">
-            Answers about the free Reader plan, one-time Lifetime Premium purchase, and research methodology.
+            Answers about the one-time Lifetime Premium purchase and research methodology.
           </p>
         </div>
 
@@ -314,9 +237,7 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
                   Purchase details
                 </span>
                 <h3 id="pricing-dialog-title" className="font-display text-xl text-bone">
-                  {activeModalPlan.price === 0
-                    ? `Activate ${activeModalPlan.name}`
-                    : `Continue to ${activeModalPlan.name} checkout`}
+                  {`Continue to ${activeModalPlan.name} checkout`}
                 </h3>
               </div>
             </div>
@@ -338,28 +259,16 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
               <div className="flex justify-between text-xs">
                 <span className="text-muted">Amount due once:</span>
                 <span className="font-mono text-sm font-bold text-gold-bright">
-                  {activeModalPlan.price === 0 ? "$0 (Free)" : "$2,497 USD"}
+                  $2,497 USD
                 </span>
               </div>
             </div>
 
-            {activeModalPlan.price > 0 && (
-              <p className="text-xs leading-relaxed text-muted">
-                You will continue to Whop to complete the one-time $2,497 USD purchase. Access is not activated until the payment is verified.
-              </p>
-            )}
-
-            {activeModalPlan.price === 0 && (
-              <p className="text-xs leading-relaxed text-muted">
-                Reader is free and available without an account or payment.
-              </p>
-            )}
-
-            {activeModalPlan.price > 0 && !activeCheckoutUrl && (
-              <p role="status" className="text-xs text-amber-200">
-                Lifetime checkout is not configured yet. Set NEXT_PUBLIC_WHOP_CHECKOUT_LIFETIME_URL to the Whop checkout link for the $2,497 one-time lifetime product.
-              </p>
-            )}
+            <p className="text-xs leading-relaxed text-muted">
+              {activeCheckoutUrl
+                ? "You will continue to Whop to complete the one-time $2,497 USD purchase. Access is activated only after payment verification."
+                : "Checkout is being configured. Do not submit payment until the Whop checkout button is active."}
+            </p>
 
             <div className="flex items-center justify-end gap-3 pt-3 border-t border-line/60">
               <button
@@ -369,16 +278,7 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
               >
                 Cancel
               </button>
-              {activeModalPlan.price === 0 ? (
-                <button
-                  type="button"
-                  onClick={handleConfirmSubscription}
-                  className="flex items-center gap-2 rounded-full bg-gold px-6 py-2.5 text-xs font-bold text-ink-950 hover:bg-gold-bright transition shadow-lg"
-                >
-                  <Zap className="h-3.5 w-3.5" />
-                  <span>Continue with {activeModalPlan.name}</span>
-                </button>
-              ) : activeCheckoutUrl ? (
+              {activeCheckoutUrl ? (
                 <a
                   href={activeCheckoutUrl}
                   target="_blank"

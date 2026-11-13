@@ -23,7 +23,6 @@ export interface UserProfileData {
   email: string;
   displayName?: string;
   photoURL?: string;
-  plan?: "reader" | "premium";
   provider?: "supabase" | "firebase" | "guest";
   createdAt?: string;
   updatedAt?: string;
@@ -67,15 +66,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             email: u.email || "",
             displayName: u.displayName || "Desk Trader",
             photoURL: u.photoURL || "",
-            plan: "reader",
             createdAt: now,
             updatedAt: now,
           };
           await setDoc(userRef, newProfile);
           setProfile({ ...newProfile, provider: "firebase" });
         } else {
-          const data = snap.data() as UserProfileData;
-          setProfile({ ...data, plan: "reader", provider: "firebase" });
+          const data = snap.data();
+          setProfile({
+            uid: data.uid,
+            email: data.email,
+            displayName: data.displayName,
+            photoURL: data.photoURL,
+            createdAt: data.createdAt,
+            updatedAt: data.updatedAt,
+            provider: "firebase",
+          });
         }
       } else {
         // Supabase profile sync
@@ -84,7 +90,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           email: u.email,
           displayName: u.displayName || u.email.split("@")[0] || "Supabase Trader",
           photoURL: u.photoURL || "",
-          plan: "reader",
           provider: "supabase",
           createdAt: now,
           updatedAt: now,
@@ -96,7 +101,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         uid: u.uid,
         email: u.email,
         displayName: u.displayName || "Trader",
-        plan: "reader",
         provider,
         updatedAt: now,
       });
