@@ -8,7 +8,7 @@ import { useAuth } from "@/lib/auth-context";
 import { useWhop } from "@/lib/whop-context";
 
 export default function AuthButton() {
-  const { user, profile, loading, signInWithGoogle, signInWithSupabaseEmail, signUpWithSupabaseEmail, signOutUser } = useAuth();
+  const { user, loading, signInWithGoogle, signInWithSupabaseEmail, signUpWithSupabaseEmail, signOutUser } = useAuth();
   const { isUnlocked } = useWhop();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
@@ -114,7 +114,7 @@ export default function AuthButton() {
               {user.displayName || user.email?.split("@")[0] || "Trader"}
             </span>
             <span className="rounded border border-gold/40 bg-gold/15 px-1.5 py-0.2 font-mono text-[9px] font-bold uppercase tracking-wider text-gold-bright">
-              {isUnlocked || profile?.plan === "premium" ? "MEMBER" : "READER"}
+              {isUnlocked ? "MEMBER" : "READER"}
             </span>
           </button>
 
@@ -163,7 +163,7 @@ export default function AuthButton() {
                   className="flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs text-bone hover:bg-ink-800 transition-colors"
                 >
                   <Award className="h-3.5 w-3.5 text-gold-bright" />
-                  <span>Plan: {isUnlocked || profile?.plan === "premium" ? "MEMBER ACCESS" : "FREE READER"}</span>
+                  <span>Plan: {isUnlocked ? "MEMBER ACCESS" : "FREE READER"}</span>
                 </Link>
               </div>
 

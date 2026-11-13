@@ -23,7 +23,7 @@ export interface UserProfileData {
   email: string;
   displayName?: string;
   photoURL?: string;
-  plan?: "reader" | "premium" | "institutional";
+  plan?: "reader" | "premium";
   provider?: "supabase" | "firebase" | "guest";
   createdAt?: string;
   updatedAt?: string;
@@ -37,7 +37,6 @@ interface AuthContextValue {
   signInWithSupabaseEmail: (email: string, password?: string) => Promise<{ error: any }>;
   signUpWithSupabaseEmail: (email: string, password?: string) => Promise<{ error: any }>;
   signOutUser: () => Promise<void>;
-  updateUserPlan: (plan: "reader" | "premium" | "institutional") => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextValue>({
@@ -48,7 +47,6 @@ const AuthContext = createContext<AuthContextValue>({
   signInWithSupabaseEmail: async () => ({ error: null }),
   signUpWithSupabaseEmail: async () => ({ error: null }),
   signOutUser: async () => {},
-  updateUserPlan: async () => {},
 });
 
 export function AuthProvider({ children }: { children: ReactNode }) {
@@ -70,15 +68,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             displayName: u.displayName || "Desk Trader",
             photoURL: u.photoURL || "",
             plan: "reader",
-            provider: "firebase",
             createdAt: now,
             updatedAt: now,
           };
           await setDoc(userRef, newProfile);
-          setProfile(newProfile);
+          setProfile({ ...newProfile, provider: "firebase" });
         } else {
           const data = snap.data() as UserProfileData;
-          setProfile({ ...data, provider: "firebase" });
+          setProfile({ ...data, plan: "reader", provider: "firebase" });
         }
       } else {
         // Supabase profile sync
@@ -221,22 +218,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const updateUserPlan = useCallback(async (newPlan: "reader" | "premium" | "institutional") => {
-    if (user?.uid) {
-      try {
-        const userRef = doc(db, "users", user.uid);
-        const now = new Date().toISOString();
-        await setDoc(userRef, { plan: newPlan, updatedAt: now }, { merge: true });
-      } catch {}
-    }
-    setProfile((prev) => (prev ? { ...prev, plan: newPlan, updatedAt: new Date().toISOString() } : {
-      uid: user?.uid || "user",
-      email: user?.email || "trader@nextwallstreet.com",
-      plan: newPlan,
-      updatedAt: new Date().toISOString(),
-    }));
-  }, [user]);
-
   return (
     <AuthContext.Provider
       value={{
@@ -247,7 +228,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         signInWithSupabaseEmail,
         signUpWithSupabaseEmail,
         signOutUser,
-        updateUserPlan,
       }}
     >
       {children}

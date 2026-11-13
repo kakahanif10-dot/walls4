@@ -97,7 +97,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <div className="prose-editorial mt-8 max-w-3xl">
               <div>{renderBlocks([first])}</div>
               {article.premium ? (
-                <PremiumGate issue={article.title}>{renderBlocks(remainder)}</PremiumGate>
+                // Keep paid article text out of the client payload until server-side entitlement checks exist.
+                <PremiumGate issue={article.title} children={null} />
               ) : (
                 <div>{renderBlocks(remainder)}</div>
               )}
