@@ -189,10 +189,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return { error };
     } else {
       // Magic link
-      const { data, error } = await supabase.auth.signInWithOtp({
+      const { error } = await supabase.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: typeof window !== "undefined" ? window.location.origin : undefined,
+          emailRedirectTo:
+            typeof window !== "undefined"
+              ? process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ?? `${window.location.origin}/auth/callback`
+              : undefined,
         },
       });
       return { error };
@@ -203,9 +206,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (!password) {
       return signInWithSupabaseEmail(email);
     }
-    const { data, error } = await supabase.auth.signUp({
+    const { error } = await supabase.auth.signUp({
       email,
       password,
+      options: {
+        emailRedirectTo:
+          typeof window !== "undefined"
+            ? process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ?? `${window.location.origin}/auth/callback`
+            : undefined,
+      },
     });
     return { error };
   }, [signInWithSupabaseEmail]);

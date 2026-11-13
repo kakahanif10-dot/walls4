@@ -17,7 +17,7 @@ import {
   type HistogramBin,
   type ScoredAssetItem,
 } from "@/lib/market-pipeline";
-import { stanceColor } from "@/lib/market";
+import { stanceColor } from "@/lib/market-format";
 
 interface Props {
   distribution: ScoreDistribution;

@@ -11,6 +11,9 @@ export interface AnalystDesk {
   status: "Active · Streaming" | "Pre-Market Sizing" | "Live Order Flow" | "High Volatility";
 }
 
+export type AnalystDeskPreview = Omit<AnalystDesk, "summary" | "focusTickers" | "keyMetric"> &
+  Partial<Pick<AnalystDesk, "summary" | "focusTickers" | "keyMetric">>;
+
 export const CATEGORY_LABELS = {
   equities: "Equities & Growth Desks",
   macro: "Macro, Rates & Regimes",

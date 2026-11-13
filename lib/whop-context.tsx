@@ -1,223 +1,158 @@
 "use client";
 
-import {
-  createContext,
-  useContext,
-  useState,
-  useCallback,
-  type ReactNode,
-} from "react";
-import { CheckCircle2, Sparkles, ExternalLink, ArrowRight, ShieldCheck, Zap, MessageSquare } from "lucide-react";
+import Link from "next/link";
+import { createContext, useCallback, useContext, useState, type ReactNode } from "react";
+import { ArrowRight, CheckCircle2, LoaderCircle, ShieldCheck, X } from "lucide-react";
+import useSWR from "swr";
+import { useAuth } from "@/lib/auth-context";
 
-interface WhopContextValue {
+type WhopStatus = {
+  authenticated: boolean;
+  unlocked: boolean;
+};
+
+type WhopContextValue = {
   isUnlocked: boolean;
-  badge: string;
-  unlockWithWhop: (options?: { licenseKey?: string; email?: string }) => Promise<boolean>;
-  lockWhop: () => void;
+  isChecking: boolean;
+  isModalOpen: boolean;
+  modalDesk: string | null;
   openWhopModal: (deskName?: string) => void;
   closeWhopModal: () => void;
-  isModalOpen: boolean;
+  unlockWithWhop: () => Promise<boolean>;
+  lockWhop: () => void;
+};
+
+const WhopContext = createContext<WhopContextValue | null>(null);
+
+async function fetchWhopStatus(url: string): Promise<WhopStatus> {
+  const response = await fetch(url, { cache: "no-store" });
+  if (response.status === 401) return { authenticated: false, unlocked: false };
+  if (!response.ok) throw new Error("Membership status is unavailable.");
+  return (await response.json()) as WhopStatus;
 }
 
-const WhopContext = createContext<WhopContextValue>({
-  isUnlocked: false,
-  badge: "PRO",
-  unlockWithWhop: async () => false,
-  lockWhop: () => {},
-  openWhopModal: () => {},
-  closeWhopModal: () => {},
-  isModalOpen: false,
-});
-
 export function WhopProvider({ children }: { children: ReactNode }) {
-  const [isUnlocked, setIsUnlocked] = useState(false);
+  const { user, profile } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [deskName, setDeskName] = useState<string>("NextWall Street PRO");
-  const [licenseInput, setLicenseInput] = useState("");
-  const [emailInput, setEmailInput] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
-
-  const unlockWithWhop = useCallback(
-    async (options?: { licenseKey?: string; email?: string }) => {
-      setLoading(true);
-      setFeedback(null);
-      try {
-        const res = await fetch("/api/whop/validate", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            licenseKey: options?.licenseKey || licenseInput.trim(),
-            email: options?.email || emailInput.trim(),
-            action: "activate",
-          }),
-        });
-
-        const data = await res.json();
-        if (res.ok && data.success === true && data.unlocked === true) {
-          setIsUnlocked(true);
-          setFeedback({
-            type: "success",
-            message: "PRO membership verified. Real-time institutional alerts and terminal access enabled.",
-          });
-          setTimeout(() => {
-            setIsModalOpen(false);
-            setFeedback(null);
-          }, 2000);
-          return true;
-        } else {
-          setFeedback({
-            type: "error",
-            message: data.error || "Unable to verify Whop license key. Please check your credentials.",
-          });
-          return false;
-        }
-      } catch (err: any) {
-        setFeedback({
-          type: "error",
-          message: err.message || "Failed to establish handshake with Whop gateway.",
-        });
-        return false;
-      } finally {
-        setLoading(false);
-      }
-    },
-    [licenseInput, emailInput]
+  const [modalDesk, setModalDesk] = useState<string | null>(null);
+  const statusKey =
+    user && profile?.provider === "supabase"
+      ? (["/api/whop/validate", user.uid] as const)
+      : null;
+  const { data, error, isLoading, mutate } = useSWR(
+    statusKey,
+    ([url]) => fetchWhopStatus(url),
+    { revalidateOnFocus: true, revalidateOnReconnect: true },
   );
+  const isUnlocked = data?.unlocked === true;
+  const isChecking = isLoading;
 
-  const lockWhop = useCallback(() => {
-    setIsUnlocked(false);
-    setFeedback({
-      type: "success",
-      message: "Lifetime Premium access is no longer active in this session.",
-    });
-    setTimeout(() => setFeedback(null), 2500);
-  }, []);
-
-  const openWhopModal = useCallback((desk?: string) => {
-    if (desk) setDeskName(desk);
+  const openWhopModal = useCallback((deskName?: string) => {
+    setModalDesk(deskName ?? null);
     setIsModalOpen(true);
   }, []);
 
   const closeWhopModal = useCallback(() => {
     setIsModalOpen(false);
-    setFeedback(null);
+    setModalDesk(null);
   }, []);
 
+  const unlockWithWhop = useCallback(async () => {
+    try {
+      const status = await mutate();
+      return status?.unlocked === true;
+    } catch {
+      return false;
+    }
+  }, [mutate]);
+
+  const lockWhop = useCallback(() => {
+    void mutate();
+  }, [mutate]);
+
+  const value: WhopContextValue = {
+    isUnlocked,
+    isChecking,
+    isModalOpen,
+    modalDesk,
+    openWhopModal,
+    closeWhopModal,
+    unlockWithWhop,
+    lockWhop,
+  };
+
   return (
-    <WhopContext.Provider
-      value={{
-        isUnlocked,
-        badge: "PRO",
-        unlockWithWhop,
-        lockWhop,
-        openWhopModal,
-        closeWhopModal,
-        isModalOpen,
-      }}
-    >
+    <WhopContext.Provider value={value}>
       {children}
-
-      {/* WHOP ACCESS & FAST ALERT CHECKOUT MODAL */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-md animate-in fade-in">
-          <div className="relative w-full max-w-lg rounded-2xl border border-gold/30 bg-ink-900 p-6 sm:p-7 shadow-2xl space-y-5">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/75 p-4 backdrop-blur-sm">
+          <section
+            aria-labelledby="membership-access-title"
+            aria-modal="true"
+            className="relative w-full max-w-lg rounded-2xl border border-white/10 bg-[#141512] p-7 shadow-2xl sm:p-9"
+            role="dialog"
+          >
             <button
-              type="button"
+              aria-label="Close membership access details"
+              className="absolute right-5 top-5 rounded-md p-2 text-bone/55 transition hover:bg-white/5 hover:text-bone"
               onClick={closeWhopModal}
-              className="absolute right-4 top-4 text-muted hover:text-bone text-base p-1"
+              type="button"
             >
-              ✕
+              <X aria-hidden="true" className="h-4 w-4" />
             </button>
-
-            {/* Header */}
-            <div className="flex items-center gap-3.5">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-gold/40 bg-gold/10 font-mono text-sm font-bold text-gold-bright shadow-inner">
-                PRO
-              </div>
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-gold flex items-center gap-1.5">
-                  <Sparkles className="h-3 w-3" />
-                  Lifetime Premium
-                </span>
-                <h3 className="font-display text-xl text-bone">
-                  {isUnlocked ? "Lifetime membership active" : `Access ${deskName}`}
-                </h3>
-              </div>
+            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-gold/25 bg-gold/10 text-gold">
+              {isChecking ? (
+                <LoaderCircle aria-hidden="true" className="h-5 w-5 animate-spin" />
+              ) : isUnlocked ? (
+                <CheckCircle2 aria-hidden="true" className="h-5 w-5" />
+              ) : (
+                <ShieldCheck aria-hidden="true" className="h-5 w-5" />
+              )}
             </div>
-
-            <p className="text-xs text-muted leading-relaxed">
-              One-time $2,497 USD purchase for lifetime access to the complete research library and Premium features. Access requires server-side payment verification.
-            </p>
-
-            <div className="rounded-xl border border-gold/30 bg-gold/[0.05] p-3.5 text-xs">
-              <div className="flex items-center gap-1.5 font-semibold text-gold-bright">
-                <ShieldCheck className="h-3.5 w-3.5 text-gold" />
-                Purchase activation
-              </div>
-              <p className="mt-1 text-[11px] leading-relaxed text-muted">
-                Premium access stays locked until the server verifies a completed one-time payment. A checkout redirect or client-side change does not grant access.
+            <h2 className="pr-8 font-display text-2xl text-bone" id="membership-access-title">
+              {modalDesk ? `Access ${modalDesk}` : "Lifetime research access"}
+            </h2>
+            {isUnlocked ? (
+              <p className="mt-4 text-sm leading-6 text-bone/65">
+                Your verified account has lifetime access. If an article is still locked, refresh your access status and try again.
               </p>
-            </div>
-
-            {/* Feedback alert */}
-            {feedback && (
-              <div
-                className={`rounded-xl border p-3 text-xs leading-relaxed ${
-                  feedback.type === "success"
-                    ? "border-emerald-500/50 bg-emerald-950/60 text-emerald-300"
-                    : "border-rose-500/50 bg-rose-950/60 text-rose-300"
-                }`}
-              >
-                {feedback.message}
-              </div>
+            ) : (
+              <p className="mt-4 text-sm leading-6 text-bone/65">
+                Purchase access through Whop, then open the secure setup link sent to the buyer email. Your account is created automatically after payment verification.
+              </p>
             )}
-
-            {!isUnlocked ? (
-              <div className="space-y-3 pt-1">
-                <p className="text-xs leading-relaxed text-muted">
-                  Lifetime Premium is a one-time $2,497 USD purchase. Membership verification is not configured yet, so checkout will not unlock premium content automatically.
-                </p>
-                <a
+            {error && (
+              <p aria-live="polite" className="mt-4 text-sm text-rose-300">
+                Membership status could not be refreshed. Please try again.
+              </p>
+            )}
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              {isUnlocked ? (
+                <button
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-5 py-3 text-sm font-semibold text-[#17140e] transition hover:bg-gold/90"
+                  onClick={() => void unlockWithWhop()}
+                  type="button"
+                >
+                  Refresh access <ArrowRight aria-hidden="true" className="h-4 w-4" />
+                </button>
+              ) : (
+                <Link
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-5 py-3 text-sm font-semibold text-[#17140e] transition hover:bg-gold/90"
                   href="/pricing"
                   onClick={closeWhopModal}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-gold px-5 py-3 text-xs font-bold text-ink-950 hover:bg-gold-bright"
                 >
-                  View lifetime plan
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
-            ) : (
-              <div className="space-y-3 pt-1">
-                <div className="rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-3.5 text-xs text-emerald-300 flex items-start gap-2.5">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <div className="space-y-1">
-                    <p className="font-semibold text-emerald-200">PRO Membership Active</p>
-                    <p className="text-[11px] text-emerald-300/80">
-                      Full institutional terminal access unlocked: 44 analyst desks, 70 research dossiers, 60 video masterclasses, and encrypted dispatch channels.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex justify-between items-center gap-2 pt-2 border-t border-line/60">
-                  <button
-                    type="button"
-                    onClick={lockWhop}
-                    className="text-xs text-muted hover:text-rose-400 transition"
-                  >
-                    Reset Credentials
-                  </button>
-                  <button
-                    type="button"
-                    onClick={closeWhopModal}
-                    className="rounded-full bg-gold px-5 py-2 text-xs font-bold text-ink-950 hover:bg-gold-bright transition shadow"
-                  >
-                    Enter Terminal
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
+                  View membership <ArrowRight aria-hidden="true" className="h-4 w-4" />
+                </Link>
+              )}
+              <button
+                className="rounded-lg border border-white/10 px-5 py-3 text-sm font-medium text-bone/75 transition hover:bg-white/5 hover:text-bone"
+                onClick={closeWhopModal}
+                type="button"
+              >
+                Close
+              </button>
+            </div>
+          </section>
         </div>
       )}
     </WhopContext.Provider>
@@ -225,5 +160,7 @@ export function WhopProvider({ children }: { children: ReactNode }) {
 }
 
 export function useWhop() {
-  return useContext(WhopContext);
+  const context = useContext(WhopContext);
+  if (!context) throw new Error("useWhop must be used within WhopProvider.");
+  return context;
 }

@@ -83,7 +83,7 @@ export default async function CoveragePage({ kind }: { kind: Kind }) {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-12">
-        <MarketExplorer rows={rows} />
+        <MarketExplorer kind={kind} rows={rows.slice(0, 8)} totalRows={rows.length} />
       </section>
 
       <section className="mx-auto max-w-7xl px-5">

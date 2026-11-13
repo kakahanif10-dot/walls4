@@ -24,11 +24,13 @@ import {
   X,
 } from "lucide-react";
 import { type PipelineMetrics, type ScoredAssetItem } from "@/lib/market-pipeline";
-import { stanceColor } from "@/lib/market";
+import { stanceColor } from "@/lib/market-format";
 import WhopBadge from "@/components/whop-badge";
+import { useWhop } from "@/lib/whop-context";
 import ScoreDistributionHistogram from "@/components/score-distribution-histogram";
 
 export default function PipelineStatusDashboard() {
+  const { isUnlocked, openWhopModal } = useWhop();
   const [metrics, setMetrics] = useState<PipelineMetrics | null>(null);
   const [topRanked, setTopRanked] = useState<ScoredAssetItem[]>([]);
   const [bottomRanked, setBottomRanked] = useState<ScoredAssetItem[]>([]);
@@ -59,6 +61,7 @@ export default function PipelineStatusDashboard() {
 
   // Load pipeline status from API
   const fetchPipeline = async (force = false) => {
+    if (!isUnlocked) return;
     try {
       if (force) setRefreshing(true);
       const url = force ? "/api/pipeline?force=true" : "/api/pipeline";
@@ -79,13 +82,26 @@ export default function PipelineStatusDashboard() {
   };
 
   useEffect(() => {
+    if (!isUnlocked) {
+      setMetrics(null);
+      setTopRanked([]);
+      setBottomRanked([]);
+      setExplorerAssets([]);
+      setExplorerTotal(0);
+      setSelectedAssetDetail(null);
+      setLoading(false);
+      setExplorerLoading(false);
+      return;
+    }
+
     fetchPipeline();
     const interval = setInterval(() => fetchPipeline(), 45_000);
     return () => clearInterval(interval);
-  }, []);
+  }, [isUnlocked]);
 
   // Fetch explorer assets from /api/scoring
   const fetchExplorer = useCallback(async () => {
+    if (!isUnlocked) return;
     try {
       setExplorerLoading(true);
       const params = new URLSearchParams();
@@ -109,7 +125,7 @@ export default function PipelineStatusDashboard() {
     } finally {
       setExplorerLoading(false);
     }
-  }, [searchQuery, selectedKind, selectedStance, selectedScoreRange, page, pageSize]);
+  }, [searchQuery, selectedKind, selectedStance, selectedScoreRange, page, pageSize, isUnlocked]);
 
   useEffect(() => {
     fetchExplorer();
@@ -131,6 +147,7 @@ export default function PipelineStatusDashboard() {
 
   // Fetch detailed 5-component breakdown for an asset
   const inspectAsset = async (symbol: string) => {
+    if (!isUnlocked) return;
     try {
       setDetailLoading(true);
       const res = await fetch(`/api/scoring?symbol=${encodeURIComponent(symbol)}`);
@@ -146,6 +163,32 @@ export default function PipelineStatusDashboard() {
   };
 
   const totalPages = Math.ceil(explorerTotal / pageSize) || 1;
+
+  if (!isUnlocked) {
+    return (
+      <section
+        aria-labelledby="pipeline-member-heading"
+        className="mx-auto max-w-3xl rounded-2xl border border-gold/25 bg-ink-900 p-8 text-center"
+      >
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+          Member-only analytics
+        </p>
+        <h2 id="pipeline-member-heading" className="mt-3 text-2xl font-semibold text-bone">
+          Full scoring universe is protected
+        </h2>
+        <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted">
+          The pipeline, ranked assets, and detailed scoring models are available to verified lifetime members.
+        </p>
+        <button
+          className="mt-6 rounded-lg bg-gold px-5 py-3 text-sm font-semibold text-ink-950 transition hover:bg-gold-bright"
+          onClick={() => openWhopModal("Full scoring pipeline and asset universe")}
+          type="button"
+        >
+          View lifetime access
+        </button>
+      </section>
+    );
+  }
 
   return (
     <div className="space-y-8">

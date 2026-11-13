@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuote } from "@/components/live-prices";
-import { fmtPct, fmtPrice } from "@/lib/market";
+import { fmtPct, fmtPrice } from "@/lib/market-format";
 
 function flashFor(dir: number): string {
   if (dir > 0) return "flash-up";

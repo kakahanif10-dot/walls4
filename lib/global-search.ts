@@ -91,8 +91,8 @@ function toDeskResult(desk: AnalystDesk): GlobalSearchDeskResult {
     categoryLabel: CATEGORY_LABELS[desk.category],
     leadAnalyst: desk.leadAnalyst,
     role: desk.role,
-    focusTickers: desk.focusTickers,
-    keyMetric: desk.keyMetric,
+    focusTickers: desk.proOnly ? [] : desk.focusTickers,
+    keyMetric: desk.proOnly ? "Member-only metric" : desk.keyMetric,
     status: desk.status,
     proOnly: desk.proOnly,
     href: `/desks?q=${encodeURIComponent(desk.name)}#${encodeURIComponent(desk.id)}`,
@@ -137,11 +137,11 @@ function scoreDesk(desk: AnalystDesk, q: string): number {
   const name = desk.name.toLowerCase();
   const lead = desk.leadAnalyst.toLowerCase();
   const role = desk.role.toLowerCase();
-  const summary = desk.summary.toLowerCase();
-  const metric = desk.keyMetric.toLowerCase();
+  const summary = desk.proOnly ? "" : desk.summary.toLowerCase();
+  const metric = desk.proOnly ? "" : desk.keyMetric.toLowerCase();
   const cat = desk.category.toLowerCase();
   const catLabel = CATEGORY_LABELS[desk.category].toLowerCase();
-  const tickers = desk.focusTickers.map((t) => t.toLowerCase());
+  const tickers = desk.proOnly ? [] : desk.focusTickers.map((t) => t.toLowerCase());
 
   if (tickers.some((t) => t === q || t.replace("-perp", "") === q)) return 95;
   if (name.startsWith(q)) return 85;

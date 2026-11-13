@@ -3,6 +3,7 @@ import Link from "next/link";
 import AnalystDesksCatalog from "@/components/analyst-desks-catalog";
 import WhopBadge from "@/components/whop-badge";
 import FastAlertBanner from "@/components/fast-alert-banner";
+import { ANALYST_DESKS_44, type AnalystDeskPreview } from "@/lib/analyst-desks";
 
 export const metadata: Metadata = {
   title: "44 Quantitative Analyst Desks — NextWall Street",
@@ -11,6 +12,20 @@ export const metadata: Metadata = {
 };
 
 export default function DesksPage() {
+  const deskPreviews: AnalystDeskPreview[] = ANALYST_DESKS_44.map((desk) => {
+    if (!desk.proOnly) return desk;
+
+    return {
+      id: desk.id,
+      name: desk.name,
+      category: desk.category,
+      leadAnalyst: desk.leadAnalyst,
+      role: desk.role,
+      proOnly: desk.proOnly,
+      status: desk.status,
+    };
+  });
+
   return (
     <div>
       <section className="grain border-b border-line/60">
@@ -37,7 +52,7 @@ export default function DesksPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-12">
-        <AnalystDesksCatalog />
+        <AnalystDesksCatalog desks={deskPreviews} />
       </section>
 
       <section className="mx-auto max-w-7xl px-5 pb-16">

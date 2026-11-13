@@ -14,7 +14,7 @@ const ACCOUNT_BILLING_FAQ = [
   },
   {
     q: "How do I complete the purchase?",
-    a: "Once the Whop checkout link is available, complete the $2,497 one-time payment there. Access is enabled only after the payment is verified; entering an email address or license key here does not activate membership.",
+    a: "Complete the $2,497 one-time purchase in Whop. After the signed payment notification is verified, we create your account and send a secure setup link to the email used at checkout.",
   },
   {
     q: "Can I get a refund or transfer my purchase?",
