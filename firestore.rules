@@ -35,7 +35,7 @@ service cloud.firestore {
         data.email is string && data.email.size() <= 256 &&
         (!('displayName' in data) || (data.displayName is string && data.displayName.size() <= 100)) &&
         (!('photoURL' in data) || (data.photoURL is string && data.photoURL.size() <= 500)) &&
-        (!('plan' in data) || (data.plan in ['reader', 'premium', 'institutional'])) &&
+        (!('plan' in data) || data.plan == 'reader') &&
         (!('createdAt' in data) || (data.createdAt is string && data.createdAt.size() <= 64)) &&
         (!('updatedAt' in data) || (data.updatedAt is string && data.updatedAt.size() <= 64)) &&
         (!('calculatorAccountSize' in data) || (data.calculatorAccountSize is number && data.calculatorAccountSize > 0)) &&
@@ -79,7 +79,7 @@ service cloud.firestore {
     match /users/{userId} {
       allow get: if isValidId(userId) && isOwner(userId);
       allow create: if isValidId(userId) && isOwner(userId) && incoming().uid == request.auth.uid && isValidUserProfile(incoming());
-      allow update: if isValidId(userId) && isOwner(userId) && incoming().uid == existing().uid && isValidUserProfile(incoming());
+      allow update: if isValidId(userId) && isOwner(userId) && incoming().uid == existing().uid && isValidUserProfile(incoming()) && !incoming().diff(existing()).affectedKeys().hasAny(['plan', 'whopUnlocked']);
       allow delete: if false;
 
       // Watchlist subcollection

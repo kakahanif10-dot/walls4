@@ -28,7 +28,7 @@ export default function ResearchPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-12">
-        <ResearchExplorer articles={ARTICLES} />
+        <ResearchExplorer articles={ARTICLES.map((article) => ({ ...article, body: [] }))} />
       </section>
     </div>
   );

@@ -1,10 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
 import { runFullMarketPipeline, getAssetDetailedBreakdown } from "@/lib/market-pipeline";
 import { type Kind } from "@/lib/market";
+import { getLifetimeAccess } from "@/lib/whop-access";
 
 export const dynamic = "force-dynamic";
 
+function privateJson(body: unknown, init?: ResponseInit) {
+  const headers = new Headers(init?.headers);
+  headers.set("Cache-Control", "private, no-store");
+  return NextResponse.json(body, { ...init, headers });
+}
+
 export async function GET(req: NextRequest) {
+  const access = await getLifetimeAccess();
+  if (access.status !== "member") {
+    const status = access.status === "unauthenticated" ? 401 : access.status === "unpaid" ? 403 : 503;
+    return privateJson({ error: "Lifetime access required." }, { status });
+  }
+
   try {
     const { searchParams } = new URL(req.url);
     const symbolParam = searchParams.get("symbol");
@@ -13,9 +26,9 @@ export async function GET(req: NextRequest) {
     if (symbolParam) {
       const detail = getAssetDetailedBreakdown(symbolParam);
       if (!detail) {
-        return NextResponse.json({ error: `Asset not found: ${symbolParam}` }, { status: 404 });
+        return privateJson({ error: `Asset not found: ${symbolParam}` }, { status: 404 });
       }
-      return NextResponse.json({
+      return privateJson({
         symbol: detail.asset.symbol,
         name: detail.asset.name,
         kind: detail.asset.kind,
@@ -70,7 +83,7 @@ export async function GET(req: NextRequest) {
     const startIndex = (page - 1) * limit;
     const pagedResults = filtered.slice(startIndex, startIndex + limit);
 
-    return NextResponse.json({
+    return privateJson({
       meta: {
         totalAssetsInUniverse: metrics.totalAssets,
         totalMatching,
@@ -83,7 +96,7 @@ export async function GET(req: NextRequest) {
     });
   } catch (error: any) {
     console.error("Scoring API error:", error);
-    return NextResponse.json(
+    return privateJson(
       { error: error?.message || "Failed to query scoring universe" },
       { status: 500 },
     );

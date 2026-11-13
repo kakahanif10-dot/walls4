@@ -1,24 +1,10 @@
-export type PaidPlanId = "premium" | "institutional";
-export type BillingCadence = "monthly" | "annual";
+export type PaidPlanId = "premium";
 
-type CheckoutLinks = Record<PaidPlanId, Record<BillingCadence, string | undefined>>;
+const lifetimeCheckoutUrl = process.env.NEXT_PUBLIC_WHOP_CHECKOUT_LIFETIME_URL;
 
-const checkoutLinks: CheckoutLinks = {
-  premium: {
-    monthly: process.env.NEXT_PUBLIC_WHOP_CHECKOUT_PREMIUM_MONTHLY_URL,
-    annual: process.env.NEXT_PUBLIC_WHOP_CHECKOUT_PREMIUM_ANNUAL_URL,
-  },
-  institutional: {
-    monthly: process.env.NEXT_PUBLIC_WHOP_CHECKOUT_INSTITUTIONAL_MONTHLY_URL,
-    annual: process.env.NEXT_PUBLIC_WHOP_CHECKOUT_INSTITUTIONAL_ANNUAL_URL,
-  },
-};
-
-export function getWhopCheckoutUrl(
-  planId: PaidPlanId,
-  cadence: BillingCadence,
-): string | null {
-  const value = checkoutLinks[planId][cadence]?.trim();
+export function getWhopCheckoutUrl(planId: PaidPlanId): string | null {
+  if (planId !== "premium") return null;
+  const value = lifetimeCheckoutUrl?.trim();
 
   if (!value) return null;
 

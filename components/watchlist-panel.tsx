@@ -5,7 +5,8 @@ import Sparkline from "@/components/sparkline";
 import { useWatchlist } from "@/lib/use-watchlist";
 import { useAuth } from "@/lib/auth-context";
 import { LivePrice, LiveChange } from "@/components/live-price";
-import { stanceColor, type Row } from "@/lib/market";
+import { stanceColor } from "@/lib/market-format";
+import type { Row } from "@/lib/market";
 
 export default function WatchlistPanel({ rows }: { rows: Row[] }) {
   const { symbols, ready, toggle } = useWatchlist();

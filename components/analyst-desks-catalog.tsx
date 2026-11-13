@@ -4,9 +4,30 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Search, BarChart3, Globe, Coins, Flame, Cpu, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import WhopBadge from "./whop-badge";
-import { ANALYST_DESKS_44, type AnalystDesk, CATEGORY_LABELS } from "@/lib/analyst-desks";
+import type { AnalystDesk, AnalystDeskPreview } from "@/lib/analyst-desks";
+import { useWhop } from "@/lib/whop-context";
+import useSWR from "swr";
 
-export default function AnalystDesksCatalog() {
+async function fetchMemberDesks(url: string): Promise<AnalystDesk[]> {
+  const response = await fetch(url, { cache: "no-store" });
+  if (!response.ok) throw new Error("Member desks could not be loaded.");
+  const result = (await response.json()) as { desks: AnalystDesk[] };
+  return result.desks;
+}
+
+export default function AnalystDesksCatalog({
+  desks,
+}: {
+  desks: AnalystDeskPreview[];
+}) {
+  const { isUnlocked, openWhopModal } = useWhop();
+  const { data: memberDesks, error: memberDesksError, isLoading: isLoadingMemberDesks } = useSWR(
+    isUnlocked ? "/api/analyst-desks" : null,
+    fetchMemberDesks,
+    { revalidateOnFocus: false },
+  );
+  const catalogDesks: AnalystDeskPreview[] =
+    isUnlocked && memberDesks ? memberDesks : desks;
   const [activeCategory, setActiveCategory] = useState<"all" | "equities" | "macro" | "crypto" | "meme" | "quant">("all");
   const [search, setSearch] = useState("");
 
@@ -16,15 +37,15 @@ export default function AnalystDesksCatalog() {
     if (q) setSearch(q);
   }, []);
 
-  const filteredDesks = ANALYST_DESKS_44.filter((desk) => {
+  const filteredDesks = catalogDesks.filter((desk) => {
     const matchesCat = activeCategory === "all" || desk.category === activeCategory;
     const matchesSearch =
       !search.trim() ||
       desk.name.toLowerCase().includes(search.toLowerCase()) ||
       desk.leadAnalyst.toLowerCase().includes(search.toLowerCase()) ||
-      desk.summary.toLowerCase().includes(search.toLowerCase()) ||
-      desk.focusTickers.some((t) => t.toLowerCase().includes(search.toLowerCase())) ||
-      desk.keyMetric.toLowerCase().includes(search.toLowerCase());
+      (desk.summary ?? "").toLowerCase().includes(search.toLowerCase()) ||
+      (desk.focusTickers ?? []).some((t) => t.toLowerCase().includes(search.toLowerCase())) ||
+      (desk.keyMetric ?? "").toLowerCase().includes(search.toLowerCase());
     return matchesCat && matchesSearch;
   });
 
@@ -38,12 +59,12 @@ export default function AnalystDesksCatalog() {
   };
 
   const counts = {
-    all: ANALYST_DESKS_44.length,
-    equities: ANALYST_DESKS_44.filter((d) => d.category === "equities").length,
-    macro: ANALYST_DESKS_44.filter((d) => d.category === "macro").length,
-    crypto: ANALYST_DESKS_44.filter((d) => d.category === "crypto").length,
-    meme: ANALYST_DESKS_44.filter((d) => d.category === "meme").length,
-    quant: ANALYST_DESKS_44.filter((d) => d.category === "quant").length,
+    all: catalogDesks.length,
+    equities: catalogDesks.filter((d) => d.category === "equities").length,
+    macro: catalogDesks.filter((d) => d.category === "macro").length,
+    crypto: catalogDesks.filter((d) => d.category === "crypto").length,
+    meme: catalogDesks.filter((d) => d.category === "meme").length,
+    quant: catalogDesks.filter((d) => d.category === "quant").length,
   };
 
   return (
@@ -176,29 +197,54 @@ export default function AnalystDesksCatalog() {
                 {desk.proOnly && <WhopBadge size="xs" />}
               </div>
 
-              <p className="mt-2 text-xs text-muted line-clamp-3 leading-relaxed">
-                {desk.summary}
-              </p>
+{desk.proOnly && !isUnlocked ? (
+  <div className="mt-3.5 rounded-lg border border-gold/20 bg-gold/[0.04] p-3">
+    <p className="text-xs font-semibold text-gold">Member-only desk</p>
+    <p className="mt-1 text-[11px] leading-relaxed text-muted">
+      Full analysis, key metric, and focus tickers are included with lifetime access.
+    </p>
+    <button
+      className="mt-3 text-xs font-semibold text-gold transition hover:text-gold-bright"
+      onClick={() => openWhopModal(desk.name)}
+      type="button"
+    >
+      Unlock this desk
+    </button>
+  </div>
+) : memberDesksError && desk.proOnly ? (
+  <p aria-live="polite" className="mt-3.5 text-xs text-rose-300">
+    Member desk details are temporarily unavailable.
+  </p>
+) : !memberDesks && desk.proOnly ? (
+  <p aria-live="polite" className="mt-3.5 text-xs text-muted">
+    Loading member desk details…
+  </p>
+) : (
+  <>
+    <p className="mt-2 text-xs text-muted line-clamp-3 leading-relaxed">
+      {desk.summary}
+    </p>
 
-              {/* Key Metric & Focus Tickers */}
-              <div className="mt-3.5 rounded-lg border border-line/60 bg-ink-950 p-2.5 text-[11px] space-y-1.5 font-mono">
-                <div className="flex justify-between items-center text-muted">
-                  <span className="text-[10px] uppercase">Key Metric:</span>
-                  <span className="text-bone/90 font-semibold truncate ml-1">{desk.keyMetric}</span>
-                </div>
-                <div className="flex items-center gap-1 pt-1 border-t border-line/40 flex-wrap">
-                  <span className="text-[10px] text-muted mr-1">Focus:</span>
-                  {desk.focusTickers.map((t) => (
-                    <Link
-                      key={t}
-                      href={`/ticker/${t.replace("-PERP", "")}`}
-                      className="rounded bg-ink-850 px-1.5 py-0.2 text-[9px] text-gold hover:text-gold-bright transition border border-line/60"
-                    >
-                      ${t}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+    <div className="mt-3.5 rounded-lg border border-line/60 bg-ink-950 p-2.5 text-[11px] space-y-1.5 font-mono">
+      <div className="flex justify-between items-center text-muted">
+        <span className="text-[10px] uppercase">Key Metric:</span>
+        <span className="text-bone/90 font-semibold truncate ml-1">{desk.keyMetric}</span>
+      </div>
+      <div className="flex items-center gap-1 pt-1 border-t border-line/40 flex-wrap">
+        <span className="text-[10px] text-muted mr-1">Focus:</span>
+        {(desk.focusTickers ?? []).map((t) => (
+          <Link
+            key={t}
+            href={`/ticker/${t.replace("-PERP", "")}`}
+            className="rounded bg-ink-850 px-1.5 py-0.2 text-[9px] text-gold hover:text-gold-bright transition border border-line/60"
+          >
+            ${t}
+          </Link>
+        ))}
+      </div>
+    </div>
+  </>
+  )}
             </div>
 
             <div className="mt-4 border-t border-line/60 pt-3 flex items-center justify-between text-[11px]">

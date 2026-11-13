@@ -251,26 +251,11 @@ export const COURSE_BY_SLUG: Record<string, Course> = Object.fromEntries(
 
 export const PLANS = [
   {
-    id: "reader",
-    name: "Reader",
-    price: 0,
-    cadence: "Free forever",
-    tagline: "For learning the framework.",
-    features: [
-      "Daily trend scores across 26 tracked assets",
-      "Two free research pieces per month",
-      "Foundation course: Reading a Trend",
-      "Weekly market pulse newsletter",
-    ],
-    cta: "Start free",
-    highlight: false,
-  },
-  {
     id: "premium",
-    name: "Premium",
-    price: 29,
-    cadence: "per month",
-    tagline: "For the active self-directed investor.",
+    name: "Lifetime Premium",
+    price: 2497,
+    cadence: "one-time payment",
+    tagline: "One payment. Lifetime access.",
     features: [
       "Every research piece, uncut",
       "Stance, conviction and invalidation level on every asset",
@@ -278,25 +263,9 @@ export const PLANS = [
       "All four Academy courses",
       "Watchlist with score-change alerts",
       "Model portfolios: core, tactical, digital assets",
+      "No recurring charges or renewal",
     ],
-    cta: "Start 14-day trial",
+    cta: "Buy lifetime access",
     highlight: true,
-  },
-  {
-    id: "institutional",
-    name: "Institutional",
-    price: 249,
-    cadence: "per seat / month",
-    tagline: "For teams who need the audit trail.",
-    features: [
-      "Everything in Premium",
-      "Multi-seat access with shared watchlists",
-      "Signal history and model-change log (CSV)",
-      "Monthly strategy call with the research desk",
-      "Event calendar: earnings, unlocks, macro prints",
-      "API access to trend scores",
-    ],
-    cta: "Talk to the desk",
-    highlight: false,
   },
 ];

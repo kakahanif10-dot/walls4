@@ -97,7 +97,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <div className="prose-editorial mt-8 max-w-3xl">
               <div>{renderBlocks([first])}</div>
               {article.premium ? (
-                <PremiumGate issue={article.title}>{renderBlocks(remainder)}</PremiumGate>
+// Protected article blocks are fetched only from the authenticated server endpoint.
+              <PremiumGate issue={article.title} slug={slug} />
               ) : (
                 <div>{renderBlocks(remainder)}</div>
               )}

@@ -1,12 +1,14 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import useSWR from "swr";
 import Link from "next/link";
 import Sparkline from "@/components/sparkline";
 import WatchlistButton from "@/components/watchlist-button";
 import WhopBadge from "@/components/whop-badge";
 import { LivePrice, LiveChange } from "@/components/live-price";
-import { fmtPct, stanceColor, type Row } from "@/lib/market";
+import { stanceColor } from "@/lib/market-format";
+import type { Kind, Row } from "@/lib/market";
 import { useWhop } from "@/lib/whop-context";
 import {
   ChevronLeft,
@@ -24,6 +26,14 @@ type SortKey = "score" | "change24h" | "change30d" | "name";
 
 const STANCES = ["All", "Buy", "Accumulate", "Hold", "Trim", "Avoid"] as const;
 const PREVIEW_LIMIT = 8;
+
+type MemberUniverseResponse = { rows: Row[] };
+
+async function fetchMemberUniverse(url: string): Promise<MemberUniverseResponse> {
+  const response = await fetch(url, { cache: "no-store" });
+  if (!response.ok) throw new Error("Member market data could not be loaded.");
+  return (await response.json()) as MemberUniverseResponse;
+}
 
 function dayTradeBadgeColor(bias: string) {
   switch (bias) {
@@ -52,8 +62,25 @@ function swingLongBadgeColor(bias: string) {
   }
 }
 
-export default function MarketExplorer({ rows }: { rows: Row[] }) {
+export default function MarketExplorer({
+  rows: previewRows,
+  kind,
+  totalRows,
+}: {
+  rows: Row[];
+  kind: Kind;
+  totalRows: number;
+}) {
   const { isUnlocked, openWhopModal } = useWhop();
+  const memberUniverseKey = isUnlocked
+    ? `/api/market-universe?kind=${encodeURIComponent(kind)}`
+    : null;
+  const {
+    data: memberUniverse,
+    isLoading: isLoadingMemberUniverse,
+    error: memberUniverseError,
+  } = useSWR(memberUniverseKey, fetchMemberUniverse, { revalidateOnFocus: false });
+  const rows = isUnlocked && memberUniverse ? memberUniverse.rows : previewRows;
 
   const [query, setQuery] = useState("");
   const [stance, setStance] = useState<(typeof STANCES)[number]>("All");
@@ -112,11 +139,12 @@ export default function MarketExplorer({ rows }: { rows: Row[] }) {
   };
 
   const handleViewAllClick = () => {
-    if (!isUnlocked) {
-      openWhopModal("View All 2,000+ Universe & Day Trade Alpha");
-      return;
-    }
-    setPageSize(0);
+  if (!isUnlocked) {
+    openWhopModal("View All 2,000+ Universe & Day Trade Alpha");
+    return;
+  }
+  if (!memberUniverse) return;
+  setPageSize(0);
     setPage(1);
   };
 
@@ -144,9 +172,13 @@ export default function MarketExplorer({ rows }: { rows: Row[] }) {
           <div>
             <div className="flex flex-wrap items-center gap-2">
               <span className="font-display text-sm sm:text-base font-semibold text-bone">
-                {isUnlocked
-                  ? `Full Universe Active: ${filtered.length} of ${rows.length} Assets Loaded`
-                  : `Member Only Preview: 8 of ${rows.length}+ Scored Assets`}
+{isUnlocked
+              ? memberUniverseError
+                ? "Member market data could not be loaded. Try again shortly."
+                : isLoadingMemberUniverse
+                  ? "Loading your verified market universe…"
+                  : `Full Universe Active: ${filtered.length} of ${rows.length} Assets Loaded`
+              : `Member Only Preview: ${Math.min(filtered.length, PREVIEW_LIMIT)} of ${totalRows} Scored Assets`}
               </span>
               <WhopBadge variant={isUnlocked ? "plus" : "wsj"} />
               <span className="rounded bg-gold/15 border border-gold/40 px-2 py-0.5 text-[10px] font-mono font-bold text-gold-bright">
@@ -168,15 +200,16 @@ export default function MarketExplorer({ rows }: { rows: Row[] }) {
         {/* View Mode Controls */}
         <div className="flex items-center gap-1.5 self-stretch sm:self-auto justify-end">
           <button
-            type="button"
-            onClick={handleViewAllClick}
+  type="button"
+  disabled={isUnlocked && !memberUniverse}
+  onClick={handleViewAllClick}
             className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all ${
               isUnlocked && isShowAll
                 ? "bg-gold text-ink-950 shadow-md ring-1 ring-gold"
                 : "border border-gold/40 bg-gold/10 text-gold-bright hover:bg-gold/20"
             }`}
           >
-            <span>⚡ View All ({rows.length})</span>
+            <span>{isUnlocked && !memberUniverse ? "Loading member data…" : `⚡ View All (${isUnlocked ? rows.length : totalRows})`}</span>
             {!isUnlocked && <WhopBadge variant="pro" className="ml-1" />}
           </button>
 
@@ -242,7 +275,7 @@ export default function MarketExplorer({ rows }: { rows: Row[] }) {
             <input
               value={query}
               onChange={(e) => handleQueryChange(e.target.value)}
-              placeholder={`Search ${rows.length}+ symbols, companies or themes...`}
+              placeholder={`Search ${isUnlocked ? rows.length : totalRows}+ symbols, companies or themes...`}
               className="w-full rounded-full border border-line bg-ink-900 px-4 py-1.5 text-xs sm:text-sm text-bone placeholder:text-muted/70 focus:border-gold/50 focus:outline-none lg:w-72"
             />
             {query && (

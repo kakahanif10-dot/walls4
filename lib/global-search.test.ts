@@ -11,13 +11,16 @@ test("Empty query returns curated featured items across assets, articles, and de
   assert.equal(result.assets[0].symbol, "NVDA");
 });
 
-test("Exact symbol search ranks exact asset match first and finds related articles and desks", () => {
+test("Exact symbol search ranks the asset first without exposing pro-only desk details", () => {
   const result = searchGlobalCatalog("nvda");
   assert.equal(result.isFeatured, false);
   assert.ok(result.assets.length > 0, "Should match NVDA asset");
   assert.equal(result.assets[0].symbol, "NVDA");
   assert.equal(result.assets[0].href, "/ticker/NVDA");
-  assert.ok(result.desks.some((d) => d.focusTickers.includes("NVDA")), "Should match AI desk focusing on NVDA");
+  assert.ok(
+    !result.desks.some((desk) => desk.id === "desk-ai-compute"),
+    "Public search must not reveal pro-only desk tickers",
+  );
 });
 
 test("Search by asset name, article topic, or analyst desk name returns relevant results", () => {

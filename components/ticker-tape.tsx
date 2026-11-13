@@ -2,7 +2,8 @@
 
 import FeedBadge from "@/components/feed-badge";
 import { useFeedMeta, useQuote } from "@/components/live-prices";
-import { fmtPct, fmtPrice, type Row } from "@/lib/market";
+import { fmtPct, fmtPrice } from "@/lib/market-format";
+import type { Row } from "@/lib/market";
 
 function TapeItem({ row }: { row: Row }) {
   const quote = useQuote(row.symbol);

@@ -23,7 +23,6 @@ export interface UserProfileData {
   email: string;
   displayName?: string;
   photoURL?: string;
-  plan?: "reader" | "premium" | "institutional";
   provider?: "supabase" | "firebase" | "guest";
   createdAt?: string;
   updatedAt?: string;
@@ -37,7 +36,6 @@ interface AuthContextValue {
   signInWithSupabaseEmail: (email: string, password?: string) => Promise<{ error: any }>;
   signUpWithSupabaseEmail: (email: string, password?: string) => Promise<{ error: any }>;
   signOutUser: () => Promise<void>;
-  updateUserPlan: (plan: "reader" | "premium" | "institutional") => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextValue>({
@@ -48,7 +46,6 @@ const AuthContext = createContext<AuthContextValue>({
   signInWithSupabaseEmail: async () => ({ error: null }),
   signUpWithSupabaseEmail: async () => ({ error: null }),
   signOutUser: async () => {},
-  updateUserPlan: async () => {},
 });
 
 export function AuthProvider({ children }: { children: ReactNode }) {
@@ -69,16 +66,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             email: u.email || "",
             displayName: u.displayName || "Desk Trader",
             photoURL: u.photoURL || "",
-            plan: "reader",
-            provider: "firebase",
             createdAt: now,
             updatedAt: now,
           };
           await setDoc(userRef, newProfile);
-          setProfile(newProfile);
+          setProfile({ ...newProfile, provider: "firebase" });
         } else {
-          const data = snap.data() as UserProfileData;
-          setProfile({ ...data, provider: "firebase" });
+          const data = snap.data();
+          setProfile({
+            uid: data.uid,
+            email: data.email,
+            displayName: data.displayName,
+            photoURL: data.photoURL,
+            createdAt: data.createdAt,
+            updatedAt: data.updatedAt,
+            provider: "firebase",
+          });
         }
       } else {
         // Supabase profile sync
@@ -87,7 +90,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           email: u.email,
           displayName: u.displayName || u.email.split("@")[0] || "Supabase Trader",
           photoURL: u.photoURL || "",
-          plan: "reader",
           provider: "supabase",
           createdAt: now,
           updatedAt: now,
@@ -99,7 +101,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         uid: u.uid,
         email: u.email,
         displayName: u.displayName || "Trader",
-        plan: "reader",
         provider,
         updatedAt: now,
       });
@@ -188,10 +189,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return { error };
     } else {
       // Magic link
-      const { data, error } = await supabase.auth.signInWithOtp({
+      const { error } = await supabase.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: typeof window !== "undefined" ? window.location.origin : undefined,
+          emailRedirectTo:
+            typeof window !== "undefined"
+              ? process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ?? `${window.location.origin}/auth/callback`
+              : undefined,
         },
       });
       return { error };
@@ -202,9 +206,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (!password) {
       return signInWithSupabaseEmail(email);
     }
-    const { data, error } = await supabase.auth.signUp({
+    const { error } = await supabase.auth.signUp({
       email,
       password,
+      options: {
+        emailRedirectTo:
+          typeof window !== "undefined"
+            ? process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ?? `${window.location.origin}/auth/callback`
+            : undefined,
+      },
     });
     return { error };
   }, [signInWithSupabaseEmail]);
@@ -221,22 +231,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const updateUserPlan = useCallback(async (newPlan: "reader" | "premium" | "institutional") => {
-    if (user?.uid) {
-      try {
-        const userRef = doc(db, "users", user.uid);
-        const now = new Date().toISOString();
-        await setDoc(userRef, { plan: newPlan, updatedAt: now }, { merge: true });
-      } catch {}
-    }
-    setProfile((prev) => (prev ? { ...prev, plan: newPlan, updatedAt: new Date().toISOString() } : {
-      uid: user?.uid || "user",
-      email: user?.email || "trader@nextwallstreet.com",
-      plan: newPlan,
-      updatedAt: new Date().toISOString(),
-    }));
-  }, [user]);
-
   return (
     <AuthContext.Provider
       value={{
@@ -247,7 +241,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         signInWithSupabaseEmail,
         signUpWithSupabaseEmail,
         signOutUser,
-        updateUserPlan,
       }}
     >
       {children}

@@ -25,8 +25,7 @@ export default async function WatchlistPage() {
             <WhopBadge className="ml-2 align-middle text-2xl" />
           </h1>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
-            Everything you have starred, with its current score and stance. Stored in this browser
-            only — no account needed for the free tier.
+            Everything you have starred, with its current score and stance. Stored in this browser only.
           </p>
         </div>
       </section>
