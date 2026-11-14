@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef, type MouseEvent } from "react";
-import LiveClock from "@/components/live-clock";
 import FeedBadge from "@/components/feed-badge";
 import AuthButton from "@/components/auth-button";
 import BrandMark from "@/components/brand-mark";
@@ -515,18 +514,6 @@ export default function SiteHeader() {
               )}
             </div>
 
-            <Link
-              href="/watchlist"
-              prefetch={isUnlocked ? undefined : false}
-              onClick={(e) => handleLockedNav(e, "Watchlist", "/watchlist")}
-              className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] xl:text-sm whitespace-nowrap transition-colors ${
-                isActive("/watchlist")
-                  ? "bg-ink-800 text-bone"
-                  : "text-muted hover:bg-ink-850 hover:text-bone"
-              }`}
-            >
-              <span>Watchlist</span>
-            </Link>
             <button
               type="button"
               onClick={() => {
@@ -542,10 +529,6 @@ export default function SiteHeader() {
 
           {/* Right Cluster */}
           <div className="hidden shrink-0 items-center gap-3 xl:gap-4 lg:flex">
-            <div className="hidden items-center gap-2.5 xl:flex">
-              <LiveClock compact />
-            </div>
-
             <button
               type="button"
               onClick={() => {
@@ -603,13 +586,12 @@ export default function SiteHeader() {
         {mobileOpen && (
           <nav className="max-h-[84vh] overflow-y-auto bg-ink-950/98 px-5 pb-6 pt-3 lg:hidden space-y-4">
             <div className="flex items-center justify-between rounded-xl bg-ink-900/60 px-3.5 py-2.5">
-              <LiveClock />
               <FeedBadge className="text-[10px] uppercase tracking-[0.14em] text-muted" />
             </div>
 
             {/* Standard Primary Navigation */}
             <div className="grid gap-1">
-              {[...SIMPLE_LINKS, { href: "/watchlist", label: "Watchlist" }].map((link) => (
+              {SIMPLE_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
