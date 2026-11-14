@@ -190,7 +190,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const { data, error } = await supabase.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: typeof window !== "undefined" ? window.location.origin : undefined,
+          emailRedirectTo:
+            process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ??
+            `${window.location.origin}/auth/callback`,
         },
       });
       return { error };
@@ -204,6 +206,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
+      options: {
+        emailRedirectTo:
+          process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ??
+          `${window.location.origin}/auth/callback`,
+        data: {
+          privacy_policy_version: "2026-11-14",
+          terms_version: "2026-11-14",
+        },
+      },
     });
     return { error };
   }, [signInWithSupabaseEmail]);
