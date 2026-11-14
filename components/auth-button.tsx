@@ -168,7 +168,7 @@ export default function AuthButton() {
               </label>
               {!isSignUp && <>
                 <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
-                  {([['google', 'Google'], ['facebook', 'Facebook']] as const).map(([provider, label]) => (
+                 {([['google', 'Google']] as const).map(([provider, label]) => (
                     <button key={provider} type="button" onClick={() => void handleOAuthSignIn(provider)} disabled={submitting || !acceptedPolicies} className="min-h-11 rounded-xl border border-ink-700 bg-ink-950 px-3 text-xs font-semibold text-bone transition hover:border-gold/50 disabled:cursor-not-allowed disabled:opacity-50">Continue with {label}</button>
                   ))}
                 </div>
