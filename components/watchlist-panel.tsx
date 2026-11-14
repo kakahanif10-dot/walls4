@@ -63,10 +63,10 @@ export default function WatchlistPanel({ rows }: { rows: Row[] }) {
         {!user && (
           <button
             type="button"
-            onClick={() => signInWithGoogle()}
+            onClick={() => window.dispatchEvent(new Event("open-auth-modal"))}
             className="text-xs text-gold hover:text-gold-bright transition-colors font-medium"
           >
-            Sign in with Google →
+            Sign in to sync →
           </button>
         )}
       </div>

@@ -508,7 +508,7 @@ export default function SiteHeader() {
                       onClick={() => setDirectoryOpen(false)}
                       className="font-medium text-gold-bright hover:underline"
                     >
-                      Get Lifetime Access →
+                      Lifetime Access Only →
                     </Link>
                   </div>
                 </div>
@@ -527,12 +527,17 @@ export default function SiteHeader() {
             >
               <span>Watchlist</span>
             </Link>
-            <a
-              href="mailto:support@nextwallstreet.com"
+            <button
+              type="button"
+              onClick={() => {
+                const widget = (window as Window & { contactWidget?: { showChat?: () => void; openFloat?: () => void } }).contactWidget;
+                if (widget?.showChat) widget.showChat();
+                else widget?.openFloat?.();
+              }}
               className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] xl:text-sm whitespace-nowrap text-muted transition-colors hover:bg-ink-850 hover:text-bone"
             >
               Customer Service
-            </a>
+            </button>
           </nav>
 
           {/* Right Cluster */}
@@ -560,7 +565,7 @@ export default function SiteHeader() {
               onClick={() => setDirectoryOpen(false)}
               className="rounded-full bg-gold px-4 py-1.5 text-[13px] xl:text-sm font-semibold whitespace-nowrap text-ink-950 transition-colors hover:bg-gold-bright"
             >
-              Get Lifetime Access
+              Lifetime Access Only
             </Link>
           </div>
 
@@ -604,7 +609,7 @@ export default function SiteHeader() {
 
             {/* Standard Primary Navigation */}
             <div className="grid gap-1">
-              {[...SIMPLE_LINKS, { href: "/watchlist", label: "Watchlist" }, { href: "mailto:support@nextwallstreet.com", label: "Customer Service" }].map((link) => (
+              {[...SIMPLE_LINKS, { href: "/watchlist", label: "Watchlist" }].map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -630,6 +635,18 @@ export default function SiteHeader() {
                   )}
                 </Link>
               ))}
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileOpen(false);
+                  const widget = (window as Window & { contactWidget?: { showChat?: () => void; openFloat?: () => void } }).contactWidget;
+                  if (widget?.showChat) widget.showChat();
+                  else widget?.openFloat?.();
+                }}
+                className="flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-sm text-muted hover:text-bone"
+              >
+                Customer Service
+              </button>
             </div>
 
             {/* Single Unified Trade Tools Directory (32 items) */}
@@ -689,7 +706,7 @@ export default function SiteHeader() {
                 onClick={() => setMobileOpen(false)}
                 className="rounded-full bg-gold px-4 py-2 text-xs font-semibold text-ink-950"
               >
-                Get Lifetime Access
+                Lifetime Access Only
               </Link>
             </div>
           </nav>

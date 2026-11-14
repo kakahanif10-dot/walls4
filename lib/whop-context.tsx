@@ -376,7 +376,7 @@ export function WhopProvider({ children }: { children: ReactNode }) {
                       onClick={handleCheckoutStarted}
                       className="flex w-full items-center justify-center rounded-full bg-gold px-6 py-3.5 text-xs font-bold tracking-wide text-ink-950 transition hover:bg-gold-bright shadow-lg"
                     >
-                      Continue to Lifetime Premium checkout — $1,487 USD
+                      Get Lifetime Access Only — $1,487 USD
                     </a>
                   ) : (
                     <button
@@ -391,7 +391,7 @@ export function WhopProvider({ children }: { children: ReactNode }) {
                       }}
                       className="flex w-full items-center justify-center rounded-full bg-gold px-6 py-3.5 text-xs font-bold tracking-wide text-ink-950 transition hover:bg-gold-bright shadow-lg"
                     >
-                      Continue to Lifetime Premium checkout — $1,487 USD
+                      Get Lifetime Access Only — $1,487 USD
                     </button>
                   )}
 
@@ -403,8 +403,7 @@ export function WhopProvider({ children }: { children: ReactNode }) {
                   )}
 
                   <p className="text-[11px] leading-relaxed text-muted/85 text-center">
-                    You will continue to Whop to complete the one-time $1,487 USD settlement. Full
-                    platform access activates immediately upon payment verification.
+                    Lifetime Access Only: pay $1,487 USD once through Whop. There are no monthly or annual plans. Full access activates after payment verification.
                   </p>
 
                   <div className="pt-1">

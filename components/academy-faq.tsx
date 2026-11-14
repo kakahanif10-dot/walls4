@@ -23,7 +23,7 @@ const FAQ_ITEMS: FAQItem[] = [
   {
     question: "Are there any recurring monthly or annual subscription fees?",
     answer:
-      "No. Lifetime Premium is a single one-time payment of $1,487 USD processed through Whop, with zero recurring monthly renewals or hidden charges.",
+      "No. Lifetime Access Only is the only plan: one $1,487 USD payment through Whop, with no monthly or annual subscription or renewals.",
   },
   {
     question: "Do I need to keep a browser window open during market hours?",
@@ -65,7 +65,7 @@ export default function AcademyFAQ() {
         </div>
 
         <div className="rounded-xl bg-gold/15 px-4 py-2.5 text-xs font-medium text-gold-bright shrink-0">
-          $1,487 USD One-Time · Lifetime Access
+          LIFETIME ACCESS ONLY · $1,487 USD ONCE
         </div>
       </div>
 
@@ -150,7 +150,7 @@ export default function AcademyFAQ() {
             href="/pricing"
             className="rounded-xl bg-gold px-5 py-2.5 text-xs font-bold text-ink-950 hover:bg-gold-bright transition shadow"
           >
-            Continue to Lifetime Premium — $1,487 USD
+            Get Lifetime Access Only — $1,487 USD
           </Link>
         </div>
       </div>

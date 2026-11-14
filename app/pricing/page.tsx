@@ -3,9 +3,9 @@ import Link from "next/link";
 import PricingPlans from "@/components/pricing-plans";
 
 export const metadata: Metadata = {
-  title: "Lifetime Premium ($1,487 USD) — NextWallStreet",
+  title: "Lifetime Access Only ($1,487 USD Once) — NextWallStreet",
   description:
-    "Lifetime Premium is a single one-time payment of $1,487 USD for all 2,038+ daily trend scores, exact invalidation levels, 70 research desks, 60 Academy lessons, and 32 trade tools.",
+    "Lifetime Access Only: one $1,487 USD payment unlocks all 2,038+ daily trend scores, exact invalidation levels, 70 research desks, 60 Academy lessons, and 32 trade tools. No monthly or annual plans.",
 };
 
 const FAQ = [
@@ -23,7 +23,7 @@ const FAQ = [
   },
   {
     q: "What is included in $1,487 USD Lifetime Premium?",
-    a: "A single one-time payment of $1,487 USD permanently unlocks all 2,038+ daily trend scores, exact invalidation levels, 70 research desks, all four Academy courses (60 video masterclasses), 32 trade tools, score-change alerts, and all future desk updates with zero recurring monthly or annual fees.",
+    a: "Lifetime Access Only is one $1,487 USD payment. It permanently unlocks all 2,038+ daily trend scores, exact invalidation levels, 70 research desks, all four Academy courses (60 video masterclasses), 32 trade tools, score-change alerts, and future desk updates. There is no monthly or annual plan.",
   },
 ];
 
@@ -33,7 +33,7 @@ export default function PricingPage() {
       <section className="grain">
         <div className="mx-auto max-w-7xl px-5 py-10 sm:py-12 text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
-            Lifetime Premium · $1,487 USD
+            Lifetime Access Only · $1,487 USD · One-Time Payment
           </p>
           <h1 className="mx-auto mt-3 max-w-2xl font-display text-3xl leading-tight text-bone sm:text-5xl">
             Analysis you can audit. One-time lifetime purchase.

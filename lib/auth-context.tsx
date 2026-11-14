@@ -8,15 +8,23 @@ import {
   useCallback,
   type ReactNode,
 } from "react";
-import { supabase } from "./supabase";
 import {
+  createUserWithEmailAndPassword,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
   signInWithPopup,
+  sendPasswordResetEmail,
+  sendSignInLinkToEmail,
+  isSignInWithEmailLink,
+  signInWithEmailLink,
+  signInWithPhoneNumber,
   signOut as fbSignOut,
+  type ConfirmationResult,
+  type RecaptchaVerifier,
   type User,
 } from "firebase/auth";
 import { doc, setDoc, getDoc } from "firebase/firestore";
-import { auth, db, googleAuthProvider } from "./firebase";
+import { auth, db, googleAuthProvider, appleAuthProvider, facebookAuthProvider } from "./firebase";
 
 export interface UserProfileData {
   uid: string;
@@ -24,20 +32,30 @@ export interface UserProfileData {
   displayName?: string;
   photoURL?: string;
   plan?: "reader" | "premium" | "institutional";
-  provider?: "supabase" | "firebase" | "guest";
+  privacyPolicyAcceptedAt?: string;
+  termsAcceptedAt?: string;
+  privacyPolicyVersion?: string;
+  termsVersion?: string;
+  provider?: "firebase" | "guest";
   createdAt?: string;
   updatedAt?: string;
 }
 
 interface AuthContextValue {
-  user: User | { uid: string; email: string; displayName?: string; photoURL?: string } | null;
+  user: User | null;
   profile: UserProfileData | null;
   loading: boolean;
-  signInWithGoogle: () => Promise<void>;
-  signInWithSupabaseEmail: (email: string, password?: string) => Promise<{ error: any }>;
-  signUpWithSupabaseEmail: (email: string, password?: string) => Promise<{ error: any }>;
+  signInWithGoogle: (acceptedPolicies: boolean) => Promise<void>;
+  signInWithApple: (acceptedPolicies: boolean) => Promise<void>;
+  signInWithFacebook: (acceptedPolicies: boolean) => Promise<void>;
+  sendEmailSignInLink: (email: string) => Promise<void>;
+  completeEmailSignIn: (email: string) => Promise<void>;
+  sendPasswordReset: (email: string) => Promise<void>;
+  requestPhoneCode: (phone: string, verifier: RecaptchaVerifier) => Promise<ConfirmationResult>;
+  verifyPhoneCode: (confirmation: ConfirmationResult, code: string, acceptedPolicies: boolean) => Promise<void>;
+  signInWithEmail: (email: string, password: string, acceptedPolicies: boolean) => Promise<void>;
+  signUpWithEmail: (email: string, password: string, acceptedPolicies: boolean) => Promise<void>;
   signOutUser: () => Promise<void>;
-  updateUserPlan: (plan: "reader" | "premium" | "institutional") => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextValue>({
@@ -45,207 +63,129 @@ const AuthContext = createContext<AuthContextValue>({
   profile: null,
   loading: true,
   signInWithGoogle: async () => {},
-  signInWithSupabaseEmail: async () => ({ error: null }),
-  signUpWithSupabaseEmail: async () => ({ error: null }),
+  signInWithApple: async () => {},
+  signInWithFacebook: async () => {},
+  sendEmailSignInLink: async () => {},
+  completeEmailSignIn: async () => {},
+  sendPasswordReset: async () => {},
+  requestPhoneCode: async () => { throw new Error("Phone sign-in is unavailable."); },
+  verifyPhoneCode: async () => {},
+  signInWithEmail: async () => {},
+  signUpWithEmail: async () => {},
   signOutUser: async () => {},
-  updateUserPlan: async () => {},
 });
 
+const POLICY_VERSION = "2026-11-14";
+
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<UserProfileData | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Sync profile to local/database
-  const syncProfile = useCallback(async (u: { uid: string; email: string; displayName?: string; photoURL?: string }, provider: "supabase" | "firebase") => {
+  const syncProfile = useCallback(async (account: User, acceptedPolicies = false) => {
+    const userRef = doc(db, "users", account.uid);
     const now = new Date().toISOString();
     try {
-      if (provider === "firebase") {
-        const userRef = doc(db, "users", u.uid);
-        const snap = await getDoc(userRef);
-        if (!snap.exists()) {
-          const firestoreProfile = {
-            uid: u.uid,
-            email: u.email || "",
-            displayName: u.displayName || "Desk Trader",
-            photoURL: u.photoURL || "",
-            plan: "reader" as const,
-            createdAt: now,
-            updatedAt: now,
-          };
-          await setDoc(userRef, firestoreProfile);
-          setProfile({ ...firestoreProfile, provider: "firebase" });
-        } else {
-          const data = snap.data() as UserProfileData;
-          setProfile({ ...data, provider: "firebase" });
-        }
-      } else {
-        // Supabase profile sync
-        setProfile({
-          uid: u.uid,
-          email: u.email,
-          displayName: u.displayName || u.email.split("@")[0] || "Supabase Trader",
-          photoURL: u.photoURL || "",
-          plan: "reader",
-          provider: "supabase",
-          createdAt: now,
-          updatedAt: now,
-        });
-      }
-    } catch (err) {
-      console.warn("Could not sync user profile:", err);
-      setProfile({
-        uid: u.uid,
-        email: u.email,
-        displayName: u.displayName || "Trader",
-        plan: "reader",
-        provider,
+      const snapshot = await getDoc(userRef);
+      const existing = snapshot.exists() ? snapshot.data() : null;
+      const accountProfile = {
+        uid: account.uid,
+        email: account.email || "",
+        displayName: account.displayName || account.email?.split("@")[0] || "Trader",
+        photoURL: account.photoURL || "",
         updatedAt: now,
-      });
-    }
-  }, []);
-
-  useEffect(() => {
-    let mounted = true;
-
-    // Check Supabase session first
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session?.user && mounted) {
-        const suUser = {
-          uid: session.user.id,
-          email: session.user.email || "",
-          displayName: session.user.user_metadata?.full_name || session.user.email?.split("@")[0],
-          photoURL: session.user.user_metadata?.avatar_url,
-        };
-        setUser(suUser);
-        syncProfile(suUser, "supabase");
-        setLoading(false);
-      } else {
-        // Fallback to Firebase auth listener
-        const unsubscribe = onAuthStateChanged(auth, async (fbUser) => {
-          if (!mounted) return;
-          if (fbUser) {
-            setUser(fbUser);
-            await syncProfile({
-              uid: fbUser.uid,
-              email: fbUser.email || "",
-              displayName: fbUser.displayName || undefined,
-              photoURL: fbUser.photoURL || undefined,
-            }, "firebase");
-          } else {
-            setUser(null);
-            setProfile(null);
-          }
-          setLoading(false);
-        });
-        return () => unsubscribe();
-      }
-    });
-
-    const { data: authListener } = supabase.auth.onAuthStateChange(async (event, session) => {
-      if (session?.user && mounted) {
-        const suUser = {
-          uid: session.user.id,
-          email: session.user.email || "",
-          displayName: session.user.user_metadata?.full_name || session.user.email?.split("@")[0],
-          photoURL: session.user.user_metadata?.avatar_url,
-        };
-        setUser(suUser);
-        syncProfile(suUser, "supabase");
-      }
-    });
-
-    return () => {
-      mounted = false;
-      authListener.subscription.unsubscribe();
-    };
-  }, [syncProfile]);
-
-  const signInWithGoogle = useCallback(async () => {
-    try {
-      const cred = await signInWithPopup(auth, googleAuthProvider);
-      if (cred.user) {
-        await syncProfile({
-          uid: cred.user.uid,
-          email: cred.user.email || "",
-          displayName: cred.user.displayName || undefined,
-          photoURL: cred.user.photoURL || undefined,
-        }, "firebase");
-      }
+        ...(existing ? {} : { plan: "reader" as const, createdAt: now }),
+        ...(acceptedPolicies ? {
+          privacyPolicyAcceptedAt: now,
+          termsAcceptedAt: now,
+          privacyPolicyVersion: POLICY_VERSION,
+          termsVersion: POLICY_VERSION,
+        } : {}),
+      };
+      await setDoc(userRef, accountProfile, { merge: true });
+      const nextProfile = { ...(existing || {}), ...accountProfile, provider: "firebase" as const } as UserProfileData;
+      setProfile(nextProfile);
     } catch (error) {
-      console.error("Sign-in error:", error);
-      throw error;
-    }
-  }, [syncProfile]);
-
-  const signInWithSupabaseEmail = useCallback(async (email: string, password?: string) => {
-    if (password) {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
+      console.warn("Could not sync user profile:", error);
+      setProfile({
+        uid: account.uid,
+        email: account.email || "",
+        displayName: account.displayName || "Trader",
+        provider: "firebase",
       });
-      return { error };
-    } else {
-      // Magic link
-      const { data, error } = await supabase.auth.signInWithOtp({
-        email,
-        options: {
-          emailRedirectTo:
-            process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ??
-            `${window.location.origin}/auth/callback`,
-        },
-      });
-      return { error };
+      if (acceptedPolicies) throw error;
     }
   }, []);
 
-  const signUpWithSupabaseEmail = useCallback(async (email: string, password?: string) => {
-    if (!password) {
-      return signInWithSupabaseEmail(email);
-    }
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo:
-          process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ??
-          `${window.location.origin}/auth/callback`,
-        data: {
-          privacy_policy_version: "2026-11-14",
-          terms_version: "2026-11-14",
-        },
-      },
+  useEffect(() => onAuthStateChanged(auth, async (account) => {
+    setUser(account);
+    if (account) await syncProfile(account);
+    else setProfile(null);
+    setLoading(false);
+  }), [syncProfile]);
+
+  const signInWithGoogle = useCallback(async (acceptedPolicies: boolean) => {
+    if (!acceptedPolicies) throw new Error("Please accept the Privacy Policy and Terms of Service first.");
+    const credential = await signInWithPopup(auth, googleAuthProvider);
+    await syncProfile(credential.user, true);
+  }, [syncProfile]);
+
+  const signInWithApple = useCallback(async (acceptedPolicies: boolean) => {
+    if (!acceptedPolicies) throw new Error("Please accept the Privacy Policy and Terms of Service first.");
+    const credential = await signInWithPopup(auth, appleAuthProvider);
+    await syncProfile(credential.user, true);
+  }, [syncProfile]);
+
+  const signInWithFacebook = useCallback(async (acceptedPolicies: boolean) => {
+    if (!acceptedPolicies) throw new Error("Please accept the Privacy Policy and Terms of Service first.");
+    const credential = await signInWithPopup(auth, facebookAuthProvider);
+    await syncProfile(credential.user, true);
+  }, [syncProfile]);
+
+  const sendEmailSignInLink = useCallback(async (email: string) => {
+    await sendSignInLinkToEmail(auth, email.trim(), {
+      url: typeof window !== "undefined" ? window.location.href : "https://nextwallstreet.com",
+      handleCodeInApp: true,
     });
-    return { error };
-  }, [signInWithSupabaseEmail]);
+  }, []);
+
+  const completeEmailSignIn = useCallback(async (email: string) => {
+    if (!isSignInWithEmailLink(auth, window.location.href)) throw new Error("This sign-in link is invalid or has expired.");
+    const credential = await signInWithEmailLink(auth, email.trim(), window.location.href);
+    await syncProfile(credential.user, true);
+  }, [syncProfile]);
+
+  const sendPasswordReset = useCallback(async (email: string) => {
+    await sendPasswordResetEmail(auth, email.trim());
+  }, []);
+
+  const requestPhoneCode = useCallback(async (phone: string, verifier: RecaptchaVerifier) => {
+    return signInWithPhoneNumber(auth, phone.trim(), verifier);
+  }, []);
+
+  const verifyPhoneCode = useCallback(async (confirmation: ConfirmationResult, code: string, acceptedPolicies: boolean) => {
+    if (!acceptedPolicies) throw new Error("Please accept the Privacy Policy and Terms of Service first.");
+    const credential = await confirmation.confirm(code.trim());
+    await syncProfile(credential.user, true);
+  }, [syncProfile]);
+
+  const signInWithEmail = useCallback(async (email: string, password: string, acceptedPolicies: boolean) => {
+    if (!acceptedPolicies) throw new Error("Please accept the Privacy Policy and Terms of Service first.");
+    const credential = await signInWithEmailAndPassword(auth, email.trim(), password);
+    await syncProfile(credential.user, true);
+  }, [syncProfile]);
+
+  const signUpWithEmail = useCallback(async (email: string, password: string, acceptedPolicies: boolean) => {
+    if (!acceptedPolicies) throw new Error("Please accept the Privacy Policy and Terms of Service first.");
+    const credential = await createUserWithEmailAndPassword(auth, email.trim(), password);
+    await syncProfile(credential.user, true);
+  }, [syncProfile]);
 
   const signOutUser = useCallback(async () => {
-    try {
-      await supabase.auth.signOut();
-      await fbSignOut(auth).catch(() => {});
-      setUser(null);
-      setProfile(null);
-    } catch (error) {
-      console.error("Sign-out error:", error);
-      throw error;
-    }
+    await fbSignOut(auth);
+    setUser(null);
+    setProfile(null);
   }, []);
-
-  const updateUserPlan = useCallback(async (newPlan: "reader" | "premium" | "institutional") => {
-    if (user?.uid) {
-      try {
-        const userRef = doc(db, "users", user.uid);
-        const now = new Date().toISOString();
-        await setDoc(userRef, { plan: newPlan, updatedAt: now }, { merge: true });
-      } catch {}
-    }
-    setProfile((prev) => (prev ? { ...prev, plan: newPlan, updatedAt: new Date().toISOString() } : {
-      uid: user?.uid || "user",
-      email: user?.email || "trader@nextwallstreet.com",
-      plan: newPlan,
-      updatedAt: new Date().toISOString(),
-    }));
-  }, [user]);
 
   return (
     <AuthContext.Provider
@@ -254,10 +194,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         profile,
         loading,
         signInWithGoogle,
-        signInWithSupabaseEmail,
-        signUpWithSupabaseEmail,
+        signInWithApple,
+        signInWithFacebook,
+        sendEmailSignInLink,
+        completeEmailSignIn,
+        sendPasswordReset,
+        requestPhoneCode,
+        verifyPhoneCode,
+        signInWithEmail,
+        signUpWithEmail,
         signOutUser,
-        updateUserPlan,
       }}
     >
       {children}
