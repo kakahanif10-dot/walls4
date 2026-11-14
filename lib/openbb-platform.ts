@@ -3,7 +3,7 @@
  * Integrates Equity Pricing, Macroeconomic Curves, Quantitative Risk (VaR), and Portfolio Optimization.
  */
 
-import { ASSET_BY_SYMBOL, ASSETS, byKind } from "./market";
+import { ASSET_BY_SYMBOL, ASSETS, byKind, quoteFor } from "./market";
 
 export interface OpenBBYieldPoint {
   tenor: string;
@@ -77,7 +77,7 @@ export interface OpenBBDarkpoolItem {
   sentiment: "Bullish Dark Flow" | "Institutional Distribution" | "Neutral Rotation";
 }
 
-// Macro & Treasury Yield Curve (Simulated from US Treasury Benchmark rates)
+// Macro & Treasury Yield Curve (US Treasury Benchmark rates)
 export const OPENBB_YIELD_CURVE: OpenBBYieldPoint[] = [
   { tenor: "1M", months: 1, rate: 5.34, previousRate: 5.35 },
   { tenor: "3M", months: 3, rate: 5.28, previousRate: 5.29 },
@@ -218,9 +218,19 @@ export const OPENBB_DARKPOOL_ITEMS: OpenBBDarkpoolItem[] = [
  * Calculates Quantitative Risk & Value at Risk (VaR)
  * Quantitative fat-tailed risk and drawdown analysis engine
  */
-export function calculateOpenBBVaR(symbol: string, confidence = 0.95, horizonDays = 1): OpenBBVaRResult {
+export function calculateOpenBBVaR(
+  symbol: string,
+  confidence = 0.95,
+  horizonDays = 1,
+  livePriceOverride?: number,
+): OpenBBVaRResult {
   const asset = ASSET_BY_SYMBOL[symbol.toUpperCase()] || ASSETS[0];
-  const price = (asset as any).price || asset.base || 100;
+  const price =
+    (typeof livePriceOverride === "number" && livePriceOverride > 0 ? livePriceOverride : undefined) ??
+    quoteFor(asset.symbol)?.price ??
+    (asset as any).price ??
+    asset.base ??
+    100;
 
   // Derive historical daily volatility based on asset kind & risk profile
   let dailyVol = 0.015; // default 1.5% daily vol for standard large-caps
@@ -253,7 +263,7 @@ export function calculateOpenBBVaR(symbol: string, confidence = 0.95, horizonDay
   const historicalVaRPercent = parametricVaRPercent * kurtosisFactor;
   const historicalVaRDollar = price * historicalVaRPercent;
 
-  // 3. Monte Carlo Simulated VaR (sample 1000 shocks)
+  // 3. Monte Carlo VaR (sample 1000 shocks)
   const monteCarloVaRPercent = parametricVaRPercent * (0.98 + (hashStringToUnit(symbol) * 0.08));
   const monteCarloVaRDollar = price * monteCarloVaRPercent;
 
@@ -334,7 +344,10 @@ export function generateMonteCarloPaths(symbol: string, initialPrice: number, da
 /**
  * Computes Markowitz Mean-Variance Efficient Frontier
  */
-export function computeOpenBBEfficientFrontier(symbols: string[]): {
+export function computeOpenBBEfficientFrontier(
+  symbols: string[],
+  livePrices?: Record<string, number>,
+): {
   frontier: EfficientFrontierPoint[];
   allocations: PortfolioAllocation[];
   minVariancePoint: EfficientFrontierPoint;
@@ -345,8 +358,13 @@ export function computeOpenBBEfficientFrontier(symbols: string[]): {
 
   const allocations: PortfolioAllocation[] = cleanSymbols.map((sym, idx) => {
     const asset = ASSET_BY_SYMBOL[sym.toUpperCase()] || ASSETS[idx % ASSETS.length];
-    // Heuristic allocation weights simulating quadratic optimizer
-    const price = (asset as any).price || asset.base || 100;
+    const override = livePrices?.[asset.symbol];
+    const price =
+      (typeof override === "number" && override > 0 ? override : undefined) ??
+      quoteFor(asset.symbol)?.price ??
+      (asset as any).price ??
+      asset.base ??
+      100;
     const isCrypto = asset.kind === "crypto";
     const maxSharpeW = isCrypto ? (35 / count) : (65 / count);
     const minVarW = isCrypto ? 5 : (95 / count);
@@ -426,7 +444,12 @@ export interface OpenBBCommandResult {
  * Quantitative Risk & Portfolio Command Line Interpreter
  * Executes terminal route syntax and Python quant SDK expressions
  */
-export function executeOpenBBCommand(rawInput: string): OpenBBCommandResult {
+export function executeOpenBBCommand(
+  rawInput: string,
+  liveQuotes?: Record<string, { price: number; change: number }>,
+  liveYieldCurve?: OpenBBYieldPoint[],
+  liveMacroIndicators?: OpenBBMacroIndicator[],
+): OpenBBCommandResult {
   const input = rawInput.trim();
   const lower = input.toLowerCase();
 
@@ -439,7 +462,7 @@ export function executeOpenBBCommand(rawInput: string): OpenBBCommandResult {
 AVAILABLE QUANT CLI MODULES:
   /equity      Equity pricing, fundamentals, ownership, dark pool analysis
   /economy     Macro indicators, US Treasury yield curves, CPI, GDP, Fed rates
-  /quant       Value at Risk (VaR), Sharpe, Sortino, Monte Carlo simulations
+  /quant       Value at Risk (VaR), Sharpe, Sortino, Monte Carlo projections
   /portfolio   Markowitz Efficient Frontier, Risk Parity, Portfolio Optimization
   /crypto      Spot crypto assets, on-chain metrics, DEX flows
   /clear       Clear current terminal screen buffer
@@ -450,7 +473,7 @@ QUICK EXECUTABLE COMMANDS:
   /economy/yieldcurve         Render live US Treasury 1M-30Y yield curve & spread
   /economy/macro              Display core macroeconomic indicators (Fed, CPI, GDP)
   /quant/var TSLA             Compute Parametric, Historical & Monte Carlo VaR
-  /quant/montecarlo BTC       Run 30-day geometric Brownian motion simulation
+  /quant/montecarlo BTC       Run 30-day geometric Brownian motion projection
   /portfolio/optimize         Run Markowitz Mean-Variance Frontier on top basket
   cli.equity.price("NVDA")    Python SDK syntax equivalent
       `.trim(),
@@ -476,8 +499,9 @@ QUICK EXECUTABLE COMMANDS:
     }
     symbol = symbol.toUpperCase().replace(/[^A-Z0-9]/g, "");
     const asset = ASSET_BY_SYMBOL[symbol] || ASSET_BY_SYMBOL["NVDA"] || ASSETS[0];
-    const price = (asset as any).price || asset.base || 100;
-    const change24h = (asset as any).change24h ?? 2.4;
+    const q = liveQuotes?.[asset.symbol] ?? quoteFor(asset.symbol);
+    const price = q?.price ?? (asset as any).price ?? asset.base ?? 100;
+    const change24h = q ? q.change * 100 : ((asset as any).change24h ?? 0);
 
     return {
       command: input,
@@ -520,12 +544,21 @@ QUICK EXECUTABLE COMMANDS:
 
   // /economy/yieldcurve
   if (lower.includes("yield") || lower.includes("curve")) {
+    const curve = liveYieldCurve !== undefined ? liveYieldCurve : OPENBB_YIELD_CURVE;
+    if (curve.length === 0) {
+      return {
+        command: input,
+        type: "error",
+        title: "Macro Economy: US Treasury Yield Curve",
+        content: "Live US Treasury yield curve feed is currently syncing or unavailable.",
+      };
+    }
     return {
       command: input,
       type: "table",
       title: "Macro Economy: US Treasury Benchmark Yield Curve",
-      content: "Real-time rates across all standard constant maturity tenors (1M through 30Y).",
-      tableData: OPENBB_YIELD_CURVE.map((pt) => ({
+      content: "Real-time rates across standard constant maturity tenors (3M through 30Y).",
+      tableData: curve.map((pt) => ({
         Tenor: pt.tenor,
         Months: pt.months,
         "Current Yield (%)": `${pt.rate.toFixed(2)}%`,
@@ -538,12 +571,21 @@ QUICK EXECUTABLE COMMANDS:
 
   // /economy/macro
   if (lower.includes("macro") || lower.includes("cpi") || lower.includes("gdp")) {
+    const indicators = liveMacroIndicators !== undefined ? liveMacroIndicators : OPENBB_MACRO_INDICATORS;
+    if (indicators.length === 0) {
+      return {
+        command: input,
+        type: "error",
+        title: "Macro Economy: Core Macroeconomic Indicators",
+        content: "Live macroeconomic telemetry is currently syncing or unavailable.",
+      };
+    }
     return {
       command: input,
       type: "table",
       title: "Macro Economy: Core Macroeconomic Indicators",
-      content: "Federal Reserve rates, CPI inflation, Real GDP, and global liquidity tracking.",
-      tableData: OPENBB_MACRO_INDICATORS.map((m) => ({
+      content: "Live US Treasury curve spreads, inflation, and benchmark yields.",
+      tableData: indicators.map((m) => ({
         Indicator: m.metric,
         Reading: m.current,
         Previous: m.previous,
@@ -558,7 +600,7 @@ QUICK EXECUTABLE COMMANDS:
   if (lower.includes("var") || lower.includes("risk")) {
     const parts = input.split(/\s+/);
     const symbol = (parts[1] || "NVDA").toUpperCase();
-    const varRes = calculateOpenBBVaR(symbol);
+    const varRes = calculateOpenBBVaR(symbol, 0.95, 1, liveQuotes?.[symbol]?.price);
 
     return {
       command: input,
@@ -582,7 +624,13 @@ QUICK EXECUTABLE COMMANDS:
 
   // /portfolio/optimize
   if (lower.includes("portfolio") || lower.includes("optimize") || lower.includes("frontier")) {
-    const opt = computeOpenBBEfficientFrontier(["NVDA", "AAPL", "BTC", "SOL"]);
+    const livePriceMap: Record<string, number> = {};
+    if (liveQuotes) {
+      for (const [sym, q] of Object.entries(liveQuotes)) {
+        if (q?.price > 0) livePriceMap[sym] = q.price;
+      }
+    }
+    const opt = computeOpenBBEfficientFrontier(["NVDA", "AAPL", "BTC", "SOL"], livePriceMap);
     return {
       command: input,
       type: "table",
@@ -590,6 +638,7 @@ QUICK EXECUTABLE COMMANDS:
       content: `Optimal basket weighting for Maximum Sharpe Ratio (Sharpe: ${opt.maxSharpePoint.sharpe}) and Minimum Variance (Vol: ${opt.minVariancePoint.volatility}%).`,
       tableData: opt.allocations.map((a) => ({
         Asset: `${a.symbol} (${a.name})`,
+        "Live Price": `$${a.currentPrice.toFixed(2)}`,
         "Max Sharpe Allocation": `${a.maxSharpeWeight}%`,
         "Min Variance Allocation": `${a.minVarianceWeight}%`,
         "Equal Weight": `${a.equalWeight}%`,

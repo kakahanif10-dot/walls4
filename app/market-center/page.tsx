@@ -12,15 +12,15 @@ export const metadata: Metadata = {
 export default function WSJPage() {
   return (
     <div>
-      <section className="grain border-b border-line/60 bg-stone-950">
-        <div className="mx-auto max-w-7xl px-5 py-12">
+      <section className="grain bg-stone-950">
+        <div className="mx-auto max-w-7xl px-5 py-10 sm:py-12">
           <nav className="flex items-center gap-2 text-xs text-stone-400">
             <Link href="/" className="hover:text-stone-100">Home</Link>
             <span className="text-stone-600">/</span>
             <span className="text-amber-400">Market Intelligence Hub</span>
           </nav>
           <div className="mt-4 flex items-center gap-2">
-            <span className="rounded bg-amber-500/10 border border-amber-500/30 px-2 py-0.5 text-[10px] font-serif font-bold uppercase tracking-wider text-amber-400">
+            <span className="rounded-lg bg-amber-500/15 px-3 py-1 text-[10px] font-serif font-bold uppercase tracking-wider text-amber-400">
               EQUITY &amp; MACRO INTELLIGENCE
             </span>
             <WhopBadge size="xs" />
@@ -34,7 +34,7 @@ export default function WSJPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-10">
+      <section className="mx-auto max-w-7xl px-5 py-8 sm:py-10">
         <WSJMarketCenter />
       </section>
     </div>

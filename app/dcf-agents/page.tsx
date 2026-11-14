@@ -5,7 +5,7 @@ import WhopBadge from "@/components/whop-badge";
 import { Terminal, Bot, BarChart2, Globe, Cpu } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI Allocator Agents, DCF & Options Greeks — NextWall Street",
+  title: "AI Allocator Agents, DCF & Options Greeks — NextWallStreet",
   description:
     "Institutional quantitative valuation suite featuring 37 AI allocator agents, Gordon Growth DCF modeling, Black-Scholes options pricing and Greeks, 100+ macro data connectors, paper trading execution, and visual strategy node automation.",
 };
@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 export default function FinceptPage() {
   return (
     <div className="min-h-screen bg-[#050609] text-[#f2efe8]">
-      <section className="relative overflow-hidden border-b border-[#d8ab5a]/20 bg-gradient-to-b from-[#120f09] via-[#080a0f] to-[#050609]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#120f09] via-[#080a0f] to-[#050609]">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(216,171,90,0.12),transparent_55%)]" />
-        <div className="relative mx-auto max-w-7xl px-5 py-12">
+        <div className="relative mx-auto max-w-7xl px-5 py-10 sm:py-12">
           <nav className="flex items-center gap-2 text-xs font-mono text-stone-400">
             <Link href="/" className="hover:text-[#f0c979] transition-colors">Home</Link>
             <span className="text-stone-600">/</span>
@@ -23,11 +23,11 @@ export default function FinceptPage() {
           </nav>
 
           <div className="mt-4 flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 rounded-md border border-[#d8ab5a]/35 bg-[#d8ab5a]/10 px-2.5 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-[#f0c979]">
+            <span className="inline-flex items-center gap-1.5 rounded-lg bg-[#d8ab5a]/15 px-3 py-1 text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-[#f0c979]">
               <Terminal className="h-3 w-3 text-[#d8ab5a]" />
               QUANTITATIVE VALUATION &amp; AGENT SUITE
             </span>
-            <span className="rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-[10px] font-mono text-stone-300">
+            <span className="rounded-lg bg-white/[0.06] px-3 py-1 text-[10px] font-mono text-stone-300">
               37 ALLOCATOR FRAMEWORKS · C++20 / PYTHON ENGINE
             </span>
             <WhopBadge size="xs" />
@@ -61,7 +61,7 @@ export default function FinceptPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-10">
+      <section className="mx-auto max-w-7xl px-5 py-8 sm:py-10">
         <FinceptTerminal />
       </section>
     </div>

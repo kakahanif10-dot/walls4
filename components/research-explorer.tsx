@@ -33,7 +33,7 @@ export default function ResearchExplorer({ articles }: { articles: Article[] }) 
   return (
     <div className="space-y-8">
       {/* 3-Category Menu Switcher Bar (Item 8) */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-line/60 pb-5">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pb-2">
         <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
@@ -41,7 +41,7 @@ export default function ResearchExplorer({ articles }: { articles: Article[] }) 
             className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition ${
               activeCategory === "all"
                 ? "bg-gold text-ink-950 shadow"
-                : "bg-ink-900 border border-line text-muted hover:text-bone"
+                : "bg-ink-900/75 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <Layers className="h-3.5 w-3.5" />
@@ -54,7 +54,7 @@ export default function ResearchExplorer({ articles }: { articles: Article[] }) 
             className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition ${
               activeCategory === "markets"
                 ? "bg-gold text-ink-950 shadow"
-                : "bg-ink-900 border border-line text-muted hover:text-bone"
+                : "bg-ink-900/75 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <BarChart3 className="h-3.5 w-3.5" />
@@ -67,7 +67,7 @@ export default function ResearchExplorer({ articles }: { articles: Article[] }) 
             className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition ${
               activeCategory === "crypto"
                 ? "bg-gold text-ink-950 shadow"
-                : "bg-ink-900 border border-line text-muted hover:text-bone"
+                : "bg-ink-900/75 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <Coins className="h-3.5 w-3.5" />
@@ -80,7 +80,7 @@ export default function ResearchExplorer({ articles }: { articles: Article[] }) 
             className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition ${
               activeCategory === "meme"
                 ? "bg-gold text-ink-950 shadow"
-                : "bg-ink-900 border border-line text-muted hover:text-bone"
+                : "bg-ink-900/75 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <Flame className="h-3.5 w-3.5" />
@@ -96,7 +96,7 @@ export default function ResearchExplorer({ articles }: { articles: Article[] }) 
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search 70 dossiers by ticker or topic..."
-            className="w-full rounded-xl border border-line bg-ink-900 pl-9 pr-3.5 py-2 text-xs text-bone placeholder:text-muted/50 focus:border-gold focus:outline-none"
+            className="w-full rounded-xl bg-ink-900/90 pl-9 pr-3.5 py-2 text-xs text-bone placeholder:text-muted/50 focus:outline-none focus:ring-1 focus:ring-gold/40"
           />
         </div>
       </div>
@@ -107,7 +107,7 @@ export default function ResearchExplorer({ articles }: { articles: Article[] }) 
           <Link
             key={article.slug}
             href={`/research/${article.slug}`}
-            className="group flex flex-col justify-between rounded-xl border border-line bg-ink-900/50 p-6 transition-all hover:border-gold/50 hover:bg-ink-900 shadow-sm"
+            className="group flex flex-col justify-between rounded-2xl bg-ink-900/55 p-6 transition-all hover:bg-ink-900/80 shadow-sm"
           >
             <div>
               <div className="flex items-center justify-between text-[10px] uppercase tracking-wider text-muted">
@@ -136,7 +136,7 @@ export default function ResearchExplorer({ articles }: { articles: Article[] }) 
                 {article.tickers.map((t) => (
                   <span
                     key={t}
-                    className="rounded bg-ink-950 border border-line px-1.5 py-0.5 font-mono text-[9px] text-bone/80"
+                    className="rounded-md bg-ink-950/75 px-2 py-0.5 font-mono text-[9px] text-bone/80"
                   >
                     ${t}
                   </span>
@@ -144,7 +144,7 @@ export default function ResearchExplorer({ articles }: { articles: Article[] }) 
               </div>
             </div>
 
-            <div className="mt-5 border-t border-line/60 pt-3 flex items-center justify-between text-[11px] text-muted">
+            <div className="mt-5 pt-2 flex items-center justify-between text-[11px] text-muted">
               <span>{article.author}</span>
               <span className="font-mono text-[10px]">{fmtDate(article.date)}</span>
             </div>
@@ -153,7 +153,7 @@ export default function ResearchExplorer({ articles }: { articles: Article[] }) 
       </div>
 
       {filtered.length === 0 && (
-        <div className="rounded-xl border border-line bg-ink-900 p-8 text-center text-sm text-muted">
+        <div className="rounded-2xl bg-ink-900/55 p-8 text-center text-sm text-muted">
           No research dossiers found matching &ldquo;{query}&rdquo;.
         </div>
       )}

@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { setMarketData, type FeedQuote, type RealTelemetry } from "@/lib/market";
 
 export type LiveSeedEntry = { price: number; change: number; vol: number };
 export type LiveSeed = Record<string, LiveSeedEntry>;
@@ -21,11 +22,12 @@ export type FeedMeta = {
 };
 
 type FeedResponse = {
-  mode?: "live" | "unavailable";
+  mode?: "live" | "real-time" | "unavailable";
   source?: string;
   asOf?: string | null;
   delayed?: boolean;
-  quotes?: Record<string, { price: number; change: number; previousClose: number }>;
+  quotes?: Record<string, FeedQuote>;
+  telemetry?: Record<string, RealTelemetry>;
 };
 
 const QuoteContext = createContext<Record<string, Quote> | null>(null);
@@ -33,10 +35,10 @@ const FeedContext = createContext<FeedMeta>({
   mode: "live",
   source: "",
   asOf: null,
-  delayed: true,
+  delayed: false,
 });
 
-const POLL_MS = 30_000;
+const POLL_MS = 10_000;
 
 /**
  * Quotes come from the server feed only. There is deliberately no client-side
@@ -46,7 +48,7 @@ const POLL_MS = 30_000;
 export default function LivePricesProvider({
   seed,
   source = "",
-  delayed = true,
+  delayed = false,
   children,
 }: {
   seed: LiveSeed;
@@ -56,18 +58,34 @@ export default function LivePricesProvider({
 }) {
   const initial = useMemo(() => {
     const out: Record<string, Quote> = {};
+    const seedQuotes: Record<string, FeedQuote> = {};
+    const seedIso = new Date().toISOString();
     for (const [symbol, entry] of Object.entries(seed)) {
       const denominator = 1 + entry.change;
+      const open = entry.price / (denominator > 0 ? denominator : 1);
       out[symbol] = {
         price: entry.price,
-        open: entry.price / (denominator > 0 ? denominator : 1),
+        open,
         change: entry.change,
         dir: 0,
         tick: 0,
       };
+      if (entry.price > 0) {
+        seedQuotes[symbol] = {
+          price: entry.price,
+          previousClose: open,
+          change: entry.change,
+          delayed: false,
+          asOf: seedIso,
+          provider: source || "Live Market Seed",
+        };
+      }
+    }
+    if (Object.keys(seedQuotes).length > 0) {
+      setMarketData({}, seedQuotes);
     }
     return out;
-  }, [seed]);
+  }, [seed, source]);
 
   const [quotes, setQuotes] = useState<Record<string, Quote>>(initial);
   const [meta, setMeta] = useState<FeedMeta>({
@@ -89,10 +107,12 @@ export default function LivePricesProvider({
         const data = (await response.json()) as FeedResponse;
         if (cancelled) return;
 
-        if (data?.mode !== "live" || !data.quotes) {
+        if ((data?.mode !== "live" && data?.mode !== "real-time") || !data.quotes) {
           setMeta((prev) => ({ ...prev, mode: "unavailable" }));
           return;
         }
+
+        setMarketData({}, data.quotes, data.telemetry);
 
         setMeta({
           mode: "live",
@@ -112,7 +132,9 @@ export default function LivePricesProvider({
               change:
                 row.previousClose > 0
                   ? row.price / row.previousClose - 1
-                  : (previous?.change ?? 0),
+                  : Number.isFinite(row.change)
+                    ? row.change
+                    : (previous?.change ?? 0),
               dir: !previous || row.price === previous.price ? 0 : row.price > previous.price ? 1 : -1,
               tick: (previous?.tick ?? 0) + 1,
             };
@@ -143,6 +165,11 @@ export default function LivePricesProvider({
 export function useQuote(symbol: string): Quote | undefined {
   const context = useContext(QuoteContext);
   return context ? context[symbol] : undefined;
+}
+
+export function useQuotes(): Record<string, Quote> {
+  const context = useContext(QuoteContext);
+  return context ?? {};
 }
 
 export function useFeedMeta(): FeedMeta {

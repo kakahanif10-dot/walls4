@@ -29,17 +29,17 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
 
   return (
     <div>
-      <section className="grain border-b border-line/60">
-        <div className="mx-auto max-w-7xl px-5 py-12">
+      <section className="grain">
+        <div className="mx-auto max-w-7xl px-5 py-10">
           <nav className="flex items-center gap-2 text-xs text-muted">
             <Link href="/academy" className="hover:text-bone">Academy</Link>
-            <span className="text-line">/</span>
+            <span className="text-muted/40">/</span>
             <span className="text-bone/80">{course.level}</span>
           </nav>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl leading-tight text-bone sm:text-5xl">
+          <h1 className="mt-4 max-w-3xl font-display text-3xl leading-tight text-bone sm:text-5xl">
             {course.title}
           </h1>
-          <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-muted">{course.summary}</p>
+          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">{course.summary}</p>
           <div className="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-xs text-muted">
             <span><span className="font-mono text-bone">{course.lessons.length}</span> lessons</span>
             <span><span className="font-mono text-bone">{minutes}</span> minutes</span>
@@ -51,18 +51,18 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
       </section>
 
       {/* Embedded Watchable Video Player */}
-      <section className="mx-auto max-w-7xl px-5 pt-8">
+      <section className="mx-auto max-w-7xl px-5 pt-6">
         <WatchableVideoPlayer courseTitle={course.title} />
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-12 lg:grid-cols-[1.5fr_0.7fr]">
+      <section className="mx-auto grid max-w-7xl gap-8 px-5 py-10 lg:grid-cols-[1.5fr_0.7fr]">
         <div>
           <h2 className="font-display text-2xl text-bone">Syllabus & Transcript Breakdown</h2>
           <div className="mt-5 space-y-3">
             {course.lessons.map((lesson, i) => (
               <details
                 key={lesson.title}
-                className="group rounded-xl border border-line bg-ink-900/50 px-5 py-4 transition hover:border-gold/30"
+                className="group rounded-2xl bg-ink-900/55 px-5 py-4 transition hover:bg-ink-900/85"
                 open={i === 0}
               >
                 <summary className="flex cursor-pointer items-center justify-between gap-4 list-none">
@@ -72,7 +72,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
                   </span>
                   <span className="shrink-0 text-[11px] text-muted">{lesson.minutes} min</span>
                 </summary>
-                <div className="mt-4 border-t border-line/60 pt-4 pl-8">
+                <div className="mt-4 rounded-xl bg-ink-950/60 p-4">
                   <p className="text-sm leading-relaxed text-muted">{lesson.summary}</p>
                   <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-gold">
                     Key takeaways
@@ -90,7 +90,7 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
             ))}
           </div>
 
-          <div className="mt-10 rounded-xl border border-line bg-ink-900/60 p-6">
+          <div className="mt-8 rounded-2xl bg-ink-900/55 p-6">
             <h2 className="font-display text-xl text-bone">What you will be able to do</h2>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
               {course.outcomes.map((outcome) => (
@@ -103,35 +103,34 @@ export default async function CoursePage({ params }: { params: Promise<{ slug: s
           </div>
         </div>
 
-        <aside className="space-y-6">
-          <div className="rounded-xl border border-gold/30 bg-gold/[0.05] p-6">
+        <aside className="space-y-5">
+          <div className="rounded-2xl bg-gold/[0.07] p-6">
             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">
-              {course.slug === "reading-trends" ? "Included in free plan" : "Premium access"}
+              Lifetime Premium
             </p>
             <p className="mt-3 text-sm leading-relaxed text-bone/85">
-              {course.slug === "reading-trends"
-                ? "The foundation course is free. The remaining three are included with Premium and Institutional plans."
-                : "Included with Premium and Institutional. Full lesson transcripts, worksheets and the model files are available to subscribers."}
+              Included with Lifetime Premium ($1,487 USD one-time). All four Academy courses,
+              transcripts, worksheets, and scoring models unlock permanently after payment verification.
             </p>
             <Link
               href="/pricing"
               className="mt-5 inline-block rounded-full bg-gold px-4 py-2 text-xs font-semibold text-ink-950 transition hover:bg-gold-bright"
             >
-              {course.slug === "reading-trends" ? "Start free" : "Unlock all courses"}
+              Lifetime Premium details
             </Link>
           </div>
 
-          <div className="rounded-xl border border-line bg-ink-900/70 p-6">
+          <div className="rounded-2xl bg-ink-900/60 p-6">
             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">Instructor</p>
             <p className="mt-3 font-display text-lg text-bone">{course.instructor}</p>
             <p className="text-xs text-muted">{course.instructorRole}</p>
             <p className="mt-3 text-sm leading-relaxed text-muted">
-              Publishes on the NextWall Street research desk and teaches the same framework used in the
+              Publishes on the NextWallStreet research desk and teaches the same framework used in the
               daily trend scores.
             </p>
           </div>
 
-          <div className="rounded-xl border border-line bg-ink-900/70 p-6">
+          <div className="rounded-2xl bg-ink-900/60 p-6">
             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">Other courses</p>
             <ul className="mt-3 space-y-3">
               {others.map((other) => (

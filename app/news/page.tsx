@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 export default function GoldNewsPage() {
   return (
     <div>
-      <section className="grain border-b border-line/60">
-        <div className="mx-auto max-w-7xl px-5 py-12">
+      <section className="grain">
+        <div className="mx-auto max-w-7xl px-5 py-10">
           <nav className="flex items-center gap-2 text-xs text-muted">
             <Link href="/" className="hover:text-bone">Home</Link>
-            <span className="text-line">/</span>
+            <span className="text-muted/40">/</span>
             <span className="text-gold-bright">News Action</span>
           </nav>
           <div className="mt-3 flex items-center gap-2">
@@ -25,7 +25,7 @@ export default function GoldNewsPage() {
             </span>
             <WhopBadge size="xs" />
           </div>
-          <h1 className="mt-2 max-w-3xl font-display text-4xl leading-tight text-bone sm:text-5xl flex items-center gap-3">
+          <h1 className="mt-2 max-w-3xl font-display text-3xl leading-tight text-bone sm:text-5xl flex items-center gap-3">
             <span>News Action · 100 Live Market Dossiers</span>
           </h1>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
@@ -34,7 +34,7 @@ export default function GoldNewsPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-10">
+      <section className="mx-auto max-w-7xl px-5 py-8 sm:py-10">
         <GoldPredictionFeed />
       </section>
     </div>

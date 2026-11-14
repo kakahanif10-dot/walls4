@@ -52,7 +52,7 @@ export const COURSES: Course[] = [
     instructor: "Daniel Okafor",
     instructorRole: "Head of Equity Strategy",
     summary:
-      "The four-course foundation of the NextWall Street method. Learn to read structure with moving averages, momentum with rate of change, and conviction with volatility — then combine them into a single score you can defend.",
+      "The four-course foundation of the NextWallStreet method. Learn to read structure with moving averages, momentum with rate of change, and conviction with volatility — then combine them into a single score you can defend.",
     outcomes: [
       "Build a repeatable trend classification instead of a gut feeling",
       "Understand why the 200-day is a regime filter, not a signal",
@@ -117,7 +117,7 @@ export const COURSES: Course[] = [
     outcomes: [
       "Map crypto exposure to liquidity conditions rather than narratives",
       "Read on-chain flow and float dynamics",
-      "Size positions using realised volatility",
+      "Size positions using realized volatility",
       "Separate protocol value from token value",
     ],
     lessons: [
@@ -147,7 +147,7 @@ export const COURSES: Course[] = [
         title: "Sizing a 3x-volatility asset",
         minutes: 10,
         summary:
-          "The maths of allocating to something that routinely draws down 40% without ending your portfolio.",
+          "The math of allocating to something that routinely draws down 40% without ending your portfolio.",
         points: [
           "Size to a risk contribution, not a dollar amount.",
           "Assume a 40% drawdown is normal and survive it without selling.",
@@ -157,51 +157,13 @@ export const COURSES: Course[] = [
     ],
   },
   {
-    slug: "meme-coin-risk",
-    title: "Meme Coins: The Risk Module",
-    level: "Advanced",
-    instructor: "Daniel Okafor",
-    instructorRole: "Head of Equity Strategy",
-    summary:
-      "Not a recommendation engine — a risk protocol. If you are going to participate in attention markets, the only defensible edge is sizing, exit discipline and honest labelling of what you own.",
-    outcomes: [
-      "Score a meme asset on concentration, depth and narrative decay",
-      "Apply hard portfolio caps and mechanical profit-taking",
-      "Recognise the distribution phase before it completes",
-    ],
-    lessons: [
-      {
-        title: "Three variables, no fundamentals",
-        minutes: 12,
-        summary:
-          "Concentration, order-book depth and narrative half-life. Everything else is marketing.",
-        points: [
-          "Top-100 wallet concentration above 40% means the exit is narrow.",
-          "Depth determines slippage; check it before, not after.",
-          "Narrative half-life shortens as a sector matures.",
-        ],
-      },
-      {
-        title: "The distribution phase",
-        minutes: 11,
-        summary:
-          "Volume diverging from price while the crowd celebrates is the most reliable warning in this sector.",
-        points: [
-          "Rising price on falling volume is a liquidity warning, not strength.",
-          "Social volume peaks before price peaks, almost always.",
-          "Take partials mechanically; nobody sells the top on purpose.",
-        ],
-      },
-    ],
-  },
-  {
     slug: "portfolio-construction",
-    title: "Portfolio Construction for Retail and Institutional",
-    level: "Advanced",
+    title: "Portfolio Construction & Sizing",
+    level: "Intermediate",
     instructor: "Priya Raghunathan",
     instructorRole: "Software Analyst",
     summary:
-      "From a list of good ideas to a portfolio that survives. Correlation clusters, risk budgets, rebalancing rules and the reporting discipline that keeps behaviour honest.",
+      "From a list of good ideas to a portfolio that survives. Correlation clusters, risk budgets, rebalancing rules and the reporting discipline that keeps behavior honest.",
     outcomes: [
       "Group holdings into risk clusters instead of sectors",
       "Set and enforce a risk budget across equities, crypto and cash",
@@ -234,11 +196,49 @@ export const COURSES: Course[] = [
         title: "Rebalancing you will actually do",
         minutes: 9,
         summary:
-          "Calendar plus threshold beats pure optimisation. Simplicity is what makes a rule survive a drawdown.",
+          "Calendar plus threshold beats pure optimization. Simplicity is what makes a rule survive a drawdown.",
         points: [
           "Quarterly review with a 25% drift trigger.",
           "Rebalance into strength, never into a broken thesis.",
           "Write the rule down before you need it.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "meme-coin-risk",
+    title: "Speculative Risk & Liquidity Traps",
+    level: "Advanced",
+    instructor: "Daniel Okafor",
+    instructorRole: "Head of Equity Strategy",
+    summary:
+      "Not a recommendation engine — a risk protocol. If you participate in high-beta speculative markets, the only defensible edge is sizing, exit discipline and honest labeling of what you own.",
+    outcomes: [
+      "Score speculative assets on wallet concentration, depth and narrative decay",
+      "Apply hard portfolio caps and mechanical profit-taking",
+      "Recognize the distribution phase before it completes",
+    ],
+    lessons: [
+      {
+        title: "Three variables, no fundamentals",
+        minutes: 12,
+        summary:
+          "Concentration, order-book depth and narrative half-life. Everything else is marketing.",
+        points: [
+          "Top-100 wallet concentration above 40% means the exit is narrow.",
+          "Depth determines slippage; check it before, not after.",
+          "Narrative half-life shortens as a sector matures.",
+        ],
+      },
+      {
+        title: "The distribution phase",
+        minutes: 11,
+        summary:
+          "Volume diverging from price while the crowd celebrates is the most reliable warning in this sector.",
+        points: [
+          "Rising price on falling volume is a liquidity warning, not strength.",
+          "Social volume peaks before price peaks, almost always.",
+          "Take partials mechanically; nobody sells the top on purpose.",
         ],
       },
     ],
@@ -251,52 +251,20 @@ export const COURSE_BY_SLUG: Record<string, Course> = Object.fromEntries(
 
 export const PLANS = [
   {
-    id: "reader",
-    name: "Reader",
-    price: 0,
-    cadence: "Free forever",
-    tagline: "For learning the framework.",
-    features: [
-      "Daily trend scores across 26 tracked assets",
-      "Two free research pieces per month",
-      "Foundation course: Reading a Trend",
-      "Weekly market pulse newsletter",
-    ],
-    cta: "Start free",
-    highlight: false,
-  },
-  {
     id: "premium",
-    name: "Premium",
-    price: 29,
-    cadence: "per month",
-    tagline: "For the active self-directed investor.",
+    name: "Lifetime Premium",
+    price: 1487,
+    cadence: "One-time · Lifetime",
+    tagline: "Complete institutional access with zero recurring fees.",
     features: [
-      "Every research piece, uncut",
-      "Stance, conviction and invalidation level on every asset",
-      "Full crypto and meme-coin coverage with risk grading",
-      "All four Academy courses",
-      "Watchlist with score-change alerts",
-      "Model portfolios: core, tactical, digital assets",
+      "All 2,038+ daily trend scores across US equities, crypto, and meme-coin risk models",
+      "Exact stance, conviction, and mathematical invalidation level on every asset",
+      "All 70 institutional research decks & complete 60-lesson Academy curriculum (4 courses)",
+      "All 32 Trade Tools including #30 Live Whale Alert, #31 AI Sentiment & #32 Top 3 Signals",
+      "Watchlist score-change alerts, model portfolio access & 1,100+ member community",
+      "One-time $1,487 USD purchase with permanent lifetime updates",
     ],
-    cta: "Start 14-day trial",
+    cta: "Continue to Lifetime Premium checkout",
     highlight: true,
-  },
-  {
-    id: "institutional",
-    name: "Institutional",
-    price: 249,
-    cadence: "per seat / month",
-    tagline: "For teams who need the audit trail.",
-    features: [
-      "Everything in Premium",
-      "Multi-seat access with shared watchlists",
-      "Signal history and model-change log (CSV)",
-      "Monthly strategy call with the research desk",
-      "Event calendar: earnings, unlocks, macro prints",
-      "API access to trend scores",
-    ],
-    cta: "Talk to the desk",
-    highlight: false,
   },
 ];

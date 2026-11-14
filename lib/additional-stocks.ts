@@ -1,9 +1,7 @@
 import type { Asset } from "./market-assets";
 
 /**
- * 250 Additional US & Global Equities (Total Stock Universe: 800 Stocks)
- * Fully compliant with the Asset interface, containing verified tickers,
- * accurate baseline prices, realistic market blurbs, and technical catalysts.
+ * Additional verified NYSE & Nasdaq live equities dataset.
  */
 export const ADDITIONAL_STOCKS: Asset[] = [
   {
@@ -11,7 +9,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Alibaba Group Holding",
     "kind": "stock",
     "group": "Global E-Commerce & Cloud",
-    "base": 84.5,
+    "base": 94.38,
     "blurb": "Alibaba Group Holding provides scalable software and cloud architecture in Global E-Commerce & Cloud, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -34,7 +32,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "PDD Holdings Inc.",
     "kind": "stock",
     "group": "Global Discount E-Commerce & Temu",
-    "base": 102.4,
+    "base": 78.97,
     "blurb": "PDD Holdings Inc. is an established consumer franchise in Global Discount E-Commerce & Temu, driving customer engagement and unit-level economics across digital and physical footprints.",
     "bull": [
       "Resilient consumer brand affinity with demonstrated pricing power against inflationary inputs.",
@@ -57,7 +55,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "JD.com Inc.",
     "kind": "stock",
     "group": "Supply Chain & Retail Infrastructure",
-    "base": 35.8,
+    "base": 27.91,
     "blurb": "JD.com Inc. provides scalable software and cloud architecture in Supply Chain & Retail Infrastructure, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -80,7 +78,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Baidu Inc.",
     "kind": "stock",
     "group": "Autonomous Driving & Chinese AI",
-    "base": 88.6,
+    "base": 78.14,
     "blurb": "Baidu Inc. provides scalable software and cloud architecture in Autonomous Driving & Chinese AI, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -103,7 +101,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "NIO Inc.",
     "kind": "stock",
     "group": "Electric Vehicles & Battery Swap",
-    "base": 4.35,
+    "base": 2.9,
     "blurb": "NIO Inc. operates in Electric Vehicles & Battery Swap, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Electric Vehicles & Battery Swap with high incremental gross margin conversion.",
@@ -126,7 +124,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "XPeng Inc.",
     "kind": "stock",
     "group": "AI-Defined EVs & Urban ADAS",
-    "base": 11.8,
+    "base": 9.37,
     "blurb": "XPeng Inc. provides scalable software and cloud architecture in AI-Defined EVs & Urban ADAS, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -149,7 +147,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Li Auto Inc.",
     "kind": "stock",
     "group": "Range-Extended Electric SUVs",
-    "base": 22.4,
+    "base": 11.64,
     "blurb": "Li Auto Inc. operates in Range-Extended Electric SUVs, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Range-Extended Electric SUVs with high incremental gross margin conversion.",
@@ -172,7 +170,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Sea Limited",
     "kind": "stock",
     "group": "Southeast Asia E-Commerce & Gaming",
-    "base": 108.6,
+    "base": 75.36,
     "blurb": "Sea Limited is an established consumer franchise in Southeast Asia E-Commerce & Gaming, driving customer engagement and unit-level economics across digital and physical footprints.",
     "bull": [
       "Resilient consumer brand affinity with demonstrated pricing power against inflationary inputs.",
@@ -195,7 +193,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Grab Holdings",
     "kind": "stock",
     "group": "Southeast Asia SuperApp & Mobility",
-    "base": 4.45,
+    "base": 3.24,
     "blurb": "Grab Holdings operates in Southeast Asia SuperApp & Mobility, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Southeast Asia SuperApp & Mobility with high incremental gross margin conversion.",
@@ -218,7 +216,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Nu Holdings Ltd.",
     "kind": "stock",
     "group": "Latin America Digital Banking",
-    "base": 13.8,
+    "base": 13.22,
     "blurb": "Nu Holdings Ltd. operates in Latin America Digital Banking, leveraging proprietary underwriting models, payment networks, or loan servicing to monetize financial volume.",
     "bull": [
       "Net interest margin stability and growing non-interest fee revenue streams.",
@@ -241,7 +239,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "MercadoLibre Inc.",
     "kind": "stock",
     "group": "Latin America Commerce & Fintech",
-    "base": 1980,
+    "base": 1491.49,
     "blurb": "MercadoLibre Inc. operates in Latin America Commerce & Fintech, leveraging proprietary underwriting models, payment networks, or loan servicing to monetize financial volume.",
     "bull": [
       "Net interest margin stability and growing non-interest fee revenue streams.",
@@ -264,7 +262,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Shopify Inc.",
     "kind": "stock",
     "group": "Global Merchant Commerce Platform",
-    "base": 112.5,
+    "base": 147.09,
     "blurb": "Shopify Inc. provides scalable software and cloud architecture in Global Merchant Commerce Platform, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -287,7 +285,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Novo Nordisk A/S",
     "kind": "stock",
     "group": "GLP-1 Obesity & Diabetes Therapeutics",
-    "base": 106.8,
+    "base": 41.63,
     "blurb": "Novo Nordisk A/S is a biopharmaceutical and medical innovators in GLP-1 Obesity & Diabetes Therapeutics, developing commercial therapies with proprietary clinical pipelines.",
     "bull": [
       "Differentiated clinical data package addressing high-unmet medical need in a blockbuster indication.",
@@ -310,7 +308,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "SAP SE",
     "kind": "stock",
     "group": "Global Enterprise ERP & Cloud",
-    "base": 238.4,
+    "base": 234.9,
     "blurb": "SAP SE provides scalable software and cloud architecture in Global Enterprise ERP & Cloud, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -333,7 +331,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "BHP Group Ltd.",
     "kind": "stock",
     "group": "Global Mining & Copper Production",
-    "base": 52.6,
+    "base": 79.49,
     "blurb": "BHP Group Ltd. operates in Global Mining & Copper Production, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Global Mining & Copper Production with high incremental gross margin conversion.",
@@ -356,7 +354,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Rio Tinto Group",
     "kind": "stock",
     "group": "Diversified Metals & Iron Ore",
-    "base": 61.4,
+    "base": 82.95,
     "blurb": "Rio Tinto Group operates in Diversified Metals & Iron Ore, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Diversified Metals & Iron Ore with high incremental gross margin conversion.",
@@ -379,7 +377,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Vale S.A.",
     "kind": "stock",
     "group": "Iron Ore & Base Metals Mining",
-    "base": 9.85,
+    "base": 11.22,
     "blurb": "Vale S.A. operates in Iron Ore & Base Metals Mining, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Iron Ore & Base Metals Mining with high incremental gross margin conversion.",
@@ -402,7 +400,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "BP p.l.c.",
     "kind": "stock",
     "group": "Integrated Global Energy & LNG",
-    "base": 28.6,
+    "base": 45.7,
     "blurb": "BP p.l.c. commands strategic infrastructure and resource assets in Integrated Global Energy & LNG, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -425,7 +423,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Shell plc",
     "kind": "stock",
     "group": "Global Integrated Energy & Chemicals",
-    "base": 64.2,
+    "base": 99.08,
     "blurb": "Shell plc commands strategic infrastructure and resource assets in Global Integrated Energy & Chemicals, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -448,7 +446,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "TotalEnergies SE",
     "kind": "stock",
     "group": "Multi-Energy & Renewable Transition",
-    "base": 59.8,
+    "base": 90.74,
     "blurb": "TotalEnergies SE commands strategic infrastructure and resource assets in Multi-Energy & Renewable Transition, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -471,7 +469,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "AstraZeneca PLC",
     "kind": "stock",
     "group": "Oncology & Biopharmaceuticals",
-    "base": 66.4,
+    "base": 184.45,
     "blurb": "AstraZeneca PLC is a biopharmaceutical and medical innovators in Oncology & Biopharmaceuticals, developing commercial therapies with proprietary clinical pipelines.",
     "bull": [
       "Differentiated clinical data package addressing high-unmet medical need in a blockbuster indication.",
@@ -494,7 +492,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "GSK plc",
     "kind": "stock",
     "group": "Vaccines & Specialty Medicines",
-    "base": 36.8,
+    "base": 50.45,
     "blurb": "GSK plc operates in Vaccines & Specialty Medicines, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Vaccines & Specialty Medicines with high incremental gross margin conversion.",
@@ -517,7 +515,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Sanofi",
     "kind": "stock",
     "group": "Immunology & Rare Disease Medicines",
-    "base": 48.2,
+    "base": 48.37,
     "blurb": "Sanofi operates in Immunology & Rare Disease Medicines, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Immunology & Rare Disease Medicines with high incremental gross margin conversion.",
@@ -540,7 +538,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Diageo plc",
     "kind": "stock",
     "group": "Premium Global Spirits & Beverages",
-    "base": 118.5,
+    "base": 101.59,
     "blurb": "Diageo plc is an established consumer franchise in Premium Global Spirits & Beverages, driving customer engagement and unit-level economics across digital and physical footprints.",
     "bull": [
       "Resilient consumer brand affinity with demonstrated pricing power against inflationary inputs.",
@@ -563,7 +561,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Unilever PLC",
     "kind": "stock",
     "group": "Personal Care & Packaged Consumer Goods",
-    "base": 56.4,
+    "base": 66.21,
     "blurb": "Unilever PLC operates in Personal Care & Packaged Consumer Goods, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Personal Care & Packaged Consumer Goods with high incremental gross margin conversion.",
@@ -586,7 +584,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Anheuser-Busch InBev",
     "kind": "stock",
     "group": "Global Brewing & Beverage Portfolio",
-    "base": 52.8,
+    "base": 84.81,
     "blurb": "Anheuser-Busch InBev is an established consumer franchise in Global Brewing & Beverage Portfolio, driving customer engagement and unit-level economics across digital and physical footprints.",
     "bull": [
       "Resilient consumer brand affinity with demonstrated pricing power against inflationary inputs.",
@@ -609,7 +607,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Canadian Pacific Kansas City",
     "kind": "stock",
     "group": "Transcontinental Freight Rail Network",
-    "base": 76.5,
+    "base": 94.15,
     "blurb": "Canadian Pacific Kansas City provides scalable software and cloud architecture in Transcontinental Freight Rail Network, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -632,7 +630,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Canadian Natural Resources",
     "kind": "stock",
     "group": "Oil Sands & Heavy Crude Production",
-    "base": 32.8,
+    "base": 49.75,
     "blurb": "Canadian Natural Resources commands strategic infrastructure and resource assets in Oil Sands & Heavy Crude Production, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -655,7 +653,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Suncor Energy Inc.",
     "kind": "stock",
     "group": "Integrated Energy & Refining",
-    "base": 37.4,
+    "base": 69.92,
     "blurb": "Suncor Energy Inc. commands strategic infrastructure and resource assets in Integrated Energy & Refining, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -678,7 +676,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Enbridge Inc.",
     "kind": "stock",
     "group": "Crude & Gas Pipeline Infrastructure",
-    "base": 41.2,
+    "base": 47.67,
     "blurb": "Enbridge Inc. commands strategic infrastructure and resource assets in Crude & Gas Pipeline Infrastructure, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -701,7 +699,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "TC Energy Corp.",
     "kind": "stock",
     "group": "North American Natural Gas Midstream",
-    "base": 46.8,
+    "base": 64.78,
     "blurb": "TC Energy Corp. commands strategic infrastructure and resource assets in North American Natural Gas Midstream, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -724,7 +722,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Royal Bank of Canada",
     "kind": "stock",
     "group": "Diversified Canadian Banking & Wealth",
-    "base": 118.6,
+    "base": 202.31,
     "blurb": "Royal Bank of Canada operates in Diversified Canadian Banking & Wealth, leveraging proprietary underwriting models, payment networks, or loan servicing to monetize financial volume.",
     "bull": [
       "Net interest margin stability and growing non-interest fee revenue streams.",
@@ -747,7 +745,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Toronto-Dominion Bank",
     "kind": "stock",
     "group": "Retail Banking & Wealth Management",
-    "base": 56.8,
+    "base": 123.76,
     "blurb": "Toronto-Dominion Bank provides scalable software and cloud architecture in Retail Banking & Wealth Management, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -770,7 +768,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Bank of Montreal",
     "kind": "stock",
     "group": "Commercial Banking & Capital Markets",
-    "base": 92.4,
+    "base": 173.24,
     "blurb": "Bank of Montreal operates in Commercial Banking & Capital Markets, leveraging proprietary underwriting models, payment networks, or loan servicing to monetize financial volume.",
     "bull": [
       "Net interest margin stability and growing non-interest fee revenue streams.",
@@ -793,7 +791,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Bank of Nova Scotia",
     "kind": "stock",
     "group": "International Banking & Wealth",
-    "base": 51.2,
+    "base": 92.54,
     "blurb": "Bank of Nova Scotia operates in International Banking & Wealth, leveraging proprietary underwriting models, payment networks, or loan servicing to monetize financial volume.",
     "bull": [
       "Net interest margin stability and growing non-interest fee revenue streams.",
@@ -816,7 +814,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Canadian Imperial Bank",
     "kind": "stock",
     "group": "Canadian Commercial & Retail Banking",
-    "base": 62.4,
+    "base": 115.8,
     "blurb": "Canadian Imperial Bank provides scalable software and cloud architecture in Canadian Commercial & Retail Banking, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -839,7 +837,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "CAVA Group Inc.",
     "kind": "stock",
     "group": "Mediterranean Fast-Casual Dining",
-    "base": 132.5,
+    "base": 58.23,
     "blurb": "CAVA Group Inc. is an established consumer franchise in Mediterranean Fast-Casual Dining, driving customer engagement and unit-level economics across digital and physical footprints.",
     "bull": [
       "Resilient consumer brand affinity with demonstrated pricing power against inflationary inputs.",
@@ -862,7 +860,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Reddit Inc.",
     "kind": "stock",
     "group": "Community Discussion & AI Training Data",
-    "base": 158.4,
+    "base": 98.45,
     "blurb": "Reddit Inc. provides scalable software and cloud architecture in Community Discussion & AI Training Data, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -885,7 +883,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Rocket Lab USA",
     "kind": "stock",
     "group": "Orbital Launch Services & Space Systems",
-    "base": 19.8,
+    "base": 61.53,
     "blurb": "Rocket Lab USA operates in Orbital Launch Services & Space Systems, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Orbital Launch Services & Space Systems with high incremental gross margin conversion.",
@@ -908,7 +906,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "IonQ Inc.",
     "kind": "stock",
     "group": "Trapped-Ion Quantum Computing Systems",
-    "base": 26.5,
+    "base": 28.88,
     "blurb": "IonQ Inc. operates in Trapped-Ion Quantum Computing Systems, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Trapped-Ion Quantum Computing Systems with high incremental gross margin conversion.",
@@ -931,7 +929,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Rigetti Computing",
     "kind": "stock",
     "group": "Superconducting Quantum Processors",
-    "base": 2.15,
+    "base": 9.62,
     "blurb": "Rigetti Computing operates in Superconducting Quantum Processors, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Superconducting Quantum Processors with high incremental gross margin conversion.",
@@ -954,7 +952,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "D-Wave Quantum",
     "kind": "stock",
     "group": "Quantum Annealing Systems & Cloud",
-    "base": 1.85,
+    "base": 9.56,
     "blurb": "D-Wave Quantum provides scalable software and cloud architecture in Quantum Annealing Systems & Cloud, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -977,7 +975,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Hims & Hers Health",
     "kind": "stock",
     "group": "Direct-to-Consumer Telehealth & GLP-1",
-    "base": 24.8,
+    "base": 19.73,
     "blurb": "Hims & Hers Health is a biopharmaceutical and medical innovators in Direct-to-Consumer Telehealth & GLP-1, developing commercial therapies with proprietary clinical pipelines.",
     "bull": [
       "Differentiated clinical data package addressing high-unmet medical need in a blockbuster indication.",
@@ -1000,7 +998,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Tempus AI Inc.",
     "kind": "stock",
     "group": "Genomic Sequencing & Clinical AI Data",
-    "base": 58.4,
+    "base": 71.6,
     "blurb": "Tempus AI Inc. provides scalable software and cloud architecture in Genomic Sequencing & Clinical AI Data, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -1023,7 +1021,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Symbotic Inc.",
     "kind": "stock",
     "group": "AI-Powered Warehouse Automation",
-    "base": 38.6,
+    "base": 34.83,
     "blurb": "Symbotic Inc. provides scalable software and cloud architecture in AI-Powered Warehouse Automation, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -1046,7 +1044,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Aurora Innovation",
     "kind": "stock",
     "group": "Autonomous Commercial Trucking Tech",
-    "base": 5.65,
+    "base": 4.21,
     "blurb": "Aurora Innovation operates in Autonomous Commercial Trucking Tech, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Autonomous Commercial Trucking Tech with high incremental gross margin conversion.",
@@ -1069,7 +1067,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Vertiv Holdings Co.",
     "kind": "stock",
     "group": "Datacenter Liquid Cooling & Power",
-    "base": 118.4,
+    "base": 202.07,
     "blurb": "Vertiv Holdings Co. commands strategic infrastructure and resource assets in Datacenter Liquid Cooling & Power, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -1092,7 +1090,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Joby Aviation",
     "kind": "stock",
     "group": "Electric Vertical Takeoff (eVTOL) Aircraft",
-    "base": 6.85,
+    "base": 5.08,
     "blurb": "Joby Aviation provides scalable software and cloud architecture in Electric Vertical Takeoff (eVTOL) Aircraft, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -1115,7 +1113,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Archer Aviation",
     "kind": "stock",
     "group": "Urban Air Mobility & eVTOL Craft",
-    "base": 5.25,
+    "base": 4.03,
     "blurb": "Archer Aviation provides scalable software and cloud architecture in Urban Air Mobility & eVTOL Craft, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -1134,26 +1132,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "LILM",
-    "name": "Lilium N.V.",
+    "symbol": "MMM",
+    "name": "3M Company",
     "kind": "stock",
-    "group": "Regional Air Mobility Jets",
-    "base": 0.85,
-    "blurb": "Lilium N.V. provides scalable software and cloud architecture in Regional Air Mobility Jets, positioning the franchise as a core vendor in digital transformation.",
+    "group": "Producer Manufacturing",
+    "base": 183.66,
+    "blurb": "3M Company (MMM) is a publicly traded US equity in Producer Manufacturing, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Net revenue retention above peer median with expanding enterprise seat expansions.",
-      "Operating leverage beginning to inflect as R&D investments yield high-margin software gross profit.",
-      "Proprietary data moats and generative AI integrations enhancing customer retention."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Extended enterprise sales cycles during periods of cautious corporate software budgeting.",
-      "Competitive pressure from hyperscaler platform bundles and verticalized open-source alternatives.",
-      "Growth decelerations would trigger sharp compression in enterprise value-to-sales multiples."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Enterprise annual contract value (ACV) and consumption metrics print.",
-      "Developer conference keynote and flagship feature releases.",
-      "Hyperscaler cloud marketplace tier-1 partnership expansion."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -1161,7 +1159,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Planet Labs PBC",
     "kind": "stock",
     "group": "Daily Global Satellite Earth Imaging",
-    "base": 2.85,
+    "base": 13.81,
     "blurb": "Planet Labs PBC provides scalable software and cloud architecture in Daily Global Satellite Earth Imaging, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -1184,7 +1182,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "BigBear.ai Holdings",
     "kind": "stock",
     "group": "Decision Intelligence & National Defense AI",
-    "base": 2.45,
+    "base": 1.91,
     "blurb": "BigBear.ai Holdings provides scalable software and cloud architecture in Decision Intelligence & National Defense AI, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -1207,7 +1205,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "SoundHound AI Inc.",
     "kind": "stock",
     "group": "Conversational Voice AI & Automotive Voice",
-    "base": 6.95,
+    "base": 3.49,
     "blurb": "SoundHound AI Inc. provides scalable software and cloud architecture in Conversational Voice AI & Automotive Voice, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -1230,7 +1228,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "BioNTech SE",
     "kind": "stock",
     "group": "mRNA Cancer Immunotherapies & Vaccines",
-    "base": 108.4,
+    "base": 85.6,
     "blurb": "BioNTech SE operates in mRNA Cancer Immunotherapies & Vaccines, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in mRNA Cancer Immunotherapies & Vaccines with high incremental gross margin conversion.",
@@ -1253,7 +1251,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Editas Medicine",
     "kind": "stock",
     "group": "Targeted In Vivo Gene Editing",
-    "base": 3.45,
+    "base": 2.17,
     "blurb": "Editas Medicine operates in Targeted In Vivo Gene Editing, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Targeted In Vivo Gene Editing with high incremental gross margin conversion.",
@@ -1276,7 +1274,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Luminar Technologies",
     "kind": "stock",
     "group": "Automotive LiDAR Sensor Platforms",
-    "base": 1.15,
+    "base": 29.25,
     "blurb": "Luminar Technologies provides scalable software and cloud architecture in Automotive LiDAR Sensor Platforms, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -1299,7 +1297,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Innoviz Technologies",
     "kind": "stock",
     "group": "High-Performance Solid-State LiDAR",
-    "base": 0.82,
+    "base": 0.1737,
     "blurb": "Innoviz Technologies operates in High-Performance Solid-State LiDAR, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in High-Performance Solid-State LiDAR with high incremental gross margin conversion.",
@@ -1322,7 +1320,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Klaviyo Inc.",
     "kind": "stock",
     "group": "B2C Marketing Automation & Customer Data",
-    "base": 36.4,
+    "base": 22.13,
     "blurb": "Klaviyo Inc. operates in B2C Marketing Automation & Customer Data, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in B2C Marketing Automation & Customer Data with high incremental gross margin conversion.",
@@ -1345,7 +1343,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Sweetgreen Inc.",
     "kind": "stock",
     "group": "Plant-Forward Fast Casual & Automation",
-    "base": 38.4,
+    "base": 12.26,
     "blurb": "Sweetgreen Inc. operates in Plant-Forward Fast Casual & Automation, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Plant-Forward Fast Casual & Automation with high incremental gross margin conversion.",
@@ -1368,7 +1366,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Dutch Bros Inc.",
     "kind": "stock",
     "group": "Drive-Thru Handcrafted Beverages",
-    "base": 39.8,
+    "base": 35.9,
     "blurb": "Dutch Bros Inc. is an established consumer franchise in Drive-Thru Handcrafted Beverages, driving customer engagement and unit-level economics across digital and physical footprints.",
     "bull": [
       "Resilient consumer brand affinity with demonstrated pricing power against inflationary inputs.",
@@ -1391,7 +1389,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "El Pollo Loco Holdings",
     "kind": "stock",
     "group": "Fire-Grilled Mexican-Style Chicken",
-    "base": 11.8,
+    "base": 15.01,
     "blurb": "El Pollo Loco Holdings operates in Fire-Grilled Mexican-Style Chicken, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Fire-Grilled Mexican-Style Chicken with high incremental gross margin conversion.",
@@ -1414,7 +1412,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Wingstop Inc.",
     "kind": "stock",
     "group": "Cooked-to-Order Flavored Wings",
-    "base": 368.5,
+    "base": 158.86,
     "blurb": "Wingstop Inc. operates in Cooked-to-Order Flavored Wings, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Cooked-to-Order Flavored Wings with high incremental gross margin conversion.",
@@ -1437,7 +1435,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Shake Shack Inc.",
     "kind": "stock",
     "group": "Premium Fast-Casual Burgers & Shakes",
-    "base": 118.4,
+    "base": 74.98,
     "blurb": "Shake Shack Inc. operates in Premium Fast-Casual Burgers & Shakes, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Premium Fast-Casual Burgers & Shakes with high incremental gross margin conversion.",
@@ -1460,7 +1458,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "CleanSpark Inc.",
     "kind": "stock",
     "group": "Low-Carbon Bitcoin Mining & Infrastructure",
-    "base": 12.8,
+    "base": 6.65,
     "blurb": "CleanSpark Inc. operates in Low-Carbon Bitcoin Mining & Infrastructure, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Low-Carbon Bitcoin Mining & Infrastructure with high incremental gross margin conversion.",
@@ -1483,7 +1481,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Iris Energy Limited",
     "kind": "stock",
     "group": "Next-Gen Data Centers & Bitcoin Mining",
-    "base": 9.45,
+    "base": 18.17,
     "blurb": "Iris Energy Limited operates in Next-Gen Data Centers & Bitcoin Mining, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Next-Gen Data Centers & Bitcoin Mining with high incremental gross margin conversion.",
@@ -1506,7 +1504,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Cipher Mining Inc.",
     "kind": "stock",
     "group": "Industrial Bitcoin Mining & Power Assets",
-    "base": 4.85,
+    "base": 6.86,
     "blurb": "Cipher Mining Inc. commands strategic infrastructure and resource assets in Industrial Bitcoin Mining & Power Assets, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -1529,7 +1527,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "TeraWulf Inc.",
     "kind": "stock",
     "group": "Zero-Carbon Nuclear Bitcoin Mining",
-    "base": 6.25,
+    "base": 12.62,
     "blurb": "TeraWulf Inc. commands strategic infrastructure and resource assets in Zero-Carbon Nuclear Bitcoin Mining, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -1552,7 +1550,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Core Scientific",
     "kind": "stock",
     "group": "HPC Hosting & Digital Asset Infrastructure",
-    "base": 13.8,
+    "base": 14.52,
     "blurb": "Core Scientific operates in HPC Hosting & Digital Asset Infrastructure, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in HPC Hosting & Digital Asset Infrastructure with high incremental gross margin conversion.",
@@ -1575,7 +1573,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Bitdeer Technologies",
     "kind": "stock",
     "group": "Proprietary Mining Hardware & Cloud Hash",
-    "base": 9.25,
+    "base": 5.6,
     "blurb": "Bitdeer Technologies provides scalable software and cloud architecture in Proprietary Mining Hardware & Cloud Hash, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -1598,7 +1596,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Hut 8 Corp.",
     "kind": "stock",
     "group": "Energy Infrastructure & Compute Hosting",
-    "base": 21.4,
+    "base": 57.57,
     "blurb": "Hut 8 Corp. provides scalable software and cloud architecture in Energy Infrastructure & Compute Hosting, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -1617,26 +1615,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "BITF",
-    "name": "Bitfarms Ltd.",
+    "symbol": "ING",
+    "name": "ING Groep N.V. Sponsored ADR",
     "kind": "stock",
-    "group": "Vertically Integrated Bitcoin Mining",
-    "base": 2.35,
-    "blurb": "Bitfarms Ltd. operates in Vertically Integrated Bitcoin Mining, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Finance",
+    "base": 33.22,
+    "blurb": "ING Groep N.V. Sponsored ADR (ING) is a publicly traded US equity in Finance, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in Vertically Integrated Bitcoin Mining with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -1644,7 +1642,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Guardant Health Inc.",
     "kind": "stock",
     "group": "Liquid Biopsy Cancer Screening",
-    "base": 26.8,
+    "base": 151.7,
     "blurb": "Guardant Health Inc. operates in Liquid Biopsy Cancer Screening, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Liquid Biopsy Cancer Screening with high incremental gross margin conversion.",
@@ -1667,7 +1665,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Twist Bioscience",
     "kind": "stock",
     "group": "Silicon-Based Synthetic DNA Synthesis",
-    "base": 44.5,
+    "base": 111.6,
     "blurb": "Twist Bioscience operates in Silicon-Based Synthetic DNA Synthesis, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Silicon-Based Synthetic DNA Synthesis with high incremental gross margin conversion.",
@@ -1686,26 +1684,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "BLUE",
-    "name": "bluebird bio",
+    "symbol": "AEM",
+    "name": "Agnico Eagle Mines Limited",
     "kind": "stock",
-    "group": "Gene Therapy for Severe Genetic Disorders",
-    "base": 0.52,
-    "blurb": "bluebird bio operates in Gene Therapy for Severe Genetic Disorders, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Non-Energy Minerals",
+    "base": 178.45,
+    "blurb": "Agnico Eagle Mines Limited (AEM) is a publicly traded US equity in Non-Energy Minerals, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in Gene Therapy for Severe Genetic Disorders with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -1713,7 +1711,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Sarepta Therapeutics",
     "kind": "stock",
     "group": "Duchenne Muscular Dystrophy Gene Therapy",
-    "base": 124.6,
+    "base": 16.07,
     "blurb": "Sarepta Therapeutics operates in Duchenne Muscular Dystrophy Gene Therapy, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Duchenne Muscular Dystrophy Gene Therapy with high incremental gross margin conversion.",
@@ -1736,7 +1734,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Alkermes plc",
     "kind": "stock",
     "group": "Neuroscience & Oncology Therapeutics",
-    "base": 28.5,
+    "base": 47.03,
     "blurb": "Alkermes plc is a biopharmaceutical and medical innovators in Neuroscience & Oncology Therapeutics, developing commercial therapies with proprietary clinical pipelines.",
     "bull": [
       "Differentiated clinical data package addressing high-unmet medical need in a blockbuster indication.",
@@ -1759,7 +1757,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Insmed Incorporated",
     "kind": "stock",
     "group": "Inhaled Liposomal Therapies for Lung Disease",
-    "base": 72.8,
+    "base": 121.16,
     "blurb": "Insmed Incorporated operates in Inhaled Liposomal Therapies for Lung Disease, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Inhaled Liposomal Therapies for Lung Disease with high incremental gross margin conversion.",
@@ -1782,7 +1780,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Arvinas Inc.",
     "kind": "stock",
     "group": "Targeted Protein Degradation Therapies",
-    "base": 26.4,
+    "base": 6.82,
     "blurb": "Arvinas Inc. operates in Targeted Protein Degradation Therapies, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Targeted Protein Degradation Therapies with high incremental gross margin conversion.",
@@ -1805,7 +1803,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Kymera Therapeutics",
     "kind": "stock",
     "group": "Immunology & Targeted Protein Degraders",
-    "base": 39.8,
+    "base": 127.57,
     "blurb": "Kymera Therapeutics operates in Immunology & Targeted Protein Degraders, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Immunology & Targeted Protein Degraders with high incremental gross margin conversion.",
@@ -1828,7 +1826,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Arrowhead Pharmaceuticals",
     "kind": "stock",
     "group": "Targeted RNAi Therapeutics",
-    "base": 18.6,
+    "base": 47.78,
     "blurb": "Arrowhead Pharmaceuticals provides scalable software and cloud architecture in Targeted RNAi Therapeutics, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -1851,7 +1849,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Vaxcyte Inc.",
     "kind": "stock",
     "group": "Broad-Spectrum Conjugate Bacterial Vaccines",
-    "base": 98.4,
+    "base": 63.37,
     "blurb": "Vaxcyte Inc. operates in Broad-Spectrum Conjugate Bacterial Vaccines, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Broad-Spectrum Conjugate Bacterial Vaccines with high incremental gross margin conversion.",
@@ -1870,26 +1868,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "AKRO",
-    "name": "Akero Therapeutics",
+    "symbol": "RACE",
+    "name": "Ferrari NV",
     "kind": "stock",
-    "group": "FGF21 Analogs for Metabolic Liver Disease",
-    "base": 28.4,
-    "blurb": "Akero Therapeutics operates in FGF21 Analogs for Metabolic Liver Disease, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Consumer Durables",
+    "base": 411.13,
+    "blurb": "Ferrari NV (RACE) is a publicly traded US equity in Consumer Durables, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in FGF21 Analogs for Metabolic Liver Disease with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -1897,7 +1895,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Structure Therapeutics",
     "kind": "stock",
     "group": "Oral Small Molecule GLP-1 Receptor Agonists",
-    "base": 38.6,
+    "base": 20,
     "blurb": "Structure Therapeutics operates in Oral Small Molecule GLP-1 Receptor Agonists, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Oral Small Molecule GLP-1 Receptor Agonists with high incremental gross margin conversion.",
@@ -1916,26 +1914,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "RVNC",
-    "name": "Revance Therapeutics",
+    "symbol": "CTAS",
+    "name": "Cintas Corporation",
     "kind": "stock",
-    "group": "Aesthetics & Neuromodulator Formulations",
-    "base": 5.85,
-    "blurb": "Revance Therapeutics operates in Aesthetics & Neuromodulator Formulations, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Commercial Services",
+    "base": 226.24,
+    "blurb": "Cintas Corporation (CTAS) is a publicly traded US equity in Commercial Services, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in Aesthetics & Neuromodulator Formulations with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -1943,7 +1941,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Immunovant Inc.",
     "kind": "stock",
     "group": "Targeted Anti-FcRn Autoimmune Therapies",
-    "base": 28.4,
+    "base": 34.18,
     "blurb": "Immunovant Inc. operates in Targeted Anti-FcRn Autoimmune Therapies, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Targeted Anti-FcRn Autoimmune Therapies with high incremental gross margin conversion.",
@@ -1966,7 +1964,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "ACADIA Pharmaceuticals",
     "kind": "stock",
     "group": "Neuroscience & Rett Syndrome Therapies",
-    "base": 16.4,
+    "base": 18.75,
     "blurb": "ACADIA Pharmaceuticals operates in Neuroscience & Rett Syndrome Therapies, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Neuroscience & Rett Syndrome Therapies with high incremental gross margin conversion.",
@@ -1989,7 +1987,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Axsome Therapeutics",
     "kind": "stock",
     "group": "Central Nervous System & Migraine Therapies",
-    "base": 94.6,
+    "base": 141.69,
     "blurb": "Axsome Therapeutics provides scalable software and cloud architecture in Central Nervous System & Migraine Therapies, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -2008,26 +2006,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "ITCI",
-    "name": "Intra-Cellular Therapies",
+    "symbol": "MSI",
+    "name": "Motorola Solutions, Inc.",
     "kind": "stock",
-    "group": "Neuropsychiatric & Bipolar Therapeutics",
-    "base": 84.5,
-    "blurb": "Intra-Cellular Therapies is a biopharmaceutical and medical innovators in Neuropsychiatric & Bipolar Therapeutics, developing commercial therapies with proprietary clinical pipelines.",
+    "group": "Electronic Technology",
+    "base": 531.2,
+    "blurb": "Motorola Solutions, Inc. (MSI) is a publicly traded US equity in Electronic Technology, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Differentiated clinical data package addressing high-unmet medical need in a blockbuster indication.",
-      "Strong cash runway protecting development timeline through key pivotal trial readouts.",
-      "Robust intellectual property portfolio and potential for strategic pharmaceutical licensing partnerships."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Clinical trial outcome binary risk and stringent regulatory review scrutiny.",
-      "Commercialization ramp uncertainty in specialty physician adoption curves.",
-      "Potential future capital dilution if clinical development programs require expanded cohorts."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Phase 2/3 clinical trial primary endpoint data readout.",
-      "Regulatory agency review decision (PDUFA) and advisory committee meetings.",
-      "Major medical congress oral presentation and peer-reviewed publication."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -2035,7 +2033,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Lantheus Holdings",
     "kind": "stock",
     "group": "Diagnostic Imaging & Radiopharmaceuticals",
-    "base": 82.4,
+    "base": 101.59,
     "blurb": "Lantheus Holdings operates in Diagnostic Imaging & Radiopharmaceuticals, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Diagnostic Imaging & Radiopharmaceuticals with high incremental gross margin conversion.",
@@ -2058,7 +2056,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Insulet Corp.",
     "kind": "stock",
     "group": "Tubeless Insulin Pod Delivery Systems",
-    "base": 258.6,
+    "base": 152.48,
     "blurb": "Insulet Corp. operates in Tubeless Insulin Pod Delivery Systems, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Tubeless Insulin Pod Delivery Systems with high incremental gross margin conversion.",
@@ -2077,26 +2075,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "NVRO",
-    "name": "Nevro Corp.",
+    "symbol": "ITUB",
+    "name": "Itau Unibanco Holding S.A. Sponsored ADR Pfd",
     "kind": "stock",
-    "group": "High-Frequency Spinal Cord Stimulation",
-    "base": 5.25,
-    "blurb": "Nevro Corp. operates in High-Frequency Spinal Cord Stimulation, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Finance",
+    "base": 7.53,
+    "blurb": "Itau Unibanco Holding S.A. Sponsored ADR Pfd (ITUB) is a publicly traded US equity in Finance, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in High-Frequency Spinal Cord Stimulation with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -2104,7 +2102,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Penumbra Inc.",
     "kind": "stock",
     "group": "Neurovascular & Peripheral Thrombectomy",
-    "base": 218.4,
+    "base": 320.91,
     "blurb": "Penumbra Inc. operates in Neurovascular & Peripheral Thrombectomy, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Neurovascular & Peripheral Thrombectomy with high incremental gross margin conversion.",
@@ -2127,7 +2125,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "AtriCure Inc.",
     "kind": "stock",
     "group": "Surgical Solutions for Atrial Fibrillation",
-    "base": 31.8,
+    "base": 56.84,
     "blurb": "AtriCure Inc. is a biopharmaceutical and medical innovators in Surgical Solutions for Atrial Fibrillation, developing commercial therapies with proprietary clinical pipelines.",
     "bull": [
       "Differentiated clinical data package addressing high-unmet medical need in a blockbuster indication.",
@@ -2150,7 +2148,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "LeMaitre Vascular",
     "kind": "stock",
     "group": "Vascular Surgery Implants & Devices",
-    "base": 88.4,
+    "base": 78.29,
     "blurb": "LeMaitre Vascular operates in Vascular Surgery Implants & Devices, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Vascular Surgery Implants & Devices with high incremental gross margin conversion.",
@@ -2169,26 +2167,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "SILK",
-    "name": "Silk Road Medical",
+    "symbol": "BAM",
+    "name": "Brookfield Asset Management Ltd. Class A",
     "kind": "stock",
-    "group": "Transcarotid Artery Revascularization (TCAR)",
-    "base": 27.4,
-    "blurb": "Silk Road Medical operates in Transcarotid Artery Revascularization (TCAR), trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Finance",
+    "base": 51.53,
+    "blurb": "Brookfield Asset Management Ltd. Class A (BAM) is a publicly traded US equity in Finance, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in Transcarotid Artery Revascularization (TCAR) with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -2196,7 +2194,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Teleflex Incorporated",
     "kind": "stock",
     "group": "Critical Care & Interventional Access Tools",
-    "base": 228.6,
+    "base": 155.1,
     "blurb": "Teleflex Incorporated operates in Critical Care & Interventional Access Tools, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Critical Care & Interventional Access Tools with high incremental gross margin conversion.",
@@ -2219,7 +2217,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "CONMED Corp.",
     "kind": "stock",
     "group": "Orthopedic & Minimally Invasive Surgery",
-    "base": 68.4,
+    "base": 50.59,
     "blurb": "CONMED Corp. operates in Orthopedic & Minimally Invasive Surgery, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Orthopedic & Minimally Invasive Surgery with high incremental gross margin conversion.",
@@ -2242,7 +2240,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "NeoGenomics Inc.",
     "kind": "stock",
     "group": "Oncology Molecular Testing & Pathology",
-    "base": 14.8,
+    "base": 16.02,
     "blurb": "NeoGenomics Inc. is a biopharmaceutical and medical innovators in Oncology Molecular Testing & Pathology, developing commercial therapies with proprietary clinical pipelines.",
     "bull": [
       "Differentiated clinical data package addressing high-unmet medical need in a blockbuster indication.",
@@ -2261,26 +2259,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "CUTR",
-    "name": "Cutera Inc.",
+    "symbol": "JCI",
+    "name": "Johnson Controls International plc",
     "kind": "stock",
-    "group": "Energy-Based Aesthetic & Dermatology Systems",
-    "base": 0.95,
-    "blurb": "Cutera Inc. commands strategic infrastructure and resource assets in Energy-Based Aesthetic & Dermatology Systems, converting commodity flows into dependable operational free cash flow.",
+    "group": "Producer Manufacturing",
+    "base": 139.33,
+    "blurb": "Johnson Controls International plc (JCI) is a publicly traded US equity in Producer Manufacturing, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
-      "Secular demand inflection driven by data center power expansion and industrial electrification.",
-      "Shareholder returns supported by ongoing dividend yield and countercyclical share repurchases."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Cyclical sensitivity to benchmark physical commodity pricing and seasonal demand fluctuations.",
-      "Capital expenditure cost overruns on greenfield infrastructure construction projects.",
-      "Permitting delays and environmental regulatory compliance overhangs."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Seasonal commodity inventory withdrawal reports and spot pricing shifts.",
-      "Long-term take-or-pay capacity contracting and utility power purchase agreements.",
-      "Quarterly free cash flow generation and capital return announcement."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -2288,7 +2286,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "STAAR Surgical Co.",
     "kind": "stock",
     "group": "Implantable Collamer Lenses (ICL)",
-    "base": 28.4,
+    "base": 26.39,
     "blurb": "STAAR Surgical Co. operates in Implantable Collamer Lenses (ICL), trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Implantable Collamer Lenses (ICL) with high incremental gross margin conversion.",
@@ -2311,7 +2309,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Globus Medical",
     "kind": "stock",
     "group": "Musculoskeletal & Spine Robotic Surgery",
-    "base": 74.8,
+    "base": 72.14,
     "blurb": "Globus Medical operates in Musculoskeletal & Spine Robotic Surgery, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Musculoskeletal & Spine Robotic Surgery with high incremental gross margin conversion.",
@@ -2334,7 +2332,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Glaukos Corp.",
     "kind": "stock",
     "group": "Micro-Invasive Glaucoma Surgery (MIGS)",
-    "base": 128.5,
+    "base": 245.72,
     "blurb": "Glaukos Corp. operates in Micro-Invasive Glaucoma Surgery (MIGS), trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Micro-Invasive Glaucoma Surgery (MIGS) with high incremental gross margin conversion.",
@@ -2357,7 +2355,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Lantronix Inc.",
     "kind": "stock",
     "group": "IoT Micro-Invasive Devices & Connectivity",
-    "base": 3.85,
+    "base": 18.3,
     "blurb": "Lantronix Inc. operates in IoT Micro-Invasive Devices & Connectivity, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in IoT Micro-Invasive Devices & Connectivity with high incremental gross margin conversion.",
@@ -2380,7 +2378,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Tarsus Pharmaceuticals",
     "kind": "stock",
     "group": "Demodex Blepharitis Ophthalmic Therapeutics",
-    "base": 46.8,
+    "base": 80.28,
     "blurb": "Tarsus Pharmaceuticals is a biopharmaceutical and medical innovators in Demodex Blepharitis Ophthalmic Therapeutics, developing commercial therapies with proprietary clinical pipelines.",
     "bull": [
       "Differentiated clinical data package addressing high-unmet medical need in a blockbuster indication.",
@@ -2403,7 +2401,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Keros Therapeutics",
     "kind": "stock",
     "group": "TGF-Beta Superfamily Biotherapeutics",
-    "base": 56.4,
+    "base": 10.3,
     "blurb": "Keros Therapeutics is a biopharmaceutical and medical innovators in TGF-Beta Superfamily Biotherapeutics, developing commercial therapies with proprietary clinical pipelines.",
     "bull": [
       "Differentiated clinical data package addressing high-unmet medical need in a blockbuster indication.",
@@ -2426,7 +2424,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Certara Inc.",
     "kind": "stock",
     "group": "Biosimulation & Drug Development Software",
-    "base": 12.4,
+    "base": 11.57,
     "blurb": "Certara Inc. provides scalable software and cloud architecture in Biosimulation & Drug Development Software, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -2449,7 +2447,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Evolent Health",
     "kind": "stock",
     "group": "Clinical Specialty Oncology & Cardiology Care",
-    "base": 14.2,
+    "base": 4.9,
     "blurb": "Evolent Health is a biopharmaceutical and medical innovators in Clinical Specialty Oncology & Cardiology Care, developing commercial therapies with proprietary clinical pipelines.",
     "bull": [
       "Differentiated clinical data package addressing high-unmet medical need in a blockbuster indication.",
@@ -2472,7 +2470,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Doximity Inc.",
     "kind": "stock",
     "group": "Digital Healthcare Professional Platform",
-    "base": 54.8,
+    "base": 33.34,
     "blurb": "Doximity Inc. provides scalable software and cloud architecture in Digital Healthcare Professional Platform, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -2495,7 +2493,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Phreesia Inc.",
     "kind": "stock",
     "group": "Patient Intake Automation & Healthcare SaaS",
-    "base": 22.4,
+    "base": 12.69,
     "blurb": "Phreesia Inc. provides scalable software and cloud architecture in Patient Intake Automation & Healthcare SaaS, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -2518,7 +2516,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "HealthEquity Inc.",
     "kind": "stock",
     "group": "Health Savings Accounts & Benefit Custody",
-    "base": 98.6,
+    "base": 103.46,
     "blurb": "HealthEquity Inc. is a biopharmaceutical and medical innovators in Health Savings Accounts & Benefit Custody, developing commercial therapies with proprietary clinical pipelines.",
     "bull": [
       "Differentiated clinical data package addressing high-unmet medical need in a blockbuster indication.",
@@ -2541,7 +2539,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Opendoor Technologies",
     "kind": "stock",
     "group": "Digital Residential iBuying Platform",
-    "base": 1.85,
+    "base": 1.19,
     "blurb": "Opendoor Technologies provides scalable software and cloud architecture in Digital Residential iBuying Platform, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -2560,49 +2558,49 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "RDFN",
-    "name": "Redfin Corp.",
+    "symbol": "NGG",
+    "name": "National Grid plc Sponsored ADR",
     "kind": "stock",
-    "group": "Technology-Powered Real Estate Brokerage",
-    "base": 8.45,
-    "blurb": "Redfin Corp. commands strategic infrastructure and resource assets in Technology-Powered Real Estate Brokerage, converting commodity flows into dependable operational free cash flow.",
+    "group": "Utilities",
+    "base": 84.29,
+    "blurb": "National Grid plc Sponsored ADR (NGG) is a publicly traded US equity in Utilities, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
-      "Secular demand inflection driven by data center power expansion and industrial electrification.",
-      "Shareholder returns supported by ongoing dividend yield and countercyclical share repurchases."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Cyclical sensitivity to benchmark physical commodity pricing and seasonal demand fluctuations.",
-      "Capital expenditure cost overruns on greenfield infrastructure construction projects.",
-      "Permitting delays and environmental regulatory compliance overhangs."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Seasonal commodity inventory withdrawal reports and spot pricing shifts.",
-      "Long-term take-or-pay capacity contracting and utility power purchase agreements.",
-      "Quarterly free cash flow generation and capital return announcement."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
-    "symbol": "EXPI",
-    "name": "eXp World Holdings",
+    "symbol": "EPD",
+    "name": "Enterprise Products Partners L.P.",
     "kind": "stock",
-    "group": "Cloud-Based Global Real Estate Brokerage",
-    "base": 12.8,
-    "blurb": "eXp World Holdings provides scalable software and cloud architecture in Cloud-Based Global Real Estate Brokerage, positioning the franchise as a core vendor in digital transformation.",
+    "group": "Industrial Services",
+    "base": 38.28,
+    "blurb": "Enterprise Products Partners L.P. (EPD) is a publicly traded US equity in Industrial Services, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Net revenue retention above peer median with expanding enterprise seat expansions.",
-      "Operating leverage beginning to inflect as R&D investments yield high-margin software gross profit.",
-      "Proprietary data moats and generative AI integrations enhancing customer retention."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Extended enterprise sales cycles during periods of cautious corporate software budgeting.",
-      "Competitive pressure from hyperscaler platform bundles and verticalized open-source alternatives.",
-      "Growth decelerations would trigger sharp compression in enterprise value-to-sales multiples."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Enterprise annual contract value (ACV) and consumption metrics print.",
-      "Developer conference keynote and flagship feature releases.",
-      "Hyperscaler cloud marketplace tier-1 partnership expansion."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -2610,7 +2608,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Compass Inc.",
     "kind": "stock",
     "group": "End-to-End Real Estate Agent Tech Platform",
-    "base": 5.85,
+    "base": 10.21,
     "blurb": "Compass Inc. provides scalable software and cloud architecture in End-to-End Real Estate Agent Tech Platform, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -2633,7 +2631,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Zillow Group Inc.",
     "kind": "stock",
     "group": "Digital Real Estate SuperApp & Portals",
-    "base": 68.4,
+    "base": 29.8,
     "blurb": "Zillow Group Inc. operates in Digital Real Estate SuperApp & Portals, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Digital Real Estate SuperApp & Portals with high incremental gross margin conversion.",
@@ -2656,7 +2654,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Bumble Inc.",
     "kind": "stock",
     "group": "Women-First Dating & Social Connection Apps",
-    "base": 6.85,
+    "base": 5.99,
     "blurb": "Bumble Inc. operates in Women-First Dating & Social Connection Apps, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Women-First Dating & Social Connection Apps with high incremental gross margin conversion.",
@@ -2679,7 +2677,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Angi Inc.",
     "kind": "stock",
     "group": "Home Services Digital Marketplace",
-    "base": 1.95,
+    "base": 6.48,
     "blurb": "Angi Inc. operates in Home Services Digital Marketplace, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Home Services Digital Marketplace with high incremental gross margin conversion.",
@@ -2702,7 +2700,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Yelp Inc.",
     "kind": "stock",
     "group": "Local Business Reviews & Advertising",
-    "base": 33.4,
+    "base": 20.34,
     "blurb": "Yelp Inc. operates in Local Business Reviews & Advertising, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Local Business Reviews & Advertising with high incremental gross margin conversion.",
@@ -2725,7 +2723,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Tripadvisor Inc.",
     "kind": "stock",
     "group": "Travel Guidance & Experiences Booking",
-    "base": 14.8,
+    "base": 7.24,
     "blurb": "Tripadvisor Inc. operates in Travel Guidance & Experiences Booking, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Travel Guidance & Experiences Booking with high incremental gross margin conversion.",
@@ -2748,7 +2746,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Caesars Entertainment",
     "kind": "stock",
     "group": "Casino Resorts & Digital Sportsbook",
-    "base": 38.6,
+    "base": 29.33,
     "blurb": "Caesars Entertainment operates in Casino Resorts & Digital Sportsbook, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Casino Resorts & Digital Sportsbook with high incremental gross margin conversion.",
@@ -2771,7 +2769,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "PENN Entertainment",
     "kind": "stock",
     "group": "Regional Gaming & ESPN BET Digital",
-    "base": 18.5,
+    "base": 17.5,
     "blurb": "PENN Entertainment operates in Regional Gaming & ESPN BET Digital, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Regional Gaming & ESPN BET Digital with high incremental gross margin conversion.",
@@ -2794,7 +2792,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "DraftKings Inc.",
     "kind": "stock",
     "group": "Online Sports Betting & iGaming Leader",
-    "base": 41.2,
+    "base": 18.89,
     "blurb": "DraftKings Inc. operates in Online Sports Betting & iGaming Leader, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Online Sports Betting & iGaming Leader with high incremental gross margin conversion.",
@@ -2817,7 +2815,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Genius Sports Limited",
     "kind": "stock",
     "group": "Official Sports Data & League Streaming",
-    "base": 8.65,
+    "base": 6.26,
     "blurb": "Genius Sports Limited operates in Official Sports Data & League Streaming, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Official Sports Data & League Streaming with high incremental gross margin conversion.",
@@ -2840,7 +2838,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Rush Street Interactive",
     "kind": "stock",
     "group": "Online Casino & Sportsbook Operations",
-    "base": 11.2,
+    "base": 60.44,
     "blurb": "Rush Street Interactive operates in Online Casino & Sportsbook Operations, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Online Casino & Sportsbook Operations with high incremental gross margin conversion.",
@@ -2863,7 +2861,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Churchill Downs",
     "kind": "stock",
     "group": "Historic Thoroughbred Racing & TwinSpires",
-    "base": 138.4,
+    "base": 99.72,
     "blurb": "Churchill Downs operates in Historic Thoroughbred Racing & TwinSpires, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Historic Thoroughbred Racing & TwinSpires with high incremental gross margin conversion.",
@@ -2886,7 +2884,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Bally's Corp.",
     "kind": "stock",
     "group": "Omnichannel Gaming & Casino Entertainment",
-    "base": 12.8,
+    "base": 11.12,
     "blurb": "Bally's Corp. provides scalable software and cloud architecture in Omnichannel Gaming & Casino Entertainment, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -2909,7 +2907,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Monarch Casino & Resort",
     "kind": "stock",
     "group": "Premium Gaming Destinations",
-    "base": 72.4,
+    "base": 110.63,
     "blurb": "Monarch Casino & Resort operates in Premium Gaming Destinations, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Premium Gaming Destinations with high incremental gross margin conversion.",
@@ -2932,7 +2930,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Boyd Gaming Corp.",
     "kind": "stock",
     "group": "Diversified Regional Gaming & Vegas Locals",
-    "base": 68.4,
+    "base": 77.24,
     "blurb": "Boyd Gaming Corp. commands strategic infrastructure and resource assets in Diversified Regional Gaming & Vegas Locals, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -2951,95 +2949,95 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "LNW",
-    "name": "Light & Wonder",
+    "symbol": "CVNA",
+    "name": "Carvana Co. Class A",
     "kind": "stock",
-    "group": "Cross-Platform Gaming Content & Slot Systems",
-    "base": 88.5,
-    "blurb": "Light & Wonder provides scalable software and cloud architecture in Cross-Platform Gaming Content & Slot Systems, positioning the franchise as a core vendor in digital transformation.",
+    "group": "Retail Trade",
+    "base": 72.37,
+    "blurb": "Carvana Co. Class A (CVNA) is a publicly traded US equity in Retail Trade, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Net revenue retention above peer median with expanding enterprise seat expansions.",
-      "Operating leverage beginning to inflect as R&D investments yield high-margin software gross profit.",
-      "Proprietary data moats and generative AI integrations enhancing customer retention."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Extended enterprise sales cycles during periods of cautious corporate software budgeting.",
-      "Competitive pressure from hyperscaler platform bundles and verticalized open-source alternatives.",
-      "Growth decelerations would trigger sharp compression in enterprise value-to-sales multiples."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Enterprise annual contract value (ACV) and consumption metrics print.",
-      "Developer conference keynote and flagship feature releases.",
-      "Hyperscaler cloud marketplace tier-1 partnership expansion."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
-    "symbol": "IGT",
-    "name": "International Game Technology",
+    "symbol": "NTES",
+    "name": "Netease Inc Sponsored ADR",
     "kind": "stock",
-    "group": "Global Lottery & Gaming Machines",
-    "base": 18.2,
-    "blurb": "International Game Technology operates in Global Lottery & Gaming Machines, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Technology Services",
+    "base": 122.17,
+    "blurb": "Netease Inc Sponsored ADR (NTES) is a publicly traded US equity in Technology Services, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in Global Lottery & Gaming Machines with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
-    "symbol": "AGS",
-    "name": "PlayAGS Inc.",
+    "symbol": "ASX",
+    "name": "ASE Technology Holding Co., Ltd. Sponsored ADR",
     "kind": "stock",
-    "group": "Electronic Gaming Machines & Table Products",
-    "base": 11.4,
-    "blurb": "PlayAGS Inc. operates in Electronic Gaming Machines & Table Products, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Electronic Technology",
+    "base": 35.55,
+    "blurb": "ASE Technology Holding Co., Ltd. Sponsored ADR (ASX) is a publicly traded US equity in Electronic Technology, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in Electronic Gaming Machines & Table Products with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
-    "symbol": "GAN",
-    "name": "GAN Limited",
+    "symbol": "CNI",
+    "name": "Canadian National Railway Company",
     "kind": "stock",
-    "group": "SaaS Solutions for Real Money iGaming",
-    "base": 1.85,
-    "blurb": "GAN Limited provides scalable software and cloud architecture in SaaS Solutions for Real Money iGaming, positioning the franchise as a core vendor in digital transformation.",
+    "group": "Transportation",
+    "base": 127.18,
+    "blurb": "Canadian National Railway Company (CNI) is a publicly traded US equity in Transportation, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Net revenue retention above peer median with expanding enterprise seat expansions.",
-      "Operating leverage beginning to inflect as R&D investments yield high-margin software gross profit.",
-      "Proprietary data moats and generative AI integrations enhancing customer retention."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Extended enterprise sales cycles during periods of cautious corporate software budgeting.",
-      "Competitive pressure from hyperscaler platform bundles and verticalized open-source alternatives.",
-      "Growth decelerations would trigger sharp compression in enterprise value-to-sales multiples."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Enterprise annual contract value (ACV) and consumption metrics print.",
-      "Developer conference keynote and flagship feature releases.",
-      "Hyperscaler cloud marketplace tier-1 partnership expansion."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -3047,7 +3045,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Dave & Buster's",
     "kind": "stock",
     "group": "Entertainment, Dining & Arcade Venues",
-    "base": 36.4,
+    "base": 8.02,
     "blurb": "Dave & Buster's provides scalable software and cloud architecture in Entertainment, Dining & Arcade Venues, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -3070,7 +3068,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Six Flags Entertainment",
     "kind": "stock",
     "group": "Regional Theme Parks & Water Attractions",
-    "base": 38.5,
+    "base": 24.96,
     "blurb": "Six Flags Entertainment operates in Regional Theme Parks & Water Attractions, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Regional Theme Parks & Water Attractions with high incremental gross margin conversion.",
@@ -3093,7 +3091,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Cedar Fair / Six Flags",
     "kind": "stock",
     "group": "Thrill Parks & Family Entertainment Resorts",
-    "base": 42.8,
+    "base": 11.55,
     "blurb": "Cedar Fair / Six Flags provides scalable software and cloud architecture in Thrill Parks & Family Entertainment Resorts, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -3112,26 +3110,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "SEAS",
-    "name": "United Parks & Resorts",
+    "symbol": "AMX",
+    "name": "America Movil SAB de CV Sponsored ADR Class B",
     "kind": "stock",
-    "group": "Theme Parks & Marine Animal Attractions",
-    "base": 48.6,
-    "blurb": "United Parks & Resorts operates in Theme Parks & Marine Animal Attractions, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Communications",
+    "base": 25.47,
+    "blurb": "America Movil SAB de CV Sponsored ADR Class B (AMX) is a publicly traded US equity in Communications, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in Theme Parks & Marine Animal Attractions with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -3139,7 +3137,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "TKO Group Holdings",
     "kind": "stock",
     "group": "Live Combat Sports (UFC & WWE)",
-    "base": 124.8,
+    "base": 195.42,
     "blurb": "TKO Group Holdings operates in Live Combat Sports (UFC & WWE), trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Live Combat Sports (UFC & WWE) with high incremental gross margin conversion.",
@@ -3162,7 +3160,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Manchester United plc",
     "kind": "stock",
     "group": "Global Football Club & Media Rights",
-    "base": 16.8,
+    "base": 22.43,
     "blurb": "Manchester United plc operates in Global Football Club & Media Rights, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Global Football Club & Media Rights with high incremental gross margin conversion.",
@@ -3185,7 +3183,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Atlanta Braves Holdings",
     "kind": "stock",
     "group": "Major League Baseball Franchise & Real Estate",
-    "base": 39.4,
+    "base": 56.66,
     "blurb": "Atlanta Braves Holdings operates in Major League Baseball Franchise & Real Estate, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Major League Baseball Franchise & Real Estate with high incremental gross margin conversion.",
@@ -3204,26 +3202,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "MSGS",
-    "name": "Madison Square Garden Sports",
+    "symbol": "BCS",
+    "name": "Barclays PLC Sponsored ADR",
     "kind": "stock",
-    "group": "Professional Sports Franchises (Knicks, Rangers)",
-    "base": 194.2,
-    "blurb": "Madison Square Garden Sports operates in Professional Sports Franchises (Knicks, Rangers), trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Finance",
+    "base": 22.87,
+    "blurb": "Barclays PLC Sponsored ADR (BCS) is a publicly traded US equity in Finance, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in Professional Sports Franchises (Knicks, Rangers) with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -3231,7 +3229,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Madison Square Garden Entertainment",
     "kind": "stock",
     "group": "Live Entertainment Venues & Rockettes",
-    "base": 38.4,
+    "base": 79.49,
     "blurb": "Madison Square Garden Entertainment provides scalable software and cloud architecture in Live Entertainment Venues & Rockettes, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -3254,7 +3252,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Sphere Entertainment",
     "kind": "stock",
     "group": "Next-Gen Immersive Media Sphere Venues",
-    "base": 46.8,
+    "base": 125.56,
     "blurb": "Sphere Entertainment operates in Next-Gen Immersive Media Sphere Venues, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Next-Gen Immersive Media Sphere Venues with high incremental gross margin conversion.",
@@ -3277,7 +3275,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Warner Music Group",
     "kind": "stock",
     "group": "Recorded Music & Global Music Publishing",
-    "base": 32.8,
+    "base": 32.3,
     "blurb": "Warner Music Group operates in Recorded Music & Global Music Publishing, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Recorded Music & Global Music Publishing with high incremental gross margin conversion.",
@@ -3300,7 +3298,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "AMC Entertainment Holdings",
     "kind": "stock",
     "group": "Theatrical Exhibition & IMAX Screens",
-    "base": 4.35,
+    "base": 3.25,
     "blurb": "AMC Entertainment Holdings operates in Theatrical Exhibition & IMAX Screens, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Theatrical Exhibition & IMAX Screens with high incremental gross margin conversion.",
@@ -3323,7 +3321,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Cinemark Holdings",
     "kind": "stock",
     "group": "Movie Theater Circuit in US and Latin America",
-    "base": 28.6,
+    "base": 40.8,
     "blurb": "Cinemark Holdings operates in Movie Theater Circuit in US and Latin America, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Movie Theater Circuit in US and Latin America with high incremental gross margin conversion.",
@@ -3346,7 +3344,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Marcus Corp.",
     "kind": "stock",
     "group": "Movie Theatres & Lodging Properties",
-    "base": 15.4,
+    "base": 26.95,
     "blurb": "Marcus Corp. operates in Movie Theatres & Lodging Properties, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Movie Theatres & Lodging Properties with high incremental gross margin conversion.",
@@ -3369,7 +3367,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "IMAX Corp.",
     "kind": "stock",
     "group": "Premium Large-Format Cinematic Systems",
-    "base": 21.8,
+    "base": 48.29,
     "blurb": "IMAX Corp. operates in Premium Large-Format Cinematic Systems, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Premium Large-Format Cinematic Systems with high incremental gross margin conversion.",
@@ -3388,26 +3386,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "MODG",
-    "name": "Topgolf Callaway Brands",
+    "symbol": "LYG",
+    "name": "Lloyds Banking Group plc Sponsored ADR",
     "kind": "stock",
-    "group": "Golf Equipment, Apparel & Venue Tech",
-    "base": 9.85,
-    "blurb": "Topgolf Callaway Brands is an established consumer franchise in Golf Equipment, Apparel & Venue Tech, driving customer engagement and unit-level economics across digital and physical footprints.",
+    "group": "Finance",
+    "base": 5.21,
+    "blurb": "Lloyds Banking Group plc Sponsored ADR (LYG) is a publicly traded US equity in Finance, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Resilient consumer brand affinity with demonstrated pricing power against inflationary inputs.",
-      "Attractive new unit payback periods and disciplined store footprint expansion runway.",
-      "Digital channel adoption and loyalty member mix driving incremental ticket frequency."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Discretionary consumer wallet pressure during macroeconomic tightening cycles.",
-      "Wage inflation and supply chain input volatility compressing store-level margins.",
-      "Intense promotional competition across rival retail and quick-service banners."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Same-store sales (comps) print and average ticket size metrics.",
-      "New market footprint launches and international franchise licensing deals.",
-      "Seasonal holiday shopping and promotional traffic disclosures."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -3415,7 +3413,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Acushnet Holdings",
     "kind": "stock",
     "group": "Titleist Golf Balls & FootJoy Golf Gear",
-    "base": 68.4,
+    "base": 82.94,
     "blurb": "Acushnet Holdings operates in Titleist Golf Balls & FootJoy Golf Gear, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Titleist Golf Balls & FootJoy Golf Gear with high incremental gross margin conversion.",
@@ -3438,7 +3436,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Peloton Interactive",
     "kind": "stock",
     "group": "Connected Fitness Hardware & Subscriptions",
-    "base": 7.85,
+    "base": 5.7,
     "blurb": "Peloton Interactive operates in Connected Fitness Hardware & Subscriptions, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Connected Fitness Hardware & Subscriptions with high incremental gross margin conversion.",
@@ -3461,7 +3459,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Ally Financial Inc.",
     "kind": "stock",
     "group": "Digital Auto Finance & Consumer Banking",
-    "base": 34.8,
+    "base": 38.31,
     "blurb": "Ally Financial Inc. operates in Digital Auto Finance & Consumer Banking, leveraging proprietary underwriting models, payment networks, or loan servicing to monetize financial volume.",
     "bull": [
       "Net interest margin stability and growing non-interest fee revenue streams.",
@@ -3480,26 +3478,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "LC",
-    "name": "LendingClub Corp.",
+    "symbol": "MFC",
+    "name": "Manulife Financial Corporation",
     "kind": "stock",
-    "group": "Digital Marketplace Bank & Personal Loans",
-    "base": 12.8,
-    "blurb": "LendingClub Corp. operates in Digital Marketplace Bank & Personal Loans, leveraging proprietary underwriting models, payment networks, or loan servicing to monetize financial volume.",
+    "group": "Finance",
+    "base": 44.06,
+    "blurb": "Manulife Financial Corporation (MFC) is a publicly traded US equity in Finance, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Net interest margin stability and growing non-interest fee revenue streams.",
-      "Credit loss reserves aligned with conservative historical loss benchmarks.",
-      "Digital platform efficiency delivering superior operating efficiency ratio compared to legacy peers."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Credit quality deterioration and rising net charge-off rates in a weakening employment backdrop.",
-      "Yield curve compression or unexpected monetary policy rate shifts impacting funding costs.",
-      "Capital adequacy regulatory constraints and capital retention requirements."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly net interest income (NII) guidance and credit provision updates.",
-      "Origination volume metrics and loan portfolio performance disclosures.",
-      "Federal Reserve policy rate decisions and banking stress test releases."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -3507,7 +3505,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Oportun Financial",
     "kind": "stock",
     "group": "AI-Driven Mission-Driven Consumer Loans",
-    "base": 2.85,
+    "base": 11.73,
     "blurb": "Oportun Financial provides scalable software and cloud architecture in AI-Driven Mission-Driven Consumer Loans, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -3530,7 +3528,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "PRA Group Inc.",
     "kind": "stock",
     "group": "Nonperforming Consumer Loan Portfolio Recovery",
-    "base": 18.6,
+    "base": 11.84,
     "blurb": "PRA Group Inc. operates in Nonperforming Consumer Loan Portfolio Recovery, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Nonperforming Consumer Loan Portfolio Recovery with high incremental gross margin conversion.",
@@ -3553,7 +3551,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Encore Capital Group",
     "kind": "stock",
     "group": "Global Consumer Debt Recovery Solutions",
-    "base": 44.8,
+    "base": 109.49,
     "blurb": "Encore Capital Group operates in Global Consumer Debt Recovery Solutions, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Global Consumer Debt Recovery Solutions with high incremental gross margin conversion.",
@@ -3576,7 +3574,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Enova International",
     "kind": "stock",
     "group": "Online Machine Learning Consumer Credit",
-    "base": 84.5,
+    "base": 169.85,
     "blurb": "Enova International operates in Online Machine Learning Consumer Credit, leveraging proprietary underwriting models, payment networks, or loan servicing to monetize financial volume.",
     "bull": [
       "Net interest margin stability and growing non-interest fee revenue streams.",
@@ -3599,7 +3597,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "FirstCash Holdings",
     "kind": "stock",
     "group": "Pawnshop Operator & Consumer Services",
-    "base": 112.4,
+    "base": 184.7,
     "blurb": "FirstCash Holdings operates in Pawnshop Operator & Consumer Services, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Pawnshop Operator & Consumer Services with high incremental gross margin conversion.",
@@ -3622,7 +3620,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "EZCORP Inc.",
     "kind": "stock",
     "group": "Pawn Loans & Pre-Owned Merchandise",
-    "base": 11.8,
+    "base": 27.55,
     "blurb": "EZCORP Inc. operates in Pawn Loans & Pre-Owned Merchandise, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Pawn Loans & Pre-Owned Merchandise with high incremental gross margin conversion.",
@@ -3645,7 +3643,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "World Acceptance Corp.",
     "kind": "stock",
     "group": "Small-Loan Consumer Installment Lending",
-    "base": 124.6,
+    "base": 138.16,
     "blurb": "World Acceptance Corp. operates in Small-Loan Consumer Installment Lending, leveraging proprietary underwriting models, payment networks, or loan servicing to monetize financial volume.",
     "bull": [
       "Net interest margin stability and growing non-interest fee revenue streams.",
@@ -3668,7 +3666,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Regional Management",
     "kind": "stock",
     "group": "Diversified Consumer Finance Products",
-    "base": 28.5,
+    "base": 35.67,
     "blurb": "Regional Management operates in Diversified Consumer Finance Products, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Diversified Consumer Finance Products with high incremental gross margin conversion.",
@@ -3691,7 +3689,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Navient Corp.",
     "kind": "stock",
     "group": "Student Loan Servicing & Business Processing",
-    "base": 14.8,
+    "base": 6.23,
     "blurb": "Navient Corp. operates in Student Loan Servicing & Business Processing, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Student Loan Servicing & Business Processing with high incremental gross margin conversion.",
@@ -3714,7 +3712,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "SLM Corporation (Sallie Mae)",
     "kind": "stock",
     "group": "Private Student Lending & Education Banking",
-    "base": 21.4,
+    "base": 17.2,
     "blurb": "SLM Corporation (Sallie Mae) operates in Private Student Lending & Education Banking, leveraging proprietary underwriting models, payment networks, or loan servicing to monetize financial volume.",
     "bull": [
       "Net interest margin stability and growing non-interest fee revenue streams.",
@@ -3737,7 +3735,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Nelnet Inc.",
     "kind": "stock",
     "group": "Education Loan Servicing & Technology",
-    "base": 98.4,
+    "base": 126.96,
     "blurb": "Nelnet Inc. operates in Education Loan Servicing & Technology, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Education Loan Servicing & Technology with high incremental gross margin conversion.",
@@ -3760,7 +3758,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Coherent Corp.",
     "kind": "stock",
     "group": "Engineered Materials & Laser Optical Silicon",
-    "base": 92.4,
+    "base": 218.15,
     "blurb": "Coherent Corp. operates in Engineered Materials & Laser Optical Silicon, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Engineered Materials & Laser Optical Silicon with high incremental gross margin conversion.",
@@ -3783,7 +3781,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Lumentum Holdings",
     "kind": "stock",
     "group": "Optical Transceivers for AI Datacenters",
-    "base": 82.5,
+    "base": 596.62,
     "blurb": "Lumentum Holdings provides scalable software and cloud architecture in Optical Transceivers for AI Datacenters, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -3806,7 +3804,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Viavi Solutions",
     "kind": "stock",
     "group": "Network Test, Measurement & Optical Security",
-    "base": 8.85,
+    "base": 30.72,
     "blurb": "Viavi Solutions operates in Network Test, Measurement & Optical Security, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Network Test, Measurement & Optical Security with high incremental gross margin conversion.",
@@ -3829,7 +3827,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Fabrinet",
     "kind": "stock",
     "group": "Advanced Optical Packaging & Manufacturing",
-    "base": 228.6,
+    "base": 327.98,
     "blurb": "Fabrinet operates in Advanced Optical Packaging & Manufacturing, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Advanced Optical Packaging & Manufacturing with high incremental gross margin conversion.",
@@ -3852,7 +3850,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Calix Inc.",
     "kind": "stock",
     "group": "Cloud Broadband Platforms & Software",
-    "base": 34.6,
+    "base": 32.17,
     "blurb": "Calix Inc. provides scalable software and cloud architecture in Cloud Broadband Platforms & Software, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -3875,7 +3873,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Dycom Industries",
     "kind": "stock",
     "group": "Telecommunications Contracting & Fiber Build",
-    "base": 178.5,
+    "base": 221.54,
     "blurb": "Dycom Industries operates in Telecommunications Contracting & Fiber Build, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Telecommunications Contracting & Fiber Build with high incremental gross margin conversion.",
@@ -3898,7 +3896,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "MasTec Inc.",
     "kind": "stock",
     "group": "Infrastructure Engineering & Clean Energy",
-    "base": 128.4,
+    "base": 182.78,
     "blurb": "MasTec Inc. commands strategic infrastructure and resource assets in Infrastructure Engineering & Clean Energy, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -3921,7 +3919,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "MYR Group Inc.",
     "kind": "stock",
     "group": "Electrical Transmission & Clean Energy",
-    "base": 138.6,
+    "base": 273.09,
     "blurb": "MYR Group Inc. commands strategic infrastructure and resource assets in Electrical Transmission & Clean Energy, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -3940,26 +3938,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "IESY",
-    "name": "IES Holdings Inc.",
+    "symbol": "RELX",
+    "name": "RELX PLC Sponsored ADR",
     "kind": "stock",
-    "group": "Electrical & Data Communications Systems",
-    "base": 214.8,
-    "blurb": "IES Holdings Inc. operates in Electrical & Data Communications Systems, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Commercial Services",
+    "base": 40.51,
+    "blurb": "RELX PLC Sponsored ADR (RELX) is a publicly traded US equity in Commercial Services, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in Electrical & Data Communications Systems with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -3967,7 +3965,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Primoris Services",
     "kind": "stock",
     "group": "Pipeline, Civil & Power Utility Services",
-    "base": 68.4,
+    "base": 69.3,
     "blurb": "Primoris Services commands strategic infrastructure and resource assets in Pipeline, Civil & Power Utility Services, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -3990,7 +3988,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Blue Bird Corp.",
     "kind": "stock",
     "group": "Electric & Clean School Buses",
-    "base": 42.6,
+    "base": 55.43,
     "blurb": "Blue Bird Corp. commands strategic infrastructure and resource assets in Electric & Clean School Buses, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -4013,7 +4011,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Winnebago Industries",
     "kind": "stock",
     "group": "Recreational Vehicles & Marine Craft",
-    "base": 54.8,
+    "base": 30.96,
     "blurb": "Winnebago Industries operates in Recreational Vehicles & Marine Craft, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Recreational Vehicles & Marine Craft with high incremental gross margin conversion.",
@@ -4036,7 +4034,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Thor Industries",
     "kind": "stock",
     "group": "Recreational Vehicles & Towable Campers",
-    "base": 98.6,
+    "base": 77.04,
     "blurb": "Thor Industries operates in Recreational Vehicles & Towable Campers, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Recreational Vehicles & Towable Campers with high incremental gross margin conversion.",
@@ -4055,26 +4053,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "LEV",
-    "name": "The Lion Electric Co.",
+    "symbol": "TAK",
+    "name": "Takeda Pharmaceutical Co. Ltd. Sponsored ADR",
     "kind": "stock",
-    "group": "All-Electric Commercial Trucks & Buses",
-    "base": 0.42,
-    "blurb": "The Lion Electric Co. operates in All-Electric Commercial Trucks & Buses, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Health Technology",
+    "base": 21.43,
+    "blurb": "Takeda Pharmaceutical Co. Ltd. Sponsored ADR (TAK) is a publicly traded US equity in Health Technology, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in All-Electric Commercial Trucks & Buses with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -4082,7 +4080,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Hyliion Holdings",
     "kind": "stock",
     "group": "Carnot Generator Technology & Distributed Power",
-    "base": 1.95,
+    "base": 2.47,
     "blurb": "Hyliion Holdings commands strategic infrastructure and resource assets in Carnot Generator Technology & Distributed Power, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -4101,26 +4099,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "NKLA",
-    "name": "Nikola Corp.",
+    "symbol": "ET",
+    "name": "Energy Transfer LP",
     "kind": "stock",
-    "group": "Hydrogen Fuel Cell & Electric Heavy Trucks",
-    "base": 1.85,
-    "blurb": "Nikola Corp. operates in Hydrogen Fuel Cell & Electric Heavy Trucks, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Industrial Services",
+    "base": 19.4,
+    "blurb": "Energy Transfer LP (ET) is a publicly traded US equity in Industrial Services, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in Hydrogen Fuel Cell & Electric Heavy Trucks with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -4128,7 +4126,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "EVgo Inc.",
     "kind": "stock",
     "group": "Public DC Fast-Charging Network",
-    "base": 3.85,
+    "base": 1.75,
     "blurb": "EVgo Inc. operates in Public DC Fast-Charging Network, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Public DC Fast-Charging Network with high incremental gross margin conversion.",
@@ -4151,7 +4149,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "ChargePoint Holdings",
     "kind": "stock",
     "group": "EV Charging Hardware & Software Cloud",
-    "base": 1.25,
+    "base": 11.67,
     "blurb": "ChargePoint Holdings provides scalable software and cloud architecture in EV Charging Hardware & Software Cloud, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -4174,7 +4172,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Blink Charging Co.",
     "kind": "stock",
     "group": "EV Charging Equipment & Network Services",
-    "base": 1.65,
+    "base": 0.4202,
     "blurb": "Blink Charging Co. operates in EV Charging Equipment & Network Services, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in EV Charging Equipment & Network Services with high incremental gross margin conversion.",
@@ -4197,7 +4195,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Weibo Corp.",
     "kind": "stock",
     "group": "Social Media & Microblogging Platform",
-    "base": 8.85,
+    "base": 6.16,
     "blurb": "Weibo Corp. provides scalable software and cloud architecture in Social Media & Microblogging Platform, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -4220,7 +4218,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Trip.com Group",
     "kind": "stock",
     "group": "Comprehensive Online Travel & Booking",
-    "base": 62.4,
+    "base": 43.58,
     "blurb": "Trip.com Group operates in Comprehensive Online Travel & Booking, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Comprehensive Online Travel & Booking with high incremental gross margin conversion.",
@@ -4243,7 +4241,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Bilibili Inc.",
     "kind": "stock",
     "group": "Video Community for Animation & Gaming",
-    "base": 18.6,
+    "base": 13.25,
     "blurb": "Bilibili Inc. operates in Video Community for Animation & Gaming, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Video Community for Animation & Gaming with high incremental gross margin conversion.",
@@ -4266,7 +4264,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "iQIYI Inc.",
     "kind": "stock",
     "group": "Streaming Video Entertainment Services",
-    "base": 2.15,
+    "base": 0.8284,
     "blurb": "iQIYI Inc. provides scalable software and cloud architecture in Streaming Video Entertainment Services, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -4289,7 +4287,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "HUYA Inc.",
     "kind": "stock",
     "group": "Live Streaming Platform for Gaming",
-    "base": 3.15,
+    "base": 2.15,
     "blurb": "HUYA Inc. provides scalable software and cloud architecture in Live Streaming Platform for Gaming, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -4312,7 +4310,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "DouYu International",
     "kind": "stock",
     "group": "Game-Centric Live Streaming in China",
-    "base": 8.45,
+    "base": 3.84,
     "blurb": "DouYu International operates in Game-Centric Live Streaming in China, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Game-Centric Live Streaming in China with high incremental gross margin conversion.",
@@ -4335,7 +4333,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Kingsoft Cloud",
     "kind": "stock",
     "group": "Independent Cloud Service Provider",
-    "base": 4.85,
+    "base": 7.55,
     "blurb": "Kingsoft Cloud provides scalable software and cloud architecture in Independent Cloud Service Provider, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -4358,7 +4356,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "TAL Education Group",
     "kind": "stock",
     "group": "Smart Learning Solutions & Tutoring",
-    "base": 9.85,
+    "base": 10.28,
     "blurb": "TAL Education Group operates in Smart Learning Solutions & Tutoring, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Smart Learning Solutions & Tutoring with high incremental gross margin conversion.",
@@ -4381,7 +4379,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "New Oriental Education",
     "kind": "stock",
     "group": "Comprehensive Educational Services",
-    "base": 58.4,
+    "base": 53.28,
     "blurb": "New Oriental Education operates in Comprehensive Educational Services, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Comprehensive Educational Services with high incremental gross margin conversion.",
@@ -4404,7 +4402,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Gaotu Techedu Inc.",
     "kind": "stock",
     "group": "Technology-Driven Education Products",
-    "base": 3.25,
+    "base": 2.48,
     "blurb": "Gaotu Techedu Inc. operates in Technology-Driven Education Products, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Technology-Driven Education Products with high incremental gross margin conversion.",
@@ -4427,7 +4425,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Full Truck Alliance",
     "kind": "stock",
     "group": "Digital Freight Matching Marketplace",
-    "base": 8.65,
+    "base": 8.69,
     "blurb": "Full Truck Alliance operates in Digital Freight Matching Marketplace, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Digital Freight Matching Marketplace with high incremental gross margin conversion.",
@@ -4450,7 +4448,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "ZTO Express",
     "kind": "stock",
     "group": "Express Delivery Services in China",
-    "base": 21.4,
+    "base": 20.32,
     "blurb": "ZTO Express operates in Express Delivery Services in China, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Express Delivery Services in China with high incremental gross margin conversion.",
@@ -4473,7 +4471,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "VNET Group Inc.",
     "kind": "stock",
     "group": "Carrier-Neutral Internet Data Center Services",
-    "base": 3.25,
+    "base": 2.98,
     "blurb": "VNET Group Inc. provides scalable software and cloud architecture in Carrier-Neutral Internet Data Center Services, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -4496,7 +4494,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "GDS Holdings Limited",
     "kind": "stock",
     "group": "High-Performance Data Centers in Asia",
-    "base": 19.8,
+    "base": 19.81,
     "blurb": "GDS Holdings Limited operates in High-Performance Data Centers in Asia, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in High-Performance Data Centers in Asia with high incremental gross margin conversion.",
@@ -4519,7 +4517,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Canaan Inc.",
     "kind": "stock",
     "group": "ASIC Microprocessors & Mining Hardware",
-    "base": 1.15,
+    "base": 0.1549,
     "blurb": "Canaan Inc. operates in ASIC Microprocessors & Mining Hardware, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in ASIC Microprocessors & Mining Hardware with high incremental gross margin conversion.",
@@ -4542,7 +4540,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "SOS Limited",
     "kind": "stock",
     "group": "Emergency Rescue Services & Blockchain Mining",
-    "base": 1.35,
+    "base": 0.2061,
     "blurb": "SOS Limited provides scalable software and cloud architecture in Emergency Rescue Services & Blockchain Mining, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -4565,7 +4563,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Ebang International",
     "kind": "stock",
     "group": "Blockchain Processing Equipment & Telecom",
-    "base": 4.85,
+    "base": 1.62,
     "blurb": "Ebang International provides scalable software and cloud architecture in Blockchain Processing Equipment & Telecom, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -4588,7 +4586,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "The9 Limited",
     "kind": "stock",
     "group": "Internet Game Operations & Digital Assets",
-    "base": 5.25,
+    "base": 2.73,
     "blurb": "The9 Limited provides scalable software and cloud architecture in Internet Game Operations & Digital Assets, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -4611,7 +4609,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "BlackSky Technology",
     "kind": "stock",
     "group": "Real-Time Geospatial Intelligence & Satellites",
-    "base": 7.45,
+    "base": 23.8,
     "blurb": "BlackSky Technology operates in Real-Time Geospatial Intelligence & Satellites, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Real-Time Geospatial Intelligence & Satellites with high incremental gross margin conversion.",
@@ -4634,7 +4632,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Spire Global",
     "kind": "stock",
     "group": "Space-Based Data Analytics & Maritime Tracking",
-    "base": 11.2,
+    "base": 9.21,
     "blurb": "Spire Global operates in Space-Based Data Analytics & Maritime Tracking, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Space-Based Data Analytics & Maritime Tracking with high incremental gross margin conversion.",
@@ -4657,7 +4655,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Redwire Corp.",
     "kind": "stock",
     "group": "Space Infrastructure & In-Space Manufacturing",
-    "base": 7.85,
+    "base": 7.73,
     "blurb": "Redwire Corp. operates in Space Infrastructure & In-Space Manufacturing, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Space Infrastructure & In-Space Manufacturing with high incremental gross margin conversion.",
@@ -4680,7 +4678,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Momentus Inc.",
     "kind": "stock",
     "group": "Commercial Space Transportation Services",
-    "base": 0.65,
+    "base": 1.8,
     "blurb": "Momentus Inc. operates in Commercial Space Transportation Services, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Commercial Space Transportation Services with high incremental gross margin conversion.",
@@ -4703,7 +4701,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Satellogic Inc.",
     "kind": "stock",
     "group": "Earth Observation Satellite Constellations",
-    "base": 1.15,
+    "base": 3.3,
     "blurb": "Satellogic Inc. operates in Earth Observation Satellite Constellations, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Earth Observation Satellite Constellations with high incremental gross margin conversion.",
@@ -4726,7 +4724,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Plug Power Inc.",
     "kind": "stock",
     "group": "Turnkey Hydrogen Fuel Cell Systems",
-    "base": 1.95,
+    "base": 1.11,
     "blurb": "Plug Power Inc. operates in Turnkey Hydrogen Fuel Cell Systems, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Turnkey Hydrogen Fuel Cell Systems with high incremental gross margin conversion.",
@@ -4749,7 +4747,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "FuelCell Energy",
     "kind": "stock",
     "group": "Stationary Fuel Cell Power Platforms",
-    "base": 5.85,
+    "base": 9.68,
     "blurb": "FuelCell Energy provides scalable software and cloud architecture in Stationary Fuel Cell Power Platforms, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -4772,7 +4770,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Bloom Energy Corp.",
     "kind": "stock",
     "group": "Solid Oxide Fuel Cell Clean Generators",
-    "base": 21.4,
+    "base": 191.99,
     "blurb": "Bloom Energy Corp. commands strategic infrastructure and resource assets in Solid Oxide Fuel Cell Clean Generators, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -4795,7 +4793,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "American Superconductor",
     "kind": "stock",
     "group": "Megawatt-Scale Power Resiliency Solutions",
-    "base": 24.8,
+    "base": 24.13,
     "blurb": "American Superconductor commands strategic infrastructure and resource assets in Megawatt-Scale Power Resiliency Solutions, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -4818,7 +4816,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Enovix Corp.",
     "kind": "stock",
     "group": "Advanced Silicon-Anode Lithium-Ion Batteries",
-    "base": 8.65,
+    "base": 1.6,
     "blurb": "Enovix Corp. operates in Advanced Silicon-Anode Lithium-Ion Batteries, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Advanced Silicon-Anode Lithium-Ion Batteries with high incremental gross margin conversion.",
@@ -4841,7 +4839,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "QuantumScape Corp.",
     "kind": "stock",
     "group": "Solid-State Lithium-Metal Batteries",
-    "base": 4.85,
+    "base": 3.68,
     "blurb": "QuantumScape Corp. operates in Solid-State Lithium-Metal Batteries, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Solid-State Lithium-Metal Batteries with high incremental gross margin conversion.",
@@ -4860,26 +4858,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "FREY",
-    "name": "FREYR Battery",
+    "symbol": "DB",
+    "name": "Deutsche Bank Aktiengesellschaft",
     "kind": "stock",
-    "group": "Clean Next-Gen Battery Cell Manufacturing",
-    "base": 1.45,
-    "blurb": "FREYR Battery commands strategic infrastructure and resource assets in Clean Next-Gen Battery Cell Manufacturing, converting commodity flows into dependable operational free cash flow.",
+    "group": "Finance",
+    "base": 36.62,
+    "blurb": "Deutsche Bank Aktiengesellschaft (DB) is a publicly traded US equity in Finance, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
-      "Secular demand inflection driven by data center power expansion and industrial electrification.",
-      "Shareholder returns supported by ongoing dividend yield and countercyclical share repurchases."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Cyclical sensitivity to benchmark physical commodity pricing and seasonal demand fluctuations.",
-      "Capital expenditure cost overruns on greenfield infrastructure construction projects.",
-      "Permitting delays and environmental regulatory compliance overhangs."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Seasonal commodity inventory withdrawal reports and spot pricing shifts.",
-      "Long-term take-or-pay capacity contracting and utility power purchase agreements.",
-      "Quarterly free cash flow generation and capital return announcement."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -4887,7 +4885,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Solid Power Inc.",
     "kind": "stock",
     "group": "All-Solid-State Battery Cells & Electrolyte",
-    "base": 1.25,
+    "base": 1.76,
     "blurb": "Solid Power Inc. operates in All-Solid-State Battery Cells & Electrolyte, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in All-Solid-State Battery Cells & Electrolyte with high incremental gross margin conversion.",
@@ -4910,7 +4908,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Stem Inc.",
     "kind": "stock",
     "group": "AI-Driven Energy Storage Optimization",
-    "base": 0.42,
+    "base": 2.24,
     "blurb": "Stem Inc. provides scalable software and cloud architecture in AI-Driven Energy Storage Optimization, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -4933,7 +4931,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Fluence Energy",
     "kind": "stock",
     "group": "Grid-Scale Energy Storage Products & Cloud",
-    "base": 18.6,
+    "base": 4.68,
     "blurb": "Fluence Energy provides scalable software and cloud architecture in Grid-Scale Energy Storage Products & Cloud, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -4956,7 +4954,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Array Technologies",
     "kind": "stock",
     "group": "Ground-Mounted Solar Tracking Systems",
-    "base": 6.85,
+    "base": 4.84,
     "blurb": "Array Technologies commands strategic infrastructure and resource assets in Ground-Mounted Solar Tracking Systems, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -4979,7 +4977,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Sunrun Inc.",
     "kind": "stock",
     "group": "Residential Solar & Battery Storage Systems",
-    "base": 9.45,
+    "base": 8.63,
     "blurb": "Sunrun Inc. commands strategic infrastructure and resource assets in Residential Solar & Battery Storage Systems, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -4998,26 +4996,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "NOVA",
-    "name": "Sunnova Energy",
+    "symbol": "LNG",
+    "name": "Cheniere Energy, Inc.",
     "kind": "stock",
-    "group": "Adaptive Residential Energy Services",
-    "base": 3.85,
-    "blurb": "Sunnova Energy commands strategic infrastructure and resource assets in Adaptive Residential Energy Services, converting commodity flows into dependable operational free cash flow.",
+    "group": "Industrial Services",
+    "base": 308.75,
+    "blurb": "Cheniere Energy, Inc. (LNG) is a publicly traded US equity in Industrial Services, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
-      "Secular demand inflection driven by data center power expansion and industrial electrification.",
-      "Shareholder returns supported by ongoing dividend yield and countercyclical share repurchases."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Cyclical sensitivity to benchmark physical commodity pricing and seasonal demand fluctuations.",
-      "Capital expenditure cost overruns on greenfield infrastructure construction projects.",
-      "Permitting delays and environmental regulatory compliance overhangs."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Seasonal commodity inventory withdrawal reports and spot pricing shifts.",
-      "Long-term take-or-pay capacity contracting and utility power purchase agreements.",
-      "Quarterly free cash flow generation and capital return announcement."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -5025,7 +5023,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "SolarEdge Technologies",
     "kind": "stock",
     "group": "DC Optimized Inverters & Smart Energy",
-    "base": 14.8,
+    "base": 23.85,
     "blurb": "SolarEdge Technologies commands strategic infrastructure and resource assets in DC Optimized Inverters & Smart Energy, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -5048,7 +5046,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Canadian Solar Inc.",
     "kind": "stock",
     "group": "Solar Modules & Large-Scale Battery Storage",
-    "base": 11.2,
+    "base": 9.88,
     "blurb": "Canadian Solar Inc. commands strategic infrastructure and resource assets in Solar Modules & Large-Scale Battery Storage, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -5071,7 +5069,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "JinkoSolar Holding",
     "kind": "stock",
     "group": "High-Efficiency Monocrystalline Solar Modules",
-    "base": 19.8,
+    "base": 9.4,
     "blurb": "JinkoSolar Holding commands strategic infrastructure and resource assets in High-Efficiency Monocrystalline Solar Modules, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -5094,7 +5092,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Daqo New Energy",
     "kind": "stock",
     "group": "High-Purity Polysilicon for Solar PV",
-    "base": 18.4,
+    "base": 10.91,
     "blurb": "Daqo New Energy commands strategic infrastructure and resource assets in High-Purity Polysilicon for Solar PV, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -5113,26 +5111,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "MAXN",
-    "name": "Maxeon Solar Technologies",
+    "symbol": "NWG",
+    "name": "NatWest Group Plc Sponsored ADR",
     "kind": "stock",
-    "group": "Advanced Solar Panel Technology",
-    "base": 2.85,
-    "blurb": "Maxeon Solar Technologies commands strategic infrastructure and resource assets in Advanced Solar Panel Technology, converting commodity flows into dependable operational free cash flow.",
+    "group": "Finance",
+    "base": 15.83,
+    "blurb": "NatWest Group Plc Sponsored ADR (NWG) is a publicly traded US equity in Finance, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
-      "Secular demand inflection driven by data center power expansion and industrial electrification.",
-      "Shareholder returns supported by ongoing dividend yield and countercyclical share repurchases."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Cyclical sensitivity to benchmark physical commodity pricing and seasonal demand fluctuations.",
-      "Capital expenditure cost overruns on greenfield infrastructure construction projects.",
-      "Permitting delays and environmental regulatory compliance overhangs."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Seasonal commodity inventory withdrawal reports and spot pricing shifts.",
-      "Long-term take-or-pay capacity contracting and utility power purchase agreements.",
-      "Quarterly free cash flow generation and capital return announcement."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -5140,7 +5138,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Shoals Technologies",
     "kind": "stock",
     "group": "Electrical Balance of System Solar Solutions",
-    "base": 4.85,
+    "base": 8.29,
     "blurb": "Shoals Technologies commands strategic infrastructure and resource assets in Electrical Balance of System Solar Solutions, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -5163,7 +5161,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "America's Car-Mart",
     "kind": "stock",
     "group": "Automotive Retailing & Financing",
-    "base": 48.5,
+    "base": 0.9353,
     "blurb": "America's Car-Mart provides scalable software and cloud architecture in Automotive Retailing & Financing, positioning the franchise as a core vendor in digital transformation.",
     "bull": [
       "Net revenue retention above peer median with expanding enterprise seat expansions.",
@@ -5186,7 +5184,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "PROG Holdings Inc.",
     "kind": "stock",
     "group": "Fintech Lease-to-Own Solutions",
-    "base": 38.6,
+    "base": 38.38,
     "blurb": "PROG Holdings Inc. operates in Fintech Lease-to-Own Solutions, leveraging proprietary underwriting models, payment networks, or loan servicing to monetize financial volume.",
     "bull": [
       "Net interest margin stability and growing non-interest fee revenue streams.",
@@ -5205,26 +5203,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "RCII",
-    "name": "Upbound Group",
+    "symbol": "TEL",
+    "name": "TE Connectivity plc",
     "kind": "stock",
-    "group": "Omnichannel Consumer Lease-Purchase",
-    "base": 28.4,
-    "blurb": "Upbound Group operates in Omnichannel Consumer Lease-Purchase, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Electronic Technology",
+    "base": 216.34,
+    "blurb": "TE Connectivity plc (TEL) is a publicly traded US equity in Electronic Technology, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in Omnichannel Consumer Lease-Purchase with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -5232,7 +5230,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "CNO Financial Group",
     "kind": "stock",
     "group": "Health & Life Insurance for Middle-America",
-    "base": 32.8,
+    "base": 57.47,
     "blurb": "CNO Financial Group is a biopharmaceutical and medical innovators in Health & Life Insurance for Middle-America, developing commercial therapies with proprietary clinical pipelines.",
     "bull": [
       "Differentiated clinical data package addressing high-unmet medical need in a blockbuster indication.",
@@ -5251,26 +5249,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "AMWD",
-    "name": "American Woodmark",
+    "symbol": "CRH",
+    "name": "CRH public limited company",
     "kind": "stock",
-    "group": "Cabinet Manufacturer for Home Remodel",
-    "base": 84.5,
-    "blurb": "American Woodmark operates in Cabinet Manufacturer for Home Remodel, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Non-Energy Minerals",
+    "base": 93.16,
+    "blurb": "CRH public limited company (CRH) is a publicly traded US equity in Non-Energy Minerals, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in Cabinet Manufacturer for Home Remodel with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -5278,7 +5276,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Interface Inc.",
     "kind": "stock",
     "group": "Modular Commercial Flooring Solutions",
-    "base": 18.6,
+    "base": 31,
     "blurb": "Interface Inc. operates in Modular Commercial Flooring Solutions, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Modular Commercial Flooring Solutions with high incremental gross margin conversion.",
@@ -5301,7 +5299,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Gibraltar Industries",
     "kind": "stock",
     "group": "Building Materials for Renewable Energy",
-    "base": 68.4,
+    "base": 30.35,
     "blurb": "Gibraltar Industries commands strategic infrastructure and resource assets in Building Materials for Renewable Energy, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -5320,26 +5318,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "CSWI",
-    "name": "CSW Industrials",
+    "symbol": "B",
+    "name": "Barrick Mining Corporation",
     "kind": "stock",
-    "group": "Specialty Chemical & Industrial Products",
-    "base": 348.5,
-    "blurb": "CSW Industrials operates in Specialty Chemical & Industrial Products, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Non-Energy Minerals",
+    "base": 37.59,
+    "blurb": "Barrick Mining Corporation (B) is a publicly traded US equity in Non-Energy Minerals, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in Specialty Chemical & Industrial Products with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -5347,7 +5345,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Global Industrial Co.",
     "kind": "stock",
     "group": "Industrial & MRO Equipment Distribution",
-    "base": 34.2,
+    "base": 46.63,
     "blurb": "Global Industrial Co. operates in Industrial & MRO Equipment Distribution, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Industrial & MRO Equipment Distribution with high incremental gross margin conversion.",
@@ -5370,7 +5368,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Standex International",
     "kind": "stock",
     "group": "Engineered Electronics & Hydraulics",
-    "base": 178.6,
+    "base": 240.79,
     "blurb": "Standex International operates in Engineered Electronics & Hydraulics, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Engineered Electronics & Hydraulics with high incremental gross margin conversion.",
@@ -5393,7 +5391,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Watts Water Technologies",
     "kind": "stock",
     "group": "Water Quality & Flow Control Systems",
-    "base": 198.4,
+    "base": 360.39,
     "blurb": "Watts Water Technologies operates in Water Quality & Flow Control Systems, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Water Quality & Flow Control Systems with high incremental gross margin conversion.",
@@ -5416,7 +5414,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Franklin Electric",
     "kind": "stock",
     "group": "Pumping Systems & Fueling Management",
-    "base": 98.6,
+    "base": 98.22,
     "blurb": "Franklin Electric operates in Pumping Systems & Fueling Management, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Pumping Systems & Fueling Management with high incremental gross margin conversion.",
@@ -5439,7 +5437,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Powell Industries",
     "kind": "stock",
     "group": "Electrical Power Distribution Equipment",
-    "base": 248.5,
+    "base": 142.72,
     "blurb": "Powell Industries commands strategic infrastructure and resource assets in Electrical Power Distribution Equipment, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -5458,26 +5456,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "HAYN",
-    "name": "Haynes International",
+    "symbol": "WPM",
+    "name": "Wheaton Precious Metals Corp",
     "kind": "stock",
-    "group": "High-Performance Nickel & Cobalt Alloys",
-    "base": 59.8,
-    "blurb": "Haynes International operates in High-Performance Nickel & Cobalt Alloys, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Non-Energy Minerals",
+    "base": 131.45,
+    "blurb": "Wheaton Precious Metals Corp (WPM) is a publicly traded US equity in Non-Energy Minerals, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in High-Performance Nickel & Cobalt Alloys with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   },
   {
@@ -5485,7 +5483,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Kaiser Aluminum",
     "kind": "stock",
     "group": "Semi-Fabricated Specialty Aluminum Products",
-    "base": 68.4,
+    "base": 108.5,
     "blurb": "Kaiser Aluminum operates in Semi-Fabricated Specialty Aluminum Products, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Semi-Fabricated Specialty Aluminum Products with high incremental gross margin conversion.",
@@ -5508,7 +5506,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Carpenter Technology",
     "kind": "stock",
     "group": "Specialty Alloys for Aerospace & Defense",
-    "base": 168.4,
+    "base": 291.57,
     "blurb": "Carpenter Technology operates in Specialty Alloys for Aerospace & Defense, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Specialty Alloys for Aerospace & Defense with high incremental gross margin conversion.",
@@ -5531,7 +5529,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "ATI Inc.",
     "kind": "stock",
     "group": "High-Performance Materials for Aerospace",
-    "base": 58.6,
+    "base": 183.09,
     "blurb": "ATI Inc. operates in High-Performance Materials for Aerospace, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in High-Performance Materials for Aerospace with high incremental gross margin conversion.",
@@ -5554,7 +5552,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Hexcel Corp.",
     "kind": "stock",
     "group": "Advanced Carbon Fiber Composites for Jets",
-    "base": 59.4,
+    "base": 79.46,
     "blurb": "Hexcel Corp. operates in Advanced Carbon Fiber Composites for Jets, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Advanced Carbon Fiber Composites for Jets with high incremental gross margin conversion.",
@@ -5577,7 +5575,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Moog Inc.",
     "kind": "stock",
     "group": "Precision Motion & Fluid Controls for Space",
-    "base": 188.5,
+    "base": 339.51,
     "blurb": "Moog Inc. operates in Precision Motion & Fluid Controls for Space, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Precision Motion & Fluid Controls for Space with high incremental gross margin conversion.",
@@ -5600,7 +5598,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Woodward Inc.",
     "kind": "stock",
     "group": "Control Solutions for Aerospace & Industrial",
-    "base": 174.8,
+    "base": 329.86,
     "blurb": "Woodward Inc. operates in Control Solutions for Aerospace & Industrial, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Control Solutions for Aerospace & Industrial with high incremental gross margin conversion.",
@@ -5623,7 +5621,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Kratos Defense",
     "kind": "stock",
     "group": "Unmanned Jet Drone Systems & Satellite Tech",
-    "base": 24.8,
+    "base": 33.91,
     "blurb": "Kratos Defense operates in Unmanned Jet Drone Systems & Satellite Tech, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Unmanned Jet Drone Systems & Satellite Tech with high incremental gross margin conversion.",
@@ -5646,7 +5644,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "AeroVironment Inc.",
     "kind": "stock",
     "group": "Loitering Munition Drones & Tactical UAS",
-    "base": 188.4,
+    "base": 117.52,
     "blurb": "AeroVironment Inc. operates in Loitering Munition Drones & Tactical UAS, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Loitering Munition Drones & Tactical UAS with high incremental gross margin conversion.",
@@ -5669,7 +5667,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Cubic Defense Tech",
     "kind": "stock",
     "group": "Mission Solutions & Secure Communications",
-    "base": 68.4,
+    "base": 10.97,
     "blurb": "Cubic Defense Tech operates in Mission Solutions & Secure Communications, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Mission Solutions & Secure Communications with high incremental gross margin conversion.",
@@ -5692,7 +5690,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Curtiss-Wright Corp.",
     "kind": "stock",
     "group": "Engineered Products for Naval Nuclear Power",
-    "base": 348.5,
+    "base": 472.06,
     "blurb": "Curtiss-Wright Corp. commands strategic infrastructure and resource assets in Engineered Products for Naval Nuclear Power, converting commodity flows into dependable operational free cash flow.",
     "bull": [
       "Low-cost production basis or fee-based long-term contracts insulating cash distributions.",
@@ -5715,7 +5713,7 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     "name": "Materion Corp.",
     "kind": "stock",
     "group": "Advanced Beryllium Materials & Optics",
-    "base": 108.6,
+    "base": 203.93,
     "blurb": "Materion Corp. operates in Advanced Beryllium Materials & Optics, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
     "bull": [
       "Expanding market share in Advanced Beryllium Materials & Optics with high incremental gross margin conversion.",
@@ -5734,26 +5732,26 @@ export const ADDITIONAL_STOCKS: Asset[] = [
     ]
   },
   {
-    "symbol": "GTLS",
-    "name": "Chart Industries",
+    "symbol": "MPLX",
+    "name": "MPLX LP",
     "kind": "stock",
-    "group": "Cryogenic Storage for Liquid Hydrogen & LNG",
-    "base": 134.8,
-    "blurb": "Chart Industries operates in Cryogenic Storage for Liquid Hydrogen & LNG, trading as a focused liquid play with direct sensitivity to industry capital expenditure cycles.",
+    "group": "Industrial Services",
+    "base": 57.25,
+    "blurb": "MPLX LP (MPLX) is a publicly traded US equity in Industrial Services, tracked with live exchange pricing, moving-average structure, and rules-based trend scoring.",
     "bull": [
-      "Expanding market share in Cryogenic Storage for Liquid Hydrogen & LNG with high incremental gross margin conversion.",
-      "Favorable balance sheet posture and disciplined operational expense controls.",
-      "Constructive trend alignment as institutional sponsorship accumulates on structural pullbacks."
+      "Institutional liquidity and active order-book depth on major US exchanges.",
+      "Sustained relative strength against sector peers and major US equity benchmarks.",
+      "Disciplined capital allocation and operating leverage supporting multi-quarter trend durability."
     ],
     "bear": [
-      "Valuation multiple sensitivity to macro discount rates and broad sector rotation.",
-      "Execution risks in scaling enterprise operations and customer acquisition costs.",
-      "Regulatory or cyclical headwind risk could compress near-term guidance revisions."
+      "Sensitive to broader macro rate expectations and risk-off index rotations.",
+      "Valuation multiple compression risk if forward guidance decelerates.",
+      "Sector-specific competitive pressures and quarterly earnings volatility."
     ],
     "catalysts": [
-      "Quarterly earnings and forward revenue guidance release.",
-      "Sector-specific regulatory updates and enterprise contract awards.",
-      "Product pipeline deployment milestones and capital allocation announcements."
+      "Quarterly earnings release and forward revenue guidance",
+      "Institutional fund rebalancing and sector ETF flows",
+      "Macro interest-rate and liquidity shifts"
     ]
   }
 ];

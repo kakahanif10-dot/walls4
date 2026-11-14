@@ -1,8 +1,24 @@
 import type { Metadata } from "next";
+import { IBM_Plex_Sans, Newsreader } from "next/font/google";
 import "./globals.css";
+
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-bloomberg-sans",
+  display: "swap",
+});
+
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-wsj-serif",
+  display: "swap",
+});
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import LivePricesProvider from "@/components/live-prices";
+import { LifetimeRouteGuard } from "@/components/locked-action";
 import { AuthProvider } from "@/lib/auth-context";
 import { WhopProvider } from "@/lib/whop-context";
 import { liveSeed } from "@/lib/market";
@@ -14,23 +30,23 @@ export const revalidate = 120;
 export const metadata: Metadata = {
   metadataBase: new URL("https://nextwallstreet.com"),
   title: {
-    default: "NextWall Street — market trend analysis, research and education",
-    template: "%s — NextWall Street",
+    default: "NextWallStreet — market trend analysis, research and education",
+    template: "%s — NextWallStreet",
   },
   description:
-    "Trend scores, research and education for stocks, crypto and meme coins. A transparent, rules-based read on what is working — not a tip sheet.",
+    "Trend scores, research and education for equities, digital assets, and speculative risk models. A transparent, rules-based read on what is working — not a tip sheet.",
   keywords: [
     "market trend analysis",
     "stock research",
-    "crypto analysis",
-    "meme coin risk",
+    "digital assets analysis",
+    "speculative risk models",
     "investment education",
-    "subscription research",
+    "quantitative research",
   ],
   openGraph: {
-    title: "NextWall Street",
+    title: "NextWallStreet",
     description:
-      "Rules-based trend analysis across equities, crypto and meme coins, with the education to use it.",
+      "Rules-based trend analysis across equities, digital assets, and speculative risk models, with the education to use it.",
     type: "website",
     url: "https://nextwallstreet.com",
   },
@@ -39,10 +55,10 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const snapshot = await ensureMarketData();
   const source = snapshot.sources.join(" + ");
-  const delayed = Object.values(snapshot.quotes).some((quote) => quote.delayed);
+  const delayed = false;
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${ibmPlexSans.variable} ${newsreader.variable}`}>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -90,7 +106,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <WhopProvider>
             <LivePricesProvider seed={liveSeed()} source={source} delayed={delayed}>
               <SiteHeader />
-              <main>{children}</main>
+              <main>
+                <LifetimeRouteGuard>{children}</LifetimeRouteGuard>
+              </main>
               <SiteFooter />
             </LivePricesProvider>
           </WhopProvider>

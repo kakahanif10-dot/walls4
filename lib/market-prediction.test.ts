@@ -34,10 +34,10 @@ test("Asset Universe has 2,000+ instruments with 800 stocks, 831 cryptos, and 40
   // Test pump.fun and viral memes
   assert.ok(ASSET_BY_SYMBOL["FARTCOIN"], "FARTCOIN must exist");
   assert.ok(ASSET_BY_SYMBOL["GOAT"], "GOAT must exist");
-  assert.ok(ASSET_BY_SYMBOL["FARTO"], "FARTO must exist");
-  assert.ok(ASSET_BY_SYMBOL["GRIF"], "GRIF must exist");
-  assert.ok(ASSET_BY_SYMBOL["VIRT"], "VIRT must exist");
-  assert.ok(ASSET_BY_SYMBOL["CHILL"], "CHILL must exist");
+  assert.ok(ASSET_BY_SYMBOL["PUMP"], "PUMP must exist");
+  assert.ok(ASSET_BY_SYMBOL["VIRTUAL"], "VIRTUAL must exist");
+  assert.ok(ASSET_BY_SYMBOL["GRIFFAIN"], "GRIFFAIN must exist");
+  assert.ok(ASSET_BY_SYMBOL["CHILLGUY"], "CHILLGUY must exist");
 });
 
 test("Metrics and series calculation generate non-zero realistic metrics for all asset types", () => {

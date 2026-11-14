@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { GoogleGenAI } from "@google/genai";
 import { handleAIModeratorQuery, generateMinutePrediction } from "@/lib/ai-moderator";
-import { ASSET_BY_SYMBOL, metricsFor, fmtPrice } from "@/lib/market";
+import { ASSET_BY_SYMBOL, metricsFor } from "@/lib/market";
+import { ensureMarketData } from "@/lib/market-data";
 
 export async function POST(req: NextRequest) {
   try {
+    await ensureMarketData();
     const { message, symbol, action } = await req.json();
 
     if (action === "minute-prediction") {
@@ -20,14 +22,19 @@ export async function POST(req: NextRequest) {
     const asset = ASSET_BY_SYMBOL[targetSymbol];
     if (asset) {
       const m = metricsFor(asset);
+      const basePred = fallbackResult.prediction ?? generateMinutePrediction(asset.symbol);
       exactData = {
+        ...basePred,
         symbol: asset.symbol,
         name: asset.name,
+        kind: asset.kind,
+        group: asset.group,
         currentPrice: m.last,
         stance: m.stance as any,
         score: m.score,
-        invalidationLevel: Math.min(m.sma20, m.sma50) * 0.975,
-        target1: m.high52,
+        invalidationLevel: basePred.invalidationLevel ?? Math.min(m.sma20, m.sma50) * 0.975,
+        target1: basePred.target1 ?? m.high52,
+        target2: basePred.target2 ?? Math.max(m.high52, m.last * 1.08),
         sma20: m.sma20,
         sma50: m.sma50,
         sma200: m.sma200,

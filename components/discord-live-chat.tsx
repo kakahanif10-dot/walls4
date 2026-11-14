@@ -6,7 +6,6 @@ import {
   Hash,
   Send,
   Zap,
-  Sparkles,
   Bot,
   Clock,
   ExternalLink,
@@ -51,6 +50,8 @@ import {
   type ChatMessage,
 } from "@/lib/ai-moderator";
 import { ASSETS } from "@/lib/market-assets";
+import { ASSET_BY_SYMBOL, fmtPrice, metricsFor } from "@/lib/market";
+import { useQuotes } from "@/components/live-prices";
 import { useAuth } from "@/lib/auth-context";
 import { useWhop } from "@/lib/whop-context";
 import WhopBadge from "@/components/whop-badge";
@@ -93,6 +94,11 @@ function playChatChime(type: "send" | "receive" = "send", enabled = true) {
 }
 
 export default function DiscordLiveChat() {
+  const liveQuotes = useQuotes();
+  const liveQuotesRef = useRef(liveQuotes);
+  liveQuotesRef.current = liveQuotes;
+  const deskUpdateSeqRef = useRef(0);
+
   const [activeChannelId, setActiveChannelId] = useState("general-trading");
   const [messages, setMessages] = useState<ChatMessage[]>(() => generateContinuousFloorHistory());
   const [inputText, setInputText] = useState("");
@@ -120,10 +126,28 @@ export default function DiscordLiveChat() {
   const [showSignalModal, setShowSignalModal] = useState(false);
   const [sigSymbol, setSigSymbol] = useState("NVDA");
   const [sigStance, setSigStance] = useState<MinutePrediction["stance"]>("STRONG BUY / LONG");
-  const [sigPrice, setSigPrice] = useState("187.40");
-  const [sigTarget, setSigTarget] = useState("198.00");
-  const [sigStop, setSigStop] = useState("182.50");
+  const [sigPrice, setSigPrice] = useState("");
+  const [sigTarget, setSigTarget] = useState("");
+  const [sigStop, setSigStop] = useState("");
   const [sigNotes, setSigNotes] = useState("Breaking above 20-EMA on 15m volume expansion.");
+
+  useEffect(() => {
+    if (!showSignalModal) return;
+    const sym = sigSymbol.trim().toUpperCase();
+    const asset = ASSET_BY_SYMBOL[sym];
+    const livePx = liveQuotes[sym]?.price ?? (asset ? metricsFor(asset).last : 0);
+    if (livePx > 0) {
+      const dec = livePx < 1 ? 6 : 2;
+      const isShort = sigStance.includes("AVOID") || sigStance.includes("TRIM");
+      setSigPrice(livePx.toFixed(dec));
+      setSigTarget((livePx * (isShort ? 0.94 : 1.06)).toFixed(dec));
+      setSigStop((livePx * (isShort ? 1.035 : 0.965)).toFixed(dec));
+    } else {
+      setSigPrice("");
+      setSigTarget("");
+      setSigStop("");
+    }
+  }, [showSignalModal, sigSymbol, sigStance, liveQuotes]);
 
   // Clocks and countdown
   const [timeData, setTimeData] = useState(() => formatTimeZones());
@@ -286,9 +310,9 @@ export default function DiscordLiveChat() {
         return prev - 1;
       });
 
-      // Periodically inject automated desk trader conversation every 80 seconds so chat is never stagnant
+      // Periodically post deterministic desk commentary grounded in live market quotes every 80s
       if (secondsCounter % 80 === 0) {
-        triggerSimulatedDeskActivity();
+        triggerLiveDeskUpdate();
       }
 
       // Automatically generate hourly macro update every 3600 seconds (or when minute is 0)
@@ -314,9 +338,24 @@ export default function DiscordLiveChat() {
 
   // Automated 60-Second Minute Prediction Generator
   const triggerAutomatedMinutePrediction = (forceSymbol?: string) => {
-    const prediction = generateMinutePrediction(forceSymbol, aiPredictionsCount);
+    const basePrediction = generateMinutePrediction(forceSymbol, aiPredictionsCount);
+    const livePx = liveQuotesRef.current[basePrediction.symbol]?.price;
+    const scale =
+      livePx && livePx > 0 && basePrediction.currentPrice > 0
+        ? livePx / basePrediction.currentPrice
+        : 1;
+    const prediction: MinutePrediction =
+      scale === 1
+        ? basePrediction
+        : {
+            ...basePrediction,
+            currentPrice: livePx!,
+            target1: Number((basePrediction.target1 * scale).toFixed(livePx! < 1 ? 5 : 2)),
+            target2: Number((basePrediction.target2 * scale).toFixed(livePx! < 1 ? 5 : 2)),
+            invalidationLevel: Number((basePrediction.invalidationLevel * scale).toFixed(livePx! < 1 ? 5 : 2)),
+          };
     const date = new Date();
-    const { wibTime, utcTime } = formatTimeZones(date);
+    const { utcTime, estTime } = formatTimeZones(date);
 
     const newAlert: ChatMessage = {
       id: `quant-minute-${Date.now()}`,
@@ -330,10 +369,10 @@ export default function DiscordLiveChat() {
         isBot: true,
         isVerified: true,
       },
-      content: `⚡ **QUANTITATIVE MINUTE SIGNAL: $${prediction.symbol} (${prediction.name})**\nReal-time model prediction generated at ${utcTime} UTC (${timeData.estTime} EST). Confidence: ${prediction.confidence}%.`,
+      content: `⚡ **QUANTITATIVE MINUTE SIGNAL: $${prediction.symbol} (${prediction.name})**\nReal-time model prediction generated at ${utcTime} UTC (${estTime} EST). Confidence: ${prediction.confidence}%.`,
       prediction,
       timestamp: date.toISOString(),
-      timeLabel: `${timeData.estTime} EST`,
+      timeLabel: `${estTime} EST`,
       reactions: { "🚀": 2, "💎": 2, "🧠": 3 },
       userReactions: {},
     };
@@ -343,8 +382,10 @@ export default function DiscordLiveChat() {
     playChatChime("receive", soundEnabled);
   };
 
-  // Automated Community Desk Discussion Generator (Never Stagnant!)
-  const triggerSimulatedDeskActivity = () => {
+  // Live Desk Floor Telemetry Update (grounded in real-time quote tape)
+  const triggerLiveDeskUpdate = () => {
+    const quotes = liveQuotesRef.current;
+    const fmtSym = (sym: string) => (quotes[sym]?.price ? fmtPrice(quotes[sym].price) : "live tape");
     const floorReplies = [
       {
         name: "Daniel Okafor",
@@ -352,7 +393,7 @@ export default function DiscordLiveChat() {
         role: "head-desk" as const,
         roleLabel: "HEAD OF STRATEGY",
         roleColor: "bg-gold/20 text-gold-bright border-gold/40",
-        text: "Semiconductor breadth holding firm above 20-day simple moving averages. Notice institutional accumulation stepping in on every shallow dip in $NVDA and $TSM.",
+        text: `Semiconductor breadth tracking above key moving averages. Institutional bid depth active around $NVDA (${fmtSym("NVDA")}) and $TSM (${fmtSym("TSM")}).`,
       },
       {
         name: "Mara Lindqvist",
@@ -360,7 +401,7 @@ export default function DiscordLiveChat() {
         role: "quant" as const,
         roleLabel: "CRYPTO LEAD",
         roleColor: "bg-purple-500/20 text-purple-400 border-purple-500/40",
-        text: "Solana on-chain order flow velocity continues absorbing spot volume. Funding rates have normalized to neutral levels. Watch $SOL $214 structural support.",
+        text: `Solana spot order flow absorbing liquidity near ${fmtSym("SOL")}. Perpetual funding remains balanced relative to $BTC (${fmtSym("BTC")}).`,
       },
       {
         name: "Priya Raghunathan",
@@ -368,7 +409,7 @@ export default function DiscordLiveChat() {
         role: "quant" as const,
         roleLabel: "QUANT RESEARCH",
         roleColor: "bg-blue-500/20 text-blue-400 border-blue-500/40",
-        text: "Volume profile reading across the 2,038 asset universe: 64% of tracked instruments are trading inside or above session Value Area High. Quantitative posture remains bullish.",
+        text: "Cross-asset breadth scan across the 2,038 tracked instruments is updated continuously from live exchange tapes and Treasury curve feeds.",
       },
       {
         name: "ScalpMaster_NY",
@@ -376,7 +417,7 @@ export default function DiscordLiveChat() {
         role: "pro-trader" as const,
         roleLabel: "SCALPER",
         roleColor: "bg-amber-500/20 text-amber-300 border-amber-500/40",
-        text: "Executed long scalp on $BTC basis expansion at $96,420. Setting invalidation stop strictly as calculated by the Quant Desk model.",
+        text: `Monitoring $BTC basis structure around ${fmtSym("BTC")} with invalidation stop strictly anchored to the Quant Desk model.`,
       },
       {
         name: "Vance_Capital",
@@ -384,11 +425,12 @@ export default function DiscordLiveChat() {
         role: "pro-trader" as const,
         roleLabel: "PRO TRADER",
         roleColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/40",
-        text: "Quant Desk model signal on $NVDA was textbook execution! Bid depth on Level 2 absorbed the pullback cleanly. Strictly maintaining invalidation stop discipline.",
+        text: `Tracking $NVDA live print at ${fmtSym("NVDA")} alongside $AAPL (${fmtSym("AAPL")}) while maintaining strict invalidation stop discipline.`,
       },
     ];
 
-    const random = floorReplies[Math.floor(Math.random() * floorReplies.length)];
+    const entry = floorReplies[deskUpdateSeqRef.current % floorReplies.length];
+    deskUpdateSeqRef.current += 1;
     const date = new Date();
     const { estTime } = formatTimeZones(date);
 
@@ -396,14 +438,14 @@ export default function DiscordLiveChat() {
       id: `desk-auto-${Date.now()}`,
       channelId: activeChannelId,
       author: {
-        name: random.name,
-        avatar: random.avatar,
-        role: random.role,
-        roleLabel: random.roleLabel,
-        roleColor: random.roleColor,
+        name: entry.name,
+        avatar: entry.avatar,
+        role: entry.role,
+        roleLabel: entry.roleLabel,
+        roleColor: entry.roleColor,
         isVerified: true,
       },
-      content: random.text,
+      content: entry.text,
       timestamp: date.toISOString(),
       timeLabel: `${estTime} EST`,
       reactions: { "👍": 3, "🔥": 2 },
@@ -534,6 +576,10 @@ export default function DiscordLiveChat() {
 
   const handlePostSignal = (e: React.FormEvent) => {
     e.preventDefault();
+    const parsedPrice = Number(sigPrice);
+    if (!Number.isFinite(parsedPrice) || parsedPrice <= 0) return;
+    const parsedTarget = Number(sigTarget);
+    const parsedStop = Number(sigStop);
     const date = new Date();
     const { wibTime, utcTime } = formatTimeZones(date);
 
@@ -543,12 +589,12 @@ export default function DiscordLiveChat() {
       name: ASSETS.find((a) => a.symbol === sigSymbol.toUpperCase())?.name || sigSymbol.toUpperCase(),
       kind: ASSETS.find((a) => a.symbol === sigSymbol.toUpperCase())?.kind || "stock",
       group: ASSETS.find((a) => a.symbol === sigSymbol.toUpperCase())?.group || "Equities / Crypto",
-      currentPrice: Number(sigPrice) || 100,
+      currentPrice: parsedPrice,
       stance: sigStance,
       confidence: 88,
-      target1: Number(sigTarget) || Number(sigPrice) * 1.05,
-      target2: Number(sigTarget) * 1.05 || Number(sigPrice) * 1.1,
-      invalidationLevel: Number(sigStop) || Number(sigPrice) * 0.95,
+      target1: Number.isFinite(parsedTarget) && parsedTarget > 0 ? parsedTarget : parsedPrice * 1.05,
+      target2: Number.isFinite(parsedTarget) && parsedTarget > 0 ? parsedTarget * 1.05 : parsedPrice * 1.1,
+      invalidationLevel: Number.isFinite(parsedStop) && parsedStop > 0 ? parsedStop : parsedPrice * 0.95,
       technicalMechanism: sigNotes || "User member setup: technical consolidation breakout with defined risk-reward.",
       timeHorizon: "1h Momentum",
       catalystAlert: "Technical order flow breakout",
@@ -639,7 +685,7 @@ export default function DiscordLiveChat() {
               type="button"
               onClick={() => setShowServerModal(true)}
               className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-tr from-gold/30 via-gold to-bone p-[1.5px] shadow-lg transition-transform hover:scale-105 active:scale-95"
-              title="NextWall Street Institutional Server — Click for Analytics & Settings"
+              title="NextWallStreet Institutional Server — Click for Analytics & Settings"
             >
               <div className="flex h-full w-full items-center justify-center rounded-2xl bg-ink-900 font-display text-sm font-bold text-gold-bright">
                 NWS
@@ -720,7 +766,7 @@ export default function DiscordLiveChat() {
             >
               <div className="flex items-center gap-2">
                 <Shield className="h-4 w-4 text-gold" />
-                <span className="font-display text-sm font-bold text-bone">NextWall Street</span>
+                <span className="font-display text-sm font-bold text-bone">NextWallStreet</span>
               </div>
               <ChevronDown className={`h-3.5 w-3.5 text-muted transition-transform ${showServerDropdown ? "rotate-180 text-gold" : ""}`} />
             </button>
@@ -1071,28 +1117,36 @@ export default function DiscordLiveChat() {
                         <div className="rounded-lg bg-ink-950/70 p-2 border border-line/60">
                           <span className="text-[10px] text-muted uppercase">Spot Price</span>
                           <p className="font-bold text-bone">
-                            ${pred.currentPrice >= 1 ? pred.currentPrice.toLocaleString(undefined, { maximumFractionDigits: 2 }) : pred.currentPrice.toFixed(5)}
+                            {Number.isFinite(pred.currentPrice)
+                              ? `$${pred.currentPrice >= 1 ? pred.currentPrice.toLocaleString(undefined, { maximumFractionDigits: 2 }) : pred.currentPrice.toFixed(5)}`
+                              : "—"}
                           </p>
                         </div>
 
                         <div className="rounded-lg bg-ink-950/70 p-2 border border-line/60">
                           <span className="text-[10px] text-muted uppercase">Target 1</span>
                           <p className="font-bold text-emerald-400">
-                            ${pred.target1 >= 1 ? pred.target1.toLocaleString(undefined, { maximumFractionDigits: 2 }) : pred.target1.toFixed(5)}
+                            {Number.isFinite(pred.target1)
+                              ? `$${pred.target1 >= 1 ? pred.target1.toLocaleString(undefined, { maximumFractionDigits: 2 }) : pred.target1.toFixed(5)}`
+                              : "—"}
                           </p>
                         </div>
 
                         <div className="rounded-lg bg-ink-950/70 p-2 border border-line/60">
                           <span className="text-[10px] text-muted uppercase">Target 2</span>
                           <p className="font-bold text-emerald-300">
-                            ${pred.target2 >= 1 ? pred.target2.toLocaleString(undefined, { maximumFractionDigits: 2 }) : pred.target2.toFixed(5)}
+                            {Number.isFinite(pred.target2)
+                              ? `$${pred.target2 >= 1 ? pred.target2.toLocaleString(undefined, { maximumFractionDigits: 2 }) : pred.target2.toFixed(5)}`
+                              : "—"}
                           </p>
                         </div>
 
                         <div className="rounded-lg bg-ink-950/70 p-2 border border-line/60">
                           <span className="text-[10px] text-rose-400 uppercase font-semibold">Invalidation Stop</span>
                           <p className="font-bold text-rose-400">
-                            ${pred.invalidationLevel >= 1 ? pred.invalidationLevel.toLocaleString(undefined, { maximumFractionDigits: 2 }) : pred.invalidationLevel.toFixed(5)}
+                            {Number.isFinite(pred.invalidationLevel)
+                              ? `$${pred.invalidationLevel >= 1 ? pred.invalidationLevel.toLocaleString(undefined, { maximumFractionDigits: 2 }) : pred.invalidationLevel.toFixed(5)}`
+                              : "—"}
                           </p>
                         </div>
                       </div>
@@ -1175,7 +1229,16 @@ export default function DiscordLiveChat() {
           <form onSubmit={handleSendMessage} className="flex items-center gap-2">
             <button
               type="button"
-              onClick={() => setShowSignalModal(true)}
+              onClick={() => {
+                const sym = sigSymbol.toUpperCase();
+                const livePx = liveQuotes[sym]?.price;
+                if (livePx && livePx > 0) {
+                  setSigPrice(livePx.toFixed(livePx < 1 ? 5 : 2));
+                  setSigTarget((livePx * 1.055).toFixed(livePx < 1 ? 5 : 2));
+                  setSigStop((livePx * 0.97).toFixed(livePx < 1 ? 5 : 2));
+                }
+                setShowSignalModal(true);
+              }}
               className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-ink-950 border border-line text-muted hover:text-gold-bright hover:border-gold/40 transition"
               title="Post custom trade setup"
             >
@@ -1222,7 +1285,7 @@ export default function DiscordLiveChat() {
                       roleLabel: "QUANT DESK",
                       bio: "Continuously monitoring order-flow imbalances and calculating 5-factor mathematical trend scores across 2,038 assets every 60 seconds.",
                       accuracy: "79.2% historical trend persistence",
-                      recentCalls: "$NVDA Long ($187.40), $BTC Accumulate ($88.4k), $SOL Long ($214)",
+                      recentCalls: `$NVDA (${liveQuotes["NVDA"]?.price ? fmtPrice(liveQuotes["NVDA"].price) : "Live"}), $BTC (${liveQuotes["BTC"]?.price ? fmtPrice(liveQuotes["BTC"].price) : "Live"}), $SOL (${liveQuotes["SOL"]?.price ? fmtPrice(liveQuotes["SOL"].price) : "Live"})`,
                     })
                   }
                   className="flex w-full items-center gap-2 rounded-lg p-1.5 hover:bg-ink-850 transition text-left group"
@@ -1390,7 +1453,7 @@ export default function DiscordLiveChat() {
             <div className="border-t border-line/60 pt-3 text-[10px] text-muted space-y-1">
               <p className="flex items-center justify-between">
                 <span>🌐 Online Traders:</span>
-                <strong className="text-bone font-mono">1,840+</strong>
+                <strong className="text-bone font-mono">1,100+</strong>
               </p>
               <p className="flex items-center justify-between">
                 <span>⚡ AI Latency:</span>
@@ -1636,7 +1699,7 @@ export default function DiscordLiveChat() {
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   Institutional Node Verified
                 </span>
-                <h3 className="font-display text-xl text-bone">NextWall Street Guild Floor</h3>
+                <h3 className="font-display text-xl text-bone">NextWallStreet Guild Floor</h3>
                 <p className="text-xs text-muted">24/7 Algorithmic Trading &amp; Minute Signals Desk</p>
               </div>
             </div>
@@ -1655,7 +1718,7 @@ export default function DiscordLiveChat() {
               </div>
               <div className="rounded-xl border border-line bg-ink-950 p-3 text-center">
                 <span className="text-[10px] text-muted uppercase">Online Traders</span>
-                <p className="font-mono text-base font-bold text-gold-bright mt-0.5">1,840+</p>
+                <p className="font-mono text-base font-bold text-gold-bright mt-0.5">1,100+</p>
                 <span className="text-[9px] text-muted/70">Global desk presence</span>
               </div>
             </div>

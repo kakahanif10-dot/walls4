@@ -37,22 +37,60 @@ export type FeedQuote = {
   provider: string;
 };
 
+export type RealTelemetry = {
+  price?: number;
+  change24h?: number;
+  change7d?: number;
+  change30d?: number;
+  change90d?: number;
+  change1y?: number;
+  high52?: number;
+  low52?: number;
+  vol?: number;
+  rsi?: number;
+  sma20?: number;
+  sma50?: number;
+  sma200?: number;
+};
+
 const REAL_POINTS: Record<string, Point[]> = {};
 const REAL_QUOTES: Record<string, FeedQuote> = {};
+const REAL_TELEMETRY: Record<string, RealTelemetry> = {};
+const DETERMINISTIC_HISTORY_CACHE = new Map<string, Point[]>();
+const METRICS_CACHE = new Map<string, Metrics>();
 
 export function setMarketData(
   points: Record<string, Point[]>,
   quotes: Record<string, FeedQuote>,
+  telemetry?: Record<string, RealTelemetry>,
 ): void {
-  for (const [symbol, history] of Object.entries(points)) REAL_POINTS[symbol] = history;
-  for (const [symbol, quote] of Object.entries(quotes)) REAL_QUOTES[symbol] = quote;
+  for (const [symbol, history] of Object.entries(points)) {
+    REAL_POINTS[symbol] = history;
+    METRICS_CACHE.delete(symbol);
+  }
+  for (const [symbol, quote] of Object.entries(quotes)) {
+    REAL_QUOTES[symbol] = quote;
+    DETERMINISTIC_HISTORY_CACHE.delete(symbol);
+    METRICS_CACHE.delete(symbol);
+  }
+  if (telemetry) {
+    for (const [symbol, tel] of Object.entries(telemetry)) {
+      REAL_TELEMETRY[symbol] = tel;
+      DETERMINISTIC_HISTORY_CACHE.delete(symbol);
+      METRICS_CACHE.delete(symbol);
+    }
+  }
 }
 
 export function quoteFor(symbol: string): FeedQuote | undefined {
   return REAL_QUOTES[symbol];
 }
 
-export function hasMarketData(symbol: string): boolean {
+export function telemetryFor(symbol: string): RealTelemetry | undefined {
+  return REAL_TELEMETRY[symbol];
+}
+
+export function hasMarketData(_symbol: string): boolean {
   return true;
 }
 
@@ -68,7 +106,8 @@ function generateDeterministicHistory(asset: Asset, days = 260): Point[] {
   const now = Date.now();
   const dayMs = 86400000;
 
-  let current = asset.base;
+  const anchor = REAL_QUOTES[asset.symbol]?.price ?? REAL_TELEMETRY[asset.symbol]?.price ?? asset.base;
+  let current = anchor > 0 ? anchor : asset.base;
   const reversedCloses: number[] = [current];
 
   for (let d = 1; d <= days; d++) {
@@ -76,7 +115,7 @@ function generateDeterministicHistory(asset: Asset, days = 260): Point[] {
     const wave = Math.cos((d + (seed % 19)) * 0.06) * 0.007;
     const jitter = (Math.sin(d * 17.1 + seed) * 0.5 + Math.cos(d * 9.7) * 0.5) * volMultiplier;
     const factor = 1 - (trendTilt + cycle + wave + jitter);
-    current = Math.max(asset.base * 0.08, current * factor);
+    current = Math.max(anchor * 0.08, current * factor);
     reversedCloses.push(current);
   }
 
@@ -91,8 +130,25 @@ function generateDeterministicHistory(asset: Asset, days = 260): Point[] {
 
 export function series(asset: Asset, days = 260): Point[] {
   const history = REAL_POINTS[asset.symbol];
+  const livePrice = REAL_QUOTES[asset.symbol]?.price ?? REAL_TELEMETRY[asset.symbol]?.price;
   if (history && history.length >= 30) {
-    return history.slice(-days);
+    const sliced = history.slice(-days);
+    if (livePrice && livePrice > 0 && sliced.length > 0) {
+      const copy = sliced.slice();
+      copy[copy.length - 1] = { close: livePrice, date: copy[copy.length - 1].date };
+      return copy;
+    }
+    return sliced;
+  }
+  if (days <= 260) {
+    let cached = DETERMINISTIC_HISTORY_CACHE.get(asset.symbol);
+    const cachedLast = cached?.[cached.length - 1]?.close;
+    const anchor = livePrice && livePrice > 0 ? livePrice : asset.base;
+    if (!cached || !cachedLast || Math.abs(cachedLast - anchor) / Math.max(anchor, 1e-9) > 0.001) {
+      cached = generateDeterministicHistory(asset, 260);
+      DETERMINISTIC_HISTORY_CACHE.set(asset.symbol, cached);
+    }
+    return days === 260 ? cached : cached.slice(-days);
   }
   return generateDeterministicHistory(asset, days);
 }
@@ -147,17 +203,27 @@ const NO_DATA: Metrics = {
 };
 
 export function metricsFor(asset: Asset): Metrics {
+  const cached = METRICS_CACHE.get(asset.symbol);
+  if (cached) return cached;
+
+  const quote = REAL_QUOTES[asset.symbol];
+  const tel = REAL_TELEMETRY[asset.symbol];
+  const hasRealCandles = Boolean(REAL_POINTS[asset.symbol] && REAL_POINTS[asset.symbol].length >= 30);
+
   const pts = series(asset);
   const values = pts.map((p) => p.close);
   if (values.length < 30) return NO_DATA;
-  const last = values[values.length - 1];
-  const sma20 = smaAt(values, 20);
-  const sma50 = smaAt(values, 50);
-  const sma200 = smaAt(values, 200);
-  const rsi14 = rsi(values);
+
+  const candleLast = values[values.length - 1];
+  const last = quote?.price && quote.price > 0 ? quote.price : tel?.price && tel.price > 0 ? tel.price : candleLast;
+
+  const baseSma20 = smaAt(values, 20);
+  const baseSma50 = smaAt(values, 50);
+  const baseSma200 = smaAt(values, 200);
+  const baseRsi14 = rsi(values);
   const window = values.slice(-252);
-  const high52 = Math.max(...window);
-  const low52 = Math.min(...window);
+  const baseHigh52 = Math.max(...window);
+  const baseLow52 = Math.min(...window);
 
   const ret = (n: number) => {
     const idx = Math.max(0, values.length - 1 - n);
@@ -169,12 +235,45 @@ export function metricsFor(asset: Asset): Metrics {
     dailyReturns.push(values[i] / values[i - 1] - 1);
   }
   const dailyVol = Math.sqrt(mean(dailyReturns.map((r) => r * r)));
-  const vol = dailyVol * Math.sqrt(365);
+  const baseVol = dailyVol * Math.sqrt(365);
+
+  // Use real candle math when full OHLCV history is loaded; otherwise overlay live exchange telemetry
+  const sma20 = !hasRealCandles && tel?.sma20 && tel.sma20 > 0 ? tel.sma20 : baseSma20;
+  const sma50 = !hasRealCandles && tel?.sma50 && tel.sma50 > 0 ? tel.sma50 : baseSma50;
+  const sma200 = !hasRealCandles && tel?.sma200 && tel.sma200 > 0 ? tel.sma200 : baseSma200;
+  const rsi14 =
+    !hasRealCandles && tel?.rsi !== undefined && Number.isFinite(tel.rsi) && tel.rsi > 0 && tel.rsi <= 100
+      ? tel.rsi
+      : baseRsi14;
+  const high52 = Math.max(
+    last,
+    !hasRealCandles && tel?.high52 && tel.high52 > 0 ? tel.high52 : baseHigh52,
+  );
+  const low52 = Math.min(
+    last,
+    !hasRealCandles && tel?.low52 && tel.low52 > 0 ? tel.low52 : baseLow52,
+  );
+  const vol = !hasRealCandles && tel?.vol && tel.vol > 0 ? tel.vol : baseVol;
+
+  const change24h =
+    quote && Number.isFinite(quote.change)
+      ? quote.change
+      : tel?.change24h !== undefined && Number.isFinite(tel.change24h)
+        ? tel.change24h
+        : ret(1);
+  const change7d =
+    !hasRealCandles && tel?.change7d !== undefined && Number.isFinite(tel.change7d) ? tel.change7d : ret(7);
+  const change30d =
+    !hasRealCandles && tel?.change30d !== undefined && Number.isFinite(tel.change30d) ? tel.change30d : ret(30);
+  const change90d =
+    !hasRealCandles && tel?.change90d !== undefined && Number.isFinite(tel.change90d) ? tel.change90d : ret(90);
+  const change1y =
+    !hasRealCandles && tel?.change1y !== undefined && Number.isFinite(tel.change1y) ? tel.change1y : ret(250);
 
   const c1 = clamp((last / sma20 - 1) * 380 + 50);
   const c2 = clamp((sma20 / sma50 - 1) * 460 + 50);
   const c3 = clamp((sma50 / sma200 - 1) * 340 + 50);
-  const c4 = clamp(ret(30) * 240 + 50);
+  const c4 = clamp(change30d * 240 + 50);
   const c5 = clamp((rsi14 - 50) * 1.1 + 50);
   const rawScore = 0.22 * c1 + 0.2 * c2 + 0.18 * c3 + 0.25 * c4 + 0.15 * c5;
   const score = Math.round(clamp(rawScore));
@@ -188,13 +287,13 @@ export function metricsFor(asset: Asset): Metrics {
   const posInRange = (last - low52) / Math.max(high52 - low52, 1e-9);
   const confidence = Math.round(clamp(52 + Math.abs(score - 50) * 0.8 + posInRange * 12, 50, 94));
 
-  return {
+  const result: Metrics = {
     last,
-    change24h: ret(1),
-    change7d: ret(7),
-    change30d: ret(30),
-    change90d: ret(90),
-    change1y: ret(250),
+    change24h,
+    change7d,
+    change30d,
+    change90d,
+    change1y,
     high52,
     low52,
     vol,
@@ -208,12 +307,17 @@ export function metricsFor(asset: Asset): Metrics {
     riskGrade,
     percentile: Math.round(posInRange * 100),
   };
+  METRICS_CACHE.set(asset.symbol, result);
+  return result;
 }
 
-export function fmtPrice(value: number): string {
+export function fmtPrice(value: number, kind?: Kind): string {
   if (!Number.isFinite(value) || value <= 0) return "—";
+  if (kind === "stock" && value >= 1) {
+    return `$${value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  }
   if (value >= 1000) return `$${value.toLocaleString("en-US", { maximumFractionDigits: 0 })}`;
-  if (value >= 10) return `$${value.toLocaleString("en-US", { maximumFractionDigits: 2 })}`;
+  if (value >= 10) return `$${value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
   if (value >= 0.01) return `$${value.toFixed(4)}`;
   return `$${value.toFixed(7)}`;
 }
@@ -239,15 +343,15 @@ export function toneClass(value: number): string {
 export function stanceColor(stance: Metrics["stance"]): string {
   switch (stance) {
     case "Buy":
-      return "text-up border-up/40 bg-up/10";
+      return "text-up bg-up/15";
     case "Accumulate":
-      return "text-gold-bright border-gold/40 bg-gold/10";
+      return "text-gold-bright bg-gold/15";
     case "Hold":
-      return "text-bone border-line bg-ink-800";
+      return "text-bone bg-ink-800/90";
     case "Trim":
-      return "text-[#e7a86b] border-[#e7a86b]/40 bg-[#e7a86b]/10";
+      return "text-[#e7a86b] bg-[#e7a86b]/15";
     default:
-      return "text-down border-down/40 bg-down/10";
+      return "text-down bg-down/15";
   }
 }
 
@@ -447,9 +551,9 @@ export function narrativeFor(asset: Asset, m: Metrics): string[] {
     m.sma200,
   )} and remains the line that defines the structural trend for this name.`;
 
-  const second = `Realised volatility is running near ${(m.vol * 100).toFixed(
+  const second = `Realized volatility is running near ${(m.vol * 100).toFixed(
     0,
-  )}% annualised with a 14-day RSI of ${m.rsi.toFixed(0)}. Price is ${m.percentile}% of the way up its 52-week range (${fmtPrice(
+  )}% annualized with a 14-day RSI of ${m.rsi.toFixed(0)}. Price is ${m.percentile}% of the way up its 52-week range (${fmtPrice(
     m.low52,
   )} to ${fmtPrice(m.high52)}), so the position-sizing question matters more than the direction question right now.`;
 

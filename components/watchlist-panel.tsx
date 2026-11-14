@@ -18,7 +18,7 @@ export default function WatchlistPanel({ rows }: { rows: Row[] }) {
 
   if (!tracked.length) {
     return (
-      <div className="rounded-xl border border-dashed border-line bg-ink-900/60 p-10 text-center">
+      <div className="rounded-2xl bg-ink-900/55 p-10 text-center">
         <p className="font-display text-xl text-bone">Your watchlist is empty</p>
         <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-muted">
           Add assets from any coverage page or from an individual trend report. Your watchlist is
@@ -27,13 +27,13 @@ export default function WatchlistPanel({ rows }: { rows: Row[] }) {
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Link
             href="/markets"
-            className="rounded-full bg-gold px-4 py-2 text-sm font-medium text-ink-950 transition hover:bg-gold-bright"
+            className="rounded-full bg-gold px-5 py-2 text-sm font-medium text-ink-950 transition hover:bg-gold-bright"
           >
             Browse equities
           </Link>
           <Link
             href="/crypto"
-            className="rounded-full border border-line px-4 py-2 text-sm text-bone transition hover:border-gold/40"
+            className="rounded-full bg-ink-950/80 px-5 py-2 text-sm text-bone transition hover:bg-ink-950"
           >
             Browse crypto
           </Link>
@@ -44,7 +44,7 @@ export default function WatchlistPanel({ rows }: { rows: Row[] }) {
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-line bg-ink-900/60 px-4 py-2.5 text-xs">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl bg-ink-900/55 px-4 py-3 text-xs">
         <div className="flex items-center gap-2">
           {user ? (
             <>
@@ -71,23 +71,23 @@ export default function WatchlistPanel({ rows }: { rows: Row[] }) {
         )}
       </div>
 
-      <div className="overflow-hidden rounded-xl border border-line">
-        <table className="w-full text-left">
-        <thead className="bg-ink-900 text-[10px] uppercase tracking-[0.16em] text-muted">
-          <tr>
-            <th className="px-4 py-3 font-medium">Asset</th>
+      <div className="overflow-x-auto rounded-2xl bg-ink-950/65 p-2 sm:p-3">
+        <table className="w-full text-left border-separate border-spacing-y-1">
+        <thead className="text-[10px] uppercase tracking-[0.16em] text-muted">
+          <tr className="bg-ink-900/90">
+            <th className="rounded-l-xl px-4 py-3 font-medium">Asset</th>
             <th className="px-4 py-3 text-right font-medium">Price</th>
             <th className="hidden px-4 py-3 text-right font-medium sm:table-cell">24h</th>
             <th className="hidden px-4 py-3 font-medium md:table-cell">60-day</th>
             <th className="px-4 py-3 text-right font-medium">Score</th>
             <th className="px-4 py-3 text-right font-medium">Stance</th>
-            <th className="px-4 py-3" />
+            <th className="rounded-r-xl px-4 py-3" />
           </tr>
         </thead>
-        <tbody className="divide-y divide-line/70">
+        <tbody>
           {tracked.map((row) => (
-            <tr key={row.symbol} className="group transition-colors hover:bg-ink-850/60">
-              <td className="px-4 py-3.5">
+            <tr key={row.symbol} className="group transition-colors hover:bg-ink-900/55">
+              <td className="rounded-l-xl px-4 py-3.5">
                 <Link href={`/ticker/${row.symbol}`} className="flex flex-col">
                   <span className="font-mono text-sm font-semibold text-bone group-hover:text-gold-bright">
                     {row.symbol}
@@ -106,11 +106,11 @@ export default function WatchlistPanel({ rows }: { rows: Row[] }) {
               </td>
               <td className="px-4 py-3.5 text-right font-mono text-sm text-bone">{row.score}</td>
               <td className="px-4 py-3.5 text-right">
-                <span className={`inline-block rounded-full border px-2.5 py-1 text-[11px] ${stanceColor(row.stance)}`}>
+                <span className={`inline-block rounded-full px-2.5 py-1 text-[11px] ${stanceColor(row.stance)}`}>
                   {row.stance}
                 </span>
               </td>
-              <td className="px-4 py-3.5 text-right">
+              <td className="rounded-r-xl px-4 py-3.5 text-right">
                 <button
                   type="button"
                   onClick={() => toggle(row.symbol)}

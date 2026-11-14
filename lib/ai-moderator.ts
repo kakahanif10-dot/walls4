@@ -1,6 +1,8 @@
 import { ASSETS, ASSET_BY_SYMBOL, type Asset } from "./market-assets";
 import { metricsFor, fmtPrice, fmtPct, type Metrics } from "./market";
 
+let predSeq = 0;
+
 export type MinutePrediction = {
   id: string;
   symbol: string;
@@ -170,9 +172,10 @@ export function generateMinutePrediction(forceSymbol?: string, seedIndex?: numbe
 
   const confidence = Math.min(96, Math.max(74, m.confidence + (asset.kind === "meme" ? -3 : 2)));
   const catalystAlert = asset.catalysts[minute % asset.catalysts.length] || "Institutional order block mitigation";
+  predSeq = (predSeq + 1) % 10000;
 
   return {
-    id: `pred-${asset.symbol}-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
+    id: `pred-${asset.symbol}-${Date.now()}-${predSeq}`,
     symbol: asset.symbol,
     name: asset.name,
     kind: asset.kind,
@@ -200,40 +203,51 @@ export function generateMinutePrediction(forceSymbol?: string, seedIndex?: numbe
  * Generates an institutional-grade Hourly Market Synthesis & Liquidity Regime Report
  * by the automated Quantitative Strategy Desk.
  */
+function liveLeaderTag(symbol: string, showPrice = false): string {
+  const asset = ASSET_BY_SYMBOL[symbol] || ASSETS[0];
+  const m = metricsFor(asset);
+  const pct = `${m.change24h >= 0 ? "+" : ""}${(m.change24h * 100).toFixed(1)}%`;
+  return showPrice ? `$${asset.symbol} (${fmtPrice(m.last)}, ${pct})` : `$${asset.symbol} (${pct})`;
+}
+
 export function generateHourlyMarketSynthesis(hoursAgo = 0): ChatMessage {
   const date = new Date(Date.now() - hoursAgo * 3600 * 1000);
   const { wibTime, utcTime, estTime, sessionStatus } = formatTimeZones(date);
 
+  const spyM = metricsFor(ASSET_BY_SYMBOL["SPY"] || ASSETS[0]);
+  const solM = metricsFor(ASSET_BY_SYMBOL["SOL"] || ASSETS[0]);
+  const spySupport = fmtPrice(spyM.sma20 || spyM.last * 0.985);
+
   const hourlyThemes = [
     {
       title: "GLOBAL MACRO & NET LIQUIDITY REGIME",
-      summary: "Treasury General Account (TGA) absorption and Reverse Repo drawdown metrics indicate stabilized bank reserves. US tech mega-caps maintain positive gamma positioning.",
-      leaders: "$NVDA (+2.8%), $MSFT (+1.4%), $SOL (+4.6%)",
-      invalidationNote: "S&P 500 invalidation floor anchored at 5,880. Trend models remain in disciplined Buy/Accumulate mode.",
+      summary: "Treasury General Account (TGA) absorption and Reverse Repo drawdown metrics continue to guide systemic dollar liquidity and mega-cap equity positioning.",
+      leaders: `${liveLeaderTag("NVDA")}, ${liveLeaderTag("MSFT")}, ${liveLeaderTag("SOL")}`,
+      invalidationNote: `S&P 500 ETF ($SPY) 20-day moving average support sits at ${spySupport}. Trend models track live session momentum across 2,038 assets.`,
     },
     {
       title: "SEMICONDUCTOR & AI INFRASTRUCTURE CYCLE",
-      summary: "Hyperscaler capex guidance updates show sustained data center cluster expansion. Advanced packaging bottlenecks (CoWoS) at TSMC remain the primary revenue velocity governor.",
-      leaders: "$TSM (+3.2%), $AVGO (+2.1%), $AMD (+1.8%)",
-      invalidationNote: "Semiconductor sector trend score stands at 74/100. Watch 20-EMA retests on high-beta leaders.",
+      summary: "Hyperscaler capex guidance and CoWoS advanced packaging throughput continue to anchor semiconductor relative strength.",
+      leaders: `${liveLeaderTag("TSM")}, ${liveLeaderTag("AVGO")}, ${liveLeaderTag("AMD")}`,
+      invalidationNote: `Watch 20-EMA retests and volume-weighted momentum on $NVDA (${fmtPrice(metricsFor(ASSET_BY_SYMBOL["NVDA"] || ASSETS[0]).last)}).`,
     },
     {
       title: "DIGITAL ASSET LIQUIDITY & DERIVATIVES FLOW",
-      summary: "Bitcoin institutional ETF net inflows absorb daily miner emissions by a factor of 2.4x. Solana DEX velocity overtakes alternative Layer-1 networks on viral pump.fun volume.",
-      leaders: "$BTC ($96,420), $SOL ($218.50), $LINK ($18.90)",
-      invalidationNote: "Aggregate crypto realized volatility is 54.2%. Hard stop discipline required on speculative altcoins.",
+      summary: "Spot Bitcoin ETF net flows and Solana on-chain DEX velocity continue to steer intraday crypto basis and perpetual funding.",
+      leaders: `${liveLeaderTag("BTC", true)}, ${liveLeaderTag("SOL", true)}, ${liveLeaderTag("LINK", true)}`,
+      invalidationNote: `Solana 60-day realized volatility stands at ${(solM.vol * 100).toFixed(1)}%. Maintain strict invalidation levels on high-beta spot & perps.`,
     },
     {
       title: "PUMP.FUN BONDING CURVE & SPECULATIVE SENTIMENT",
-      summary: "Bonding curve graduation velocity at 8.4% on Solana DEXs. Top-100 wallet concentration analysis reveals smart-money rotation into narrative leaders.",
-      leaders: "$FARTCOIN (+14.2%), $GOAT (+9.5%), $PEPE (+6.1%)",
+      summary: "Bonding curve graduation flow and top-wallet concentration metrics track speculative rotation across Solana and Base micro-caps.",
+      leaders: `${liveLeaderTag("FARTCOIN")}, ${liveLeaderTag("GOAT")}, ${liveLeaderTag("PEPE")}`,
       invalidationNote: "Risk rule enforcement: Maintain hard 2% total portfolio allocation cap and never average down into broken structure.",
     },
     {
-      title: "FIXED INCOME & 2s10s YIELD CURVE DYNAMICS",
-      summary: "US 10-year Treasury yields consolidate near 4.38%. The 2s10s yield curve un-inversion indicates market transition from rate shock to growth normalization.",
-      leaders: "$SPY (+0.8%), $QQQ (+1.1%), $TLT (-0.4%)",
-      invalidationNote: "Equities breadth index holding at 58% bullish. Continue trailing protective stops along 20-day moving averages.",
+      title: "FIXED INCOME & CROSS-ASSET LIQUIDITY DYNAMICS",
+      summary: "Treasury curve slope and dollar index moves govern long-duration equity multiples and cross-asset volatility.",
+      leaders: `${liveLeaderTag("SPY", true)}, ${liveLeaderTag("QQQ", true)}, ${liveLeaderTag("TLT", true)}`,
+      invalidationNote: "Trailing protective stops dynamically track 20-day simple moving averages across index proxies.",
     },
   ];
 
@@ -270,16 +284,19 @@ export function generateHourlyMarketSynthesis(hoursAgo = 0): ChatMessage {
 
 /**
  * Generates an automated, non-stagnant stream of past and current hourly messages
- * so the Discord chat is continuously populated across the 24-hour cycle.
+ * so the floor chat is continuously populated across the 24-hour cycle using live quotes.
  */
 export function generateContinuousFloorHistory(): ChatMessage[] {
   const messages: ChatMessage[] = [];
   const now = Date.now();
 
-  // Create hourly timeline checkpoints for the last 6 hours
+  const nvdaM = metricsFor(ASSET_BY_SYMBOL["NVDA"] || ASSETS[0]);
+  const solM = metricsFor(ASSET_BY_SYMBOL["SOL"] || ASSETS[0]);
+  const btcM = metricsFor(ASSET_BY_SYMBOL["BTC"] || ASSETS[0]);
+
   const hoursToCheckpoint = [6, 5, 4, 3, 2, 1, 0];
 
-  const simulatedDeskTraders = [
+  const floorDeskAnalysts = [
     {
       name: "Daniel Okafor",
       avatar: "👨🏾‍💼",
@@ -288,8 +305,8 @@ export function generateContinuousFloorHistory(): ChatMessage[] {
       roleColor: "bg-gold/20 text-gold-bright border-gold/40",
       isVerified: true,
       messages: [
-        "Semiconductor tape is holding up remarkably well. $NVDA printing higher swing lows above the 20-day SMA. As always: we trade price structure, not headlines.",
-        "Macro liquidity remains supportive. Notice how institutional bids step in every time $SPY touches the 50-day average. Discipline over excitement.",
+        `Semiconductor tape check: $NVDA is trading at ${fmtPrice(nvdaM.last)} relative to its 20-day SMA at ${fmtPrice(nvdaM.sma20)}. As always: we trade price structure, not headlines.`,
+        "Macro liquidity remains our primary driver. Watch how institutional bids respond whenever $SPY tests its 50-day moving average. Discipline over excitement.",
         "Reminder for all floor traders: evaluate your position sizing using 14-day ATR. An equal-dollar position in micro-cap memes vs mega-cap equities is asymmetric risk suicide.",
       ],
     },
@@ -301,9 +318,9 @@ export function generateContinuousFloorHistory(): ChatMessage[] {
       roleColor: "bg-purple-500/20 text-purple-400 border-purple-500/40",
       isVerified: true,
       messages: [
-        "Solana decentralized exchange velocity continues to outpace Ethereum mainnet. If $SOL sustains above $214 on the 1-hour close, liquidity target is $228. Invalidation at $206.50.",
-        "On-chain forensics check: top-100 wallet concentration on the latest trending pump.fun memes is sitting at 46%. Keep allocations strictly under 2% portfolio equity.",
-        "Bitcoin perpetual funding rates have completely normalized to 0.008% across major venues. Leverage flush complete; spot tape leading the basis expansion.",
+        `Solana spot currently prints ${fmtPrice(solM.last)}. Next upside liquidity pocket sits near ${fmtPrice(solM.last * 1.045)}, with invalidation beneath ${fmtPrice(solM.last * 0.965)}.`,
+        "On-chain forensics check: review top-100 wallet concentration before sizing any pump.fun meme position. Keep speculative allocations strictly under 2% portfolio equity.",
+        `Bitcoin spot is at ${fmtPrice(btcM.last)} (${fmtPct(btcM.change24h)}). Monitor Hyperliquid & Binance perpetual funding rates to distinguish spot-led breakouts from levered squeezes.`,
       ],
     },
     {
@@ -314,9 +331,9 @@ export function generateContinuousFloorHistory(): ChatMessage[] {
       roleColor: "bg-blue-500/20 text-blue-400 border-blue-500/40",
       isVerified: true,
       messages: [
-        "Volume Profile calculation update across the 2,038 asset universe: 68% of stocks are currently trading inside or above their session Value Area High (VAH).",
-        "Our 5-factor scoring model ($c_1$ through $c_5$) just upgraded 18 equities from Hold to Accumulate on 30-session ROC momentum inflections.",
-        "Realized 60-day volatility in mega-cap tech compressed to 21.4%. Historical backtests show volatility compression precedes explosive directional expansions.",
+        "Cross-asset factor sweep across the 2,038-asset universe updates continuously as live exchange ticks stream into the scoring engine.",
+        "Our 5-factor scoring model (c1 through c5) dynamically re-ranks momentum, RSI, moving-average alignment, and realized volatility in real time.",
+        `60-day annualized realized volatility on $NVDA stands at ${(nvdaM.vol * 100).toFixed(1)}%. Position sizing should scale inversely with realized volatility.`,
       ],
     },
     {
@@ -327,9 +344,9 @@ export function generateContinuousFloorHistory(): ChatMessage[] {
       roleColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/40",
       isVerified: false,
       messages: [
-        "Quant desk signal on $SOL retest was textbook execution. Anchored stop placed directly beneath the prior swing low.",
-        "Morning session order flow: speculative pump.fun liquidity rotational volume is spiking. Maintaining strict 2% portfolio exposure cap.",
-        "Level 2 depth at Nasdaq pre-market exhibits massive bid support. Following the Quant Strategy Desk Buy signal.",
+        `Watching $SOL (${fmtPrice(solM.last)}) closely at session levels with hard invalidation anchored beneath the prior swing low.`,
+        "Maintaining strict 2% portfolio exposure caps on speculative high-beta meme rotations.",
+        "Confirming multi-venue Level 2 order book depth alongside the Quant Strategy Desk signal before execution.",
       ],
     },
     {
@@ -340,16 +357,15 @@ export function generateContinuousFloorHistory(): ChatMessage[] {
       roleColor: "bg-amber-500/20 text-amber-300 border-amber-500/40",
       isVerified: true,
       messages: [
-        "Filled on $NVDA continuation alert at $187.40. Target 1 set to $194.50 with a tight trailing stop. Execution speed is everything.",
-        "Tape reading Level 2 on $BTC: large iceberg order absorbing asks at $96,400. Bullish accumulation signature.",
-        "Just audited $FARTCOIN on /predict. Respecting the invalidation stop strictly. Green on the session.",
+        `Tracking $NVDA live print at ${fmtPrice(nvdaM.last)} with target 1 near ${fmtPrice(nvdaM.last * 1.035)} and tight trailing risk bounds.`,
+        `Reading spot order flow on $BTC (${fmtPrice(btcM.last)}) across primary exchanges before adding exposure.`,
+        "Running /predict before entering high-beta momentum names to keep invalidation stops disciplined.",
       ],
     },
   ];
 
   for (const hoursAgo of hoursToCheckpoint) {
     const hourDate = new Date(now - hoursAgo * 3600 * 1000);
-    const { estTime } = formatTimeZones(hourDate);
 
     // 1. Add Hourly Quant Synthesis Report
     messages.push(generateHourlyMarketSynthesis(hoursAgo));
@@ -382,8 +398,8 @@ export function generateContinuousFloorHistory(): ChatMessage[] {
       });
     }
 
-    // 3. Add 1-2 realistic trader replies
-    const trader1 = simulatedDeskTraders[(hoursAgo * 2) % simulatedDeskTraders.length];
+    // 3. Add trader message
+    const trader1 = floorDeskAnalysts[(hoursAgo * 2) % floorDeskAnalysts.length];
     const traderMsg1Date = new Date(hourDate.getTime() + 18 * 60 * 1000);
     messages.push({
       id: `floor-chat-${hoursAgo}-1`,
@@ -468,7 +484,7 @@ export function handleAIModeratorQuery(input: string): { reply: string; predicti
   if (lower.includes("clock") || lower.includes("time") || lower.includes("hour") || lower.includes("session")) {
     const { wibTime, utcTime, estTime, sessionStatus } = formatTimeZones();
     return {
-      reply: `🕒 **NextWall Street Institutional Trading Clocks:**\n` +
+      reply: `🕒 **NextWallStreet Institutional Trading Clocks:**\n` +
         `• 🇺🇸 **EST (Wall Street New York):** \`${estTime} EST\`\n` +
         `• 🌐 **UTC (Market Benchmark):** \`${utcTime} UTC\`\n` +
         `• 🇸🇬 **SGT (Asia Pacific Session):** \`${wibTime} SGT\`\n` +
@@ -502,7 +518,7 @@ export function handleAIModeratorQuery(input: string): { reply: string; predicti
   // General welcome response
   const generalPred = generateMinutePrediction();
   return {
-    reply: `👋 **NextWall Street Quant Desk Online & Monitoring 2,038 Assets.**\n\n` +
+    reply: `👋 **NextWallStreet Quant Desk Online & Monitoring 2,038 Assets.**\n\n` +
       `• **Real-Time Minute Predictions:** Continuous mathematical alpha predictions generated every 60 seconds.\n` +
       `• **Hourly Macro Synthesis:** Liquidity and sector flows compiled every 60 minutes.\n` +
       `• **Audit Any Symbol:** Type \`/predict [ticker]\` (e.g. \`/predict NVDA\`, \`/predict BTC\`, \`/predict SOL\`, \`/predict FARTCOIN\`).\n` +

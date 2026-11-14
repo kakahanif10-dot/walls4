@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import GlobalMarketsView from "@/components/global-markets-view";
 import WhopBadge from "@/components/whop-badge";
-import { Globe, Sparkles, Bell, TrendingUp, MapPin } from "lucide-react";
+import { Globe, Activity, Bell, TrendingUp, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Global Markets & Financial Exchanges Map — NextWall Street",
+  title: "Global Markets & Financial Exchanges Map — NextWallStreet",
   description:
     "Track 11 global financial exchanges via Google Maps Platform, 9 international regions, multi-tab ticker exploration, crowd sentiment radar, and custom price alerts.",
 };
@@ -21,9 +21,9 @@ export default function OpenStockPage() {
 
   return (
     <div className="min-h-screen bg-[#050609] text-[#f2efe8]">
-      <section className="relative overflow-hidden border-b border-[#d8ab5a]/20 bg-gradient-to-b from-[#0b1210] via-[#080a0f] to-[#050609]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#0b1210] via-[#080a0f] to-[#050609]">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(62,207,142,0.09),transparent_55%)]" />
-        <div className="relative mx-auto max-w-7xl px-5 py-12">
+        <div className="relative mx-auto max-w-7xl px-5 py-10 sm:py-12">
           <nav className="flex items-center gap-2 text-xs font-mono text-stone-400">
             <Link href="/" className="hover:text-[#f0c979] transition-colors">Home</Link>
             <span className="text-stone-600">/</span>
@@ -31,11 +31,11 @@ export default function OpenStockPage() {
           </nav>
 
           <div className="mt-4 flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 rounded-md border border-emerald-400/30 bg-emerald-500/10 px-2.5 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-emerald-300">
+            <span className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-500/15 px-3 py-1 text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-emerald-300">
               <Globe className="h-3 w-3 text-emerald-400" />
               GLOBAL EXCHANGES &amp; MAP TERMINAL
             </span>
-            <span className="rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-[10px] font-mono text-stone-300">
+            <span className="rounded-lg bg-white/[0.06] px-3 py-1 text-[10px] font-mono text-stone-300">
               GOOGLE MAPS PLATFORM · 11 FINANCIAL HUBS
             </span>
             <WhopBadge size="xs" />
@@ -58,7 +58,7 @@ export default function OpenStockPage() {
               Multi-Tab Technical Overlays
             </span>
             <span className="flex items-center gap-1.5 text-stone-200">
-              <Sparkles className="h-3.5 w-3.5 text-[#d8ab5a]" />
+              <Activity className="h-3.5 w-3.5 text-[#d8ab5a]" />
               Social &amp; Crowd Sentiment Radar
             </span>
             <span className="flex items-center gap-1.5 text-stone-200">
@@ -69,7 +69,7 @@ export default function OpenStockPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-10">
+      <section className="mx-auto max-w-7xl px-5 py-8 sm:py-10">
         <GlobalMarketsView apiKey={mapsApiKey} />
       </section>
     </div>

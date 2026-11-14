@@ -25,18 +25,18 @@ import {
   type Kind,
 } from "@/lib/market";
 import WhopBadge from "@/components/whop-badge";
-import { ensureMarketData } from "@/lib/market-data";
+import { ensureMarketData, ensureSymbolHistory } from "@/lib/market-data";
 
 const KIND_PATH: Record<Kind, string> = {
   stock: "/markets",
   crypto: "/crypto",
-  meme: "/meme-coins",
+  meme: "/crypto?tab=speculative",
 };
 
 const KIND_LABEL: Record<Kind, string> = {
   stock: "Equities",
-  crypto: "Digital assets",
-  meme: "Meme coins",
+  crypto: "Digital Assets",
+  meme: "Speculative & High-Beta Risk",
 };
 
 export const dynamicParams = true;
@@ -64,7 +64,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
   const asset = ASSET_BY_SYMBOL[symbol];
   if (!asset) notFound();
 
-  await ensureMarketData();
+  await Promise.all([ensureMarketData(), ensureSymbolHistory(asset.symbol)]);
 
   const m = metricsFor(asset);
   const pts = series(asset);
@@ -82,13 +82,13 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
 
   return (
     <div>
-      <div className="border-b border-line/60 bg-ink-900/40">
-        <div className="mx-auto max-w-7xl px-5 py-4">
+      <div className="bg-ink-900/40">
+        <div className="mx-auto max-w-7xl px-5 py-3.5">
           <nav className="flex items-center gap-2 text-xs text-muted">
             <Link href="/" className="hover:text-bone">Home</Link>
-            <span className="text-line">/</span>
+            <span className="text-muted/40">/</span>
             <Link href={KIND_PATH[asset.kind]} className="hover:text-bone">{KIND_LABEL[asset.kind]}</Link>
-            <span className="text-line">/</span>
+            <span className="text-muted/40">/</span>
             <span className="text-bone/80">{asset.symbol}</span>
           </nav>
         </div>
@@ -97,19 +97,19 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
       <section className="mx-auto max-w-7xl px-5 pt-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
           <div>
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2.5">
               <h1 className="font-display text-4xl text-bone">{asset.symbol}</h1>
-              <span className={`rounded-full border px-2.5 py-1 text-[11px] ${stanceColor(m.stance)}`}>
+              <span className={`rounded-full px-3 py-1 text-[11px] font-medium ${stanceColor(m.stance)}`}>
                 {m.stance}
               </span>
-              <span className="rounded-full border border-line px-2.5 py-1 text-[11px] text-muted">
+              <span className="rounded-full bg-ink-900/80 px-3 py-1 text-[11px] text-muted">
                 {asset.group}
               </span>
-              <span className="rounded-full border border-line px-2.5 py-1 text-[11px] text-muted">
+              <span className="rounded-full bg-ink-900/80 px-3 py-1 text-[11px] text-muted">
                 Risk: {m.riskGrade}
               </span>
             </div>
-            <p className="mt-1 text-sm text-muted">{asset.name}</p>
+            <p className="mt-1.5 text-sm text-muted">{asset.name}</p>
 
             <div className="mt-5 flex flex-wrap items-end gap-4">
               <span className="font-mono text-4xl text-bone">
@@ -135,7 +135,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
           </div>
         </div>
 
-        <div className="mt-7 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-5">
+        <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-5">
           {[
             { label: "24h", value: m.change24h },
             { label: "7d", value: m.change7d },
@@ -143,7 +143,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
             { label: "90d", value: m.change90d },
             { label: "1y", value: m.change1y },
           ].map((item) => (
-            <div key={item.label} className="bg-ink-900 px-4 py-3.5">
+            <div key={item.label} className="rounded-xl bg-ink-900/60 px-4 py-3.5">
               <p className="text-[10px] uppercase tracking-[0.14em] text-muted">{item.label}</p>
               <p className={`mt-1 font-mono text-sm ${item.value >= 0 ? "text-up" : "text-down"}`}>
                 {fmtPct(item.value)}
@@ -154,7 +154,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-8 px-5 py-10 lg:grid-cols-[1.65fr_0.85fr]">
-        <div className="space-y-8">
+        <div className="space-y-6">
           <AnalystFaceBreakdown
             symbol={asset.symbol}
             name={asset.name}
@@ -169,11 +169,11 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
             sma200={m.sma200}
             rsi={m.rsi}
             volatility60d={m.vol}
-            validReason={`Struktur ${asset.symbol} dinilai berdasarkan 5 bobot teknikal kuantitatif: harga ${fmtPrice(m.last)} berada di ${m.last > m.sma20 ? "atas" : "bawah"} 20-day SMA ($${m.sma20.toFixed(2)}) dengan RSI ${m.rsi.toFixed(0)}. Sektor ${asset.group} menunjukkan persistensi momentum dengan skor komposit ${m.score}/100.`}
-            invalidationReason={`Tesis ini gugur dan dibatalkan jika harga penutupan harian tembus di bawah ${fmtPrice(trigger.value)}. Level invalidasi ini adalah batas objektif cut loss untuk melindungi modal sebelum drawdown berlarut.`}
+            validReason={`${asset.symbol} structure is scored across 5 quantitative weights: spot ${fmtPrice(m.last)} sits ${m.last > m.sma20 ? "above" : "below"} the 20-day SMA ($${m.sma20.toFixed(2)}) with a 14-day RSI of ${m.rsi.toFixed(0)}. The ${asset.group} sleeve carries a composite trend score of ${m.score}/100.`}
+            invalidationReason={`This thesis invalidates cleanly if daily closing price breaks ${m.score >= 47 ? "below" : "above"} ${fmtPrice(trigger.value)}. That trigger defines an objective risk cut before drawdowns compound.`}
           />
 
-          <div className="rounded-xl border border-line bg-ink-900/50 p-5">
+          <div className="rounded-2xl bg-ink-900/55 p-5">
             <TrendChart values={pts.map((p) => p.close)} label={`${asset.symbol} · daily close`} />
           </div>
 
@@ -187,7 +187,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
           </div>
 
           <div className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-xl border border-up/25 bg-up/[0.04] p-5">
+            <div className="rounded-2xl bg-up/[0.06] p-5">
               <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-up">Bull case</p>
               <ul className="mt-3 space-y-2.5">
                 {asset.bull.map((item) => (
@@ -198,7 +198,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
                 ))}
               </ul>
             </div>
-            <div className="rounded-xl border border-down/25 bg-down/[0.04] p-5">
+            <div className="rounded-2xl bg-down/[0.06] p-5">
               <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-down">Bear case</p>
               <ul className="mt-3 space-y-2.5">
                 {asset.bear.map((item) => (
@@ -211,7 +211,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
             </div>
           </div>
 
-          <div className="rounded-xl border border-line bg-ink-900 p-5">
+          <div className="rounded-2xl bg-ink-900/65 p-5">
             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">What would change the call</p>
             <div className="mt-3 flex flex-wrap items-end gap-x-8 gap-y-3">
               <div>
@@ -223,8 +223,8 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
           </div>
 
           {/* DUAL-HORIZON STRATEGY DESK: DAY TRADER VS LONG-TERM ALLOCATION */}
-          <div className="rounded-xl border border-line bg-ink-900/90 p-6 backdrop-blur space-y-4">
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-line/60 pb-3">
+          <div className="rounded-2xl bg-ink-900/65 p-6 backdrop-blur space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-2 pb-1">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
                   Dual-Horizon Tactical Framework
@@ -236,14 +236,14 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
               <WhopBadge variant="wsj" />
             </div>
 
-            <div className="grid gap-5 md:grid-cols-2">
+            <div className="grid gap-4 md:grid-cols-2">
               {/* Day Trader Desk */}
-              <div className="rounded-lg border border-line/80 bg-ink-950 p-4 space-y-3">
+              <div className="rounded-xl bg-ink-950/75 p-4 space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-muted">
                     Day Trader (Intraday Tape)
                   </span>
-                  <span className="font-mono text-[10px] font-bold rounded px-2 py-0.5 border border-emerald-500/40 bg-emerald-500/10 text-emerald-400">
+                  <span className="font-mono text-[10px] font-bold rounded px-2 py-0.5 bg-emerald-500/15 text-emerald-400">
                     {dayTrade.bias}
                   </span>
                 </div>
@@ -271,18 +271,18 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
                   </div>
                 </div>
 
-                <p className="text-[11px] text-muted leading-relaxed border-t border-line/50 pt-2">
+                <p className="text-[11px] text-muted leading-relaxed pt-1">
                   Designed for active execution. Cut positions immediately if price breaks the session stop level.
                 </p>
               </div>
 
               {/* Long-Term / Swing Desk */}
-              <div className="rounded-lg border border-line/80 bg-ink-950 p-4 space-y-3">
+              <div className="rounded-xl bg-ink-950/75 p-4 space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-muted">
                     Long-Term &amp; Swing (Macro)
                   </span>
-                  <span className="font-mono text-[10px] font-bold rounded px-2 py-0.5 border border-gold/40 bg-gold/15 text-gold-bright">
+                  <span className="font-mono text-[10px] font-bold rounded px-2 py-0.5 bg-gold/15 text-gold-bright">
                     {swingLong.bias}
                   </span>
                 </div>
@@ -310,7 +310,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
                   </div>
                 </div>
 
-                <p className="text-[11px] text-muted leading-relaxed border-t border-line/50 pt-2">
+                <p className="text-[11px] text-muted leading-relaxed pt-1">
                   Designed for portfolio allocation. Stance holds until weekly closes violate the macro invalidation level.
                 </p>
               </div>
@@ -329,7 +329,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted">{asset.blurb}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {asset.catalysts.map((c) => (
-                <span key={c} className="rounded-full border border-line bg-ink-900 px-3 py-1.5 text-xs text-muted">
+                <span key={c} className="rounded-full bg-ink-900/80 px-3 py-1.5 text-xs text-muted">
                   {c}
                 </span>
               ))}
@@ -337,17 +337,17 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
           </div>
         </div>
 
-        <aside className="space-y-6">
-          <div className="rounded-xl border border-line bg-ink-900/70 p-5">
+        <aside className="space-y-5">
+          <div className="rounded-2xl bg-ink-900/60 p-5">
             <ScoreDial score={m.score} stance={m.stance} confidence={m.confidence} />
-            <div className="mt-5 space-y-3 border-t border-line/60 pt-4">
+            <div className="mt-5 space-y-3 rounded-xl bg-ink-950/55 p-3.5">
               {breakdown.map((row) => (
                 <div key={row.label}>
                   <div className="flex items-center justify-between text-[11px]">
                     <span className="text-muted">{row.label}</span>
                     <span className="font-mono text-bone/80">{row.value}</span>
                   </div>
-                  <div className="mt-1 h-1 overflow-hidden rounded-full bg-line">
+                  <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-ink-900">
                     <div
                       className={`h-full rounded-full ${row.value >= 66 ? "bg-up" : row.value >= 47 ? "bg-gold" : "bg-down"}`}
                       style={{ width: `${row.value}%` }}
@@ -358,9 +358,9 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
             </div>
           </div>
 
-          <div className="rounded-xl border border-line bg-ink-900/70 p-5">
+          <div className="rounded-2xl bg-ink-900/60 p-5">
             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">Risk panel</p>
-            <dl className="mt-3 space-y-2.5 text-sm">
+            <dl className="mt-3 space-y-1.5 rounded-xl bg-ink-950/55 p-2 text-sm">
               {[
                 { k: "Realised volatility", v: `${(m.vol * 100).toFixed(0)}%` },
                 { k: "Risk grade", v: m.riskGrade },
@@ -371,13 +371,13 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
                 { k: "50-day average", v: fmtPrice(m.sma50) },
                 { k: "200-day average", v: fmtPrice(m.sma200) },
               ].map((row) => (
-                <div key={row.k} className="flex items-center justify-between border-b border-line/50 pb-2 last:border-0">
+                <div key={row.k} className="flex items-center justify-between rounded-lg px-2.5 py-1.5">
                   <dt className="text-xs text-muted">{row.k}</dt>
                   <dd className="font-mono text-xs text-bone">{row.v}</dd>
                 </div>
               ))}
             </dl>
-            <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-line">
+            <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-ink-950/90">
               <div
                 className="h-full rounded-full bg-gradient-to-r from-down via-gold to-up"
                 style={{ width: `${m.percentile}%` }}
@@ -386,7 +386,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
             <p className="mt-2 text-[10px] text-muted/70">Position within the 52-week range</p>
           </div>
 
-          <div className="rounded-xl border border-gold/30 bg-gold/[0.05] p-5">
+          <div className="rounded-2xl bg-gold/[0.07] p-5">
             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">Premium desk note</p>
             <p className="mt-3 text-sm leading-relaxed text-bone/85">
               When the score sits between 45 and 60, the honest answer is that the tape has no edge.
@@ -402,7 +402,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
           </div>
 
           {related.length > 0 && (
-            <div className="rounded-xl border border-line bg-ink-900/70 p-5">
+            <div className="rounded-2xl bg-ink-900/60 p-5">
               <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">Related research</p>
               <ul className="mt-3 space-y-3">
                 {related.map((article) => (
@@ -421,14 +421,14 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
             </div>
           )}
 
-          <div className="rounded-xl border border-line bg-ink-900/70 p-5">
+          <div className="rounded-2xl bg-ink-900/60 p-5">
             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">Peers</p>
             <ul className="mt-3 grid grid-cols-2 gap-2">
               {peers.map((peer) => (
                 <li key={peer.symbol}>
                   <Link
                     href={`/ticker/${peer.symbol}`}
-                    className="flex items-center justify-between rounded-md border border-line/70 px-2.5 py-2 text-xs text-bone transition hover:border-gold/40 hover:text-gold-bright"
+                    className="flex items-center justify-between rounded-lg bg-ink-950/65 px-3 py-2 text-xs text-bone transition hover:bg-ink-850 hover:text-gold-bright"
                   >
                     <span className="font-mono">{peer.symbol}</span>
                     <span className="text-muted">{metricsFor(peer).score}</span>
@@ -440,12 +440,12 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
         </aside>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 pb-4">
-        <p className="rounded-lg border border-line/70 bg-ink-900/40 px-4 py-3 text-[11px] leading-relaxed text-muted/70">
+      <section className="mx-auto max-w-7xl px-5 pb-6">
+        <p className="rounded-2xl bg-ink-900/45 px-5 py-3.5 text-[11px] leading-relaxed text-muted/70">
           This report is market analysis and education, not investment advice. It contains no
-          recommendation to transact. Scores are computed from real daily closes; equity quotes are
-          delayed and crypto quotes stream continuously. See the{" "}
-          <Link href="/disclaimer" className="text-bone/80 underline decoration-line underline-offset-2">
+          recommendation to transact. Scores and charts are computed from live real-time exchange
+          quotes and daily closes across equities, digital assets, and speculative pairs. See the{" "}
+          <Link href="/disclaimer" className="text-bone/80 underline decoration-muted/40 underline-offset-2">
             methodology
           </Link>{" "}
           for how scores are calculated.

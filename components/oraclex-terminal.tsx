@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useCallback } from "react";
 import {
   Activity,
   Layers,
@@ -20,34 +20,149 @@ import {
   computeLiquidityLadder,
   detectMarketDivergences,
   queryVectorMemory,
-  BIST_EQUITIES,
   VECTOR_KNOWLEDGE_STORE,
+  type BISTAsset,
   type OracleXRealm,
   type VectorRAGDocument,
 } from "@/lib/oraclex-platform";
 import { ASSETS, ASSET_BY_SYMBOL, fmtPrice, fmtPct, metricsFor } from "@/lib/market";
+import { useQuotes } from "@/components/live-prices";
 import WhopBadge from "@/components/whop-badge";
 
 export default function OracleXTerminal() {
+  const liveQuotes = useQuotes();
   const [realm, setRealm] = useState<OracleXRealm>("global");
   const [activeTab, setActiveTab] = useState<"internals" | "ladder" | "rag" | "divergence" | "bist">("internals");
   const [selectedAssetSymbol, setSelectedAssetSymbol] = useState<string>("BTC");
   const [ragQuery, setRagQuery] = useState<string>("");
   const [selectedDoc, setSelectedDoc] = useState<VectorRAGDocument | null>(VECTOR_KNOWLEDGE_STORE[0]);
   const [isRefreshing, setIsRefreshing] = useState<boolean>(false);
+  const [bistEquities, setBistEquities] = useState<BISTAsset[]>([]);
+  const [bistLoading, setBistLoading] = useState<boolean>(true);
+  const [bistError, setBistError] = useState<string | null>(null);
 
-  const internals = useMemo(() => computeOracleXMarketInternals(), []);
-  const liquidity = useMemo(() => computeLiquidityLadder(selectedAssetSymbol), [selectedAssetSymbol]);
-  const divergences = useMemo(() => detectMarketDivergences(), []);
-  const filteredDocs = useMemo(() => queryVectorMemory(ragQuery), [ragQuery]);
+  const fetchLiveBist = useCallback(async () => {
+    setBistLoading(true);
+    setBistError(null);
+    try {
+      const res = await fetch("/api/live-terminal-data?view=bist", { cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = (await res.json()) as { equities?: BISTAsset[] };
+      if (Array.isArray(data.equities) && data.equities.length > 0) {
+        setBistEquities(data.equities);
+      } else {
+        setBistError("Borsa İstanbul live feed returned empty.");
+      }
+    } catch {
+      setBistError("Unable to reach BIST live quote feed.");
+    } finally {
+      setBistLoading(false);
+    }
+  }, []);
 
-  const handleRefresh = () => {
-    setIsRefreshing(true);
-    setTimeout(() => setIsRefreshing(false), 600);
-  };
+  useEffect(() => {
+    fetchLiveBist();
+  }, [fetchLiveBist]);
+
+  const internals = useMemo(() => {
+    const base = computeOracleXMarketInternals();
+    const quoteList = Object.values(liveQuotes);
+    if (quoteList.length < 50) return base;
+
+    let advanceCount = 0;
+    let declineCount = 0;
+    let unchangedCount = 0;
+    let sumEq = 0;
+    const buckets = [0, 0, 0, 0, 0, 0];
+
+    for (const q of quoteList) {
+      const pct = q.change * 100;
+      sumEq += pct;
+      if (pct > 0.15) advanceCount++;
+      else if (pct < -0.15) declineCount++;
+      else unchangedCount++;
+
+      if (pct < -5) buckets[0]++;
+      else if (pct < -2) buckets[1]++;
+      else if (pct < 0) buckets[2]++;
+      else if (pct < 2) buckets[3]++;
+      else if (pct < 5) buckets[4]++;
+      else buckets[5]++;
+    }
+
+    const total = quoteList.length || 1;
+    const capSyms = ["AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META", "BTC", "ETH"];
+    const capValues = capSyms.map((s) => (liveQuotes[s]?.change ?? 0) * 100);
+    const capWeightedChangePct = Number(
+      (capValues.reduce((a, b) => a + b, 0) / capValues.length).toFixed(2)
+    );
+    const equalWeightedChangePct = Number((sumEq / total).toFixed(2));
+
+    return {
+      ...base,
+      advanceCount,
+      declineCount,
+      unchangedCount,
+      adRatio: Number((advanceCount / Math.max(1, declineCount)).toFixed(2)),
+      capWeightedChangePct,
+      equalWeightedChangePct,
+      moveDistributionBuckets: base.moveDistributionBuckets.map((b, i) => ({
+        ...b,
+        count: buckets[i],
+        percentage: Number(((buckets[i] / total) * 100).toFixed(1)),
+      })),
+    };
+  }, [liveQuotes]);
 
   const currentAsset = ASSET_BY_SYMBOL[selectedAssetSymbol] || ASSETS[0];
   const currentMetrics = metricsFor(currentAsset);
+  const liveSelectedQuote = liveQuotes[selectedAssetSymbol];
+  const liveSpotPrice = liveSelectedQuote?.price ?? currentMetrics.last;
+  const liveChange24h = liveSelectedQuote?.change ?? currentMetrics.change24h;
+
+  const liquidity = useMemo(() => {
+    const base = computeLiquidityLadder(selectedAssetSymbol);
+    if (!base.spotPrice || base.spotPrice <= 0 || Math.abs(liveSpotPrice - base.spotPrice) < 1e-8) {
+      return base;
+    }
+    const scale = liveSpotPrice / base.spotPrice;
+    return {
+      ...base,
+      spotPrice: liveSpotPrice,
+      levels: base.levels.map((lvl) => ({
+        ...lvl,
+        price: Number((lvl.price * scale).toFixed(liveSpotPrice < 1 ? 6 : 2)),
+      })),
+    };
+  }, [selectedAssetSymbol, liveSpotPrice]);
+
+  const divergences = useMemo(
+    () =>
+      detectMarketDivergences().map((d) => {
+        const q = liveQuotes[d.symbol];
+        return q
+          ? {
+              ...d,
+              lastPrice: q.price,
+              change24h: q.change,
+            }
+          : d;
+      }),
+    [liveQuotes]
+  );
+
+  const filteredDocs = useMemo(() => queryVectorMemory(ragQuery), [ragQuery]);
+
+  const handleRefresh = async () => {
+    setIsRefreshing(true);
+    try {
+      await Promise.all([fetch("/api/quotes", { cache: "no-store" }), fetchLiveBist()]);
+    } catch {
+      // keep existing live stream
+    } finally {
+      setIsRefreshing(false);
+    }
+  };
 
   return (
     <div className="rounded-2xl border border-[#d8ab5a]/25 bg-gradient-to-b from-[#0d1017]/95 to-[#06080d]/95 p-4 sm:p-6 text-[#f2efe8] shadow-[0_24px_60px_rgba(0,0,0,0.65)] backdrop-blur-xl space-y-6">
@@ -273,8 +388,8 @@ export default function OracleXTerminal() {
             <div className="flex items-center gap-4 text-xs font-mono tabular-nums">
               <span className="text-stone-400">Spot Price:</span>
               <span className="text-lg font-bold text-[#f2efe8]">{fmtPrice(liquidity.spotPrice)}</span>
-              <span className={currentMetrics.change24h >= 0 ? "text-emerald-400" : "text-rose-400"}>
-                {fmtPct(currentMetrics.change24h)}
+              <span className={liveChange24h >= 0 ? "text-emerald-400" : "text-rose-400"}>
+                {fmtPct(liveChange24h)}
               </span>
             </div>
           </div>
@@ -576,21 +691,39 @@ export default function OracleXTerminal() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/[0.05]">
-                {BIST_EQUITIES.map((eq) => (
-                  <tr key={eq.symbol} className="hover:bg-white/[0.03] transition">
-                    <td className="px-4 py-3 font-bold text-[#f0c979]">{eq.symbol}</td>
-                    <td className="px-4 py-3 text-stone-300">{eq.name}</td>
-                    <td className="px-4 py-3 font-bold text-[#f2efe8]">₺{eq.priceTRY.toFixed(2)}</td>
-                    <td className={`px-4 py-3 font-semibold ${eq.change24hPct >= 0 ? "text-emerald-400" : "text-rose-400"}`}>
-                      {eq.change24hPct >= 0 ? `+${eq.change24hPct}%` : `${eq.change24hPct}%`}
-                    </td>
-                    <td className="px-4 py-3 text-[#f2efe8]">{eq.peRatio}x</td>
-                    <td className="px-4 py-3 text-[#f0c979]">{eq.dividendYieldPct}%</td>
-                    <td className="px-4 py-3 text-[11px] text-stone-300 max-w-xs truncate" title={eq.kapLastDisclosure}>
-                      {eq.kapLastDisclosure}
+                {bistLoading ? (
+                  <tr>
+                    <td colSpan={7} className="px-4 py-8 text-center text-stone-400">
+                      Syncing live Borsa İstanbul quotes...
                     </td>
                   </tr>
-                ))}
+                ) : bistEquities.length === 0 ? (
+                  <tr>
+                    <td colSpan={7} className="px-4 py-8 text-center text-rose-400">
+                      {bistError ?? "Borsa İstanbul live feed unavailable."}
+                    </td>
+                  </tr>
+                ) : (
+                  bistEquities.map((eq) => (
+                    <tr key={eq.symbol} className="hover:bg-white/[0.03] transition">
+                      <td className="px-4 py-3 font-bold text-[#f0c979]">{eq.symbol}</td>
+                      <td className="px-4 py-3 text-stone-300">{eq.name}</td>
+                      <td className="px-4 py-3 font-bold text-[#f2efe8]">₺{eq.priceTRY.toFixed(2)}</td>
+                      <td className={`px-4 py-3 font-semibold ${eq.change24hPct >= 0 ? "text-emerald-400" : "text-rose-400"}`}>
+                        {eq.change24hPct >= 0 ? `+${eq.change24hPct}%` : `${eq.change24hPct}%`}
+                      </td>
+                      <td className="px-4 py-3 text-[#f2efe8]">
+                        {eq.peRatio > 0 ? `${eq.peRatio}x` : "—"}
+                      </td>
+                      <td className="px-4 py-3 text-[#f0c979]">
+                        {eq.dividendYieldPct > 0 ? `${eq.dividendYieldPct}%` : "—"}
+                      </td>
+                      <td className="px-4 py-3 text-[11px] text-stone-300 max-w-xs truncate" title={eq.kapLastDisclosure}>
+                        {eq.kapLastDisclosure}
+                      </td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
           </div>

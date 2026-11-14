@@ -4,7 +4,7 @@ import PositionSizingCalculator from "@/components/position-sizing-calculator";
 import WhopBadge from "@/components/whop-badge";
 
 export const metadata: Metadata = {
-  title: "Position Sizing & Invalidation Calculator — NextWall Street",
+  title: "Position Sizing & Invalidation Calculator — NextWallStreet",
   description:
     "Institutional risk-based position sizing calculator. Computes suggested shares, notional dollar allocation, and risk-reward targets against the model's invalidation level and 60-day realized volatility.",
 };
@@ -12,15 +12,15 @@ export const metadata: Metadata = {
 export default function CalculatorPage() {
   return (
     <div>
-      <section className="grain border-b border-line/60">
-        <div className="mx-auto max-w-7xl px-5 py-12">
+      <section className="grain">
+        <div className="mx-auto max-w-7xl px-5 py-10">
           <nav className="flex items-center gap-2 text-xs text-muted">
             <Link href="/" className="hover:text-bone">Home</Link>
-            <span className="text-line">/</span>
+            <span className="text-muted/40">/</span>
             <span className="text-gold-bright">Risk Calculator</span>
           </nav>
           <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">Capital Preservation</p>
-          <h1 className="mt-2 max-w-3xl font-display text-4xl leading-tight text-bone sm:text-5xl flex items-center">
+          <h1 className="mt-2 max-w-3xl font-display text-3xl leading-tight text-bone sm:text-5xl flex items-center">
             <span>Position Sizing Calculator</span>
             <WhopBadge className="ml-2 align-middle text-2xl" />
           </h1>
@@ -31,12 +31,12 @@ export default function CalculatorPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-10">
+      <section className="mx-auto max-w-7xl px-5 py-8 sm:py-10">
         <PositionSizingCalculator initialSymbol="NVDA" />
 
         {/* Methodology Notes */}
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          <div className="rounded-xl border border-line bg-ink-900/50 p-6">
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="rounded-2xl bg-ink-900/55 p-6">
             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">
               1. The Invalidation Anchor
             </p>
@@ -46,7 +46,7 @@ export default function CalculatorPage() {
             </p>
           </div>
 
-          <div className="rounded-xl border border-line bg-ink-900/50 p-6">
+          <div className="rounded-2xl bg-ink-900/55 p-6">
             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">
               2. Volatility Normalization
             </p>
@@ -56,7 +56,7 @@ export default function CalculatorPage() {
             </p>
           </div>
 
-          <div className="rounded-xl border border-line bg-ink-900/50 p-6">
+          <div className="rounded-2xl bg-ink-900/55 p-6">
             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">
               3. Hard Sector Caps
             </p>

@@ -14,15 +14,16 @@ import {
   Database,
 } from "lucide-react";
 import {
-  OPENBB_YIELD_CURVE,
-  OPENBB_MACRO_INDICATORS,
   OPENBB_DARKPOOL_ITEMS,
   calculateOpenBBVaR,
   generateMonteCarloPaths,
   computeOpenBBEfficientFrontier,
   executeOpenBBCommand,
   type OpenBBCommandResult,
+  type OpenBBMacroIndicator,
+  type OpenBBYieldPoint,
 } from "@/lib/openbb-platform";
+import { useQuotes } from "@/components/live-prices";
 import WhopBadge from "@/components/whop-badge";
 
 type WorkspaceTab = "cli" | "quant-var" | "macro-yield" | "portfolio" | "darkpool";
@@ -40,7 +41,7 @@ export default function OpenBBTerminal() {
       type: "text",
       title: "NextWall Quantitative Risk & CLI Engine v4.3",
       content:
-        "Connected to NextWall Street high-frequency quantitative engine.\nConsolidates 2,000+ asset real-time feeds, US Treasury constant-maturity yields, and portfolio risk models.\nType 'help' or click any command preset below to inspect.",
+        "Connected to NextWallStreet high-frequency quantitative engine.\nConsolidates 2,000+ asset real-time feeds, US Treasury constant-maturity yields, and portfolio risk models.\nType 'help' or click any command preset below to inspect.",
       pythonCodeSnippet:
         'from nextwall.quant import cli\n# Query multi-asset universe\noutput = cli.equity.price.historical("NVDA")\nprint(output.to_dataframe())',
     },
@@ -48,24 +49,76 @@ export default function OpenBBTerminal() {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const logEndRef = useRef<HTMLDivElement>(null);
 
+  const liveQuotes = useQuotes();
+
+  // Live Treasury Yield Curve & Macro State
+  const [yieldCurve, setYieldCurve] = useState<OpenBBYieldPoint[]>([]);
+  const [macroIndicators, setMacroIndicators] = useState<OpenBBMacroIndicator[]>([]);
+  const [macroLoading, setMacroLoading] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+    const loadMacro = async () => {
+      try {
+        const res = await fetch("/api/live-terminal-data?view=macro-perps", { cache: "no-store" });
+        if (!res.ok || cancelled) return;
+        const data = (await res.json()) as {
+          yieldCurve?: OpenBBYieldPoint[];
+          macroIndicators?: OpenBBMacroIndicator[];
+        };
+        if (cancelled) return;
+        if (Array.isArray(data.yieldCurve) && data.yieldCurve.length >= 6) {
+          setYieldCurve(data.yieldCurve);
+        }
+        if (Array.isArray(data.macroIndicators) && data.macroIndicators.length >= 3) {
+          setMacroIndicators(data.macroIndicators);
+        }
+      } catch {
+        // retain existing live Treasury rates
+      } finally {
+        if (!cancelled) setMacroLoading(false);
+      }
+    };
+    loadMacro();
+    const id = setInterval(loadMacro, 30_000);
+    return () => {
+      cancelled = true;
+      clearInterval(id);
+    };
+  }, []);
+
   // Quant VaR State
   const [selectedSymbol, setSelectedSymbol] = useState("NVDA");
   const [confidence, setConfidence] = useState<0.95 | 0.99>(0.95);
   const [horizonDays, setHorizonDays] = useState(1);
-  const [varResult, setVarResult] = useState(() => calculateOpenBBVaR("NVDA", 0.95, 1));
+  const liveSelectedPrice = liveQuotes[selectedSymbol]?.price;
+  const [varResult, setVarResult] = useState(() =>
+    calculateOpenBBVaR("NVDA", 0.95, 1, liveQuotes["NVDA"]?.price),
+  );
   const [monteCarloPaths, setMonteCarloPaths] = useState(() =>
-    generateMonteCarloPaths("NVDA", 187.4, 30)
+    generateMonteCarloPaths("NVDA", liveQuotes["NVDA"]?.price ?? calculateOpenBBVaR("NVDA", 0.95, 1).price, 30),
   );
 
   // Portfolio Optimizer State
   const [basketSymbols] = useState<string[]>(["NVDA", "AAPL", "MSFT", "BTC", "SOL"]);
-  const [frontierData] = useState(() => computeOpenBBEfficientFrontier(["NVDA", "AAPL", "MSFT", "BTC", "SOL"]));
+  const livePriceMap = React.useMemo(() => {
+    const out: Record<string, number> = {};
+    for (const [sym, q] of Object.entries(liveQuotes)) {
+      if (q && q.price > 0) out[sym] = q.price;
+    }
+    return out;
+  }, [liveQuotes]);
+
+  const frontierData = React.useMemo(
+    () => computeOpenBBEfficientFrontier(basketSymbols, livePriceMap),
+    [basketSymbols, livePriceMap],
+  );
 
   useEffect(() => {
-    const res = calculateOpenBBVaR(selectedSymbol, confidence, horizonDays);
+    const res = calculateOpenBBVaR(selectedSymbol, confidence, horizonDays, liveSelectedPrice);
     setVarResult(res);
     setMonteCarloPaths(generateMonteCarloPaths(selectedSymbol, res.price, 30));
-  }, [selectedSymbol, confidence, horizonDays]);
+  }, [selectedSymbol, confidence, horizonDays, liveSelectedPrice]);
 
   useEffect(() => {
     logEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -81,7 +134,7 @@ export default function OpenBBTerminal() {
       return;
     }
 
-    const result = executeOpenBBCommand(target);
+    const result = executeOpenBBCommand(target, liveQuotes, yieldCurve, macroIndicators);
     setTerminalLogs((prev) => [...prev, result]);
     setCommandHistory((prev) => [...prev, target]);
     setHistoryIndex(-1);
@@ -138,7 +191,7 @@ export default function OpenBBTerminal() {
               Quantitative Risk, VaR &amp; Portfolio CLI
             </h2>
             <p className="mt-1.5 text-xs sm:text-sm text-stone-400 max-w-3xl leading-relaxed">
-              Full command-line terminal, parametric &amp; fat-tailed Value at Risk (VaR), 30-day Monte Carlo diffusion simulator, Markowitz Efficient Frontier optimizer, US Treasury yield curve analytics, and institutional dark pool flow.
+              Full command-line terminal, parametric &amp; fat-tailed Value at Risk (VaR), 30-day Monte Carlo diffusion model, Markowitz Efficient Frontier optimizer, US Treasury yield curve analytics, and institutional dark pool flow.
             </p>
           </div>
 
@@ -345,17 +398,29 @@ export default function OpenBBTerminal() {
                 className="rounded-lg border border-[#d8ab5a]/35 bg-[#050609] px-3 py-1.5 text-[#f2efe8] font-bold focus:outline-none focus:border-[#d8ab5a]"
               >
                 <optgroup label="S&P 500 / Large Tech">
-                  <option value="NVDA">NVDA - NVIDIA Corp ($187.40)</option>
-                  <option value="AAPL">AAPL - Apple Inc ($242.10)</option>
-                  <option value="MSFT">MSFT - Microsoft Corp ($415.80)</option>
-                  <option value="TSLA">TSLA - Tesla Inc ($348.60)</option>
-                  <option value="PLTR">PLTR - Palantir Tech ($76.50)</option>
-                  <option value="AMD">AMD - Advanced Micro Devices ($124.80)</option>
+                  {[
+                    { sym: "NVDA", name: "NVIDIA Corp" },
+                    { sym: "AAPL", name: "Apple Inc" },
+                    { sym: "MSFT", name: "Microsoft Corp" },
+                    { sym: "TSLA", name: "Tesla Inc" },
+                    { sym: "PLTR", name: "Palantir Tech" },
+                    { sym: "AMD", name: "Advanced Micro Devices" },
+                  ].map((item) => (
+                    <option key={item.sym} value={item.sym}>
+                      {item.sym} - {item.name} ({liveQuotes[item.sym]?.price ? `$${liveQuotes[item.sym].price.toFixed(2)}` : "Live"})
+                    </option>
+                  ))}
                 </optgroup>
                 <optgroup label="Crypto Assets">
-                  <option value="BTC">BTC - Bitcoin ($88,400.00)</option>
-                  <option value="ETH">ETH - Ethereum ($2,640.00)</option>
-                  <option value="SOL">SOL - Solana ($184.50)</option>
+                  {[
+                    { sym: "BTC", name: "Bitcoin" },
+                    { sym: "ETH", name: "Ethereum" },
+                    { sym: "SOL", name: "Solana" },
+                  ].map((item) => (
+                    <option key={item.sym} value={item.sym}>
+                      {item.sym} - {item.name} ({liveQuotes[item.sym]?.price ? `$${liveQuotes[item.sym].price.toLocaleString("en-US", { maximumFractionDigits: 2 })}` : "Live"})
+                    </option>
+                  ))}
                 </optgroup>
               </select>
             </div>
@@ -465,10 +530,10 @@ export default function OpenBBTerminal() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/[0.07] pb-4">
               <div>
                 <h3 className="text-lg font-display font-medium text-[#f2efe8]">
-                  Monte Carlo 30-Day Geometric Brownian Motion Simulation
+                  Monte Carlo 30-Day Geometric Brownian Motion Envelope
                 </h3>
                 <p className="text-xs text-stone-400 mt-1">
-                  1,000 simulated price paths across 5th (tail stop), 25th, 50th (median), 75th, and 95th percentiles.
+                  1,000 Monte Carlo diffusion price paths across 5th (tail stop), 25th, 50th (median), 75th, and 95th percentiles.
                 </p>
               </div>
               <div className="flex items-center gap-3 text-xs font-mono">
@@ -594,13 +659,37 @@ export default function OpenBBTerminal() {
                 </h3>
               </div>
               <div className="flex items-center gap-3 font-mono text-xs">
-                <div className="rounded-lg border border-emerald-500/35 bg-emerald-950/20 px-3 py-1.5 text-emerald-400">
-                  10Y - 2Y Spread: <span className="font-bold">+16 bps</span> (Dis-inverted)
-                </div>
+                {(() => {
+                  const y10 = yieldCurve.find((p) => p.tenor === "10Y")?.rate;
+                  const y2 = yieldCurve.find((p) => p.tenor === "2Y")?.rate;
+                  if (y10 === undefined || y2 === undefined) {
+                    return (
+                      <div className="rounded-lg border border-white/10 bg-[#050609] px-3 py-1.5 text-stone-400">
+                        {macroLoading ? "Syncing live 10Y - 2Y spread..." : "Live 10Y - 2Y spread unavailable"}
+                      </div>
+                    );
+                  }
+                  const spreadBps = Math.round((y10 - y2) * 100);
+                  return (
+                    <div className="rounded-lg border border-emerald-500/35 bg-emerald-950/20 px-3 py-1.5 text-emerald-400">
+                      10Y - 2Y Spread:{" "}
+                      <span className="font-bold">
+                        {spreadBps >= 0 ? "+" : ""}
+                        {spreadBps} bps
+                      </span>{" "}
+                      ({spreadBps >= 0 ? "Positive Slope" : "Inverted"})
+                    </div>
+                  );
+                })()}
               </div>
             </div>
 
             <div className="mt-6 h-64 w-full">
+              {yieldCurve.length === 0 ? (
+                <div className="flex h-full items-center justify-center rounded-xl border border-white/[0.06] bg-[#050609] text-xs font-mono text-stone-400">
+                  {macroLoading ? "Syncing live US Treasury yield curve..." : "Live US Treasury yield feed unavailable"}
+                </div>
+              ) : (
               <svg className="h-full w-full overflow-visible" viewBox="0 0 800 240">
                 {[5.5, 5.0, 4.5, 4.0, 3.5].map((level, i) => (
                   <g key={level}>
@@ -616,9 +705,9 @@ export default function OpenBBTerminal() {
                   stroke="#475569"
                   strokeWidth="1.5"
                   strokeDasharray="4 3"
-                  points={OPENBB_YIELD_CURVE.map(
+                  points={yieldCurve.map(
                     (pt, idx) =>
-                      `${60 + (idx * 700) / (OPENBB_YIELD_CURVE.length - 1)},${
+                      `${60 + (idx * 700) / Math.max(1, yieldCurve.length - 1)},${
                         210 - ((pt.previousRate - 3.5) / 2.0) * 180
                       }`
                   ).join(" ")}
@@ -628,16 +717,16 @@ export default function OpenBBTerminal() {
                   fill="none"
                   stroke="#f0c979"
                   strokeWidth="3"
-                  points={OPENBB_YIELD_CURVE.map(
+                  points={yieldCurve.map(
                     (pt, idx) =>
-                      `${60 + (idx * 700) / (OPENBB_YIELD_CURVE.length - 1)},${
+                      `${60 + (idx * 700) / Math.max(1, yieldCurve.length - 1)},${
                         210 - ((pt.rate - 3.5) / 2.0) * 180
                       }`
                   ).join(" ")}
                 />
 
-                {OPENBB_YIELD_CURVE.map((pt, idx) => {
-                  const x = 60 + (idx * 700) / (OPENBB_YIELD_CURVE.length - 1);
+                {yieldCurve.map((pt, idx) => {
+                  const x = 60 + (idx * 700) / Math.max(1, yieldCurve.length - 1);
                   const y = 210 - ((pt.rate - 3.5) / 2.0) * 180;
                   return (
                     <g key={pt.tenor}>
@@ -652,6 +741,7 @@ export default function OpenBBTerminal() {
                   );
                 })}
               </svg>
+              )}
             </div>
           </div>
 
@@ -672,28 +762,36 @@ export default function OpenBBTerminal() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/[0.05]">
-                  {OPENBB_MACRO_INDICATORS.map((m, idx) => (
-                    <tr key={idx} className="hover:bg-white/[0.02]">
-                      <td className="p-3 text-[#f2efe8] font-bold">{m.metric}</td>
-                      <td className="p-3 text-[#f0c979] font-bold">{m.current}</td>
-                      <td className="p-3 text-stone-400">{m.previous}</td>
-                      <td className="p-3 text-stone-300">{m.change}</td>
-                      <td className="p-3">
-                        <span
-                          className={`rounded px-2 py-0.5 text-[10px] font-bold ${
-                            m.impact === "Bullish"
-                              ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/35"
-                              : m.impact === "Bearish"
-                              ? "bg-rose-500/15 text-rose-400 border border-rose-500/35"
-                              : "bg-white/[0.06] text-stone-300"
-                          }`}
-                        >
-                          {m.impact}
-                        </span>
+                  {macroIndicators.length === 0 ? (
+                    <tr>
+                      <td colSpan={6} className="p-6 text-center text-stone-400">
+                        {macroLoading ? "Syncing live macroeconomic indicators..." : "Live macroeconomic feed unavailable"}
                       </td>
-                      <td className="p-3 text-stone-500">{m.updated}</td>
                     </tr>
-                  ))}
+                  ) : (
+                    macroIndicators.map((m, idx) => (
+                      <tr key={idx} className="hover:bg-white/[0.02]">
+                        <td className="p-3 text-[#f2efe8] font-bold">{m.metric}</td>
+                        <td className="p-3 text-[#f0c979] font-bold">{m.current}</td>
+                        <td className="p-3 text-stone-400">{m.previous}</td>
+                        <td className="p-3 text-stone-300">{m.change}</td>
+                        <td className="p-3">
+                          <span
+                            className={`rounded px-2 py-0.5 text-[10px] font-bold ${
+                              m.impact === "Bullish"
+                                ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/35"
+                                : m.impact === "Bearish"
+                                ? "bg-rose-500/15 text-rose-400 border border-rose-500/35"
+                                : "bg-white/[0.06] text-stone-300"
+                            }`}
+                          >
+                            {m.impact}
+                          </span>
+                        </td>
+                        <td className="p-3 text-stone-500">{m.updated}</td>
+                      </tr>
+                    ))
+                  )}
                 </tbody>
               </table>
             </div>
@@ -849,11 +947,13 @@ print(opt.weights)`}
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/[0.05]">
-                {OPENBB_DARKPOOL_ITEMS.map((item) => (
+                {OPENBB_DARKPOOL_ITEMS.map((item) => {
+                  const liveP = liveQuotes[item.symbol]?.price ?? null;
+                  return (
                   <tr key={item.symbol} className="hover:bg-white/[0.02]">
                     <td className="p-3 font-bold text-[#f2efe8]">{item.symbol}</td>
                     <td className="p-3 text-stone-400">{item.name}</td>
-                    <td className="p-3 font-bold text-stone-200">${item.price.toFixed(2)}</td>
+                    <td className="p-3 font-bold text-stone-200">{liveP !== null ? `$${liveP.toFixed(2)}` : "Syncing..."}</td>
                     <td className="p-3 font-bold text-sky-300">{item.darkpoolVolumePct}%</td>
                     <td className="p-3 text-stone-300">{item.shortVolumePct}%</td>
                     <td className="p-3">
@@ -880,7 +980,8 @@ print(opt.weights)`}
                       </span>
                     </td>
                   </tr>
-                ))}
+                  );
+                })}
               </tbody>
             </table>
           </div>

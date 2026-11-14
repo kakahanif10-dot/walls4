@@ -49,7 +49,7 @@ export default function AnalystDesksCatalog() {
   return (
     <div className="space-y-8">
       {/* Category Pills & Search */}
-      <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 border-b border-line/60 pb-5">
+      <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 pb-2">
         <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
@@ -57,7 +57,7 @@ export default function AnalystDesksCatalog() {
             className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold transition ${
               activeCategory === "all"
                 ? "bg-gold text-ink-950 shadow"
-                : "bg-ink-900 border border-line text-muted hover:text-bone"
+                : "bg-ink-900/75 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <span>All 44 Desks ({counts.all})</span>
@@ -69,7 +69,7 @@ export default function AnalystDesksCatalog() {
             className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold transition ${
               activeCategory === "equities"
                 ? "bg-gold text-ink-950 shadow"
-                : "bg-ink-900 border border-line text-muted hover:text-bone"
+                : "bg-ink-900/75 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <BarChart3 className="h-3.5 w-3.5" />
@@ -82,7 +82,7 @@ export default function AnalystDesksCatalog() {
             className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold transition ${
               activeCategory === "macro"
                 ? "bg-gold text-ink-950 shadow"
-                : "bg-ink-900 border border-line text-muted hover:text-bone"
+                : "bg-ink-900/75 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <Globe className="h-3.5 w-3.5" />
@@ -95,7 +95,7 @@ export default function AnalystDesksCatalog() {
             className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold transition ${
               activeCategory === "crypto"
                 ? "bg-gold text-ink-950 shadow"
-                : "bg-ink-900 border border-line text-muted hover:text-bone"
+                : "bg-ink-900/75 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <Coins className="h-3.5 w-3.5" />
@@ -108,7 +108,7 @@ export default function AnalystDesksCatalog() {
             className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold transition ${
               activeCategory === "meme"
                 ? "bg-gold text-ink-950 shadow"
-                : "bg-ink-900 border border-line text-muted hover:text-bone"
+                : "bg-ink-900/75 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <Flame className="h-3.5 w-3.5" />
@@ -121,7 +121,7 @@ export default function AnalystDesksCatalog() {
             className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold transition ${
               activeCategory === "quant"
                 ? "bg-gold text-ink-950 shadow"
-                : "bg-ink-900 border border-line text-muted hover:text-bone"
+                : "bg-ink-900/75 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <Cpu className="h-3.5 w-3.5" />
@@ -137,17 +137,17 @@ export default function AnalystDesksCatalog() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search 44 desks, lead analysts, or symbols..."
-            className="w-full rounded-xl border border-line bg-ink-900 pl-9 pr-3.5 py-2 text-xs text-bone placeholder:text-muted/50 focus:border-gold focus:outline-none"
+            className="w-full rounded-xl bg-ink-900/90 pl-9 pr-3.5 py-2 text-xs text-bone placeholder:text-muted/50 focus:outline-none focus:ring-1 focus:ring-gold/40"
           />
         </div>
       </div>
 
       {/* Desk Grid */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {filteredDesks.map((desk, idx) => (
           <div
             key={desk.id}
-            className="group flex flex-col justify-between rounded-xl border border-line bg-ink-900/50 p-5 transition-all hover:border-gold/50 hover:bg-ink-900 hover:shadow-lg"
+            className="group flex flex-col justify-between rounded-2xl bg-ink-900/55 p-5 sm:p-6 transition-all hover:bg-ink-900/80 hover:shadow-lg"
           >
             <div>
               <div className="flex items-center justify-between text-[11px] text-muted">
@@ -155,14 +155,14 @@ export default function AnalystDesksCatalog() {
                   Desk {String(idx + 1).padStart(2, "0")}
                 </span>
                 <span
-                  className={`rounded-full px-2 py-0.5 text-[9px] font-mono font-semibold ${
+                  className={`rounded-full px-2.5 py-0.5 text-[9px] font-mono font-semibold ${
                     desk.status.includes("High Volatility")
-                      ? "bg-rose-500/10 text-rose-400 border border-rose-500/30"
+                      ? "bg-rose-500/15 text-rose-400"
                       : desk.status.includes("Live Order Flow")
-                      ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30"
+                      ? "bg-emerald-500/15 text-emerald-400"
                       : desk.status.includes("Pre-Market")
-                      ? "bg-amber-500/10 text-amber-300 border border-amber-500/30"
-                      : "bg-ink-800 text-bone/80 border border-line"
+                      ? "bg-amber-500/15 text-amber-300"
+                      : "bg-ink-850 text-bone/80"
                   }`}
                 >
                   {desk.status}
@@ -181,18 +181,18 @@ export default function AnalystDesksCatalog() {
               </p>
 
               {/* Key Metric & Focus Tickers */}
-              <div className="mt-3.5 rounded-lg border border-line/60 bg-ink-950 p-2.5 text-[11px] space-y-1.5 font-mono">
+              <div className="mt-4 rounded-xl bg-ink-950/75 p-3 text-[11px] space-y-2 font-mono">
                 <div className="flex justify-between items-center text-muted">
                   <span className="text-[10px] uppercase">Key Metric:</span>
                   <span className="text-bone/90 font-semibold truncate ml-1">{desk.keyMetric}</span>
                 </div>
-                <div className="flex items-center gap-1 pt-1 border-t border-line/40 flex-wrap">
+                <div className="flex items-center gap-1.5 pt-1 flex-wrap">
                   <span className="text-[10px] text-muted mr-1">Focus:</span>
                   {desk.focusTickers.map((t) => (
                     <Link
                       key={t}
                       href={`/ticker/${t.replace("-PERP", "")}`}
-                      className="rounded bg-ink-850 px-1.5 py-0.2 text-[9px] text-gold hover:text-gold-bright transition border border-line/60"
+                      className="rounded-md bg-ink-900/90 px-2 py-0.5 text-[9px] text-gold hover:text-gold-bright transition"
                     >
                       ${t}
                     </Link>
@@ -201,7 +201,7 @@ export default function AnalystDesksCatalog() {
               </div>
             </div>
 
-            <div className="mt-4 border-t border-line/60 pt-3 flex items-center justify-between text-[11px]">
+            <div className="mt-4 pt-2 flex items-center justify-between text-[11px]">
               <div>
                 <p className="text-bone/90 font-medium">{desk.leadAnalyst}</p>
                 <p className="text-[10px] text-muted">{desk.role}</p>
@@ -219,7 +219,7 @@ export default function AnalystDesksCatalog() {
       </div>
 
       {filteredDesks.length === 0 && (
-        <div className="rounded-xl border border-line bg-ink-900 p-8 text-center text-sm text-muted">
+        <div className="rounded-2xl bg-ink-900/55 p-8 text-center text-sm text-muted">
           No analyst desks found matching &ldquo;{search}&rdquo;.
         </div>
       )}

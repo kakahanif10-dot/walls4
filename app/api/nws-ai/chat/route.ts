@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { GoogleGenAI } from "@google/genai";
+import { ASSET_BY_SYMBOL, fmtPct, fmtPrice, metricsFor } from "@/lib/market";
+import { ensureMarketData } from "@/lib/market-data";
 
 const ROLE_CONFIGS: Record<string, { model: string; systemInstruction: string; title: string; displayName: string }> = {
   carbon: {
@@ -79,12 +81,28 @@ export async function POST(req: NextRequest) {
     const backendModel = mapping.backendModel || selectedRole.model;
     const publicDisplayName = mapping.displayName || selectedRole.displayName;
 
+    await ensureMarketData();
+    const lastUserMsg = messages[messages.length - 1]?.text || "Market inquiry";
+    const tokens = lastUserMsg.toUpperCase().replace(/[^A-Z0-9\s$]/g, " ").split(/\s+/);
+    const detectedSym = tokens.map((t) => t.replace(/^\$/, "")).find((t) => t.length >= 2 && Boolean(ASSET_BY_SYMBOL[t]));
+    const liveContextAssets = [detectedSym ?? "NVDA", "BTC", "SPY"]
+      .filter((s, idx, arr) => arr.indexOf(s) === idx && Boolean(ASSET_BY_SYMBOL[s]))
+      .map((s) => {
+        const asset = ASSET_BY_SYMBOL[s];
+        const m = metricsFor(asset);
+        return { symbol: s, name: asset.name, m };
+      });
+    const liveSnapshotLine = liveContextAssets
+      .map(({ symbol, m }) => `$${symbol}: ${fmtPrice(m.last)} (${fmtPct(m.change24h)}, Score ${m.score}/100, RSI ${m.rsi.toFixed(0)}, SMA20 ${fmtPrice(m.sma20)}, SMA50 ${fmtPrice(m.sma50)})`)
+      .join(" | ");
+
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
-      // Deterministic simulation fallback if API key is not configured
-      const lastUserMsg = messages[messages.length - 1]?.text || "Market inquiry";
+      const primary = liveContextAssets[0];
+      const invStop = primary ? fmtPrice(Math.min(primary.m.sma20, primary.m.sma50) * 0.975) : "live volume shelf";
+      const tgt = primary ? fmtPrice(Math.max(primary.m.high52, primary.m.last * 1.05)) : "session extension";
       return NextResponse.json({
-        reply: `**[${selectedRole.title} — Institutional Feed]**\n\n*Order Flow Analysis for "${lastUserMsg}"*:\n\n- **Desk Stance**: Moderately Bullish with Volatility Expansion.\n- **Primary Anchor**: Resistance test underway with 20-day SMA slope positive (+1.84% weekly drift).\n- **Risk Protocol**: Invalidation stop placed 2.5% below nearest volume shelf. Recommended R/R ratio is 2.8:1.\n- **Catalyst Focus**: Watching front-month implied volatility and liquidity order book absorption across institutional exchanges.`,
+        reply: `**[${selectedRole.title} — Real-Time Market Telemetry]**\n\n*Live Analysis for "${lastUserMsg}"*:\n\n- **Live Tape Snapshot**: ${liveSnapshotLine}\n- **Primary Anchor**: ${primary ? `$${primary.symbol} trading at ${fmtPrice(primary.m.last)} with stance **${primary.m.stance}** (Score ${primary.m.score}/100, RSI ${primary.m.rsi.toFixed(0)}).` : "Multi-asset telemetry synchronized."}\n- **Risk Protocol**: Invalidation stop anchored at ${invStop}; primary target extension ${tgt}.`,
         modelUsed: publicDisplayName,
         fallback: true,
       });
@@ -98,6 +116,8 @@ export async function POST(req: NextRequest) {
         },
       },
     });
+
+    const enrichedInstruction = `${selectedRole.systemInstruction}\n\nLIVE REAL-TIME MARKET TELEMETRY (USE ONLY THESE LIVE QUOTES WHEN CITING PRICES):\n${liveSnapshotLine}`;
 
     // Map conversation history to contents format: [{ role: 'user' | 'model', parts: [{ text: '...' }] }]
     const contents = messages.map((m: { role: string; text: string }) => ({
@@ -114,7 +134,7 @@ export async function POST(req: NextRequest) {
         model: actualBackendModel,
         contents,
         config: {
-          systemInstruction: selectedRole.systemInstruction,
+          systemInstruction: enrichedInstruction,
         },
       });
       responseText = response.text || "";
@@ -127,7 +147,7 @@ export async function POST(req: NextRequest) {
           model: actualBackendModel,
           contents,
           config: {
-            systemInstruction: selectedRole.systemInstruction,
+            systemInstruction: enrichedInstruction,
           },
         });
         responseText = fallbackResponse.text || "";
@@ -142,13 +162,20 @@ export async function POST(req: NextRequest) {
       roleUsed: role,
     });
   } catch (error: any) {
+    await ensureMarketData().catch(() => undefined);
     const lastUserMsg = messages[messages.length - 1]?.text || "Market inquiry";
     const mapping = NWS_MODEL_MAP[requestedKey] || NWS_MODEL_MAP["nws-mercury-3.8"];
     const effectiveRole = ROLE_CONFIGS[mapping?.roleId] || ROLE_CONFIGS[role] || ROLE_CONFIGS.flash;
     const isQuota = String(error?.message || "").includes("429") || String(error?.message || "").includes("RESOURCE_EXHAUSTED");
+    const nvda = ASSET_BY_SYMBOL.NVDA ? metricsFor(ASSET_BY_SYMBOL.NVDA) : null;
+    const btc = ASSET_BY_SYMBOL.BTC ? metricsFor(ASSET_BY_SYMBOL.BTC) : null;
+    const liveSummary = [
+      nvda ? `$NVDA ${fmtPrice(nvda.last)} (${fmtPct(nvda.change24h)})` : null,
+      btc ? `$BTC ${fmtPrice(btc.last)} (${fmtPct(btc.change24h)})` : null,
+    ].filter(Boolean).join(" | ");
 
     return NextResponse.json({
-      reply: `**[${effectiveRole.title} — Real-Time Signal Desk]**\n\n*Institutional synthesis for: "${lastUserMsg}"*\n\n- **Order Flow Stance**: Constructive with controlled volatility. Volume shelf established at nearest 50-day moving average.\n- **Execution Risk**: Strict invalidation stop pegged 2.8% below immediate support structure.\n- **Strategy Directive**: Maintain disciplined position sizing (max 2% risk capital per allocation) and monitor volume weighted average price (VWAP).\n\n*(Desk note: ${isQuota ? "NWS AI rate limit quota active; served via NextWall high-throughput risk engine." : "Synthesized via internal quant models."})*`,
+      reply: `**[${effectiveRole.title} — Real-Time Signal Desk]**\n\n*Live institutional synthesis for: "${lastUserMsg}"*\n\n- **Live Tape**: ${liveSummary || "Connected to multi-venue feed"}\n- **Execution Risk**: Strict invalidation stop pegged 2.5% below immediate 20-day/50-day SMA volume shelf.\n- **Strategy Directive**: Maintain disciplined position sizing (max 2% risk capital per allocation).\n\n*(Desk note: ${isQuota ? "NWS AI rate limit quota active; served via NextWall live quantitative telemetry engine." : "Synthesized via live quantitative telemetry."})*`,
       modelUsed: effectiveRole.displayName,
       fallback: true,
     });

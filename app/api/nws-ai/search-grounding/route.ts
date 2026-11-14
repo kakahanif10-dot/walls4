@@ -11,32 +11,10 @@ export async function POST(req: NextRequest) {
 
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
-      // Deterministic fallback if API key is not yet set
-      return NextResponse.json({
-        text: `**Real-Time Search Grounding for: "${query}"**\n\n*Macro Intelligence Synthesis:*\n- Global equity indices and fixed-income yields are adjusting to recent macroeconomic releases and central bank guidance.\n- Energy and precious metals markets show heightened positioning around geopolitical catalysts and institutional flows.\n- Institutional order books reflect active rotation across defensive sectors and high-beta digital assets.`,
-        groundingChunks: [
-          {
-            web: {
-              uri: "https://www.bloomberg.com/markets",
-              title: "Bloomberg Markets — Global Real-Time Financial Data",
-            },
-          },
-          {
-            web: {
-              uri: "https://www.reuters.com/markets/",
-              title: "Reuters Markets — Real-Time News & Global Commodities",
-            },
-          },
-          {
-            web: {
-              uri: "https://www.wsj.com/market-data",
-              title: "The Wall Street Journal — Market Center & US Equities",
-            },
-          },
-        ],
-        searchQueries: [query, `${query} financial markets today`],
-        fallback: true,
-      });
+      return NextResponse.json(
+        { error: "GEMINI_API_KEY is not configured. Live search grounding requires an active API key." },
+        { status: 503 }
+      );
     }
 
     const ai = new GoogleGenAI({
@@ -74,18 +52,11 @@ Keep the style concise, professional, and clear with bold bullet points.`,
     });
   } catch (error: any) {
     console.error("NWS AI Search Grounding Error:", error);
-    return NextResponse.json({
-      text: `**Search Grounding Engine Active**\n\nLatest institutional data reflects active capital rotation. Cross-asset desks note key support holds above multi-week moving averages with liquidity absorption steady.`,
-      groundingChunks: [
-        {
-          web: {
-            uri: "https://www.bloomberg.com/markets",
-            title: "Bloomberg Markets Terminal",
-          },
-        },
-      ],
-      searchQueries: ["Institutional order flow analysis"],
-      fallback: true,
-    });
+    return NextResponse.json(
+      {
+        error: "Live Google Search grounding service temporarily unavailable. Please retry.",
+      },
+      { status: 503 }
+    );
   }
 }

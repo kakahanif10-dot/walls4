@@ -18,7 +18,6 @@ import {
   ChevronLeft,
   Info,
   Clock,
-  Sparkles,
   BarChart2,
   Filter,
   X,
@@ -150,14 +149,14 @@ export default function PipelineStatusDashboard() {
   return (
     <div className="space-y-8">
       {/* Top Banner & Control Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-xl border border-line bg-ink-900/80 p-5 backdrop-blur">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl bg-ink-900/65 p-5 sm:p-6 backdrop-blur">
         <div>
           <div className="flex items-center gap-2">
             <span className="live-dot h-2.5 w-2.5 rounded-full bg-emerald-400" />
             <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-400">
               Backend Pipeline Live
             </span>
-            <span className="rounded bg-line/60 px-2 py-0.5 font-mono text-[10px] text-muted">
+            <span className="rounded bg-ink-850 px-2 py-0.5 font-mono text-[10px] text-muted">
               2,038 Total Assets Scored
             </span>
           </div>
@@ -175,7 +174,7 @@ export default function PipelineStatusDashboard() {
             type="button"
             onClick={() => fetchPipeline(true)}
             disabled={refreshing}
-            className="flex items-center gap-2 rounded-full border border-gold/50 bg-gold/15 px-4 py-2 text-xs font-semibold text-gold-bright hover:bg-gold/25 transition disabled:opacity-50"
+            className="flex items-center gap-2 rounded-full bg-gold/15 px-4 py-2 text-xs font-semibold text-gold-bright hover:bg-gold/25 transition disabled:opacity-50"
           >
             <RefreshCw className={`h-3.5 w-3.5 ${refreshing ? "animate-spin" : ""}`} />
             <span>{refreshing ? "Recalculating..." : "Run Pipeline Ingestion"}</span>
@@ -184,16 +183,16 @@ export default function PipelineStatusDashboard() {
       </div>
 
       {/* KPI Metrics Strip */}
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6">
-        <div className="rounded-xl border border-line bg-ink-900/60 p-4">
+      <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-4 lg:grid-cols-6">
+        <div className="rounded-xl bg-ink-900/55 px-4 py-3.5">
           <span className="text-[10px] uppercase tracking-wider text-muted">Total Universe</span>
           <p className="mt-1 font-mono text-2xl font-bold text-bone">
-            {metrics?.totalAssets?.toLocaleString() || "2,038"}
+            {metrics ? metrics.totalAssets.toLocaleString() : "—"}
           </p>
           <p className="text-[10px] text-muted/70">800 stocks · 831 crypto · 407 memes</p>
         </div>
 
-        <div className="rounded-xl border border-line bg-ink-900/60 p-4">
+        <div className="rounded-xl bg-ink-900/55 px-4 py-3.5">
           <span className="text-[10px] uppercase tracking-wider text-muted">Market Breadth</span>
           <p className="mt-1 font-mono text-2xl font-bold text-emerald-400">
             {metrics ? `${metrics.breadthScore}%` : "—"}
@@ -201,34 +200,34 @@ export default function PipelineStatusDashboard() {
           <p className="text-[10px] text-muted/70">names scoring 60+ (bullish)</p>
         </div>
 
-        <div className="rounded-xl border border-line bg-ink-900/60 p-4">
+        <div className="rounded-xl bg-ink-900/55 px-4 py-3.5">
           <span className="text-[10px] uppercase tracking-wider text-muted">Equities Median</span>
           <p className="mt-1 font-mono text-2xl font-bold text-gold-bright">
-            {metrics?.medianScoreStock || "52"}
+            {metrics ? metrics.medianScoreStock : "—"}
             <span className="text-xs text-muted font-normal"> / 100</span>
           </p>
           <p className="text-[10px] text-muted/70">S&amp;P 500 / Nasdaq</p>
         </div>
 
-        <div className="rounded-xl border border-line bg-ink-900/60 p-4">
+        <div className="rounded-xl bg-ink-900/55 px-4 py-3.5">
           <span className="text-[10px] uppercase tracking-wider text-muted">Crypto Median</span>
           <p className="mt-1 font-mono text-2xl font-bold text-bone">
-            {metrics?.medianScoreCrypto || "54"}
+            {metrics ? metrics.medianScoreCrypto : "—"}
             <span className="text-xs text-muted font-normal"> / 100</span>
           </p>
           <p className="text-[10px] text-muted/70">Coinbase / Binance spot</p>
         </div>
 
-        <div className="rounded-xl border border-line bg-ink-900/60 p-4">
+        <div className="rounded-xl bg-ink-900/55 px-4 py-3.5">
           <span className="text-[10px] uppercase tracking-wider text-muted">Meme Risk Median</span>
           <p className="mt-1 font-mono text-2xl font-bold text-[#e7a86b]">
-            {metrics?.medianScoreMeme || "47"}
+            {metrics ? metrics.medianScoreMeme : "—"}
             <span className="text-xs text-muted font-normal"> / 100</span>
           </p>
           <p className="text-[10px] text-muted/70">pump.fun / viral meta</p>
         </div>
 
-        <div className="rounded-xl border border-line bg-ink-900/60 p-4">
+        <div className="rounded-xl bg-ink-900/55 px-4 py-3.5">
           <span className="text-[10px] uppercase tracking-wider text-muted">Pipeline Latency</span>
           <p className="mt-1 font-mono text-2xl font-bold text-emerald-400">
             {metrics ? `${metrics.executionDurationMs}ms` : "—"}
@@ -238,15 +237,15 @@ export default function PipelineStatusDashboard() {
       </div>
 
       {/* Navigation Tabs */}
-      <div className="border-b border-line/60 pb-1 flex items-center justify-between">
-        <div className="flex gap-2 text-xs">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex flex-wrap gap-2 text-xs rounded-xl bg-ink-900/55 p-1.5">
           <button
             type="button"
             onClick={() => setActiveTab("overview")}
-            className={`rounded-t-lg px-4 py-2 font-medium transition-colors ${
+            className={`rounded-lg px-4 py-2 font-medium transition-colors ${
               activeTab === "overview"
-                ? "border-b-2 border-gold text-gold-bright"
-                : "text-muted hover:text-bone"
+                ? "bg-gold/20 text-gold-bright font-semibold"
+                : "text-muted hover:text-bone hover:bg-ink-850/60"
             }`}
           >
             Overview &amp; Momentum
@@ -254,10 +253,10 @@ export default function PipelineStatusDashboard() {
           <button
             type="button"
             onClick={() => setActiveTab("distribution")}
-            className={`rounded-t-lg px-4 py-2 font-medium transition-colors flex items-center gap-1.5 ${
+            className={`rounded-lg px-4 py-2 font-medium transition-colors flex items-center gap-1.5 ${
               activeTab === "distribution"
-                ? "border-b-2 border-gold text-gold-bright"
-                : "text-muted hover:text-bone"
+                ? "bg-gold/20 text-gold-bright font-semibold"
+                : "text-muted hover:text-bone hover:bg-ink-850/60"
             }`}
           >
             <BarChart2 className="h-3.5 w-3.5" />
@@ -266,10 +265,10 @@ export default function PipelineStatusDashboard() {
           <button
             type="button"
             onClick={() => setActiveTab("explorer")}
-            className={`rounded-t-lg px-4 py-2 font-medium transition-colors flex items-center gap-1.5 ${
+            className={`rounded-lg px-4 py-2 font-medium transition-colors flex items-center gap-1.5 ${
               activeTab === "explorer"
-                ? "border-b-2 border-gold text-gold-bright"
-                : "text-muted hover:text-bone"
+                ? "bg-gold/20 text-gold-bright font-semibold"
+                : "text-muted hover:text-bone hover:bg-ink-850/60"
             }`}
           >
             <span className="flex items-center gap-1.5">
@@ -277,7 +276,7 @@ export default function PipelineStatusDashboard() {
               <WhopBadge className="ml-1" />
             </span>
             {selectedScoreRange && (
-              <span className="rounded-full bg-gold/20 px-1.5 py-0.2 text-[9px] text-gold-bright font-mono font-bold">
+              <span className="rounded-full bg-gold/25 px-1.5 py-0.2 text-[9px] text-gold-bright font-mono font-bold">
                 Filtered
               </span>
             )}
@@ -285,10 +284,10 @@ export default function PipelineStatusDashboard() {
           <button
             type="button"
             onClick={() => setActiveTab("providers")}
-            className={`rounded-t-lg px-4 py-2 font-medium transition-colors ${
+            className={`rounded-lg px-4 py-2 font-medium transition-colors ${
               activeTab === "providers"
-                ? "border-b-2 border-gold text-gold-bright"
-                : "text-muted hover:text-bone"
+                ? "bg-gold/20 text-gold-bright font-semibold"
+                : "text-muted hover:text-bone hover:bg-ink-850/60"
             }`}
           >
             API Providers ({metrics?.providers?.length || 4})
@@ -322,8 +321,8 @@ export default function PipelineStatusDashboard() {
       {activeTab === "overview" && (
         <div className="grid gap-6 lg:grid-cols-2">
           {/* Top 10 Momentum Leaders */}
-          <div className="rounded-xl border border-line bg-ink-900/60 p-5">
-            <div className="flex items-center justify-between pb-3 border-b border-line/60">
+          <div className="rounded-2xl bg-ink-900/55 p-5 sm:p-6">
+            <div className="flex items-center justify-between pb-3">
               <span className="text-xs font-semibold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
                 <TrendingUp className="h-4 w-4" />
                 Top Trend Momentum Leaders (Score 78+)
@@ -331,9 +330,9 @@ export default function PipelineStatusDashboard() {
               <span className="text-[10px] text-muted">Confirmed Buy Stance</span>
             </div>
 
-            <div className="mt-3 divide-y divide-line/60">
+            <div className="mt-2 space-y-1.5">
               {topRanked.slice(0, 8).map((item) => (
-                <div key={item.symbol} className="flex items-center justify-between py-2.5 text-xs">
+                <div key={item.symbol} className="flex items-center justify-between rounded-xl bg-ink-950/65 px-3.5 py-2.5 text-xs hover:bg-ink-950 transition-colors">
                   <div className="flex items-center gap-3">
                     <button
                       type="button"
@@ -345,7 +344,7 @@ export default function PipelineStatusDashboard() {
                     <span className="text-[10px] text-muted truncate max-w-[130px] hidden sm:inline">
                       {item.name}
                     </span>
-                    <span className="rounded bg-line/50 px-1.5 py-0.2 font-mono text-[9px] text-muted uppercase">
+                    <span className="rounded bg-ink-900 px-1.5 py-0.2 font-mono text-[9px] text-muted uppercase">
                       {item.kind}
                     </span>
                   </div>
@@ -367,8 +366,8 @@ export default function PipelineStatusDashboard() {
           </div>
 
           {/* Bottom 10 Deteriorating Assets */}
-          <div className="rounded-xl border border-line bg-ink-900/60 p-5">
-            <div className="flex items-center justify-between pb-3 border-b border-line/60">
+          <div className="rounded-2xl bg-ink-900/55 p-5 sm:p-6">
+            <div className="flex items-center justify-between pb-3">
               <span className="text-xs font-semibold uppercase tracking-wider text-down flex items-center gap-1.5">
                 <AlertCircle className="h-4 w-4" />
                 Lowest Trend Scores (Avoid / Breakdown)
@@ -376,9 +375,9 @@ export default function PipelineStatusDashboard() {
               <span className="text-[10px] text-muted">Broken Structure</span>
             </div>
 
-            <div className="mt-3 divide-y divide-line/60">
+            <div className="mt-2 space-y-1.5">
               {bottomRanked.slice(0, 8).map((item) => (
-                <div key={item.symbol} className="flex items-center justify-between py-2.5 text-xs">
+                <div key={item.symbol} className="flex items-center justify-between rounded-xl bg-ink-950/65 px-3.5 py-2.5 text-xs hover:bg-ink-950 transition-colors">
                   <div className="flex items-center gap-3">
                     <button
                       type="button"
@@ -390,7 +389,7 @@ export default function PipelineStatusDashboard() {
                     <span className="text-[10px] text-muted truncate max-w-[130px] hidden sm:inline">
                       {item.name}
                     </span>
-                    <span className="rounded bg-line/50 px-1.5 py-0.2 font-mono text-[9px] text-muted uppercase">
+                    <span className="rounded bg-ink-900 px-1.5 py-0.2 font-mono text-[9px] text-muted uppercase">
                       {item.kind}
                     </span>
                   </div>
@@ -417,19 +416,19 @@ export default function PipelineStatusDashboard() {
       {activeTab === "providers" && (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {(metrics?.providers || []).map((provider) => (
-            <div key={provider.name} className="rounded-xl border border-line bg-ink-900/70 p-5 space-y-3">
+            <div key={provider.name} className="rounded-2xl bg-ink-900/55 p-5 space-y-3">
               <div className="flex items-center justify-between">
                 <span className="flex items-center gap-1.5 text-xs font-semibold text-bone">
                   <Server className="h-3.5 w-3.5 text-gold" />
                   {provider.name}
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 px-2 py-0.2 text-[9px] font-mono text-emerald-400">
+                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[9px] font-mono text-emerald-400">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                   ONLINE
                 </span>
               </div>
 
-              <div className="space-y-1 text-xs">
+              <div className="space-y-1.5 rounded-xl bg-ink-950/65 p-3 text-xs">
                 <div className="flex justify-between text-muted">
                   <span>Host:</span>
                   <span className="font-mono text-bone">{provider.endpoint}</span>
@@ -444,7 +443,7 @@ export default function PipelineStatusDashboard() {
                 </div>
               </div>
 
-              <div className="border-t border-line/60 pt-2 text-[10px] text-muted/70 flex items-center justify-between">
+              <div className="pt-1 text-[10px] text-muted/70 flex items-center justify-between">
                 <span>Protocol: HTTPS/REST</span>
                 <span>Active Poll</span>
               </div>
@@ -458,7 +457,7 @@ export default function PipelineStatusDashboard() {
         <div className="space-y-4">
           {/* Active Range Filter Indicator */}
           {selectedScoreRange && (
-            <div className="flex items-center justify-between rounded-lg border border-gold/40 bg-gold/10 px-4 py-2.5 text-xs">
+            <div className="flex items-center justify-between rounded-xl bg-gold/15 px-4 py-2.5 text-xs">
               <div className="flex items-center gap-2 text-gold-bright">
                 <Filter className="h-4 w-4" />
                 <span>Histogram Selection Filter:</span>
@@ -468,7 +467,7 @@ export default function PipelineStatusDashboard() {
               <button
                 type="button"
                 onClick={() => setSelectedScoreRange(null)}
-                className="flex items-center gap-1 rounded bg-line/60 px-2.5 py-1 text-[11px] text-muted hover:text-bone hover:bg-line transition"
+                className="flex items-center gap-1 rounded-lg bg-ink-900/75 px-2.5 py-1 text-[11px] text-muted hover:text-bone hover:bg-ink-900 transition"
               >
                 <X className="h-3 w-3" />
                 Clear Range
@@ -488,13 +487,13 @@ export default function PipelineStatusDashboard() {
                   setSearchQuery(e.target.value);
                   setPage(1);
                 }}
-                className="w-full rounded-lg border border-line bg-ink-900 pl-9 pr-3 py-1.5 text-xs text-bone placeholder:text-muted/60 focus:border-gold focus:outline-none"
+                className="w-full rounded-xl bg-ink-900/90 pl-9 pr-3 py-2 text-xs text-bone placeholder:text-muted/60 focus:outline-none focus:ring-1 focus:ring-gold/40"
               />
             </div>
 
             <div className="flex flex-wrap items-center gap-2 text-xs">
               {/* Kind selector */}
-              <div className="flex items-center gap-1 rounded-full border border-line bg-ink-950 p-0.5">
+              <div className="flex items-center gap-1 rounded-full bg-ink-950/80 p-1">
                 {(["all", "stock", "crypto", "meme"] as const).map((k) => (
                   <button
                     key={k}
@@ -521,7 +520,7 @@ export default function PipelineStatusDashboard() {
                   setSelectedStance(e.target.value);
                   setPage(1);
                 }}
-                className="rounded-lg border border-line bg-ink-900 px-3 py-1.5 text-xs text-bone focus:border-gold focus:outline-none"
+                className="rounded-xl bg-ink-900/90 px-3 py-1.5 text-xs text-bone focus:outline-none focus:ring-1 focus:ring-gold/40"
               >
                 <option value="all">All Stances</option>
                 <option value="buy">Buy (78–100)</option>
@@ -538,21 +537,21 @@ export default function PipelineStatusDashboard() {
           </div>
 
           {/* Table */}
-          <div className="overflow-x-auto rounded-xl border border-line bg-ink-900/60">
-            <table className="w-full text-left text-xs">
-              <thead className="bg-ink-900 text-[10px] uppercase tracking-wider text-muted border-b border-line/60">
-                <tr>
-                  <th className="px-4 py-3">Asset</th>
+          <div className="overflow-x-auto rounded-2xl bg-ink-950/65 p-2 sm:p-3">
+            <table className="w-full text-left text-xs border-separate border-spacing-y-1">
+              <thead className="text-[10px] uppercase tracking-wider text-muted">
+                <tr className="bg-ink-900/90">
+                  <th className="rounded-l-xl px-4 py-3">Asset</th>
                   <th className="px-4 py-3 text-right">Price</th>
                   <th className="px-4 py-3 text-right">24h Change</th>
                   <th className="px-4 py-3 text-right">Trend Score</th>
                   <th className="px-4 py-3 text-center">Stance</th>
                   <th className="px-4 py-3 text-right">Invalidation Level</th>
                   <th className="px-4 py-3 text-right">Risk Grade</th>
-                  <th className="px-4 py-3 text-center">Action</th>
+                  <th className="rounded-r-xl px-4 py-3 text-center">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-line/60">
+              <tbody>
                 {explorerLoading ? (
                   <tr>
                     <td colSpan={8} className="py-12 text-center text-muted">
@@ -570,14 +569,14 @@ export default function PipelineStatusDashboard() {
                   </tr>
                 ) : (
                   explorerAssets.map((row) => (
-                    <tr key={row.symbol} className="hover:bg-ink-850/50 transition-colors">
-                      <td className="px-4 py-3">
+                    <tr key={row.symbol} className="hover:bg-ink-900/55 transition-colors">
+                      <td className="rounded-l-xl px-4 py-3">
                         <div className="flex items-center gap-2">
                           <Link href={`/ticker/${row.symbol}`} className="font-mono font-bold text-bone hover:text-gold-bright">
                             ${row.symbol}
                           </Link>
                           <span className="text-[10px] text-muted truncate max-w-[140px]">{row.name}</span>
-                          <span className="rounded bg-line/50 px-1 py-0.2 font-mono text-[9px] text-muted uppercase">
+                          <span className="rounded bg-ink-900 px-1.5 py-0.2 font-mono text-[9px] text-muted uppercase">
                             {row.kind}
                           </span>
                         </div>
@@ -592,7 +591,7 @@ export default function PipelineStatusDashboard() {
                         {row.score} / 100
                       </td>
                       <td className="px-4 py-3 text-center">
-                        <span className={`inline-block rounded-full border px-2 py-0.5 text-[10px] font-semibold ${stanceColor(row.stance)}`}>
+                        <span className={`inline-block rounded-full px-2.5 py-0.5 text-[10px] font-semibold ${stanceColor(row.stance)}`}>
                           {row.stance}
                         </span>
                       </td>
@@ -602,11 +601,11 @@ export default function PipelineStatusDashboard() {
                       <td className="px-4 py-3 text-right font-mono text-muted">
                         {row.riskGrade}
                       </td>
-                      <td className="px-4 py-3 text-center">
+                      <td className="rounded-r-xl px-4 py-3 text-center">
                         <button
                           type="button"
                           onClick={() => inspectAsset(row.symbol)}
-                          className="rounded bg-line/60 px-2 py-1 text-[10px] text-muted hover:text-bone hover:bg-gold/20 transition-colors"
+                          className="rounded-lg bg-ink-900 px-2.5 py-1 text-[10px] text-muted hover:text-bone hover:bg-gold/20 transition-colors"
                         >
                           Audit Math
                         </button>
@@ -619,7 +618,7 @@ export default function PipelineStatusDashboard() {
           </div>
 
           {/* Pagination Controls */}
-          <div className="flex items-center justify-between border-t border-line/60 pt-3 text-xs text-muted">
+          <div className="flex items-center justify-between pt-2 text-xs text-muted">
             <span className="font-mono">
               Showing {(page - 1) * pageSize + 1}–{Math.min(page * pageSize, explorerTotal)} of {explorerTotal.toLocaleString()} assets
             </span>
@@ -628,7 +627,7 @@ export default function PipelineStatusDashboard() {
                 type="button"
                 onClick={() => setPage((p) => Math.max(1, p - 1))}
                 disabled={page <= 1}
-                className="flex items-center gap-1 rounded border border-line px-3 py-1 hover:text-bone disabled:opacity-40 transition"
+                className="flex items-center gap-1 rounded-lg bg-ink-900/80 px-3 py-1.5 hover:text-bone hover:bg-ink-900 disabled:opacity-40 transition"
               >
                 <ChevronLeft className="h-3.5 w-3.5" />
                 <span>Prev</span>
@@ -640,7 +639,7 @@ export default function PipelineStatusDashboard() {
                 type="button"
                 onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                 disabled={page >= totalPages}
-                className="flex items-center gap-1 rounded border border-line px-3 py-1 hover:text-bone disabled:opacity-40 transition"
+                className="flex items-center gap-1 rounded-lg bg-ink-900/80 px-3 py-1.5 hover:text-bone hover:bg-ink-900 disabled:opacity-40 transition"
               >
                 <span>Next</span>
                 <ChevronRight className="h-3.5 w-3.5" />
@@ -653,7 +652,7 @@ export default function PipelineStatusDashboard() {
       {/* MATHEMATICAL SCORING INSPECTOR MODAL */}
       {selectedAssetDetail && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink-950/80 p-4 backdrop-blur-sm animate-in fade-in">
-          <div className="relative w-full max-w-2xl rounded-xl border border-line bg-ink-900 p-6 shadow-2xl">
+          <div className="relative w-full max-w-2xl rounded-2xl bg-ink-900 p-6 sm:p-7 shadow-2xl">
             <button
               type="button"
               onClick={() => setSelectedAssetDetail(null)}
@@ -674,7 +673,7 @@ export default function PipelineStatusDashboard() {
               Published 5-Factor Quantitative Composite Engine Verification
             </p>
 
-            <div className="mt-5 rounded-lg border border-gold/40 bg-gold/10 p-3.5 flex items-center justify-between">
+            <div className="mt-5 rounded-xl bg-gold/15 p-4 flex items-center justify-between">
               <div>
                 <span className="text-[10px] text-muted uppercase font-mono">Final Computed Score</span>
                 <p className="font-mono text-3xl font-bold text-bone">
@@ -682,7 +681,7 @@ export default function PipelineStatusDashboard() {
                 </p>
               </div>
               <div className="text-right">
-                <span className={`inline-block rounded-full border px-3 py-1 text-xs font-bold ${stanceColor(selectedAssetDetail.metrics.stance)}`}>
+                <span className={`inline-block rounded-full px-3 py-1 text-xs font-bold ${stanceColor(selectedAssetDetail.metrics.stance)}`}>
                   {selectedAssetDetail.metrics.stance}
                 </span>
                 <p className="text-[10px] text-muted mt-1 font-mono">
@@ -696,9 +695,9 @@ export default function PipelineStatusDashboard() {
               <span className="text-[11px] font-semibold uppercase tracking-wider text-muted">
                 Component Breakdown (Fixed Weights)
               </span>
-              <div className="divide-y divide-line/60 rounded-lg border border-line bg-ink-850 p-2 text-xs">
+              <div className="space-y-1.5 rounded-xl bg-ink-950/75 p-2.5 text-xs">
                 {selectedAssetDetail.breakdown.map((comp: any) => (
-                  <div key={comp.label} className="flex items-center justify-between py-2">
+                  <div key={comp.label} className="flex items-center justify-between rounded-lg bg-ink-900/70 px-3 py-2">
                     <div>
                       <span className="font-semibold text-bone">{comp.label}</span>
                       <p className="text-[10px] text-muted">{comp.reads}</p>

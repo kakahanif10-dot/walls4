@@ -50,7 +50,7 @@ export interface FinancialCenter {
   indexChange: string;
   isPositive: boolean;
   estDailyVolume: string;
-  status: "OPEN" | "CLOSED" | "PRE-MARKET" | "AFTER-HOURS";
+  status: "OPEN" | "CLOSED" | "PRE-MARKET" | "AFTER-HOURS" | "SYNCING";
   deskType: string;
   description: string;
 }
@@ -259,9 +259,48 @@ export const FINANCIAL_CENTERS: FinancialCenter[] = [
 export default function GlobalTradingMap({ apiKey: initialApiKey = "" }: { apiKey?: string }) {
   const [apiKey, setApiKey] = useState<string>(initialApiKey);
   const [quotaExceeded, setQuotaExceeded] = useState(false);
-  const [selectedCenter, setSelectedCenter] = useState<FinancialCenter | null>(FINANCIAL_CENTERS[0]);
+  const [liveCenterMap, setLiveCenterMap] = useState<
+    Record<string, { status: FinancialCenter["status"]; indexChange: string; isPositive: boolean }>
+  >({});
+  const [selectedCenterId, setSelectedCenterId] = useState<string | null>(FINANCIAL_CENTERS[0].id);
   const [activeRegion, setActiveRegion] = useState<"ALL" | "Americas" | "EMEA" | "APAC">("ALL");
   const [searchFilter, setSearchFilter] = useState("");
+
+  useEffect(() => {
+    let active = true;
+    const loadCenters = async () => {
+      try {
+        const res = await fetch("/api/live-terminal-data?view=openstock-markets", { cache: "no-store" });
+        if (!res.ok || !active) return;
+        const data = (await res.json()) as {
+          tradingCenters?: Array<{
+            id: string;
+            status: FinancialCenter["status"];
+            indexChange: string;
+            isPositive: boolean;
+          }>;
+        };
+        if (!active || !Array.isArray(data.tradingCenters)) return;
+        const next: Record<string, { status: FinancialCenter["status"]; indexChange: string; isPositive: boolean }> = {};
+        for (const tc of data.tradingCenters) {
+          next[tc.id] = {
+            status: tc.status,
+            indexChange: tc.indexChange,
+            isPositive: tc.isPositive,
+          };
+        }
+        setLiveCenterMap(next);
+      } catch {
+        // retain prior live status
+      }
+    };
+    loadCenters();
+    const id = setInterval(loadCenters, 30_000);
+    return () => {
+      active = false;
+      clearInterval(id);
+    };
+  }, []);
 
   // Fetch API key dynamically if not in client env or prop
   useEffect(() => {
@@ -293,8 +332,29 @@ export default function GlobalTradingMap({ apiKey: initialApiKey = "" }: { apiKe
     };
   }, []);
 
+  const hydratedCenters = useMemo(() => {
+    return FINANCIAL_CENTERS.map((center) => {
+      const live = liveCenterMap[center.id];
+      return {
+        ...center,
+        status: live?.status ?? "SYNCING",
+        indexChange: live?.indexChange ?? "Syncing...",
+        isPositive: live?.isPositive ?? true,
+      };
+    });
+  }, [liveCenterMap]);
+
+  const selectedCenter = useMemo(
+    () => (selectedCenterId ? hydratedCenters.find((c) => c.id === selectedCenterId) ?? null : null),
+    [hydratedCenters, selectedCenterId]
+  );
+
+  const setSelectedCenter = (center: FinancialCenter | null) => {
+    setSelectedCenterId(center ? center.id : null);
+  };
+
   const filteredCenters = useMemo(() => {
-    return FINANCIAL_CENTERS.filter((center) => {
+    return hydratedCenters.filter((center) => {
       const matchRegion = activeRegion === "ALL" || center.region === activeRegion;
       const matchSearch =
         !searchFilter ||
@@ -303,7 +363,7 @@ export default function GlobalTradingMap({ apiKey: initialApiKey = "" }: { apiKe
         center.exchangeCode.toLowerCase().includes(searchFilter.toLowerCase());
       return matchRegion && matchSearch;
     });
-  }, [activeRegion, searchFilter]);
+  }, [hydratedCenters, activeRegion, searchFilter]);
 
   return (
     <div className="relative rounded-2xl border border-line/80 bg-ink-950 overflow-hidden shadow-2xl">

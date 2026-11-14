@@ -6,26 +6,39 @@ import {
   useState,
   useEffect,
   useCallback,
+  useRef,
   type ReactNode,
 } from "react";
+import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
-import { doc, setDoc } from "firebase/firestore";
-import { db } from "@/lib/firebase";
-import { CheckCircle2, Sparkles, ExternalLink, ArrowRight, ShieldCheck, Zap, MessageSquare } from "lucide-react";
+import { buildLifetimeCheckoutUrl } from "@/lib/whop-checkout-links";
+import { parseWhopReturnParams } from "@/lib/whop-verification";
+import { X } from "lucide-react";
+
+interface WhopUnlockOptions {
+  licenseKey?: string;
+  email?: string;
+  membershipId?: string;
+  receiptId?: string;
+  paymentId?: string;
+  silent?: boolean;
+}
 
 interface WhopContextValue {
   isUnlocked: boolean;
+  hasCheckedStorage: boolean;
   badge: string;
-  unlockWithWhop: (options?: { licenseKey?: string; email?: string }) => Promise<boolean>;
+  unlockWithWhop: (options?: WhopUnlockOptions) => Promise<boolean>;
   lockWhop: () => void;
-  openWhopModal: (deskName?: string) => void;
+  openWhopModal: (deskName?: string, targetHref?: string) => void;
   closeWhopModal: () => void;
   isModalOpen: boolean;
 }
 
 const WhopContext = createContext<WhopContextValue>({
   isUnlocked: false,
-  badge: "PRO",
+  hasCheckedStorage: false,
+  badge: "LIFETIME",
   unlockWithWhop: async () => false,
   lockWhop: () => {},
   openWhopModal: () => {},
@@ -33,121 +46,292 @@ const WhopContext = createContext<WhopContextValue>({
   isModalOpen: false,
 });
 
+const PENDING_HREF_KEY = "nws_whop_pending_href";
+const PENDING_CHECKOUT_KEY = "nws_whop_checkout_pending";
+
 export function WhopProvider({ children }: { children: ReactNode }) {
+  const router = useRouter();
   const { user, profile, updateUserPlan } = useAuth();
   const [isUnlocked, setIsUnlocked] = useState(false);
+  const [hasCheckedStorage, setHasCheckedStorage] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [deskName, setDeskName] = useState<string>("NextWall Street PRO");
+  const [deskName, setDeskName] = useState<string>("Lifetime Premium");
+  const [pendingHref, setPendingHref] = useState<string | null>(null);
   const [licenseInput, setLicenseInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showKeyForm, setShowKeyForm] = useState(false);
+  const [awaitingCheckout, setAwaitingCheckout] = useState(false);
   const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
+  const autoCheckedEmailRef = useRef<string | null>(null);
+  const handledUrlReturnRef = useRef(false);
 
-  // Synchronize state from user profile or localStorage on mount
+  const origin = typeof window !== "undefined" ? window.location.origin : "";
+  const effectiveEmail = (emailInput || user?.email || "").trim();
+  const lifetimeCheckoutUrl = buildLifetimeCheckoutUrl({
+    email: effectiveEmail || undefined,
+    redirectUrl: origin ? `${origin}${pendingHref || "/"}` : undefined,
+  });
+
   useEffect(() => {
     try {
       const localStatus = localStorage.getItem("nws_whop_unlocked");
       if (localStatus === "true") {
         setIsUnlocked(true);
-        return;
-      }
-      if (profile?.plan === "premium" || profile?.plan === "institutional") {
+      } else if (profile?.plan === "premium" || profile?.plan === "institutional") {
         setIsUnlocked(true);
         localStorage.setItem("nws_whop_unlocked", "true");
-        return;
+      }
+      const savedPendingHref = sessionStorage.getItem(PENDING_HREF_KEY);
+      if (savedPendingHref) setPendingHref(savedPendingHref);
+      if (sessionStorage.getItem(PENDING_CHECKOUT_KEY) === "true") {
+        setAwaitingCheckout(true);
       }
     } catch {
-      // ignore
+      // ignore storage errors
+    } finally {
+      setHasCheckedStorage(true);
     }
   }, [profile]);
 
+  const applyVerifiedUnlock = useCallback(
+    async (data: { licenseKey?: string; membershipId?: string; email?: string }, silent?: boolean) => {
+      setIsUnlocked(true);
+      setAwaitingCheckout(false);
+      try {
+        localStorage.setItem("nws_whop_unlocked", "true");
+        if (data.licenseKey) localStorage.setItem("nws_whop_license", data.licenseKey);
+        if (data.membershipId) localStorage.setItem("nws_whop_membership_id", data.membershipId);
+        if (data.email) localStorage.setItem("nws_whop_email", data.email);
+        sessionStorage.removeItem(PENDING_CHECKOUT_KEY);
+      } catch {
+        // ignore storage errors
+      }
+
+      await updateUserPlan("premium");
+
+      let targetToOpen: string | null = null;
+      try {
+        targetToOpen = pendingHref || sessionStorage.getItem(PENDING_HREF_KEY);
+        sessionStorage.removeItem(PENDING_HREF_KEY);
+      } catch {
+        targetToOpen = pendingHref;
+      }
+
+      if (!silent) {
+        setFeedback({
+          type: "success",
+          message:
+            "Lifetime Premium verified. All 2,038+ assets, research desks, Academy courses, and 32 Trade Tools are now unlocked.",
+        });
+        setTimeout(() => {
+          setIsModalOpen(false);
+          setFeedback(null);
+          if (targetToOpen && targetToOpen !== window.location.pathname + window.location.search) {
+            router.push(targetToOpen);
+          }
+        }, 900);
+      } else {
+        setIsModalOpen(false);
+        setFeedback(null);
+        if (targetToOpen && targetToOpen !== window.location.pathname + window.location.search) {
+          router.push(targetToOpen);
+        }
+      }
+    },
+    [pendingHref, router, updateUserPlan],
+  );
+
   const unlockWithWhop = useCallback(
-    async (options?: { licenseKey?: string; email?: string }) => {
-      setLoading(true);
-      setFeedback(null);
+    async (options?: WhopUnlockOptions) => {
+      const cleanKey = (options?.licenseKey ?? licenseInput).trim();
+      const cleanEmail = (options?.email ?? emailInput).trim();
+      const cleanMembershipId = (options?.membershipId ?? "").trim();
+      const cleanReceiptId = (options?.receiptId ?? "").trim();
+      const cleanPaymentId = (options?.paymentId ?? "").trim();
+      const silent = Boolean(options?.silent);
+
+      if (!cleanKey && !cleanEmail && !cleanMembershipId && !cleanReceiptId && !cleanPaymentId) {
+        if (!silent) {
+          setShowKeyForm(true);
+          setFeedback({
+            type: "error",
+            message: "Enter your Whop license key or purchase email after completing checkout.",
+          });
+        }
+        return false;
+      }
+
+      if (!silent) {
+        setLoading(true);
+        setFeedback(null);
+      }
+
       try {
         const res = await fetch("/api/whop/validate", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            licenseKey: options?.licenseKey || licenseInput.trim(),
-            email: options?.email || emailInput.trim(),
+            licenseKey: cleanKey || undefined,
+            email: cleanEmail || undefined,
+            membershipId: cleanMembershipId || undefined,
+            receiptId: cleanReceiptId || undefined,
+            paymentId: cleanPaymentId || undefined,
             action: "activate",
           }),
         });
 
         const data = await res.json();
-        if (data.success && data.unlocked) {
-          setIsUnlocked(true);
-          try {
-            localStorage.setItem("nws_whop_unlocked", "true");
-            if (options?.licenseKey || licenseInput) {
-              localStorage.setItem("nws_whop_license", options?.licenseKey || licenseInput);
-            }
-          } catch {}
-
-          // Update user profile in Firestore if logged in
-          if (user) {
-            try {
-              const userRef = doc(db, "users", user.uid);
-              await setDoc(userRef, { whopUnlocked: true, plan: "premium" }, { merge: true });
-            } catch (err) {
-              console.warn("Firestore whop sync:", err);
-            }
-          }
-          await updateUserPlan("premium");
-
-          setFeedback({
-            type: "success",
-            message: "PRO membership verified. Real-time institutional alerts and terminal access enabled.",
-          });
-          setTimeout(() => {
-            setIsModalOpen(false);
-            setFeedback(null);
-          }, 2000);
+        if (res.ok && data.success && data.unlocked) {
+          await applyVerifiedUnlock(
+            {
+              licenseKey: data.licenseKey || cleanKey,
+              membershipId: data.membershipId || cleanMembershipId,
+              email: data.email || cleanEmail,
+            },
+            silent,
+          );
           return true;
         } else {
-          setFeedback({
-            type: "error",
-            message: data.error || "Unable to verify Whop license key. Please check your credentials.",
-          });
+          if (!silent) {
+            setFeedback({
+              type: "error",
+              message:
+                data.error ||
+                "Unable to verify active Whop Lifetime purchase. Confirm your license key or checkout email.",
+            });
+          }
           return false;
         }
-      } catch (err: any) {
-        setFeedback({
-          type: "error",
-          message: err.message || "Failed to establish handshake with Whop gateway.",
-        });
+      } catch (err: unknown) {
+        if (!silent) {
+          const message = err instanceof Error ? err.message : "Failed to connect to Whop verification.";
+          setFeedback({ type: "error", message });
+        }
         return false;
       } finally {
-        setLoading(false);
+        if (!silent) setLoading(false);
       }
     },
-    [licenseInput, emailInput, user, updateUserPlan]
+    [licenseInput, emailInput, applyVerifiedUnlock],
   );
+
+  // 1. Auto-verify immediately when Whop redirects back with membership_id, receipt_id, payment_id, or license_key
+  useEffect(() => {
+    if (!hasCheckedStorage || isUnlocked || handledUrlReturnRef.current) return;
+    if (typeof window === "undefined") return;
+
+    const parsed = parseWhopReturnParams(window.location.search);
+    if (!parsed.hasWhopReturn) return;
+
+    handledUrlReturnRef.current = true;
+    void (async () => {
+      const ok = await unlockWithWhop({
+        membershipId: parsed.membershipId,
+        licenseKey: parsed.licenseKey,
+        receiptId: parsed.receiptId,
+        paymentId: parsed.paymentId,
+        email: parsed.email,
+        silent: false,
+      });
+      if (ok) {
+        const url = new URL(window.location.href);
+        for (const param of [
+          "membership_id",
+          "whop_membership_id",
+          "receipt_id",
+          "payment_id",
+          "license_key",
+          "whop_key",
+          "key",
+          "email",
+          "status",
+          "checkout_status",
+        ]) {
+          url.searchParams.delete(param);
+        }
+        window.history.replaceState({}, "", url.pathname + url.search + url.hash);
+      }
+    })();
+  }, [hasCheckedStorage, isUnlocked, unlockWithWhop]);
+
+  // 2. Silently auto-verify signed-in user's email against Whop API / webhook store
+  useEffect(() => {
+    if (!hasCheckedStorage || isUnlocked) return;
+    const userEmail = user?.email?.trim().toLowerCase();
+    if (!userEmail || autoCheckedEmailRef.current === userEmail) return;
+
+    autoCheckedEmailRef.current = userEmail;
+    void unlockWithWhop({ email: userEmail, silent: true });
+  }, [hasCheckedStorage, isUnlocked, user?.email, unlockWithWhop]);
+
+  // 3. When user opens Whop checkout in a new tab and returns, auto-check payment status on focus & poll
+  useEffect(() => {
+    if (!awaitingCheckout || isUnlocked) return;
+    const candidateEmail =
+      (emailInput || user?.email || (typeof localStorage !== "undefined" ? localStorage.getItem("nws_whop_email") : "") || "").trim();
+    if (!candidateEmail) return;
+
+    const checkNow = () => {
+      void unlockWithWhop({ email: candidateEmail, silent: true });
+    };
+
+    const handleVisibility = () => {
+      if (document.visibilityState === "visible") checkNow();
+    };
+
+    window.addEventListener("focus", checkNow);
+    document.addEventListener("visibilitychange", handleVisibility);
+    const interval = window.setInterval(checkNow, 5000);
+
+    return () => {
+      window.removeEventListener("focus", checkNow);
+      document.removeEventListener("visibilitychange", handleVisibility);
+      window.clearInterval(interval);
+    };
+  }, [awaitingCheckout, isUnlocked, emailInput, user?.email, unlockWithWhop]);
+
+  const handleCheckoutStarted = useCallback(() => {
+    setAwaitingCheckout(true);
+    try {
+      sessionStorage.setItem(PENDING_CHECKOUT_KEY, "true");
+      if (effectiveEmail) {
+        localStorage.setItem("nws_whop_email", effectiveEmail);
+      }
+    } catch {
+      // ignore storage errors
+    }
+  }, [effectiveEmail]);
 
   const lockWhop = useCallback(() => {
     setIsUnlocked(false);
+    setAwaitingCheckout(false);
     try {
       localStorage.removeItem("nws_whop_unlocked");
       localStorage.removeItem("nws_whop_license");
+      localStorage.removeItem("nws_whop_membership_id");
+      sessionStorage.removeItem(PENDING_CHECKOUT_KEY);
+      sessionStorage.removeItem(PENDING_HREF_KEY);
     } catch {}
-    if (user) {
-      try {
-        const userRef = doc(db, "users", user.uid);
-        setDoc(userRef, { whopUnlocked: false, plan: "reader" }, { merge: true });
-      } catch {}
-    }
     updateUserPlan("reader");
     setFeedback({
       type: "success",
-      message: "Terminal access switched to Standard Reader tier.",
+      message: "Lifetime session locked.",
     });
-    setTimeout(() => setFeedback(null), 2500);
-  }, [user, updateUserPlan]);
+    setTimeout(() => setFeedback(null), 2000);
+  }, [updateUserPlan]);
 
-  const openWhopModal = useCallback((desk?: string) => {
-    if (desk) setDeskName(desk);
+  const openWhopModal = useCallback((desk?: string, targetHref?: string) => {
+    setDeskName(desk || "Lifetime Premium");
+    if (targetHref) {
+      setPendingHref(targetHref);
+      try {
+        sessionStorage.setItem(PENDING_HREF_KEY, targetHref);
+      } catch {
+        // ignore storage errors
+      }
+    }
+    setFeedback(null);
     setIsModalOpen(true);
   }, []);
 
@@ -160,7 +344,8 @@ export function WhopProvider({ children }: { children: ReactNode }) {
     <WhopContext.Provider
       value={{
         isUnlocked,
-        badge: "PRO",
+        hasCheckedStorage,
+        badge: "LIFETIME",
         unlockWithWhop,
         lockWhop,
         openWhopModal,
@@ -170,152 +355,191 @@ export function WhopProvider({ children }: { children: ReactNode }) {
     >
       {children}
 
-      {/* WHOP ACCESS & FAST ALERT CHECKOUT MODAL */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-md animate-in fade-in">
-          <div className="relative w-full max-w-lg rounded-2xl border border-gold/30 bg-ink-900 p-6 sm:p-7 shadow-2xl space-y-5">
+        <div
+          className="fixed inset-0 z-[110] flex items-center justify-center bg-black/85 p-4 backdrop-blur-md animate-in fade-in"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) closeWhopModal();
+          }}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="lifetime-purchase-title"
+            className="relative w-full max-w-md overflow-hidden rounded-2xl bg-gradient-to-b from-[#13110c] via-ink-900 to-ink-950 p-7 sm:p-8 shadow-[0_32px_90px_rgba(0,0,0,0.92)]"
+          >
             <button
               type="button"
+              aria-label="Close purchase modal"
               onClick={closeWhopModal}
-              className="absolute right-4 top-4 text-muted hover:text-bone text-base p-1"
+              className="absolute right-5 top-5 rounded-lg p-1.5 text-muted transition hover:bg-ink-800 hover:text-bone"
             >
-              ✕
+              <X className="h-4 w-4" />
             </button>
 
-            {/* Header */}
-            <div className="flex items-center gap-3.5">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-gold/40 bg-gold/10 font-mono text-sm font-bold text-gold-bright shadow-inner">
-                PRO
-              </div>
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-gold flex items-center gap-1.5">
-                  <Sparkles className="h-3 w-3" />
-                  Institutional Access &amp; VIP Alerts
-                </span>
-                <h3 className="font-display text-xl text-bone">
-                  {isUnlocked ? "PRO Membership Active" : `Access ${deskName}`}
+            <div className="space-y-5">
+              <div className="pr-8">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-gold">
+                  Membership &amp; Access
+                </p>
+                <h3
+                  id="lifetime-purchase-title"
+                  className="mt-1.5 font-display text-2xl leading-snug text-bone"
+                >
+                  {isUnlocked ? "Lifetime Premium Active" : "Lifetime Premium"}
                 </h3>
               </div>
-            </div>
 
-            <p className="text-xs text-muted leading-relaxed">
-              Unlock real-time quantitative pipelines, 70 research dossiers, 60 video masterclasses, position sizing engine, and private Telegram / Discord broadcast channels without browser friction.
-            </p>
+              {!isUnlocked && deskName && deskName !== "Lifetime Premium" && (
+                <div className="rounded-lg bg-gold/10 px-3.5 py-2 text-[11px] text-gold-bright">
+                  Selected access: <span className="font-semibold text-bone">{deskName}</span>
+                </div>
+              )}
 
-            {/* Institutional Concierge info (Phone Number 100% Removed) */}
-            <div className="rounded-xl border border-gold/30 bg-gold/[0.05] p-3.5 text-xs">
-              <div className="flex items-center justify-between">
-                <span className="font-semibold text-gold-bright flex items-center gap-1.5">
-                  <Zap className="h-3.5 w-3.5 text-gold" />
-                  VIP Instant Dispatch &amp; Concierge Desk
-                </span>
-                <span className="font-mono text-[11px] text-bone font-medium">Terminal Broadcast</span>
-              </div>
-              <p className="mt-1 text-[11px] text-muted leading-relaxed">
-                Active PRO members receive direct automated push notifications via our private Telegram terminal feed. Immediate fulfillment is processed automatically upon membership authorization.
+              <p className="text-xs sm:text-[13px] leading-relaxed text-muted">
+                One-time membership granting permanent access to all 2,038+ daily trend scores, exact
+                invalidation levels, 70 research desks, all four Academy courses, score-change
+                alerts, and all 32 trade tools with zero recurring fees.
               </p>
-            </div>
 
-            {/* Feedback alert */}
-            {feedback && (
-              <div
-                className={`rounded-xl border p-3 text-xs leading-relaxed ${
-                  feedback.type === "success"
-                    ? "border-emerald-500/50 bg-emerald-950/60 text-emerald-300"
-                    : "border-rose-500/50 bg-rose-950/60 text-rose-300"
-                }`}
-              >
-                {feedback.message}
-              </div>
-            )}
-
-            {!isUnlocked ? (
-              <div className="space-y-4 pt-1">
-                {/* Method 1: Instant Whop Pay & Unlock */}
-                <button
-                  type="button"
-                  onClick={() => unlockWithWhop()}
-                  disabled={loading}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-gold px-5 py-3 text-xs font-bold text-ink-950 hover:bg-gold-bright transition-all shadow-lg hover:shadow-gold/20 disabled:opacity-50"
-                >
-                  {loading ? (
-                    <span>Verifying Subscription via Whop...</span>
-                  ) : (
-                    <>
-                      <ShieldCheck className="h-4 w-4" />
-                      <span>Unlock PRO via Whop Checkout ($29/month)</span>
-                      <ArrowRight className="h-4 w-4" />
-                    </>
-                  )}
-                </button>
-
-                <div className="relative flex items-center justify-center">
-                  <div className="absolute inset-0 flex items-center">
-                    <div className="w-full border-t border-line/60" />
-                  </div>
-                  <span className="relative bg-ink-900 px-3 text-[10px] uppercase font-bold text-muted">
-                    Or Enter Existing Whop License
+              {/* Minimalist Summary Ledger */}
+              <div className="rounded-xl bg-ink-950/80 p-4 space-y-2.5">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-muted">Membership Tier</span>
+                  <span className="font-semibold text-bone">Lifetime Premium</span>
+                </div>
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-muted">Billing Structure</span>
+                  <span className="font-medium text-bone">One-time · Permanent access</span>
+                </div>
+                <div className="flex items-center justify-between text-xs pt-1.5">
+                  <span className="text-muted">Total Investment</span>
+                  <span className="font-mono text-base font-bold text-gold-bright tabular-nums">
+                    $1,487 USD
                   </span>
                 </div>
+              </div>
 
-                {/* Method 2: Enter Whop Key / Email */}
-                <div className="space-y-2">
-                  <input
-                    type="text"
-                    value={licenseInput}
-                    onChange={(e) => setLicenseInput(e.target.value)}
-                    placeholder="Paste Whop License Key..."
-                    className="w-full rounded-xl border border-line bg-ink-950 px-3.5 py-2.5 text-xs text-bone placeholder:text-muted/60 focus:border-gold focus:outline-none font-mono"
-                  />
-                  <div className="flex gap-2">
-                    <input
-                      type="email"
-                      value={emailInput}
-                      onChange={(e) => setEmailInput(e.target.value)}
-                      placeholder="Whop Account Email (optional)..."
-                      className="flex-1 rounded-xl border border-line bg-ink-950 px-3.5 py-2.5 text-xs text-bone placeholder:text-muted/60 focus:border-gold focus:outline-none"
-                    />
+              {feedback && (
+                <div
+                  className={`rounded-xl p-3.5 text-xs leading-relaxed ${
+                    feedback.type === "success"
+                      ? "bg-emerald-950/70 text-emerald-300"
+                      : "bg-rose-950/70 text-rose-300"
+                  }`}
+                >
+                  {feedback.message}
+                </div>
+              )}
+
+              {!isUnlocked ? (
+                <div className="space-y-3.5 pt-1">
+                  {lifetimeCheckoutUrl ? (
+                    <a
+                      href={lifetimeCheckoutUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={handleCheckoutStarted}
+                      className="flex w-full items-center justify-center rounded-full bg-gold px-6 py-3.5 text-xs font-bold tracking-wide text-ink-950 transition hover:bg-gold-bright shadow-lg"
+                    >
+                      Continue to Lifetime Premium checkout — $1,487 USD
+                    </a>
+                  ) : (
                     <button
                       type="button"
-                      onClick={() => unlockWithWhop()}
-                      disabled={loading || (!licenseInput.trim() && !emailInput.trim())}
-                      className="rounded-xl border border-gold/50 bg-gold/15 px-4 py-2.5 text-xs font-semibold text-gold-bright hover:bg-gold/25 transition disabled:opacity-40"
+                      onClick={() => {
+                        setShowKeyForm(true);
+                        setFeedback({
+                          type: "error",
+                          message:
+                            "Whop checkout link (NEXT_PUBLIC_WHOP_CHECKOUT_LIFETIME_URL) is not configured yet. Configure it or verify an existing Whop license key below.",
+                        });
+                      }}
+                      className="flex w-full items-center justify-center rounded-full bg-gold px-6 py-3.5 text-xs font-bold tracking-wide text-ink-950 transition hover:bg-gold-bright shadow-lg"
                     >
-                      Validate
+                      Continue to Lifetime Premium checkout — $1,487 USD
+                    </button>
+                  )}
+
+                  {awaitingCheckout && (
+                    <div className="rounded-xl bg-gold/10 px-3.5 py-2.5 text-[11px] text-gold-bright text-center">
+                      Waiting for Whop payment confirmation — access unlocks immediately once your
+                      checkout completes.
+                    </div>
+                  )}
+
+                  <p className="text-[11px] leading-relaxed text-muted/85 text-center">
+                    You will continue to Whop to complete the one-time $1,487 USD settlement. Full
+                    platform access activates immediately upon payment verification.
+                  </p>
+
+                  <div className="pt-1">
+                    {!showKeyForm ? (
+                      <button
+                        type="button"
+                        onClick={() => setShowKeyForm(true)}
+                        className="flex w-full items-center justify-center text-[11px] font-medium text-gold-bright/90 transition hover:text-gold-bright hover:underline underline-offset-4"
+                      >
+                        Already completed payment? Verify Whop License Key
+                      </button>
+                    ) : (
+                      <div className="space-y-2.5 pt-1">
+                        <input
+                          type="text"
+                          value={licenseInput}
+                          onChange={(e) => setLicenseInput(e.target.value)}
+                          placeholder="Paste Whop License Key..."
+                          className="w-full rounded-xl bg-ink-950/90 px-3.5 py-2.5 text-xs font-mono text-bone placeholder:text-muted/60 focus:outline-none focus:ring-1 focus:ring-gold/40"
+                        />
+                        <div className="flex gap-2">
+                          <input
+                            type="email"
+                            value={emailInput}
+                            onChange={(e) => setEmailInput(e.target.value)}
+                            placeholder="Whop Checkout Email..."
+                            className="flex-1 rounded-xl bg-ink-950/90 px-3.5 py-2.5 text-xs text-bone placeholder:text-muted/60 focus:outline-none focus:ring-1 focus:ring-gold/40"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => unlockWithWhop()}
+                            disabled={loading || (!licenseInput.trim() && !emailInput.trim())}
+                            className="rounded-xl bg-gold/15 px-4 py-2 text-xs font-semibold text-gold-bright transition hover:bg-gold/25 disabled:opacity-40"
+                          >
+                            {loading ? "Verifying..." : "Verify"}
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ) : (
+                <div className="space-y-4 pt-1">
+                  <div className="rounded-xl bg-emerald-500/12 p-4 text-xs text-emerald-300 space-y-1">
+                    <p className="font-semibold text-emerald-200">Lifetime Premium Unlocked</p>
+                    <p className="text-[11px] leading-relaxed text-emerald-300/85">
+                      All 2,038+ assets, 70 research desks, all four Academy courses, and all 32 Trade
+                      Tools are permanently active on your account.
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-between pt-1">
+                    <button
+                      type="button"
+                      onClick={lockWhop}
+                      className="text-xs text-muted transition hover:text-rose-400"
+                    >
+                      Reset Session
+                    </button>
+                    <button
+                      type="button"
+                      onClick={closeWhopModal}
+                      className="rounded-full bg-gold px-5 py-2 text-xs font-bold text-ink-950 transition hover:bg-gold-bright"
+                    >
+                      Enter Platform
                     </button>
                   </div>
                 </div>
-              </div>
-            ) : (
-              <div className="space-y-3 pt-1">
-                <div className="rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-3.5 text-xs text-emerald-300 flex items-start gap-2.5">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <div className="space-y-1">
-                    <p className="font-semibold text-emerald-200">PRO Membership Active</p>
-                    <p className="text-[11px] text-emerald-300/80">
-                      Full institutional terminal access unlocked: 44 analyst desks, 70 research dossiers, 60 video masterclasses, and encrypted dispatch channels.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex justify-between items-center gap-2 pt-2 border-t border-line/60">
-                  <button
-                    type="button"
-                    onClick={lockWhop}
-                    className="text-xs text-muted hover:text-rose-400 transition"
-                  >
-                    Reset Credentials
-                  </button>
-                  <button
-                    type="button"
-                    onClick={closeWhopModal}
-                    className="rounded-full bg-gold px-5 py-2 text-xs font-bold text-ink-950 hover:bg-gold-bright transition shadow"
-                  >
-                    Enter Terminal
-                  </button>
-                </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       )}

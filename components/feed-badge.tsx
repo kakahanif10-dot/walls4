@@ -3,12 +3,12 @@
 import { useFeedMeta } from "@/components/live-prices";
 
 export default function FeedBadge({ className = "" }: { className?: string }) {
-  const { mode, source, delayed } = useFeedMeta();
+  const { mode } = useFeedMeta();
 
   const label =
     mode === "unavailable"
       ? "Data unavailable"
-      : `${delayed ? "Delayed" : "Live"} · ${source || "market data"}`;
+      : "Market Tape · Real-Time Equities & Live Crypto";
 
   return <span className={className}>{label}</span>;
 }

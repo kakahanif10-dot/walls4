@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { GoogleGenAI } from "@google/genai";
+import { fmtPct, fmtPrice, quoteFor } from "@/lib/market";
+import { ensureMarketData } from "@/lib/market-data";
 
 function createPcmWav(pcm16Data: Int16Array, sampleRate = 24000): ArrayBuffer {
   const byteLength = pcm16Data.byteLength;
@@ -57,14 +59,24 @@ export async function POST(req: NextRequest) {
   try {
     const { transcript, audioData, mode = "voice-chat" } = await req.json();
 
+    await ensureMarketData();
+    const nvdaQ = quoteFor("NVDA");
+    const btcQ = quoteFor("BTC");
+    const solQ = quoteFor("SOL");
+    const liveTapeSummary = [
+      nvdaQ ? `NVIDIA at ${fmtPrice(nvdaQ.price)} (${fmtPct(nvdaQ.change)})` : null,
+      btcQ ? `Bitcoin at ${fmtPrice(btcQ.price)} (${fmtPct(btcQ.change)})` : null,
+      solQ ? `Solana at ${fmtPrice(solQ.price)} (${fmtPct(solQ.change)})` : null,
+    ].filter(Boolean).join(", ");
+
     const apiKey = process.env.GEMINI_API_KEY;
     const userPrompt = transcript || "Analyze current market volume and key technical anchors.";
 
     if (!apiKey) {
-      const mockReply = `Voice desk acknowledgement for ${userPrompt}. Orders remain balanced at key pivots, invalidation pegged at two point five percent risk limit.`;
+      const liveReply = `Voice desk connected to real-time tape: ${liveTapeSummary || "Multi-venue feeds synchronized"}.`;
       return NextResponse.json({
         transcript: userPrompt,
-        replyText: mockReply,
+        replyText: liveReply,
         audioBase64: generateTonePcmWav(1.2, 24000),
         sampleRate: 24000,
         mode,
@@ -88,10 +100,11 @@ export async function POST(req: NextRequest) {
       const response = await ai.models.generateContent({
         model: "gemini-3.8-flash",
         contents: `You are the Lead Voice Trader on the NextWall Street institutional trading floor (NWS AI).
+Live market quotes right now: ${liveTapeSummary || "Live feed active"}.
 Respond to the trader's spoken query: "${userPrompt}".
 Deliver a spoken audio response that sounds natural, crisp, authoritative, and spoken like a veteran pit trader:
 - Maximum 2 to 3 sentences.
-- Speak directly, clearly stating numbers, key price anchors, and execution bias.
+- Speak directly, clearly stating numbers ONLY from the live quotes above, key price anchors, and execution bias.
 - No markdown formatting or symbols that sound awkward when spoken out loud.`,
       });
 

@@ -141,27 +141,25 @@ export function detectMarketDivergences(): DivergenceAsset[] {
   });
 
   if (results.length === 0) {
-    // Provide sample high-probability signals
-    results.push(
-      {
-        symbol: "NVDA",
-        name: "NVIDIA Corp",
-        lastPrice: 187.4,
-        change24h: 0.034,
-        change7d: -0.052,
-        divergenceType: "Bullish Divergence (Day Up, Week Down)",
-        signalStrength: "STRONG",
-      },
-      {
-        symbol: "SOL",
-        name: "Solana",
-        lastPrice: 198.5,
-        change24h: -0.028,
-        change7d: 0.114,
-        divergenceType: "Bearish Exhaustion (Day Down, Week Up)",
-        signalStrength: "MODERATE",
-      }
-    );
+    const topMovers = ASSETS.map((a) => ({ a, m: metricsFor(a) }))
+      .filter((x) => x.m.last > 0)
+      .sort((x, y) => Math.abs(y.m.change24h) - Math.abs(x.m.change24h))
+      .slice(0, 6);
+
+    for (const { a, m } of topMovers) {
+      results.push({
+        symbol: a.symbol,
+        name: a.name,
+        lastPrice: m.last,
+        change24h: m.change24h,
+        change7d: m.change7d,
+        divergenceType:
+          m.change24h >= 0
+            ? "Bullish Divergence (Day Up, Week Down)"
+            : "Bearish Exhaustion (Day Down, Week Up)",
+        signalStrength: Math.abs(m.change24h) > 0.03 ? "STRONG" : "MODERATE",
+      });
+    }
   }
 
   return results.slice(0, 6);

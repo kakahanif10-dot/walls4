@@ -20,9 +20,9 @@ export type ResearchDeck = {
 export const RESEARCH_DECKS_70: ResearchDeck[] = [
   {
     "slug": "the-ai-capex-cycle-is-now-a-second-derivative-trade",
-    "title": "The AI capex cycle is now a second-derivative trade",
+    "title": "The AI Capex Cycle Is Now a Second-Derivative Trade",
     "category": "markets",
-    "dek": "In-depth quantitative desk analysis on the ai capex cycle is now a second-derivative trade. Evaluating structural trends, liquidity flows, exact invalidation price levels, and institutional risk distribution.",
+    "dek": "Hyperscaler GPU spending is shifting from raw silicon capacity toward power delivery, optical interconnects, and enterprise inference margins. We track institutional accumulation across NVDA, AMZN, and AMD alongside exact moving-average invalidation levels.",
     "author": "Daniel Okafor",
     "role": "Head of Wall Street Equity Strategy",
     "date": "2026-11-11",
@@ -42,7 +42,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
     "body": [
       {
         "type": "p",
-        "text": "Every institutional trader knows that price action without structural context is merely noise. In this desk memo, we dissect the core drivers behind the ai capex cycle is now a second-derivative trade, examining where real capital is deploying versus where passive liquidity is trapped."
+        "text": "Every institutional desk knows that price action without structural context is merely noise. As hyperscaler AI budgets mature, second-derivative winners across power, interconnects, and silicon supply chains diverge sharply from headline narrative trades."
       },
       {
         "type": "h2",
@@ -62,7 +62,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -85,11 +85,11 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
   },
   {
     "slug": "the-breadth-divergence-playbook-when-five-mega-caps-carry-the-index",
-    "title": "The Breadth Divergence Playbook: When five mega-caps carry the index",
+    "title": "The Breadth Divergence Playbook: When Five Mega-Caps Carry the Index",
     "category": "markets",
-    "dek": "In-depth quantitative desk analysis on the breadth divergence playbook: when five mega-caps carry the index. Evaluating structural trends, liquidity flows, exact invalidation price levels, and institutional risk distribution.",
+    "dek": "When equal-weight participation drops below 30% while mega-cap leaders print highs, institutional flow rotates quietly into volatility hedges. Here is how our desk throttles risk and tracks mean-reversion triggers across AAPL, META, and AVGO.",
     "author": "Sarah Vance, CFA",
-    "role": "Chief Quantitative & Day Trade Strategist",
+    "role": "Chief Quantitative Equity Strategist",
     "date": "2026-11-09",
     "readMinutes": 7,
     "tags": [
@@ -107,7 +107,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
     "body": [
       {
         "type": "p",
-        "text": "Every institutional trader knows that price action without structural context is merely noise. In this desk memo, we dissect the core drivers behind the breadth divergence playbook: when five mega-caps carry the index, examining where real capital is deploying versus where passive liquidity is trapped."
+        "text": "Narrow index leadership routinely masks underlying fragility across the broader equity tape. When five mega-caps hold up headline benchmarks, equal-weight breadth divergence dictates how aggressively portfolio capital should be sized."
       },
       {
         "type": "h2",
@@ -127,7 +127,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -152,9 +152,9 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
     "slug": "institutional-pre-market-volume-imbalance-exploiting-the-09-15-est-gap",
     "title": "Institutional Pre-Market Volume Imbalance: Exploiting the 09:15 EST Gap",
     "category": "markets",
-    "dek": "In-depth quantitative desk analysis on institutional pre-market volume imbalance: exploiting the 09:15 est gap. Evaluating structural trends, liquidity flows, exact invalidation price levels, and institutional risk distribution.",
+    "dek": "Thin overnight order books create sharp liquidity sweeps between 09:15 EST and the NYSE opening auction as institutional blocks rebalance. We quantify opening-range invalidation stops across MSFT, TSLA, and PLTR to avoid chasing false breakouts.",
     "author": "Elena Rostova",
-    "role": "Senior Crypto Flow & Derivatives Analyst",
+    "role": "Head of Market Microstructure & Execution",
     "date": "2026-11-07",
     "readMinutes": 8,
     "tags": [
@@ -172,7 +172,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
     "body": [
       {
         "type": "p",
-        "text": "Every institutional trader knows that price action without structural context is merely noise. In this desk memo, we dissect the core drivers behind institutional pre-market volume imbalance: exploiting the 09:15 est gap, examining where real capital is deploying versus where passive liquidity is trapped."
+        "text": "Pre-market equity gaps reflect overnight order imbalances colliding with shallow pre-open liquidity before the primary auction clears. Dissecting the 09:15 EST imbalance window separates institutional accumulation from opening-bell mean reversion."
       },
       {
         "type": "h2",
@@ -192,7 +192,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -257,7 +257,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -322,7 +322,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -387,7 +387,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -452,7 +452,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -517,7 +517,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -582,7 +582,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -647,7 +647,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -712,7 +712,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -777,7 +777,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -842,7 +842,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -907,7 +907,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -972,7 +972,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -1037,7 +1037,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -1102,7 +1102,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -1167,7 +1167,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -1232,7 +1232,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -1297,7 +1297,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -1362,7 +1362,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -1427,7 +1427,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -1492,7 +1492,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -1557,7 +1557,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -1622,7 +1622,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -1687,7 +1687,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -1752,7 +1752,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -1817,7 +1817,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -1882,7 +1882,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -1947,7 +1947,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -2011,7 +2011,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -2075,7 +2075,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -2139,7 +2139,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -2203,7 +2203,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -2267,7 +2267,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -2331,7 +2331,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -2395,7 +2395,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -2459,7 +2459,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -2523,7 +2523,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -2587,7 +2587,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -2651,7 +2651,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -2715,7 +2715,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -2779,7 +2779,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -2843,7 +2843,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -2907,7 +2907,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -2971,7 +2971,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -3035,7 +3035,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -3099,7 +3099,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -3163,7 +3163,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -3227,7 +3227,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -3291,7 +3291,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -3355,7 +3355,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -3419,7 +3419,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -3483,7 +3483,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -3547,7 +3547,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -3611,7 +3611,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -3675,7 +3675,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -3739,7 +3739,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -3803,7 +3803,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -3867,7 +3867,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -3906,7 +3906,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
     "premium": true,
     "tickers": [
       "PNUT",
-      "FARTO"
+      "PUMP"
     ],
     "body": [
       {
@@ -3919,7 +3919,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "Unlike subjective sentiment or lagging fundamental ratios, our 5-factor scoring engine measures the slope of moving averages (20, 50, and 200 SMA), 30-session rate of change, and RSI stretch. When PNUT, FARTO trigger momentum persistence above the 66-threshold, positioning transitions from accumulation to trend expansion."
+        "text": "Unlike subjective sentiment or lagging fundamental ratios, our 5-factor scoring engine measures the slope of moving averages (20, 50, and 200 SMA), 30-session rate of change, and RSI stretch. When PNUT, PUMP trigger momentum persistence above the 66-threshold, positioning transitions from accumulation to trend expansion."
       },
       {
         "type": "quote",
@@ -3931,7 +3931,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -3970,7 +3970,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
     "premium": true,
     "tickers": [
       "MOODENG",
-      "GRIF"
+      "GRIFFAIN"
     ],
     "body": [
       {
@@ -3983,7 +3983,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "Unlike subjective sentiment or lagging fundamental ratios, our 5-factor scoring engine measures the slope of moving averages (20, 50, and 200 SMA), 30-session rate of change, and RSI stretch. When MOODENG, GRIF trigger momentum persistence above the 66-threshold, positioning transitions from accumulation to trend expansion."
+        "text": "Unlike subjective sentiment or lagging fundamental ratios, our 5-factor scoring engine measures the slope of moving averages (20, 50, and 200 SMA), 30-session rate of change, and RSI stretch. When MOODENG, GRIFFAIN trigger momentum persistence above the 66-threshold, positioning transitions from accumulation to trend expansion."
       },
       {
         "type": "quote",
@@ -3995,7 +3995,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -4034,7 +4034,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
     "premium": true,
     "tickers": [
       "POPCAT",
-      "CHILL"
+      "CHILLGUY"
     ],
     "body": [
       {
@@ -4047,7 +4047,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "Unlike subjective sentiment or lagging fundamental ratios, our 5-factor scoring engine measures the slope of moving averages (20, 50, and 200 SMA), 30-session rate of change, and RSI stretch. When POPCAT, CHILL trigger momentum persistence above the 66-threshold, positioning transitions from accumulation to trend expansion."
+        "text": "Unlike subjective sentiment or lagging fundamental ratios, our 5-factor scoring engine measures the slope of moving averages (20, 50, and 200 SMA), 30-session rate of change, and RSI stretch. When POPCAT, CHILLGUY trigger momentum persistence above the 66-threshold, positioning transitions from accumulation to trend expansion."
       },
       {
         "type": "quote",
@@ -4059,7 +4059,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -4123,7 +4123,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -4161,7 +4161,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
     ],
     "premium": true,
     "tickers": [
-      "FARTO",
+      "PUMP",
       "SHIB"
     ],
     "body": [
@@ -4175,7 +4175,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "Unlike subjective sentiment or lagging fundamental ratios, our 5-factor scoring engine measures the slope of moving averages (20, 50, and 200 SMA), 30-session rate of change, and RSI stretch. When FARTO, SHIB trigger momentum persistence above the 66-threshold, positioning transitions from accumulation to trend expansion."
+        "text": "Unlike subjective sentiment or lagging fundamental ratios, our 5-factor scoring engine measures the slope of moving averages (20, 50, and 200 SMA), 30-session rate of change, and RSI stretch. When PUMP, SHIB trigger momentum persistence above the 66-threshold, positioning transitions from accumulation to trend expansion."
       },
       {
         "type": "quote",
@@ -4187,7 +4187,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -4204,7 +4204,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "For subscribers actively tracking FARTO and related sector peers, review your exposure against the hard sector caps: maximum 20% portfolio allocation in equities, 8% in major crypto, and a strict 2% ceiling in meme tokens."
+        "text": "For subscribers actively tracking PUMP and related sector peers, review your exposure against the hard sector caps: maximum 20% portfolio allocation in equities, 8% in major crypto, and a strict 2% ceiling in meme tokens."
       }
     ]
   },
@@ -4225,7 +4225,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
     ],
     "premium": true,
     "tickers": [
-      "GRIF",
+      "GRIFFAIN",
       "PEPE"
     ],
     "body": [
@@ -4239,7 +4239,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "Unlike subjective sentiment or lagging fundamental ratios, our 5-factor scoring engine measures the slope of moving averages (20, 50, and 200 SMA), 30-session rate of change, and RSI stretch. When GRIF, PEPE trigger momentum persistence above the 66-threshold, positioning transitions from accumulation to trend expansion."
+        "text": "Unlike subjective sentiment or lagging fundamental ratios, our 5-factor scoring engine measures the slope of moving averages (20, 50, and 200 SMA), 30-session rate of change, and RSI stretch. When GRIFFAIN, PEPE trigger momentum persistence above the 66-threshold, positioning transitions from accumulation to trend expansion."
       },
       {
         "type": "quote",
@@ -4251,7 +4251,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -4268,7 +4268,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "For subscribers actively tracking GRIF and related sector peers, review your exposure against the hard sector caps: maximum 20% portfolio allocation in equities, 8% in major crypto, and a strict 2% ceiling in meme tokens."
+        "text": "For subscribers actively tracking GRIFFAIN and related sector peers, review your exposure against the hard sector caps: maximum 20% portfolio allocation in equities, 8% in major crypto, and a strict 2% ceiling in meme tokens."
       }
     ]
   },
@@ -4289,7 +4289,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
     ],
     "premium": true,
     "tickers": [
-      "CHILL",
+      "CHILLGUY",
       "WIF"
     ],
     "body": [
@@ -4303,7 +4303,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "Unlike subjective sentiment or lagging fundamental ratios, our 5-factor scoring engine measures the slope of moving averages (20, 50, and 200 SMA), 30-session rate of change, and RSI stretch. When CHILL, WIF trigger momentum persistence above the 66-threshold, positioning transitions from accumulation to trend expansion."
+        "text": "Unlike subjective sentiment or lagging fundamental ratios, our 5-factor scoring engine measures the slope of moving averages (20, 50, and 200 SMA), 30-session rate of change, and RSI stretch. When CHILLGUY, WIF trigger momentum persistence above the 66-threshold, positioning transitions from accumulation to trend expansion."
       },
       {
         "type": "quote",
@@ -4315,7 +4315,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -4332,7 +4332,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "For subscribers actively tracking CHILL and related sector peers, review your exposure against the hard sector caps: maximum 20% portfolio allocation in equities, 8% in major crypto, and a strict 2% ceiling in meme tokens."
+        "text": "For subscribers actively tracking CHILLGUY and related sector peers, review your exposure against the hard sector caps: maximum 20% portfolio allocation in equities, 8% in major crypto, and a strict 2% ceiling in meme tokens."
       }
     ]
   },
@@ -4379,7 +4379,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -4443,7 +4443,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",
@@ -4507,7 +4507,7 @@ export const RESEARCH_DECKS_70: ResearchDeck[] = [
       },
       {
         "type": "p",
-        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWall Street institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
+        "text": "The critical failure mode for most retail traders is entering based on narrative and exiting based on pain. On the NextWallStreet institutional desk, our invalidation is anchored to the lower band of the 20-day and 50-day moving average confluence. A daily close below this anchor invalidates the thesis, triggering an immediate disciplined cut."
       },
       {
         "type": "list",

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ChatViewContainer from "@/components/chat-view-container";
 
 export const metadata: Metadata = {
-  title: "Trading Floor Community (1,840+ Traders) — NextWall Street",
+  title: "Trading Floor Community (1,100+ Traders) — NextWallStreet",
   description:
-    "Institutional live trading floor community featuring 1,840+ verified traders, active breakout channels, AI moderator synthesis, and audio alerts.",
+    "Institutional live trading floor community featuring 1,100+ verified traders, active breakout channels, AI moderator synthesis, and audio alerts.",
 };
 
 export default function CommunityPage() {

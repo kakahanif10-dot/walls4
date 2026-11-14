@@ -30,7 +30,7 @@ export default function WatchCurriculumGrid({ lessons }: { lessons: VideoLesson[
   return (
     <div className="space-y-6">
       {/* 3-Category Switcher & Search (Item 8) */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-b border-line/60 pb-5">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pb-2">
         <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
@@ -38,7 +38,7 @@ export default function WatchCurriculumGrid({ lessons }: { lessons: VideoLesson[
             className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition ${
               activeCategory === "all"
                 ? "bg-gold text-ink-950 shadow"
-                : "bg-ink-900 border border-line text-muted hover:text-bone"
+                : "bg-ink-900/75 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <Layers className="h-3.5 w-3.5" />
@@ -51,7 +51,7 @@ export default function WatchCurriculumGrid({ lessons }: { lessons: VideoLesson[
             className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition ${
               activeCategory === "markets"
                 ? "bg-gold text-ink-950 shadow"
-                : "bg-ink-900 border border-line text-muted hover:text-bone"
+                : "bg-ink-900/75 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <BarChart3 className="h-3.5 w-3.5" />
@@ -64,7 +64,7 @@ export default function WatchCurriculumGrid({ lessons }: { lessons: VideoLesson[
             className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition ${
               activeCategory === "crypto"
                 ? "bg-gold text-ink-950 shadow"
-                : "bg-ink-900 border border-line text-muted hover:text-bone"
+                : "bg-ink-900/75 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <Coins className="h-3.5 w-3.5" />
@@ -77,7 +77,7 @@ export default function WatchCurriculumGrid({ lessons }: { lessons: VideoLesson[
             className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition ${
               activeCategory === "meme"
                 ? "bg-gold text-ink-950 shadow"
-                : "bg-ink-900 border border-line text-muted hover:text-bone"
+                : "bg-ink-900/75 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <Flame className="h-3.5 w-3.5" />
@@ -92,25 +92,25 @@ export default function WatchCurriculumGrid({ lessons }: { lessons: VideoLesson[
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search 60 video masterclasses..."
-            className="w-full rounded-xl border border-line bg-ink-900 pl-9 pr-3.5 py-2 text-xs text-bone placeholder:text-muted/50 focus:border-gold focus:outline-none"
+            className="w-full rounded-xl bg-ink-900/90 pl-9 pr-3.5 py-2 text-xs text-bone placeholder:text-muted/50 focus:outline-none focus:ring-1 focus:ring-gold/40"
           />
         </div>
       </div>
 
       {/* Grid of 60 Video Lessons */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {filtered.map((lesson, idx) => (
           <Link
             key={lesson.id}
             href={`/academy/watch?lesson=${lesson.id}#video-studio-player`}
-            className="group flex flex-col justify-between rounded-xl border border-line bg-ink-900/60 p-4 transition-all hover:border-gold/60 hover:bg-ink-900 hover:shadow-lg"
+            className="group flex flex-col justify-between rounded-2xl bg-ink-900/55 p-5 transition-all hover:bg-ink-900/80 hover:shadow-lg"
           >
             <div>
               <div className="flex items-center justify-between text-[11px] text-muted">
                 <span className="font-mono text-gold font-semibold">
                   Lesson {String(idx + 1).padStart(2, "0")}
                 </span>
-                <span className="rounded bg-ink-800 px-2 py-0.5 text-[10px] font-mono text-bone/90">
+                <span className="rounded bg-ink-950/75 px-2 py-0.5 text-[10px] font-mono text-bone/90">
                   {lesson.durationLabel}
                 </span>
               </div>
@@ -118,10 +118,10 @@ export default function WatchCurriculumGrid({ lessons }: { lessons: VideoLesson[
                 {lesson.title}
               </h4>
               <div className="mt-2 flex items-center gap-2">
-                <span className="rounded bg-line/50 px-1.5 py-0.5 text-[9px] font-mono text-muted">
+                <span className="rounded bg-ink-950/75 px-2 py-0.5 text-[9px] font-mono text-muted">
                   {lesson.module}
                 </span>
-                <span className="rounded bg-emerald-500/10 px-1.5 py-0.5 text-[9px] font-semibold text-emerald-400">
+                <span className="rounded bg-emerald-500/15 px-2 py-0.5 text-[9px] font-semibold text-emerald-400">
                   {lesson.level}
                 </span>
               </div>
@@ -130,7 +130,7 @@ export default function WatchCurriculumGrid({ lessons }: { lessons: VideoLesson[
               </p>
             </div>
 
-            <div className="mt-4 border-t border-line/60 pt-3 flex items-center justify-between">
+            <div className="mt-4 pt-2 flex items-center justify-between">
               <p className="text-[11px] text-muted truncate">{lesson.instructor}</p>
               <span className="shrink-0 flex items-center gap-1 text-[11px] font-semibold text-gold group-hover:translate-x-0.5 transition-transform">
                 <span>Watch</span>

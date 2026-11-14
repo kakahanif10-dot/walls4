@@ -5,7 +5,7 @@ import WhopBadge from "@/components/whop-badge";
 import { Terminal, Activity, Compass, DollarSign, Vote } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "516-Panel Macro & Perpetuals Workstation — NextWall Street",
+  title: "516-Panel Macro & Perpetuals Workstation — NextWallStreet",
   description:
     "Modular 516-panel quantitative workstation featuring Fear & Greed composite gauge, Macro Regime Quadrants, 24/7 equity & crypto perpetuals, commodities matrix, and live event prediction order books.",
 };
@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 export default function NeubergPage() {
   return (
     <div className="min-h-screen bg-[#050609] text-[#f2efe8]">
-      <section className="relative overflow-hidden border-b border-[#d8ab5a]/20 bg-gradient-to-b from-[#110f0c] via-[#080a0f] to-[#050609]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#110f0c] via-[#080a0f] to-[#050609]">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(216,171,90,0.12),transparent_55%)]" />
-        <div className="relative mx-auto max-w-7xl px-5 py-12">
+        <div className="relative mx-auto max-w-7xl px-5 py-10 sm:py-12">
           <nav className="flex items-center gap-2 text-xs font-mono text-stone-400">
             <Link href="/" className="hover:text-[#f0c979] transition-colors">Home</Link>
             <span className="text-stone-600">/</span>
@@ -23,11 +23,11 @@ export default function NeubergPage() {
           </nav>
 
           <div className="mt-4 flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 rounded-md border border-[#d8ab5a]/35 bg-[#d8ab5a]/10 px-2.5 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-[#f0c979]">
+            <span className="inline-flex items-center gap-1.5 rounded-lg bg-[#d8ab5a]/15 px-3 py-1 text-[10px] font-mono font-semibold uppercase tracking-[0.14em] text-[#f0c979]">
               <Terminal className="h-3 w-3 text-[#d8ab5a]" />
               INSTITUTIONAL MACRO &amp; DERIVATIVES COCKPIT
             </span>
-            <span className="rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-[10px] font-mono text-stone-300">
+            <span className="rounded-lg bg-white/[0.06] px-3 py-1 text-[10px] font-mono text-stone-300">
               516 MODULAR PANELS · 24/7 EXECUTION
             </span>
             <WhopBadge size="xs" />
@@ -61,7 +61,7 @@ export default function NeubergPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-10">
+      <section className="mx-auto max-w-7xl px-5 py-8 sm:py-10">
         <NeubergTerminal />
       </section>
     </div>

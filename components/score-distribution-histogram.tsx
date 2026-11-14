@@ -9,7 +9,6 @@ import {
   Info,
   Filter,
   X,
-  Sparkles,
   ArrowUpRight,
 } from "lucide-react";
 import {
@@ -56,7 +55,7 @@ export default function ScoreDistributionHistogram({
   // Color helper for histogram bars based on stance regime
   const getBarColor = (stance: string, isHovered: boolean, isSelected: boolean) => {
     if (isSelected) {
-      return "bg-gold-bright shadow-[0_0_12px_rgba(229,184,105,0.7)] border-bone";
+      return "bg-gold-bright shadow-[0_0_12px_rgba(229,184,105,0.7)]";
     }
     switch (stance) {
       case "Buy":
@@ -103,9 +102,9 @@ export default function ScoreDistributionHistogram({
   };
 
   return (
-    <div className="rounded-xl border border-line bg-ink-900/80 p-6 backdrop-blur">
+    <div className="rounded-2xl bg-ink-900/55 p-6 sm:p-7 backdrop-blur">
       {/* Header and Scope Controls */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-line/60">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3">
         <div>
           <div className="flex items-center gap-2">
             <span className="flex h-5 w-5 items-center justify-center rounded-md bg-gold/20 text-gold-bright">
@@ -114,7 +113,7 @@ export default function ScoreDistributionHistogram({
             <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
               Distribution Engine
             </span>
-            <span className="rounded bg-line/60 px-2 py-0.5 font-mono text-[10px] text-muted">
+            <span className="rounded bg-ink-850 px-2 py-0.5 font-mono text-[10px] text-muted">
               {currentDist.totalAssets.toLocaleString()} Assets Sampled
             </span>
           </div>
@@ -127,7 +126,7 @@ export default function ScoreDistributionHistogram({
         </div>
 
         {/* Scope Pill Selector */}
-        <div className="flex flex-wrap items-center gap-1.5 rounded-lg border border-line bg-ink-950 p-1 shrink-0 self-start sm:self-auto">
+        <div className="flex flex-wrap items-center gap-1.5 rounded-xl bg-ink-950/80 p-1.5 shrink-0 self-start sm:self-auto">
           {(
             [
               { id: "all", label: "All Assets", count: distribution.totalAssets },
@@ -140,10 +139,10 @@ export default function ScoreDistributionHistogram({
               key={scope.id}
               type="button"
               onClick={() => setActiveAssetScope(scope.id)}
-              className={`rounded-md px-3 py-1 text-xs font-medium transition-all ${
+              className={`rounded-lg px-3 py-1 text-xs font-medium transition-all ${
                 activeAssetScope === scope.id
                   ? "bg-gold text-ink-950 font-bold shadow"
-                  : "text-muted hover:text-bone hover:bg-ink-850"
+                  : "text-muted hover:text-bone hover:bg-ink-900"
               }`}
             >
               {scope.label}
@@ -154,8 +153,8 @@ export default function ScoreDistributionHistogram({
       </div>
 
       {/* Quick Summary Statistical KPIs */}
-      <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <div className="rounded-lg border border-line bg-ink-850/60 p-3">
+      <div className="mt-5 grid grid-cols-2 gap-3.5 sm:grid-cols-4">
+        <div className="rounded-xl bg-ink-950/75 px-4 py-3.5">
           <div className="flex items-center justify-between text-[10px] uppercase text-muted">
             <span>Mean &amp; Std Dev</span>
             <Info className="h-3 w-3 text-muted/60" />
@@ -167,7 +166,7 @@ export default function ScoreDistributionHistogram({
           <p className="text-[10px] text-muted/70">Central tendency &amp; dispersion</p>
         </div>
 
-        <div className="rounded-lg border border-line bg-ink-850/60 p-3">
+        <div className="rounded-xl bg-ink-950/75 px-4 py-3.5">
           <div className="flex items-center justify-between text-[10px] uppercase text-muted">
             <span>Median &amp; IQR</span>
             <span className="font-mono text-[10px] text-gold-bright">50%</span>
@@ -181,7 +180,7 @@ export default function ScoreDistributionHistogram({
           <p className="text-[10px] text-muted/70">Middle 50% interquartile range</p>
         </div>
 
-        <div className="rounded-lg border border-line bg-ink-850/60 p-3">
+        <div className="rounded-xl bg-ink-950/75 px-4 py-3.5">
           <div className="flex items-center justify-between text-[10px] uppercase text-muted">
             <span>Regime Skew</span>
             <Sliders className="h-3 w-3 text-muted/60" />
@@ -192,7 +191,7 @@ export default function ScoreDistributionHistogram({
           <p className="text-[10px] text-muted/70">Distribution symmetry shape</p>
         </div>
 
-        <div className="rounded-lg border border-line bg-ink-850/60 p-3">
+        <div className="rounded-xl bg-ink-950/75 px-4 py-3.5">
           <div className="flex items-center justify-between text-[10px] uppercase text-muted">
             <span>Bullish Cohort</span>
             <TrendingUp className="h-3 w-3 text-emerald-400" />
@@ -209,7 +208,7 @@ export default function ScoreDistributionHistogram({
 
       {/* Active Filter Pill */}
       {selectedRange && (
-        <div className="mt-4 flex items-center justify-between rounded-lg border border-gold/40 bg-gold/10 px-4 py-2 text-xs">
+        <div className="mt-4 flex items-center justify-between rounded-xl bg-gold/15 px-4 py-2.5 text-xs">
           <div className="flex items-center gap-2 text-gold-bright">
             <Filter className="h-3.5 w-3.5" />
             <span>Active Range Filter:</span>
@@ -218,7 +217,7 @@ export default function ScoreDistributionHistogram({
           <button
             type="button"
             onClick={() => onSelectScoreRange?.(null, null)}
-            className="flex items-center gap-1 rounded bg-line/60 px-2 py-0.5 text-[10px] text-muted hover:text-bone hover:bg-line transition"
+            className="flex items-center gap-1 rounded-lg bg-ink-900/75 px-2.5 py-1 text-[10px] text-muted hover:text-bone hover:bg-ink-900 transition"
           >
             <X className="h-3 w-3" />
             Clear Filter
@@ -231,10 +230,10 @@ export default function ScoreDistributionHistogram({
         <div className="relative pt-4 pb-2">
           {/* Regime Background Watermarks */}
           <div className="absolute inset-0 flex pointer-events-none opacity-20">
-            <div className="w-[33%] bg-rose-500/10 border-r border-rose-500/30" />
-            <div className="w-[14%] bg-amber-500/10 border-r border-amber-500/30" />
-            <div className="w-[19%] bg-sky-500/10 border-r border-sky-500/30" />
-            <div className="w-[12%] bg-teal-500/10 border-r border-teal-500/30" />
+            <div className="w-[33%] bg-rose-500/10" />
+            <div className="w-[14%] bg-amber-500/10" />
+            <div className="w-[19%] bg-sky-500/10" />
+            <div className="w-[12%] bg-teal-500/10" />
             <div className="w-[22%] bg-emerald-500/10" />
           </div>
 
@@ -263,7 +262,7 @@ export default function ScoreDistributionHistogram({
                   {/* Bar Element */}
                   <div
                     style={{ height: `${heightPercent}%` }}
-                    className={`w-full rounded-t-sm transition-all duration-200 border-t ${getBarColor(
+                    className={`w-full rounded-t-sm transition-all duration-200 ${getBarColor(
                       bin.stance,
                       isHovered,
                       isSelected,
@@ -280,7 +279,7 @@ export default function ScoreDistributionHistogram({
           </div>
 
           {/* X-Axis Rule & Scale */}
-          <div className="border-t border-line/80 pt-2">
+          <div className="pt-2.5">
             <div className="flex justify-between font-mono text-[10px] text-muted px-1">
               <span>0 (Bearish)</span>
               <span>20</span>
@@ -292,7 +291,7 @@ export default function ScoreDistributionHistogram({
             </div>
 
             {/* Stance Regime Zones Legend */}
-            <div className="mt-2 grid grid-cols-5 gap-1 text-center font-mono text-[9px] uppercase tracking-wider">
+            <div className="mt-2 grid grid-cols-5 gap-1.5 text-center font-mono text-[9px] uppercase tracking-wider">
               <span className="text-rose-400/80 bg-rose-500/10 py-1 rounded">Avoid (0–33)</span>
               <span className="text-amber-400/80 bg-amber-500/10 py-1 rounded">Trim (34–46)</span>
               <span className="text-sky-400/80 bg-sky-500/10 py-1 rounded">Hold (47–65)</span>
@@ -304,14 +303,14 @@ export default function ScoreDistributionHistogram({
 
         {/* Dynamic Tooltip / Bin Inspection Card */}
         {hoveredBin ? (
-          <div className="rounded-lg border border-gold/40 bg-ink-950 p-3.5 shadow-xl transition-all">
+          <div className="rounded-xl bg-ink-950/85 p-4 shadow-xl transition-all">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div className="flex items-center gap-2.5">
                 <span className="font-mono text-sm font-bold text-gold-bright">
                   Score Range [{hoveredBin.minScore} – {hoveredBin.maxScore}]
                 </span>
                 <span
-                  className={`rounded-full border px-2 py-0.2 text-[10px] font-semibold ${stanceColor(
+                  className={`rounded-full px-2.5 py-0.5 text-[10px] font-semibold ${stanceColor(
                     hoveredBin.stance,
                   )}`}
                 >
@@ -327,7 +326,7 @@ export default function ScoreDistributionHistogram({
               </span>
             </div>
 
-            <div className="mt-2.5 flex flex-wrap items-center justify-between gap-3 border-t border-line/60 pt-2 text-xs">
+            <div className="mt-3 flex flex-wrap items-center justify-between gap-3 pt-1 text-xs">
               <div className="flex items-center gap-4 text-muted">
                 <span>
                   Stocks: <strong className="text-bone font-mono">{hoveredBin.stockCount}</strong>
@@ -346,7 +345,7 @@ export default function ScoreDistributionHistogram({
                   {hoveredBin.sampleSymbols.map((sym) => (
                     <span
                       key={sym}
-                      className="rounded bg-line/60 px-1.5 py-0.2 text-bone font-bold"
+                      className="rounded bg-ink-900 px-1.5 py-0.5 text-bone font-bold"
                     >
                       ${sym}
                     </span>
@@ -356,14 +355,14 @@ export default function ScoreDistributionHistogram({
             </div>
           </div>
         ) : (
-          <div className="rounded-lg border border-line/50 bg-ink-950/40 p-2.5 text-center text-xs text-muted">
+          <div className="rounded-xl bg-ink-950/55 p-3 text-center text-xs text-muted">
             Hover over any histogram bar to inspect score cluster density, sector composition, and representative symbols.
           </div>
         )}
       </div>
 
       {/* STANCE REGIME MACRO BAR */}
-      <div className="mt-6 pt-5 border-t border-line/60">
+      <div className="mt-6 pt-3">
         <div className="flex items-center justify-between text-xs pb-2">
           <span className="text-[11px] font-semibold uppercase tracking-wider text-muted">
             Macro Regime Distribution ({currentDist.totalAssets.toLocaleString()} Assets)
@@ -381,7 +380,7 @@ export default function ScoreDistributionHistogram({
         </div>
 
         {/* Stacked Progress Bar */}
-        <div className="flex h-3 w-full overflow-hidden rounded-full bg-ink-950 border border-line/80">
+        <div className="flex h-3 w-full overflow-hidden rounded-full bg-ink-950">
           <div
             style={{ width: `${stancePercents.avoid}%` }}
             className="bg-rose-500 hover:brightness-110 transition-all"

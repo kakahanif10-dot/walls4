@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   output: "standalone",
-  allowedDevOrigins: ["*.run.app", "*.style.dev", "localhost:3000"],
+  allowedDevOrigins: ["**.run.app", "**.style.dev", "localhost:3000"],
   async redirects() {
     return [
       { source: "/realtime-news", destination: "/news-wire", permanent: true },

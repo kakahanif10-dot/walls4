@@ -452,13 +452,45 @@ export interface PaperTradeOrder {
   timestamp: string;
 }
 
-// Initial Simulated Portfolio for Fincept Terminal
+// Initial Desk Portfolio for Fincept Terminal (dynamically priced from market feed)
+function buildInitialPaperPosition(
+  symbol: string,
+  shares: number,
+  side: "BUY" | "SELL",
+  timestamp: string,
+): PaperPosition {
+  const asset = ASSET_BY_SYMBOL[symbol] || ASSETS[0];
+  const m = metricsFor(asset);
+  const currentPrice = m.last;
+  const entryPrice = Number((currentPrice * 0.96).toFixed(currentPrice < 10 ? 4 : 2));
+  const unrealizedPnL = Number(((currentPrice - entryPrice) * shares).toFixed(2));
+  const unrealizedPnLPct = entryPrice > 0 ? Number((((currentPrice - entryPrice) / entryPrice) * 100).toFixed(2)) : 0;
+  return {
+    symbol: asset.symbol,
+    assetName: asset.name,
+    side,
+    shares,
+    entryPrice,
+    currentPrice,
+    unrealizedPnL,
+    unrealizedPnLPct,
+    timestamp,
+  };
+}
+
 export const INITIAL_PAPER_POSITIONS: PaperPosition[] = [
-  { symbol: "NVDA", assetName: "NVIDIA Corp", side: "BUY", shares: 45, entryPrice: 168.5, currentPrice: 187.4, unrealizedPnL: 850.5, unrealizedPnLPct: 11.22, timestamp: "Today 09:31 EST" },
-  { symbol: "AAPL", assetName: "Apple Inc", side: "BUY", shares: 30, entryPrice: 242.0, currentPrice: 258.8, unrealizedPnL: 504.0, unrealizedPnLPct: 6.94, timestamp: "Yesterday 14:15 EST" },
-  { symbol: "BTC", assetName: "Bitcoin", side: "BUY", shares: 0.35, entryPrice: 91400, currentPrice: 96800, unrealizedPnL: 1890.0, unrealizedPnLPct: 5.91, timestamp: "Nov 08 20:00 UTC" },
-  { symbol: "SOL", assetName: "Solana", side: "BUY", shares: 60, entryPrice: 178.0, currentPrice: 198.5, unrealizedPnL: 1230.0, unrealizedPnLPct: 11.52, timestamp: "Nov 09 11:20 UTC" },
+  buildInitialPaperPosition("NVDA", 45, "BUY", "Session Open"),
+  buildInitialPaperPosition("AAPL", 30, "BUY", "Prior Session"),
+  buildInitialPaperPosition("BTC", 0.35, "BUY", "24h Spot"),
+  buildInitialPaperPosition("SOL", 60, "BUY", "24h Spot"),
 ];
+
+export interface FinceptLiveMacro {
+  us10y?: number | null;
+  us2y?: number | null;
+  spreadBps?: number | null;
+  dxy?: number | null;
+}
 
 // CLI Command Result Definition
 export interface FinceptCLIResponse {
@@ -469,11 +501,14 @@ export interface FinceptCLIResponse {
   data?: any;
 }
 
-export function executeFinceptCommand(input: string): FinceptCLIResponse {
+export function executeFinceptCommand(
+  input: string,
+  liveQuotes?: Record<string, { price: number; change: number }>,
+  liveMacro?: FinceptLiveMacro,
+): FinceptCLIResponse {
   const parts = input.trim().split(/\s+/);
   const root = parts[0]?.toLowerCase() || "";
   const arg1 = parts[1]?.toUpperCase() || "";
-  const arg2 = parts[2]?.toUpperCase() || "";
 
   switch (root) {
     case "help":
@@ -500,14 +535,17 @@ export function executeFinceptCommand(input: string): FinceptCLIResponse {
       const agent = FINCEPT_AGENTS.find((a) => a.id === agentId) || FINCEPT_AGENTS[0];
       const asset = ASSET_BY_SYMBOL[symbol] || ASSETS[0];
       const m = metricsFor(asset);
-      const evalResult = agent.evaluate(asset.symbol, m.last, 32.4, 0.45, 0.042, 1.35);
+      const q = liveQuotes?.[asset.symbol];
+      const spot = q && q.price > 0 ? q.price : m.last;
+      const chg = q ? q.change : m.change24h;
+      const evalResult = agent.evaluate(asset.symbol, spot, 32.4, 0.45, 0.042, 1.35);
 
       return {
         command: input,
         title: `Allocator Agent Analysis: ${agent.name} (${agent.title}) on $${asset.symbol}`,
         output: `AGENT ARCHETYPE: ${agent.archetype} | AVATAR: ${agent.avatar}
 STANCE: ${evalResult.stance} (Conviction: ${evalResult.conviction}/100)
-PRICE: ${fmtPrice(m.last)} | 24H CHANGE: ${(m.change24h * 100).toFixed(2)}%
+LIVE PRICE: ${fmtPrice(spot)} | 24H CHANGE: ${(chg * 100).toFixed(2)}%
 
 INVESTMENT THESIS:
 ${evalResult.thesis}
@@ -520,7 +558,7 @@ ${evalResult.risks.map((r) => `! ${r}`).join("\n")}
 
 PHILOSOPHY: "${agent.quote}"`,
         type: "agent",
-        data: { agent, evalResult, asset, metrics: m },
+        data: { agent, evalResult, asset, metrics: { ...m, last: spot, change24h: chg } },
       };
     }
 
@@ -528,9 +566,11 @@ PHILOSOPHY: "${agent.quote}"`,
       const symbol = arg1 || "NVDA";
       const asset = ASSET_BY_SYMBOL[symbol] || ASSETS[0];
       const m = metricsFor(asset);
+      const q = liveQuotes?.[asset.symbol];
+      const spot = q && q.price > 0 ? q.price : m.last;
       const dcf = computeFinceptDCF({
         symbol: asset.symbol,
-        currentPrice: m.last,
+        currentPrice: spot,
         revenueBaseBillion: symbol === "NVDA" ? 115 : symbol === "AAPL" ? 395 : 50,
         growthRatePct: symbol === "NVDA" ? 42 : 12,
         terminalGrowthPct: 3.0,
@@ -544,7 +584,7 @@ PHILOSOPHY: "${agent.quote}"`,
       return {
         command: input,
         title: `Discounted Cash Flow (DCF) Model: $${asset.symbol}`,
-        output: `TICKER: $${asset.symbol} | CURRENT MARKET PRICE: ${fmtPrice(m.last)}
+        output: `TICKER: $${asset.symbol} | LIVE MARKET PRICE: ${fmtPrice(spot)}
 MODEL INTRINSIC VALUE: $${dcf.fairValuePerShare.toFixed(2)} per share
 VALUATION SPREAD: ${dcf.upsideDownsidePct >= 0 ? "+" : ""}${dcf.upsideDownsidePct}% ${dcf.upsideDownsidePct >= 0 ? "Undervalued" : "Overvalued"}
 MARGIN OF SAFETY: ${dcf.marginOfSafetyPct}%
@@ -563,19 +603,29 @@ TERMINAL VALUE (Gordon Growth): $${dcf.terminalValue}B (PV: $${dcf.pvTerminalVal
       const symbol = arg1 || "NVDA";
       const asset = ASSET_BY_SYMBOL[symbol] || ASSETS[0];
       const m = metricsFor(asset);
-      const strike = parts[2] ? parseFloat(parts[2]) : Math.round(m.last);
+      const q = liveQuotes?.[asset.symbol];
+      const spot = q && q.price > 0 ? q.price : m.last;
+      if (typeof liveMacro?.us10y !== "number" || !Number.isFinite(liveMacro.us10y)) {
+        return {
+          command: input,
+          title: `Black-Scholes Options Model: $${asset.symbol}`,
+          output: `Awaiting live US 10Y Treasury yield telemetry from /api/live-terminal-data to price risk-free rate accurately. Underlying live spot: ${fmtPrice(spot)}. Retry shortly or set the rate in the Options Pricer panel.`,
+          type: "warning",
+        };
+      }
+      const strike = parts[2] ? parseFloat(parts[2]) : Math.round(spot);
       const greeks = computeBlackScholesGreeks({
-        stockPrice: m.last,
+        stockPrice: spot,
         strikePrice: strike,
         timeToExpiryDays: 30,
-        riskFreeRatePct: 4.35,
+        riskFreeRatePct: liveMacro.us10y,
         volatilityPct: m.vol * 100,
       });
 
       return {
         command: input,
         title: `Black-Scholes Options Model: $${asset.symbol} (Strike: $${strike})`,
-        output: `UNDERLYING PRICE: ${fmtPrice(m.last)} | EXPIRY: 30 Days | REALIZED VOL: ${(m.vol * 100).toFixed(1)}%
+        output: `UNDERLYING LIVE PRICE: ${fmtPrice(spot)} | EXPIRY: 30 Days | RISK-FREE (US10Y): ${liveMacro.us10y.toFixed(2)}% | REALIZED VOL: ${(m.vol * 100).toFixed(1)}%
 30-DAY CALL PRICE: $${greeks.callPrice} | 30-DAY PUT PRICE: $${greeks.putPrice}
 
 THE GREEKS:
@@ -589,23 +639,28 @@ THE GREEKS:
       };
     }
 
-    case "macro":
+    case "macro": {
+      const us10yStr = typeof liveMacro?.us10y === "number" ? `${liveMacro.us10y.toFixed(2)}%` : "Syncing Live Feed...";
+      const us2yStr = typeof liveMacro?.us2y === "number" ? `${liveMacro.us2y.toFixed(2)}%` : "Syncing Live Feed...";
+      const spreadStr = typeof liveMacro?.spreadBps === "number" ? `${liveMacro.spreadBps >= 0 ? "+" : ""}${liveMacro.spreadBps} bps` : "Syncing Live Feed...";
+      const dxyStr = typeof liveMacro?.dxy === "number" ? liveMacro.dxy.toFixed(2) : "Syncing Live Feed...";
       return {
         command: input,
-        title: "Macro Telemetry & Central Bank Policy Matrix",
-        output: `G10 CENTRAL BANK POLICY BENCHMARKS:
-• Federal Reserve (Fed):     5.25% - 5.50% (Upper Bound) | Bias: Data-dependent hold
-• European Central Bank:     3.25% (Deposit Rate)        | Bias: Easing trajectory
-• Bank of Japan (BoJ):       0.25% (Policy Target)       | Bias: Gradual normalization
-• Bank of England (BoE):     4.75% (Bank Rate)           | Bias: Cautious trimming
+        title: "Live Macro Telemetry & Sovereign Yield Matrix",
+        output: `LIVE TREASURY & FX BENCHMARKS:
+• US 10Y Treasury Yield:     ${us10yStr}
+• US 2Y Treasury Yield:      ${us2yStr}
+• 10Y-2Y Yield Spread:       ${spreadStr}
+• US Dollar Index (DXY):     ${dxyStr}
 
-FRED SOVEREIGN SPREADS:
-• US 10Y Treasury Yield:     4.38% (-3 bps today)
-• US 2Y Treasury Yield:      4.22% (-6 bps today)
-• 10Y-2Y Spread:             +16 bps (Un-inverted, steepening regime)
-• US M2 Money Supply:        $21.4 Trillion (+2.8% YoY)`,
+MONETARY POLICY BENCHMARKS:
+• Federal Reserve (Fed):     Target Range tracked via live FOMC / Treasury front-end
+• European Central Bank:     Deposit Facility tracked via EUR FX basis
+• Bank of Japan (BoJ):       Policy Rate tracked via JPY FX basis
+• Bank of England (BoE):     Bank Rate tracked via GBP FX basis`,
         type: "info",
       };
+    }
 
     case "chokepoint":
       return {
@@ -636,16 +691,18 @@ FRED SOVEREIGN SPREADS:
       const shares = parseFloat(parts[3]) || 10;
       const asset = ASSET_BY_SYMBOL[symbol] || ASSETS[0];
       const m = metricsFor(asset);
-      const notional = shares * m.last;
+      const q = liveQuotes?.[asset.symbol];
+      const spot = q && q.price > 0 ? q.price : m.last;
+      const notional = shares * spot;
 
       return {
         command: input,
         title: `Paper Trade Order Executed: ${side} ${shares} $${asset.symbol}`,
-        output: `ORDER STATUS: FILLED IMMEDIATELY
+        output: `ORDER STATUS: FILLED AT LIVE MARKET
 • Ticker: $${asset.symbol} (${asset.name})
 • Side: ${side}
 • Quantity: ${shares} units
-• Fill Price: ${fmtPrice(m.last)}
+• Fill Price: ${fmtPrice(spot)}
 • Total Notional: ${fmtPrice(notional)}
 • Venue: NextWall Virtual Matcher (Zero Commission)
 • Execution Timestamp: ${new Date().toLocaleTimeString()} EST`,

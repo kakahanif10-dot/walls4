@@ -64,7 +64,7 @@ export default function TrendChart({ values, label, height = 320 }: Props) {
 
   if (data.length < 2) {
     return (
-      <div className="flex h-[220px] items-center justify-center rounded-lg border border-line/70 bg-ink-900/40 text-sm text-muted">
+      <div className="flex h-[220px] items-center justify-center rounded-xl bg-ink-900/55 text-sm text-muted">
         Price history for {label} is unavailable right now.
       </div>
     );
@@ -87,7 +87,7 @@ export default function TrendChart({ values, label, height = 320 }: Props) {
             {fmtPct(change)} · {range}
           </span>
         </div>
-        <div className="flex gap-1 rounded-full border border-line bg-ink-900 p-1">
+        <div className="flex gap-1 rounded-full bg-ink-950/80 p-1">
           {RANGES.map((r) => (
             <button
               key={r.key}
@@ -163,7 +163,7 @@ export default function TrendChart({ values, label, height = 320 }: Props) {
         </svg>
 
         {hover !== null && (
-          <div className="pointer-events-none absolute right-2 top-2 rounded-md border border-line bg-ink-900/95 px-3 py-1.5 font-mono text-xs text-bone">
+          <div className="pointer-events-none absolute right-2 top-2 rounded-lg bg-ink-900/95 px-3 py-1.5 font-mono text-xs text-bone shadow-lg">
             {fmtPrice(data[hover])}
           </div>
         )}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuote } from "@/components/live-prices";
-import { fmtPct, fmtPrice } from "@/lib/market";
+import { fmtPct, fmtPrice, type Kind } from "@/lib/market";
 
 function flashFor(dir: number): string {
   if (dir > 0) return "flash-up";
@@ -12,10 +12,12 @@ function flashFor(dir: number): string {
 export function LivePrice({
   symbol,
   base,
+  kind,
   className = "",
 }: {
   symbol: string;
   base: number;
+  kind?: Kind;
   className?: string;
 }) {
   const quote = useQuote(symbol);
@@ -27,7 +29,7 @@ export function LivePrice({
       key={`price-${quote?.tick ?? 0}`}
       className={`inline-block tabular-nums ${flash} ${className}`}
     >
-      {fmtPrice(price)}
+      {fmtPrice(price, kind)}
     </span>
   );
 }

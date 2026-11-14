@@ -16,15 +16,15 @@ function sessionFor(date: Date): { label: string; tone: string } {
   const day = date.getUTCDay();
   const minutes = date.getUTCHours() * 60 + date.getUTCMinutes();
 
-  if (day === 0 || day === 6) return { label: "Closed · weekend", tone: "text-muted border-line" };
-  if (minutes >= 810 && minutes < 1200) return { label: "US session", tone: "text-up border-up/40 bg-up/10" };
-  if (minutes >= 540 && minutes < 810) return { label: "Pre-market", tone: "text-gold border-gold/40 bg-gold/10" };
-  if (minutes >= 1200) return { label: "After hours", tone: "text-gold border-gold/40 bg-gold/10" };
-  return { label: "Overnight", tone: "text-muted border-line" };
+  if (day === 0 || day === 6) return { label: "Closed · weekend", tone: "text-muted bg-ink-900/75" };
+  if (minutes >= 810 && minutes < 1200) return { label: "US session", tone: "text-up bg-up/15" };
+  if (minutes >= 540 && minutes < 810) return { label: "Pre-market", tone: "text-gold bg-gold/15" };
+  if (minutes >= 1200) return { label: "After hours", tone: "text-gold bg-gold/15" };
+  return { label: "Overnight", tone: "text-muted bg-ink-900/75" };
 }
 
 export default function LiveClock({ compact = false }: { compact?: boolean }) {
-  const [now, setNow] = useState<Date | null>(null);
+  const [now, setNow] = useState<Date>(() => new Date());
 
   useEffect(() => {
     setNow(new Date());
@@ -32,17 +32,25 @@ export default function LiveClock({ compact = false }: { compact?: boolean }) {
     return () => clearInterval(id);
   }, []);
 
-  const session = now ? sessionFor(now) : null;
+  const session = sessionFor(now);
 
   return (
-    <div className="flex items-center gap-2 text-xs" title={now ? now.toUTCString() : undefined}>
-      <span className="live-dot h-1.5 w-1.5 shrink-0 rounded-full bg-up" aria-hidden="true" />
-      <span className="font-mono tabular-nums text-bone/90">
-        {now ? formatUtc(now) : "--:--:--"}
+    <div
+      className="flex items-center gap-2 text-xs"
+      title={now.toUTCString()}
+      suppressHydrationWarning
+    >
+      <span className="font-mono tabular-nums text-bone/90" suppressHydrationWarning>
+        {formatUtc(now)}
         <span className="ml-1 text-muted">UTC</span>
       </span>
-      {!compact && session && (
-        <span className={`rounded-full border px-2 py-0.5 text-[10px] ${session.tone}`}>{session.label}</span>
+      {!compact && (
+        <span
+          className={`rounded-full px-2.5 py-0.5 text-[10px] ${session.tone}`}
+          suppressHydrationWarning
+        >
+          {session.label}
+        </span>
       )}
     </div>
   );

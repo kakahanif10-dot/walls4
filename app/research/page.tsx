@@ -4,7 +4,7 @@ import ResearchExplorer from "@/components/research-explorer";
 import WhopBadge from "@/components/whop-badge";
 
 export const metadata: Metadata = {
-  title: "70 Research Decks — NextWall Street Desk",
+  title: "70 Research Decks — NextWallStreet Desk",
   description:
     "70 quantitative institutional research decks across Wall Street & Day Trading, Crypto Liquidity, and Meme Coin Risk.",
 };
@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 export default function ResearchPage() {
   return (
     <div>
-      <section className="grain border-b border-line/60">
-        <div className="mx-auto max-w-7xl px-5 py-14">
+      <section className="grain">
+        <div className="mx-auto max-w-7xl px-5 py-10 sm:py-12">
           <div className="flex items-center gap-2">
             <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">The Research Desks</span>
             <WhopBadge size="xs" />
           </div>
-          <h1 className="mt-3 font-display text-4xl text-bone sm:text-5xl">
+          <h1 className="mt-3 font-display text-3xl text-bone sm:text-5xl">
             70 Institutional Research Decks
           </h1>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
@@ -27,7 +27,7 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-12">
+      <section className="mx-auto max-w-7xl px-5 py-8 sm:py-10">
         <ResearchExplorer articles={ARTICLES} />
       </section>
     </div>

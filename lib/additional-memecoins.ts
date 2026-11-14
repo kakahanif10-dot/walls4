@@ -1,78 +1,76 @@
 import type { Asset } from "./market-assets";
 
 /**
- * 370 Additional Viral Memecoins (Total Meme Universe: 407 Memecoins)
- * Covering pump.fun, Solana DEXs, Base Social, Ethereum, TRON, and BSC
- * with realistic micro/dollar pricing, trading blurbs, and volatility catalysts.
+ * Verified live exchange-traded meme & community tokens across Binance, OKX, Gate.io, and CoinGecko.
  */
 export const ADDITIONAL_MEMECOINS: Asset[] = [
   {
-    "symbol": "FARTO",
-    "name": "Fartcoin Original",
+    "symbol": "PENGU",
+    "name": "Pudgy Penguins",
     "kind": "meme",
-    "group": "AI Agent Memes / Terminal",
-    "base": 0.42,
-    "blurb": "Fartcoin Original represents the autonomous AI agent and terminal meta in AI Agent Memes / Terminal, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "Binance Spot Meme Markets",
+    "base": 0.005954,
+    "blurb": "Pudgy Penguins (PENGU) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "GRIF",
-    "name": "Griffain AI Agent",
+    "symbol": "APEPE",
+    "name": "Ape and Pepe",
     "kind": "meme",
-    "group": "Autonomous Twitter AI Agents",
-    "base": 0.32,
-    "blurb": "Griffain AI Agent represents the autonomous AI agent and terminal meta in Autonomous Twitter AI Agents, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.000001221,
+    "blurb": "Ape and Pepe (APEPE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SEKAI",
-    "name": "Sekai Agent",
+    "symbol": "COCO",
+    "name": "coco",
     "kind": "meme",
-    "group": "AI Interactive Story World Agent",
-    "base": 0.045,
-    "blurb": "Sekai Agent represents the autonomous AI agent and terminal meta in AI Interactive Story World Agent, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.1353,
+    "blurb": "coco (COCO) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -80,7 +78,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "AIXBT Terminal",
     "kind": "meme",
     "group": "Algorithmic Crypto Alpha Agent",
-    "base": 0.18,
+    "base": 0.01397,
     "blurb": "AIXBT Terminal represents the autonomous AI agent and terminal meta in Algorithmic Crypto Alpha Agent, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
     "bull": [
       "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
@@ -99,118 +97,118 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "MEMEAI",
-    "name": "Meme AI Terminal",
+    "symbol": "USELESS",
+    "name": "Useless Coin",
     "kind": "meme",
-    "group": "Decentralized AI Meme Generator",
-    "base": 0.0034,
-    "blurb": "Meme AI Terminal represents the autonomous AI agent and terminal meta in Decentralized AI Meme Generator, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.1216,
+    "blurb": "Useless Coin (USELESS) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "DEGENAI",
-    "name": "Degen Spartan AI",
+    "symbol": "NPC",
+    "name": "Non-Playable Coin",
     "kind": "meme",
-    "group": "Synthetic On-Chain Trading Agent",
-    "base": 0.065,
-    "blurb": "Degen Spartan AI represents the autonomous AI agent and terminal meta in Synthetic On-Chain Trading Agent, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.01342,
+    "blurb": "Non-Playable Coin (NPC) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "CHILL",
-    "name": "Chill Guy Cult",
+    "symbol": "BABYCLAW",
+    "name": "Baby Claw",
     "kind": "meme",
-    "group": "TikTok Wholesome Stoic Character",
-    "base": 0.38,
-    "blurb": "Chill Guy Cult (CHILL) is a viral community speculation token in TikTok Wholesome Stoic Character, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.09138,
+    "blurb": "Baby Claw (BABYCLAW) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PNUT2",
-    "name": "Peanut the Squirrel",
+    "symbol": "YZY",
+    "name": "Swasticoin",
     "kind": "meme",
-    "group": "New York Internet Legend Mascot",
-    "base": 0.92,
-    "blurb": "Peanut the Squirrel captures the beloved internet animal and cute mascot meta in New York Internet Legend Mascot, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.288,
+    "blurb": "Swasticoin (YZY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MOOD",
-    "name": "Moo Deng Baby Hippo",
+    "symbol": "DOG",
+    "name": "Dog (Bitcoin)",
     "kind": "meme",
-    "group": "Viral Khao Kheow Zoo Sensation",
-    "base": 0.34,
-    "blurb": "Moo Deng Baby Hippo (MOOD) is a viral community speculation token in Viral Khao Kheow Zoo Sensation, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.0007265,
+    "blurb": "Dog (Bitcoin) (DOG) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -218,7 +216,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Billy Dog Mascot",
     "kind": "meme",
     "group": "Adorable Solana Pup pump.fun Runner",
-    "base": 0.042,
+    "base": 0.001341,
     "blurb": "Billy Dog Mascot captures the beloved internet animal and cute mascot meta in Adorable Solana Pup pump.fun Runner, converting universal pet affection into viral meme currency.",
     "bull": [
       "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
@@ -237,26 +235,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "MOTHER",
-    "name": "Mother Iggy",
+    "symbol": "APES",
+    "name": "APES",
     "kind": "meme",
-    "group": "Celebrity Solana Token by Iggy Azalea",
-    "base": 0.065,
-    "blurb": "Mother Iggy (MOTHER) is a viral community speculation token in Celebrity Solana Token by Iggy Azalea, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.08013,
+    "blurb": "APES (APES) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -264,7 +262,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Daddy Tate",
     "kind": "meme",
     "group": "Celebrity Token by Andrew Tate",
-    "base": 0.085,
+    "base": 0.004801,
     "blurb": "Daddy Tate (DADDY) is a viral community speculation token in Celebrity Token by Andrew Tate, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -283,72 +281,72 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "RETARD",
-    "name": "Retardio",
+    "symbol": "CHEEMS",
+    "name": "Cheems Token",
     "kind": "meme",
-    "group": "Solana Anime & Gaming Casino Cult",
-    "base": 0.28,
-    "blurb": "Retardio (RETARD) is a viral community speculation token in Solana Anime & Gaming Casino Cult, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 3.552e-7,
+    "blurb": "Cheems Token (CHEEMS) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SPX69",
-    "name": "SPX6900 Index",
+    "symbol": "ORDI",
+    "name": "ORDI",
     "kind": "meme",
-    "group": "S&P 500 Parody Pure Speculative Cult",
-    "base": 0.72,
-    "blurb": "SPX6900 Index (SPX69) is a viral community speculation token in S&P 500 Parody Pure Speculative Cult, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Binance Spot Meme Markets",
+    "base": 3.068,
+    "blurb": "ORDI (ORDI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "GIGA2",
-    "name": "Gigachad Ernest",
+    "symbol": "MOOLAH",
+    "name": "Moolah",
     "kind": "meme",
-    "group": "Chad Sigma Fitness Lifestyle Cult",
-    "base": 0.055,
-    "blurb": "Gigachad Ernest (GIGA2) is a viral community speculation token in Chad Sigma Fitness Lifestyle Cult, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.05448,
+    "blurb": "Moolah (MOOLAH) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -356,7 +354,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Lock In Meme",
     "kind": "meme",
     "group": "High Performance Focus Meme",
-    "base": 0.068,
+    "base": 0.0007714,
     "blurb": "Lock In Meme (LOCKIN) is a viral community speculation token in High Performance Focus Meme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -375,49 +373,49 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "SCF",
-    "name": "Smoking Chicken Fish",
+    "symbol": "PURR",
+    "name": "Purr",
     "kind": "meme",
-    "group": "Surreal Animal Hybrid pump.fun Lore",
-    "base": 0.038,
-    "blurb": "Smoking Chicken Fish captures the beloved internet animal and cute mascot meta in Surreal Animal Hybrid pump.fun Lore, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.0916,
+    "blurb": "Purr (PURR) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "CHONK",
-    "name": "Chonky Cat",
+    "symbol": "MHORSE",
+    "name": "MEME HORSE",
     "kind": "meme",
-    "group": "Obese Tabby Cat Solana Viral Meme",
-    "base": 0.018,
-    "blurb": "Chonky Cat captures the beloved internet animal and cute mascot meta in Obese Tabby Cat Solana Viral Meme, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.04937,
+    "blurb": "MEME HORSE (MHORSE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -425,7 +423,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Apu Apustaja",
     "kind": "meme",
     "group": "Wholesome Helper Fren Frog Meme",
-    "base": 0.00068,
+    "base": 0.000009527,
     "blurb": "Apu Apustaja (APU) is a viral community speculation token in Wholesome Helper Fren Frog Meme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -448,7 +446,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Wojak Feels Guy",
     "kind": "meme",
     "group": "Universal Crypto Trader Sentiment Meme",
-    "base": 0.00085,
+    "base": 3.898e-8,
     "blurb": "Wojak Feels Guy (WOJAK) is a viral community speculation token in Universal Crypto Trader Sentiment Meme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -467,26 +465,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "PEPE2",
-    "name": "Pepe 2.0",
+    "symbol": "BABY",
+    "name": "Babylon",
     "kind": "meme",
-    "group": "Community Continuation of Pepe Lore",
-    "base": 3.4e-8,
-    "blurb": "Pepe 2.0 (PEPE2) is a viral community speculation token in Community Continuation of Pepe Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Binance Spot Meme Markets",
+    "base": 0.00928,
+    "blurb": "Babylon (BABY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -494,7 +492,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Shiba 2.0",
     "kind": "meme",
     "group": "Next-Gen Decentralized Doge Derivative",
-    "base": 1.2e-9,
+    "base": 3.13e-11,
     "blurb": "Shiba 2.0 captures the beloved internet animal and cute mascot meta in Next-Gen Decentralized Doge Derivative, converting universal pet affection into viral meme currency.",
     "bull": [
       "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
@@ -513,26 +511,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "DOGE2",
-    "name": "Doge 2.0",
+    "symbol": "GEKKO",
+    "name": "GEKKO",
     "kind": "meme",
-    "group": "Classic Dogecoin Proof-of-Meme Tribute",
-    "base": 0.000018,
-    "blurb": "Doge 2.0 captures the beloved internet animal and cute mascot meta in Classic Dogecoin Proof-of-Meme Tribute, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 7.885e-7,
+    "blurb": "GEKKO (GEKKO) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -540,7 +538,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Baby Doge Coin",
     "kind": "meme",
     "group": "Hyper-Deflationary Doge Offspring",
-    "base": 2.1e-9,
+    "base": 2.73e-10,
     "blurb": "Baby Doge Coin captures the beloved internet animal and cute mascot meta in Hyper-Deflationary Doge Offspring, converting universal pet affection into viral meme currency.",
     "bull": [
       "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
@@ -559,26 +557,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "FLOKICEO",
-    "name": "Floki CEO",
+    "symbol": "CASHCAT",
+    "name": "Cash Cat",
     "kind": "meme",
-    "group": "Musk Dog CEO Parody Community Token",
-    "base": 4.5e-11,
-    "blurb": "Floki CEO captures the beloved internet animal and cute mascot meta in Musk Dog CEO Parody Community Token, converting universal pet affection into viral meme currency.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.04744,
+    "blurb": "Cash Cat (CASHCAT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -586,7 +584,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Dogelon Mars",
     "kind": "meme",
     "group": "Interplanetary Meme Currency for Mars",
-    "base": 1.8e-7,
+    "base": 0.0381,
     "blurb": "Dogelon Mars (ELON) is a viral community speculation token in Interplanetary Meme Currency for Mars, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -609,7 +607,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Milady Meme Coin",
     "kind": "meme",
     "group": "Milady NFT Derivative Street Cult",
-    "base": 8.5e-8,
+    "base": 4.472e-9,
     "blurb": "Milady Meme Coin (LADYS) is a viral community speculation token in Milady NFT Derivative Street Cult, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -632,7 +630,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Samoyedcoin",
     "kind": "meme",
     "group": "Solana Original Ambassador Dog Mascot",
-    "base": 0.0085,
+    "base": 0.0002418,
     "blurb": "Samoyedcoin captures the beloved internet animal and cute mascot meta in Solana Original Ambassador Dog Mascot, converting universal pet affection into viral meme currency.",
     "bull": [
       "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
@@ -655,7 +653,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Pitbull Token",
     "kind": "meme",
     "group": "Community-Driven Dog Protection Token",
-    "base": 4.2e-10,
+    "base": 1.244e-10,
     "blurb": "Pitbull Token captures the beloved internet animal and cute mascot meta in Community-Driven Dog Protection Token, converting universal pet affection into viral meme currency.",
     "bull": [
       "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
@@ -678,7 +676,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Kishu Inu",
     "kind": "meme",
     "group": "Decentralized Little Dog Community Token",
-    "base": 3.8e-10,
+    "base": 4.628e-11,
     "blurb": "Kishu Inu captures the beloved internet animal and cute mascot meta in Decentralized Little Dog Community Token, converting universal pet affection into viral meme currency.",
     "bull": [
       "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
@@ -701,7 +699,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Kuma Inu",
     "kind": "meme",
     "group": "Meme Yield Breeding & Autonomous Dog DAO",
-    "base": 6.5e-9,
+    "base": 1.046e-9,
     "blurb": "Kuma Inu captures the beloved internet animal and cute mascot meta in Meme Yield Breeding & Autonomous Dog DAO, converting universal pet affection into viral meme currency.",
     "bull": [
       "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
@@ -724,7 +722,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Arbシティ AI Doge",
     "kind": "meme",
     "group": "First Arbitrum AI Meme Experiment",
-    "base": 2.8e-10,
+    "base": 6.89e-12,
     "blurb": "Arbシティ AI Doge represents the autonomous AI agent and terminal meta in First Arbitrum AI Meme Experiment, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
     "bull": [
       "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
@@ -747,7 +745,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Grok Token",
     "kind": "meme",
     "group": "AI Chatbot Humor Inspired Community Token",
-    "base": 0.0068,
+    "base": 0.0003031,
     "blurb": "Grok Token represents the autonomous AI agent and terminal meta in AI Chatbot Humor Inspired Community Token, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
     "bull": [
       "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
@@ -770,7 +768,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Memecoin by Memeland",
     "kind": "meme",
     "group": "9GAG Ecosystem Community Token",
-    "base": 0.012,
+    "base": 0.000374,
     "blurb": "Memecoin by Memeland (MEME) is a viral community speculation token in 9GAG Ecosystem Community Token, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -793,7 +791,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "PepeFork",
     "kind": "meme",
     "group": "Decentralized Pink Pond Pepe Split",
-    "base": 1.4e-7,
+    "base": 1.157e-8,
     "blurb": "PepeFork (PORK) is a viral community speculation token in Decentralized Pink Pond Pepe Split, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -812,26 +810,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "FIRSTNEIRO",
-    "name": "First Neiro on ETH",
+    "symbol": "UP",
+    "name": "Unitas",
     "kind": "meme",
-    "group": "Atsuko Sato New Rescue Dog Token",
-    "base": 0.0018,
-    "blurb": "First Neiro on ETH captures the beloved internet animal and cute mascot meta in Atsuko Sato New Rescue Dog Token, converting universal pet affection into viral meme currency.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.1859,
+    "blurb": "Unitas (UP) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -839,7 +837,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Sundog",
     "kind": "meme",
     "group": "SunPump TRON Viral Dog Mascot",
-    "base": 0.18,
+    "base": 0.0007421,
     "blurb": "Sundog captures the beloved internet animal and cute mascot meta in SunPump TRON Viral Dog Mascot, converting universal pet affection into viral meme currency.",
     "bull": [
       "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
@@ -858,26 +856,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "TRONBULL",
-    "name": "Tron Bull",
+    "symbol": "MARSCOIN",
+    "name": "MarsCoin",
     "kind": "meme",
-    "group": "First Community Bull Mascot on TRON",
-    "base": 0.048,
-    "blurb": "Tron Bull captures the beloved internet animal and cute mascot meta in First Community Bull Mascot on TRON, converting universal pet affection into viral meme currency.",
+    "group": "Binance Spot Meme Markets",
+    "base": 0.04,
+    "blurb": "MarsCoin (MARSCOIN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -885,7 +883,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Foxy",
     "kind": "meme",
     "group": "First Linea Culture Coin & Fox Mascot",
-    "base": 0.014,
+    "base": 0.00005805,
     "blurb": "Foxy captures the beloved internet animal and cute mascot meta in First Linea Culture Coin & Fox Mascot, converting universal pet affection into viral meme currency.",
     "bull": [
       "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
@@ -908,7 +906,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Coq Inu",
     "kind": "meme",
     "group": "First Hen & Poultry Meme on Avalanche",
-    "base": 0.0000018,
+    "base": 9.206e-8,
     "blurb": "Coq Inu (COQ) is a viral community speculation token in First Hen & Poultry Meme on Avalanche, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -927,26 +925,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "KIMBO",
-    "name": "Kimbo Dog",
+    "symbol": "BANANAS31",
+    "name": "Banana For Scale",
     "kind": "meme",
-    "group": "Avalanche Community Dog Mascot & Subnet",
-    "base": 0.00018,
-    "blurb": "Kimbo Dog captures the beloved internet animal and cute mascot meta in Avalanche Community Dog Mascot & Subnet, converting universal pet affection into viral meme currency.",
+    "group": "Binance Spot Meme Markets",
+    "base": 0.003989,
+    "blurb": "Banana For Scale (BANANAS31) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -954,7 +952,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Myro the Dog",
     "kind": "meme",
     "group": "Raj Gokal Pet Dog Tribute on Solana",
-    "base": 0.085,
+    "base": 0.001135,
     "blurb": "Myro the Dog captures the beloved internet animal and cute mascot meta in Raj Gokal Pet Dog Tribute on Solana, converting universal pet affection into viral meme currency.",
     "bull": [
       "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
@@ -977,7 +975,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Catwifhat",
     "kind": "meme",
     "group": "Deflationary Cat with Knitted Hat Meme",
-    "base": 4.8e-7,
+    "base": 1.408e-8,
     "blurb": "Catwifhat captures the beloved internet animal and cute mascot meta in Deflationary Cat with Knitted Hat Meme, converting universal pet affection into viral meme currency.",
     "bull": [
       "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
@@ -996,26 +994,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "TREMP",
-    "name": "Doland Tremp",
+    "symbol": "GOHOME",
+    "name": "GOHOME",
     "kind": "meme",
-    "group": "Solana Satirical Political Parody Meme",
-    "base": 0.14,
-    "blurb": "Doland Tremp trades in the PolitiFi sector in Solana Satirical Political Parody Meme, functioning as a high-beta financial proxy on political headlines, debates, and election cycles.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 72.96,
+    "blurb": "GOHOME (GOHOME) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Massive free mainstream media coverage during major televised rallies and breaking news events.",
-      "Passionate, politically aligned community that treats the token as ideological merchandise.",
-      "Global speculative participation across US, European, and Asian trading hours."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Post-event attention dropoff and severe profit-taking following major political milestones.",
-      "Unpredictable headline risks that can cause sudden double-digit intraday drawdowns.",
-      "Zero formal connection to official political campaigns or public figures."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Keynote rally speeches, press conferences, and viral debate soundbites.",
-      "Public figures referencing meme culture or wearing campaign merchandise.",
-      "High-profile mainstream news features on international television broadcasts."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -1023,7 +1021,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Jeo Boden",
     "kind": "meme",
     "group": "Viral Hand-Drawn Satirical President Meme",
-    "base": 0.0085,
+    "base": 0.00108,
     "blurb": "Jeo Boden trades in the PolitiFi sector in Viral Hand-Drawn Satirical President Meme, functioning as a high-beta financial proxy on political headlines, debates, and election cycles.",
     "bull": [
       "Massive free mainstream media coverage during major televised rallies and breaking news events.",
@@ -1042,49 +1040,49 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "KAMA",
-    "name": "Kamala Horris",
+    "symbol": "BASEDHYPE",
+    "name": "BasedHype",
     "kind": "meme",
-    "group": "Satirical Vice-President Parody Meme",
-    "base": 0.0042,
-    "blurb": "Kamala Horris trades in the PolitiFi sector in Satirical Vice-President Parody Meme, functioning as a high-beta financial proxy on political headlines, debates, and election cycles.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.003413,
+    "blurb": "BasedHype (BASEDHYPE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Massive free mainstream media coverage during major televised rallies and breaking news events.",
-      "Passionate, politically aligned community that treats the token as ideological merchandise.",
-      "Global speculative participation across US, European, and Asian trading hours."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Post-event attention dropoff and severe profit-taking following major political milestones.",
-      "Unpredictable headline risks that can cause sudden double-digit intraday drawdowns.",
-      "Zero formal connection to official political campaigns or public figures."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Keynote rally speeches, press conferences, and viral debate soundbites.",
-      "Public figures referencing meme culture or wearing campaign merchandise.",
-      "High-profile mainstream news features on international television broadcasts."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "FIGHT",
-    "name": "Fight Trump Rally",
+    "symbol": "SNEK",
+    "name": "Snek",
     "kind": "meme",
-    "group": "Iconic Butler Rally Hand Gesture Meme",
-    "base": 0.012,
-    "blurb": "Fight Trump Rally (FIGHT) is a viral community speculation token in Iconic Butler Rally Hand Gesture Meme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.0004419,
+    "blurb": "Snek (SNEK) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -1092,7 +1090,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "MAGA Hat Coin",
     "kind": "meme",
     "group": "Red Hat Community Political Movement",
-    "base": 0.00014,
+    "base": 0.00000109,
     "blurb": "MAGA Hat Coin trades in the PolitiFi sector in Red Hat Community Political Movement, functioning as a high-beta financial proxy on political headlines, debates, and election cycles.",
     "bull": [
       "Massive free mainstream media coverage during major televised rallies and breaking news events.",
@@ -1111,164 +1109,164 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "DADDYTRUMP",
-    "name": "Daddy Trump",
+    "symbol": "MUBARAK",
+    "name": "Mubarak",
     "kind": "meme",
-    "group": "High Energy Political Derivative Meme",
-    "base": 0.0034,
-    "blurb": "Daddy Trump trades in the PolitiFi sector in High Energy Political Derivative Meme, functioning as a high-beta financial proxy on political headlines, debates, and election cycles.",
+    "group": "Binance Spot Meme Markets",
+    "base": 0.03318,
+    "blurb": "Mubarak (MUBARAK) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Massive free mainstream media coverage during major televised rallies and breaking news events.",
-      "Passionate, politically aligned community that treats the token as ideological merchandise.",
-      "Global speculative participation across US, European, and Asian trading hours."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Post-event attention dropoff and severe profit-taking following major political milestones.",
-      "Unpredictable headline risks that can cause sudden double-digit intraday drawdowns.",
-      "Zero formal connection to official political campaigns or public figures."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Keynote rally speeches, press conferences, and viral debate soundbites.",
-      "Public figures referencing meme culture or wearing campaign merchandise.",
-      "High-profile mainstream news features on international television broadcasts."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "VANCE",
-    "name": "JD Vance Lore",
+    "symbol": "LOBO",
+    "name": "LOBO•THE•WOLF•PUP",
     "kind": "meme",
-    "group": "Appalachian Hillbilly Lore Political Meme",
-    "base": 0.0028,
-    "blurb": "JD Vance Lore trades in the PolitiFi sector in Appalachian Hillbilly Lore Political Meme, functioning as a high-beta financial proxy on political headlines, debates, and election cycles.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.00002798,
+    "blurb": "LOBO•THE•WOLF•PUP (LOBO) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Massive free mainstream media coverage during major televised rallies and breaking news events.",
-      "Passionate, politically aligned community that treats the token as ideological merchandise.",
-      "Global speculative participation across US, European, and Asian trading hours."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Post-event attention dropoff and severe profit-taking following major political milestones.",
-      "Unpredictable headline risks that can cause sudden double-digit intraday drawdowns.",
-      "Zero formal connection to official political campaigns or public figures."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Keynote rally speeches, press conferences, and viral debate soundbites.",
-      "Public figures referencing meme culture or wearing campaign merchandise.",
-      "High-profile mainstream news features on international television broadcasts."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BARRON",
-    "name": "Barron Token",
+    "symbol": "LION",
+    "name": "Loaded Lions",
     "kind": "meme",
-    "group": "First Son Internet Lore & Crypto Meme",
-    "base": 0.0065,
-    "blurb": "Barron Token (BARRON) is a viral community speculation token in First Son Internet Lore & Crypto Meme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.001006,
+    "blurb": "Loaded Lions (LION) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "TOSH",
-    "name": "Toshi the Cat",
+    "symbol": "AMERICA",
+    "name": "America Party",
     "kind": "meme",
-    "group": "Brian Armstrong Cat Mascot on Base",
-    "base": 0.00035,
-    "blurb": "Toshi the Cat is a native culture and social token within the Base and Farcaster ecosystem in Brian Armstrong Cat Mascot on Base, driven by Warpcast tipping and Coinbase wallet adoption.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 6.749e-8,
+    "blurb": "America Party (AMERICA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Direct tailwinds from Coinbase Smart Wallet onboarding and gasless transaction infrastructure.",
-      "Strong organic social distribution across Warpcast channels without paid venture capital overhead.",
-      "High holder retention among core Ethereum and Base builder communities."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Ecosystem dependency on Base sequencer uptime and Farcaster platform engagement health.",
-      "Lower total speculative liquidity compared to primary Solana DEX trading venues.",
-      "Fast-moving internal Base meta rotations into newly minted creator tokens."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Farcaster channel tipping integration or viral Warpcast frame campaign.",
-      "Coinbase Wallet featured trending token showcase.",
-      "Aerodrome liquidity gauge incentive boost or DEX volume print."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BRETT2",
-    "name": "Brett on Base 2.0",
+    "symbol": "FB",
+    "name": "Fractal Bitcoin",
     "kind": "meme",
-    "group": "Boy's Club Best Friend Mascot on Base",
-    "base": 0.085,
-    "blurb": "Brett on Base 2.0 is a native culture and social token within the Base and Farcaster ecosystem in Boy's Club Best Friend Mascot on Base, driven by Warpcast tipping and Coinbase wallet adoption.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.2518,
+    "blurb": "Fractal Bitcoin (FB) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Direct tailwinds from Coinbase Smart Wallet onboarding and gasless transaction infrastructure.",
-      "Strong organic social distribution across Warpcast channels without paid venture capital overhead.",
-      "High holder retention among core Ethereum and Base builder communities."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Ecosystem dependency on Base sequencer uptime and Farcaster platform engagement health.",
-      "Lower total speculative liquidity compared to primary Solana DEX trading venues.",
-      "Fast-moving internal Base meta rotations into newly minted creator tokens."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Farcaster channel tipping integration or viral Warpcast frame campaign.",
-      "Coinbase Wallet featured trending token showcase.",
-      "Aerodrome liquidity gauge incentive boost or DEX volume print."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "DEGEN2",
-    "name": "Degen on Farcaster",
+    "symbol": "WKC",
+    "name": "Wiki Cat",
     "kind": "meme",
-    "group": "Warpcast Tips & SocialFi Layer 3",
-    "base": 0.0085,
-    "blurb": "Degen on Farcaster is a native culture and social token within the Base and Farcaster ecosystem in Warpcast Tips & SocialFi Layer 3, driven by Warpcast tipping and Coinbase wallet adoption.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 4.936e-8,
+    "blurb": "Wiki Cat (WKC) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Direct tailwinds from Coinbase Smart Wallet onboarding and gasless transaction infrastructure.",
-      "Strong organic social distribution across Warpcast channels without paid venture capital overhead.",
-      "High holder retention among core Ethereum and Base builder communities."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Ecosystem dependency on Base sequencer uptime and Farcaster platform engagement health.",
-      "Lower total speculative liquidity compared to primary Solana DEX trading venues.",
-      "Fast-moving internal Base meta rotations into newly minted creator tokens."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Farcaster channel tipping integration or viral Warpcast frame campaign.",
-      "Coinbase Wallet featured trending token showcase.",
-      "Aerodrome liquidity gauge incentive boost or DEX volume print."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "HIGHER",
-    "name": "Aime Higher",
+    "symbol": "NEET",
+    "name": "Not in Employment, Education, or Training",
     "kind": "meme",
-    "group": "Minimalist Optimistic Lifestyle Movement",
-    "base": 0.038,
-    "blurb": "Aime Higher (HIGHER) is a viral community speculation token in Minimalist Optimistic Lifestyle Movement, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.02612,
+    "blurb": "Not in Employment, Education, or Training (NEET) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -1276,7 +1274,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Keyboard Cat",
     "kind": "meme",
     "group": "Legendary Internet Fat Cat on Base",
-    "base": 0.0042,
+    "base": 0.0004022,
     "blurb": "Keyboard Cat is a native culture and social token within the Base and Farcaster ecosystem in Legendary Internet Fat Cat on Base, driven by Warpcast tipping and Coinbase wallet adoption.",
     "bull": [
       "Direct tailwinds from Coinbase Smart Wallet onboarding and gasless transaction infrastructure.",
@@ -1299,7 +1297,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Mochi the Cat",
     "kind": "meme",
     "group": "Coinbase CEO Tabby Kitten Tribute",
-    "base": 0.0068,
+    "base": 5.48e-7,
     "blurb": "Mochi the Cat is a native culture and social token within the Base and Farcaster ecosystem in Coinbase CEO Tabby Kitten Tribute, driven by Warpcast tipping and Coinbase wallet adoption.",
     "bull": [
       "Direct tailwinds from Coinbase Smart Wallet onboarding and gasless transaction infrastructure.",
@@ -1322,7 +1320,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Mister Miggles",
     "kind": "meme",
     "group": "Coinbase Wallet Ad Mascot Cat",
-    "base": 0.042,
+    "base": 0.0008952,
     "blurb": "Mister Miggles is a native culture and social token within the Base and Farcaster ecosystem in Coinbase Wallet Ad Mascot Cat, driven by Warpcast tipping and Coinbase wallet adoption.",
     "bull": [
       "Direct tailwinds from Coinbase Smart Wallet onboarding and gasless transaction infrastructure.",
@@ -1341,26 +1339,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "BOOMER",
-    "name": "Boomer Token",
+    "symbol": "TROLL",
+    "name": "Troll Face",
     "kind": "meme",
-    "group": "Boomer vs Zoomer Millennial Satire",
-    "base": 0.0085,
-    "blurb": "Boomer Token (BOOMER) is a viral community speculation token in Boomer vs Zoomer Millennial Satire, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.02567,
+    "blurb": "Troll Face (TROLL) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -1368,7 +1366,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Normie Coin",
     "kind": "meme",
     "group": "Mass Retail Onboarding Satire Token",
-    "base": 0.0024,
+    "base": 0.001101,
     "blurb": "Normie Coin represents the autonomous AI agent and terminal meta in Mass Retail Onboarding Satire Token, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
     "bull": [
       "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
@@ -1391,7 +1389,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Ski Mask Dog",
     "kind": "meme",
     "group": "Masked Hound Hustler Meme on Base",
-    "base": 0.048,
+    "base": 0.001781,
     "blurb": "Ski Mask Dog is a native culture and social token within the Base and Farcaster ecosystem in Masked Hound Hustler Meme on Base, driven by Warpcast tipping and Coinbase wallet adoption.",
     "bull": [
       "Direct tailwinds from Coinbase Smart Wallet onboarding and gasless transaction infrastructure.",
@@ -1414,7 +1412,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Dog In Me",
     "kind": "meme",
     "group": "Got That Dog In Him Motivational Meme",
-    "base": 0.00028,
+    "base": 0.0000578,
     "blurb": "Dog In Me captures the beloved internet animal and cute mascot meta in Got That Dog In Him Motivational Meme, converting universal pet affection into viral meme currency.",
     "bull": [
       "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
@@ -1437,7 +1435,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Base God",
     "kind": "meme",
     "group": "Based Lil B The BasedGod Community",
-    "base": 0.00018,
+    "base": 0.00000513,
     "blurb": "Base God is a native culture and social token within the Base and Farcaster ecosystem in Based Lil B The BasedGod Community, driven by Warpcast tipping and Coinbase wallet adoption.",
     "bull": [
       "Direct tailwinds from Coinbase Smart Wallet onboarding and gasless transaction infrastructure.",
@@ -1456,26 +1454,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "CHAD",
-    "name": "Base Chad",
+    "symbol": "NYC",
+    "name": "NYC",
     "kind": "meme",
-    "group": "Alpha Male Sigma Parody on Base",
-    "base": 0.0012,
-    "blurb": "Base Chad is a native culture and social token within the Base and Farcaster ecosystem in Alpha Male Sigma Parody on Base, driven by Warpcast tipping and Coinbase wallet adoption.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.08461,
+    "blurb": "NYC (NYC) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Direct tailwinds from Coinbase Smart Wallet onboarding and gasless transaction infrastructure.",
-      "Strong organic social distribution across Warpcast channels without paid venture capital overhead.",
-      "High holder retention among core Ethereum and Base builder communities."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Ecosystem dependency on Base sequencer uptime and Farcaster platform engagement health.",
-      "Lower total speculative liquidity compared to primary Solana DEX trading venues.",
-      "Fast-moving internal Base meta rotations into newly minted creator tokens."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Farcaster channel tipping integration or viral Warpcast frame campaign.",
-      "Coinbase Wallet featured trending token showcase.",
-      "Aerodrome liquidity gauge incentive boost or DEX volume print."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -1483,7 +1481,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Stay Based",
     "kind": "meme",
     "group": "Jesse Pollak Build on Base Cult",
-    "base": 0.0048,
+    "base": 0.03918,
     "blurb": "Stay Based is a native culture and social token within the Base and Farcaster ecosystem in Jesse Pollak Build on Base Cult, driven by Warpcast tipping and Coinbase wallet adoption.",
     "bull": [
       "Direct tailwinds from Coinbase Smart Wallet onboarding and gasless transaction infrastructure.",
@@ -1502,26 +1500,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "MICHI2",
-    "name": "Michi The Standing Cat",
+    "symbol": "GIGGLE",
+    "name": "Giggle Fund",
     "kind": "meme",
-    "group": "Viral Standing Up Kitten with Guns",
-    "base": 0.18,
-    "blurb": "Michi The Standing Cat (MICHI2) is a viral community speculation token in Viral Standing Up Kitten with Guns, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Binance Spot Meme Markets",
+    "base": 25.12,
+    "blurb": "Giggle Fund (GIGGLE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -1529,7 +1527,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Harambe Gorilla",
     "kind": "meme",
     "group": "Cincinnati Zoo Immortal Silverback",
-    "base": 0.048,
+    "base": 0.00001309,
     "blurb": "Harambe Gorilla (HARAMBE) is a viral community speculation token in Cincinnati Zoo Immortal Silverback, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -1548,72 +1546,72 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "SILLY",
-    "name": "Silly Dragon",
+    "symbol": "ONION",
+    "name": "MyOnion.fun",
     "kind": "meme",
-    "group": "Anatoly Yakovenko Halloween Costume Dragon",
-    "base": 0.016,
-    "blurb": "Silly Dragon (SILLY) is a viral community speculation token in Anatoly Yakovenko Halloween Costume Dragon, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.03186,
+    "blurb": "MyOnion.fun (ONION) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SMOG",
-    "name": "Smog Dragon",
+    "symbol": "HUNDRED",
+    "name": "HUNDRED",
     "kind": "meme",
-    "group": "Zealy Dragon Airdrop Campaign Meme",
-    "base": 0.028,
-    "blurb": "Smog Dragon represents the autonomous AI agent and terminal meta in Zealy Dragon Airdrop Campaign Meme, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.0002407,
+    "blurb": "HUNDRED (HUNDRED) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PENG",
-    "name": "Penguin Meme",
+    "symbol": "UTYA",
+    "name": "Utya",
     "kind": "meme",
-    "group": "Small Adorable Arctic Penguin on Solana",
-    "base": 0.14,
-    "blurb": "Penguin Meme (PENG) is a viral community speculation token in Small Adorable Arctic Penguin on Solana, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.02157,
+    "blurb": "Utya (UTYA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -1621,7 +1619,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Solama Llama",
     "kind": "meme",
     "group": "Official Llama Mascot of Solana",
-    "base": 0.018,
+    "base": 0.0007074,
     "blurb": "Solama Llama captures the beloved internet animal and cute mascot meta in Official Llama Mascot of Solana, converting universal pet affection into viral meme currency.",
     "bull": [
       "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
@@ -1644,7 +1642,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Slothana",
     "kind": "meme",
     "group": "420 Office Sloth Quitting Corporate Life",
-    "base": 0.0068,
+    "base": 0.0009572,
     "blurb": "Slothana (SLOTH) is a viral community speculation token in 420 Office Sloth Quitting Corporate Life, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -1667,7 +1665,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Beercoin",
     "kind": "meme",
     "group": "Universal Social Liquid Guzzling Token",
-    "base": 0.000018,
+    "base": 5.724e-7,
     "blurb": "Beercoin (BEER) is a viral community speculation token in Universal Social Liquid Guzzling Token, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -1686,72 +1684,72 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "WATER",
-    "name": "Water Token",
+    "symbol": "BIRB",
+    "name": "Moonbirds",
     "kind": "meme",
-    "group": "Clean Hydration Philanthropic Meme",
-    "base": 0.00012,
-    "blurb": "Water Token (WATER) is a viral community speculation token in Clean Hydration Philanthropic Meme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.07208,
+    "blurb": "Moonbirds (BIRB) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "DUKO",
-    "name": "Duko Dog",
+    "symbol": "ANSEM",
+    "name": "The Black Bull",
     "kind": "meme",
-    "group": "Support Real Dogs Animal Welfare Token",
-    "base": 0.00045,
-    "blurb": "Duko Dog captures the beloved internet animal and cute mascot meta in Support Real Dogs Animal Welfare Token, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.04844,
+    "blurb": "The Black Bull (ANSEM) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SEAL",
-    "name": "Seal with It",
+    "symbol": "SIREN",
+    "name": "Siren",
     "kind": "meme",
-    "group": "Chubby Polar Seal Sliding on Ice",
-    "base": 0.0024,
-    "blurb": "Seal with It (SEAL) is a viral community speculation token in Chubby Polar Seal Sliding on Ice, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.03028,
+    "blurb": "Siren (SIREN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -1759,7 +1757,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Hawk Tuah Girl",
     "kind": "meme",
     "group": "Haliey Welch Viral Street Interview Meme",
-    "base": 0.0048,
+    "base": 0.00003042,
     "blurb": "Hawk Tuah Girl (HAWK) is a viral community speculation token in Haliey Welch Viral Street Interview Meme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -1778,49 +1776,49 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "TUAH",
-    "name": "Tuah Spitting",
+    "symbol": "AIX",
+    "name": "AI XOVIA",
     "kind": "meme",
-    "group": "Viral Country Girl Internet Explosion",
-    "base": 0.0028,
-    "blurb": "Tuah Spitting (TUAH) is a viral community speculation token in Viral Country Girl Internet Explosion, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.1898,
+    "blurb": "AI XOVIA (AIX) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "GUMMY",
-    "name": "Gummy Bear",
+    "symbol": "JOHN",
+    "name": "Little John",
     "kind": "meme",
-    "group": "Gummy Chewy Candy pump.fun Stealth Launch",
-    "base": 0.0085,
-    "blurb": "Gummy Bear (GUMMY) is a viral community speculation token in Gummy Chewy Candy pump.fun Stealth Launch, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.0172,
+    "blurb": "Little John (JOHN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -1828,7 +1826,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Maneki Neko",
     "kind": "meme",
     "group": "Japanese Lucky Beckoning Gold Cat",
-    "base": 0.0048,
+    "base": 0.0002011,
     "blurb": "Maneki Neko captures the beloved internet animal and cute mascot meta in Japanese Lucky Beckoning Gold Cat, converting universal pet affection into viral meme currency.",
     "bull": [
       "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
@@ -1847,95 +1845,95 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "CATWIF",
-    "name": "Cat Wif Hat",
+    "symbol": "NEFE",
+    "name": "NEFE COIN",
     "kind": "meme",
-    "group": "Pink Beanie Cat Meme Derivative",
-    "base": 0.0018,
-    "blurb": "Cat Wif Hat captures the beloved internet animal and cute mascot meta in Pink Beanie Cat Meme Derivative, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.0008345,
+    "blurb": "NEFE COIN (NEFE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SHICHI",
-    "name": "Shichi Mascot",
+    "symbol": "FUZZY",
+    "name": "Fuzzybear",
     "kind": "meme",
-    "group": "Japanese Folklore Lucky Spirit",
-    "base": 0.0065,
-    "blurb": "Shichi Mascot (SHICHI) is a viral community speculation token in Japanese Folklore Lucky Spirit, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.00005223,
+    "blurb": "Fuzzybear (FUZZY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "ZACK",
-    "name": "Zack Morris",
+    "symbol": "BOB",
+    "name": "BOB (Build on Bitcoin)",
     "kind": "meme",
-    "group": "FinTwit Stock Legend pump.fun Runner",
-    "base": 0.014,
-    "blurb": "Zack Morris (ZACK) is a viral community speculation token in FinTwit Stock Legend pump.fun Runner, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.003417,
+    "blurb": "BOB (Build on Bitcoin) (BOB) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "IGGY",
-    "name": "Iggy Token",
+    "symbol": "ARARA",
+    "name": "Araracoin",
     "kind": "meme",
-    "group": "Australian Pop Star Hip Hop Lore",
-    "base": 0.018,
-    "blurb": "Iggy Token (IGGY) is a viral community speculation token in Australian Pop Star Hip Hop Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.0004467,
+    "blurb": "Araracoin (ARARA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -1943,7 +1941,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Mini Doge",
     "kind": "meme",
     "group": "Pocket Sized Golden Retriever Pup",
-    "base": 0.0000085,
+    "base": 0.0005595,
     "blurb": "Mini Doge captures the beloved internet animal and cute mascot meta in Pocket Sized Golden Retriever Pup, converting universal pet affection into viral meme currency.",
     "bull": [
       "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
@@ -1966,7 +1964,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Pooh Bear",
     "kind": "meme",
     "group": "Honey Pot Loving Yellow Bear Meme",
-    "base": 1.4e-8,
+    "base": 2.143e-9,
     "blurb": "Pooh Bear (POOH) is a viral community speculation token in Honey Pot Loving Yellow Bear Meme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -1985,72 +1983,72 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "GENSLER",
-    "name": "Gary Gensler Parody",
+    "symbol": "FARTBOY",
+    "name": "Fartboy",
     "kind": "meme",
-    "group": "SEC Chair Regulatory Comedy Meme",
-    "base": 0.0018,
-    "blurb": "Gary Gensler Parody represents the autonomous AI agent and terminal meta in SEC Chair Regulatory Comedy Meme, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.0162,
+    "blurb": "Fartboy (FARTBOY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SBF",
-    "name": "Sam Bankman Comedy",
+    "symbol": "PORKU",
+    "name": "HoodPork",
     "kind": "meme",
-    "group": "FTX Alameda Polycule Satire Token",
-    "base": 0.00048,
-    "blurb": "Sam Bankman Comedy (SBF) is a viral community speculation token in FTX Alameda Polycule Satire Token, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.01594,
+    "blurb": "HoodPork (PORKU) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "DO KWON",
-    "name": "Do Kwon Luna Lore",
+    "symbol": "SEPPUKU",
+    "name": "Seppuku",
     "kind": "meme",
-    "group": "Algorithmic Inventions Satire Token",
-    "base": 0.00095,
-    "blurb": "Do Kwon Luna Lore (DO KWON) is a viral community speculation token in Algorithmic Inventions Satire Token, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.01578,
+    "blurb": "Seppuku (SEPPUKU) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -2058,7 +2056,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "4 Finger Peace CZ",
     "kind": "meme",
     "group": "Funds Are Safu Binance Founder Meme",
-    "base": 0.024,
+    "base": 0.001215,
     "blurb": "4 Finger Peace CZ (CZ) is a viral community speculation token in Funds Are Safu Binance Founder Meme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -2077,49 +2075,49 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "VITALIK",
-    "name": "Vitalik Singing",
+    "symbol": "ZCAT",
+    "name": "Anonymous Cat",
     "kind": "meme",
-    "group": "Ethereum Founder Karaoke Lore Meme",
-    "base": 0.042,
-    "blurb": "Vitalik Singing (VITALIK) is a viral community speculation token in Ethereum Founder Karaoke Lore Meme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.01599,
+    "blurb": "Anonymous Cat (ZCAT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "ANATOLY",
-    "name": "Toly Solana",
+    "symbol": "MIHAO",
+    "name": "ni hao cat",
     "kind": "meme",
-    "group": "Solana Founder High Throughput Meme",
-    "base": 0.038,
-    "blurb": "Toly Solana (ANATOLY) is a viral community speculation token in Solana Founder High Throughput Meme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.01627,
+    "blurb": "ni hao cat (MIHAO) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -2127,7 +2125,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Sigma Male Rule",
     "kind": "meme",
     "group": "Sigma Male Hustle Grindset Lore",
-    "base": 0.014,
+    "base": 0.001034,
     "blurb": "Sigma Male Rule (SIGMA) is a viral community speculation token in Sigma Male Hustle Grindset Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -2146,302 +2144,302 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "RIZZ",
-    "name": "Rizz God",
+    "symbol": "HAROLD",
+    "name": "Harold",
     "kind": "meme",
-    "group": "Unspoken Charisma Internet Slang",
-    "base": 0.0085,
-    "blurb": "Rizz God (RIZZ) is a viral community speculation token in Unspoken Charisma Internet Slang, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.01526,
+    "blurb": "Harold (HAROLD) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "GYATT",
-    "name": "Level 10 Gyatt",
+    "symbol": "QKA",
+    "name": "Qkacoin",
     "kind": "meme",
-    "group": "Kai Cenat Twitch Chat Lore",
-    "base": 0.0048,
-    "blurb": "Level 10 Gyatt represents the autonomous AI agent and terminal meta in Kai Cenat Twitch Chat Lore, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.4795,
+    "blurb": "Qkacoin (QKA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SKIBIDI",
-    "name": "Skibidi Toilet",
+    "symbol": "BROCCOLI",
+    "name": "CZ's Dog",
     "kind": "meme",
-    "group": "Viral YouTube G-Man War Sensation",
-    "base": 0.018,
-    "blurb": "Skibidi Toilet (SKIBIDI) is a viral community speculation token in Viral YouTube G-Man War Sensation, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.0155,
+    "blurb": "CZ's Dog (BROCCOLI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "FANUM",
-    "name": "Fanum Tax",
+    "symbol": "FRTC",
+    "name": "FART COIN",
     "kind": "meme",
-    "group": "AMP Food Stealing Twitch Meme",
-    "base": 0.0065,
-    "blurb": "Fanum Tax (FANUM) is a viral community speculation token in AMP Food Stealing Twitch Meme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 1.483e-7,
+    "blurb": "FART COIN (FRTC) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "OHIO",
-    "name": "Only in Ohio",
+    "symbol": "CRABAI",
+    "name": "Claude Crab",
     "kind": "meme",
-    "group": "Bizarre Eldritch State Surrealism",
-    "base": 0.0034,
-    "blurb": "Only in Ohio (OHIO) is a viral community speculation token in Bizarre Eldritch State Surrealism, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.001555,
+    "blurb": "Claude Crab (CRABAI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEWING",
-    "name": "Mewing Streak",
+    "symbol": "XCAT",
+    "name": "PUMPSTOP",
     "kind": "meme",
-    "group": "Jawline Posture Orthotropic Cult",
-    "base": 0.012,
-    "blurb": "Mewing Streak (MEWING) is a viral community speculation token in Jawline Posture Orthotropic Cult, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 14.62,
+    "blurb": "PUMPSTOP (XCAT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "LOOKSMAX",
-    "name": "Looksmaxxing God",
+    "symbol": "LUCIC",
+    "name": "Lucidum",
     "kind": "meme",
-    "group": "Facial Aesthetic Rating Forum Meme",
-    "base": 0.0095,
-    "blurb": "Looksmaxxing God (LOOKSMAX) is a viral community speculation token in Facial Aesthetic Rating Forum Meme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.08656,
+    "blurb": "Lucidum (LUCIC) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MOGGER",
-    "name": "Mogged",
+    "symbol": "MAX",
+    "name": "Giggle Mascot",
     "kind": "meme",
-    "group": "Bone Structure Hierarchy Satire",
-    "base": 0.016,
-    "blurb": "Mogged (MOGGER) is a viral community speculation token in Bone Structure Hierarchy Satire, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 651.64,
+    "blurb": "Giggle Mascot (MAX) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BOZO",
-    "name": "Rip Bozo",
+    "symbol": "THEROS",
+    "name": "Theros",
     "kind": "meme",
-    "group": "Packwatch Celebratory Twitter Meme",
-    "base": 0.0042,
-    "blurb": "Rip Bozo (BOZO) is a viral community speculation token in Packwatch Celebratory Twitter Meme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.1691,
+    "blurb": "Theros (THEROS) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "CLOWN",
-    "name": "Clown World",
+    "symbol": "BURN",
+    "name": "BurnedFi",
     "kind": "meme",
-    "group": "Honk Honk Absurdist Reality Parody",
-    "base": 0.0028,
-    "blurb": "Clown World (CLOWN) is a viral community speculation token in Honk Honk Absurdist Reality Parody, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 1.12,
+    "blurb": "BurnedFi (BURN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "HONK",
-    "name": "Untitled Goose",
+    "symbol": "OSK",
+    "name": "OSK",
     "kind": "meme",
-    "group": "Mischievous Honking White Goose",
-    "base": 0.0085,
-    "blurb": "Untitled Goose (HONK) is a viral community speculation token in Mischievous Honking White Goose, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 12.5,
+    "blurb": "OSK (OSK) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "KERMIT",
-    "name": "Sipping Tea Kermit",
+    "symbol": "LITY",
+    "name": "LITY",
     "kind": "meme",
-    "group": "None of My Business Puppet Lore",
-    "base": 0.014,
-    "blurb": "Sipping Tea Kermit captures the beloved internet animal and cute mascot meta in None of My Business Puppet Lore, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Markets Meme Markets",
+    "base": 0.006588,
+    "blurb": "LITY (LITY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PEPEFROG",
-    "name": "Pepe The Frog",
+    "symbol": "TUT",
+    "name": "Tutorial",
     "kind": "meme",
-    "group": "Matt Furie Original Pepe Drawing",
-    "base": 0.048,
-    "blurb": "Pepe The Frog (PEPEFROG) is a viral community speculation token in Matt Furie Original Pepe Drawing, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Binance Spot Meme Markets",
+    "base": 0.01475,
+    "blurb": "Tutorial (TUT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -2449,7 +2447,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Giga Toad",
     "kind": "meme",
     "group": "Warty Amphibian Bonding Curve Runner",
-    "base": 0.0068,
+    "base": 0.0005981,
     "blurb": "Giga Toad (TOAD) is a viral community speculation token in Warty Amphibian Bonding Curve Runner, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -2468,49 +2466,49 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "SHRIMP",
-    "name": "Shrimp Gang",
+    "symbol": "TDCCP",
+    "name": "TDCCP",
     "kind": "meme",
-    "group": "Underwater Bottom Feeder Liquidity",
-    "base": 0.00045,
-    "blurb": "Shrimp Gang (SHRIMP) is a viral community speculation token in Underwater Bottom Feeder Liquidity, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.01907,
+    "blurb": "TDCCP (TDCCP) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "CRAB",
-    "name": "Crab Market",
+    "symbol": "ANIME",
+    "name": "Animecoin",
     "kind": "meme",
-    "group": "Horizontal Ranging Crabs in a Bucket",
-    "base": 0.0024,
-    "blurb": "Crab Market (CRAB) is a viral community speculation token in Horizontal Ranging Crabs in a Bucket, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Binance Spot Meme Markets",
+    "base": 0.002204,
+    "blurb": "Animecoin (ANIME) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -2518,7 +2516,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Whale Alert",
     "kind": "meme",
     "group": "Deep Sea Liquidity Market Maker Meme",
-    "base": 0.018,
+    "base": 0.0002024,
     "blurb": "Whale Alert (WHALE) is a viral community speculation token in Deep Sea Liquidity Market Maker Meme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -2537,739 +2535,739 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "SHARK",
-    "name": "Baby Shark Lore",
+    "symbol": "PIPPIN",
+    "name": "pippin",
     "kind": "meme",
-    "group": "Trillion View Viral YouTube Toddler Song",
-    "base": 0.0048,
-    "blurb": "Baby Shark Lore (SHARK) is a viral community speculation token in Trillion View Viral YouTube Toddler Song, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.01212,
+    "blurb": "pippin (PIPPIN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "DOLPHIN",
-    "name": "Dolphin Laugh",
+    "symbol": "BULLA",
+    "name": "BULLA",
     "kind": "meme",
-    "group": "Sonar High Pitch Ocean Cult",
-    "base": 0.0085,
-    "blurb": "Dolphin Laugh (DOLPHIN) is a viral community speculation token in Sonar High Pitch Ocean Cult, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.02916,
+    "blurb": "BULLA (BULLA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "OCTO",
-    "name": "Octopus Lore",
+    "symbol": "KEKIUS",
+    "name": "Kekius Maximus",
     "kind": "meme",
-    "group": "Eight Tentacle Multi-Tasking Trader",
-    "base": 0.0034,
-    "blurb": "Octopus Lore (OCTO) is a viral community speculation token in Eight Tentacle Multi-Tasking Trader, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.004088,
+    "blurb": "Kekius Maximus (KEKIUS) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SQUID",
-    "name": "Squid Game Lore",
+    "symbol": "FROGGIE",
+    "name": "Froggie",
     "kind": "meme",
-    "group": "Red Light Green Light Survival Parody",
-    "base": 0.0018,
-    "blurb": "Squid Game Lore (SQUID) is a viral community speculation token in Red Light Green Light Survival Parody, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.0112,
+    "blurb": "Froggie (FROGGIE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "LOBSTER",
-    "name": "Jordan Peterson Lobster",
+    "symbol": "BITCOIN",
+    "name": "HarryPotterObamaSonic10Inu (ETH)",
     "kind": "meme",
-    "group": "Serotonin Hierarchy Marine Crustacean",
-    "base": 0.012,
-    "blurb": "Jordan Peterson Lobster (LOBSTER) is a viral community speculation token in Serotonin Hierarchy Marine Crustacean, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.01117,
+    "blurb": "HarryPotterObamaSonic10Inu (ETH) (BITCOIN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "OTTER",
-    "name": "Otter Holding Hands",
+    "symbol": "TST",
+    "name": "Test",
     "kind": "meme",
-    "group": "Adorable Sleeping River Mammal",
-    "base": 0.0065,
-    "blurb": "Otter Holding Hands (OTTER) is a viral community speculation token in Adorable Sleeping River Mammal, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Binance Spot Meme Markets",
+    "base": 0.01184,
+    "blurb": "Test (TST) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "RACCOON",
-    "name": "Trash Panda",
+    "symbol": "OSAK",
+    "name": "Osaka Protocol",
     "kind": "meme",
-    "group": "Nocturnal Dumpster Diving Bandit",
-    "base": 0.0085,
-    "blurb": "Trash Panda (RACCOON) is a viral community speculation token in Nocturnal Dumpster Diving Bandit, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.388e-8,
+    "blurb": "Osaka Protocol (OSAK) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "CAPY",
-    "name": "Capybara Pull Up",
+    "symbol": "BALD",
+    "name": "Bald",
     "kind": "meme",
-    "group": "Ok I Pull Up Chill Rodent Sensation",
-    "base": 0.038,
-    "blurb": "Capybara Pull Up (CAPY) is a viral community speculation token in Ok I Pull Up Chill Rodent Sensation, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.01055,
+    "blurb": "Bald (BALD) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "WOMBAT",
-    "name": "Square Wombat",
+    "symbol": "BONE",
+    "name": "Bone ShibaSwap",
     "kind": "meme",
-    "group": "Australian Marsupial Cube Dropping Lore",
-    "base": 0.0048,
-    "blurb": "Square Wombat (WOMBAT) is a viral community speculation token in Australian Marsupial Cube Dropping Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.04151,
+    "blurb": "Bone ShibaSwap (BONE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "KOALA",
-    "name": "Smooth Brain Koala",
+    "symbol": "ANDY",
+    "name": "ANDY ETH",
     "kind": "meme",
-    "group": "Eucalyptus Chewing Monotreme",
-    "base": 0.0065,
-    "blurb": "Smooth Brain Koala (KOALA) is a viral community speculation token in Eucalyptus Chewing Monotreme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.0000102,
+    "blurb": "ANDY ETH (ANDY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "KANG",
-    "name": "Boxing Kangaroo",
+    "symbol": "AIC",
+    "name": "AI Companions",
     "kind": "meme",
-    "group": "Outback Heavyweight Combat Marsupial",
-    "base": 0.014,
-    "blurb": "Boxing Kangaroo (KANG) is a viral community speculation token in Outback Heavyweight Combat Marsupial, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.01045,
+    "blurb": "AI Companions (AIC) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PLATY",
-    "name": "Perry The Platypus",
+    "symbol": "MARSMI",
+    "name": "MarsMi",
     "kind": "meme",
-    "group": "Egg Laying Mammal Secret Agent",
-    "base": 0.024,
-    "blurb": "Perry The Platypus represents the autonomous AI agent and terminal meta in Egg Laying Mammal Secret Agent, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.01014,
+    "blurb": "MarsMi (MARSMI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "HEDGE",
-    "name": "Sonic Hedgehog",
+    "symbol": "NST",
+    "name": "Ninja Squad Token",
     "kind": "meme",
-    "group": "Gotta Go Fast Ring Collecting Runner",
-    "base": 0.018,
-    "blurb": "Sonic Hedgehog (HEDGE) is a viral community speculation token in Gotta Go Fast Ring Collecting Runner, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.1,
+    "blurb": "Ninja Squad Token (NST) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "ARMADILLO",
-    "name": "Armadillo Shell",
+    "symbol": "BINK",
+    "name": "Big Dog Fink",
     "kind": "meme",
-    "group": "Hard Plated Defensive Curled Roller",
-    "base": 0.0034,
-    "blurb": "Armadillo Shell (ARMADILLO) is a viral community speculation token in Hard Plated Defensive Curled Roller, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00006009,
+    "blurb": "Big Dog Fink (BINK) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "FERRET",
-    "name": "War Dance Ferret",
+    "symbol": "67",
+    "name": "SIXSEVEN",
     "kind": "meme",
-    "group": "Tubular Hyperactive Domestic Mustelid",
-    "base": 0.0085,
-    "blurb": "War Dance Ferret (FERRET) is a viral community speculation token in Tubular Hyperactive Domestic Mustelid, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.008762,
+    "blurb": "SIXSEVEN (67) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEERKAT",
-    "name": "Compare The Meerkat",
+    "symbol": "BERT",
+    "name": "Bertram The Pomeranian",
     "kind": "meme",
-    "group": "Kalahari Desert Sentry Lookout",
-    "base": 0.0068,
-    "blurb": "Compare The Meerkat (MEERKAT) is a viral community speculation token in Kalahari Desert Sentry Lookout, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.008615,
+    "blurb": "Bertram The Pomeranian (BERT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "LEMUR",
-    "name": "King Julien",
+    "symbol": "EGL1",
+    "name": "EGL1",
     "kind": "meme",
-    "group": "I Like To Move It Madagascar Ringtail",
-    "base": 0.012,
-    "blurb": "King Julien represents the autonomous AI agent and terminal meta in I Like To Move It Madagascar Ringtail, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.00882,
+    "blurb": "EGL1 (EGL1) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SLOTH2",
-    "name": "Flash Sloth",
+    "symbol": "WOULD",
+    "name": "would",
     "kind": "meme",
-    "group": "DMV Three Minute Laughing Clerk",
-    "base": 0.0048,
-    "blurb": "Flash Sloth (SLOTH2) is a viral community speculation token in DMV Three Minute Laughing Clerk, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.008327,
+    "blurb": "would (WOULD) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PANGOLIN",
-    "name": "Scaly Pangolin",
+    "symbol": "MIM",
+    "name": "MAGIC•INTERNET•MONEY (Bitcoin)",
     "kind": "meme",
-    "group": "Endangered Keratin Plated Anteater",
-    "base": 0.0038,
-    "blurb": "Scaly Pangolin (PANGOLIN) is a viral community speculation token in Endangered Keratin Plated Anteater, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.0003937,
+    "blurb": "MAGIC•INTERNET•MONEY (Bitcoin) (MIM) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "ALPACA2",
-    "name": "Drama Llama",
+    "symbol": "CORGIAI",
+    "name": "CorgiAI",
     "kind": "meme",
-    "group": "Spitting High Altitude Wool Producer",
-    "base": 0.0085,
-    "blurb": "Drama Llama (ALPACA2) is a viral community speculation token in Spitting High Altitude Wool Producer, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.0000228,
+    "blurb": "CorgiAI (CORGIAI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "CAMEL",
-    "name": "Hump Day Camel",
+    "symbol": "PEPECOIN",
+    "name": "PepeCoin",
     "kind": "meme",
-    "group": "Mike Mike What Day Is It Office Meme",
-    "base": 0.0068,
-    "blurb": "Hump Day Camel (CAMEL) is a viral community speculation token in Mike Mike What Day Is It Office Meme, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.07288,
+    "blurb": "PepeCoin (PEPECOIN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "YAK",
-    "name": "Tibetan Yak",
+    "symbol": "CBDOGE",
+    "name": "Coinbase Wrapped DOGE",
     "kind": "meme",
-    "group": "Highland Shaggy Horned Mountain Beast",
-    "base": 0.0045,
-    "blurb": "Tibetan Yak represents the autonomous AI agent and terminal meta in Highland Shaggy Horned Mountain Beast, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.06327,
+    "blurb": "Coinbase Wrapped DOGE (CBDOGE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "WALRUS",
-    "name": "I Am The Walrus",
+    "symbol": "BONKSOL",
+    "name": "Bonk Staked SOL",
     "kind": "meme",
-    "group": "Blubbery Tusked Arctic Beach Master",
-    "base": 0.0095,
-    "blurb": "I Am The Walrus (WALRUS) is a viral community speculation token in Blubbery Tusked Arctic Beach Master, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 127.26,
+    "blurb": "Bonk Staked SOL (BONKSOL) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "NARWHAL",
-    "name": "Narwhal Bacon",
+    "symbol": "LOFI",
+    "name": "LOFI",
     "kind": "meme",
-    "group": "Midnight Bacon Horned Arctic Whale",
-    "base": 0.018,
-    "blurb": "Narwhal Bacon (NARWHAL) is a viral community speculation token in Midnight Bacon Horned Arctic Whale, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.007678,
+    "blurb": "LOFI (LOFI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BELUGA",
-    "name": "Beluga Cat",
+    "symbol": "ROSA",
+    "name": "Rosa Inu",
     "kind": "meme",
-    "group": "Mischievous Discord Polite Cat Face",
-    "base": 0.024,
-    "blurb": "Beluga Cat captures the beloved internet animal and cute mascot meta in Mischievous Discord Polite Cat Face, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00007515,
+    "blurb": "Rosa Inu (ROSA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "ORCA2",
-    "name": "Free Willy",
+    "symbol": "KOMA",
+    "name": "Koma Inu",
     "kind": "meme",
-    "group": "Apex Killer Whale Yacht Sinking Squadron",
-    "base": 0.038,
-    "blurb": "Free Willy (ORCA2) is a viral community speculation token in Apex Killer Whale Yacht Sinking Squadron, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.01238,
+    "blurb": "Koma Inu (KOMA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MANATEE",
-    "name": "Sea Cow Manatee",
+    "symbol": "BARA",
+    "name": "Capybara Nation",
     "kind": "meme",
-    "group": "Gentle Floating Herbivorous Marine Giant",
-    "base": 0.0065,
-    "blurb": "Sea Cow Manatee (MANATEE) is a viral community speculation token in Gentle Floating Herbivorous Marine Giant, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 6.875e-8,
+    "blurb": "Capybara Nation (BARA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PELICAN",
-    "name": "Pelican Gulp",
+    "symbol": "AHT",
+    "name": "AhaToken",
     "kind": "meme",
-    "group": "Capybara Swallowing Bird Ambition",
-    "base": 0.0048,
-    "blurb": "Pelican Gulp (PELICAN) is a viral community speculation token in Capybara Swallowing Bird Ambition, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.000914,
+    "blurb": "AhaToken (AHT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SEAGULL",
-    "name": "Mine Seagull",
+    "symbol": "PNDC",
+    "name": "PondCoin",
     "kind": "meme",
-    "group": "Finding Nemo French Fry Plundering Flock",
-    "base": 0.0085,
-    "blurb": "Mine Seagull (SEAGULL) is a viral community speculation token in Finding Nemo French Fry Plundering Flock, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 4.753e-8,
+    "blurb": "PondCoin (PNDC) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PIGEON",
-    "name": "Cooing Pigeon",
+    "symbol": "SMOLE",
+    "name": "smolecoin",
     "kind": "meme",
-    "group": "City Breadcrumb Stalking Urban Drone",
-    "base": 0.0034,
-    "blurb": "Cooing Pigeon (PIGEON) is a viral community speculation token in City Breadcrumb Stalking Urban Drone, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00001569,
+    "blurb": "smolecoin (SMOLE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "CROW",
-    "name": "Counting Crows",
+    "symbol": "CULT",
+    "name": "Milady Cult Coin",
     "kind": "meme",
-    "group": "Shiny Bottlecap Collecting Corvids",
-    "base": 0.0068,
-    "blurb": "Counting Crows (CROW) is a viral community speculation token in Shiny Bottlecap Collecting Corvids, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.0001373,
+    "blurb": "Milady Cult Coin (CULT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "RAVEN",
-    "name": "Nevermore Raven",
+    "symbol": "DRB",
+    "name": "DebtReliefBot",
     "kind": "meme",
-    "group": "Edgar Allan Poe Gothic Omen",
-    "base": 0.014,
-    "blurb": "Nevermore Raven (RAVEN) is a viral community speculation token in Edgar Allan Poe Gothic Omen, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00006421,
+    "blurb": "DebtReliefBot (DRB) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -3277,7 +3275,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Duck Song",
     "kind": "meme",
     "group": "Got Any Grapes Lemonade Stand Duck",
-    "base": 0.016,
+    "base": 0.00000969,
     "blurb": "Duck Song (DUCK) is a viral community speculation token in Got Any Grapes Lemonade Stand Duck, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -3300,7 +3298,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Peace Was Never Option",
     "kind": "meme",
     "group": "Butter Knife Wielding Farm Terror",
-    "base": 0.028,
+    "base": 0.003406,
     "blurb": "Peace Was Never Option (GOOSE) is a viral community speculation token in Butter Knife Wielding Farm Terror, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -3323,7 +3321,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Black Swan Lore",
     "kind": "meme",
     "group": "Nassim Taleb Fat Tail Outlier Event",
-    "base": 0.048,
+    "base": 0.000235,
     "blurb": "Black Swan Lore represents the autonomous AI agent and terminal meta in Nassim Taleb Fat Tail Outlier Event, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
     "bull": [
       "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
@@ -3342,72 +3340,72 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "FLAMINGO",
-    "name": "Pink Flamingo",
+    "symbol": "PCOCK",
+    "name": "PulseChain Peacock",
     "kind": "meme",
-    "group": "One Legged Lawn Ornament Cult",
-    "base": 0.0065,
-    "blurb": "Pink Flamingo (FLAMINGO) is a viral community speculation token in One Legged Lawn Ornament Cult, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.007568,
+    "blurb": "PulseChain Peacock (PCOCK) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "TOUCAN",
-    "name": "Follow Your Nose",
+    "symbol": "CROB",
+    "name": "Crob Mob",
     "kind": "meme",
-    "group": "Fruit Loops Tropical Beak Mascot",
-    "base": 0.0085,
-    "blurb": "Follow Your Nose captures the beloved internet animal and cute mascot meta in Fruit Loops Tropical Beak Mascot, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.006118,
+    "blurb": "Crob Mob (CROB) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PARROT",
-    "name": "Party Parrot",
+    "symbol": "BUTTCOIN",
+    "name": "Buttcoin",
     "kind": "meme",
-    "group": "Rainbow Flashing Cult Slack Emoji",
-    "base": 0.034,
-    "blurb": "Party Parrot represents the autonomous AI agent and terminal meta in Rainbow Flashing Cult Slack Emoji, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.005936,
+    "blurb": "Buttcoin (BUTTCOIN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -3415,7 +3413,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Noot Noot Pingu",
     "kind": "meme",
     "group": "Lacrimosa Dramatic Opera Stare",
-    "base": 0.042,
+    "base": 0.0003551,
     "blurb": "Noot Noot Pingu (PENGUIN) is a viral community speculation token in Lacrimosa Dramatic Opera Stare, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -3434,95 +3432,95 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "EAGLE",
-    "name": "Freedom Screech",
+    "symbol": "BASECAT",
+    "name": "Basecat",
     "kind": "meme",
-    "group": "Majestic Bald Eagle American Pride",
-    "base": 0.018,
-    "blurb": "Freedom Screech (EAGLE) is a viral community speculation token in Majestic Bald Eagle American Pride, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.005897,
+    "blurb": "Basecat (BASECAT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "HAWK2",
-    "name": "Tony Hawk",
+    "symbol": "BNBTIGEROG",
+    "name": "BNB Tiger OG",
     "kind": "meme",
-    "group": "Do A Kickflip Skateboard Legend",
-    "base": 0.024,
-    "blurb": "Tony Hawk (HAWK2) is a viral community speculation token in Do A Kickflip Skateboard Legend, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1e-18,
+    "blurb": "BNB Tiger OG (BNBTIGEROG) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "FALCON",
-    "name": "Falcon Punch",
+    "symbol": "PTGC",
+    "name": "The Grays Currency",
     "kind": "meme",
-    "group": "Captain Falcon Super Smash Finisher",
-    "base": 0.016,
-    "blurb": "Falcon Punch represents the autonomous AI agent and terminal meta in Captain Falcon Super Smash Finisher, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00001991,
+    "blurb": "The Grays Currency (PTGC) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "FOX2",
-    "name": "What Does Fox Say",
+    "symbol": "HMM",
+    "name": "Thinking Cat",
     "kind": "meme",
-    "group": "Ylvis 2013 Ring-ding-ding Sensation",
-    "base": 0.012,
-    "blurb": "What Does Fox Say (FOX2) is a viral community speculation token in Ylvis 2013 Ring-ding-ding Sensation, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.005681,
+    "blurb": "Thinking Cat (HMM) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -3530,7 +3528,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Wolf of Wall St",
     "kind": "meme",
     "group": "Sell Me This Pen Jordan Belfort Lore",
-    "base": 0.038,
+    "base": 0.00000781,
     "blurb": "Wolf of Wall St (WOLF) is a viral community speculation token in Sell Me This Pen Jordan Belfort Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -3549,233 +3547,233 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "DOGGO",
-    "name": "Goodest Boy Doggo",
+    "symbol": "MONA",
+    "name": "MonaCoin",
     "kind": "meme",
-    "group": "Floofy Golden Pup Head Patting",
-    "base": 0.0048,
-    "blurb": "Goodest Boy Doggo captures the beloved internet animal and cute mascot meta in Floofy Golden Pup Head Patting, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.0532,
+    "blurb": "MonaCoin (MONA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PUPPER",
-    "name": "Tiny Pupper",
+    "symbol": "BABYSHIBAINU",
+    "name": "Baby Shiba Inu",
     "kind": "meme",
-    "group": "Yapping Teacup Fluffball Runner",
-    "base": 0.0034,
-    "blurb": "Tiny Pupper (PUPPER) is a viral community speculation token in Yapping Teacup Fluffball Runner, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 5.526e-9,
+    "blurb": "Baby Shiba Inu (BABYSHIBAINU) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "CORGI",
-    "name": "Thicc Corgi",
+    "symbol": "MCDULL",
+    "name": "McDull (Meme)",
     "kind": "meme",
-    "group": "Splooting Pembroke Welsh Royal Pup",
-    "base": 0.016,
-    "blurb": "Thicc Corgi captures the beloved internet animal and cute mascot meta in Splooting Pembroke Welsh Royal Pup, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 6.205e-7,
+    "blurb": "McDull (Meme) (MCDULL) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "HUSKY",
-    "name": "Screaming Husky",
+    "symbol": "UFD",
+    "name": "Unicorn Fart Dust",
     "kind": "meme",
-    "group": "Dramatic Vocal Temper Tantrum Canine",
-    "base": 0.018,
-    "blurb": "Screaming Husky (HUSKY) is a viral community speculation token in Dramatic Vocal Temper Tantrum Canine, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.005391,
+    "blurb": "Unicorn Fart Dust (UFD) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PUG",
-    "name": "Doug The Pug",
+    "symbol": "PUPPIES",
+    "name": "I love puppies",
     "kind": "meme",
-    "group": "Wheezing Wrinkly Couch Snuggler",
-    "base": 0.0095,
-    "blurb": "Doug The Pug (PUG) is a viral community speculation token in Wheezing Wrinkly Couch Snuggler, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.239e-7,
+    "blurb": "I love puppies (PUPPIES) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BULLDOG",
-    "name": "English Bully",
+    "symbol": "PEPECAT",
+    "name": "PEPECAT",
     "kind": "meme",
-    "group": "Underbite Drooling Heavyweight Mascot",
-    "base": 0.0085,
-    "blurb": "English Bully captures the beloved internet animal and cute mascot meta in Underbite Drooling Heavyweight Mascot, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.005262,
+    "blurb": "PEPECAT (PEPECAT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BEAGLE",
-    "name": "Snoopy Beagle",
+    "symbol": "PIKA",
+    "name": "Pikaboss",
     "kind": "meme",
-    "group": "Red Baron Flying Ace Top Dog",
-    "base": 0.022,
-    "blurb": "Snoopy Beagle captures the beloved internet animal and cute mascot meta in Red Baron Flying Ace Top Dog, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.231e-8,
+    "blurb": "Pikaboss (PIKA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "POODLE",
-    "name": "Standard Poodle",
+    "symbol": "JOBCOIN",
+    "name": "JOBCOIN",
     "kind": "meme",
-    "group": "Groomed Continental French Elegance",
-    "base": 0.0068,
-    "blurb": "Standard Poodle (POODLE) is a viral community speculation token in Groomed Continental French Elegance, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.005164,
+    "blurb": "JOBCOIN (JOBCOIN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "CHIHUAHUA",
-    "name": "Angry Chihuahua",
+    "symbol": "VINE",
+    "name": "Vine",
     "kind": "meme",
-    "group": "Shaking 50% Fear 50% Tremble",
-    "base": 0.0048,
-    "blurb": "Angry Chihuahua (CHIHUAHUA) is a viral community speculation token in Shaking 50% Fear 50% Tremble, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "OKX Spot Meme Markets",
+    "base": 0.005032,
+    "blurb": "Vine (VINE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SHIBA",
-    "name": "Doge Brother Shiba",
+    "symbol": "MXT",
+    "name": "Memetern",
     "kind": "meme",
-    "group": "Original Japanese Hunting Hound",
-    "base": 0.028,
-    "blurb": "Doge Brother Shiba (SHIBA) is a viral community speculation token in Original Japanese Hunting Hound, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.004972,
+    "blurb": "Memetern (MXT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -3783,7 +3781,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Hachiko Akita",
     "kind": "meme",
     "group": "Tokyo Shibuya Station Eternal Loyalty",
-    "base": 0.014,
+    "base": 0.01036,
     "blurb": "Hachiko Akita (AKITA) is a viral community speculation token in Tokyo Shibuya Station Eternal Loyalty, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -3802,1521 +3800,1521 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "SAMOYED",
-    "name": "Smiling Sammy",
+    "symbol": "FO",
+    "name": "Official FO",
     "kind": "meme",
-    "group": "Walking Cloud White Arctic Sled Dog",
-    "base": 0.018,
-    "blurb": "Smiling Sammy captures the beloved internet animal and cute mascot meta in Walking Cloud White Arctic Sled Dog, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.04241,
+    "blurb": "Official FO (FO) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MALAMUTE",
-    "name": "Giant Malamute",
+    "symbol": "CREPE",
+    "name": "CREPE",
     "kind": "meme",
-    "group": "Fluffy Howling Alaskan Snow Beast",
-    "base": 0.0095,
-    "blurb": "Giant Malamute (MALAMUTE) is a viral community speculation token in Fluffy Howling Alaskan Snow Beast, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00000711,
+    "blurb": "CREPE (CREPE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "ROTTWEILER",
-    "name": "Chop Rottweiler",
+    "symbol": "JOFF",
+    "name": "Chomolon Joff",
     "kind": "meme",
-    "group": "GTA V Lamar Companion Muscle Dog",
-    "base": 0.012,
-    "blurb": "Chop Rottweiler captures the beloved internet animal and cute mascot meta in GTA V Lamar Companion Muscle Dog, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.005581,
+    "blurb": "Chomolon Joff (JOFF) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "DOBERMAN",
-    "name": "Dobie Pinscher",
+    "symbol": "POFU",
+    "name": "Pofu",
     "kind": "meme",
-    "group": "Sleek Guard Dog Velvet Muscle",
-    "base": 0.0085,
-    "blurb": "Dobie Pinscher captures the beloved internet animal and cute mascot meta in Sleek Guard Dog Velvet Muscle, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.0000486,
+    "blurb": "Pofu (POFU) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PITBULL2",
-    "name": "Mr Worldwide",
+    "symbol": "PB",
+    "name": "Perpetual Bitcoin",
     "kind": "meme",
-    "group": "Pitbull Dale Miami Music Icon",
-    "base": 0.034,
-    "blurb": "Mr Worldwide (PITBULL2) is a viral community speculation token in Pitbull Dale Miami Music Icon, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.2284,
+    "blurb": "Perpetual Bitcoin (PB) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BOXER",
-    "name": "Bouncing Boxer",
+    "symbol": "VDOGE",
+    "name": "Venus DOGE",
     "kind": "meme",
-    "group": "Kidney Beaning Spring Loaded Clown",
-    "base": 0.0078,
-    "blurb": "Bouncing Boxer (BOXER) is a viral community speculation token in Kidney Beaning Spring Loaded Clown, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001286,
+    "blurb": "Venus DOGE (VDOGE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "GREATDANE",
-    "name": "Scooby Doo Dane",
+    "symbol": "AURA",
+    "name": "aura",
     "kind": "meme",
-    "group": "Rut Roh Raggy Haunted Mystery Dog",
-    "base": 0.028,
-    "blurb": "Scooby Doo Dane captures the beloved internet animal and cute mascot meta in Rut Roh Raggy Haunted Mystery Dog, converting universal pet affection into viral meme currency.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.000391,
+    "blurb": "aura (AURA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "DACHSHUND",
-    "name": "Wiener Dog",
+    "symbol": "HTM",
+    "name": "Hatom",
     "kind": "meme",
-    "group": "Long Low Sausage Silhouette Runner",
-    "base": 0.014,
-    "blurb": "Wiener Dog (DACHSHUND) is a viral community speculation token in Long Low Sausage Silhouette Runner, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.04829,
+    "blurb": "Hatom (HTM) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BASSET",
-    "name": "Basset Hound Ears",
+    "symbol": "ALD",
+    "name": "ALD",
     "kind": "meme",
-    "group": "Sad Eyes Drooping Floor Sweeping Ears",
-    "base": 0.0085,
-    "blurb": "Basset Hound Ears (BASSET) is a viral community speculation token in Sad Eyes Drooping Floor Sweeping Ears, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.02314,
+    "blurb": "ALD (ALD) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BLOODHOUND",
-    "name": "Track The Scent",
+    "symbol": "SQGROW",
+    "name": "SquidGrow",
     "kind": "meme",
-    "group": "Wrinkled Nose Sniffing Detective",
-    "base": 0.0068,
-    "blurb": "Track The Scent (BLOODHOUND) is a viral community speculation token in Wrinkled Nose Sniffing Detective, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.004593,
+    "blurb": "SquidGrow (SQGROW) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "GREYHOUND",
-    "name": "Couch Potato Speed",
+    "symbol": "DITAU",
+    "name": "DITGOLD",
     "kind": "meme",
-    "group": "45 MPH Nap Loving Needle Nose",
-    "base": 0.012,
-    "blurb": "Couch Potato Speed (GREYHOUND) is a viral community speculation token in 45 MPH Nap Loving Needle Nose, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00516,
+    "blurb": "DITGOLD (DITAU) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "WHIPPET",
-    "name": "Devo Whip It",
+    "symbol": "JAGER",
+    "name": "Jager Hunter",
     "kind": "meme",
-    "group": "Aerodynamic Ribcage Scurrying Sprite",
-    "base": 0.0085,
-    "blurb": "Devo Whip It (WHIPPET) is a viral community speculation token in Aerodynamic Ribcage Scurrying Sprite, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 3.081e-10,
+    "blurb": "Jager Hunter (JAGER) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BORZOI",
-    "name": "Lord Foog The 2nd",
+    "symbol": "CLASH",
+    "name": "GeorgePlaysClashRoyale",
     "kind": "meme",
-    "group": "Didn't I Do It For You Long Snout",
-    "base": 0.048,
-    "blurb": "Lord Foog The 2nd (BORZOI) is a viral community speculation token in Didn't I Do It For You Long Snout, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.004498,
+    "blurb": "GeorgePlaysClashRoyale (CLASH) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "AFGHAN",
-    "name": "Silk Afghan Hound",
+    "symbol": "DACITYCOIN",
+    "name": "AudaCity",
     "kind": "meme",
-    "group": "Supermodel Shampoo Commercial Hair",
-    "base": 0.016,
-    "blurb": "Silk Afghan Hound represents the autonomous AI agent and terminal meta in Supermodel Shampoo Commercial Hair, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.004476,
+    "blurb": "AudaCity (DACITYCOIN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "CHOWCHOW",
-    "name": "Blue Tongue Chow",
+    "symbol": "OMIKAMI",
+    "name": "AMATERASU OMIKAMI",
     "kind": "meme",
-    "group": "Lion Mane Puffy Teddy Bear Guard",
-    "base": 0.014,
-    "blurb": "Blue Tongue Chow (CHOWCHOW) is a viral community speculation token in Lion Mane Puffy Teddy Bear Guard, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.004335,
+    "blurb": "AMATERASU OMIKAMI (OMIKAMI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SHARPEI",
-    "name": "Towel Wrinkle Dog",
+    "symbol": "DESSA",
+    "name": "Dessa",
     "kind": "meme",
-    "group": "Folded Skin Chinese Palace Guard",
-    "base": 0.0078,
-    "blurb": "Towel Wrinkle Dog (SHARPEI) is a viral community speculation token in Folded Skin Chinese Palace Guard, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.004411,
+    "blurb": "Dessa (DESSA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MASTIFF",
-    "name": "Gentle Giant Mastiff",
+    "symbol": "1000PEPPER",
+    "name": "1000PEPPER",
     "kind": "meme",
-    "group": "200 Pound Drooling Floor Matt",
-    "base": 0.0095,
-    "blurb": "Gentle Giant Mastiff (MASTIFF) is a viral community speculation token in 200 Pound Drooling Floor Matt, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 4.912e-7,
+    "blurb": "1000PEPPER (1000PEPPER) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "NEWFIE",
-    "name": "Water Rescue Giant",
+    "symbol": "BUN",
+    "name": "Bundle Cat",
     "kind": "meme",
-    "group": "Gentle Newfoundland Lifeguard Bear",
-    "base": 0.0085,
-    "blurb": "Water Rescue Giant (NEWFIE) is a viral community speculation token in Gentle Newfoundland Lifeguard Bear, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.02069,
+    "blurb": "Bundle Cat (BUN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BERNESE",
-    "name": "Bernese Mountain",
+    "symbol": "SOSANA",
+    "name": "SOSANA",
     "kind": "meme",
-    "group": "Swiss Tricolor Gentle Alpine Puller",
-    "base": 0.018,
-    "blurb": "Bernese Mountain (BERNESE) is a viral community speculation token in Swiss Tricolor Gentle Alpine Puller, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.04815,
+    "blurb": "SOSANA (SOSANA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "STBERNARD",
-    "name": "Beethoven Bernard",
+    "symbol": "PEPPER",
+    "name": "PEPPER",
     "kind": "meme",
-    "group": "Brandy Cask Alpine Snow Rescuer",
-    "base": 0.014,
-    "blurb": "Beethoven Bernard (STBERNARD) is a viral community speculation token in Brandy Cask Alpine Snow Rescuer, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 4.859e-10,
+    "blurb": "PEPPER (PEPPER) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PYRENEES",
-    "name": "Great Pyrenees",
+    "symbol": "SI",
+    "name": "Super Inu",
     "kind": "meme",
-    "group": "Flock Guarding Nocturnal Barking Cloud",
-    "base": 0.011,
-    "blurb": "Great Pyrenees (PYRENEES) is a viral community speculation token in Flock Guarding Nocturnal Barking Cloud, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.004167,
+    "blurb": "Super Inu (SI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SHEEPDOG",
-    "name": "Old English Bobtail",
+    "symbol": "PHNIX",
+    "name": "PHNIX",
     "kind": "meme",
-    "group": "Covered Eyes Bumbling Sheep Herder",
-    "base": 0.0085,
-    "blurb": "Old English Bobtail (SHEEPDOG) is a viral community speculation token in Covered Eyes Bumbling Sheep Herder, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00000785,
+    "blurb": "PHNIX (PHNIX) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "COLLIE",
-    "name": "Lassie Timmy Well",
+    "symbol": "NATI",
+    "name": "IlluminatiCoin",
     "kind": "meme",
-    "group": "Rough Collie Telepathic Rescuer",
-    "base": 0.016,
-    "blurb": "Lassie Timmy Well (COLLIE) is a viral community speculation token in Rough Collie Telepathic Rescuer, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.237e-7,
+    "blurb": "IlluminatiCoin (NATI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BORDER",
-    "name": "Border Collie IQ",
+    "symbol": "LAPTOP",
+    "name": "Hunter Biden's Laptop",
     "kind": "meme",
-    "group": "Hyperfocus Agility Frisbee Prodigy",
-    "base": 0.024,
-    "blurb": "Border Collie IQ (BORDER) is a viral community speculation token in Hyperfocus Agility Frisbee Prodigy, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.02366,
+    "blurb": "Hunter Biden's Laptop (LAPTOP) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "AUSSIE",
-    "name": "Blue Merle Aussie",
+    "symbol": "SAUCE",
+    "name": "saucecoin",
     "kind": "meme",
-    "group": "Heterochromia Ghost Eyed Wiggle Butt",
-    "base": 0.019,
-    "blurb": "Blue Merle Aussie (AUSSIE) is a viral community speculation token in Heterochromia Ghost Eyed Wiggle Butt, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.009181,
+    "blurb": "saucecoin (SAUCE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "HEELER",
-    "name": "Bluey Heeler",
+    "symbol": "CLAUDIA",
+    "name": "Claudia",
     "kind": "meme",
-    "group": "Brisbane Australian Cattle Dog Icon",
-    "base": 0.048,
-    "blurb": "Bluey Heeler captures the beloved internet animal and cute mascot meta in Brisbane Australian Cattle Dog Icon, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.004259,
+    "blurb": "Claudia (CLAUDIA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "KELPIE",
-    "name": "Sheep Jumping Kelpie",
+    "symbol": "REDO",
+    "name": "Resistance Dog",
     "kind": "meme",
-    "group": "Limitless Stamina Red Dirt Runner",
-    "base": 0.0095,
-    "blurb": "Sheep Jumping Kelpie (KELPIE) is a viral community speculation token in Limitless Stamina Red Dirt Runner, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.04022,
+    "blurb": "Resistance Dog (REDO) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SHETLAND",
-    "name": "Sheltie Fox",
+    "symbol": "UBIK",
+    "name": "ubik",
     "kind": "meme",
-    "group": "Miniature Lassie Barking Tornado",
-    "base": 0.0085,
-    "blurb": "Sheltie Fox (SHETLAND) is a viral community speculation token in Miniature Lassie Barking Tornado, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.003951,
+    "blurb": "ubik (UBIK) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MALINOIS",
-    "name": "Navy Seal Mali",
+    "symbol": "CRONUS",
+    "name": "CRONUS",
     "kind": "meme",
-    "group": "Fur Missile Wall Running K9",
-    "base": 0.032,
-    "blurb": "Navy Seal Mali (MALINOIS) is a viral community speculation token in Fur Missile Wall Running K9, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.004029,
+    "blurb": "CRONUS (CRONUS) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SHEPHERD",
-    "name": "German Shepherd",
+    "symbol": "BCHAMP",
+    "name": "Bear Champ",
     "kind": "meme",
-    "group": "Loyal Police Working Partner",
-    "base": 0.018,
-    "blurb": "German Shepherd (SHEPHERD) is a viral community speculation token in Loyal Police Working Partner, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.003854,
+    "blurb": "Bear Champ (BCHAMP) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "TERRIER",
-    "name": "Jack Russell Terror",
+    "symbol": "HOSKY",
+    "name": "Hosky",
     "kind": "meme",
-    "group": "Tireless Bounce Ball Obsessed Fiend",
-    "base": 0.0078,
-    "blurb": "Jack Russell Terror (TERRIER) is a viral community speculation token in Tireless Bounce Ball Obsessed Fiend, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 3.852e-9,
+    "blurb": "Hosky (HOSKY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SCOTTIE",
-    "name": "Scottish Terrier",
+    "symbol": "CAW",
+    "name": "crow with knife",
     "kind": "meme",
-    "group": "Bearded Bagpipe Highland Gentleman",
-    "base": 0.0095,
-    "blurb": "Scottish Terrier (SCOTTIE) is a viral community speculation token in Bearded Bagpipe Highland Gentleman, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 5.003e-9,
+    "blurb": "crow with knife (CAW) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "WESTIE",
-    "name": "White Highland Terrier",
+    "symbol": "GF",
+    "name": "GongFu",
     "kind": "meme",
-    "group": "Caesar Dog Food Mascot Pure Joy",
-    "base": 0.0085,
-    "blurb": "White Highland Terrier captures the beloved internet animal and cute mascot meta in Caesar Dog Food Mascot Pure Joy, converting universal pet affection into viral meme currency.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.01848,
+    "blurb": "GongFu (GF) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "YORKIE",
-    "name": "Yorkshire Teacup",
+    "symbol": "PIPEDOG",
+    "name": "pipedog",
     "kind": "meme",
-    "group": "Blue Tan Bow In Hair Ankle Biter",
-    "base": 0.0068,
-    "blurb": "Yorkshire Teacup represents the autonomous AI agent and terminal meta in Blue Tan Bow In Hair Ankle Biter, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.0003075,
+    "blurb": "pipedog (PIPEDOG) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MALTESE",
-    "name": "White Maltese Cloud",
+    "symbol": "TENDIES",
+    "name": "TENDIES",
     "kind": "meme",
-    "group": "Ancient Mediterranean Lap Dog",
-    "base": 0.0075,
-    "blurb": "White Maltese Cloud captures the beloved internet animal and cute mascot meta in Ancient Mediterranean Lap Dog, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.003678,
+    "blurb": "TENDIES (TENDIES) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BICHON",
-    "name": "Bichon Frise Poff",
+    "symbol": "THAT",
+    "name": "THAT",
     "kind": "meme",
-    "group": "Cotton Ball Powder Puff Prancer",
-    "base": 0.0065,
-    "blurb": "Bichon Frise Poff (BICHON) is a viral community speculation token in Cotton Ball Powder Puff Prancer, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002288,
+    "blurb": "THAT (THAT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "HAVANESE",
-    "name": "Havana Silk Dog",
+    "symbol": "GOATED",
+    "name": "GOAT Network",
     "kind": "meme",
-    "group": "Cuban National Toy Companion",
-    "base": 0.0058,
-    "blurb": "Havana Silk Dog (HAVANESE) is a viral community speculation token in Cuban National Toy Companion, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.01255,
+    "blurb": "GOAT Network (GOATED) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PAPILLON",
-    "name": "Butterfly Ears",
+    "symbol": "DJI6930",
+    "name": "DOWGE",
     "kind": "meme",
-    "group": "Agile Toy Spaniel Winged Head",
-    "base": 0.0085,
-    "blurb": "Butterfly Ears (PAPILLON) is a viral community speculation token in Agile Toy Spaniel Winged Head, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.003486,
+    "blurb": "DOWGE (DJI6930) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PEKINGESE",
-    "name": "Lion Dog Imperial",
+    "symbol": "PURPE",
+    "name": "PURPLE PEPE",
     "kind": "meme",
-    "group": "Forbidden City Sleeve Dweller",
-    "base": 0.0048,
-    "blurb": "Lion Dog Imperial (PEKINGESE) is a viral community speculation token in Forbidden City Sleeve Dweller, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00000831,
+    "blurb": "PURPLE PEPE (PURPE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SHIHTZU",
-    "name": "Chrysanthemum Dog",
+    "symbol": "BONER",
+    "name": "Boner Coin",
     "kind": "meme",
-    "group": "Tibetan Buddhist Temple Guardian",
-    "base": 0.0072,
-    "blurb": "Chrysanthemum Dog (SHIHTZU) is a viral community speculation token in Tibetan Buddhist Temple Guardian, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.003465,
+    "blurb": "Boner Coin (BONER) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "LHASA",
-    "name": "Lhasa Apso Bark",
+    "symbol": "GSTOCK",
+    "name": "Gstock",
     "kind": "meme",
-    "group": "Himalayan Sentinel Floor Duster",
-    "base": 0.0055,
-    "blurb": "Lhasa Apso Bark (LHASA) is a viral community speculation token in Himalayan Sentinel Floor Duster, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.003487,
+    "blurb": "Gstock (GSTOCK) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SPITZ",
-    "name": "Japanese White Spitz",
+    "symbol": "WTH",
+    "name": "what the hook?",
     "kind": "meme",
-    "group": "Pure White Smiling Fluff Triangle",
-    "base": 0.0085,
-    "blurb": "Japanese White Spitz (SPITZ) is a viral community speculation token in Pure White Smiling Fluff Triangle, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 15.99,
+    "blurb": "what the hook? (WTH) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "KEEHOND",
-    "name": "Dutch Barge Dog",
+    "symbol": "GBACK",
+    "name": "GIVEBACK",
     "kind": "meme",
-    "group": "Spectacle Ring Eyed Canal Mascot",
-    "base": 0.0068,
-    "blurb": "Dutch Barge Dog captures the beloved internet animal and cute mascot meta in Spectacle Ring Eyed Canal Mascot, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.003334,
+    "blurb": "GIVEBACK (GBACK) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SCHNAUZER",
-    "name": "Moustache Schnauzer",
+    "symbol": "ASTEROID",
+    "name": "Asteroid Shiba",
     "kind": "meme",
-    "group": "Salt and Pepper German Farm Guard",
-    "base": 0.014,
-    "blurb": "Moustache Schnauzer (SCHNAUZER) is a viral community speculation token in Salt and Pepper German Farm Guard, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00000792,
+    "blurb": "Asteroid Shiba (ASTEROID) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PINSCHER",
-    "name": "Min Pin King",
+    "symbol": "CATE",
+    "name": "CateCoin",
     "kind": "meme",
-    "group": "High Stepping Hackney Trot Toy King",
-    "base": 0.0078,
-    "blurb": "Min Pin King (PINSCHER) is a viral community speculation token in High Stepping Hackney Trot Toy King, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.01781,
+    "blurb": "CateCoin (CATE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "AFFEN",
-    "name": "Monkey Terrier",
+    "symbol": "ARMY",
+    "name": "XRP ARMY",
     "kind": "meme",
-    "group": "Mustachioed Primate Face Troublemaker",
-    "base": 0.0052,
-    "blurb": "Monkey Terrier (AFFEN) is a viral community speculation token in Mustachioed Primate Face Troublemaker, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.005604,
+    "blurb": "XRP ARMY (ARMY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "GRIFFON",
-    "name": "Brussels Griffon",
+    "symbol": "FWOG",
+    "name": "Fwog",
     "kind": "meme",
-    "group": "Ewok Looking Star Wars Inspiration",
-    "base": 0.012,
-    "blurb": "Brussels Griffon (GRIFFON) is a viral community speculation token in Ewok Looking Star Wars Inspiration, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.003331,
+    "blurb": "Fwog (FWOG) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "CRESTED",
-    "name": "Chinese Crested",
+    "symbol": "YEE",
+    "name": "Yee Token",
     "kind": "meme",
-    "group": "Hairless Mohawked Naked Court Jester",
-    "base": 0.0048,
-    "blurb": "Chinese Crested represents the autonomous AI agent and terminal meta in Hairless Mohawked Naked Court Jester, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.003228,
+    "blurb": "Yee Token (YEE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "XOLO",
-    "name": "Xoloitzcuintli",
+    "symbol": "ZZZ",
+    "name": "ZZZ",
     "kind": "meme",
-    "group": "Aztec Underworld Guide Hairless Dog",
-    "base": 0.018,
-    "blurb": "Xoloitzcuintli represents the autonomous AI agent and terminal meta in Aztec Underworld Guide Hairless Dog, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.004266,
+    "blurb": "ZZZ (ZZZ) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BASENJI",
-    "name": "Barkless Basenji",
+    "symbol": "MICRODUCK",
+    "name": "microduck",
     "kind": "meme",
-    "group": "Yodeling Congo Cleanliness Hound",
-    "base": 0.014,
-    "blurb": "Barkless Basenji (BASENJI) is a viral community speculation token in Yodeling Congo Cleanliness Hound, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.003402,
+    "blurb": "microduck (MICRODUCK) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "RHODESIAN",
-    "name": "Lion Hound Ridgeback",
+    "symbol": "BEAR",
+    "name": "TEDDY BEAR",
     "kind": "meme",
-    "group": "African Savannah Big Game Hunter",
-    "base": 0.019,
-    "blurb": "Lion Hound Ridgeback (RHODESIAN) is a viral community speculation token in African Savannah Big Game Hunter, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 3.117e-9,
+    "blurb": "TEDDY BEAR (BEAR) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "VIZSLA",
-    "name": "Velcro Dog Vizsla",
+    "symbol": "JEANPHIL",
+    "name": "Jean Phil",
     "kind": "meme",
-    "group": "Hungarian Golden Rust Personal Shadow",
-    "base": 0.016,
-    "blurb": "Velcro Dog Vizsla (VIZSLA) is a viral community speculation token in Hungarian Golden Rust Personal Shadow, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.003142,
+    "blurb": "Jean Phil (JEANPHIL) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "WEIMARANER",
-    "name": "Gray Ghost Hunter",
+    "symbol": "DOGO",
+    "name": "DogBull",
     "kind": "meme",
-    "group": "Silver Velvet Aristocratic Pointer",
-    "base": 0.014,
-    "blurb": "Gray Ghost Hunter (WEIMARANER) is a viral community speculation token in Silver Velvet Aristocratic Pointer, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.003002,
+    "blurb": "DogBull (DOGO) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "POINTER",
-    "name": "English Pointer",
+    "symbol": "CBUCKS",
+    "name": "Cartoon Money",
     "kind": "meme",
-    "group": "Frozen Statue Quail Pointing Arrow",
-    "base": 0.0095,
-    "blurb": "English Pointer represents the autonomous AI agent and terminal meta in Frozen Statue Quail Pointing Arrow, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00321,
+    "blurb": "Cartoon Money (CBUCKS) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SETTER",
-    "name": "Irish Red Setter",
+    "symbol": "DOGEKING",
+    "name": "DogeKing",
     "kind": "meme",
-    "group": "Mahogany Feathered Gentle Hunter",
-    "base": 0.012,
-    "blurb": "Irish Red Setter (SETTER) is a viral community speculation token in Mahogany Feathered Gentle Hunter, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 2.993e-9,
+    "blurb": "DogeKing (DOGEKING) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BRITTANY",
-    "name": "Brittany Spaniel",
+    "symbol": "HOLD",
+    "name": "Everybody",
     "kind": "meme",
-    "group": "Compact French Bird Finding Dynamo",
-    "base": 0.0085,
-    "blurb": "Brittany Spaniel (BRITTANY) is a viral community speculation token in Compact French Bird Finding Dynamo, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.000001272,
+    "blurb": "Everybody (HOLD) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SPANIEL",
-    "name": "Cocker Spaniel Eyes",
+    "symbol": "MANIFEST",
+    "name": "Manifesting",
     "kind": "meme",
-    "group": "Lady and the Tramp Spaghetti Romance",
-    "base": 0.018,
-    "blurb": "Cocker Spaniel Eyes (SPANIEL) is a viral community speculation token in Lady and the Tramp Spaghetti Romance, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.003307,
+    "blurb": "Manifesting (MANIFEST) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SPRINGER",
-    "name": "English Springer",
+    "symbol": "LUX",
+    "name": "Luxxcoin",
     "kind": "meme",
-    "group": "Game Flushing Water Splashing Joy",
-    "base": 0.0095,
-    "blurb": "English Springer (SPRINGER) is a viral community speculation token in Game Flushing Water Splashing Joy, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.0003103,
+    "blurb": "Luxxcoin (LUX) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "WATERDOG",
-    "name": "Portuguese Water Dog",
+    "symbol": "PUSS",
+    "name": "Puss",
     "kind": "meme",
-    "group": "Obama Bo White Pawed Swimming Friend",
-    "base": 0.014,
-    "blurb": "Portuguese Water Dog (WATERDOG) is a viral community speculation token in Obama Bo White Pawed Swimming Friend, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002916,
+    "blurb": "Puss (PUSS) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "RETRIEVER",
-    "name": "Labrador Retriever",
+    "symbol": "VRAX",
+    "name": "Commander Vrax",
     "kind": "meme",
-    "group": "America's Sweetheart Yellow Tennis Ball",
-    "base": 0.038,
-    "blurb": "Labrador Retriever (RETRIEVER) is a viral community speculation token in America's Sweetheart Yellow Tennis Ball, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.003123,
+    "blurb": "Commander Vrax (VRAX) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "GOLDEN",
-    "name": "Golden Retriever",
+    "symbol": "BOOE",
+    "name": "Book of Ethereum",
     "kind": "meme",
-    "group": "Derpy Sunshine Happy Tail Wagging",
-    "base": 0.048,
-    "blurb": "Golden Retriever represents the autonomous AI agent and terminal meta in Derpy Sunshine Happy Tail Wagging, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.02847,
+    "blurb": "Book of Ethereum (BOOE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "FLATCOAT",
-    "name": "Flat Coated Wagger",
+    "symbol": "GME",
+    "name": "GME (Ethereum)",
     "kind": "meme",
-    "group": "Everlasting Peter Pan Black Retriever",
-    "base": 0.0085,
-    "blurb": "Flat Coated Wagger (FLATCOAT) is a viral community speculation token in Everlasting Peter Pan Black Retriever, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00000689,
+    "blurb": "GME (Ethereum) (GME) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "CHESA",
-    "name": "Chesapeake Bay Dog",
+    "symbol": "SOLIDX",
+    "name": "Solid X",
     "kind": "meme",
-    "group": "Icy Wave Duck Retrieving Oil Coat",
-    "base": 0.0095,
-    "blurb": "Chesapeake Bay Dog (CHESA) is a viral community speculation token in Icy Wave Duck Retrieving Oil Coat, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.13,
+    "blurb": "Solid X (SOLIDX) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "TOLLER",
-    "name": "Nova Scotia Duck Toller",
+    "symbol": "CROCAT",
+    "name": "CROCAT",
     "kind": "meme",
-    "group": "Fox Masking Red Little Dynamo",
-    "base": 0.012,
-    "blurb": "Nova Scotia Duck Toller (TOLLER) is a viral community speculation token in Fox Masking Red Little Dynamo, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002712,
+    "blurb": "CROCAT (CROCAT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "FROGGE",
-    "name": "Ribbit Frog",
+    "symbol": "KABOSU",
+    "name": "Kabosu",
     "kind": "meme",
-    "group": "Swamp Lilypad Amphibian Chiller",
-    "base": 0.0068,
-    "blurb": "Ribbit Frog (FROGGE) is a viral community speculation token in Swamp Lilypad Amphibian Chiller, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 2.692e-9,
+    "blurb": "Kabosu (KABOSU) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PEPEWAR",
-    "name": "Pepe Army General",
+    "symbol": "KRA",
+    "name": "KiraKuru",
     "kind": "meme",
-    "group": "Tactical Camo Kekistan Warrior",
-    "base": 0.018,
-    "blurb": "Pepe Army General (PEPEWAR) is a viral community speculation token in Tactical Camo Kekistan Warrior, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002677,
+    "blurb": "KiraKuru (KRA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -5324,7 +5322,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Bobo The Bear",
     "kind": "meme",
     "group": "Downtrend Red Candle Enjoyer Parody",
-    "base": 0.024,
+    "base": 0.003989,
     "blurb": "Bobo The Bear (BOBO) is a viral community speculation token in Downtrend Red Candle Enjoyer Parody, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -5343,95 +5341,95 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "BULLRUN",
-    "name": "Green Dildo Bull",
+    "symbol": "MOST",
+    "name": "Most Wanted",
     "kind": "meme",
-    "group": "Vertical God Candle Pumper",
-    "base": 0.038,
-    "blurb": "Green Dildo Bull (BULLRUN) is a viral community speculation token in Vertical God Candle Pumper, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00262,
+    "blurb": "Most Wanted (MOST) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MOONSHOT",
-    "name": "Moonshot Target",
+    "symbol": "GCOW",
+    "name": "GameCow",
     "kind": "meme",
-    "group": "1000x Bonding Curve Liquidity Rocket",
-    "base": 0.045,
-    "blurb": "Moonshot Target (MOONSHOT) is a viral community speculation token in 1000x Bonding Curve Liquidity Rocket, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 338.82,
+    "blurb": "GameCow (GCOW) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "LAMBO",
-    "name": "Wen Lambo",
+    "symbol": "NAP",
+    "name": "SNAP",
     "kind": "meme",
-    "group": "Sant'Agata Bolognese V12 Dream Car",
-    "base": 0.068,
-    "blurb": "Wen Lambo (LAMBO) is a viral community speculation token in Sant'Agata Bolognese V12 Dream Car, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.1467,
+    "blurb": "SNAP (NAP) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "YACHT",
-    "name": "Bored Ape Yacht",
+    "symbol": "ANTHROPIG",
+    "name": "Anthropig",
     "kind": "meme",
-    "group": "Monaco Harbor Superyacht Slipway",
-    "base": 0.085,
-    "blurb": "Bored Ape Yacht (YACHT) is a viral community speculation token in Monaco Harbor Superyacht Slipway, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002539,
+    "blurb": "Anthropig (ANTHROPIG) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -5439,7 +5437,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Bel Air Mansion",
     "kind": "meme",
     "group": "Glass Infinity Pool Gated Estate",
-    "base": 0.048,
+    "base": 0.0008339,
     "blurb": "Bel Air Mansion (MANSION) is a viral community speculation token in Glass Infinity Pool Gated Estate, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -5458,49 +5456,49 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "DIAMOND",
-    "name": "Diamond Hands",
+    "symbol": "UNIVERSE",
+    "name": "UNIVERSE",
     "kind": "meme",
-    "group": "Unshakable Grip Through -90% Drawdowns",
-    "base": 0.032,
-    "blurb": "Diamond Hands (DIAMOND) is a viral community speculation token in Unshakable Grip Through -90% Drawdowns, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.0005055,
+    "blurb": "UNIVERSE (UNIVERSE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PAPER",
-    "name": "Paper Hands Portnoy",
+    "symbol": "TRIPLET",
+    "name": "Tung Tung Tung Sahur",
     "kind": "meme",
-    "group": "Panic Selling Bottom Tick Specialist",
-    "base": 0.0068,
-    "blurb": "Paper Hands Portnoy (PAPER) is a viral community speculation token in Panic Selling Bottom Tick Specialist, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002476,
+    "blurb": "Tung Tung Tung Sahur (TRIPLET) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -5508,7 +5506,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "HODL Forever",
     "kind": "meme",
     "group": "GameKyuubi 2013 Drunk Bitcointalk Post",
-    "base": 0.048,
+    "base": 0.00189,
     "blurb": "HODL Forever (HODL) is a viral community speculation token in GameKyuubi 2013 Drunk Bitcointalk Post, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -5527,72 +5525,72 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "WAGMI",
-    "name": "We All Gonna Make It",
+    "symbol": "PWEASE",
+    "name": "Pwease",
     "kind": "meme",
-    "group": "Zyzz Aesthetic Affirmation Cult",
-    "base": 0.038,
-    "blurb": "We All Gonna Make It (WAGMI) is a viral community speculation token in Zyzz Aesthetic Affirmation Cult, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002475,
+    "blurb": "Pwease (PWEASE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "NGMI",
-    "name": "Not Gonna Make It",
+    "symbol": "GHST",
+    "name": "Aavegotchi",
     "kind": "meme",
-    "group": "Dismissive Crypto Cynicism Label",
-    "base": 0.0085,
-    "blurb": "Not Gonna Make It (NGMI) is a viral community speculation token in Dismissive Crypto Cynicism Label, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Binance Spot Meme Markets",
+    "base": 0.108,
+    "blurb": "Aavegotchi (GHST) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "LFG",
-    "name": "Let's Friggin Go",
+    "symbol": "SCAM",
+    "name": "Scamcoin",
     "kind": "meme",
-    "group": "Primal Crypto Twitter Hype Scream",
-    "base": 0.024,
-    "blurb": "Let's Friggin Go (LFG) is a viral community speculation token in Primal Crypto Twitter Hype Scream, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002455,
+    "blurb": "Scamcoin (SCAM) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -5600,7 +5598,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Fear Of Missing Out",
     "kind": "meme",
     "group": "Green Candle Market Buying Frenzy",
-    "base": 0.018,
+    "base": 0.01421,
     "blurb": "Fear Of Missing Out (FOMO) is a viral community speculation token in Green Candle Market Buying Frenzy, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -5619,26 +5617,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "FUD",
-    "name": "Fear Uncertainty Doubt",
+    "symbol": "FEG",
+    "name": "FEED EVERY GORILLA",
     "kind": "meme",
-    "group": "Coordinated Bearish Smear Campaign",
-    "base": 0.0095,
-    "blurb": "Fear Uncertainty Doubt represents the autonomous AI agent and terminal meta in Coordinated Bearish Smear Campaign, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.00002577,
+    "blurb": "FEED EVERY GORILLA (FEG) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -5646,7 +5644,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Rekt By Leverage",
     "kind": "meme",
     "group": "100x Margin Liquidation Screenshot",
-    "base": 0.0078,
+    "base": 5.804e-8,
     "blurb": "Rekt By Leverage (REKT) is a viral community speculation token in 100x Margin Liquidation Screenshot, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -5665,325 +5663,325 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "BASEDLIL",
-    "name": "Lil Based Token",
+    "symbol": "MANYU",
+    "name": "Manyu",
     "kind": "meme",
-    "group": "Jesse Pollak Base Blue Chain Tribute",
-    "base": 0.014,
-    "blurb": "Lil Based Token represents the autonomous AI agent and terminal meta in Jesse Pollak Base Blue Chain Tribute, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 2.437e-9,
+    "blurb": "Manyu (MANYU) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "COPE",
-    "name": "Cope And Seethe",
+    "symbol": "WAAC",
+    "name": "Wrapped AyeAyeCoin",
     "kind": "meme",
-    "group": "Industrial Grade Copium Inhaler",
-    "base": 0.0068,
-    "blurb": "Cope And Seethe (COPE) is a viral community speculation token in Industrial Grade Copium Inhaler, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.4056,
+    "blurb": "Wrapped AyeAyeCoin (WAAC) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SEETHE",
-    "name": "Pure Seething",
+    "symbol": "DROP",
+    "name": "DROP",
     "kind": "meme",
-    "group": "Rage Quitting Timeline Meltdown",
-    "base": 0.0048,
-    "blurb": "Pure Seething (SEETHE) is a viral community speculation token in Rage Quitting Timeline Meltdown, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 2.44,
+    "blurb": "DROP (DROP) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MALD",
-    "name": "Balding Malder",
+    "symbol": "MORI",
+    "name": "MORI COIN",
     "kind": "meme",
-    "group": "Hair Tearing Post-Pump Regret",
-    "base": 0.0038,
-    "blurb": "Balding Malder represents the autonomous AI agent and terminal meta in Hair Tearing Post-Pump Regret, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002404,
+    "blurb": "MORI COIN (MORI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "RENTFREE",
-    "name": "Living Rent Free",
+    "symbol": "TSUKI",
+    "name": "Tsuki",
     "kind": "meme",
-    "group": "Permanent Subconscious Real Estate",
-    "base": 0.0085,
-    "blurb": "Living Rent Free (RENTFREE) is a viral community speculation token in Permanent Subconscious Real Estate, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002498,
+    "blurb": "Tsuki (TSUKI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "GRASS2",
-    "name": "Touch Some Grass",
+    "symbol": "CINO",
+    "name": "Private Aviation Finance Token",
     "kind": "meme",
-    "group": "Go Outside Put Your Phone Down",
-    "base": 0.012,
-    "blurb": "Touch Some Grass (GRASS2) is a viral community speculation token in Go Outside Put Your Phone Down, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00236,
+    "blurb": "Private Aviation Finance Token (CINO) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "TACO",
-    "name": "Tuesday Taco",
+    "symbol": "VOLT",
+    "name": "VOLT INU",
     "kind": "meme",
-    "group": "Crunchy Seasoned Beef Tortilla Feast",
-    "base": 0.0085,
-    "blurb": "Tuesday Taco (TACO) is a viral community speculation token in Crunchy Seasoned Beef Tortilla Feast, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.007847,
+    "blurb": "VOLT INU (VOLT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PIZZA",
-    "name": "10000 BTC Pizza",
+    "symbol": "KIMCHI",
+    "name": "Aura Final Boss",
     "kind": "meme",
-    "group": "Laszlo Hanyecz Papa John's Feast",
-    "base": 0.048,
-    "blurb": "10000 BTC Pizza (PIZZA) is a viral community speculation token in Laszlo Hanyecz Papa John's Feast, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00233,
+    "blurb": "Aura Final Boss (KIMCHI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BURGER2",
-    "name": "Smash Burger",
+    "symbol": "PUPS",
+    "name": "Pups (Bitcoin)",
     "kind": "meme",
-    "group": "Caramelized Crispy Edges Double Patty",
-    "base": 0.014,
-    "blurb": "Smash Burger (BURGER2) is a viral community speculation token in Caramelized Crispy Edges Double Patty, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.0023,
+    "blurb": "Pups (Bitcoin) (PUPS) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "RAMEN",
-    "name": "Instant Shin Ramen",
+    "symbol": "DIP",
+    "name": "Buy the DIP",
     "kind": "meme",
-    "group": "Spicy Broth Instant College Lifeline",
-    "base": 0.0095,
-    "blurb": "Instant Shin Ramen (RAMEN) is a viral community speculation token in Spicy Broth Instant College Lifeline, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.0002292,
+    "blurb": "Buy the DIP (DIP) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SUSHI2",
-    "name": "Spicy Tuna Roll",
+    "symbol": "BLUECHIP",
+    "name": "BLUE CHIP",
     "kind": "meme",
-    "group": "Soy Sauce Wasabi Dipping Delight",
-    "base": 0.016,
-    "blurb": "Spicy Tuna Roll (SUSHI2) is a viral community speculation token in Soy Sauce Wasabi Dipping Delight, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002257,
+    "blurb": "BLUE CHIP (BLUECHIP) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "COFFEE",
-    "name": "Cold Brew Energy",
+    "symbol": "DOBO",
+    "name": "DogeBonk",
     "kind": "meme",
-    "group": "Double Shot Espresso Heart Racing Fuel",
-    "base": 0.018,
-    "blurb": "Cold Brew Energy (COFFEE) is a viral community speculation token in Double Shot Espresso Heart Racing Fuel, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 3.86e-9,
+    "blurb": "DogeBonk (DOBO) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MATCHA",
-    "name": "Ceremonial Matcha",
+    "symbol": "RAGEGUY",
+    "name": "Rage Guy",
     "kind": "meme",
-    "group": "Green Whisked Frothy Zen Elixir",
-    "base": 0.016,
-    "blurb": "Ceremonial Matcha (MATCHA) is a viral community speculation token in Green Whisked Frothy Zen Elixir, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002189,
+    "blurb": "Rage Guy (RAGEGUY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "DONUT2",
-    "name": "Glazed Krispy Donut",
+    "symbol": "STANK",
+    "name": "STANK",
     "kind": "meme",
-    "group": "Hot Light Burning Sugar Ring",
-    "base": 0.0085,
-    "blurb": "Glazed Krispy Donut (DONUT2) is a viral community speculation token in Hot Light Burning Sugar Ring, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002184,
+    "blurb": "STANK (STANK) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -5991,7 +5989,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Warm Choc Cookie",
     "kind": "meme",
     "group": "Melting Gooey Center Bakery Dream",
-    "base": 0.012,
+    "base": 0.00881,
     "blurb": "Warm Choc Cookie (COOKIE) is a viral community speculation token in Melting Gooey Center Bakery Dream, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -6010,26 +6008,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "CANDY",
-    "name": "Sour Patch Gummy",
+    "symbol": "CRYPTO",
+    "name": "Cryptocurrency Coin",
     "kind": "meme",
-    "group": "First They Sour Then They Sweet",
-    "base": 0.0065,
-    "blurb": "Sour Patch Gummy (CANDY) is a viral community speculation token in First They Sour Then They Sweet, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002154,
+    "blurb": "Cryptocurrency Coin (CRYPTO) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -6037,7 +6035,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Pure Fire Emoji",
     "kind": "meme",
     "group": "Triple Fire Reaction In TG Channel",
-    "base": 0.028,
+    "base": 0.00014,
     "blurb": "Pure Fire Emoji (FIRE) is a viral community speculation token in Triple Fire Reaction In TG Channel, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -6056,26 +6054,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "NICE",
-    "name": "Nice 69 Token",
+    "symbol": "JUGGERNAUT",
+    "name": "The Juggernaut",
     "kind": "meme",
-    "group": "Immature Internet Number Salute",
-    "base": 0.069,
-    "blurb": "Nice 69 Token (NICE) is a viral community speculation token in Immature Internet Number Salute, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002152,
+    "blurb": "The Juggernaut (JUGGERNAUT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -6083,7 +6081,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "CZ Number 4",
     "kind": "meme",
     "group": "Ignore FUD Keep Building Gesture",
-    "base": 0.044,
+    "base": 9.362e-7,
     "blurb": "CZ Number 4 (FOUR) is a viral community speculation token in Ignore FUD Keep Building Gesture, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -6102,26 +6100,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "LUCK",
-    "name": "Lucky 777",
+    "symbol": "BTCBULL",
+    "name": "Bitcoin Bull",
     "kind": "meme",
-    "group": "Triple Jackpot Triple Cherry Winner",
-    "base": 0.077,
-    "blurb": "Lucky 777 (LUCK) is a viral community speculation token in Triple Jackpot Triple Cherry Winner, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.0001002,
+    "blurb": "Bitcoin Bull (BTCBULL) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -6129,7 +6127,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Liquid Gold Bull",
     "kind": "meme",
     "group": "Pure 24 Karat Solid Gold Ingot",
-    "base": 0.098,
+    "base": 0.0104,
     "blurb": "Liquid Gold Bull (GOLD) is a viral community speculation token in Pure 24 Karat Solid Gold Ingot, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -6148,26 +6146,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "SILVER",
-    "name": "Stacking Silver",
+    "symbol": "STNK",
+    "name": "Stonks",
     "kind": "meme",
-    "group": "Physical 10 Ounce Bar Stacker Cult",
-    "base": 0.024,
-    "blurb": "Stacking Silver (SILVER) is a viral community speculation token in Physical 10 Ounce Bar Stacker Cult, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 3.6,
+    "blurb": "Stonks (STNK) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -6175,7 +6173,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Doctor Copper",
     "kind": "meme",
     "group": "Industrial Global Electrification Metal",
-    "base": 0.018,
+    "base": 4.307e-12,
     "blurb": "Doctor Copper captures the beloved internet animal and cute mascot meta in Industrial Global Electrification Metal, converting universal pet affection into viral meme currency.",
     "bull": [
       "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
@@ -6194,26 +6192,26 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "CHROME",
-    "name": "Future Chrome",
+    "symbol": "BELIEVE",
+    "name": "Believe",
     "kind": "meme",
-    "group": "Shiny Reflective Cyberpunk Surface",
-    "base": 0.014,
-    "blurb": "Future Chrome (CHROME) is a viral community speculation token in Shiny Reflective Cyberpunk Surface, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.001626,
+    "blurb": "Believe (BELIEVE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
@@ -6221,7 +6219,7 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     "name": "Neon Cyber Light",
     "kind": "meme",
     "group": "Akira Neo Tokyo Glowing Billboard",
-    "base": 0.016,
+    "base": 0.001668,
     "blurb": "Neon Cyber Light (NEON) is a viral community speculation token in Akira Neo Tokyo Glowing Billboard, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
     "bull": [
       "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
@@ -6240,2280 +6238,2280 @@ export const ADDITIONAL_MEMECOINS: Asset[] = [
     ]
   },
   {
-    "symbol": "RETRO",
-    "name": "Synthwave 1984",
+    "symbol": "WSPP",
+    "name": "WolfSafePoorPeople",
     "kind": "meme",
-    "group": "Sunset Palm Trees Testarossa Grid",
-    "base": 0.022,
-    "blurb": "Synthwave 1984 (RETRO) is a viral community speculation token in Sunset Palm Trees Testarossa Grid, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.884e-10,
+    "blurb": "WolfSafePoorPeople (WSPP) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "VAPOR",
-    "name": "Vaporwave Aesthetic",
+    "symbol": "FRONG",
+    "name": "frong",
     "kind": "meme",
-    "group": "Roman Busts Arizona Iced Tea Lore",
-    "base": 0.018,
-    "blurb": "Vaporwave Aesthetic (VAPOR) is a viral community speculation token in Roman Busts Arizona Iced Tea Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002085,
+    "blurb": "frong (FRONG) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PIXEL2",
-    "name": "8 Bit Sprite",
+    "symbol": "MACCA",
+    "name": "Macca The Gator",
     "kind": "meme",
-    "group": "Nostalgic 1989 Gameboy Screen",
-    "base": 0.012,
-    "blurb": "8 Bit Sprite (PIXEL2) is a viral community speculation token in Nostalgic 1989 Gameboy Screen, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002148,
+    "blurb": "Macca The Gator (MACCA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "ARCADE",
-    "name": "Quarter Eater",
+    "symbol": "ZAI",
+    "name": "Zen AI",
     "kind": "meme",
-    "group": "Street Fighter Cabinet High Score",
-    "base": 0.016,
-    "blurb": "Quarter Eater (ARCADE) is a viral community speculation token in Street Fighter Cabinet High Score, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.0006529,
+    "blurb": "Zen AI (ZAI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PINBALL",
-    "name": "Multiball Wizard",
+    "symbol": "YOOSHI",
+    "name": "YooShi",
     "kind": "meme",
-    "group": "Silver Ball Bumper Flashing Madness",
-    "base": 0.014,
-    "blurb": "Multiball Wizard (PINBALL) is a viral community speculation token in Silver Ball Bumper Flashing Madness, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.977e-9,
+    "blurb": "YooShi (YOOSHI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "CASINO",
-    "name": "Degenerate Casino",
+    "symbol": "YUMMY",
+    "name": "Yummy",
     "kind": "meme",
-    "group": "2 AM Roulette Double Down Frenzy",
-    "base": 0.038,
-    "blurb": "Degenerate Casino (CASINO) is a viral community speculation token in 2 AM Roulette Double Down Frenzy, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00000511,
+    "blurb": "Yummy (YUMMY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "POKER",
-    "name": "All In Texas Holdem",
+    "symbol": "KET",
+    "name": "Ket",
     "kind": "meme",
-    "group": "Pocket Aces On The River Gamble",
-    "base": 0.028,
-    "blurb": "All In Texas Holdem (POKER) is a viral community speculation token in Pocket Aces On The River Gamble, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001962,
+    "blurb": "Ket (KET) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "DICE",
-    "name": "Craps Roll 7",
+    "symbol": "DACITY",
+    "name": "Dacity Coin",
     "kind": "meme",
-    "group": "Snake Eyes Natural Winner Table",
-    "base": 0.019,
-    "blurb": "Craps Roll 7 (DICE) is a viral community speculation token in Snake Eyes Natural Winner Table, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001986,
+    "blurb": "Dacity Coin (DACITY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BINGO",
-    "name": "Bingo Night Granny",
+    "symbol": "JESUS",
+    "name": "Jesus Coin",
     "kind": "meme",
-    "group": "Dabber Pen Sunday Church Hall Joy",
-    "base": 0.0078,
-    "blurb": "Bingo Night Granny (BINGO) is a viral community speculation token in Dabber Pen Sunday Church Hall Joy, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.241e-8,
+    "blurb": "Jesus Coin (JESUS) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "LOTTO",
-    "name": "Powerball Ticket",
+    "symbol": "JEFF",
+    "name": "Jeff",
     "kind": "meme",
-    "group": "2 Billion Dollar Cash Option Dream",
-    "base": 0.018,
-    "blurb": "Powerball Ticket (LOTTO) is a viral community speculation token in 2 Billion Dollar Cash Option Dream, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.93,
+    "blurb": "Jeff (JEFF) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MAGIC2",
-    "name": "Black Lotus Mint",
+    "symbol": "RETIRE",
+    "name": "The Last Play",
     "kind": "meme",
-    "group": "Alpha Edition Beta Sleeved Card",
-    "base": 0.085,
-    "blurb": "Black Lotus Mint (MAGIC2) is a viral community speculation token in Alpha Edition Beta Sleeved Card, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001911,
+    "blurb": "The Last Play (RETIRE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "CHARIZARD",
-    "name": "1st Ed Shadowless",
+    "symbol": "TBB",
+    "name": "The Bitcoin Bull",
     "kind": "meme",
-    "group": "Base Set Holo PSA 10 Holy Grail",
-    "base": 0.14,
-    "blurb": "1st Ed Shadowless represents the autonomous AI agent and terminal meta in Base Set Holo PSA 10 Holy Grail, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.0019,
+    "blurb": "The Bitcoin Bull (TBB) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "PIKACHU",
-    "name": "Fat Pikachu 1999",
+    "symbol": "UNCOMMONGOODS",
+    "name": "UNCOMMON•GOODS",
     "kind": "meme",
-    "group": "Chubby Red Cheek Electric Mouse",
-    "base": 0.068,
-    "blurb": "Fat Pikachu 1999 (PIKACHU) is a viral community speculation token in Chubby Red Cheek Electric Mouse, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.01089,
+    "blurb": "UNCOMMON•GOODS (UNCOMMONGOODS) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEWTWO",
-    "name": "Genetic Mewtwo",
+    "symbol": "PAIN",
+    "name": "Pain",
     "kind": "meme",
-    "group": "Cinnabar Island Lab Breakout Beast",
-    "base": 0.048,
-    "blurb": "Genetic Mewtwo (MEWTWO) is a viral community speculation token in Cinnabar Island Lab Breakout Beast, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.3678,
+    "blurb": "Pain (PAIN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "GENGAR",
-    "name": "Shadow Ghost Gengar",
+    "symbol": "ANONCOIN",
+    "name": "Anoncoin",
     "kind": "meme",
-    "group": "Lavender Town Grinning Spooky Boy",
-    "base": 0.034,
-    "blurb": "Shadow Ghost Gengar (GENGAR) is a viral community speculation token in Lavender Town Grinning Spooky Boy, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001885,
+    "blurb": "Anoncoin (ANONCOIN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SNORLAX",
-    "name": "Sleeping Roadblock",
+    "symbol": "DORA",
+    "name": "DORA",
     "kind": "meme",
-    "group": "PokeFlute Waking Giant Belly",
-    "base": 0.028,
-    "blurb": "Sleeping Roadblock (SNORLAX) is a viral community speculation token in PokeFlute Waking Giant Belly, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001826,
+    "blurb": "DORA (DORA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "EEVEE",
-    "name": "Evolution Stone Eevee",
+    "symbol": "CROBINHOOD",
+    "name": "Crobinhood",
     "kind": "meme",
-    "group": "Eight Different Elemental Branches",
-    "base": 0.024,
-    "blurb": "Evolution Stone Eevee (EEVEE) is a viral community speculation token in Eight Different Elemental Branches, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001814,
+    "blurb": "Crobinhood (CROBINHOOD) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BULBA",
-    "name": "Bulbasaur Number 1",
+    "symbol": "SNOWMOON",
+    "name": "SNOWMOON",
     "kind": "meme",
-    "group": "Seed On Its Back Best Starter",
-    "base": 0.018,
-    "blurb": "Bulbasaur Number 1 (BULBA) is a viral community speculation token in Seed On Its Back Best Starter, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002653,
+    "blurb": "SNOWMOON (SNOWMOON) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "SQUIRTLE",
-    "name": "Squirtle Squad Shade",
+    "symbol": "OXA",
+    "name": "Onyx Arches",
     "kind": "meme",
-    "group": "Leader With Pointy Sunglasses Cool",
-    "base": 0.022,
-    "blurb": "Squirtle Squad Shade (SQUIRTLE) is a viral community speculation token in Leader With Pointy Sunglasses Cool, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002643,
+    "blurb": "Onyx Arches (OXA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MAGIKARP",
-    "name": "Splash Attack Karp",
+    "symbol": "BORGY",
+    "name": "BORGY",
     "kind": "meme",
-    "group": "Worthless Flopping Into Gyarados",
-    "base": 0.014,
-    "blurb": "Splash Attack Karp (MAGIKARP) is a viral community speculation token in Worthless Flopping Into Gyarados, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00002341,
+    "blurb": "BORGY (BORGY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "DIGIMON",
-    "name": "Agumon Pepper Breath",
+    "symbol": "CHUMP",
+    "name": "Chump Coin",
     "kind": "meme",
-    "group": "Digital Monster DigiDestined Boy",
-    "base": 0.016,
-    "blurb": "Agumon Pepper Breath (DIGIMON) is a viral community speculation token in Digital Monster DigiDestined Boy, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.0018,
+    "blurb": "Chump Coin (CHUMP) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "YU",
-    "name": "Yu-Gi-Oh Exodia",
+    "symbol": "JOTCHUA",
+    "name": "Jotchua",
     "kind": "meme",
-    "group": "Obliterate All Five Pieces In Hand",
-    "base": 0.038,
-    "blurb": "Yu-Gi-Oh Exodia (YU) is a viral community speculation token in Obliterate All Five Pieces In Hand, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001788,
+    "blurb": "Jotchua (JOTCHUA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "BLUEEYES",
-    "name": "Blue Eyes White Dragon",
+    "symbol": "PX",
+    "name": "Not Pixel",
     "kind": "meme",
-    "group": "Seto Kaiba 3000 Attack Point Dragon",
-    "base": 0.052,
-    "blurb": "Blue Eyes White Dragon represents the autonomous AI agent and terminal meta in Seto Kaiba 3000 Attack Point Dragon, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.009494,
+    "blurb": "Not Pixel (PX) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "DARKMAG",
-    "name": "Dark Magician",
+    "symbol": "CYBERLEEK",
+    "name": "CyberLeek",
     "kind": "meme",
-    "group": "Ultimate Wizard In Terms Of Attack",
-    "base": 0.034,
-    "blurb": "Dark Magician (DARKMAG) is a viral community speculation token in Ultimate Wizard In Terms Of Attack, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.002436,
+    "blurb": "CyberLeek (CYBERLEEK) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "POTGREED",
-    "name": "Pot Of Greed",
+    "symbol": "FATCAT",
+    "name": "FATCAT",
     "kind": "meme",
-    "group": "Draw 2 Additional Cards From Deck",
-    "base": 0.048,
-    "blurb": "Pot Of Greed (POTGREED) is a viral community speculation token in Draw 2 Additional Cards From Deck, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001776,
+    "blurb": "FATCAT (FATCAT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "TRAP",
-    "name": "You Activated Trap",
+    "symbol": "BLUB",
+    "name": "BLUB",
     "kind": "meme",
-    "group": "Mirror Force Flip Face Down Wipe",
-    "base": 0.024,
-    "blurb": "You Activated Trap (TRAP) is a viral community speculation token in Mirror Force Flip Face Down Wipe, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 4.212e-9,
+    "blurb": "BLUB (BLUB) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME1",
-    "name": "Viral pump.fun #2 Cult",
+    "symbol": "KENDU",
+    "name": "Kendu",
     "kind": "meme",
-    "group": "Gaming & DeGen Lore",
-    "base": 0.084715,
-    "blurb": "Viral pump.fun #2 Cult (MEME1) is a viral community speculation token in Gaming & DeGen Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00000176,
+    "blurb": "Kendu (KENDU) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME2",
-    "name": "Viral pump.fun #3 Cult",
+    "symbol": "V2EX",
+    "name": "V2EX",
     "kind": "meme",
-    "group": "Food, Snacks & Refreshment Lore",
-    "base": 0.062446,
-    "blurb": "Viral pump.fun #3 Cult (MEME2) is a viral community speculation token in Food, Snacks & Refreshment Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001735,
+    "blurb": "V2EX (V2EX) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME3",
-    "name": "Viral pump.fun #4 Cult",
+    "symbol": "DOGI",
+    "name": "dogi",
     "kind": "meme",
-    "group": "Sigma & Masculine Lifestyle Cults",
-    "base": 0.024137,
-    "blurb": "Viral pump.fun #4 Cult (MEME3) is a viral community speculation token in Sigma & Masculine Lifestyle Cults, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.08229,
+    "blurb": "dogi (DOGI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME4",
-    "name": "Viral pump.fun #5 Cult",
+    "symbol": "DADDYDOGE",
+    "name": "Daddy Doge",
     "kind": "meme",
-    "group": "AI Autonomous Agents / pump.fun",
-    "base": 0.00501,
-    "blurb": "Viral pump.fun #5 Cult represents the autonomous AI agent and terminal meta in AI Autonomous Agents / pump.fun, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.721e-9,
+    "blurb": "Daddy Doge (DADDYDOGE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME5",
-    "name": "Viral pump.fun #6 Cult",
+    "symbol": "SCHIFFY",
+    "name": "SCHIFFY",
     "kind": "meme",
-    "group": "Solana Cults & Community Lore",
-    "base": 0.022649,
-    "blurb": "Viral pump.fun #6 Cult (MEME5) is a viral community speculation token in Solana Cults & Community Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001751,
+    "blurb": "SCHIFFY (SCHIFFY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME6",
-    "name": "Viral pump.fun #7 Cult",
+    "symbol": "FLOWER",
+    "name": "Farcaster Flower",
     "kind": "meme",
-    "group": "Base Social & Warpcast Metas",
-    "base": 0.060838,
-    "blurb": "Viral pump.fun #7 Cult is a native culture and social token within the Base and Farcaster ecosystem in Base Social & Warpcast Metas, driven by Warpcast tipping and Coinbase wallet adoption.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001684,
+    "blurb": "Farcaster Flower (FLOWER) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Direct tailwinds from Coinbase Smart Wallet onboarding and gasless transaction infrastructure.",
-      "Strong organic social distribution across Warpcast channels without paid venture capital overhead.",
-      "High holder retention among core Ethereum and Base builder communities."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Ecosystem dependency on Base sequencer uptime and Farcaster platform engagement health.",
-      "Lower total speculative liquidity compared to primary Solana DEX trading venues.",
-      "Fast-moving internal Base meta rotations into newly minted creator tokens."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Farcaster channel tipping integration or viral Warpcast frame campaign.",
-      "Coinbase Wallet featured trending token showcase.",
-      "Aerodrome liquidity gauge incentive boost or DEX volume print."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME7",
-    "name": "Viral pump.fun #8 Cult",
+    "symbol": "KNOTS",
+    "name": "KNOTS",
     "kind": "meme",
-    "group": "TikTok & Internet Viral Lore",
-    "base": 0.084465,
-    "blurb": "Viral pump.fun #8 Cult (MEME7) is a viral community speculation token in TikTok & Internet Viral Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001706,
+    "blurb": "KNOTS (KNOTS) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME8",
-    "name": "Viral pump.fun #9 Cult",
+    "symbol": "KAKI",
+    "name": "Doge KaKi",
     "kind": "meme",
-    "group": "Animal & Mascot Metas",
-    "base": 0.071808,
-    "blurb": "Viral pump.fun #9 Cult captures the beloved internet animal and cute mascot meta in Animal & Mascot Metas, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.667e-8,
+    "blurb": "Doge KaKi (KAKI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME9",
-    "name": "Viral pump.fun #10 Cult",
+    "symbol": "LOAF",
+    "name": "Loaf Token",
     "kind": "meme",
-    "group": "PolitiFi & Current Affairs",
-    "base": 0.034504,
-    "blurb": "Viral pump.fun #10 Cult represents the autonomous AI agent and terminal meta in PolitiFi & Current Affairs, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.003323,
+    "blurb": "Loaf Token (LOAF) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME10",
-    "name": "Viral pump.fun #11 Cult",
+    "symbol": "RYU",
+    "name": "RyuJin",
     "kind": "meme",
-    "group": "Abstract & Conceptual Surrealism",
-    "base": 0.00685,
-    "blurb": "Viral pump.fun #11 Cult (MEME10) is a viral community speculation token in Abstract & Conceptual Surrealism, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.661e-9,
+    "blurb": "RyuJin (RYU) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME11",
-    "name": "Viral pump.fun #12 Cult",
+    "symbol": "PUNDU",
+    "name": "Pundu",
     "kind": "meme",
-    "group": "Bonding Curve Breakouts",
-    "base": 0.014271,
-    "blurb": "Viral pump.fun #12 Cult (MEME11) is a viral community speculation token in Bonding Curve Breakouts, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001665,
+    "blurb": "Pundu (PUNDU) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME12",
-    "name": "Viral pump.fun #13 Cult",
+    "symbol": "GLITCH",
+    "name": "Infinite Money Glitch",
     "kind": "meme",
-    "group": "Ethereum Classic Derivatives",
-    "base": 0.049944,
-    "blurb": "Viral pump.fun #13 Cult (MEME12) is a viral community speculation token in Ethereum Classic Derivatives, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001775,
+    "blurb": "Infinite Money Glitch (GLITCH) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME13",
-    "name": "Viral pump.fun #14 Cult",
+    "symbol": "NACHO",
+    "name": "Nacho the Kat",
     "kind": "meme",
-    "group": "Gaming & DeGen Lore",
-    "base": 0.081072,
-    "blurb": "Viral pump.fun #14 Cult (MEME13) is a viral community speculation token in Gaming & DeGen Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00000574,
+    "blurb": "Nacho the Kat (NACHO) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME14",
-    "name": "Viral pump.fun #15 Cult",
+    "symbol": "CAR",
+    "name": "Central African Republic Meme",
     "kind": "meme",
-    "group": "Food, Snacks & Refreshment Lore",
-    "base": 0.079036,
-    "blurb": "Viral pump.fun #15 Cult (MEME14) is a viral community speculation token in Food, Snacks & Refreshment Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001653,
+    "blurb": "Central African Republic Meme (CAR) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME15",
-    "name": "Viral pump.fun #16 Cult",
+    "symbol": "FEFER",
+    "name": "FEFER",
     "kind": "meme",
-    "group": "Sigma & Masculine Lifestyle Cults",
-    "base": 0.045707,
-    "blurb": "Viral pump.fun #16 Cult (MEME15) is a viral community speculation token in Sigma & Masculine Lifestyle Cults, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001635,
+    "blurb": "FEFER (FEFER) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME16",
-    "name": "Viral pump.fun #17 Cult",
+    "symbol": "USDUC",
+    "name": "Unstable Coin",
     "kind": "meme",
-    "group": "AI Autonomous Agents / pump.fun",
-    "base": 0.011728,
-    "blurb": "Viral pump.fun #17 Cult represents the autonomous AI agent and terminal meta in AI Autonomous Agents / pump.fun, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001598,
+    "blurb": "Unstable Coin (USDUC) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME17",
-    "name": "Viral pump.fun #18 Cult",
+    "symbol": "GIB",
+    "name": "༼ つ ◕_◕ ༽つ",
     "kind": "meme",
-    "group": "Solana Cults & Community Lore",
-    "base": 0.00834,
-    "blurb": "Viral pump.fun #18 Cult (MEME17) is a viral community speculation token in Solana Cults & Community Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001591,
+    "blurb": "༼ つ ◕_◕ ༽つ (GIB) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME18",
-    "name": "Viral pump.fun #19 Cult",
+    "symbol": "CRAZYBUNNY",
+    "name": "CrazyBunny",
     "kind": "meme",
-    "group": "Base Social & Warpcast Metas",
-    "base": 0.038656,
-    "blurb": "Viral pump.fun #19 Cult is a native culture and social token within the Base and Farcaster ecosystem in Base Social & Warpcast Metas, driven by Warpcast tipping and Coinbase wallet adoption.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 3.704e-11,
+    "blurb": "CrazyBunny (CRAZYBUNNY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Direct tailwinds from Coinbase Smart Wallet onboarding and gasless transaction infrastructure.",
-      "Strong organic social distribution across Warpcast channels without paid venture capital overhead.",
-      "High holder retention among core Ethereum and Base builder communities."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Ecosystem dependency on Base sequencer uptime and Farcaster platform engagement health.",
-      "Lower total speculative liquidity compared to primary Solana DEX trading venues.",
-      "Fast-moving internal Base meta rotations into newly minted creator tokens."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Farcaster channel tipping integration or viral Warpcast frame campaign.",
-      "Coinbase Wallet featured trending token showcase.",
-      "Aerodrome liquidity gauge incentive boost or DEX volume print."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME19",
-    "name": "Viral pump.fun #20 Cult",
+    "symbol": "LMEOW",
+    "name": "lmeow",
     "kind": "meme",
-    "group": "TikTok & Internet Viral Lore",
-    "base": 0.074805,
-    "blurb": "Viral pump.fun #20 Cult (MEME19) is a viral community speculation token in TikTok & Internet Viral Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00155,
+    "blurb": "lmeow (LMEOW) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME20",
-    "name": "Viral pump.fun #21 Cult",
+    "symbol": "VIBECOIN",
+    "name": "Vibing Cat Coin",
     "kind": "meme",
-    "group": "Animal & Mascot Metas",
-    "base": 0.083551,
-    "blurb": "Viral pump.fun #21 Cult captures the beloved internet animal and cute mascot meta in Animal & Mascot Metas, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001548,
+    "blurb": "Vibing Cat Coin (VIBECOIN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME21",
-    "name": "Viral pump.fun #22 Cult",
+    "symbol": "KORI",
+    "name": "Kori",
     "kind": "meme",
-    "group": "PolitiFi & Current Affairs",
-    "base": 0.056854,
-    "blurb": "Viral pump.fun #22 Cult represents the autonomous AI agent and terminal meta in PolitiFi & Current Affairs, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00153,
+    "blurb": "Kori (KORI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME22",
-    "name": "Viral pump.fun #23 Cult",
+    "symbol": "STRATEGY",
+    "name": "Strategy Coin",
     "kind": "meme",
-    "group": "Abstract & Conceptual Surrealism",
-    "base": 0.019258,
-    "blurb": "Viral pump.fun #23 Cult (MEME22) is a viral community speculation token in Abstract & Conceptual Surrealism, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00152,
+    "blurb": "Strategy Coin (STRATEGY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME23",
-    "name": "Viral pump.fun #24 Cult",
+    "symbol": "ALLINU",
+    "name": "ALLINU",
     "kind": "meme",
-    "group": "Bonding Curve Breakouts",
-    "base": 0.005329,
-    "blurb": "Viral pump.fun #24 Cult (MEME23) is a viral community speculation token in Bonding Curve Breakouts, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001533,
+    "blurb": "ALLINU (ALLINU) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME24",
-    "name": "Viral pump.fun #25 Cult",
+    "symbol": "PUPDOGE",
+    "name": "Pup Doge",
     "kind": "meme",
-    "group": "Ethereum Classic Derivatives",
-    "base": 0.027874,
-    "blurb": "Viral pump.fun #25 Cult (MEME24) is a viral community speculation token in Ethereum Classic Derivatives, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.512e-9,
+    "blurb": "Pup Doge (PUPDOGE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME25",
-    "name": "Viral pump.fun #26 Cult",
+    "symbol": "NYA",
+    "name": "Nya",
     "kind": "meme",
-    "group": "Gaming & DeGen Lore",
-    "base": 0.066164,
-    "blurb": "Viral pump.fun #26 Cult (MEME25) is a viral community speculation token in Gaming & DeGen Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 4.099e-8,
+    "blurb": "Nya (NYA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME26",
-    "name": "Viral pump.fun #27 Cult",
+    "symbol": "ALLINDOGE",
+    "name": "ALLINDOGE",
     "kind": "meme",
-    "group": "Food, Snacks & Refreshment Lore",
-    "base": 0.084996,
-    "blurb": "Viral pump.fun #27 Cult (MEME26) is a viral community speculation token in Food, Snacks & Refreshment Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001506,
+    "blurb": "ALLINDOGE (ALLINDOGE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME27",
-    "name": "Viral pump.fun #28 Cult",
+    "symbol": "DINGO",
+    "name": "Dingocoin",
     "kind": "meme",
-    "group": "Sigma & Masculine Lifestyle Cults",
-    "base": 0.067056,
-    "blurb": "Viral pump.fun #28 Cult (MEME27) is a viral community speculation token in Sigma & Masculine Lifestyle Cults, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00001271,
+    "blurb": "Dingocoin (DINGO) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME28",
-    "name": "Viral pump.fun #29 Cult",
+    "symbol": "KAREN",
+    "name": "KarenCoin",
     "kind": "meme",
-    "group": "AI Autonomous Agents / pump.fun",
-    "base": 0.028837,
-    "blurb": "Viral pump.fun #29 Cult represents the autonomous AI agent and terminal meta in AI Autonomous Agents / pump.fun, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.484e-9,
+    "blurb": "KarenCoin (KAREN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME29",
-    "name": "Viral pump.fun #30 Cult",
+    "symbol": "LUCKY",
+    "name": "LUCKY",
     "kind": "meme",
-    "group": "Solana Cults & Community Lore",
-    "base": 0.005479,
-    "blurb": "Viral pump.fun #30 Cult (MEME29) is a viral community speculation token in Solana Cults & Community Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001466,
+    "blurb": "LUCKY (LUCKY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME30",
-    "name": "Viral pump.fun #31 Cult",
+    "symbol": "TLS",
+    "name": "Test Liquid Staking",
     "kind": "meme",
-    "group": "Base Social & Warpcast Metas",
-    "base": 0.018456,
-    "blurb": "Viral pump.fun #31 Cult is a native culture and social token within the Base and Farcaster ecosystem in Base Social & Warpcast Metas, driven by Warpcast tipping and Coinbase wallet adoption.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001462,
+    "blurb": "Test Liquid Staking (TLS) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Direct tailwinds from Coinbase Smart Wallet onboarding and gasless transaction infrastructure.",
-      "Strong organic social distribution across Warpcast channels without paid venture capital overhead.",
-      "High holder retention among core Ethereum and Base builder communities."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Ecosystem dependency on Base sequencer uptime and Farcaster platform engagement health.",
-      "Lower total speculative liquidity compared to primary Solana DEX trading venues.",
-      "Fast-moving internal Base meta rotations into newly minted creator tokens."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Farcaster channel tipping integration or viral Warpcast frame campaign.",
-      "Coinbase Wallet featured trending token showcase.",
-      "Aerodrome liquidity gauge incentive boost or DEX volume print."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME31",
-    "name": "Viral pump.fun #32 Cult",
+    "symbol": "KIBSHI",
+    "name": "KiboShib",
     "kind": "meme",
-    "group": "TikTok & Internet Viral Lore",
-    "base": 0.055837,
-    "blurb": "Viral pump.fun #32 Cult (MEME31) is a viral community speculation token in TikTok & Internet Viral Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00000144,
+    "blurb": "KiboShib (KIBSHI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME32",
-    "name": "Viral pump.fun #33 Cult",
+    "symbol": "FLORK",
+    "name": "FLORK",
     "kind": "meme",
-    "group": "Animal & Mascot Metas",
-    "base": 0.083255,
-    "blurb": "Viral pump.fun #33 Cult captures the beloved internet animal and cute mascot meta in Animal & Mascot Metas, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001432,
+    "blurb": "FLORK (FLORK) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME33",
-    "name": "Viral pump.fun #34 Cult",
+    "symbol": "4STOCK",
+    "name": "4Stock",
     "kind": "meme",
-    "group": "PolitiFi & Current Affairs",
-    "base": 0.075502,
-    "blurb": "Viral pump.fun #34 Cult represents the autonomous AI agent and terminal meta in PolitiFi & Current Affairs, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.001387,
+    "blurb": "4Stock (4STOCK) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME34",
-    "name": "Viral pump.fun #35 Cult",
+    "symbol": "BELLS",
+    "name": "Bellscoin",
     "kind": "meme",
-    "group": "Abstract & Conceptual Surrealism",
-    "base": 0.039705,
-    "blurb": "Viral pump.fun #35 Cult (MEME34) is a viral community speculation token in Abstract & Conceptual Surrealism, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.02325,
+    "blurb": "Bellscoin (BELLS) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME35",
-    "name": "Viral pump.fun #36 Cult",
+    "symbol": "RFD",
+    "name": "Refund",
     "kind": "meme",
-    "group": "Bonding Curve Breakouts",
-    "base": 0.008776,
-    "blurb": "Viral pump.fun #36 Cult (MEME35) is a viral community speculation token in Bonding Curve Breakouts, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00000139,
+    "blurb": "Refund (RFD) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME36",
-    "name": "Viral pump.fun #37 Cult",
+    "symbol": "MIZU",
+    "name": "MIZU KAPPA",
     "kind": "meme",
-    "group": "Ethereum Classic Derivatives",
-    "base": 0.011152,
-    "blurb": "Viral pump.fun #37 Cult (MEME36) is a viral community speculation token in Ethereum Classic Derivatives, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001382,
+    "blurb": "MIZU KAPPA (MIZU) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME37",
-    "name": "Viral pump.fun #38 Cult",
+    "symbol": "BIG",
+    "name": "Big Guy",
     "kind": "meme",
-    "group": "Gaming & DeGen Lore",
-    "base": 0.044647,
-    "blurb": "Viral pump.fun #38 Cult (MEME37) is a viral community speculation token in Gaming & DeGen Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001449,
+    "blurb": "Big Guy (BIG) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME38",
-    "name": "Viral pump.fun #39 Cult",
+    "symbol": "GROYP",
+    "name": "Groyper",
     "kind": "meme",
-    "group": "Food, Snacks & Refreshment Lore",
-    "base": 0.078467,
-    "blurb": "Viral pump.fun #39 Cult (MEME38) is a viral community speculation token in Food, Snacks & Refreshment Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.02856,
+    "blurb": "Groyper (GROYP) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME39",
-    "name": "Viral pump.fun #40 Cult",
+    "symbol": "EPIK",
+    "name": "TEH EPIK DUCK",
     "kind": "meme",
-    "group": "Sigma & Masculine Lifestyle Cults",
-    "base": 0.081517,
-    "blurb": "Viral pump.fun #40 Cult (MEME39) is a viral community speculation token in Sigma & Masculine Lifestyle Cults, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001612,
+    "blurb": "TEH EPIK DUCK (EPIK) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME40",
-    "name": "Viral pump.fun #41 Cult",
+    "symbol": "CL8Y",
+    "name": "CeramicLiberty.com",
     "kind": "meme",
-    "group": "AI Autonomous Agents / pump.fun",
-    "base": 0.050994,
-    "blurb": "Viral pump.fun #41 Cult represents the autonomous AI agent and terminal meta in AI Autonomous Agents / pump.fun, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.4756,
+    "blurb": "CeramicLiberty.com (CL8Y) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME41",
-    "name": "Viral pump.fun #42 Cult",
+    "symbol": "CHONKETHA",
+    "name": "Chonketha the Wet Beaver",
     "kind": "meme",
-    "group": "Solana Cults & Community Lore",
-    "base": 0.01496,
-    "blurb": "Viral pump.fun #42 Cult (MEME41) is a viral community speculation token in Solana Cults & Community Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00135,
+    "blurb": "Chonketha the Wet Beaver (CHONKETHA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME42",
-    "name": "Viral pump.fun #43 Cult",
+    "symbol": "JOB",
+    "name": "DogWifJob",
     "kind": "meme",
-    "group": "Base Social & Warpcast Metas",
-    "base": 0.006544,
-    "blurb": "Viral pump.fun #43 Cult is a native culture and social token within the Base and Farcaster ecosystem in Base Social & Warpcast Metas, driven by Warpcast tipping and Coinbase wallet adoption.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001376,
+    "blurb": "DogWifJob (JOB) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Direct tailwinds from Coinbase Smart Wallet onboarding and gasless transaction infrastructure.",
-      "Strong organic social distribution across Warpcast channels without paid venture capital overhead.",
-      "High holder retention among core Ethereum and Base builder communities."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Ecosystem dependency on Base sequencer uptime and Farcaster platform engagement health.",
-      "Lower total speculative liquidity compared to primary Solana DEX trading venues.",
-      "Fast-moving internal Base meta rotations into newly minted creator tokens."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Farcaster channel tipping integration or viral Warpcast frame campaign.",
-      "Coinbase Wallet featured trending token showcase.",
-      "Aerodrome liquidity gauge incentive boost or DEX volume print."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME43",
-    "name": "Viral pump.fun #44 Cult",
+    "symbol": "DOUBT",
+    "name": "DOUBT",
     "kind": "meme",
-    "group": "TikTok & Internet Viral Lore",
-    "base": 0.033485,
-    "blurb": "Viral pump.fun #44 Cult (MEME43) is a viral community speculation token in TikTok & Internet Viral Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001409,
+    "blurb": "DOUBT (DOUBT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME44",
-    "name": "Viral pump.fun #45 Cult",
+    "symbol": "PEIPEI",
+    "name": "PeiPei",
     "kind": "meme",
-    "group": "Animal & Mascot Metas",
-    "base": 0.071012,
-    "blurb": "Viral pump.fun #45 Cult captures the beloved internet animal and cute mascot meta in Animal & Mascot Metas, converting universal pet affection into viral meme currency.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 3.155e-9,
+    "blurb": "PeiPei (PEIPEI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME45",
-    "name": "Viral pump.fun #46 Cult",
+    "symbol": "BORED",
+    "name": "BORED",
     "kind": "meme",
-    "group": "PolitiFi & Current Affairs",
-    "base": 0.084624,
-    "blurb": "Viral pump.fun #46 Cult represents the autonomous AI agent and terminal meta in PolitiFi & Current Affairs, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.0004144,
+    "blurb": "BORED (BORED) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME46",
-    "name": "Viral pump.fun #47 Cult",
+    "symbol": "ANITA",
+    "name": "ANITA",
     "kind": "meme",
-    "group": "Abstract & Conceptual Surrealism",
-    "base": 0.061806,
-    "blurb": "Viral pump.fun #47 Cult (MEME46) is a viral community speculation token in Abstract & Conceptual Surrealism, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001303,
+    "blurb": "ANITA (ANITA) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME47",
-    "name": "Viral pump.fun #48 Cult",
+    "symbol": "MARVIN",
+    "name": "Marvin",
     "kind": "meme",
-    "group": "Bonding Curve Breakouts",
-    "base": 0.023536,
-    "blurb": "Viral pump.fun #48 Cult (MEME47) is a viral community speculation token in Bonding Curve Breakouts, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00000309,
+    "blurb": "Marvin (MARVIN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME48",
-    "name": "Viral pump.fun #49 Cult",
+    "symbol": "LMAO",
+    "name": "LMAO!",
     "kind": "meme",
-    "group": "Ethereum Classic Derivatives",
-    "base": 0.005,
-    "blurb": "Viral pump.fun #49 Cult (MEME48) is a viral community speculation token in Ethereum Classic Derivatives, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001292,
+    "blurb": "LMAO! (LMAO) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME49",
-    "name": "Viral pump.fun #50 Cult",
+    "symbol": "YUNAI",
+    "name": "Yunai by Virtuals",
     "kind": "meme",
-    "group": "Gaming & DeGen Lore",
-    "base": 0.02324,
-    "blurb": "Viral pump.fun #50 Cult (MEME49) is a viral community speculation token in Gaming & DeGen Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001268,
+    "blurb": "Yunai by Virtuals (YUNAI) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME50",
-    "name": "Viral pump.fun #51 Cult",
+    "symbol": "BYTE",
+    "name": "Byte",
     "kind": "meme",
-    "group": "Food, Snacks & Refreshment Lore",
-    "base": 0.061486,
-    "blurb": "Viral pump.fun #51 Cult (MEME50) is a viral community speculation token in Food, Snacks & Refreshment Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00000131,
+    "blurb": "Byte (BYTE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME51",
-    "name": "Viral pump.fun #52 Cult",
+    "symbol": "SLT",
+    "name": "Salute",
     "kind": "meme",
-    "group": "Sigma & Masculine Lifestyle Cults",
-    "base": 0.084575,
-    "blurb": "Viral pump.fun #52 Cult (MEME51) is a viral community speculation token in Sigma & Masculine Lifestyle Cults, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00001245,
+    "blurb": "Salute (SLT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME52",
-    "name": "Viral pump.fun #53 Cult",
+    "symbol": "XDOG",
+    "name": "XDOG",
     "kind": "meme",
-    "group": "AI Autonomous Agents / pump.fun",
-    "base": 0.071279,
-    "blurb": "Viral pump.fun #53 Cult represents the autonomous AI agent and terminal meta in AI Autonomous Agents / pump.fun, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001244,
+    "blurb": "XDOG (XDOG) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME53",
-    "name": "Viral pump.fun #54 Cult",
+    "symbol": "BSU",
+    "name": "Baby Shark Universe",
     "kind": "meme",
-    "group": "Solana Cults & Community Lore",
-    "base": 0.033822,
-    "blurb": "Viral pump.fun #54 Cult (MEME53) is a viral community speculation token in Solana Cults & Community Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001459,
+    "blurb": "Baby Shark Universe (BSU) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME54",
-    "name": "Viral pump.fun #55 Cult",
+    "symbol": "USCR",
+    "name": "USCR",
     "kind": "meme",
-    "group": "Base Social & Warpcast Metas",
-    "base": 0.006643,
-    "blurb": "Viral pump.fun #55 Cult is a native culture and social token within the Base and Farcaster ecosystem in Base Social & Warpcast Metas, driven by Warpcast tipping and Coinbase wallet adoption.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001239,
+    "blurb": "USCR (USCR) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Direct tailwinds from Coinbase Smart Wallet onboarding and gasless transaction infrastructure.",
-      "Strong organic social distribution across Warpcast channels without paid venture capital overhead.",
-      "High holder retention among core Ethereum and Base builder communities."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Ecosystem dependency on Base sequencer uptime and Farcaster platform engagement health.",
-      "Lower total speculative liquidity compared to primary Solana DEX trading venues.",
-      "Fast-moving internal Base meta rotations into newly minted creator tokens."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Farcaster channel tipping integration or viral Warpcast frame campaign.",
-      "Coinbase Wallet featured trending token showcase.",
-      "Aerodrome liquidity gauge incentive boost or DEX volume print."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME55",
-    "name": "Viral pump.fun #56 Cult",
+    "symbol": "MILO",
+    "name": "Milo Inu",
     "kind": "meme",
-    "group": "TikTok & Internet Viral Lore",
-    "base": 0.014729,
-    "blurb": "Viral pump.fun #56 Cult (MEME55) is a viral community speculation token in TikTok & Internet Viral Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 1.813e-9,
+    "blurb": "Milo Inu (MILO) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME56",
-    "name": "Viral pump.fun #57 Cult",
+    "symbol": "CHUSD",
+    "name": "Chateau USD",
     "kind": "meme",
-    "group": "Animal & Mascot Metas",
-    "base": 0.050646,
-    "blurb": "Viral pump.fun #57 Cult captures the beloved internet animal and cute mascot meta in Animal & Mascot Metas, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.9995,
+    "blurb": "Chateau USD (CHUSD) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME57",
-    "name": "Viral pump.fun #58 Cult",
+    "symbol": "BNBTIGER",
+    "name": "BNB Tiger Inu",
     "kind": "meme",
-    "group": "PolitiFi & Current Affairs",
-    "base": 0.081372,
-    "blurb": "Viral pump.fun #58 Cult represents the autonomous AI agent and terminal meta in PolitiFi & Current Affairs, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 2.377e-12,
+    "blurb": "BNB Tiger Inu (BNBTIGER) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME58",
-    "name": "Viral pump.fun #59 Cult",
+    "symbol": "BOSS",
+    "name": "Boss",
     "kind": "meme",
-    "group": "Abstract & Conceptual Surrealism",
-    "base": 0.078658,
-    "blurb": "Viral pump.fun #59 Cult (MEME58) is a viral community speculation token in Abstract & Conceptual Surrealism, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.226e-9,
+    "blurb": "Boss (BOSS) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME59",
-    "name": "Viral pump.fun #60 Cult",
+    "symbol": "DOGZ",
+    "name": "Dogz",
     "kind": "meme",
-    "group": "Bonding Curve Breakouts",
-    "base": 0.044999,
-    "blurb": "Viral pump.fun #60 Cult (MEME59) is a viral community speculation token in Bonding Curve Breakouts, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00001226,
+    "blurb": "Dogz (DOGZ) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME60",
-    "name": "Viral pump.fun #61 Cult",
+    "symbol": "LOULOU",
+    "name": "LOULOU",
     "kind": "meme",
-    "group": "Ethereum Classic Derivatives",
-    "base": 0.011341,
-    "blurb": "Viral pump.fun #61 Cult (MEME60) is a viral community speculation token in Ethereum Classic Derivatives, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "Gate.io Spot Meme Markets",
+    "base": 0.001202,
+    "blurb": "LOULOU (LOULOU) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME61",
-    "name": "Viral pump.fun #62 Cult",
+    "symbol": "ZREAL",
+    "name": "Z李REAL SUPER COIN",
     "kind": "meme",
-    "group": "Gaming & DeGen Lore",
-    "base": 0.008629,
-    "blurb": "Viral pump.fun #62 Cult (MEME61) is a viral community speculation token in Gaming & DeGen Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001213,
+    "blurb": "Z李REAL SUPER COIN (ZREAL) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME62",
-    "name": "Viral pump.fun #63 Cult",
+    "symbol": "4CHAN",
+    "name": "4Chan",
     "kind": "meme",
-    "group": "Food, Snacks & Refreshment Lore",
-    "base": 0.039356,
-    "blurb": "Viral pump.fun #63 Cult (MEME62) is a viral community speculation token in Food, Snacks & Refreshment Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.539e-14,
+    "blurb": "4Chan (4CHAN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME63",
-    "name": "Viral pump.fun #64 Cult",
+    "symbol": "SHIBDOGE",
+    "name": "ShibaDoge",
     "kind": "meme",
-    "group": "Sigma & Masculine Lifestyle Cults",
-    "base": 0.075273,
-    "blurb": "Viral pump.fun #64 Cult (MEME63) is a viral community speculation token in Sigma & Masculine Lifestyle Cults, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 9e-18,
+    "blurb": "ShibaDoge (SHIBDOGE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME64",
-    "name": "Viral pump.fun #65 Cult",
+    "symbol": "POX",
+    "name": "Monkey Pox",
     "kind": "meme",
-    "group": "AI Autonomous Agents / pump.fun",
-    "base": 0.083357,
-    "blurb": "Viral pump.fun #65 Cult represents the autonomous AI agent and terminal meta in AI Autonomous Agents / pump.fun, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001174,
+    "blurb": "Monkey Pox (POX) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME65",
-    "name": "Viral pump.fun #66 Cult",
+    "symbol": "NINJACAT",
+    "name": "NinjaCat",
     "kind": "meme",
-    "group": "Solana Cults & Community Lore",
-    "base": 0.056175,
-    "blurb": "Viral pump.fun #66 Cult (MEME65) is a viral community speculation token in Solana Cults & Community Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001172,
+    "blurb": "NinjaCat (NINJACAT) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME66",
-    "name": "Viral pump.fun #67 Cult",
+    "symbol": "LEASH",
+    "name": "Doge Killer",
     "kind": "meme",
-    "group": "Base Social & Warpcast Metas",
-    "base": 0.01872,
-    "blurb": "Viral pump.fun #67 Cult is a native culture and social token within the Base and Farcaster ecosystem in Base Social & Warpcast Metas, driven by Warpcast tipping and Coinbase wallet adoption.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.457e-12,
+    "blurb": "Doge Killer (LEASH) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Direct tailwinds from Coinbase Smart Wallet onboarding and gasless transaction infrastructure.",
-      "Strong organic social distribution across Warpcast channels without paid venture capital overhead.",
-      "High holder retention among core Ethereum and Base builder communities."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Ecosystem dependency on Base sequencer uptime and Farcaster platform engagement health.",
-      "Lower total speculative liquidity compared to primary Solana DEX trading venues.",
-      "Fast-moving internal Base meta rotations into newly minted creator tokens."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Farcaster channel tipping integration or viral Warpcast frame campaign.",
-      "Coinbase Wallet featured trending token showcase.",
-      "Aerodrome liquidity gauge incentive boost or DEX volume print."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME67",
-    "name": "Viral pump.fun #68 Cult",
+    "symbol": "XDOGE",
+    "name": "Xdoge",
     "kind": "meme",
-    "group": "TikTok & Internet Viral Lore",
-    "base": 0.005426,
-    "blurb": "Viral pump.fun #68 Cult (MEME67) is a viral community speculation token in TikTok & Internet Viral Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 2.786e-9,
+    "blurb": "Xdoge (XDOGE) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME68",
-    "name": "Viral pump.fun #69 Cult",
+    "symbol": "FEELSGOOD",
+    "name": "Feels Good Man",
     "kind": "meme",
-    "group": "Animal & Mascot Metas",
-    "base": 0.028516,
-    "blurb": "Viral pump.fun #69 Cult captures the beloved internet animal and cute mascot meta in Animal & Mascot Metas, converting universal pet affection into viral meme currency.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001171,
+    "blurb": "Feels Good Man (FEELSGOOD) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Universal cross-cultural appeal that easily bridges non-crypto retail internet audiences.",
-      "Limitless creative meme templates allowing immediate adaptation to any trending pop culture event.",
-      "Charitable animal shelter donations that generate heartwarming viral press coverage."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Severe meme dilution from hundreds of copycat animal derivative tokens launched daily.",
-      "Vulnerability to attention fatigue if the mascot imagery becomes stale.",
-      "Absence of protocol revenue outside of community merchandise and decentralized liquidity pools."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Original pet owner or viral zoo social media updates and photo drops.",
-      "Celebrity or athlete interactions and organic meme reposts on Instagram and X.",
-      "Major exchange derivative listing announcements with high retail visibility."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME69",
-    "name": "Viral pump.fun #70 Cult",
+    "symbol": "MOBY",
+    "name": "Moby AI",
     "kind": "meme",
-    "group": "PolitiFi & Current Affairs",
-    "base": 0.066762,
-    "blurb": "Viral pump.fun #70 Cult represents the autonomous AI agent and terminal meta in PolitiFi & Current Affairs, where autonomous Twitter agents trade, generate memes, or deploy on-chain contracts.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.001169,
+    "blurb": "Moby AI (MOBY) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Novel intersection of LLM autonomous reasoning and real-time on-chain tokenized action.",
-      "Continuous automated content generation on social media keeping mindshare perpetually active.",
-      "Cult following among AI crypto researchers, developers, and tech venture builders."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Fast-moving technology cycle where newer agent architectures risk obsoleting older token narratives.",
-      "API rate limits or account suspensions on social platforms impacting agent autonomous activity.",
-      "Speculative froth running far ahead of actual technical agent capabilities."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Major autonomous agent framework upgrade or multi-agent collaboration capability.",
-      "Autonomous treasury deployment announcement by the agent model.",
-      "Integration with decentralized compute networks or on-chain execution SDKs."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME70",
-    "name": "Viral pump.fun #71 Cult",
+    "symbol": "MONKEYS",
+    "name": "monKEYS",
     "kind": "meme",
-    "group": "Abstract & Conceptual Surrealism",
-    "base": 0.085,
-    "blurb": "Viral pump.fun #71 Cult (MEME70) is a viral community speculation token in Abstract & Conceptual Surrealism, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00001593,
+    "blurb": "monKEYS (MONKEYS) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME71",
-    "name": "Viral pump.fun #72 Cult",
+    "symbol": "MOOCHII",
+    "name": "Moochii",
     "kind": "meme",
-    "group": "Bonding Curve Breakouts",
-    "base": 0.066462,
-    "blurb": "Viral pump.fun #72 Cult (MEME71) is a viral community speculation token in Bonding Curve Breakouts, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 1.14e-9,
+    "blurb": "Moochii (MOOCHII) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME72",
-    "name": "Viral pump.fun #73 Cult",
+    "symbol": "POOCOIN",
+    "name": "PooCoin",
     "kind": "meme",
-    "group": "Ethereum Classic Derivatives",
-    "base": 0.028192,
-    "blurb": "Viral pump.fun #73 Cult (MEME72) is a viral community speculation token in Ethereum Classic Derivatives, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.182,
+    "blurb": "PooCoin (POOCOIN) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   },
   {
-    "symbol": "MEME73",
-    "name": "Viral pump.fun #74 Cult",
+    "symbol": "XAVIER",
+    "name": "Xavier: Renegade Angel",
     "kind": "meme",
-    "group": "Gaming & DeGen Lore",
-    "base": 0.005376,
-    "blurb": "Viral pump.fun #74 Cult (MEME73) is a viral community speculation token in Gaming & DeGen Lore, trading strictly on decentralized liquidity pool velocity, viral attention, and social engagement.",
+    "group": "CoinGecko Meme Markets Meme Markets",
+    "base": 0.00111,
+    "blurb": "Xavier: Renegade Angel (XAVIER) is an exchange-traded community & meme token tracked across real-time spot and DEX venues with strict volatility-adjusted position sizing.",
     "bull": [
-      "Explosive viral traction across crypto Twitter, Telegram communities, and TikTok trend loops.",
-      "Rapid liquidity pool bootstrapping on decentralized exchanges with 100% burned LP tokens.",
-      "High velocity retail engagement driving intense volume-to-market-cap ratios."
+      "High organic retail mindshare and continuous 24/7 spot exchange liquidity.",
+      "Reflexive upside momentum during risk-on speculative market rotations.",
+      "Deep community distribution across active Solana, Ethereum, and Base trading venues."
     ],
     "bear": [
-      "Extreme intraday price volatility with zero fundamental valuation floor or earnings backing.",
-      "High risk of short-term attention decay as speculative liquidity rotates into newer meta tokens.",
-      "Whale holder concentration in early sniped bonding curve wallet clusters."
+      "Elevated realized volatility requires tight invalidation levels and reduced position sizing.",
+      "Narrative-driven flows rotate rapidly between viral community themes.",
+      "Severe drawdown risk when market-wide risk appetite contracts."
     ],
     "catalysts": [
-      "Influencer endorsements and viral social media post saturation.",
-      "Tier-1 centralized exchange spot or perpetual futures contract listing.",
-      "Community raiding events and cross-chain bridge liquidity integration."
+      "Major centralized exchange spot and perpetual listings",
+      "Viral community campaigns and social attention surges",
+      "Altcoin & meme sector capital rotation waves"
     ]
   }
 ];

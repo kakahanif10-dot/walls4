@@ -90,9 +90,9 @@ export interface PerpetualContract {
   type: "Stock Perp" | "Crypto Perp";
   markPrice: number;
   indexPrice: number;
-  fundingRateHourlyPct: number;
-  openInterestBillion: number;
-  volume24hBillion: number;
+  fundingRateHourlyPct: number | null;
+  openInterestBillion: number | null;
+  volume24hBillion: number | null;
   maxLeverage: number;
 }
 

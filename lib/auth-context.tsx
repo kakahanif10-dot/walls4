@@ -64,18 +64,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         const userRef = doc(db, "users", u.uid);
         const snap = await getDoc(userRef);
         if (!snap.exists()) {
-          const newProfile: UserProfileData = {
+          const firestoreProfile = {
             uid: u.uid,
             email: u.email || "",
             displayName: u.displayName || "Desk Trader",
             photoURL: u.photoURL || "",
-            plan: "reader",
-            provider: "firebase",
+            plan: "reader" as const,
             createdAt: now,
             updatedAt: now,
           };
-          await setDoc(userRef, newProfile);
-          setProfile(newProfile);
+          await setDoc(userRef, firestoreProfile);
+          setProfile({ ...firestoreProfile, provider: "firebase" });
         } else {
           const data = snap.data() as UserProfileData;
           setProfile({ ...data, provider: "firebase" });

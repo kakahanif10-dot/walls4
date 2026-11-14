@@ -17,10 +17,10 @@ export default function WatchlistButton({
       type="button"
       onClick={() => toggle(symbol)}
       aria-pressed={active}
-      className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+      className={`inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors ${
         active
-          ? "border-gold/60 bg-gold/15 text-gold-bright"
-          : "border-line bg-ink-900 text-muted hover:border-gold/40 hover:text-bone"
+          ? "bg-gold/20 text-gold-bright"
+          : "bg-ink-900/80 text-muted hover:bg-ink-900 hover:text-bone"
       }`}
     >
       <svg width="12" height="12" viewBox="0 0 24 24" fill={active ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.7">

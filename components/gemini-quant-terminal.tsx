@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import {
-  Sparkles,
+  BrainCircuit,
   Send,
   Search,
   Mic,
@@ -88,10 +88,10 @@ const MODEL_OPTIONS: {
 ];
 
 const PRESET_QUERIES = [
-  "Audit the delta hedging risk on an NVDA 180/200 call spread expiring next month.",
+  "Audit the delta hedging risk on an ATM NVDA call spread expiring next month.",
   "What is the mathematical flaw in assuming stationary covariance during high-volatility shocks?",
-  "Synthesize institutional order flow catalysts for Gold ($2,700+) and Treasury yields.",
-  "Give me an instant execution stop and invalidation level for Bitcoin near $90,000.",
+  "Synthesize institutional order flow catalysts for Gold and US 10Y Treasury yields.",
+  "Give me an instant execution stop and invalidation level for Bitcoin from the live tape.",
 ];
 
 const SEARCH_PROMPTS = [
@@ -111,7 +111,7 @@ export default function GeminiQuantTerminal() {
     {
       id: "init-1",
       role: "assistant",
-      text: "NextWall Street NWS AI Suite active. Selected: **NWS Mercury 3.8** (*Flow Desk & Market Intelligence*).\n\nAsk any quantitative model verification, multi-leg options structuring (NWS Olympus 4.0), or cross-asset tape query.",
+      text: "NextWallStreet NWS AI Suite active. Selected: **NWS Mercury 3.8** (*Flow Desk & Market Intelligence*).\n\nAsk any quantitative model verification, multi-leg options structuring (NWS Olympus 4.0), or cross-asset tape query.",
       timestamp: "Live Feed",
       modelUsed: "NWS Mercury 3.8",
     },
@@ -133,6 +133,7 @@ export default function GeminiQuantTerminal() {
   const [voiceReply, setVoiceReply] = useState("");
   const [audioLevel, setAudioLevel] = useState(0);
   const [audioMuted, setAudioMuted] = useState(false);
+  const [voiceError, setVoiceError] = useState<string | null>(null);
 
   const chatBottomRef = useRef<HTMLDivElement>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
@@ -209,7 +210,7 @@ export default function GeminiQuantTerminal() {
         {
           id: "err-" + Date.now(),
           role: "assistant",
-          text: `**Terminal Notice:** Network handshake timeout. Fallback signal: Maintaining strict risk discipline and watching 20-day SMA slope.`,
+          text: `**Terminal Notice:** Live NWS AI request timed out or failed (${err?.message || "network error"}). Please retry your query.`,
           timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
           modelUsed: currentModelMeta.name,
         },
@@ -236,6 +237,10 @@ export default function GeminiQuantTerminal() {
         body: JSON.stringify({ query: q }),
       });
       const data = await res.json();
+      if (!res.ok) {
+        setSearchReport(data.error || `Search grounding unavailable (HTTP ${res.status}).`);
+        return;
+      }
 
       setSearchReport(data.text || "No grounded findings returned.");
 
@@ -253,8 +258,8 @@ export default function GeminiQuantTerminal() {
       }
       setGroundingSources(sources);
       setSearchQueriesUsed(data.searchQueries || [q]);
-    } catch (err) {
-      setSearchReport("Failed to execute search grounding. Please retry in a few moments.");
+    } catch {
+      setSearchReport("Failed to execute live search grounding. Please retry in a few moments.");
     } finally {
       setIsSearchLoading(false);
     }
@@ -320,12 +325,13 @@ export default function GeminiQuantTerminal() {
           playAudio24kHz(data.audioBase64);
         }
       } catch {
-        setVoiceReply("Desk audio stream reconnecting. Levels verified at primary pivots.");
+        setVoiceReply("Voice desk network request failed. Please retry.");
       } finally {
         setIsVoiceProcessing(false);
       }
     } else {
       // Start Recording with 16kHz audio context
+      setVoiceError(null);
       try {
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
         mediaStreamRef.current = stream;
@@ -378,8 +384,8 @@ export default function GeminiQuantTerminal() {
           recognition.onerror = () => {};
           recognition.start();
         }
-      } catch (err) {
-        alert("Microphone access is required for real-time voice conversations.");
+      } catch {
+        setVoiceError("Microphone access is required for real-time voice conversations. Please enable mic permissions in your browser.");
       }
     }
   };
@@ -396,12 +402,12 @@ export default function GeminiQuantTerminal() {
       <div className="border-b border-line/70 bg-ink-900/90 px-4 py-3 sm:px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           <div className="h-9 w-9 rounded-xl border border-gold/40 bg-gold/10 flex items-center justify-center text-gold">
-            <Sparkles className="h-5 w-5" />
+            <BrainCircuit className="h-5 w-5" />
           </div>
           <div>
             <div className="flex items-center gap-2">
               <h3 className="font-display text-lg text-bone font-medium">
-                NextWall Street NWS AI Suite
+                NextWallStreet NWS AI Suite
               </h3>
               <WhopBadge size="xs" />
             </div>
@@ -846,6 +852,12 @@ export default function GeminiQuantTerminal() {
               )}
             </button>
           </div>
+
+          {voiceError && (
+            <div className="w-full max-w-xl rounded-xl border border-rose-500/40 bg-rose-500/10 px-4 py-2.5 text-xs text-rose-300">
+              {voiceError}
+            </div>
+          )}
 
           {/* Live Transcript & Spoken Reply Display */}
           {(voiceTranscript || voiceReply) && (

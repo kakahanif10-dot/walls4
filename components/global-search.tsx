@@ -16,6 +16,8 @@ import type {
   GlobalSearchResponse,
   SearchScope,
 } from "@/lib/global-search";
+import { useWhop } from "@/lib/whop-context";
+import { isPublicRoute } from "@/components/locked-action";
 
 interface GlobalSearchProps {
   open: boolean;
@@ -41,6 +43,7 @@ export default function GlobalSearchModal({
   onClose,
 }: GlobalSearchProps) {
   const router = useRouter();
+  const { isUnlocked, openWhopModal } = useWhop();
   const inputRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState("");
   const [scope, setScope] = useState<SearchScope>("all");
@@ -139,8 +142,12 @@ export default function GlobalSearchModal({
     return items;
   }, [data]);
 
-  const navigateTo = (href: string) => {
+  const navigateTo = (href: string, label?: string) => {
     onClose();
+    if (!isUnlocked && !isPublicRoute(href.split("?")[0])) {
+      openWhopModal(label || href, href);
+      return;
+    }
     router.push(href);
   };
 
@@ -189,10 +196,10 @@ export default function GlobalSearchModal({
         role="dialog"
         aria-modal="true"
         aria-label="Global market search"
-        className="w-full max-w-2xl overflow-hidden rounded-2xl border border-line bg-ink-900 shadow-2xl"
+        className="w-full max-w-2xl overflow-hidden rounded-2xl bg-ink-900 shadow-2xl"
       >
         {/* Search Input Header */}
-        <div className="flex items-center gap-3 border-b border-line bg-ink-950/70 px-4 py-3.5">
+        <div className="flex items-center gap-3 bg-ink-950/75 px-4 py-3.5">
           <Search className="h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
           <label htmlFor="global-search-input" className="sr-only">
             Search assets, research articles, and analyst desks
@@ -231,7 +238,7 @@ export default function GlobalSearchModal({
             type="button"
             onClick={onClose}
             aria-label="Close search"
-            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-line text-muted transition hover:border-gold/40 hover:text-bone"
+            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-ink-900 text-muted transition hover:bg-ink-850 hover:text-bone"
           >
             <X className="h-3.5 w-3.5" />
           </button>
@@ -241,7 +248,7 @@ export default function GlobalSearchModal({
         <div
           role="tablist"
           aria-label="Search categories"
-          className="flex flex-wrap items-center justify-between gap-2 border-b border-line/70 bg-ink-900/90 px-4 py-2.5"
+          className="flex flex-wrap items-center justify-between gap-2 bg-ink-900/95 px-4 py-2.5"
         >
           <div className="flex flex-wrap items-center gap-1.5">
             {SCOPE_TABS.map((tab) => {
@@ -256,7 +263,7 @@ export default function GlobalSearchModal({
                   className={`rounded-full px-3 py-1 text-xs font-medium transition ${
                     active
                       ? "bg-gold text-ink-950 font-semibold"
-                      : "border border-line bg-ink-950/60 text-muted hover:text-bone"
+                      : "bg-ink-950/75 text-muted hover:bg-ink-850 hover:text-bone"
                   }`}
                 >
                   {tab.label}
@@ -282,19 +289,19 @@ export default function GlobalSearchModal({
         {/* Results Body */}
         <div className="max-h-[62vh] overflow-y-auto p-3 space-y-4">
           {error && (
-            <div className="rounded-xl border border-down/30 bg-down/10 p-4 text-xs text-down">
+            <div className="rounded-xl bg-down/15 p-4 text-xs text-down">
               {error}
             </div>
           )}
 
           {!error && loading && !data && (
-            <div className="rounded-xl border border-line/70 bg-ink-950/60 p-8 text-center text-xs text-muted">
+            <div className="rounded-xl bg-ink-950/60 p-8 text-center text-xs text-muted">
               Searching 2,000+ assets, 70 research decks, and 44 analyst desks...
             </div>
           )}
 
           {!error && data && !hasResults && (
-            <div className="rounded-xl border border-line/70 bg-ink-950/60 p-8 text-center">
+            <div className="rounded-xl bg-ink-950/60 p-8 text-center">
               <p className="text-sm font-medium text-bone">
                 No results found for &ldquo;{data.query}&rdquo;
               </p>
@@ -319,7 +326,15 @@ export default function GlobalSearchModal({
                 </p>
                 <Link
                   href="/markets"
-                  onClick={onClose}
+                  onClick={(e) => {
+                    if (!isUnlocked) {
+                      e.preventDefault();
+                      onClose();
+                      openWhopModal("All Scored Markets", "/markets");
+                    } else {
+                      onClose();
+                    }
+                  }}
                   className="text-[11px] text-muted hover:text-gold-bright"
                 >
                   Browse all →
@@ -333,15 +348,23 @@ export default function GlobalSearchModal({
                     <li key={key}>
                       <Link
                         href={asset.href}
-                        onClick={onClose}
+                        onClick={(e) => {
+                          if (!isUnlocked) {
+                            e.preventDefault();
+                            onClose();
+                            openWhopModal(`${asset.symbol} · ${asset.name}`, asset.href);
+                          } else {
+                            onClose();
+                          }
+                        }}
                         className={`flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 transition ${
                           isHighlighted
-                            ? "bg-ink-800 border border-gold/40"
-                            : "border border-transparent hover:bg-ink-850 hover:border-line"
+                            ? "bg-ink-800"
+                            : "hover:bg-ink-850"
                         }`}
                       >
                         <div className="flex min-w-0 items-center gap-3">
-                          <span className="w-20 shrink-0 rounded-md border border-line bg-ink-950 px-2 py-1 text-center font-mono text-xs font-bold text-gold-bright">
+                          <span className="w-20 shrink-0 rounded-md bg-ink-950/90 px-2 py-1 text-center font-mono text-xs font-bold text-gold-bright">
                             {asset.symbol}
                           </span>
                           <div className="min-w-0">
@@ -354,7 +377,7 @@ export default function GlobalSearchModal({
                           </div>
                         </div>
                         <div className="flex shrink-0 items-center gap-2">
-                          <span className="rounded-full border border-line bg-ink-950 px-2 py-0.5 font-mono text-[10px] uppercase text-muted">
+                          <span className="rounded-full bg-ink-950/85 px-2.5 py-0.5 font-mono text-[10px] uppercase text-muted">
                             {asset.kind}
                           </span>
                           <ArrowUpRight className="h-3.5 w-3.5 text-muted" aria-hidden="true" />
@@ -382,7 +405,15 @@ export default function GlobalSearchModal({
                 </p>
                 <Link
                   href="/research"
-                  onClick={onClose}
+                  onClick={(e) => {
+                    if (!isUnlocked) {
+                      e.preventDefault();
+                      onClose();
+                      openWhopModal("All 70 Research Decks", "/research");
+                    } else {
+                      onClose();
+                    }
+                  }}
                   className="text-[11px] text-muted hover:text-gold-bright"
                 >
                   All 70 decks →
@@ -396,11 +427,19 @@ export default function GlobalSearchModal({
                     <li key={key}>
                       <Link
                         href={article.href}
-                        onClick={onClose}
+                        onClick={(e) => {
+                          if (!isUnlocked) {
+                            e.preventDefault();
+                            onClose();
+                            openWhopModal(article.title, article.href);
+                          } else {
+                            onClose();
+                          }
+                        }}
                         className={`flex items-start justify-between gap-3 rounded-xl px-3 py-2.5 transition ${
                           isHighlighted
-                            ? "bg-ink-800 border border-gold/40"
-                            : "border border-transparent hover:bg-ink-850 hover:border-line"
+                            ? "bg-ink-800"
+                            : "hover:bg-ink-850"
                         }`}
                       >
                         <div className="min-w-0">
@@ -413,7 +452,7 @@ export default function GlobalSearchModal({
                           </p>
                         </div>
                         <div className="flex shrink-0 items-center gap-2 pt-0.5">
-                          <span className="rounded-full border border-line bg-ink-950 px-2 py-0.5 text-[10px] uppercase text-muted">
+                          <span className="rounded-full bg-ink-950/85 px-2.5 py-0.5 text-[10px] uppercase text-muted">
                             {article.category}
                           </span>
                           <ArrowUpRight className="h-3.5 w-3.5 text-muted" aria-hidden="true" />
@@ -441,7 +480,15 @@ export default function GlobalSearchModal({
                 </p>
                 <Link
                   href="/desks"
-                  onClick={onClose}
+                  onClick={(e) => {
+                    if (!isUnlocked) {
+                      e.preventDefault();
+                      onClose();
+                      openWhopModal("Quantitative Analyst Desks", "/desks");
+                    } else {
+                      onClose();
+                    }
+                  }}
                   className="text-[11px] text-muted hover:text-gold-bright"
                 >
                   All 44 desks →
@@ -455,11 +502,19 @@ export default function GlobalSearchModal({
                     <li key={key}>
                       <Link
                         href={desk.href}
-                        onClick={onClose}
+                        onClick={(e) => {
+                          if (!isUnlocked) {
+                            e.preventDefault();
+                            onClose();
+                            openWhopModal(desk.name, desk.href);
+                          } else {
+                            onClose();
+                          }
+                        }}
                         className={`flex items-start justify-between gap-3 rounded-xl px-3 py-2.5 transition ${
                           isHighlighted
-                            ? "bg-ink-800 border border-gold/40"
-                            : "border border-transparent hover:bg-ink-850 hover:border-line"
+                            ? "bg-ink-800"
+                            : "hover:bg-ink-850"
                         }`}
                       >
                         <div className="min-w-0">
@@ -471,7 +526,7 @@ export default function GlobalSearchModal({
                           </p>
                         </div>
                         <div className="flex shrink-0 items-center gap-2 pt-0.5">
-                          <span className="rounded-full border border-line bg-ink-950 px-2 py-0.5 text-[10px] uppercase text-muted">
+                          <span className="rounded-full bg-ink-950/85 px-2.5 py-0.5 text-[10px] uppercase text-muted">
                             {desk.category}
                           </span>
                           <ArrowUpRight className="h-3.5 w-3.5 text-muted" aria-hidden="true" />
@@ -486,22 +541,22 @@ export default function GlobalSearchModal({
         </div>
 
         {/* Keyboard Shortcut Footer */}
-        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-line/70 bg-ink-950/80 px-4 py-2 text-[11px] text-muted">
+        <div className="flex flex-wrap items-center justify-between gap-2 bg-ink-950/80 px-4 py-2.5 text-[11px] text-muted">
           <div className="flex items-center gap-3">
             <span>
-              <kbd className="rounded border border-line bg-ink-900 px-1.5 py-0.5 font-mono text-[10px] text-bone">
+              <kbd className="rounded bg-ink-900 px-1.5 py-0.5 font-mono text-[10px] text-bone">
                 ↑↓
               </kbd>{" "}
               navigate
             </span>
             <span>
-              <kbd className="rounded border border-line bg-ink-900 px-1.5 py-0.5 font-mono text-[10px] text-bone">
+              <kbd className="rounded bg-ink-900 px-1.5 py-0.5 font-mono text-[10px] text-bone">
                 Enter
               </kbd>{" "}
               open
             </span>
             <span>
-              <kbd className="rounded border border-line bg-ink-900 px-1.5 py-0.5 font-mono text-[10px] text-bone">
+              <kbd className="rounded bg-ink-900 px-1.5 py-0.5 font-mono text-[10px] text-bone">
                 Esc
               </kbd>{" "}
               close

@@ -13,7 +13,6 @@ import {
   Bookmark,
   CheckCircle,
   HelpCircle,
-  Sparkles,
   Layers,
   Clock,
   ChevronRight,
@@ -51,7 +50,7 @@ export const SAMPLE_VIDEO_LESSONS = VIDEO_LESSONS_20;
 
 export default function WatchableVideoPlayer({
   initialLessonId,
-  courseTitle = "NextWall Street 20-Lesson Trading Academy",
+  courseTitle = "NextWallStreet 20-Lesson Trading Academy",
 }: {
   initialLessonId?: string;
   courseTitle?: string;
@@ -238,7 +237,7 @@ export default function WatchableVideoPlayer({
     };
   }, [activeChapter, voiceNarration, isPlaying, isMuted, volume, speed, lesson.takeaways]);
 
-  // Drawing Engine: Proprietary NextWall Street 60FPS Video Screen
+  // Drawing Engine: Proprietary NextWallStreet 60FPS Video Screen
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -631,15 +630,15 @@ export default function WatchableVideoPlayer({
   return (
     <div className="space-y-6" id="video-studio-player">
       {/* Top Header & Navigation Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line/60 pb-4">
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-2">
         <div>
           <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-gold/50 bg-gold/15 px-3 py-0.5 text-[10px] font-bold uppercase tracking-[0.16em] text-gold-bright">
-              <Sparkles className="h-3 w-3 text-gold" />
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/15 px-3 py-0.5 text-[10px] font-bold uppercase tracking-[0.16em] text-gold-bright">
+              <GraduationCap className="h-3.5 w-3.5 text-gold" />
               <span>Watchable Video Academy (20 Masterclasses)</span>
               <WhopBadge className="ml-1" />
             </span>
-            <span className="rounded bg-line/60 px-2 py-0.5 text-[10px] font-mono text-muted">
+            <span className="rounded bg-ink-850 px-2 py-0.5 text-[10px] font-mono text-muted">
               {lesson.module}
             </span>
             <span className="rounded bg-emerald-500/20 px-2 py-0.5 text-[10px] font-semibold text-emerald-400">
@@ -659,7 +658,7 @@ export default function WatchableVideoPlayer({
             type="button"
             disabled={activeLessonIndex <= 0}
             onClick={handlePrevLesson}
-            className="flex items-center gap-1 rounded-full border border-line bg-ink-900 px-3 py-1.5 text-xs text-bone transition hover:border-gold/50 disabled:opacity-30"
+            className="flex items-center gap-1 rounded-full bg-ink-900/80 px-3.5 py-1.5 text-xs text-bone transition hover:bg-ink-900 disabled:opacity-30"
           >
             <ChevronLeft className="h-3.5 w-3.5" />
             Prev
@@ -671,7 +670,7 @@ export default function WatchableVideoPlayer({
             type="button"
             disabled={activeLessonIndex >= VIDEO_LESSONS_20.length - 1}
             onClick={handleNextLesson}
-            className="flex items-center gap-1 rounded-full border border-line bg-ink-900 px-3 py-1.5 text-xs text-bone transition hover:border-gold/50 disabled:opacity-30"
+            className="flex items-center gap-1 rounded-full bg-ink-900/80 px-3.5 py-1.5 text-xs text-bone transition hover:bg-ink-900 disabled:opacity-30"
           >
             Next
             <ChevronRight className="h-3.5 w-3.5" />
@@ -680,7 +679,7 @@ export default function WatchableVideoPlayer({
           <button
             type="button"
             onClick={copyLessonShareLink}
-            className="flex items-center gap-1 rounded-full border border-line bg-ink-900 px-3 py-1.5 text-xs text-muted hover:text-bone hover:border-gold/40 transition ml-1"
+            className="flex items-center gap-1 rounded-full bg-ink-900/80 px-3.5 py-1.5 text-xs text-muted hover:text-bone hover:bg-ink-900 transition ml-1"
             title="Copy share link for this masterclass"
           >
             {copiedLink ? <Check className="h-3.5 w-3.5 text-up" /> : <Share2 className="h-3.5 w-3.5" />}
@@ -690,10 +689,10 @@ export default function WatchableVideoPlayer({
           <button
             type="button"
             onClick={() => toggleCompleteLesson(lesson.id)}
-            className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition ${
+            className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium transition ${
               completedLessons[lesson.id]
-                ? "border-emerald-500/50 bg-emerald-500/15 text-emerald-400"
-                : "border-line bg-ink-900 text-muted hover:text-bone hover:border-gold/40"
+                ? "bg-emerald-500/20 text-emerald-400"
+                : "bg-ink-900/80 text-muted hover:text-bone hover:bg-ink-900"
             }`}
             title="Track completion in your account"
           >
@@ -710,10 +709,10 @@ export default function WatchableVideoPlayer({
             <button
               key={mod}
               onClick={() => setSelectedModule(mod)}
-              className={`whitespace-nowrap rounded-full px-3 py-1 transition-all ${
+              className={`whitespace-nowrap rounded-full px-3.5 py-1 transition-all ${
                 selectedModule === mod
-                  ? "border border-gold bg-gold/20 text-gold-bright font-semibold shadow-sm"
-                  : "border border-line bg-ink-900 text-muted hover:text-bone"
+                  ? "bg-gold/20 text-gold-bright font-semibold shadow-sm"
+                  : "bg-ink-900/75 text-muted hover:text-bone hover:bg-ink-900"
               }`}
             >
               {mod}
@@ -728,13 +727,13 @@ export default function WatchableVideoPlayer({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search across all 20 video lessons..."
-            className="w-full rounded-full border border-line bg-ink-900 py-1.5 pl-8 pr-3 text-xs text-bone placeholder:text-muted/60 focus:border-gold focus:outline-none"
+            className="w-full rounded-full bg-ink-900/90 py-1.5 pl-8 pr-3 text-xs text-bone placeholder:text-muted/60 focus:outline-none focus:ring-1 focus:ring-gold/40"
           />
         </div>
       </div>
 
       {/* 20-Lesson Horizontal Strip / Carousel */}
-      <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin">
+      <div className="flex gap-2.5 overflow-x-auto pb-2 scrollbar-thin">
         {filteredLessons.map((l) => {
           const globalIdx = VIDEO_LESSONS_20.findIndex((item) => item.id === l.id);
           const isActive = globalIdx === activeLessonIndex;
@@ -744,15 +743,15 @@ export default function WatchableVideoPlayer({
             <button
               key={l.id}
               onClick={() => setActiveLessonIndex(globalIdx)}
-              className={`flex shrink-0 items-center gap-2.5 rounded-xl border p-2.5 text-left transition-all max-w-[260px] ${
+              className={`flex shrink-0 items-center gap-2.5 rounded-xl p-2.5 text-left transition-all max-w-[260px] ${
                 isActive
-                  ? "border-gold bg-gold/15 text-bone shadow-md ring-1 ring-gold/50"
-                  : "border-line bg-ink-900/60 text-muted hover:border-line/80 hover:text-bone hover:bg-ink-900"
+                  ? "bg-gold/20 text-bone shadow-md"
+                  : "bg-ink-900/55 text-muted hover:text-bone hover:bg-ink-900"
               }`}
             >
               <div
                 className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg font-mono text-xs font-bold ${
-                  isActive ? "bg-gold text-ink-950" : isDone ? "bg-emerald-500/20 text-emerald-400" : "bg-ink-800 text-muted"
+                  isActive ? "bg-gold text-ink-950" : isDone ? "bg-emerald-500/20 text-emerald-400" : "bg-ink-850 text-muted"
                 }`}
               >
                 {isDone ? "✓" : globalIdx + 1 < 10 ? `0${globalIdx + 1}` : globalIdx + 1}
@@ -783,7 +782,7 @@ export default function WatchableVideoPlayer({
             className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs transition-all ${
               viewMode === "masterclass"
                 ? "bg-gold text-ink-950 font-bold shadow"
-                : "border border-line bg-ink-900 text-muted hover:text-bone"
+                : "bg-ink-900/80 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <Video className="h-3.5 w-3.5" />
@@ -795,7 +794,7 @@ export default function WatchableVideoPlayer({
             className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs transition-all ${
               viewMode === "chart"
                 ? "bg-gold text-ink-950 font-bold shadow"
-                : "border border-line bg-ink-900 text-muted hover:text-bone"
+                : "bg-ink-900/80 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <BarChart2 className="h-3.5 w-3.5" />
@@ -807,7 +806,7 @@ export default function WatchableVideoPlayer({
             className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs transition-all ${
               viewMode === "slides"
                 ? "bg-gold text-ink-950 font-bold shadow"
-                : "border border-line bg-ink-900 text-muted hover:text-bone"
+                : "bg-ink-900/80 text-muted hover:text-bone hover:bg-ink-900"
             }`}
           >
             <FileText className="h-3.5 w-3.5" />
@@ -819,10 +818,10 @@ export default function WatchableVideoPlayer({
           <button
             type="button"
             onClick={() => setShowCaptions((c) => !c)}
-            className={`flex items-center gap-1 rounded-lg px-2 py-1 text-[11px] transition ${
+            className={`flex items-center gap-1 rounded-lg px-2.5 py-1 text-[11px] transition ${
               showCaptions
-                ? "border border-gold/40 bg-gold/10 text-gold-bright"
-                : "border border-line text-muted hover:text-bone"
+                ? "bg-gold/15 text-gold-bright"
+                : "bg-ink-900/75 text-muted hover:text-bone"
             }`}
             title="Toggle closed captions / subtitles"
           >
@@ -834,8 +833,8 @@ export default function WatchableVideoPlayer({
             onClick={() => setVoiceNarration((v) => !v)}
             className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs transition-all ${
               voiceNarration
-                ? "border border-emerald-500/50 bg-emerald-500/15 text-emerald-400 font-semibold"
-                : "border border-line bg-ink-900 text-muted hover:text-bone"
+                ? "bg-emerald-500/20 text-emerald-400 font-semibold"
+                : "bg-ink-900/80 text-muted hover:text-bone"
             }`}
             title="Toggle automated speech narration for tutor explanation"
           >
@@ -848,15 +847,15 @@ export default function WatchableVideoPlayer({
       {/* PROPRIETARY VIDEO SCREEN VIEWPORT (100% OWNED, NO YOUTUBE) */}
       <div
         ref={containerRef}
-        className="group relative overflow-hidden rounded-xl border border-line bg-[#07090e] shadow-2xl aspect-video max-h-[580px] w-full select-none"
+        className="group relative overflow-hidden rounded-2xl bg-[#07090e] shadow-2xl aspect-video max-h-[580px] w-full select-none"
       >
         {/* Render Mode: Slide Deck View vs Dynamic Chart Video View */}
         {viewMode === "slides" ? (
           <div className="flex h-full w-full flex-col justify-between bg-ink-950 p-6 sm:p-10">
             <div>
-              <div className="flex items-center justify-between border-b border-line/60 pb-3">
+              <div className="flex items-center justify-between pb-3">
                 <span className="font-mono text-xs uppercase tracking-widest text-gold font-bold">
-                  NextWall Street Academy · Masterclass Slide Deck
+                  NextWallStreet Academy · Masterclass Slide Deck
                 </span>
                 <span className="font-mono text-xs text-muted">
                   Slide {Math.min(5, Math.floor((currentTime / duration) * 5) + 1)} / 5
@@ -870,7 +869,7 @@ export default function WatchableVideoPlayer({
               </p>
             </div>
 
-            <div className="rounded-xl border border-gold/30 bg-gold/[0.06] p-4">
+            <div className="rounded-xl bg-gold/[0.08] p-4">
               <span className="text-[10px] font-semibold uppercase tracking-wider text-gold">
                 Key Lesson Principle
               </span>
@@ -889,19 +888,19 @@ export default function WatchableVideoPlayer({
 
         {/* TUTOR PICTURE-IN-PICTURE (PiP) STUDIO FEED (Top-Right) */}
         {viewMode === "masterclass" && (
-          <div className="absolute top-4 right-4 pointer-events-none rounded-xl border border-gold/40 bg-ink-950/95 p-3 backdrop-blur-md shadow-2xl max-w-[210px] sm:max-w-[240px] transition-all">
-            <div className="flex items-center justify-between border-b border-line/60 pb-2">
+          <div className="absolute top-4 right-4 pointer-events-none rounded-xl bg-ink-950/95 p-3 backdrop-blur-md shadow-2xl max-w-[210px] sm:max-w-[240px] transition-all">
+            <div className="flex items-center justify-between pb-2">
               <span className="inline-flex items-center gap-1.5 font-mono text-[9px] font-bold uppercase tracking-wider text-emerald-400">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 TUTOR STUDIO
               </span>
-              <span className="rounded bg-line/60 px-1 py-0.2 font-mono text-[9px] text-muted">
+              <span className="rounded bg-ink-850 px-1.5 py-0.5 font-mono text-[9px] text-muted">
                 1080p
               </span>
             </div>
 
             {/* Presenter Profile & Talking Waveform */}
-            <div className="mt-2.5 flex items-center gap-2.5">
+            <div className="mt-2 flex items-center gap-2.5">
               <div className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-tr from-gold/30 via-gold to-bone p-[1.5px] shadow-lg">
                 <div className="flex h-full w-full items-center justify-center rounded-full bg-ink-900 font-display text-xs font-bold text-gold-bright">
                   {lesson.instructorInitials || "NW"}
@@ -920,7 +919,7 @@ export default function WatchableVideoPlayer({
             </div>
 
             {/* Live Audio Equalizer Waveform */}
-            <div className="mt-2.5 flex items-center justify-between gap-1 rounded bg-ink-900/80 px-2 py-1.5 border border-line/60">
+            <div className="mt-2.5 flex items-center justify-between gap-1 rounded-lg bg-ink-900/90 px-2.5 py-1.5">
               <span className="font-mono text-[9px] text-muted">VOICE FEED</span>
               <div className="flex items-end gap-1 h-3">
                 {audioWave.map((h, idx) => (
@@ -940,7 +939,7 @@ export default function WatchableVideoPlayer({
         {/* LIVE SYNCHRONIZED CLOSED-CAPTIONS (Subtitles) */}
         {showCaptions && (
           <div className="absolute bottom-16 inset-x-6 sm:inset-x-12 pointer-events-none flex justify-center">
-            <div className="rounded-lg border border-gold/30 bg-ink-950/90 px-4 py-2 backdrop-blur-md shadow-2xl text-center max-w-2xl">
+            <div className="rounded-xl bg-ink-950/90 px-4 py-2 backdrop-blur-md shadow-2xl text-center max-w-2xl">
               <span className="font-mono text-[9px] uppercase tracking-wider text-gold-bright block font-bold mb-0.5">
                 Instructor Commentary · {lesson.instructor}
               </span>
@@ -957,7 +956,7 @@ export default function WatchableVideoPlayer({
             onClick={togglePlay}
             className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 backdrop-blur-[2px] transition-all cursor-pointer"
           >
-            <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-gold bg-ink-900/90 text-gold-bright shadow-2xl transition-transform hover:scale-110">
+            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-ink-900/90 text-gold-bright shadow-2xl transition-transform hover:scale-110">
               <Play className="ml-1.5 h-9 w-9 fill-current" />
             </div>
             <p className="mt-3 font-display text-base text-bone tracking-wide drop-shadow">
@@ -1051,7 +1050,7 @@ export default function WatchableVideoPlayer({
               </div>
 
               {/* Speed selector */}
-              <div className="flex items-center gap-1 rounded bg-ink-900 border border-line px-1.5 py-0.5 text-[11px] font-mono">
+              <div className="flex items-center gap-1 rounded-lg bg-ink-900/90 px-2 py-0.5 text-[11px] font-mono">
                 {[0.75, 1, 1.25, 1.5].map((s) => (
                   <button
                     key={s}
@@ -1081,16 +1080,16 @@ export default function WatchableVideoPlayer({
       </div>
 
       {/* Tabs Below Video: Chapters, Takeaways, Quiz, Notes, Transcript */}
-      <div className="rounded-xl border border-line bg-ink-900/70 p-5">
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line/60 pb-3">
-          <div className="flex items-center gap-2 text-xs">
+      <div className="rounded-2xl bg-ink-900/55 p-5 sm:p-6">
+        <div className="flex flex-wrap items-center justify-between gap-3 pb-2">
+          <div className="flex flex-wrap items-center gap-2 text-xs">
             <button
               type="button"
               onClick={() => setActiveTab("chapters")}
               className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-medium transition ${
                 activeTab === "chapters"
                   ? "bg-gold text-ink-950 font-bold shadow"
-                  : "text-muted hover:text-bone hover:bg-ink-800"
+                  : "text-muted hover:text-bone hover:bg-ink-850"
               }`}
             >
               <Clock className="h-3.5 w-3.5" />
@@ -1103,7 +1102,7 @@ export default function WatchableVideoPlayer({
               className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-medium transition ${
                 activeTab === "takeaways"
                   ? "bg-gold text-ink-950 font-bold shadow"
-                  : "text-muted hover:text-bone hover:bg-ink-800"
+                  : "text-muted hover:text-bone hover:bg-ink-850"
               }`}
             >
               <Award className="h-3.5 w-3.5" />
@@ -1116,7 +1115,7 @@ export default function WatchableVideoPlayer({
               className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-medium transition ${
                 activeTab === "quiz"
                   ? "bg-gold text-ink-950 font-bold shadow"
-                  : "text-muted hover:text-bone hover:bg-ink-800"
+                  : "text-muted hover:text-bone hover:bg-ink-850"
               }`}
             >
               <HelpCircle className="h-3.5 w-3.5" />
@@ -1129,7 +1128,7 @@ export default function WatchableVideoPlayer({
               className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-medium transition ${
                 activeTab === "bookmarks"
                   ? "bg-gold text-ink-950 font-bold shadow"
-                  : "text-muted hover:text-bone hover:bg-ink-800"
+                  : "text-muted hover:text-bone hover:bg-ink-850"
               }`}
             >
               <Bookmark className="h-3.5 w-3.5" />
@@ -1142,7 +1141,7 @@ export default function WatchableVideoPlayer({
               className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-medium transition ${
                 activeTab === "transcript"
                   ? "bg-gold text-ink-950 font-bold shadow"
-                  : "text-muted hover:text-bone hover:bg-ink-800"
+                  : "text-muted hover:text-bone hover:bg-ink-850"
               }`}
             >
               <FileText className="h-3.5 w-3.5" />
@@ -1160,10 +1159,10 @@ export default function WatchableVideoPlayer({
                 <div
                   key={ch.time}
                   onClick={() => handleSeek(ch.time)}
-                  className={`flex cursor-pointer items-start justify-between gap-4 rounded-xl border p-3 transition ${
+                  className={`flex cursor-pointer items-start justify-between gap-4 rounded-xl p-3.5 transition ${
                     isActive
-                      ? "border-gold/60 bg-gold/10 text-bone shadow-sm"
-                      : "border-line bg-ink-950/60 text-muted hover:border-gold/30 hover:text-bone hover:bg-ink-950"
+                      ? "bg-gold/15 text-bone shadow-sm"
+                      : "bg-ink-950/65 text-muted hover:text-bone hover:bg-ink-950"
                   }`}
                 >
                   <div className="flex items-start gap-3">
@@ -1192,7 +1191,7 @@ export default function WatchableVideoPlayer({
             </p>
             <div className="space-y-2">
               {lesson.takeaways.map((point, idx) => (
-                <div key={idx} className="flex items-start gap-3 rounded-lg border border-line bg-ink-950/60 p-3 text-xs">
+                <div key={idx} className="flex items-start gap-3 rounded-xl bg-ink-950/65 p-3.5 text-xs">
                   <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold-bright font-bold">
                     ✓
                   </span>
@@ -1214,13 +1213,13 @@ export default function WatchableVideoPlayer({
               {lesson.quiz.options.map((opt, idx) => {
                 const isSelected = selectedQuizAnswer === idx;
                 const isCorrect = idx === lesson.quiz.correctIndex;
-                let btnStyle = "border-line bg-ink-950 text-bone hover:border-gold/50";
+                let btnStyle = "bg-ink-950/75 text-bone hover:bg-ink-950";
                 if (showQuizResult) {
-                  if (isCorrect) btnStyle = "border-emerald-500 bg-emerald-500/20 text-emerald-300 font-bold";
-                  else if (isSelected) btnStyle = "border-rose-500 bg-rose-500/20 text-rose-300";
-                  else btnStyle = "border-line/40 bg-ink-950/40 text-muted opacity-60";
+                  if (isCorrect) btnStyle = "bg-emerald-500/20 text-emerald-300 font-bold";
+                  else if (isSelected) btnStyle = "bg-rose-500/20 text-rose-300";
+                  else btnStyle = "bg-ink-950/40 text-muted opacity-60";
                 } else if (isSelected) {
-                  btnStyle = "border-gold bg-gold/20 text-gold-bright font-semibold";
+                  btnStyle = "bg-gold/20 text-gold-bright font-semibold";
                 }
 
                 return (
@@ -1229,7 +1228,7 @@ export default function WatchableVideoPlayer({
                     type="button"
                     disabled={showQuizResult}
                     onClick={() => setSelectedQuizAnswer(idx)}
-                    className={`w-full rounded-xl border p-3 text-left text-xs transition ${btnStyle}`}
+                    className={`w-full rounded-xl p-3.5 text-left text-xs transition ${btnStyle}`}
                   >
                     <div className="flex items-center justify-between">
                       <span>{opt}</span>
@@ -1258,7 +1257,7 @@ export default function WatchableVideoPlayer({
                     setSelectedQuizAnswer(null);
                     setShowQuizResult(false);
                   }}
-                  className="rounded-full border border-line px-4 py-2 text-xs text-muted hover:text-bone transition"
+                  className="rounded-full bg-ink-950/80 px-4 py-2 text-xs text-muted hover:text-bone hover:bg-ink-950 transition"
                 >
                   Try Again
                 </button>
@@ -1266,7 +1265,7 @@ export default function WatchableVideoPlayer({
             </div>
 
             {showQuizResult && (
-              <div className="rounded-xl border border-line bg-ink-950 p-4 text-xs">
+              <div className="rounded-xl bg-ink-950/80 p-4 text-xs">
                 <span className="font-semibold text-gold">Institutional Explanation:</span>
                 <p className="mt-1 text-muted leading-relaxed">{lesson.quiz.explanation}</p>
               </div>
@@ -1284,7 +1283,7 @@ export default function WatchableVideoPlayer({
                 value={bookmarkInput}
                 onChange={(e) => setBookmarkInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && addBookmark()}
-                className="flex-1 rounded-xl border border-line bg-ink-950 px-3.5 py-2 text-xs text-bone placeholder:text-muted/60 focus:border-gold focus:outline-none"
+                className="flex-1 rounded-xl bg-ink-950/85 px-3.5 py-2 text-xs text-bone placeholder:text-muted/60 focus:outline-none focus:ring-1 focus:ring-gold/40"
               />
               <button
                 type="button"
@@ -1304,13 +1303,13 @@ export default function WatchableVideoPlayer({
                 bookmarks.map((bm) => (
                   <div
                     key={bm.id}
-                    className="flex items-center justify-between gap-4 rounded-xl border border-line bg-ink-950 p-3 text-xs"
+                    className="flex items-center justify-between gap-4 rounded-xl bg-ink-950/75 p-3.5 text-xs"
                   >
                     <div className="flex items-center gap-3">
                       <button
                         type="button"
                         onClick={() => handleSeek(bm.time)}
-                        className="rounded bg-line/60 px-2 py-0.5 font-mono text-[11px] text-gold-bright hover:bg-gold hover:text-ink-950 transition font-bold"
+                        className="rounded bg-ink-900 px-2 py-0.5 font-mono text-[11px] text-gold-bright hover:bg-gold hover:text-ink-950 transition font-bold"
                       >
                         {formatTime(bm.time)}
                       </button>
@@ -1332,13 +1331,13 @@ export default function WatchableVideoPlayer({
 
         {/* Tab 5: Full Transcript */}
         {activeTab === "transcript" && (
-          <div className="mt-4 space-y-4 max-h-96 overflow-y-auto pr-2 scrollbar-thin text-xs">
+          <div className="mt-4 space-y-3 max-h-96 overflow-y-auto pr-2 scrollbar-thin text-xs">
             <p className="text-muted text-[11px] italic">
               Click any timestamp to jump the video directly to that point in the lecture:
             </p>
             {lesson.chapters.map((ch) => (
-              <div key={ch.time} className="rounded-lg border border-line/60 bg-ink-950/60 p-3.5">
-                <div className="flex items-center justify-between pb-1.5 border-b border-line/40">
+              <div key={ch.time} className="rounded-xl bg-ink-950/70 p-4">
+                <div className="flex items-center justify-between pb-1.5">
                   <span className="font-semibold text-gold-bright">{ch.title}</span>
                   <button
                     type="button"
@@ -1348,7 +1347,7 @@ export default function WatchableVideoPlayer({
                     Jump to {formatTime(ch.time)} ▶
                   </button>
                 </div>
-                <p className="mt-2 text-bone/85 leading-relaxed">
+                <p className="mt-1.5 text-bone/85 leading-relaxed">
                   {ch.description} In this section, instructor {lesson.instructor} outlines the exact structural criteria required before deploying institutional risk. Traders must verify market condition confluence rather than reacting to isolated tick fluctuations.
                 </p>
               </div>

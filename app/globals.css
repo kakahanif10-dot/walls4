@@ -38,6 +38,16 @@ body {
   font-family: var(--font-display);
 }
 
+.font-institutional {
+  font-family: var(--font-bloomberg-sans), var(--font-sans);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.font-luxury-num {
+  font-family: var(--font-wsj-serif), var(--font-display);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
 .hairline {
   border-color: color-mix(in srgb, var(--color-line) 90%, transparent);
 }
