@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import GlobalTradingMap from "@/components/global-trading-map";
 import WhopBadge from "@/components/whop-badge";
-import firebaseConfig from "@/firebase-applet-config.json";
+import mapsConfig from "@/maps-applet-config.json";
 import { Globe, MapPin, Layers, Building2 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function GlobalTradingMapPage() {
   const mapsApiKey =
     process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ||
     process.env.GOOGLE_MAPS_API_KEY ||
-    firebaseConfig.apiKey ||
+    mapsConfig.apiKey ||
     "";
 
   return (

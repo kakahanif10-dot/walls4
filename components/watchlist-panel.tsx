@@ -9,7 +9,7 @@ import { stanceColor, type Row } from "@/lib/market";
 
 export default function WatchlistPanel({ rows }: { rows: Row[] }) {
   const { symbols, ready, toggle } = useWatchlist();
-  const { user, signInWithGoogle } = useAuth();
+  const { user } = useAuth();
   const tracked = rows.filter((r) => symbols.includes(r.symbol));
 
   if (!ready) {
@@ -50,7 +50,7 @@ export default function WatchlistPanel({ rows }: { rows: Row[] }) {
             <>
               <span className="h-2 w-2 rounded-full bg-emerald-400" />
               <span className="text-muted">
-                Synced to cloud Firestore: <span className="text-bone">{user.email}</span>
+                Synced securely to Supabase: <span className="text-bone">{user.email}</span>
               </span>
             </>
           ) : (

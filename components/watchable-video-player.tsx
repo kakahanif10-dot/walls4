@@ -42,8 +42,7 @@ import {
 } from "@/lib/academy-videos";
 import { useAuth } from "@/lib/auth-context";
 import WhopBadge from "@/components/whop-badge";
-import { db } from "@/lib/firebase";
-import { doc, setDoc, onSnapshot, collection } from "firebase/firestore";
+import { supabase } from "@/lib/supabase";
 
 export type { VideoLesson, VideoChapter };
 export const SAMPLE_VIDEO_LESSONS = VIDEO_LESSONS_20;
@@ -62,31 +61,44 @@ export default function WatchableVideoPlayer({
   const { user } = useAuth();
   const [completedLessons, setCompletedLessons] = useState<Record<string, boolean>>({});
 
-  // Sync completion with Firestore
   useEffect(() => {
-    if (!user) return;
-    const unsub = onSnapshot(collection(db, "users", user.uid, "progress"), (snap) => {
-      const completed: Record<string, boolean> = {};
-      snap.forEach((d) => {
-        if (d.data().completed) completed[d.id] = true;
-      });
-      setCompletedLessons(completed);
-    });
-    return () => unsub();
+    if (!user) {
+      setCompletedLessons({});
+      return;
+    }
+    let active = true;
+    const loadProgress = async () => {
+      const { data, error } = await supabase.from("course_progress").select("lesson_id,completed").eq("user_id", user.id);
+      if (!active) return;
+      if (error) {
+        console.error("[v0] Could not load Supabase course progress:", error);
+        return;
+      }
+      setCompletedLessons(Object.fromEntries(data.filter((row) => row.completed).map((row) => [row.lesson_id, true])));
+    };
+    void loadProgress();
+    const channel = supabase.channel(`course-progress-${user.id}`)
+      .on("postgres_changes", { event: "*", schema: "public", table: "course_progress", filter: `user_id=eq.${user.id}` }, () => void loadProgress())
+      .subscribe();
+    return () => {
+      active = false;
+      void supabase.removeChannel(channel);
+    };
   }, [user]);
 
   const toggleCompleteLesson = async (lessonId: string) => {
     const isDone = !!completedLessons[lessonId];
     setCompletedLessons((prev) => ({ ...prev, [lessonId]: !isDone }));
     if (user) {
-      try {
-        await setDoc(doc(db, "users", user.uid, "progress", lessonId), {
-          lessonId,
-          completed: !isDone,
-          updatedAt: new Date().toISOString(),
-        });
-      } catch (err) {
-        console.warn("Could not save lesson progress to Firestore:", err);
+      const { error } = await supabase.from("course_progress").upsert({
+        user_id: user.id,
+        lesson_id: lessonId,
+        completed: !isDone,
+        updated_at: new Date().toISOString(),
+      }, { onConflict: "user_id,lesson_id" });
+      if (error) {
+        console.error("[v0] Could not save Supabase course progress:", error);
+        setCompletedLessons((prev) => ({ ...prev, [lessonId]: isDone }));
       }
     }
   };

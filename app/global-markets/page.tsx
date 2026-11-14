@@ -10,13 +10,13 @@ export const metadata: Metadata = {
     "Track 11 global financial exchanges via Google Maps Platform, 9 international regions, multi-tab ticker exploration, crowd sentiment radar, and custom price alerts.",
 };
 
-import firebaseConfig from "@/firebase-applet-config.json";
+import mapsConfig from "@/maps-applet-config.json";
 
 export default function OpenStockPage() {
   const mapsApiKey =
     process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ||
     process.env.GOOGLE_MAPS_API_KEY ||
-    firebaseConfig.apiKey ||
+    mapsConfig.apiKey ||
     "";
 
   return (

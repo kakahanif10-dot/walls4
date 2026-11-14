@@ -55,8 +55,7 @@ import { useQuotes } from "@/components/live-prices";
 import { useAuth } from "@/lib/auth-context";
 import { useWhop } from "@/lib/whop-context";
 import WhopBadge from "@/components/whop-badge";
-import { db } from "@/lib/firebase";
-import { collection, doc, setDoc, onSnapshot, query, limit } from "firebase/firestore";
+import { supabase } from "@/lib/supabase";
 
 export type { ChatMessage };
 
@@ -107,7 +106,7 @@ export default function DiscordLiveChat() {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showMemberList, setShowMemberList] = useState(true);
 
-  const { user } = useAuth();
+  const { user, profile } = useAuth();
 
   // User Profile
   const [userName, setUserName] = useState("Trader (You)");
@@ -117,10 +116,10 @@ export default function DiscordLiveChat() {
 
   useEffect(() => {
     if (user) {
-      setUserName(user.displayName || user.email?.split("@")[0] || "Trader");
-      if (user.photoURL) setUserAvatar(user.photoURL);
+      setUserName(profile?.displayName || user.email?.split("@")[0] || "Trader");
+      if (profile?.photoURL) setUserAvatar(profile.photoURL);
     }
-  }, [user]);
+  }, [user, profile]);
 
   // Post Signal Modal
   const [showSignalModal, setShowSignalModal] = useState(false);
@@ -243,45 +242,53 @@ export default function DiscordLiveChat() {
     }
   }, [user]);
 
-  // Listen for real-time trade ideas stored in Firestore
   useEffect(() => {
-    const q = query(collection(db, "trade_ideas"), limit(25));
-    const unsubscribe = onSnapshot(
-      q,
-      (snapshot) => {
-        snapshot.docChanges().forEach((change) => {
-          if (change.type === "added") {
-            const data = change.doc.data();
-            const firestoreId = `firestore-${change.doc.id}`;
-            setMessages((prev) => {
-              if (prev.some((m) => m.id === firestoreId)) return prev;
-              const ideaMsg: ChatMessage = {
-                id: firestoreId,
-                channelId: "general-trading",
-                author: {
-                  name: data.userName || "Verified Desk Trader",
-                  avatar: data.userAvatar || "👤",
-                  role: "pro-trader",
-                  roleLabel: "FIRESTORE VERIFIED",
-                  roleColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/40",
-                  isVerified: true,
-                },
-                content: `🎯 **COMMUNITY SETUP: $${data.symbol} (${data.stance})**\n${data.content}\nTarget: ${data.target} | Stop: ${data.invalidation}`,
-                timestamp: data.createdAt || new Date().toISOString(),
-                timeLabel: `${formatTimeZones(new Date(data.createdAt || Date.now())).wibTime} WIB`,
-                reactions: { "🚀": 3, "🔥": 2 },
-                userReactions: {},
-              };
-              return [...prev, ideaMsg];
-            });
-          }
-        });
-      },
-      (error) => {
-        console.warn("Firestore trade ideas live subscription fallback:", error);
+    let active = true;
+    const addIdeaMessage = (data: Record<string, unknown>) => {
+      const ideaId = String(data.id || "");
+      if (!ideaId) return;
+      const createdAt = String(data.created_at || new Date().toISOString());
+      setMessages((prev) => {
+        if (prev.some((message) => message.id === `supabase-${ideaId}`)) return prev;
+        const ideaMessage: ChatMessage = {
+          id: `supabase-${ideaId}`,
+          channelId: "general-trading",
+          author: {
+            name: String(data.user_name || "Verified Desk Trader"),
+            avatar: String(data.user_avatar || "Trader"),
+            role: "pro-trader",
+            roleLabel: "SUPABASE VERIFIED",
+            roleColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/40",
+            isVerified: true,
+          },
+          content: `COMMUNITY SETUP: $${String(data.symbol)} (${String(data.stance)})\n${String(data.content)}\nTarget: ${String(data.target || "—")} | Stop: ${String(data.invalidation || "—")}`,
+          timestamp: createdAt,
+          timeLabel: `${formatTimeZones(new Date(createdAt)).wibTime} WIB`,
+          reactions: { "🚀": 3, "🔥": 2 },
+          userReactions: {},
+        };
+        return [...prev, ideaMessage];
+      });
+    };
+    const loadIdeas = async () => {
+      const { data, error } = await supabase.from("trade_ideas")
+        .select("id,symbol,stance,content,target,invalidation,user_name,user_avatar,created_at")
+        .order("created_at", { ascending: false }).limit(25);
+      if (!active) return;
+      if (error) {
+        console.error("[v0] Could not load Supabase trade ideas:", error);
+        return;
       }
-    );
-    return () => unsubscribe();
+      data.reverse().forEach((idea) => addIdeaMessage(idea));
+    };
+    void loadIdeas();
+    const channel = supabase.channel("community-trade-ideas")
+      .on("postgres_changes", { event: "INSERT", schema: "public", table: "trade_ideas" }, (payload) => addIdeaMessage(payload.new))
+      .subscribe();
+    return () => {
+      active = false;
+      void supabase.removeChannel(channel);
+    };
   }, []);
 
   // Save messages to localStorage
@@ -574,7 +581,7 @@ export default function DiscordLiveChat() {
     );
   };
 
-  const handlePostSignal = (e: React.FormEvent) => {
+  const handlePostSignal = async (e: React.FormEvent) => {
     e.preventDefault();
     const parsedPrice = Number(sigPrice);
     if (!Number.isFinite(parsedPrice) || parsedPrice <= 0) return;
@@ -627,19 +634,21 @@ export default function DiscordLiveChat() {
 
     if (user) {
       try {
-        const ideaId = `idea-${Date.now()}`;
-        setDoc(doc(db, "trade_ideas", ideaId), {
+        const ideaId = `idea-${Date.now()}-${user.id}`;
+        const { error } = await supabase.from("trade_ideas").insert({
+          id: ideaId,
+          user_id: user.id,
           symbol: customPrediction.symbol,
           stance: customPrediction.stance,
           content: customPrediction.technicalMechanism,
           target: `$${customPrediction.target1}`,
           invalidation: `$${customPrediction.invalidationLevel}`,
-          userName,
-          userAvatar,
-          createdAt: new Date().toISOString(),
+          user_name: userName,
+          user_avatar: userAvatar,
         });
+        if (error) throw error;
       } catch (err) {
-        console.warn("Could not save trade idea to Firestore:", err);
+        console.error("[v0] Could not save trade idea to Supabase:", err);
       }
     }
   };

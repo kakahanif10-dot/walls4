@@ -21,8 +21,7 @@ import { ASSETS, ASSET_BY_SYMBOL, fmtPrice, fmtPct, metricsFor, type Asset } fro
 import { useQuote } from "@/components/live-prices";
 import { useAuth } from "@/lib/auth-context";
 import WhopBadge from "@/components/whop-badge";
-import { db } from "@/lib/firebase";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { supabase } from "@/lib/supabase";
 
 interface PositionSizingCalculatorProps {
   initialSymbol?: string;
@@ -103,42 +102,36 @@ export default function PositionSizingCalculator({
     }
   }, [symbol, initialPrice, initialVolatility, initialInvalidation, assetMetrics, liveQuote?.price, hasManualPriceEdit]);
 
-  // Load saved risk preferences from Firestore if authenticated
   useEffect(() => {
     if (!user) return;
-    const fetchSavedPref = async () => {
-      try {
-        const userDoc = await getDoc(doc(db, "users", user.uid));
-        if (userDoc.exists()) {
-          const data = userDoc.data();
-          if (data?.calculatorAccountSize) setAccountSize(data.calculatorAccountSize);
-          if (data?.calculatorRiskPct) setAccountRiskPct(data.calculatorRiskPct);
-        }
-      } catch (err) {
-        console.warn("Could not load calculator preferences from Firestore:", err);
+    let active = true;
+    const loadPreferences = async () => {
+      const { data, error } = await supabase.from("profiles").select("calculator_account_size,calculator_risk_pct").eq("id", user.id).maybeSingle();
+      if (!active) return;
+      if (error) {
+        console.error("[v0] Could not load Supabase calculator preferences:", error);
+        return;
       }
+      if (data?.calculator_account_size) setAccountSize(Number(data.calculator_account_size));
+      if (data?.calculator_risk_pct) setAccountRiskPct(Number(data.calculator_risk_pct));
     };
-    fetchSavedPref();
+    void loadPreferences();
+    return () => { active = false; };
   }, [user]);
 
-  // Save risk preference to Firestore
-  const savePreferencesToFirestore = async () => {
+  const savePreferencesToSupabase = async () => {
     if (!user) return;
-    try {
-      await setDoc(
-        doc(db, "users", user.uid),
-        {
-          calculatorAccountSize: accountSize,
-          calculatorRiskPct: accountRiskPct,
-          updatedAt: new Date().toISOString(),
-        },
-        { merge: true },
-      );
-      setSavedPreferenceNotice(true);
-      setTimeout(() => setSavedPreferenceNotice(false), 3000);
-    } catch (err) {
-      console.warn("Could not save calculator preferences to Firestore:", err);
+    const { error } = await supabase.from("profiles").update({
+      calculator_account_size: accountSize,
+      calculator_risk_pct: accountRiskPct,
+      updated_at: new Date().toISOString(),
+    }).eq("id", user.id);
+    if (error) {
+      console.error("[v0] Could not save Supabase calculator preferences:", error);
+      return;
     }
+    setSavedPreferenceNotice(true);
+    setTimeout(() => setSavedPreferenceNotice(false), 3000);
   };
 
   // Reset to current asset defaults
@@ -493,15 +486,15 @@ ${calculations.isCapped ? `Note: Capped by ${calculations.capReason}` : ""}`;
             </button>
           </div>
 
-          {/* User Preferences Persistence in Firestore */}
+          {/* User Preferences Persistence */}
           {user && (
             <div className="flex items-center justify-between rounded-xl bg-emerald-950/30 px-3.5 py-2.5 text-xs">
               <span className="text-[11px] text-emerald-300">
-                {savedPreferenceNotice ? "✓ Risk defaults saved to Firestore!" : "Save these risk defaults to your account"}
+                {savedPreferenceNotice ? "✓ Risk defaults saved to Supabase!" : "Save these risk defaults to your account"}
               </span>
               <button
                 type="button"
-                onClick={savePreferencesToFirestore}
+                onClick={savePreferencesToSupabase}
                 className="rounded-lg bg-emerald-500/20 px-2.5 py-1 text-[10px] font-semibold text-emerald-300 hover:bg-emerald-500/30 transition-colors"
               >
                 Save
