@@ -11,7 +11,7 @@ import { LockedLink } from "@/components/locked-action";
 import BrandMark from "@/components/brand-mark";
 
 export default function AuthButton() {
-  const { user, profile, loading, sendPasswordReset, signInWithEmail, signInWithOAuth, signUpWithEmail, signOutUser } = useAuth();
+  const { user, profile, loading, sendPasswordReset, signInWithEmail, signUpWithEmail, signOutUser } = useAuth();
   const { isUnlocked } = useWhop();
   const [menuOpen, setMenuOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -65,21 +65,6 @@ export default function AuthButton() {
     } catch (error) {
       setMessage({ type: "error", text: explainAuthError(error) });
     } finally {
-      setSubmitting(false);
-    }
-  };
-
-  const handleOAuthSignIn = async (provider: "google" | "apple" | "facebook") => {
-    if (!acceptedPolicies) {
-      setMessage({ type: "error", text: "Please accept both policies before continuing." });
-      return;
-    }
-    setSubmitting(true);
-    setMessage(null);
-    try {
-      await signInWithOAuth(provider, acceptedPolicies);
-    } catch {
-      setMessage({ type: "error", text: `Could not start ${provider} sign-in. Make sure this provider is enabled in Supabase, then try again.` });
       setSubmitting(false);
     }
   };
@@ -159,33 +144,15 @@ export default function AuthButton() {
           <div className="mx-auto max-w-md">
             <form onSubmit={handleSubmit} className="flex flex-col">
               <label htmlFor="auth-email" className="mb-1 mt-1 text-xs text-muted">Email address</label>
-                <input id="auth-email" type="email" autoComplete="email" required value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" className="min-h-11 rounded-xl border border-ink-700 bg-ink-950 px-3.5 text-sm text-bone placeholder:text-muted/50 focus:border-gold/60 focus:outline-none focus:ring-2 focus:ring-gold/20" />
-                <label htmlFor="auth-password" className="mb-1 mt-4 text-xs text-muted">{isSignUp ? "Create a password" : "Password"}</label>
-                <input id="auth-password" type="password" autoComplete={isSignUp ? "new-password" : "current-password"} minLength={isSignUp ? 6 : undefined} required value={password} onChange={(event) => setPassword(event.target.value)} placeholder={isSignUp ? "At least 6 characters" : "Your password"} className="min-h-11 rounded-xl border border-ink-700 bg-ink-950 px-3.5 text-sm text-bone placeholder:text-muted/50 focus:border-gold/60 focus:outline-none focus:ring-2 focus:ring-gold/20" />
+              <input id="auth-email" type="email" autoComplete="email" required value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" className="min-h-11 rounded-xl border border-ink-700 bg-ink-950 px-3.5 text-sm text-bone placeholder:text-muted/50 focus:border-gold/60 focus:outline-none focus:ring-2 focus:ring-gold/20" />
+              <label htmlFor="auth-password" className="mb-1 mt-4 text-xs text-muted">{isSignUp ? "Create a password" : "Password"}</label>
+              <input id="auth-password" type="password" autoComplete={isSignUp ? "new-password" : "current-password"} minLength={isSignUp ? 6 : undefined} required value={password} onChange={(event) => setPassword(event.target.value)} placeholder={isSignUp ? "At least 6 characters" : "Your password"} className="min-h-11 rounded-xl border border-ink-700 bg-ink-950 px-3.5 text-sm text-bone placeholder:text-muted/50 focus:border-gold/60 focus:outline-none focus:ring-2 focus:ring-gold/20" />
               <label className="mt-5 flex items-start gap-3 text-xs leading-relaxed text-muted">
                 <input type="checkbox" required checked={acceptedPolicies} onChange={(event) => setAcceptedPolicies(event.target.checked)} className="mt-0.5 size-4 shrink-0 accent-amber-400" />
                 <span>I have read and agree to the <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gold-bright underline underline-offset-2">Privacy Policy</Link> and <Link href="/terms-of-service" target="_blank" rel="noopener noreferrer" className="text-gold-bright underline underline-offset-2">NextWallStreet Terms of Service</Link>.</span>
               </label>
-              {!isSignUp && (
-  <>
-    <div className="mt-5 flex justify-center w-full">
-      {([['google', 'Google']] as const).map(([provider, label]) => (
-        <button
-          key={provider}
-          type="button"
-          onClick={() => void handleOAuthSignIn(provider)}
-          disabled={submitting || !acceptedPolicies}
-          className="min-h-11 w-full rounded-xl border border-ink-700 bg-ink-950 px-4 text-xs font-semibold text-bone transition hover:border-gold/50 disabled:cursor-not-allowed disabled:opacity-50"
-        >
-          Continue with {label}
-        </button>
-      ))}
-    </div>
-    <p className="mt-3 text-[11px] leading-relaxed text-muted">
-      Social sign-in requires each provider to be enabled with its OAuth client credentials in Supabase under Authentication → Sign In / Providers.
-    </p>
-  </>
-)}
+
+              <button type="submit" disabled={submitting || !acceptedPolicies} className="mt-5 min-h-12 w-full rounded-xl bg-gold px-4 text-sm font-bold text-ink-950 transition hover:bg-gold-bright disabled:cursor-not-allowed disabled:opacity-50">{submitting ? "Signing in…" : isSignUp ? "Create account" : "Continue"}</button>
               {!isSignUp && <button type="button" onClick={() => void handleRecovery()} disabled={submitting} className="mt-3 text-center text-xs text-muted underline underline-offset-2 hover:text-bone">Forgot your password?</button>}
               <button type="button" onClick={() => { setIsSignUp((value) => !value); setMessage(null); }} className="mt-4 text-left text-xs text-gold hover:text-gold-bright">{isSignUp ? "Already have an account? Sign in" : "New to NWS? Create an account"}</button>
               {!isSignUp && <p className="mt-3 text-center text-xs text-muted">Print subscriber? <Link href="/pricing" onClick={closeModal} className="text-gold-bright underline underline-offset-2">Activate your digital subscription</Link></p>}
