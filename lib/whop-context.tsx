@@ -65,11 +65,9 @@ export function WhopProvider({ children }: { children: ReactNode }) {
   const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
   const handledUrlReturnRef = useRef(false);
 
-  const origin = typeof window !== "undefined" ? window.location.origin : "";
   const effectiveEmail = (emailInput || user?.email || "").trim();
   const lifetimeCheckoutUrl = buildLifetimeCheckoutUrl({
     email: effectiveEmail || undefined,
-    redirectUrl: origin ? `${origin}${pendingHref || "/"}` : undefined,
   });
 
   useEffect(() => {
