@@ -150,7 +150,7 @@ export default function AcademyFAQ() {
             href="/pricing"
             className="rounded-xl bg-gold px-5 py-2.5 text-xs font-bold text-ink-950 hover:bg-gold-bright transition shadow"
           >
-            Get Lifetime Access Only — $1,487 USD
+            One Lifetime Plan Only — $1,487 USD
           </Link>
         </div>
       </div>

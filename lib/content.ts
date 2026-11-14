@@ -264,7 +264,7 @@ export const PLANS = [
       "Watchlist score-change alerts, model portfolio access & 1,100+ member community",
       "One-time $1,487 USD purchase with permanent lifetime updates",
     ],
-    cta: "Get Lifetime Access Only",
+    cta: "One Lifetime Plan Only",
     highlight: true,
   },
 ];

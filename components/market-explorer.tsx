@@ -157,7 +157,7 @@ export default function MarketExplorer({
     return (
       <div className="mx-auto max-w-lg rounded-2xl bg-gradient-to-b from-[#15120c] via-ink-900/95 to-ink-950 p-6 sm:p-7 text-center shadow-2xl space-y-4">
         <h3 className="font-display text-2xl text-bone">
-          Get Lifetime Access Only
+          One Lifetime Plan Only
         </h3>
         <p className="text-xs leading-relaxed text-muted">
           Get every research piece, full crypto and meme-coin coverage, all four Academy courses,
@@ -169,7 +169,7 @@ export default function MarketExplorer({
             onClick={() => openWhopModal("All 2,038+ Scored Assets")}
             className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-xs font-bold text-ink-950 transition hover:bg-gold-bright shadow-lg"
           >
-            Lifetime Access Only — $1,487 USD
+            One Lifetime Plan Only — $1,487 USD
           </button>
           <Link
             href="/pricing"

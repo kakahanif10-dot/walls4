@@ -123,7 +123,7 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
                 onClick={() => setShowCheckoutModal(true)}
                 className="flex w-full items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-bold text-ink-950 transition hover:bg-gold-bright shadow-xl"
               >
-                Get Lifetime Access Only — $1,487 USD
+                One Lifetime Plan Only — $1,487 USD
               </button>
             )}
 

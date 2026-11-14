@@ -376,7 +376,7 @@ export function WhopProvider({ children }: { children: ReactNode }) {
                       onClick={handleCheckoutStarted}
                       className="flex w-full items-center justify-center rounded-full bg-gold px-6 py-3.5 text-xs font-bold tracking-wide text-ink-950 transition hover:bg-gold-bright shadow-lg"
                     >
-                      Get Lifetime Access Only — $1,487 USD
+                      One Lifetime Plan Only — $1,487 USD
                     </a>
                   ) : (
                     <button
@@ -391,7 +391,7 @@ export function WhopProvider({ children }: { children: ReactNode }) {
                       }}
                       className="flex w-full items-center justify-center rounded-full bg-gold px-6 py-3.5 text-xs font-bold tracking-wide text-ink-950 transition hover:bg-gold-bright shadow-lg"
                     >
-                      Get Lifetime Access Only — $1,487 USD
+                      One Lifetime Plan Only — $1,487 USD
                     </button>
                   )}
 
