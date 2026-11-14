@@ -8,6 +8,7 @@ import { Award, Bookmark, Calculator, LogOut, Shield, ShieldCheck, User as UserI
 import { useAuth } from "@/lib/auth-context";
 import { useWhop } from "@/lib/whop-context";
 import { LockedLink } from "@/components/locked-action";
+import BrandMark from "@/components/brand-mark";
 
 export default function AuthButton() {
   const { user, profile, loading, sendPasswordReset, signInWithEmail, signInWithOAuth, signUpWithEmail, signOutUser } = useAuth();
@@ -145,6 +146,9 @@ export default function AuthButton() {
         <section role="dialog" aria-modal="true" aria-labelledby="auth-title" className="relative my-auto max-h-[calc(100dvh-1.5rem)] w-full max-w-2xl overflow-y-auto rounded-3xl border border-gold/20 bg-ink-900 p-6 shadow-[0_24px_100px_rgba(0,0,0,0.55)] sm:max-h-[calc(100dvh-3rem)] sm:p-9">
           <button type="button" onClick={closeModal} aria-label="Close sign-in dialog" className="absolute right-5 top-5 rounded-full p-2 text-muted transition hover:bg-ink-800 hover:text-bone">×</button>
           <div className="mb-7 max-w-lg">
+            <div className="mb-7 flex justify-center border-b border-white/[0.08] pb-5">
+              <BrandMark centered />
+            </div>
             <span className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-gold"><ShieldCheck className="h-4 w-4" /> Secure Supabase Account</span>
             <h2 id="auth-title" className="mt-3 font-display text-3xl text-bone sm:text-4xl">{isSignUp ? "Create your account" : "Sign in to your desk"}</h2>
             <p className="mt-2 text-sm leading-relaxed text-muted">Save your watchlist and account preferences securely. Sign-in is optional; you can browse without an account.</p>
@@ -162,11 +166,16 @@ export default function AuthButton() {
                 <input type="checkbox" required checked={acceptedPolicies} onChange={(event) => setAcceptedPolicies(event.target.checked)} className="mt-0.5 size-4 shrink-0 accent-amber-400" />
                 <span>I have read and agree to the <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gold-bright underline underline-offset-2">Privacy Policy</Link> and <Link href="/terms-of-service" target="_blank" rel="noopener noreferrer" className="text-gold-bright underline underline-offset-2">NextWallStreet Terms of Service</Link>.</span>
               </label>
-              {!isSignUp && <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-3">
-                {([['google', 'Google'], ['apple', 'Apple'], ['facebook', 'Facebook']] as const).map(([provider, label]) => (
-                  <button key={provider} type="button" onClick={() => void handleOAuthSignIn(provider)} disabled={submitting || !acceptedPolicies} className="min-h-11 rounded-xl border border-ink-700 bg-ink-950 px-3 text-xs font-semibold text-bone transition hover:border-gold/50 disabled:cursor-not-allowed disabled:opacity-50">Continue with {label}</button>
-                ))}
-              </div>}
+              {!isSignUp && <>
+                <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-3">
+                  {([['google', 'Google'], ['apple', 'Apple'], ['facebook', 'Facebook']] as const).map(([provider, label]) => (
+                    <button key={provider} type="button" onClick={() => void handleOAuthSignIn(provider)} disabled={submitting || !acceptedPolicies} className="min-h-11 rounded-xl border border-ink-700 bg-ink-950 px-3 text-xs font-semibold text-bone transition hover:border-gold/50 disabled:cursor-not-allowed disabled:opacity-50">Continue with {label}</button>
+                  ))}
+                </div>
+                <p className="mt-3 text-[11px] leading-relaxed text-muted">
+                  Social sign-in requires each provider to be enabled with its OAuth client credentials in Supabase under Authentication → Sign In / Providers.
+                </p>
+              </>}
               <button type="submit" disabled={submitting || !acceptedPolicies} className="mt-5 min-h-12 w-full rounded-xl bg-gold px-4 text-sm font-bold text-ink-950 transition hover:bg-gold-bright disabled:cursor-not-allowed disabled:opacity-50">{submitting ? "Signing in…" : isSignUp ? "Create account" : "Continue"}</button>
               {!isSignUp && <button type="button" onClick={() => void handleRecovery()} disabled={submitting} className="mt-3 text-center text-xs text-muted underline underline-offset-2 hover:text-bone">Forgot your password?</button>}
               <button type="button" onClick={() => { setIsSignUp((value) => !value); setMessage(null); }} className="mt-4 text-left text-xs text-gold hover:text-gold-bright">{isSignUp ? "Already have an account? Sign in" : "New to NWS? Create an account"}</button>

@@ -6,6 +6,7 @@ import { useState, useEffect, useRef, type MouseEvent } from "react";
 import LiveClock from "@/components/live-clock";
 import FeedBadge from "@/components/feed-badge";
 import AuthButton from "@/components/auth-button";
+import BrandMark from "@/components/brand-mark";
 import GlobalSearchModal from "@/components/global-search";
 import { useWhop } from "@/lib/whop-context";
 import {
@@ -326,15 +327,14 @@ export default function SiteHeader() {
           {/* Editorial Brand */}
           <Link
             href="/"
-            className="group flex shrink-0 items-baseline"
+            aria-label="NextWallStreet home"
+            className="group flex shrink-0 items-center transition-opacity hover:opacity-85"
             onClick={() => {
               setMobileOpen(false);
               setDirectoryOpen(false);
             }}
           >
-            <span className="font-display text-[1.35rem] tracking-tight text-bone">
-              Next<span className="text-gold-bright">Wall</span>Street
-            </span>
+            <BrandMark />
           </Link>
 
           {/* Primary Single-Row Navigation */}
