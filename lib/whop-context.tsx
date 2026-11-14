@@ -51,7 +51,7 @@ const PENDING_CHECKOUT_KEY = "nws_whop_checkout_pending";
 
 export function WhopProvider({ children }: { children: ReactNode }) {
   const router = useRouter();
-  const { user, profile, updateUserPlan } = useAuth();
+  const { user } = useAuth();
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [hasCheckedStorage, setHasCheckedStorage] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -63,7 +63,6 @@ export function WhopProvider({ children }: { children: ReactNode }) {
   const [showKeyForm, setShowKeyForm] = useState(false);
   const [awaitingCheckout, setAwaitingCheckout] = useState(false);
   const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
-  const autoCheckedEmailRef = useRef<string | null>(null);
   const handledUrlReturnRef = useRef(false);
 
   const origin = typeof window !== "undefined" ? window.location.origin : "";
@@ -75,13 +74,6 @@ export function WhopProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     try {
-      const localStatus = localStorage.getItem("nws_whop_unlocked");
-      if (localStatus === "true") {
-        setIsUnlocked(true);
-      } else if (profile?.plan === "premium" || profile?.plan === "institutional") {
-        setIsUnlocked(true);
-        localStorage.setItem("nws_whop_unlocked", "true");
-      }
       const savedPendingHref = sessionStorage.getItem(PENDING_HREF_KEY);
       if (savedPendingHref) setPendingHref(savedPendingHref);
       if (sessionStorage.getItem(PENDING_CHECKOUT_KEY) === "true") {
@@ -92,23 +84,17 @@ export function WhopProvider({ children }: { children: ReactNode }) {
     } finally {
       setHasCheckedStorage(true);
     }
-  }, [profile]);
+  }, []);
 
   const applyVerifiedUnlock = useCallback(
-    async (data: { licenseKey?: string; membershipId?: string; email?: string }, silent?: boolean) => {
+    async (silent?: boolean) => {
       setIsUnlocked(true);
       setAwaitingCheckout(false);
       try {
-        localStorage.setItem("nws_whop_unlocked", "true");
-        if (data.licenseKey) localStorage.setItem("nws_whop_license", data.licenseKey);
-        if (data.membershipId) localStorage.setItem("nws_whop_membership_id", data.membershipId);
-        if (data.email) localStorage.setItem("nws_whop_email", data.email);
         sessionStorage.removeItem(PENDING_CHECKOUT_KEY);
       } catch {
         // ignore storage errors
       }
-
-      await updateUserPlan("premium");
 
       let targetToOpen: string | null = null;
       try {
@@ -139,7 +125,7 @@ export function WhopProvider({ children }: { children: ReactNode }) {
         }
       }
     },
-    [pendingHref, router, updateUserPlan],
+    [pendingHref, router],
   );
 
   const unlockWithWhop = useCallback(
@@ -151,12 +137,12 @@ export function WhopProvider({ children }: { children: ReactNode }) {
       const cleanPaymentId = (options?.paymentId ?? "").trim();
       const silent = Boolean(options?.silent);
 
-      if (!cleanKey && !cleanEmail && !cleanMembershipId && !cleanReceiptId && !cleanPaymentId) {
+      if (!cleanKey && !cleanMembershipId && !cleanReceiptId && !cleanPaymentId) {
         if (!silent) {
           setShowKeyForm(true);
           setFeedback({
             type: "error",
-            message: "Enter your Whop license key or purchase email after completing checkout.",
+            message: "Complete checkout, then use the Whop license key or membership ID from your receipt to verify access.",
           });
         }
         return false;
@@ -183,14 +169,7 @@ export function WhopProvider({ children }: { children: ReactNode }) {
 
         const data = await res.json();
         if (res.ok && data.success && data.unlocked) {
-          await applyVerifiedUnlock(
-            {
-              licenseKey: data.licenseKey || cleanKey,
-              membershipId: data.membershipId || cleanMembershipId,
-              email: data.email || cleanEmail,
-            },
-            silent,
-          );
+          await applyVerifiedUnlock(silent);
           return true;
         } else {
           if (!silent) {
@@ -255,49 +234,10 @@ export function WhopProvider({ children }: { children: ReactNode }) {
     })();
   }, [hasCheckedStorage, isUnlocked, unlockWithWhop]);
 
-  // 2. Silently auto-verify signed-in user's email against Whop API / webhook store
-  useEffect(() => {
-    if (!hasCheckedStorage || isUnlocked) return;
-    const userEmail = user?.email?.trim().toLowerCase();
-    if (!userEmail || autoCheckedEmailRef.current === userEmail) return;
-
-    autoCheckedEmailRef.current = userEmail;
-    void unlockWithWhop({ email: userEmail, silent: true });
-  }, [hasCheckedStorage, isUnlocked, user?.email, unlockWithWhop]);
-
-  // 3. When user opens Whop checkout in a new tab and returns, auto-check payment status on focus & poll
-  useEffect(() => {
-    if (!awaitingCheckout || isUnlocked) return;
-    const candidateEmail =
-      (emailInput || user?.email || (typeof localStorage !== "undefined" ? localStorage.getItem("nws_whop_email") : "") || "").trim();
-    if (!candidateEmail) return;
-
-    const checkNow = () => {
-      void unlockWithWhop({ email: candidateEmail, silent: true });
-    };
-
-    const handleVisibility = () => {
-      if (document.visibilityState === "visible") checkNow();
-    };
-
-    window.addEventListener("focus", checkNow);
-    document.addEventListener("visibilitychange", handleVisibility);
-    const interval = window.setInterval(checkNow, 5000);
-
-    return () => {
-      window.removeEventListener("focus", checkNow);
-      document.removeEventListener("visibilitychange", handleVisibility);
-      window.clearInterval(interval);
-    };
-  }, [awaitingCheckout, isUnlocked, emailInput, user?.email, unlockWithWhop]);
-
   const handleCheckoutStarted = useCallback(() => {
     setAwaitingCheckout(true);
     try {
       sessionStorage.setItem(PENDING_CHECKOUT_KEY, "true");
-      if (effectiveEmail) {
-        localStorage.setItem("nws_whop_email", effectiveEmail);
-      }
     } catch {
       // ignore storage errors
     }
@@ -307,19 +247,15 @@ export function WhopProvider({ children }: { children: ReactNode }) {
     setIsUnlocked(false);
     setAwaitingCheckout(false);
     try {
-      localStorage.removeItem("nws_whop_unlocked");
-      localStorage.removeItem("nws_whop_license");
-      localStorage.removeItem("nws_whop_membership_id");
       sessionStorage.removeItem(PENDING_CHECKOUT_KEY);
       sessionStorage.removeItem(PENDING_HREF_KEY);
     } catch {}
-    updateUserPlan("reader");
     setFeedback({
       type: "success",
       message: "Lifetime session locked.",
     });
     setTimeout(() => setFeedback(null), 2000);
-  }, [updateUserPlan]);
+  }, []);
 
   const openWhopModal = useCallback((desk?: string, targetHref?: string) => {
     setDeskName(desk || "Lifetime Premium");
@@ -488,7 +424,7 @@ export function WhopProvider({ children }: { children: ReactNode }) {
                           type="text"
                           value={licenseInput}
                           onChange={(e) => setLicenseInput(e.target.value)}
-                          placeholder="Paste Whop License Key..."
+                          placeholder="Paste your Whop license key..."
                           className="w-full rounded-xl bg-ink-950/90 px-3.5 py-2.5 text-xs font-mono text-bone placeholder:text-muted/60 focus:outline-none focus:ring-1 focus:ring-gold/40"
                         />
                         <div className="flex gap-2">
@@ -502,7 +438,7 @@ export function WhopProvider({ children }: { children: ReactNode }) {
                           <button
                             type="button"
                             onClick={() => unlockWithWhop()}
-                            disabled={loading || (!licenseInput.trim() && !emailInput.trim())}
+                            disabled={loading || !licenseInput.trim()}
                             className="rounded-xl bg-gold/15 px-4 py-2 text-xs font-semibold text-gold-bright transition hover:bg-gold/25 disabled:opacity-40"
                           >
                             {loading ? "Verifying..." : "Verify"}

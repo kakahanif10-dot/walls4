@@ -9,13 +9,16 @@ import {
   verifyWhopWebhookSignature,
 } from "./whop-verification";
 
-test("validateWhopCredentialsInput rejects empty activation attempts and accepts key, email, membershipId, or receiptId", () => {
+test("validateWhopCredentialsInput rejects empty and email-only attempts, and accepts verifiable Whop IDs", () => {
   const empty = validateWhopCredentialsInput({});
   assert.equal(empty.ok, false);
   assert.match(empty.error ?? "", /Payment verification required/);
 
-  const badEmail = validateWhopCredentialsInput({ email: "not-an-email" });
-  assert.equal(badEmail.ok, false);
+  const emailOnly = validateWhopCredentialsInput({ email: "buyer@example.com" });
+  assert.equal(emailOnly.ok, false);
+
+  const badEmailWithKey = validateWhopCredentialsInput({ licenseKey: "key_123", email: "not-an-email" });
+  assert.equal(badEmailWithKey.ok, false);
 
   const validKey = validateWhopCredentialsInput({ licenseKey: "whop_key_12345" });
   assert.equal(validKey.ok, true);
@@ -30,7 +33,7 @@ test("validateWhopCredentialsInput rejects empty activation attempts and accepts
   assert.equal(validReceipt.receiptId, "rcpt_xyz789");
 });
 
-test("extractActiveWhopMembership grants verified=true when active membership matches licenseKey, membershipId, or email", () => {
+test("extractActiveWhopMembership only accepts active membership from the configured product", () => {
   const records = [
     {
       id: "mem_1",
@@ -38,6 +41,7 @@ test("extractActiveWhopMembership grants verified=true when active membership ma
       valid: false,
       email: "canceled@example.com",
       license_key: "key_canceled",
+      product_id: "prod_lifetime",
     },
     {
       id: "mem_2",
@@ -45,23 +49,43 @@ test("extractActiveWhopMembership grants verified=true when active membership ma
       valid: true,
       email: "Buyer@NextWallStreet.com",
       license_key: "key_lifetime_1487",
+      product_id: "prod_lifetime",
     },
   ];
 
-  const miss = extractActiveWhopMembership(records, { licenseKey: "key_canceled" });
+  const miss = extractActiveWhopMembership(records, {
+    licenseKey: "key_canceled",
+    productId: "prod_lifetime",
+  });
   assert.equal(miss.verified, false);
 
-  const byKey = extractActiveWhopMembership(records, { licenseKey: "key_lifetime_1487" });
+  const byKey = extractActiveWhopMembership(records, {
+    licenseKey: "key_lifetime_1487",
+    productId: "prod_lifetime",
+  });
   assert.equal(byKey.verified, true);
   assert.equal(byKey.membershipId, "mem_2");
 
-  const byMembershipId = extractActiveWhopMembership(records, { membershipId: "mem_2" });
+  const wrongProduct = extractActiveWhopMembership(records, {
+    licenseKey: "key_lifetime_1487",
+    productId: "prod_other",
+  });
+  assert.equal(wrongProduct.verified, false);
+
+  const byMembershipId = extractActiveWhopMembership(records, {
+    membershipId: "mem_2",
+    productId: "prod_lifetime",
+  });
   assert.equal(byMembershipId.verified, true);
   assert.equal(byMembershipId.membershipId, "mem_2");
 
-  const byEmail = extractActiveWhopMembership(records, { email: "buyer@nextwallstreet.com" });
-  assert.equal(byEmail.verified, true);
-  assert.equal(byEmail.membershipId, "mem_2");
+  const byEmailAndKey = extractActiveWhopMembership(records, {
+    email: "buyer@nextwallstreet.com",
+    licenseKey: "key_lifetime_1487",
+    productId: "prod_lifetime",
+  });
+  assert.equal(byEmailAndKey.verified, true);
+  assert.equal(byEmailAndKey.membershipId, "mem_2");
 });
 
 test("parseWhopReturnParams detects Whop post-checkout redirect parameters", () => {
@@ -89,6 +113,7 @@ test("parseWhopWebhookEvent handles activation and revocation events + signature
       valid: true,
       status: "active",
       license_key: "NWS-LIFE-1487",
+      product_id: "prod_lifetime",
       user: { email: "VIP@Buyer.com" },
     },
   };
@@ -97,6 +122,7 @@ test("parseWhopWebhookEvent handles activation and revocation events + signature
   assert.equal(parsedValid.membershipId, "mem_paid_1487");
   assert.equal(parsedValid.email, "vip@buyer.com");
   assert.equal(parsedValid.licenseKey, "NWS-LIFE-1487");
+  assert.equal(parsedValid.productId, "prod_lifetime");
 
   const revokedPayload = {
     action: "membership.went_invalid",
@@ -115,4 +141,5 @@ test("parseWhopWebhookEvent handles activation and revocation events + signature
   const sig = crypto.createHmac("sha256", secret).update(rawBody, "utf8").digest("hex");
   assert.equal(verifyWhopWebhookSignature(rawBody, sig, secret), true);
   assert.equal(verifyWhopWebhookSignature(rawBody, "bad_sig", secret), false);
+  assert.equal(verifyWhopWebhookSignature(rawBody, sig, undefined), false);
 });
