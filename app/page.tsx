@@ -121,7 +121,7 @@ export default async function HomePage() {
                 href="/pricing"
                 className="rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink-950 transition hover:bg-gold-bright"
               >
-                Lifetime Access Only — $1,487 USD
+                One Lifetime Plan Only — $1,487 USD
               </Link>
               <AuthButton />
               <LockedLink
@@ -449,7 +449,7 @@ export default async function HomePage() {
               href="/pricing"
               className="rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink-950 transition hover:bg-gold-bright"
             >
-              Lifetime Access Only — $1,487 USD
+              One Lifetime Plan Only — $1,487 USD
             </Link>
             <LockedLink
               href="/research"

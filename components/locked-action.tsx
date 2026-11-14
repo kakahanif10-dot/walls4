@@ -149,7 +149,7 @@ export function LifetimeRouteGuard({ children }: { children: ReactNode }) {
               rel="noopener noreferrer"
               className="flex w-full items-center justify-center rounded-full bg-gold px-6 py-3.5 text-xs font-bold tracking-wide text-ink-950 transition hover:bg-gold-bright shadow-lg"
             >
-              Get Lifetime Access Only — $1,487 USD
+              One Lifetime Plan Only — $1,487 USD
             </a>
           ) : (
             <button
@@ -157,7 +157,7 @@ export function LifetimeRouteGuard({ children }: { children: ReactNode }) {
               onClick={() => openWhopModal(labelForLockedRoute(pathname), pathname ?? undefined)}
               className="flex w-full items-center justify-center rounded-full bg-gold px-6 py-3.5 text-xs font-bold tracking-wide text-ink-950 transition hover:bg-gold-bright shadow-lg"
             >
-              Get Lifetime Access Only — $1,487 USD
+              One Lifetime Plan Only — $1,487 USD
             </button>
           )}
 

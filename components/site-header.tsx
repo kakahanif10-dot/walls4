@@ -508,7 +508,7 @@ export default function SiteHeader() {
                       onClick={() => setDirectoryOpen(false)}
                       className="font-medium text-gold-bright hover:underline"
                     >
-                      Lifetime Access Only →
+                      One Lifetime Plan Only →
                     </Link>
                   </div>
                 </div>
@@ -565,7 +565,7 @@ export default function SiteHeader() {
               onClick={() => setDirectoryOpen(false)}
               className="rounded-full bg-gold px-4 py-1.5 text-[13px] xl:text-sm font-semibold whitespace-nowrap text-ink-950 transition-colors hover:bg-gold-bright"
             >
-              Lifetime Access Only
+              One Lifetime Plan Only
             </Link>
           </div>
 
@@ -706,7 +706,7 @@ export default function SiteHeader() {
                 onClick={() => setMobileOpen(false)}
                 className="rounded-full bg-gold px-4 py-2 text-xs font-semibold text-ink-950"
               >
-                Lifetime Access Only
+                One Lifetime Plan Only
               </Link>
             </div>
           </nav>
