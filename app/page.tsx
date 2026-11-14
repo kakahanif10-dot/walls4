@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AuthButton from "@/components/auth-button";
 import TickerTape from "@/components/ticker-tape";
 import DisclaimerMarquee from "@/components/disclaimer-marquee";
 import Sparkline from "@/components/sparkline";
@@ -123,6 +124,7 @@ export default async function HomePage() {
               >
                 Get Lifetime Access — $1,487 USD
               </Link>
+              <AuthButton />
               <LockedLink
                 href="/markets"
                 deskLabel="US Equities Board"
