@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import { createHash } from "node:crypto";
+import { createClient } from "@supabase/supabase-js";
 import {
   parseWhopWebhookEvent,
   verifyWhopWebhookSignature,
@@ -7,6 +9,19 @@ import {
   recordVerifiedWhopMembership,
   revokeWhopMembership,
 } from "@/lib/whop-webhook-store";
+
+function getAdminSupabase() {
+  const url = process.env.SUPABASE_URL?.trim();
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
+  if (!url || !serviceKey) throw new Error("Supabase server credentials are not configured.");
+  return createClient(url, serviceKey, { auth: { persistSession: false, autoRefreshToken: false } });
+}
+
+function licenseHash(licenseKey?: string) {
+  return licenseKey?.trim()
+    ? createHash("sha256").update(licenseKey.trim()).digest("hex")
+    : null;
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -36,6 +51,25 @@ export async function POST(req: NextRequest) {
         productId: parsed.productId,
         status: parsed.status,
       });
+      const recordKey = parsed.membershipId?.trim()
+        ? `membership:${parsed.membershipId.trim()}`
+        : parsed.email?.trim()
+          ? `email:${parsed.email.trim().toLowerCase()}`
+          : `license:${licenseHash(parsed.licenseKey)}`;
+      const { error } = await getAdminSupabase().from("whop_memberships").upsert(
+        {
+          record_key: recordKey,
+          membership_id: parsed.membershipId?.trim() || null,
+          email: parsed.email?.trim().toLowerCase() || null,
+          product_id: parsed.productId,
+          license_key_hash: licenseHash(parsed.licenseKey),
+          status: parsed.status || "active",
+          valid: true,
+          updated_at: new Date().toISOString(),
+        },
+        { onConflict: "record_key" },
+      );
+      if (error) throw error;
     } else if (parsed.kind === "revoke" && parsed.productId === lifetimeProductId && lifetimeProductId) {
       revokeWhopMembership({
         membershipId: parsed.membershipId,
@@ -43,6 +77,17 @@ export async function POST(req: NextRequest) {
         licenseKey: parsed.licenseKey,
         status: parsed.status,
       });
+      const admin = getAdminSupabase();
+      const updatedAt = new Date().toISOString();
+      const updates = { valid: false, status: parsed.status || "canceled", updated_at: updatedAt };
+      const { error } = parsed.membershipId
+        ? await admin.from("whop_memberships").update(updates).eq("membership_id", parsed.membershipId)
+        : parsed.email
+          ? await admin.from("whop_memberships").update(updates).ilike("email", parsed.email.trim())
+          : parsed.licenseKey
+            ? await admin.from("whop_memberships").update(updates).eq("license_key_hash", licenseHash(parsed.licenseKey))
+            : { error: null };
+      if (error) throw error;
     }
 
     return NextResponse.json({

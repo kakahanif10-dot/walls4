@@ -16,6 +16,7 @@ export default function AuthButton() {
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
+  const [acceptedPolicies, setAcceptedPolicies] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [authMsg, setAuthMsg] = useState<{ type: "success" | "error"; text: string } | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -50,6 +51,10 @@ export default function AuthButton() {
     setAuthMsg(null);
     try {
       if (isSignUp) {
+        if (!acceptedPolicies) {
+          setAuthMsg({ type: "error", text: "Please accept the Privacy Policy and Terms of Service to create an account." });
+          return;
+        }
         const { error } = await signUpWithSupabaseEmail(emailInput, passwordInput || undefined);
         if (error) throw error;
         setAuthMsg({
@@ -283,6 +288,7 @@ export default function AuthButton() {
                   <KeyRound className="absolute left-3 top-2.5 h-4 w-4 text-muted/60" />
                   <input
                     type="password"
+                    required={isSignUp}
                     value={passwordInput}
                     onChange={(e) => setPasswordInput(e.target.value)}
                     placeholder="•••••••• (leave empty for magic link)"
@@ -291,9 +297,24 @@ export default function AuthButton() {
                 </div>
               </div>
 
+              {isSignUp && (
+                <label className="flex items-start gap-2.5 text-[11px] leading-relaxed text-muted">
+                  <input
+                    type="checkbox"
+                    required
+                    checked={acceptedPolicies}
+                    onChange={(event) => setAcceptedPolicies(event.target.checked)}
+                    className="mt-0.5 accent-amber-400"
+                  />
+                  <span>
+                    I have read and agree to the <Link href="/privacy-policy" className="text-gold-bright underline underline-offset-2">Privacy Policy</Link> and <Link href="/terms-of-service" className="text-gold-bright underline underline-offset-2">NextWallStreet Terms of Service</Link>.
+                  </span>
+                </label>
+              )}
+
               <button
                 type="submit"
-                disabled={submitting}
+                disabled={submitting || (isSignUp && !acceptedPolicies)}
                 className="w-full rounded-xl bg-gold px-4 py-2.5 text-xs font-bold text-ink-950 transition hover:bg-gold-bright shadow disabled:opacity-50"
               >
                 {submitting ? "Authenticating..." : isSignUp ? "Sign Up with Supabase" : "Sign In with Supabase"}

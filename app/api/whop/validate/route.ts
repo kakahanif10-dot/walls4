@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import { createHash } from "node:crypto";
+import { createClient } from "@supabase/supabase-js";
 import {
   extractActiveWhopMembership,
   validateWhopCredentialsInput,
@@ -62,7 +64,40 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // 2. Verify live against Whop API v2
+    // 2. Reuse entitlements persisted by signed Whop webhooks across server restarts.
+    const supabaseUrl = process.env.SUPABASE_URL?.trim();
+    const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
+    if (supabaseUrl && serviceRoleKey) {
+      const admin = createClient(supabaseUrl, serviceRoleKey, {
+        auth: { persistSession: false, autoRefreshToken: false },
+      });
+      let query = admin
+        .from("whop_memberships")
+        .select("membership_id,email,status,product_id")
+        .eq("product_id", productId)
+        .eq("valid", true);
+      if (validation.membershipId) {
+        query = query.eq("membership_id", validation.membershipId);
+      } else if (validation.email) {
+        query = query.ilike("email", validation.email);
+      } else if (validation.licenseKey) {
+        const licenseKeyHash = createHash("sha256").update(validation.licenseKey.trim()).digest("hex");
+        query = query.eq("license_key_hash", licenseKeyHash);
+      }
+      const { data: persisted } = await query.maybeSingle();
+      if (persisted) {
+        return NextResponse.json({
+          success: true,
+          unlocked: true,
+          plan: "premium",
+          membershipId: persisted.membership_id,
+          email: persisted.email,
+          message: "Lifetime Premium purchase verified from the secure account record.",
+        });
+      }
+    }
+
+    // 3. Verify live against Whop API v2
     const apiKey = process.env.WHOP_API_KEY?.trim();
     if (!apiKey) {
       return NextResponse.json(

@@ -527,6 +527,12 @@ export default function SiteHeader() {
             >
               <span>Watchlist</span>
             </Link>
+            <a
+              href="mailto:support@nextwallstreet.com"
+              className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] xl:text-sm whitespace-nowrap text-muted transition-colors hover:bg-ink-850 hover:text-bone"
+            >
+              Customer Service
+            </a>
           </nav>
 
           {/* Right Cluster */}
@@ -548,6 +554,7 @@ export default function SiteHeader() {
               <Search className="h-4 w-4" aria-hidden="true" />
             </button>
 
+            <AuthButton />
             <Link
               href="/pricing"
               onClick={() => setDirectoryOpen(false)}
@@ -597,12 +604,12 @@ export default function SiteHeader() {
 
             {/* Standard Primary Navigation */}
             <div className="grid gap-1">
-              {[...SIMPLE_LINKS, { href: "/watchlist", label: "Watchlist" }].map((link) => (
+              {[...SIMPLE_LINKS, { href: "/watchlist", label: "Watchlist" }, { href: "mailto:support@nextwallstreet.com", label: "Customer Service" }].map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   prefetch={isUnlocked ? undefined : false}
-                  onClick={(e) => handleLockedNav(e, link.label, link.href)}
+                  onClick={(e) => link.href.startsWith("mailto:") ? setMobileOpen(false) : handleLockedNav(e, link.label, link.href)}
                   className={`flex items-center justify-between rounded-md px-3 py-2 text-sm ${
                     isActive(link.href) ? "bg-ink-800 text-bone" : "text-muted hover:text-bone"
                   }`}
