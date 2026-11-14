@@ -1,5 +1,5 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, OAuthProvider, FacebookAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import firebaseConfig from "@/firebase-applet-config.json";
 
@@ -7,3 +7,5 @@ const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 export const auth = getAuth(app);
 export const db = getFirestore(app, firebaseConfig.firestoreDatabaseId);
 export const googleAuthProvider = new GoogleAuthProvider();
+export const appleAuthProvider = new OAuthProvider("apple.com");
+export const facebookAuthProvider = new FacebookAuthProvider();
