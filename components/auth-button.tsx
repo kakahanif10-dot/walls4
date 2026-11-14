@@ -169,7 +169,7 @@ export default function AuthButton() {
               {!isSignUp && <>
                 <div className="mt-5 flex justify-center w-full">
                  {([['google', 'Google']] as const).map(([provider, label]) => (
-                    <button key={provider} type="button" className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-md border border-neutral-700 bg-neutral-900 text-white hover:bg-neutral-800 transition" onClick={() => void handleOAuthSignIn(provider)} disabled={submitting || !acceptedPolicies}> className="min-h-11 rounded-xl border border-ink-700 bg-ink-950 px-3 text-xs font-semibold text-bone transition hover:border-gold/50 disabled:cursor-not-allowed disabled:opacity-50">Continue with {label}</button>
+                    <button key={provider} type="button" onClick={() => void handleOAuthSignIn(provider)} disabled={submitting || !acceptedPolicies}> className="min-h-11 rounded-xl border border-ink-700 bg-ink-950 px-3 text-xs font-semibold text-bone transition hover:border-gold/50 disabled:cursor-not-allowed disabled:opacity-50">Continue with {label}</button>
                   ))}
                 </div>
                 <p className="mt-3 text-[11px] leading-relaxed text-muted">
