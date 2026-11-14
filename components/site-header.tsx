@@ -507,4 +507,73 @@ export default function SiteHeader() {
             <button
               type="button"
               onClick={() => {
-                const widget = (window as Window & { contactWidget?: { showChat?: () => void; openFloat?: () => void }
+                const widget = (window as Window & { contactWidget?: { showChat?: () => void; openFloat?: () => void } }).contactWidget;
+                if (widget?.showChat) widget.showChat();
+                else widget?.openFloat?.();
+              }}
+              className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] xl:text-sm whitespace-nowrap text-muted transition-colors hover:bg-ink-850 hover:text-bone"
+            >
+              Customer Service
+            </button>
+          </nav>
+
+          {/* Right Cluster */}
+          <div className="hidden shrink-0 items-center gap-3 xl:gap-4 lg:flex">
+            <div className="hidden items-center gap-2.5 xl:flex">
+              <LiveClock compact />
+            </div>
+
+            <button
+              type="button"
+              onClick={() => {
+                setDirectoryOpen(false);
+                setSearchOpen(true);
+              }}
+              aria-label="Search assets, research, and analyst desks"
+              title="Search (⌘K)"
+              className="flex h-8 w-8 items-center justify-center rounded-full text-gold transition-colors hover:bg-ink-850 hover:text-gold-bright"
+            >
+              <Search className="h-4 w-4" aria-hidden="true" />
+            </button>
+
+            <AuthButton />
+            <Link
+              href="/pricing"
+              onClick={() => setDirectoryOpen(false)}
+              className="rounded-full bg-gold px-4 py-1.5 text-[13px] xl:text-sm font-semibold whitespace-nowrap text-ink-950 transition-colors hover:bg-gold-bright"
+            >
+              One Lifetime Plan Only
+            </Link>
+          </div>
+
+          {/* Mobile Actions: Search + Menu */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              type="button"
+              aria-label="Search assets, research, and analyst desks"
+              onClick={() => {
+                setMobileOpen(false);
+                setSearchOpen(true);
+              }}
+              className="flex h-9 w-9 items-center justify-center rounded-full text-gold transition-colors hover:bg-ink-850 hover:text-gold-bright"
+            >
+              <Search className="h-4 w-4" aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              aria-label="Toggle navigation menu"
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen((v) => !v)}
+              className="flex h-9 items-center gap-1.5 rounded-lg bg-ink-900 px-3 text-xs font-medium text-bone hover:bg-ink-850"
+            >
+              {mobileOpen ? (
+                <X className="h-4 w-4 text-gold-bright" aria-hidden="true" />
+              ) : (
+                <Menu className="h-4 w-4 text-gold-bright" aria-hidden="true" />
+              )}
+              <span>Menu</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Drawer */}
