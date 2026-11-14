@@ -569,11 +569,4 @@ export default function SiteHeader() {
               {mobileOpen ? (
                 <X className="h-4 w-4 text-gold-bright" aria-hidden="true" />
               ) : (
-                <Menu className="h-4 w-4 text-gold-bright" aria-hidden="true" />
-              )}
-              <span>Menu</span>
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Drawer */}
+                <Menu className="h-4 w-4 text-gold-
