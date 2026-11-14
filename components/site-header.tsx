@@ -1,198 +1,723 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
-import { createPortal } from "react-dom";
-import Image from "next/image";
 import Link from "next/link";
-import { Award, Bookmark, Calculator, LogOut, Shield, ShieldCheck, User as UserIcon } from "lucide-react";
-import { useAuth } from "@/lib/auth-context";
-import { useWhop } from "@/lib/whop-context";
-import { LockedLink } from "@/components/locked-action";
+import { usePathname } from "next/navigation";
+import { useState, useEffect, useRef, type MouseEvent } from "react";
+import LiveClock from "@/components/live-clock";
+import FeedBadge from "@/components/feed-badge";
+import AuthButton from "@/components/auth-button";
 import BrandMark from "@/components/brand-mark";
+import GlobalSearchModal from "@/components/global-search";
+import { useWhop } from "@/lib/whop-context";
+import {
+  Menu,
+  Search,
+  X,
+  Radio,
+  Compass,
+  Terminal,
+  Globe,
+  Cpu,
+  Database,
+  Zap,
+  FileText,
+  BarChart3,
+  TrendingUp,
+  Coins,
+  Flame,
+  Bookmark,
+  ExternalLink,
+  Activity,
+  BrainCircuit,
+  ShieldCheck,
+  Calculator,
+  Monitor,
+  Table2,
+  Building2,
+  FileSearch,
+  LineChart,
+  ShieldAlert,
+  BookOpen,
+  Radar,
+  Layers,
+  Scale,
+  Gauge,
+} from "lucide-react";
 
-export default function AuthButton() {
-  const { user, profile, loading, sendPasswordReset, signInWithEmail, signInWithOAuth, signUpWithEmail, signOutUser } = useAuth();
-  const { isUnlocked } = useWhop();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [isSignUp, setIsSignUp] = useState(false);
-  const [acceptedPolicies, setAcceptedPolicies] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+const SIMPLE_LINKS: Array<{ href: string; label: string; live?: boolean }> = [
+  { href: "/markets", label: "Markets" },
+  { href: "/crypto", label: "Digital Assets" },
+  { href: "/research", label: "Research" },
+  { href: "/academy", label: "Academy" },
+  { href: "/community", label: "Community" },
+];
 
-  const openModal = () => {
-    setAcceptedPolicies(false);
-    setMessage(null);
-    setModalOpen(true);
+export interface MainDirectoryItem {
+  href: string;
+  label: string;
+  desc: string;
+  icon: typeof Radio;
+  live?: boolean;
+}
+
+export const ALL_MAIN_ITEMS: MainDirectoryItem[] = [
+  {
+    href: "/news-wire",
+    label: "News Wire",
+    desc: "Real-time multi-source news wire & ticker query stream",
+    icon: Radio,
+    live: true,
+  },
+  {
+    href: "/vector-rag",
+    label: "Vector RAG",
+    desc: "Cross-asset semantic store, internals & liquidity ladder",
+    icon: Compass,
+  },
+  {
+    href: "/macro-perps",
+    label: "Macro & Perps",
+    desc: "516-panel macro regime, Fear & Greed & 24/7 perpetuals",
+    icon: Terminal,
+  },
+  {
+    href: "/nws-ai",
+    label: "NWS AI",
+    desc: "Titan 4.0 reasoning, 24kHz voice & search grounding terminal",
+    icon: BrainCircuit,
+    live: true,
+  },
+  {
+    href: "/global-markets",
+    label: "Global Markets & Map",
+    desc: "Google Maps 11 global exchanges, multi-tab charts & radar",
+    icon: Globe,
+  },
+  {
+    href: "/dcf-agents",
+    label: "DCF & Agents",
+    desc: "37 capital allocator models, DCF valuation & options Greeks",
+    icon: Cpu,
+  },
+  {
+    href: "/pro-terminal",
+    label: "Pro Terminal",
+    desc: "Dual-screen charting, Level 2 depth & execution desk",
+    icon: Terminal,
+  },
+  {
+    href: "/var-cli",
+    label: "VaR & CLI",
+    desc: "Parametric & Monte Carlo VaR, yield curves & portfolio CLI",
+    icon: Database,
+  },
+  {
+    href: "/news",
+    label: "News",
+    desc: "100 live breaking action bulletins & trade directives",
+    icon: Zap,
+    live: true,
+  },
+  {
+    href: "/market-center",
+    label: "Market Center",
+    desc: "Most active volume, Form 4 insiders & sector analysis",
+    icon: FileText,
+  },
+  {
+    href: "/markets",
+    label: "Wall Street Desk",
+    desc: "Large-cap US equities & institutional flow coverage",
+    icon: BarChart3,
+  },
+  {
+    href: "/calculator",
+    label: "Day Trader Desk",
+    desc: "Intraday invalidation levels & volatility position sizing",
+    icon: TrendingUp,
+  },
+  {
+    href: "/crypto",
+    label: "Digital Assets Desk",
+    desc: "Core BTC/ETH flows, perpetual funding & on-chain float",
+    icon: Coins,
+  },
+  {
+    href: "/crypto?tab=speculative",
+    label: "Speculative Risk Desk",
+    desc: "High-beta digital tokens & liquidity depth risk caps",
+    icon: Flame,
+  },
+  {
+    href: "/execution-terminal",
+    label: "Trade Execution & Risk",
+    desc: "Invalidation position sizer, 40/35/25 score simulator & audit log",
+    icon: ShieldCheck,
+  },
+  {
+    href: "/precision-calculator",
+    label: "Precision Quant Calculator",
+    desc: "Live free-API ATR sizing, Kelly Criterion, DCA ladder & FX",
+    icon: Calculator,
+    live: true,
+  },
+  {
+    href: "/tools/bloomberg-desk",
+    label: "Bloomberg Terminal Desk",
+    desc: "Live equities, US Treasury yields, ECB FX & SEC EDGAR wire",
+    icon: Monitor,
+    live: true,
+  },
+  {
+    href: "/tools/excel-dcf",
+    label: "Excel DCF & Comps Model",
+    desc: "5Y DCF workbook, CAPM WACC, 5x5 sensitivity & CSV export",
+    icon: Table2,
+  },
+  {
+    href: "/tools/capital-iq",
+    label: "Capital IQ & FactSet Comps",
+    desc: "SEC XBRL GAAP financials & peer EV/EBITDA, EV/Rev, P/E comps",
+    icon: Building2,
+    live: true,
+  },
+  {
+    href: "/tools/alphasense",
+    label: "AlphaSense Filings & Search",
+    desc: "Live SEC EDGAR 10-K, 10-Q, 8-K & Form 4 institutional search",
+    icon: FileSearch,
+    live: true,
+  },
+  {
+    href: "/tools/tradingview-screener",
+    label: "TradingView Multi-Asset",
+    desc: "Live OHLCV candlesticks, RSI-14, MACD, SMA-20/50 & screener",
+    icon: LineChart,
+    live: true,
+  },
+  {
+    href: "/tools/glassnode-onchain",
+    label: "Glassnode & CryptoQuant",
+    desc: "Live Bitcoin mempool, sat/vB fees, hashrate & perp funding",
+    icon: Activity,
+    live: true,
+  },
+  {
+    href: "/tools/chainalysis-aml",
+    label: "Chainalysis & TRM Forensics",
+    desc: "Live BTC/ETH wallet inspection, UTXO trace & AML risk scoring",
+    icon: ShieldAlert,
+    live: true,
+  },
+  {
+    href: "/tools/messari-research",
+    label: "Messari & Blockworks Intel",
+    desc: "Token supply FDV float schedules & Snapshot DAO governance",
+    icon: BookOpen,
+    live: true,
+  },
+  {
+    href: "/tools/nansen-arkham",
+    label: "Nansen & Arkham Smart Money",
+    desc: "Live ETH block whale transfers, block trades & stablecoin flows",
+    icon: Radar,
+    live: true,
+  },
+  {
+    href: "/tools/defillama-terminal",
+    label: "DeFiLlama & Token Terminal",
+    desc: "Live TVL rankings, protocol 24h/30d fees & P/F ratio comps",
+    icon: Layers,
+    live: true,
+  },
+  {
+    href: "/tools/coinmetrics-kaiko",
+    label: "Coin Metrics & Kaiko Feeds",
+    desc: "Normalized Binance, Coinbase & Kraken L2 books & slippage",
+    icon: Scale,
+    live: true,
+  },
+  {
+    href: "/tools/crypto-fear-greed",
+    label: "Crypto Fear & Greed",
+    desc: "Real-time 0–100 sentiment gauge, regime extremes & BTC/ETH context",
+    icon: Gauge,
+    live: true,
+  },
+  {
+    href: "/desks",
+    label: "Quantitative Desks",
+    desc: "Complete institutional quantitative research directory",
+    icon: Cpu,
+  },
+  {
+    href: "/tools/whale-alert",
+    label: "Live Whale Movement Feed",
+    desc: "Real-time ETH block whale alerts, spot blocks & stablecoin flows",
+    icon: Radar,
+    live: true,
+  },
+  {
+    href: "/tools/ai-sentiment",
+    label: "AI Market Sentiment",
+    desc: "Real-time AI sentiment synthesis across Fear & Greed & equities breadth",
+    icon: BrainCircuit,
+    live: true,
+  },
+  {
+    href: "/tools/top-signals",
+    label: "Top 3 Signals Today",
+    desc: "Daily highest-conviction scores with live price targets & stops",
+    icon: TrendingUp,
+    live: true,
+  },
+];
+
+export default function SiteHeader() {
+  const pathname = usePathname();
+  const { isUnlocked, openWhopModal } = useWhop();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [directoryOpen, setDirectoryOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  const isActive = (href: string) =>
+    pathname === href ||
+    pathname.startsWith(`${href}/`) ||
+    (href === "/crypto" && pathname === "/meme-coins");
+
+  const handleLockedNav = (e: MouseEvent<HTMLAnchorElement>, label: string, href?: string) => {
+    if (!isUnlocked) {
+      e.preventDefault();
+      e.stopPropagation();
+      setDirectoryOpen(false);
+      setMobileOpen(false);
+      openWhopModal(label, href);
+      return true;
+    }
+    setDirectoryOpen(false);
+    setMobileOpen(false);
+    return false;
   };
 
   useEffect(() => {
-    const handleOpen = () => {
-      setAcceptedPolicies(false);
-      setMessage(null);
-      setModalOpen(true);
-    };
-    window.addEventListener("open-auth-modal", handleOpen);
-    return () => window.removeEventListener("open-auth-modal", handleOpen);
-  }, []);
-
-  const closeModal = () => {
-    if (submitting) return;
-    setModalOpen(false);
-    setMessage(null);
-  };
-
-  const explainAuthError = (error: unknown) => {
-    const code = (error as { code?: string })?.code;
-    if (code === "invalid_credentials" || code === "invalid_grant") return "Email or password is incorrect.";
-    if (code === "user_already_exists") return "An account already uses this email. Sign in instead.";
-    if (code === "weak_password") return "Choose a password with at least 6 characters.";
-    if (code === "email_not_confirmed") return "Confirm your email using the link we sent before signing in.";
-    if (code === "over_email_send_rate_limit") return "Too many email requests. Please wait a few minutes and try again.";
-    if (code === "email_address_invalid") return "Enter a valid email address.";
-    return "Could not complete sign-in. Please check your details and try again.";
-  };
-
-  const handleRecovery = async () => {
-    if (!email.trim()) return setMessage({ type: "error", text: "Enter your email address first. Your email is your username." });
-    setSubmitting(true);
-    setMessage(null);
-    try {
-      await sendPasswordReset(email);
-      setMessage({ type: "success", text: `Password reset instructions were sent to ${email}.` });
-    } catch (error) {
-      setMessage({ type: "error", text: explainAuthError(error) });
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
-  const handleOAuthSignIn = async (provider: "google" | "apple" | "facebook") => {
-    if (!acceptedPolicies) {
-      setMessage({ type: "error", text: "Please accept both policies before continuing." });
-      return;
-    }
-    setSubmitting(true);
-    setMessage(null);
-    try {
-      await signInWithOAuth(provider, acceptedPolicies);
-    } catch {
-      setMessage({ type: "error", text: `Could not start ${provider} sign-in. Make sure this provider is enabled in Supabase, then try again.` });
-      setSubmitting(false);
-    }
-  };
-
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (!acceptedPolicies) {
-      setMessage({ type: "error", text: "Please accept both policies before continuing." });
-      return;
-    }
-    setSubmitting(true);
-    setMessage(null);
-    try {
-      if (isSignUp) {
-        const signedIn = await signUpWithEmail(email, password, acceptedPolicies);
-        if (!signedIn) {
-          setMessage({ type: "success", text: "Account created. Check your inbox to confirm your email, then sign in." });
-          return;
-        }
-      } else {
-        await signInWithEmail(email, password, acceptedPolicies);
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setDirectoryOpen(false);
+        setMobileOpen(false);
       }
-      setMessage({ type: "success", text: isSignUp ? "Your account is ready. You are signed in." : "Welcome back. You are signed in." });
-      setTimeout(() => {
-        setModalOpen(false);
-        setMessage(null);
-      }, 900);
-    } catch (error) {
-      setMessage({ type: "error", text: explainAuthError(error) });
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
-  if (loading) return <div aria-hidden="true" className="h-9 w-24 animate-pulse rounded-full bg-ink-800" />;
+    };
+    const handlePointerDown = (e: MouseEvent | globalThis.MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+        setDirectoryOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("mousedown", handlePointerDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("mousedown", handlePointerDown);
+    };
+  }, []);
 
   return (
     <>
-      {!user ? (
-        <button type="button" onClick={openModal} className="inline-flex items-center gap-2 rounded-full border border-gold/35 bg-ink-900 px-4 py-2 text-xs font-semibold text-bone transition hover:border-gold hover:text-gold-bright">
-          <UserIcon className="h-3.5 w-3.5 text-gold" /> Sign In
-        </button>
-      ) : (
-        <div className="relative">
-          <button type="button" onClick={() => setMenuOpen((open) => !open)} aria-expanded={menuOpen} className="flex items-center gap-2 rounded-full bg-ink-900 p-1 pr-3 text-xs text-bone transition hover:bg-ink-850">
-            {profile?.photoURL ? <Image src={profile.photoURL} alt="" width={28} height={28} className="rounded-full object-cover" referrerPolicy="no-referrer" /> : <span aria-hidden="true" className="flex h-7 w-7 items-center justify-center rounded-full bg-gold/20 font-mono font-bold text-gold-bright">{(profile?.displayName || user.email || "T")[0].toUpperCase()}</span>}
-            <span className="max-w-[100px] truncate font-medium">{profile?.displayName || user.email?.split("@")[0] || "Trader"}</span>
-            <span className="rounded bg-gold/15 px-1.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wider text-gold-bright">{isUnlocked ? "LIFETIME" : "ACCOUNT"}</span>
-          </button>
-          {menuOpen && <div className="absolute right-0 z-50 mt-2 w-64 rounded-2xl bg-ink-900/95 p-3 shadow-2xl backdrop-blur-md">
-            <div className="rounded-xl bg-ink-950/60 p-3"><p className="truncate text-xs font-semibold text-bone">{profile?.displayName || user.email?.split("@")[0] || "Trader"}</p><p className="truncate text-[10px] text-muted">{user.email}</p></div>
-            <div className="my-2 flex flex-col gap-1">
-              <LockedLink href="/watchlist" deskLabel="Watchlist" onClick={() => setMenuOpen(false)} className="flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs text-bone hover:bg-ink-800"><Bookmark className="h-3.5 w-3.5 text-gold" /> Synced Watchlist</LockedLink>
-              <LockedLink href="/community" deskLabel="Community" onClick={() => setMenuOpen(false)} className="flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs text-bone hover:bg-ink-800"><Shield className="h-3.5 w-3.5 text-emerald-400" /> Live Trading Floor &amp; Alerts</LockedLink>
-              <LockedLink href="/calculator" deskLabel="Position Sizing Calculator" onClick={() => setMenuOpen(false)} className="flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs text-bone hover:bg-ink-800"><Calculator className="h-3.5 w-3.5 text-gold-bright" /> Position Sizing Calculator</LockedLink>
-              <Link href="/pricing" onClick={() => setMenuOpen(false)} className="flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-xs text-bone hover:bg-ink-800"><Award className="h-3.5 w-3.5 text-gold-bright" /> Plan: {isUnlocked ? "LIFETIME" : "View plans"}</Link>
+      <header ref={headerRef} className="sticky top-0 z-50 bg-ink-950/90 backdrop-blur-md">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-5">
+          {/* Editorial Brand */}
+          <Link
+            href="/"
+            aria-label="NextWallStreet home"
+            className="group flex shrink-0 items-center transition-opacity hover:opacity-85"
+            onClick={() => {
+              setMobileOpen(false);
+              setDirectoryOpen(false);
+            }}
+          >
+            <BrandMark />
+          </Link>
+
+          {/* Primary Single-Row Navigation */}
+          <nav className="hidden items-center gap-1 lg:flex">
+            {SIMPLE_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                prefetch={isUnlocked ? undefined : false}
+                onClick={(e) => handleLockedNav(e, link.label, link.href)}
+                className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] xl:text-sm whitespace-nowrap transition-colors ${
+                  isActive(link.href)
+                    ? "bg-ink-800 text-bone"
+                    : "text-muted hover:bg-ink-850 hover:text-bone"
+                }`}
+              >
+                {link.live && (
+                  <span
+                    className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"
+                    aria-hidden="true"
+                  />
+                )}
+                <span>{link.label}</span>
+              </Link>
+            ))}
+
+            {/* Trade Tools Popover Button & Floating Dropdown */}
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setDirectoryOpen((prev) => !prev)}
+                aria-expanded={directoryOpen}
+                aria-controls="trade-tools-directory-menu"
+                aria-label={directoryOpen ? "Close Trade Tools directory" : "Open Trade Tools directory"}
+                title="Trade Tools · Directory & Desks"
+                className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] xl:text-sm whitespace-nowrap transition-colors ${
+                  directoryOpen
+                    ? "bg-gold/15 text-gold-bright"
+                    : "text-muted hover:bg-ink-850 hover:text-bone"
+                }`}
+              >
+                <span>Trade Tools</span>
+                <span className="rounded-full bg-gold/15 px-1.5 py-0.2 font-mono text-[10px] text-gold-bright">
+                  {ALL_MAIN_ITEMS.length}
+                </span>
+              </button>
+
+              {/* Compact Elongated Popover Dropdown */}
+              {directoryOpen && (
+                <div
+                  id="trade-tools-directory-menu"
+                  role="menu"
+                  aria-label="Trade Tools Directory"
+                  className="absolute left-0 top-full mt-2.5 z-50 w-[390px] sm:w-[420px] rounded-2xl bg-[#0b0e16]/98 p-3.5 shadow-[0_24px_60px_rgba(0,0,0,0.85)] backdrop-blur-2xl animate-in fade-in zoom-in-95 duration-150"
+                >
+                  {/* Dropdown Header */}
+                  <div className="flex items-center justify-between rounded-xl bg-ink-950/60 px-3 py-2.5">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-gold-bright">
+                          Desk &amp; Terminal Directory
+                        </span>
+                        <span className="rounded-full bg-gold/15 px-2 py-0.2 font-mono text-[10px] text-gold-bright font-semibold">
+                          {ALL_MAIN_ITEMS.length} Modules
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-muted mt-0.5">
+                        {isUnlocked
+                          ? "Clicking an item opens in a new tab ↗"
+                          : "Lifetime Premium ($1,487 USD) unlocks all 32 tools"}
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setDirectoryOpen(false)}
+                      className="rounded-lg p-1.5 text-muted hover:bg-ink-800 hover:text-bone transition-colors"
+                      title="Close directory"
+                      aria-label="Close"
+                    >
+                      <X className="h-4 w-4" />
+                    </button>
+                  </div>
+
+                  {/* Elongated Clean Scrollable Single List (32 items) */}
+                  <div className="mt-2.5 max-h-[62vh] sm:max-h-[520px] space-y-1 overflow-y-auto pr-1 overscroll-contain">
+                    {ALL_MAIN_ITEMS.map((item, idx) => {
+                      const Icon = item.icon;
+                      const active = isActive(item.href);
+                      return (
+                        <Link
+                          key={`all-main-${idx}-${item.label}`}
+                          href={item.href}
+                          prefetch={isUnlocked ? undefined : false}
+                          target={isUnlocked ? "_blank" : undefined}
+                          rel={isUnlocked ? "noopener noreferrer" : undefined}
+                          onClick={(e) =>
+                            handleLockedNav(
+                              e,
+                              `Trade Tool #${String(idx + 1).padStart(2, "0")} · ${item.label}`,
+                              item.href,
+                            )
+                          }
+                          className={`group flex items-center justify-between gap-3 rounded-xl px-2.5 py-2 text-xs transition-all ${
+                            active
+                              ? "bg-gold/15 text-gold-bright"
+                              : "text-bone/90 hover:bg-ink-850 hover:text-gold-bright"
+                          }`}
+                        >
+                          <div className="flex min-w-0 items-center gap-2.5">
+                            <span className="w-5 shrink-0 font-mono text-[11px] font-semibold text-gold/75 tabular-nums">
+                              {String(idx + 1).padStart(2, "0")}
+                            </span>
+                            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-ink-900 group-hover:bg-gold/10 transition-colors">
+                              <Icon className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
+                            </div>
+                            <div className="min-w-0">
+                              <div className="flex items-center gap-1.5">
+                                <span className="font-medium text-bone group-hover:text-gold-bright text-[12.5px] truncate">
+                                  {item.label}
+                                </span>
+                                {item.live && (
+                                  <span className="inline-flex items-center gap-1 rounded bg-emerald-500/15 px-1.5 py-0.2 font-mono text-[9px] text-emerald-300">
+                                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                                    LIVE
+                                  </span>
+                                )}
+                              </div>
+                              <p className="truncate text-[10.5px] text-muted group-hover:text-muted/90">
+                                {item.desc}
+                              </p>
+                            </div>
+                          </div>
+                          {isUnlocked && (
+                            <div className="flex shrink-0 items-center gap-1">
+                              <ExternalLink className="h-3 w-3 text-muted/50 group-hover:text-gold-bright transition-colors" />
+                            </div>
+                          )}
+                        </Link>
+                      );
+                    })}
+                  </div>
+
+                  {/* Dropdown Footer Quick Links */}
+                  <div className="mt-2.5 flex items-center justify-between rounded-xl bg-ink-950/60 px-3 py-2 text-[11px] text-muted">
+                    <div className="flex items-center gap-3">
+                      <Link
+                        href="/pipeline"
+                        prefetch={isUnlocked ? undefined : false}
+                        target={isUnlocked ? "_blank" : undefined}
+                        rel={isUnlocked ? "noopener noreferrer" : undefined}
+                        onClick={(e) => handleLockedNav(e, "Live Market Pipeline", "/pipeline")}
+                        className="hover:text-gold-bright flex items-center gap-1 transition-colors"
+                      >
+                        <Activity className="h-3 w-3 text-gold" />
+                        <span>Pipeline</span>
+                      </Link>
+                      <Link
+                        href="/watchlist"
+                        prefetch={isUnlocked ? undefined : false}
+                        target={isUnlocked ? "_blank" : undefined}
+                        rel={isUnlocked ? "noopener noreferrer" : undefined}
+                        onClick={(e) => handleLockedNav(e, "Watchlist", "/watchlist")}
+                        className="hover:text-gold-bright flex items-center gap-1 transition-colors"
+                      >
+                        <Bookmark className="h-3 w-3 text-gold" />
+                        <span>Watchlist</span>
+                      </Link>
+                    </div>
+                    <Link
+                      href="/pricing"
+                      onClick={() => setDirectoryOpen(false)}
+                      className="font-medium text-gold-bright hover:underline"
+                    >
+                      One Lifetime Plan Only →
+                    </Link>
+                  </div>
+                </div>
+              )}
             </div>
-            <button type="button" onClick={() => { setMenuOpen(false); void signOutUser(); }} className="flex w-full items-center gap-2 rounded-lg bg-down/10 px-2.5 py-2 text-xs text-down hover:bg-down/20"><LogOut className="h-3.5 w-3.5" /> Sign out</button>
-          </div>}
+
+            <Link
+              href="/watchlist"
+              prefetch={isUnlocked ? undefined : false}
+              onClick={(e) => handleLockedNav(e, "Watchlist", "/watchlist")}
+              className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] xl:text-sm whitespace-nowrap transition-colors ${
+                isActive("/watchlist")
+                  ? "bg-ink-800 text-bone"
+                  : "text-muted hover:bg-ink-850 hover:text-bone"
+              }`}
+            >
+              <span>Watchlist</span>
+            </Link>
+            <button
+              type="button"
+              onClick={() => {
+                const widget = (window as Window & { contactWidget?: { showChat?: () => void; openFloat?: () => void } }).contactWidget;
+                if (widget?.showChat) widget.showChat();
+                else widget?.openFloat?.();
+              }}
+              className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] xl:text-sm whitespace-nowrap text-muted transition-colors hover:bg-ink-850 hover:text-bone"
+            >
+              Customer Service
+            </button>
+          </nav>
+
+          {/* Right Cluster */}
+          <div className="hidden shrink-0 items-center gap-3 xl:gap-4 lg:flex">
+            <div className="hidden items-center gap-2.5 xl:flex">
+              <LiveClock compact />
+            </div>
+
+            <button
+              type="button"
+              onClick={() => {
+                setDirectoryOpen(false);
+                setSearchOpen(true);
+              }}
+              aria-label="Search assets, research, and analyst desks"
+              title="Search (⌘K)"
+              className="flex h-8 w-8 items-center justify-center rounded-full text-gold transition-colors hover:bg-ink-850 hover:text-gold-bright"
+            >
+              <Search className="h-4 w-4" aria-hidden="true" />
+            </button>
+
+            <AuthButton />
+            <Link
+              href="/pricing"
+              onClick={() => setDirectoryOpen(false)}
+              className="rounded-full bg-gold px-4 py-1.5 text-[13px] xl:text-sm font-semibold whitespace-nowrap text-ink-950 transition-colors hover:bg-gold-bright"
+            >
+              One Lifetime Plan Only
+            </Link>
+          </div>
+
+          {/* Mobile Actions: Search + Menu */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              type="button"
+              aria-label="Search assets, research, and analyst desks"
+              onClick={() => {
+                setMobileOpen(false);
+                setSearchOpen(true);
+              }}
+              className="flex h-9 w-9 items-center justify-center rounded-full text-gold transition-colors hover:bg-ink-850 hover:text-gold-bright"
+            >
+              <Search className="h-4 w-4" aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              aria-label="Toggle navigation menu"
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen((v) => !v)}
+              className="flex h-9 items-center gap-1.5 rounded-lg bg-ink-900 px-3 text-xs font-medium text-bone hover:bg-ink-850"
+            >
+              {mobileOpen ? (
+                <X className="h-4 w-4 text-gold-bright" aria-hidden="true" />
+              ) : (
+                <Menu className="h-4 w-4 text-gold-bright" aria-hidden="true" />
+              )}
+              <span>Menu</span>
+            </button>
+          </div>
         </div>
-      )}
 
-      {modalOpen && createPortal(<div className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-black/80 p-3 backdrop-blur-md sm:p-6" onMouseDown={(event) => { if (event.target === event.currentTarget) closeModal(); }}>
-        <section role="dialog" aria-modal="true" aria-labelledby="auth-title" className="relative my-auto max-h-[calc(100dvh-1.5rem)] w-full max-w-2xl overflow-y-auto rounded-3xl border border-gold/20 bg-ink-900 p-6 shadow-[0_24px_100px_rgba(0,0,0,0.55)] sm:max-h-[calc(100dvh-3rem)] sm:p-9">
-          <button type="button" onClick={closeModal} aria-label="Close sign-in dialog" className="absolute right-5 top-5 rounded-full p-2 text-muted transition hover:bg-ink-800 hover:text-bone">×</button>
-          <div className="mb-7 max-w-lg">
-            <div className="mb-7 flex justify-center border-b border-white/[0.08] pb-5">
-              <BrandMark centered />
+        {/* Mobile Drawer */}
+        {mobileOpen && (
+          <nav className="max-h-[84vh] overflow-y-auto bg-ink-950/98 px-5 pb-6 pt-3 lg:hidden space-y-4">
+            <div className="flex items-center justify-between rounded-xl bg-ink-900/60 px-3.5 py-2.5">
+              <LiveClock />
+              <FeedBadge className="text-[10px] uppercase tracking-[0.14em] text-muted" />
             </div>
-            <span className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-gold"><ShieldCheck className="h-4 w-4" /> Secure Supabase Account</span>
-            <h2 id="auth-title" className="mt-3 font-display text-3xl text-bone sm:text-4xl">{isSignUp ? "Create your account" : "Sign in to your desk"}</h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted">Save your watchlist and account preferences securely. Sign-in is optional; you can browse without an account.</p>
-          </div>
 
-          {message && <p role="status" className={`mb-5 rounded-xl p-3 text-sm ${message.type === "success" ? "bg-emerald-950/70 text-emerald-300" : "bg-rose-950/70 text-rose-300"}`}>{message.text}</p>}
+            {/* Standard Primary Navigation */}
+            <div className="grid gap-1">
+              {[...SIMPLE_LINKS, { href: "/watchlist", label: "Watchlist" }].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  prefetch={isUnlocked ? undefined : false}
+                  onClick={(e) => link.href.startsWith("mailto:") ? setMobileOpen(false) : handleLockedNav(e, link.label, link.href)}
+                  className={`flex items-center justify-between rounded-md px-3 py-2 text-sm ${
+                    isActive(link.href) ? "bg-ink-800 text-bone" : "text-muted hover:text-bone"
+                  }`}
+                >
+                  <span className="inline-flex items-center gap-2">
+                    {"live" in link && link.live && (
+                      <span
+                        className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"
+                        aria-hidden="true"
+                      />
+                    )}
+                    <span>{link.label}</span>
+                  </span>
+                  {"live" in link && link.live && (
+                    <span className="rounded bg-emerald-500/15 px-1.5 py-0.5 font-mono text-[9px] text-emerald-300">
+                      LIVE CHAT
+                    </span>
+                  )}
+                </Link>
+              ))}
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileOpen(false);
+                  const widget = (window as Window & { contactWidget?: { showChat?: () => void; openFloat?: () => void } }).contactWidget;
+                  if (widget?.showChat) widget.showChat();
+                  else widget?.openFloat?.();
+                }}
+                className="flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-sm text-muted hover:text-bone"
+              >
+                Customer Service
+              </button>
+            </div>
 
-          <div className="mx-auto max-w-md">
-            <form onSubmit={handleSubmit} className="flex flex-col">
-              <label htmlFor="auth-email" className="mb-1 mt-1 text-xs text-muted">Email address</label>
-                <input id="auth-email" type="email" autoComplete="email" required value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" className="min-h-11 rounded-xl border border-ink-700 bg-ink-950 px-3.5 text-sm text-bone placeholder:text-muted/50 focus:border-gold/60 focus:outline-none focus:ring-2 focus:ring-gold/20" />
-                <label htmlFor="auth-password" className="mb-1 mt-4 text-xs text-muted">{isSignUp ? "Create a password" : "Password"}</label>
-                <input id="auth-password" type="password" autoComplete={isSignUp ? "new-password" : "current-password"} minLength={isSignUp ? 6 : undefined} required value={password} onChange={(event) => setPassword(event.target.value)} placeholder={isSignUp ? "At least 6 characters" : "Your password"} className="min-h-11 rounded-xl border border-ink-700 bg-ink-950 px-3.5 text-sm text-bone placeholder:text-muted/50 focus:border-gold/60 focus:outline-none focus:ring-2 focus:ring-gold/20" />
-              <label className="mt-5 flex items-start gap-3 text-xs leading-relaxed text-muted">
-                <input type="checkbox" required checked={acceptedPolicies} onChange={(event) => setAcceptedPolicies(event.target.checked)} className="mt-0.5 size-4 shrink-0 accent-amber-400" />
-                <span>I have read and agree to the <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gold-bright underline underline-offset-2">Privacy Policy</Link> and <Link href="/terms-of-service" target="_blank" rel="noopener noreferrer" className="text-gold-bright underline underline-offset-2">NextWallStreet Terms of Service</Link>.</span>
-              </label>
-              {!isSignUp && (
-  <>
-    <div className="mt-5 flex justify-center w-full">
-      {([['google', 'Google']] as const).map(([provider, label]) => (
-        <button
-          key={provider}
-          type="button"
-          onClick={() => void handleOAuthSignIn(provider)}
-          disabled={submitting || !acceptedPolicies}
-          className="min-h-11 w-full rounded-xl border border-ink-700 bg-ink-950 px-4 text-xs font-semibold text-bone transition hover:border-gold/50 disabled:cursor-not-allowed disabled:opacity-50"
-        >
-          Continue with {label}
-        </button>
-      ))}
-    </div>
-    <p className="mt-3 text-[11px] leading-relaxed text-muted">
-      Social sign-in requires each provider to be enabled with its OAuth client credentials in Supabase under Authentication → Sign In / Providers.
-    </p>
-  </>
-)}
-              {!isSignUp && <button type="button" onClick={() => void handleRecovery()} disabled={submitting} className="mt-3 text-center text-xs text-muted underline underline-offset-2 hover:text-bone">Forgot your password?</button>}
-              <button type="button" onClick={() => { setIsSignUp((value) => !value); setMessage(null); }} className="mt-4 text-left text-xs text-gold hover:text-gold-bright">{isSignUp ? "Already have an account? Sign in" : "New to NWS? Create an account"}</button>
-              {!isSignUp && <p className="mt-3 text-center text-xs text-muted">Print subscriber? <Link href="/pricing" onClick={closeModal} className="text-gold-bright underline underline-offset-2">Activate your digital subscription</Link></p>}
-            </form>
-          </div>
-        </section>
-      </div>, document.body)}
+            {/* Single Unified Trade Tools Directory (32 items) */}
+            <div className="rounded-xl bg-ink-900/50 p-2.5 space-y-1">
+              <div className="flex items-center justify-between px-2 pb-1.5">
+                <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-gold">
+                  Directory · Trade Tools ({ALL_MAIN_ITEMS.length})
+                </p>
+                <span className="text-[10px] text-muted">
+                  {isUnlocked ? "Opens in new tab ↗" : "$1,487 USD Lifetime"}
+                </span>
+              </div>
+              {ALL_MAIN_ITEMS.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <Link
+                    key={`m-main-${idx}-${item.label}`}
+                    href={item.href}
+                    prefetch={isUnlocked ? undefined : false}
+                    target={isUnlocked ? "_blank" : undefined}
+                    rel={isUnlocked ? "noopener noreferrer" : undefined}
+                    onClick={(e) =>
+                      handleLockedNav(
+                        e,
+                        `Trade Tool #${String(idx + 1).padStart(2, "0")} · ${item.label}`,
+                        item.href,
+                      )
+                    }
+                    className={`flex items-center justify-between rounded-lg px-3 py-2 text-xs font-medium ${
+                      isActive(item.href) ? "bg-ink-800 text-gold-bright" : "text-bone/90 hover:bg-ink-900 hover:text-gold-bright"
+                    }`}
+                  >
+                    <span className="flex items-center gap-2.5">
+                      <span className="w-5 font-mono text-[10px] text-gold/75">
+                        {String(idx + 1).padStart(2, "0")}
+                      </span>
+                      <Icon className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
+                      <span>{item.label}</span>
+                      {item.live && (
+                        <span className="rounded bg-emerald-500/20 px-1 py-0.2 text-[9px] text-emerald-300">
+                          LIVE
+                        </span>
+                      )}
+                    </span>
+                    {isUnlocked && (
+                      <ExternalLink className="h-3 w-3 text-muted/60" />
+                    )}
+                  </Link>
+                );
+              })}
+            </div>
+
+            <div className="flex items-center justify-between rounded-xl bg-ink-900/50 px-3.5 py-3">
+              <AuthButton />
+              <Link
+                href="/pricing"
+                onClick={() => setMobileOpen(false)}
+                className="rounded-full bg-gold px-4 py-2 text-xs font-semibold text-ink-950"
+              >
+                One Lifetime Plan Only
+              </Link>
+            </div>
+          </nav>
+        )}
+      </header>
+
+      <GlobalSearchModal
+        open={searchOpen}
+        onOpen={() => setSearchOpen(true)}
+        onClose={() => setSearchOpen(false)}
+      />
     </>
   );
 }
