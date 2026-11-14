@@ -255,7 +255,7 @@ export const PLANS = [
     name: "Lifetime Premium",
     price: 1487,
     cadence: "One-time · Lifetime",
-    tagline: "Complete institutional access with zero recurring fees.",
+    tagline: "Lifetime access only. One-time payment, with no monthly or annual plans.",
     features: [
       "All 2,038+ daily trend scores across US equities, crypto, and meme-coin risk models",
       "Exact stance, conviction, and mathematical invalidation level on every asset",
@@ -264,7 +264,7 @@ export const PLANS = [
       "Watchlist score-change alerts, model portfolio access & 1,100+ member community",
       "One-time $1,487 USD purchase with permanent lifetime updates",
     ],
-    cta: "Continue to Lifetime Premium checkout",
+    cta: "Get Lifetime Access Only",
     highlight: true,
   },
 ];

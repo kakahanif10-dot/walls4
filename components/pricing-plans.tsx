@@ -10,7 +10,7 @@ import { getLifetimeCheckoutUrl } from "@/lib/whop-checkout-links";
 const ACCOUNT_BILLING_FAQ = [
   {
     q: "How does the one-time $1,487 USD Lifetime Premium purchase work?",
-    a: "Lifetime Premium is a single one-time payment of $1,487 USD processed via Whop with zero recurring monthly or annual fees. You receive permanent access to all 2,038+ daily trend scores, full crypto and meme-coin coverage, all four Academy courses, score-change alerts, all 32 trade tools, and model portfolio access.",
+    a: "Lifetime Access Only is a single $1,487 USD payment processed via Whop. There are no monthly or annual plans or renewals. You receive permanent access to all 2,038+ daily trend scores, full crypto and meme-coin coverage, all four Academy courses, score-change alerts, all 32 trade tools, and model portfolio access.",
   },
   {
     q: "What payment methods are supported through Whop?",
@@ -72,7 +72,7 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
         <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-[#17130a]/95 via-ink-900 to-ink-950/90 p-7 sm:p-8 shadow-[0_24px_70px_rgba(0,0,0,0.65)]">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <span className="rounded-full bg-gold px-3.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-ink-950">
-              One-Time · Lifetime Purchase
+              LIFETIME ACCESS ONLY · ONE-TIME PAYMENT
             </span>
             {isCurrentActive && (
               <span className="rounded-full bg-emerald-500/15 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-emerald-300">
@@ -93,7 +93,7 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
                 </span>
                 <span className="font-mono text-xs sm:text-sm font-semibold text-bone">USD</span>
               </div>
-              <p className="mt-1 text-[11px] text-muted">One-time · Lifetime · Zero monthly renewals</p>
+              <p className="mt-1 text-[11px] text-muted">One payment only · Lifetime access · No monthly or annual plans</p>
             </div>
           </div>
 
@@ -123,13 +123,12 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
                 onClick={() => setShowCheckoutModal(true)}
                 className="flex w-full items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-bold text-ink-950 transition hover:bg-gold-bright shadow-xl"
               >
-                Continue to Lifetime Premium checkout — $1,487 USD
+                Get Lifetime Access Only — $1,487 USD
               </button>
             )}
 
             <p className="text-center text-[11px] leading-relaxed text-muted">
-              You will continue to Whop to complete the one-time $1,487 USD settlement. Access
-              activates immediately upon payment verification.
+              This is the only plan: one $1,487 USD payment for lifetime access. No monthly or annual subscription. Access activates after payment verification.
             </p>
           </div>
         </div>
@@ -145,7 +144,7 @@ export default function PricingPlans({ faqList }: PricingPlansProps) {
             ["The Academy", "All 4 courses & 60 watchable video masterclasses"],
             ["Trade Tools Directory", "All 32 institutional tools including #30 Whale Alert, #31 AI Sentiment & #32 Top 3 Signals"],
             ["Community & Alerts", "Live trading floor chat & real-time score-change alerts"],
-            ["Billing Structure", "$1,487 USD one-time · Lifetime access (no subscriptions)"],
+            ["Only Plan", "Lifetime Access Only · $1,487 USD once · No monthly or annual plans"],
           ].map(([item, value]) => (
             <div key={item} className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 rounded-lg px-3.5 py-2.5 transition hover:bg-ink-900/45">
               <span className="font-medium text-bone">{item}</span>

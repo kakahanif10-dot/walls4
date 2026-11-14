@@ -100,7 +100,7 @@ export default async function HomePage() {
           <div className="rise">
             <div className="inline-flex items-center gap-2 rounded-full bg-ink-900/80 px-3.5 py-1.5 text-[11px] text-muted">
               <span className="h-1.5 w-1.5 rounded-full bg-up" />
-              Independent research · $1,487 USD One-Time Lifetime Access
+              LIFETIME ACCESS ONLY · $1,487 USD ONE-TIME
             </div>
 
             <h1 className="mt-6 font-display text-[2.75rem] leading-[1.05] text-bone sm:text-6xl">
@@ -111,10 +111,9 @@ export default async function HomePage() {
 
             <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-muted">
               NextWallStreet scores the trend, names the stance and publishes the invalidation
-              level — across equities, digital assets and speculative markets. Full Lifetime
-              Access ($1,487 USD one-time) unlocks all 2,038+ daily trend scores, exact invalidation
+              level — across equities, digital assets and speculative markets. Lifetime Access Only ($1,487 USD one-time) unlocks all 2,038+ daily trend scores, exact invalidation
               levels, 70 Research Desks, 60 Academy Lessons, 32 Trade Tools, and 1,100+ Community
-              Members with zero recurring monthly fees.
+              Members. One lifetime plan only — no monthly or annual service.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3.5">
@@ -122,7 +121,7 @@ export default async function HomePage() {
                 href="/pricing"
                 className="rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink-950 transition hover:bg-gold-bright"
               >
-                Get Lifetime Access — $1,487 USD
+                Lifetime Access Only — $1,487 USD
               </Link>
               <AuthButton />
               <LockedLink
@@ -394,7 +393,7 @@ export default async function HomePage() {
               Signals fade. Process compounds.
             </h2>
             <p className="mt-5 max-w-md text-[15px] leading-relaxed text-muted">
-              Lifetime Access unlocks the complete 60-lesson Academy curriculum across 4 courses:
+              Lifetime Access Only unlocks the complete 60-lesson Academy curriculum across 4 courses:
               structure reading, momentum interpretation, crypto liquidity, portfolio sizing and
               speculative risk traps. Written by the same desk that publishes the scores — no
               recycled course content.
@@ -441,7 +440,7 @@ export default async function HomePage() {
             Read the market the way the desk does.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted">
-            $1,487 USD One-Time Lifetime Access — zero recurring monthly fees. Unlock all 2,038+
+            LIFETIME ACCESS ONLY — $1,487 USD, paid once. No monthly or annual plans or renewals. Unlock all 2,038+
             daily trend scores, exact invalidation levels, 70 Research Desks, 60 Academy Lessons,
             32 Trade Tools, and 1,100+ Community Members with transparent math.
           </p>
@@ -450,7 +449,7 @@ export default async function HomePage() {
               href="/pricing"
               className="rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink-950 transition hover:bg-gold-bright"
             >
-              Get Lifetime Access — $1,487 USD
+              Lifetime Access Only — $1,487 USD
             </Link>
             <LockedLink
               href="/research"

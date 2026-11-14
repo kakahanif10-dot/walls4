@@ -42,7 +42,7 @@ export default function PremiumGate({
           onClick={() => openWhopModal(issue)}
           className="inline-flex items-center gap-1.5 rounded-full bg-gold px-6 py-2.5 text-sm font-semibold text-ink-950 transition hover:bg-gold-bright shadow-md"
         >
-          <span>Continue to Lifetime Premium checkout</span>
+          <span>Get Lifetime Access Only</span>
         </button>
         <Link
           href="/pricing"
