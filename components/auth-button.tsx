@@ -10,7 +10,7 @@ import { useWhop } from "@/lib/whop-context";
 import { LockedLink } from "@/components/locked-action";
 
 export default function AuthButton() {
-  const { user, profile, loading, sendPasswordReset, signInWithEmail, signUpWithEmail, signOutUser } = useAuth();
+  const { user, profile, loading, sendPasswordReset, signInWithEmail, signInWithOAuth, signUpWithEmail, signOutUser } = useAuth();
   const { isUnlocked } = useWhop();
   const [menuOpen, setMenuOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -64,6 +64,21 @@ export default function AuthButton() {
     } catch (error) {
       setMessage({ type: "error", text: explainAuthError(error) });
     } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const handleOAuthSignIn = async (provider: "google" | "apple" | "facebook") => {
+    if (!acceptedPolicies) {
+      setMessage({ type: "error", text: "Please accept both policies before continuing." });
+      return;
+    }
+    setSubmitting(true);
+    setMessage(null);
+    try {
+      await signInWithOAuth(provider, acceptedPolicies);
+    } catch {
+      setMessage({ type: "error", text: `Could not start ${provider} sign-in. Make sure this provider is enabled in Supabase, then try again.` });
       setSubmitting(false);
     }
   };
@@ -147,6 +162,11 @@ export default function AuthButton() {
                 <input type="checkbox" required checked={acceptedPolicies} onChange={(event) => setAcceptedPolicies(event.target.checked)} className="mt-0.5 size-4 shrink-0 accent-amber-400" />
                 <span>I have read and agree to the <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gold-bright underline underline-offset-2">Privacy Policy</Link> and <Link href="/terms-of-service" target="_blank" rel="noopener noreferrer" className="text-gold-bright underline underline-offset-2">NextWallStreet Terms of Service</Link>.</span>
               </label>
+              {!isSignUp && <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-3">
+                {([['google', 'Google'], ['apple', 'Apple'], ['facebook', 'Facebook']] as const).map(([provider, label]) => (
+                  <button key={provider} type="button" onClick={() => void handleOAuthSignIn(provider)} disabled={submitting || !acceptedPolicies} className="min-h-11 rounded-xl border border-ink-700 bg-ink-950 px-3 text-xs font-semibold text-bone transition hover:border-gold/50 disabled:cursor-not-allowed disabled:opacity-50">Continue with {label}</button>
+                ))}
+              </div>}
               <button type="submit" disabled={submitting || !acceptedPolicies} className="mt-5 min-h-12 w-full rounded-xl bg-gold px-4 text-sm font-bold text-ink-950 transition hover:bg-gold-bright disabled:cursor-not-allowed disabled:opacity-50">{submitting ? "Signing in…" : isSignUp ? "Create account" : "Continue"}</button>
               {!isSignUp && <button type="button" onClick={() => void handleRecovery()} disabled={submitting} className="mt-3 text-center text-xs text-muted underline underline-offset-2 hover:text-bone">Forgot your password?</button>}
               <button type="button" onClick={() => { setIsSignUp((value) => !value); setMessage(null); }} className="mt-4 text-left text-xs text-gold hover:text-gold-bright">{isSignUp ? "Already have an account? Sign in" : "New to NWS? Create an account"}</button>

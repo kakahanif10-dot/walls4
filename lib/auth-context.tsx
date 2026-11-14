@@ -24,6 +24,7 @@ interface AuthContextValue {
   profile: UserProfileData | null;
   loading: boolean;
   signInWithEmail: (email: string, password: string, acceptedPolicies: boolean) => Promise<void>;
+  signInWithOAuth: (provider: "google" | "apple" | "facebook", acceptedPolicies: boolean) => Promise<void>;
   signUpWithEmail: (email: string, password: string, acceptedPolicies: boolean) => Promise<boolean>;
   sendPasswordReset: (email: string) => Promise<void>;
   signOutUser: () => Promise<void>;
@@ -34,6 +35,7 @@ const AuthContext = createContext<AuthContextValue>({
   profile: null,
   loading: true,
   signInWithEmail: async () => {},
+  signInWithOAuth: async () => {},
   signUpWithEmail: async () => false,
   sendPasswordReset: async () => {},
   signOutUser: async () => {},
@@ -145,6 +147,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (data.user) await syncProfile(data.user, true);
   }, [syncProfile]);
 
+  const signInWithOAuth = useCallback(async (provider: "google" | "apple" | "facebook", acceptedPolicies: boolean) => {
+    if (!acceptedPolicies) throw new Error("Please accept the Privacy Policy and Terms of Service first.");
+    const callbackUrl = new URL(process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ?? "/auth/callback", window.location.origin);
+    const acceptedAt = new Date().toISOString();
+    callbackUrl.searchParams.set("policy_accepted_at", acceptedAt);
+    callbackUrl.searchParams.set("policy_version", POLICY_VERSION);
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider,
+      options: {
+        redirectTo: callbackUrl.toString(),
+      },
+    });
+    if (error) throw error;
+  }, []);
+
   const signUpWithEmail = useCallback(async (email: string, password: string, acceptedPolicies: boolean) => {
     if (!acceptedPolicies) throw new Error("Please accept the Privacy Policy and Terms of Service first.");
     const acceptedAt = new Date().toISOString();
@@ -182,7 +199,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, profile, loading, signInWithEmail, signUpWithEmail, sendPasswordReset, signOutUser }}>
+    <AuthContext.Provider value={{ user, profile, loading, signInWithEmail, signInWithOAuth, signUpWithEmail, sendPasswordReset, signOutUser }}>
       {children}
     </AuthContext.Provider>
   );
