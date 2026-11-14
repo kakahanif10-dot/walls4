@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { IBM_Plex_Sans, Newsreader } from "next/font/google";
 import "./globals.css";
 
@@ -113,6 +114,25 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             </LivePricesProvider>
           </WhopProvider>
         </AuthProvider>
+        <Script id="tawk-to-live-chat" strategy="afterInteractive">
+          {`var Tawk_API = window.Tawk_API = window.Tawk_API || {};
+var Tawk_LoadStart = new Date();
+Tawk_API.customStyle = {
+  visibility: {
+    desktop: { position: 'br', xOffset: 18, yOffset: 18 },
+    mobile: { position: 'br', xOffset: 12, yOffset: 18 }
+  }
+};
+(function(){
+  var s1 = document.createElement('script');
+  var s0 = document.getElementsByTagName('script')[0];
+  s1.async = true;
+  s1.src = 'https://embed.tawk.to/6af842eaff603a3c45c3a661/1k7csapnf';
+  s1.charset = 'UTF-8';
+  s1.setAttribute('crossorigin', '*');
+  s0.parentNode.insertBefore(s1, s0);
+})();`}
+        </Script>
       </body>
     </html>
   );
