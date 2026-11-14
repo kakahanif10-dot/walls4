@@ -166,17 +166,26 @@ export default function AuthButton() {
                 <input type="checkbox" required checked={acceptedPolicies} onChange={(event) => setAcceptedPolicies(event.target.checked)} className="mt-0.5 size-4 shrink-0 accent-amber-400" />
                 <span>I have read and agree to the <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gold-bright underline underline-offset-2">Privacy Policy</Link> and <Link href="/terms-of-service" target="_blank" rel="noopener noreferrer" className="text-gold-bright underline underline-offset-2">NextWallStreet Terms of Service</Link>.</span>
               </label>
-              {!isSignUp && <>
-                <div className="mt-5 flex justify-center w-full">
-                 {([['google', 'Google']] as const).map(([provider, label]) => (
-                    <button key={provider} type="button" onClick={() => void handleOAuthSignIn(provider)} disabled={submitting || !acceptedPolicies}> className="min-h-11 rounded-xl border border-ink-700 bg-ink-950 px-3 text-xs font-semibold text-bone transition hover:border-gold/50 disabled:cursor-not-allowed disabled:opacity-50">Continue with {label}</button>
-                  ))}
-                </div>
-                <p className="mt-3 text-[11px] leading-relaxed text-muted">
-                  Social sign-in requires each provider to be enabled with its OAuth client credentials in Supabase under Authentication → Sign In / Providers.
-                </p>
-              </>}
-              <button type="submit" disabled={submitting || !acceptedPolicies} className="mt-5 min-h-12 w-full rounded-xl bg-gold px-4 text-sm font-bold text-ink-950 transition hover:bg-gold-bright disabled:cursor-not-allowed disabled:opacity-50">{submitting ? "Signing in…" : isSignUp ? "Create account" : "Continue"}</button>
+              {!isSignUp && (
+  <>
+    <div className="mt-5 flex justify-center w-full">
+      {([['google', 'Google']] as const).map(([provider, label]) => (
+        <button
+          key={provider}
+          type="button"
+          onClick={() => void handleOAuthSignIn(provider)}
+          disabled={submitting || !acceptedPolicies}
+          className="min-h-11 w-full rounded-xl border border-ink-700 bg-ink-950 px-4 text-xs font-semibold text-bone transition hover:border-gold/50 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          Continue with {label}
+        </button>
+      ))}
+    </div>
+    <p className="mt-3 text-[11px] leading-relaxed text-muted">
+      Social sign-in requires each provider to be enabled with its OAuth client credentials in Supabase under Authentication → Sign In / Providers.
+    </p>
+  </>
+)}
               {!isSignUp && <button type="button" onClick={() => void handleRecovery()} disabled={submitting} className="mt-3 text-center text-xs text-muted underline underline-offset-2 hover:text-bone">Forgot your password?</button>}
               <button type="button" onClick={() => { setIsSignUp((value) => !value); setMessage(null); }} className="mt-4 text-left text-xs text-gold hover:text-gold-bright">{isSignUp ? "Already have an account? Sign in" : "New to NWS? Create an account"}</button>
               {!isSignUp && <p className="mt-3 text-center text-xs text-muted">Print subscriber? <Link href="/pricing" onClick={closeModal} className="text-gold-bright underline underline-offset-2">Activate your digital subscription</Link></p>}
