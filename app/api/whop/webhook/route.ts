@@ -27,14 +27,16 @@ export async function POST(req: NextRequest) {
     const payload = JSON.parse(rawBody || "{}");
     const parsed = parseWhopWebhookEvent(payload);
 
-    if (parsed.kind === "activate") {
+    const lifetimeProductId = process.env.WHOP_PRODUCT_ID?.trim();
+    if (parsed.kind === "activate" && parsed.productId === lifetimeProductId && lifetimeProductId) {
       recordVerifiedWhopMembership({
         membershipId: parsed.membershipId,
         email: parsed.email,
         licenseKey: parsed.licenseKey,
+        productId: parsed.productId,
         status: parsed.status,
       });
-    } else if (parsed.kind === "revoke") {
+    } else if (parsed.kind === "revoke" && parsed.productId === lifetimeProductId && lifetimeProductId) {
       revokeWhopMembership({
         membershipId: parsed.membershipId,
         email: parsed.email,

@@ -34,11 +34,20 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const productId = process.env.WHOP_PRODUCT_ID?.trim();
+    if (!productId) {
+      return NextResponse.json(
+        { success: false, unlocked: false, error: "Whop lifetime product verification is not configured." },
+        { status: 503 },
+      );
+    }
+
     // 1. Check webhook-verified local store first for immediate post-checkout unlock
     const webhookHit = findVerifiedWhopMembership({
       licenseKey: validation.licenseKey,
       email: validation.email,
       membershipId: validation.membershipId,
+      productId,
     });
     if (webhookHit.verified) {
       return NextResponse.json({
@@ -72,7 +81,8 @@ export async function POST(req: NextRequest) {
       "Content-Type": "application/json",
     };
 
-    // 2a. Direct payment / receipt lookup if paymentId or receiptId was returned from Whop redirect
+    // Payment IDs are only a pointer to the associated membership; the membership must match WHOP_PRODUCT_ID.
+    let candidateMembershipId = validation.membershipId;
     const paymentOrReceiptId = validation.paymentId || validation.receiptId;
     if (paymentOrReceiptId) {
       const payRes = await fetch(
@@ -86,37 +96,20 @@ export async function POST(req: NextRequest) {
       );
       if (payRes.ok) {
         const payData = (await payRes.json()) as {
-          id?: string;
           status?: string;
           membership_id?: string;
-          user_email?: string;
-          user?: { email?: string };
         };
         const status = (payData.status ?? "").toLowerCase();
-        if (ACTIVE_PAYMENT_STATUSES.has(status)) {
-          const email = (payData.user_email ?? payData.user?.email ?? validation.email) || undefined;
-          recordVerifiedWhopMembership({
-            membershipId: payData.membership_id ?? payData.id,
-            email,
-            status,
-          });
-          return NextResponse.json({
-            success: true,
-            unlocked: true,
-            plan: "premium",
-            membershipId: payData.membership_id ?? payData.id,
-            email,
-            message:
-              "Lifetime Premium ($1,487 USD) payment verified. All 2,038+ assets, 70 research desks, 60 Academy lessons, and 32 Trade Tools are now unlocked.",
-          });
+        if (ACTIVE_PAYMENT_STATUSES.has(status) && payData.membership_id) {
+          candidateMembershipId = payData.membership_id;
         }
       }
     }
 
-    // 2b. Direct membership ID lookup if membershipId (e.g. mem_...) was provided
-    if (validation.membershipId) {
+    // 2b. Direct membership ID lookup, including the membership referenced by a paid checkout.
+    if (candidateMembershipId) {
       const memRes = await fetch(
-        `https://api.whop.com/api/v2/memberships/${encodeURIComponent(validation.membershipId)}`,
+        `https://api.whop.com/api/v2/memberships/${encodeURIComponent(candidateMembershipId)}`,
         {
           method: "GET",
           headers,
@@ -127,15 +120,17 @@ export async function POST(req: NextRequest) {
       if (memRes.ok) {
         const memRecord = (await memRes.json()) as WhopMembershipRecord;
         const result = extractActiveWhopMembership([memRecord], {
-          membershipId: validation.membershipId,
+          membershipId: candidateMembershipId,
           email: validation.email,
           licenseKey: validation.licenseKey,
+          productId,
         });
         if (result.verified) {
           recordVerifiedWhopMembership({
             membershipId: result.membershipId,
             email: result.email,
             licenseKey: result.licenseKey,
+            productId,
             status: result.status,
           });
           return NextResponse.json({
@@ -152,16 +147,10 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // 2c. Query memberships list by email or licenseKey
-    const queryParam = validation.email
-      ? `?email=${encodeURIComponent(validation.email)}`
-      : validation.licenseKey
-        ? `?query=${encodeURIComponent(validation.licenseKey)}`
-        : validation.membershipId
-          ? `?query=${encodeURIComponent(validation.membershipId)}`
-          : "";
-
-    const whopRes = await fetch(`https://api.whop.com/api/v2/memberships${queryParam}`, {
+    // 2c. Search only the configured lifetime product, never any active Whop membership.
+    const membershipQuery = new URLSearchParams({ product_id: productId });
+    if (validation.licenseKey) membershipQuery.set("query", validation.licenseKey);
+    const whopRes = await fetch(`https://api.whop.com/api/v2/memberships?${membershipQuery}`, {
       method: "GET",
       headers,
       cache: "no-store",
@@ -184,6 +173,7 @@ export async function POST(req: NextRequest) {
       licenseKey: validation.licenseKey,
       email: validation.email,
       membershipId: validation.membershipId,
+      productId,
     });
 
     if (!result.verified) {
@@ -201,6 +191,7 @@ export async function POST(req: NextRequest) {
       membershipId: result.membershipId,
       email: result.email,
       licenseKey: result.licenseKey,
+      productId,
       status: result.status,
     });
 

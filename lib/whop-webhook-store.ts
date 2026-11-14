@@ -6,6 +6,7 @@ export interface StoredWhopRecord {
   membershipId?: string;
   email?: string;
   licenseKey?: string;
+  productId?: string;
   status: string;
   valid: boolean;
   updatedAt: string;
@@ -54,6 +55,7 @@ export function recordVerifiedWhopMembership(entry: {
   membershipId?: string;
   email?: string;
   licenseKey?: string;
+  productId?: string;
   status?: string;
 }): StoredWhopRecord {
   hydrateOnce();
@@ -61,6 +63,7 @@ export function recordVerifiedWhopMembership(entry: {
     membershipId: entry.membershipId?.trim() || undefined,
     email: entry.email?.trim().toLowerCase() || undefined,
     licenseKey: entry.licenseKey?.trim() || undefined,
+    productId: entry.productId?.trim() || undefined,
     status: entry.status?.trim() || "active",
     valid: true,
     updatedAt: new Date().toISOString(),
@@ -105,9 +108,10 @@ export function findVerifiedWhopMembership(
   const targetEmail = criteria.email?.trim().toLowerCase();
   const targetId = criteria.membershipId?.trim();
   const targetKey = criteria.licenseKey?.trim();
+  const targetProductId = criteria.productId?.trim();
 
   for (const rec of memoryRecords.values()) {
-    if (!rec.valid) continue;
+    if (!rec.valid || !targetProductId || rec.productId !== targetProductId) continue;
     const idMatch = Boolean(targetId) && rec.membershipId === targetId;
     const keyMatch =
       Boolean(targetKey) && (rec.licenseKey === targetKey || rec.membershipId === targetKey);

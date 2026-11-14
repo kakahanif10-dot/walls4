@@ -7,7 +7,8 @@ export interface WhopMembershipRecord {
   email?: string;
   user_email?: string;
   license_key?: string;
-  product?: string;
+  product_id?: string;
+  product?: string | { id?: string };
   plan?: string;
   user?: {
     email?: string;
@@ -29,6 +30,7 @@ export interface WhopValidationCriteria {
   membershipId?: string;
   receiptId?: string;
   paymentId?: string;
+  productId?: string;
 }
 
 const ACTIVE_STATUSES = new Set(["active", "completed", "trialing", "valid", "paid", "succeeded"]);
@@ -50,7 +52,7 @@ export function validateWhopCredentialsInput(
   const receiptId = (input.receiptId ?? "").trim();
   const paymentId = (input.paymentId ?? "").trim();
 
-  if (!licenseKey && !email && !membershipId && !receiptId && !paymentId) {
+  if (!licenseKey && !membershipId && !receiptId && !paymentId) {
     return {
       ok: false,
       licenseKey,
@@ -101,6 +103,9 @@ export function extractActiveWhopMembership(
     const recordEmail = (rec.email ?? rec.user_email ?? rec.user?.email ?? "").trim().toLowerCase();
     const recordKey = (rec.license_key ?? "").trim();
     const recordId = (rec.id ?? "").trim();
+    const recordProductId = rec.product_id ?? (typeof rec.product === "object" ? rec.product.id : undefined);
+
+    if (!criteria.productId || recordProductId !== criteria.productId) continue;
 
     const membershipMatch = Boolean(membershipTarget) && recordId === membershipTarget;
     const keyMatch =
@@ -167,6 +172,7 @@ export interface ParsedWhopWebhookEvent {
   membershipId?: string;
   email?: string;
   licenseKey?: string;
+  productId?: string;
   status?: string;
 }
 
@@ -190,6 +196,12 @@ export function parseWhopWebhookEvent(payload: unknown): ParsedWhopWebhookEvent 
         ? data.id
         : undefined;
   const licenseKey = typeof data.license_key === "string" ? data.license_key : undefined;
+  const productObj = data.product && typeof data.product === "object"
+    ? (data.product as Record<string, unknown>)
+    : null;
+  const productId =
+    (typeof data.product_id === "string" && data.product_id) ||
+    (productObj && typeof productObj.id === "string" ? productObj.id : undefined);
 
   const userObj =
     data.user && typeof data.user === "object" ? (data.user as Record<string, unknown>) : null;
@@ -214,6 +226,7 @@ export function parseWhopWebhookEvent(payload: unknown): ParsedWhopWebhookEvent 
       membershipId,
       email,
       licenseKey,
+      productId,
       status: status ?? "canceled",
     };
   }
@@ -232,6 +245,7 @@ export function parseWhopWebhookEvent(payload: unknown): ParsedWhopWebhookEvent 
       membershipId,
       email,
       licenseKey,
+      productId,
       status: status ?? "active",
     };
   }
@@ -244,7 +258,7 @@ export function verifyWhopWebhookSignature(
   signatureHeader: string | null | undefined,
   secret: string | undefined,
 ): boolean {
-  if (!secret || !secret.trim()) return true;
+  if (!secret || !secret.trim()) return false;
   if (!signatureHeader || !signatureHeader.trim()) return false;
 
   const cleanSig = signatureHeader.trim().replace(/^sha256=/i, "").replace(/^v1,/i, "");
