@@ -167,8 +167,8 @@ export default function AuthButton() {
                 <span>I have read and agree to the <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gold-bright underline underline-offset-2">Privacy Policy</Link> and <Link href="/terms-of-service" target="_blank" rel="noopener noreferrer" className="text-gold-bright underline underline-offset-2">NextWallStreet Terms of Service</Link>.</span>
               </label>
               {!isSignUp && <>
-                <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-3">
-                  {([['google', 'Google'], ['apple', 'Apple'], ['facebook', 'Facebook']] as const).map(([provider, label]) => (
+                <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  {([['google', 'Google'], ['facebook', 'Facebook']] as const).map(([provider, label]) => (
                     <button key={provider} type="button" onClick={() => void handleOAuthSignIn(provider)} disabled={submitting || !acceptedPolicies} className="min-h-11 rounded-xl border border-ink-700 bg-ink-950 px-3 text-xs font-semibold text-bone transition hover:border-gold/50 disabled:cursor-not-allowed disabled:opacity-50">Continue with {label}</button>
                   ))}
                 </div>
