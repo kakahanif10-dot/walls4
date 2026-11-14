@@ -14,6 +14,9 @@ const checkoutLinks: CheckoutLinks = {
   },
 };
 
+const LIFETIME_CHECKOUT_URL =
+  "https://whop.com/checkout/ch_1lB5uiuzPykUtqb/?redirect_url=https%3A%2F%2Fwalls4-ochre.vercel.app%2F&session=chs_BO4t9BaLejWnzi";
+
 function sanitizeHttpsUrl(value: string | undefined): string | null {
   const trimmed = value?.trim();
   if (!trimmed) return null;
@@ -32,30 +35,14 @@ export function getWhopCheckoutUrl(
   return sanitizeHttpsUrl(checkoutLinks[planId][cadence]);
 }
 
-export function getLifetimeCheckoutUrl(): string | null {
-  return (
-    sanitizeHttpsUrl(process.env.NEXT_PUBLIC_WHOP_CHECKOUT_LIFETIME_URL) ??
-    sanitizeHttpsUrl(process.env.NEXT_PUBLIC_WHOP_CHECKOUT_PREMIUM_ANNUAL_URL) ??
-    sanitizeHttpsUrl(process.env.NEXT_PUBLIC_WHOP_CHECKOUT_PREMIUM_MONTHLY_URL)
-  );
+export function getLifetimeCheckoutUrl(): string {
+  return LIFETIME_CHECKOUT_URL;
 }
 
-export function buildLifetimeCheckoutUrl(options?: {
-  email?: string;
-  redirectUrl?: string;
-}): string | null {
-  const base = getLifetimeCheckoutUrl();
-  if (!base) return null;
-  try {
-    const url = new URL(base);
-    if (options?.email && options.email.trim() && !url.searchParams.has("email")) {
-      url.searchParams.set("email", options.email.trim());
-    }
-    if (options?.redirectUrl && !url.searchParams.has("redirect_url")) {
-      url.searchParams.set("redirect_url", options.redirectUrl);
-    }
-    return url.toString();
-  } catch {
-    return base;
+export function buildLifetimeCheckoutUrl(options?: { email?: string }): string {
+  const url = new URL(LIFETIME_CHECKOUT_URL);
+  if (options?.email && options.email.trim()) {
+    url.searchParams.set("email", options.email.trim());
   }
+  return url.toString();
 }
