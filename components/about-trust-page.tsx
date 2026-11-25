@@ -134,20 +134,7 @@ function HeritageSection() {
           <p className="mt-3 max-w-2xl text-sm leading-7 text-muted sm:text-base">Over Two Decades of Market Discipline, Now Accessible Online</p>
         </header>
 
-        <div className="mt-8 max-w-4xl rounded-2xl border border-gold/20 bg-gradient-to-br from-[#19170f] via-[#111722] to-[#10151e] p-5 sm:p-7">
-          <span className="inline-flex rounded-full border border-gold/25 bg-gold/[0.08] px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-gold-bright sm:text-[11px]">
-            20+ Years Market Intelligence | Roots Since 2001
-          </span>
-          <h3 className="mt-5 font-display text-2xl leading-tight text-bone sm:text-3xl">
-            Two Decades of Analytical Evolution
-          </h3>
-          <p className="mt-4 text-sm leading-7 text-muted sm:text-[15px]">
-            Originating as an independent proprietary research desk in 2001, our quantitative models and market frameworks have navigated multiple market cycles—from the early 2000s tech transitions to the current digital asset era. In 2026, we unified and modernized our entire institutional toolset under the nextwallstreet.com terminal to bring high-conviction intelligence directly to modern investors.
-          </p>
-        </div>
-
-        <h3 className="mt-10 font-display text-xl text-bone sm:text-2xl">Legacy &amp; Heritage Timeline</h3>
-        <ol aria-label="NextWallStreet heritage milestones" className="mt-5 max-w-4xl">
+        <ol aria-label="NextWallStreet heritage milestones" className="mt-10 max-w-4xl">
           {heritageMilestones.map(({ period, title, description, icon: Icon }, index) => (
             <li key={period} className="relative grid grid-cols-[2.75rem_minmax(0,1fr)] gap-4 pb-7 last:pb-0 sm:grid-cols-[3rem_minmax(0,1fr)] sm:gap-6">
               {index < heritageMilestones.length - 1 && <span aria-hidden="true" className="absolute bottom-0 left-[1.375rem] top-10 w-px bg-gradient-to-b from-gold/35 to-gold/10 sm:left-6" />}
@@ -162,6 +149,23 @@ function HeritageSection() {
             </li>
           ))}
         </ol>
+
+        <section aria-labelledby="legacy-heritage-heading" className="mt-8 max-w-4xl">
+          <h3 id="legacy-heritage-heading" className="font-display text-xl text-bone sm:text-2xl">
+            Legacy &amp; Heritage Timeline
+          </h3>
+          <div className="mt-5 rounded-2xl border border-gold/20 bg-gradient-to-br from-[#19170f] via-[#111722] to-[#10151e] p-5 sm:p-7">
+            <span className="inline-flex rounded-full border border-gold/25 bg-gold/[0.08] px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-gold-bright sm:text-[11px]">
+              20+ Years Market Intelligence | Roots Since 2001
+            </span>
+            <h4 className="mt-5 font-display text-2xl leading-tight text-bone sm:text-3xl">
+              Two Decades of Analytical Evolution
+            </h4>
+            <p className="mt-4 text-sm leading-7 text-muted sm:text-[15px]">
+              Originating as an independent proprietary research desk in 2001, our quantitative models and market frameworks have navigated multiple market cycles—from the early 2000s tech transitions to the current digital asset era. In 2026, we unified and modernized our entire institutional toolset under the nextwallstreet.com terminal to bring high-conviction intelligence directly to modern investors.
+            </p>
+          </div>
+        </section>
 
         <aside className="mt-8 flex max-w-4xl items-start gap-4 rounded-2xl border border-gold/15 bg-gold/[0.025] p-5 sm:p-6">
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gold/15 bg-gold/[0.06] text-gold">
