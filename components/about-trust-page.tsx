@@ -150,20 +150,27 @@ function HeritageSection() {
           ))}
         </ol>
 
-        <section aria-labelledby="legacy-heritage-heading" className="mt-8 max-w-4xl">
+        <section aria-labelledby="legacy-heritage-heading" className="mt-8 max-w-5xl">
           <h3 id="legacy-heritage-heading" className="font-display text-xl text-bone sm:text-2xl">
             Legacy &amp; Heritage Timeline
           </h3>
-          <div className="mt-5 rounded-2xl border border-gold/20 bg-gradient-to-br from-[#19170f] via-[#111722] to-[#10151e] p-5 sm:p-7">
-            <span className="inline-flex rounded-full border border-gold/25 bg-gold/[0.08] px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-gold-bright sm:text-[11px]">
-              20+ Years Market Intelligence | Roots Since 2001
-            </span>
-            <h4 className="mt-5 font-display text-2xl leading-tight text-bone sm:text-3xl">
-              Two Decades of Analytical Evolution
-            </h4>
-            <p className="mt-4 text-sm leading-7 text-muted sm:text-[15px]">
-              Originating as an independent proprietary research desk in 2001, our quantitative models and market frameworks have navigated multiple market cycles—from the early 2000s tech transitions to the current digital asset era. In 2026, we unified and modernized our entire institutional toolset under the nextwallstreet.com terminal to bring high-conviction intelligence directly to modern investors.
-            </p>
+          <div className="mt-5 grid gap-6 rounded-2xl border border-gold/20 bg-gradient-to-br from-[#19170f] via-[#111722] to-[#10151e] p-5 sm:p-7 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-8 lg:p-8">
+            <div className="flex flex-col items-start">
+              <span className="inline-flex max-w-full rounded-full border border-gold/25 bg-gold/[0.08] px-3 py-2 font-mono text-[10px] font-semibold uppercase leading-relaxed tracking-[0.12em] text-gold-bright sm:text-[11px]">
+                20+ Years Market Intelligence | Roots Since 2001
+              </span>
+              <h4 className="mt-5 max-w-sm font-display text-2xl leading-tight text-bone sm:text-3xl">
+                Two Decades of Analytical Evolution
+              </h4>
+            </div>
+            <div className="border-t border-gold/15 pt-5 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-gold">
+                Our story
+              </p>
+              <p className="mt-3 text-sm leading-7 text-muted sm:text-[15px]">
+                Originating as an independent proprietary research desk in 2001, our quantitative models and market frameworks have navigated multiple market cycles—from the early 2000s tech transitions to the current digital asset era. In 2026, we unified and modernized our entire institutional toolset under the nextwallstreet.com terminal to bring high-conviction intelligence directly to modern investors.
+              </p>
+            </div>
           </div>
         </section>
 
