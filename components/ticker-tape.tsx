@@ -33,9 +33,9 @@ export default function TickerTape({ rows }: { rows: Row[] }) {
   return (
     <section
       aria-label="Live market prices"
-      className="mx-auto my-4 w-full max-w-7xl px-5 sm:my-5"
+      className="my-4 w-full sm:my-5"
     >
-      <div className="min-w-0 overflow-hidden rounded-xl border border-line/80 bg-ink-900/90 shadow-[0_8px_30px_rgba(0,0,0,0.16)]">
+      <div className="w-full min-w-0 overflow-hidden border-y border-line/80 bg-ink-900/90 shadow-[0_8px_30px_rgba(0,0,0,0.16)]">
         <div className="min-w-0 overflow-hidden">
           <div className="marquee-track flex items-center gap-8 py-2.5 pl-4">
             {rows.map((row) => (
