@@ -52,7 +52,7 @@ export default function SiteFooter() {
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
               Rules-based trend analysis and research across equities, digital assets and
-              speculative markets — plus the education to use it responsibly.
+              speculative markets — plus the education to use it responsibly. Founded in 2001 as an independent, community-driven market research and trading consultancy focused on macroeconomic analysis and disciplined capital protection.
             </p>
             <p className="mt-5 text-xs leading-relaxed text-muted/70">
               {ASSETS.length.toLocaleString()} Assets Tracked · 70 Research Desks · 60 Academy Lessons · 32 Trade Tools · 1,100+ Community Members
@@ -99,7 +99,7 @@ export default function SiteFooter() {
             digital assets, and global venues. Investing and trading involve
             substantial risk of loss, including total loss of capital. Past performance does not
             predict future results. Do your own research and consult a licensed adviser where
-            appropriate.
+            appropriate. Founded in 2001 as an independent, community-driven market research and trading consultancy focused on macroeconomic analysis and disciplined capital protection.
           </p>
           <div className="mt-5 flex flex-col gap-3 text-xs text-muted/70 sm:flex-row sm:items-center sm:justify-between">
             <p>© {new Date().getFullYear()} NextWallStreet. All rights reserved.</p>

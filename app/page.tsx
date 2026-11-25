@@ -114,9 +114,9 @@ export default async function HomePage() {
 
             <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-muted">
               NextWallStreet scores the trend, names the stance and publishes the invalidation
-              level — across equities, digital assets and speculative markets. Lifetime Access Only ($1,487 USD one-time) unlocks all 2,038+ daily trend scores, exact invalidation
+              level — across equities,               digital assets and speculative markets. Lifetime Access Only ($1,487 USD one-time) unlocks all 2,038+ daily trend scores, exact invalidation
               levels, 70 Research Desks, 60 Academy Lessons, 32 Trade Tools, and 1,100+ Community
-              Members. One lifetime plan only — no monthly or annual service.
+              Members. One lifetime plan only — no monthly or annual service. Founded in 2001 as an independent, community-driven market research and trading consultancy focused on macroeconomic analysis and disciplined capital protection.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3.5">
