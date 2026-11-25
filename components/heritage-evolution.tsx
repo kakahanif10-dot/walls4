@@ -49,7 +49,19 @@ export default function HeritageEvolution() {
           </p>
         </div>
 
-        <div className="relative mx-auto mt-14 max-w-3xl">
+        <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-gold/20 bg-gradient-to-br from-[#19170f] via-[#111722] to-[#10151e] p-5 sm:p-7">
+          <div className="inline-flex rounded-full border border-gold/25 bg-gold/[0.08] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-gold-bright sm:text-[11px]">
+            20+ Years Market Intelligence | Roots Since 2001
+          </div>
+          <h3 className="mt-5 font-display text-2xl leading-tight text-bone sm:text-3xl">
+            Two Decades of Analytical Evolution
+          </h3>
+          <p className="mt-4 text-sm leading-relaxed text-muted sm:text-[15px]">
+            Originating as an independent proprietary research desk in 2001, our quantitative models and market frameworks have navigated multiple market cycles—from the early 2000s tech transitions to the current digital asset era. In 2026, we unified and modernized our entire institutional toolset under the nextwallstreet.com terminal to bring high-conviction intelligence directly to modern investors.
+          </p>
+        </div>
+
+        <div className="relative mx-auto mt-10 max-w-3xl">
           <div
             aria-hidden="true"
             className="absolute bottom-10 left-[19px] top-10 w-px bg-gradient-to-b from-gold/70 via-gold/30 to-gold/10 sm:left-6"
