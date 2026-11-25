@@ -6,7 +6,7 @@ const milestones = [
     chapter: "FOUNDATIONS",
     title: "Private Market Advisory",
     description:
-      "Founded as an independent, community-driven market research and trading consultancy, focused on macroeconomic analysis and disciplined capital protection.",
+      "Founded in 2001 as an independent, community-driven market research and trading consultancy focused on macroeconomic analysis and disciplined capital protection.",
     Icon: History,
     featured: true,
   },
@@ -36,16 +36,16 @@ export default function HeritageEvolution() {
       <div className="mx-auto max-w-7xl px-5 py-20 sm:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-gold">
-            Built through market cycles
+            OUR HERITAGE
           </p>
           <h2
             id="heritage-heading"
             className="mt-3 font-display text-3xl text-bone sm:text-4xl"
           >
-            Our Heritage
+            Built Through Market Cycles
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
-            Over Two Decades of Market Discipline, Now Accessible Online
+            Over two decades of market discipline, now accessible on one digital terminal.
           </p>
         </div>
 
@@ -98,33 +98,24 @@ export default function HeritageEvolution() {
           </ol>
         </div>
 
-        <section aria-labelledby="legacy-heritage-heading" className="mx-auto mt-8 max-w-3xl">
-          <h3 id="legacy-heritage-heading" className="sr-only">
-            Legacy &amp; Heritage Timeline
-          </h3>
+        <div className="mx-auto mt-8 max-w-3xl">
           <article className="relative overflow-hidden rounded-2xl border border-gold/30 bg-gradient-to-br from-[#211b10] via-[#131923] to-[#10151e] p-6 shadow-[0_20px_70px_rgba(0,0,0,0.22)] sm:p-8">
             <div aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full border border-gold/10" />
             <div aria-hidden="true" className="pointer-events-none absolute -right-8 -top-8 h-36 w-36 rounded-full border border-gold/[0.08]" />
             <div className="relative grid gap-6 sm:gap-8 md:grid-cols-[0.85fr_1.15fr] md:items-center">
               <div>
-                <p className="mb-4 font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-gold">
-                  Legacy &amp; Heritage Timeline
-                </p>
                 <div className="inline-flex rounded-full border border-gold/30 bg-gold/[0.08] px-3 py-2 text-[10px] font-semibold uppercase leading-relaxed tracking-[0.12em] text-gold-bright sm:text-[11px]">
-                  20+ Years Market Intelligence | Roots Since 2001
+                  25 Years of Analytical Evolution | Roots Since 2001
                 </div>
-                <h4 className="mt-5 font-display text-2xl leading-tight text-bone sm:text-3xl">
-                  Two Decades of Analytical Evolution
-                </h4>
               </div>
               <div className="border-t border-gold/20 pt-5 md:border-l md:border-t-0 md:pl-8 md:pt-0">
                 <p className="text-sm leading-relaxed text-muted sm:text-[15px]">
-                  Originating as an independent proprietary research desk in 2001, our quantitative models and market frameworks have navigated multiple market cycles—from the early 2000s tech transitions to the current digital asset era. In 2026, we unified and modernized our entire institutional toolset under the nextwallstreet.com terminal to bring high-conviction intelligence directly to modern investors.
+                  Founded in 2001 as an independent, community-driven market research and trading consultancy focused on macroeconomic analysis and disciplined capital protection, our frameworks have navigated multiple market cycles—from early-2000s market shifts and the 2008 financial crisis to modern digital asset cycles. After evolving into systematic quantitative models in the 2010s, we unified and modernized our analytics under NextWallStreet in 2026 to make structured market intelligence accessible on nextwallstreet.com.
                 </p>
               </div>
             </div>
           </article>
-        </section>
+        </div>
 
         <div className="mx-auto mt-8 flex max-w-3xl gap-3 rounded-xl border border-white/[0.06] bg-[#10151e]/75 p-4 sm:p-5">
           <ShieldCheck
@@ -132,7 +123,7 @@ export default function HeritageEvolution() {
             aria-hidden="true"
           />
           <p className="text-xs leading-relaxed text-muted sm:text-[13px]">
-            NextWallStreet has evolved from a private, traditional consultancy into a modern digital intelligence portal. Our market research and quantitative tools are provided for informational and educational purposes only; they do not constitute investment advice or a recommendation to buy or sell any security.
+            NextWallStreet has evolved from a private, community-driven research practice into a modern digital intelligence portal. All market research, quantitative indicators, and analytics are provided for informational and educational purposes only; they do not constitute personalized investment advice or a recommendation to buy or sell any security.
           </p>
         </div>
       </div>
