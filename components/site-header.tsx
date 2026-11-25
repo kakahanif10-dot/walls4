@@ -332,7 +332,7 @@ export default function SiteHeader() {
               setDirectoryOpen(false);
             }}
           >
-            <span className="font-display text-xl font-semibold text-bone">
+            <span className="font-luxury-num text-xl font-medium tracking-[-0.025em] text-bone">
               Next<span className="text-gold-bright">Wall</span>Street
             </span>
           </Link>
