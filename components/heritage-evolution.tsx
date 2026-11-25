@@ -6,7 +6,7 @@ const milestones = [
     chapter: "FOUNDATIONS",
     title: "Private Market Advisory",
     description:
-      "Founded as an independent family-run market research and trading consultancy, focused on macroeconomic analysis and disciplined capital protection.",
+      "Founded as an independent, community-driven market research and trading consultancy, focused on macroeconomic analysis and disciplined capital protection.",
     Icon: History,
     featured: true,
   },
