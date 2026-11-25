@@ -141,6 +141,39 @@ export default function AboutTrustPage() {
         <p className="mt-4 text-[11px] leading-5 text-muted/60">Coverage and model counts describe the platform&apos;s current published scope. Security and data handling details are described in our <Link className="underline decoration-white/20 underline-offset-4 hover:text-bone" href="/privacy-policy">Privacy Policy</Link>.</p>
       </section>
 
+      <section className="border-y border-white/[0.055] bg-[#0b0f17]/70">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-16">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-gold/20 bg-gold/[0.06] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-gold-bright">
+                <span className="h-1.5 w-1.5 rounded-full bg-gold-bright" aria-hidden="true" />
+                20+ Years Market Intelligence | Roots Since 2001
+              </div>
+              <h2 className="mt-5 font-display text-3xl leading-tight text-bone sm:text-4xl">Two Decades of Analytical Evolution</h2>
+            </div>
+            <div>
+              <p className="text-sm leading-7 text-muted sm:text-base sm:leading-8">
+                Originating as an independent proprietary research desk in 2001, our quantitative models and market frameworks have navigated multiple market cycles—from the early 2000s tech transitions to the current digital asset era. In 2026, we unified and modernized our entire institutional toolset under the nextwallstreet.com terminal to bring high-conviction intelligence directly to modern investors.
+              </p>
+              <ol aria-label="NextWallStreet heritage timeline" className="mt-8 grid gap-3 sm:grid-cols-3">
+                <li className="rounded-xl border border-white/[0.075] bg-white/[0.025] p-4">
+                  <span className="font-mono text-xs tracking-widest text-gold-bright">2001</span>
+                  <p className="mt-2 text-xs leading-5 text-bone/85">Independent proprietary research desk</p>
+                </li>
+                <li className="rounded-xl border border-white/[0.075] bg-white/[0.025] p-4">
+                  <span className="font-mono text-xs tracking-widest text-gold-bright">ACROSS CYCLES</span>
+                  <p className="mt-2 text-xs leading-5 text-bone/85">Models evolve with changing market structure</p>
+                </li>
+                <li className="rounded-xl border border-gold/20 bg-gold/[0.04] p-4">
+                  <span className="font-mono text-xs tracking-widest text-gold-bright">2026</span>
+                  <p className="mt-2 text-xs leading-5 text-bone/85">Unified intelligence terminal for modern investors</p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="border-y border-white/[0.055] bg-white/[0.012]">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
           <SectionHeading eyebrow="Research framework" title="Three principles. One consistent process." description="The research process starts with evidence, makes uncertainty visible, and treats risk as part of every market view." />
