@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef, type MouseEvent } from "react";
 import FeedBadge from "@/components/feed-badge";
 import AuthButton from "@/components/auth-button";
-import BrandMark from "@/components/brand-mark";
 import GlobalSearchModal from "@/components/global-search";
 import { useWhop } from "@/lib/whop-context";
 import {
@@ -333,7 +332,9 @@ export default function SiteHeader() {
               setDirectoryOpen(false);
             }}
           >
-            <BrandMark />
+            <span className="font-luxury-num text-xl font-medium tracking-[-0.025em] text-bone">
+              Next<span className="text-gold-bright">Wall</span>Street
+            </span>
           </Link>
 
           {/* Primary Single-Row Navigation */}

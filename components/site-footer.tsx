@@ -47,7 +47,7 @@ export default function SiteFooter() {
       <div className="mx-auto max-w-7xl px-5 py-12">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-2">
-            <Link href="/" className="font-display text-xl text-bone">
+            <Link href="/" className="font-luxury-num text-xl font-medium tracking-[-0.025em] text-bone">
               Next<span className="text-gold-bright">Wall</span>Street
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
