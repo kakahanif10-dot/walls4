@@ -22,7 +22,7 @@ const milestones = [
   {
     period: "2026",
     chapter: "DIGITAL ERA",
-    title: "Launch of NextWallStreet",
+    title: "NextWallStreet",
     description:
       "Bringing these proprietary quantitative indicators, market intelligence, and analytics directly to the public web via our digital platform.",
     Icon: Globe2,
