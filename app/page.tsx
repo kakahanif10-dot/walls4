@@ -1,6 +1,7 @@
 import Link from "next/link";
 import AuthButton from "@/components/auth-button";
 import TickerTape from "@/components/ticker-tape";
+import HeritageEvolution from "@/components/heritage-evolution";
 import DisclaimerMarquee from "@/components/disclaimer-marquee";
 import Sparkline from "@/components/sparkline";
 import { LivePrice, LiveChange } from "@/components/live-price";
@@ -95,6 +96,7 @@ export default async function HomePage() {
 
   return (
     <div>
+      <HeritageEvolution />
       <TickerTape rows={tapeRows} />
 
       <section className="grain relative overflow-hidden">
