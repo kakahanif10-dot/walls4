@@ -95,6 +95,8 @@ export default async function HomePage() {
 
   return (
     <div>
+      <TickerTape rows={tapeRows} />
+
       <section className="grain relative overflow-hidden">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:py-24">
           <div className="rise">
@@ -222,8 +224,6 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-
-      <TickerTape rows={tapeRows} />
 
       <DisclaimerMarquee />
 
