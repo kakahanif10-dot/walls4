@@ -31,17 +31,33 @@ function TapeItem({ row }: { row: Row }) {
 
 export default function TickerTape({ rows }: { rows: Row[] }) {
   return (
-    <div className="overflow-hidden border-y border-line/70 bg-ink-900/70">
-      <div className="marquee-track flex items-center gap-8 py-2.5">
-        {rows.map((row) => (
-          <TapeItem key={row.symbol} row={row} />
-        ))}
-        <div className="flex items-center gap-8" aria-hidden="true">
-          {rows.map((row) => (
-            <TapeItem key={`${row.symbol}-loop`} row={row} />
-          ))}
+    <section
+      aria-label="Live market prices"
+      className="mx-auto my-4 w-full max-w-7xl px-5 sm:my-5"
+    >
+      <div className="flex min-w-0 overflow-hidden rounded-xl border border-line/80 bg-ink-900/90 shadow-[0_8px_30px_rgba(0,0,0,0.16)]">
+        <div className="flex shrink-0 items-center gap-2.5 border-r border-line/80 bg-ink-950/80 px-3 py-3 sm:px-4">
+          <span className="relative flex h-2 w-2" aria-hidden="true">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-up opacity-60" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-up" />
+          </span>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-gold-bright">
+            Live markets
+          </span>
+        </div>
+        <div className="min-w-0 flex-1 overflow-hidden">
+          <div className="marquee-track flex items-center gap-8 py-2.5 pl-4">
+            {rows.map((row) => (
+              <TapeItem key={row.symbol} row={row} />
+            ))}
+            <div className="flex items-center gap-8" aria-hidden="true">
+              {rows.map((row) => (
+                <TapeItem key={`${row.symbol}-loop`} row={row} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
