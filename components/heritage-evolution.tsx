@@ -1,4 +1,5 @@
-import { Clock3, Globe2, History, ShieldCheck } from "lucide-react";
+import { Clock3, Globe2, History } from "lucide-react";
+import HeritageMethodologyPoster from "@/components/heritage-methodology-poster";
 
 const milestones = [
   {
@@ -117,15 +118,7 @@ export default function HeritageEvolution() {
           </article>
         </div>
 
-        <div className="mx-auto mt-8 flex max-w-3xl gap-3 rounded-xl border border-white/[0.06] bg-[#10151e]/75 p-4 sm:p-5">
-          <ShieldCheck
-            className="mt-0.5 h-4 w-4 shrink-0 text-gold/80"
-            aria-hidden="true"
-          />
-          <p className="text-xs leading-relaxed text-muted sm:text-[13px]">
-            NextWallStreet has evolved from a private, community-driven research practice into a modern digital intelligence portal. All market research, quantitative indicators, and analytics are provided for informational and educational purposes only; they do not constitute personalized investment advice or a recommendation to buy or sell any security.
-          </p>
-        </div>
+        <HeritageMethodologyPoster />
       </div>
     </section>
   );
