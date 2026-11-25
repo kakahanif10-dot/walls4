@@ -45,11 +45,27 @@ export const metadata: Metadata = {
     "quantitative research",
   ],
   openGraph: {
-    title: "NextWallStreet",
+    title: "NextWallStreet — Market Intelligence & Trend Analysis",
     description:
       "Rules-based trend analysis across equities, digital assets, and speculative risk models, with the education to use it.",
     type: "website",
     url: "https://nextwallstreet.com",
+    siteName: "NextWallStreet",
+    images: [
+      {
+        url: "https://nextwallstreet.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "NextWallStreet — Market Intelligence",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NextWallStreet — Market Intelligence & Trend Analysis",
+    description:
+      "Rules-based trend analysis across equities, digital assets, and speculative risk models, with the education to use it.",
+    images: ["https://nextwallstreet.com/og-image.jpg"],
   },
 };
 
