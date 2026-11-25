@@ -6,7 +6,7 @@ import { useEffect, useRef, type ComponentPropsWithoutRef, type MouseEvent, type
 import { useWhop } from "@/lib/whop-context";
 import { getLifetimeCheckoutUrl } from "@/lib/whop-checkout-links";
 
-const PUBLIC_PATHS = new Set(["/", "/pricing", "/disclaimer"]);
+const PUBLIC_PATHS = new Set(["/", "/pricing", "/disclaimer", "/about"]);
 
 export function isPublicRoute(pathname: string | null): boolean {
   if (!pathname) return true;
