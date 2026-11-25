@@ -33,7 +33,7 @@ export default function TickerTape({ rows }: { rows: Row[] }) {
   return (
     <section
       aria-label="Market prices"
-      className="my-8 w-full border-y border-gold/20 bg-[linear-gradient(90deg,#29271f_0%,#353126_48%,#29271f_100%)] sm:my-10"
+      className="my-8 w-full border-y border-line/80 bg-ink-900/90 sm:my-10"
     >
       <div className="w-full overflow-hidden py-4 sm:py-[1.125rem]">
         <div className="marquee-track flex items-center gap-8 pl-5 sm:gap-10 sm:pl-8">
