@@ -8,12 +8,16 @@ import {
   CheckCircle2,
   ChevronRight,
   CircleHelp,
+  Clock,
+  Globe,
+  History,
   ExternalLink,
   Fingerprint,
   Code2,
   Building2,
   Mail,
   Radio,
+  Shield,
   ShieldCheck,
   Sparkles,
   TerminalSquare,
@@ -97,6 +101,69 @@ function MetricCard({ value, label, detail, icon: Icon }: (typeof metrics)[numbe
   );
 }
 
+const heritageMilestones = [
+  {
+    period: "2001 · FOUNDATIONS",
+    title: "Private Market Advisory",
+    description: "Founded as an independent family-run market research and trading consultancy, focused on macroeconomic analysis and disciplined capital protection.",
+    icon: History,
+  },
+  {
+    period: "2010s · QUANTITATIVE EVOLUTION",
+    title: "Systematic Frameworks",
+    description: "Transitioning from discretionary analysis to algorithmic models and rule-based risk management.",
+    icon: Clock,
+  },
+  {
+    period: "2026 · DIGITAL ERA",
+    title: "Launch of NextWallStreet",
+    description: "Bringing these proprietary quantitative indicators, market intelligence, and analytics directly to the public web via our digital platform.",
+    icon: Globe,
+  },
+];
+
+function HeritageSection() {
+  return (
+    <section id="our-heritage" aria-labelledby="heritage-heading" className="border-y border-white/[0.055] bg-[#0b0f17]">
+      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
+        <header className="max-w-3xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-gold/20 bg-gold/[0.05] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-gold-bright">
+            <History className="h-3.5 w-3.5" aria-hidden="true" /> Our Heritage
+          </span>
+          <h2 id="heritage-heading" className="mt-5 font-display text-3xl leading-tight tracking-tight text-bone sm:text-4xl">Our Heritage &amp; Evolution</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-muted sm:text-base">Over Two Decades of Market Discipline, Now Accessible Online</p>
+        </header>
+
+        <ol aria-label="NextWallStreet heritage milestones" className="mt-10 max-w-4xl">
+          {heritageMilestones.map(({ period, title, description, icon: Icon }, index) => (
+            <li key={period} className="relative grid grid-cols-[2.75rem_minmax(0,1fr)] gap-4 pb-7 last:pb-0 sm:grid-cols-[3rem_minmax(0,1fr)] sm:gap-6">
+              {index < heritageMilestones.length - 1 && <span aria-hidden="true" className="absolute bottom-0 left-[1.375rem] top-10 w-px bg-gradient-to-b from-gold/35 to-gold/10 sm:left-6" />}
+              <span className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-gold/25 bg-[#0b0f17] text-gold-bright shadow-[0_0_0_5px_#0b0f17]">
+                <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
+              </span>
+              <article className="rounded-2xl border border-white/[0.075] bg-white/[0.02] p-5 transition-colors hover:border-gold/20 sm:p-6">
+                <p className="font-mono text-[10px] font-medium tracking-[0.16em] text-gold">{period}</p>
+                <h3 className="mt-2 font-display text-xl text-bone sm:text-2xl">{title}</h3>
+                <p className="mt-2 max-w-2xl text-sm leading-7 text-muted">{description}</p>
+              </article>
+            </li>
+          ))}
+        </ol>
+
+        <aside className="mt-8 flex max-w-4xl items-start gap-4 rounded-2xl border border-gold/15 bg-gold/[0.025] p-5 sm:p-6">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gold/15 bg-gold/[0.06] text-gold">
+            <Shield className="h-[18px] w-[18px]" aria-hidden="true" />
+          </span>
+          <div>
+            <h3 className="text-sm font-semibold text-bone">A Clear Evolution, Grounded in Trust</h3>
+            <p className="mt-2 text-sm leading-7 text-muted">We began as a private, traditional consultancy. Today, NextWallStreet is a public digital intelligence portal making our market analysis, quantitative indicators, and research tools accessible online. The portal shares information and education; it does not provide individualized investment advice.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  );
+}
+
 export default function AboutTrustPage() {
   return (
     <div className="overflow-hidden">
@@ -130,6 +197,8 @@ export default function AboutTrustPage() {
         </div>
       </section>
 
+      <HeritageSection />
+
       <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <SectionHeading eyebrow="The operating standard" title="Built around measurable discipline." description="A transparent view of what the platform covers and how we approach market research." />
@@ -139,39 +208,6 @@ export default function AboutTrustPage() {
           {metrics.map((metric) => <MetricCard key={metric.label} {...metric} />)}
         </div>
         <p className="mt-4 text-[11px] leading-5 text-muted/60">Coverage and model counts describe the platform&apos;s current published scope. Security and data handling details are described in our <Link className="underline decoration-white/20 underline-offset-4 hover:text-bone" href="/privacy-policy">Privacy Policy</Link>.</p>
-      </section>
-
-      <section className="border-y border-white/[0.055] bg-[#0b0f17]/70">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-16">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-gold/20 bg-gold/[0.06] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-gold-bright">
-                <span className="h-1.5 w-1.5 rounded-full bg-gold-bright" aria-hidden="true" />
-                20+ Years Market Intelligence | Roots Since 2001
-              </div>
-              <h2 className="mt-5 font-display text-3xl leading-tight text-bone sm:text-4xl">Two Decades of Analytical Evolution</h2>
-            </div>
-            <div>
-              <p className="text-sm leading-7 text-muted sm:text-base sm:leading-8">
-                Originating as an independent proprietary research desk in 2001, our quantitative models and market frameworks have navigated multiple market cycles—from the early 2000s tech transitions to the current digital asset era. In 2026, we unified and modernized our entire institutional toolset under the nextwallstreet.com terminal to bring high-conviction intelligence directly to modern investors.
-              </p>
-              <ol aria-label="NextWallStreet heritage timeline" className="mt-8 grid gap-3 sm:grid-cols-3">
-                <li className="rounded-xl border border-white/[0.075] bg-white/[0.025] p-4">
-                  <span className="font-mono text-xs tracking-widest text-gold-bright">2001</span>
-                  <p className="mt-2 text-xs leading-5 text-bone/85">Independent proprietary research desk</p>
-                </li>
-                <li className="rounded-xl border border-white/[0.075] bg-white/[0.025] p-4">
-                  <span className="font-mono text-xs tracking-widest text-gold-bright">ACROSS CYCLES</span>
-                  <p className="mt-2 text-xs leading-5 text-bone/85">Models evolve with changing market structure</p>
-                </li>
-                <li className="rounded-xl border border-gold/20 bg-gold/[0.04] p-4">
-                  <span className="font-mono text-xs tracking-widest text-gold-bright">2026</span>
-                  <p className="mt-2 text-xs leading-5 text-bone/85">Unified intelligence terminal for modern investors</p>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section className="border-y border-white/[0.055] bg-white/[0.012]">
