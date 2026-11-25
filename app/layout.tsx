@@ -18,6 +18,7 @@ const newsreader = Newsreader({
 });
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
+import HeritageStatement from "@/components/heritage-statement";
 import LivePricesProvider from "@/components/live-prices";
 import { LifetimeRouteGuard } from "@/components/locked-action";
 import { AuthProvider } from "@/lib/auth-context";
@@ -122,11 +123,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <AuthProvider>
           <WhopProvider>
             <LivePricesProvider seed={liveSeed()} source={source} delayed={delayed}>
+              <HeritageStatement placement="top" />
               <SiteHeader />
               <main>
                 <LifetimeRouteGuard>{children}</LifetimeRouteGuard>
               </main>
               <SiteFooter />
+              <HeritageStatement placement="bottom" />
             </LivePricesProvider>
           </WhopProvider>
         </AuthProvider>
