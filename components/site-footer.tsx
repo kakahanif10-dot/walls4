@@ -35,6 +35,7 @@ const COLUMNS = [
   {
     title: "Company",
     links: [
+      { href: "/about", label: "About NextWallStreet", isPublic: true },
       { href: "/pricing", label: "Lifetime access ($1,487 USD)", isPublic: true },
       { href: "/disclaimer", label: "Disclaimer & methodology", isPublic: true },
     ],

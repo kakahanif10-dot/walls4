@@ -191,6 +191,7 @@ function HeritageSection() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
+              "@id": "https://nextwallstreet.com/#organization",
               name: "NextWallStreet",
               url: "https://nextwallstreet.com",
               foundingDate: "2001",
