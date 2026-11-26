@@ -1,7 +1,6 @@
 import Link from "next/link";
 import AuthButton from "@/components/auth-button";
 import TickerTape from "@/components/ticker-tape";
-import DisclaimerMarquee from "@/components/disclaimer-marquee";
 import Sparkline from "@/components/sparkline";
 import { LivePrice, LiveChange } from "@/components/live-price";
 import FrontpageTriplePoster from "@/components/frontpage-triple-poster";
@@ -227,10 +226,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <DisclaimerMarquee />
-
-      <HeritageEvolution />
       <HomepageEntityOverview />
+      <HeritageEvolution />
 
       <div className="pt-24 sm:pt-36">
         <FrontpageTriplePoster initialData={frontpageBundle} />

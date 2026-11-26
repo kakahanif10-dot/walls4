@@ -7,6 +7,7 @@ import FeedBadge from "@/components/feed-badge";
 import AuthButton from "@/components/auth-button";
 import GlobalSearchModal from "@/components/global-search";
 import { useWhop } from "@/lib/whop-context";
+import { isPublicRoute } from "@/components/locked-action";
 import {
   Menu,
   Search,
@@ -286,7 +287,7 @@ export default function SiteHeader() {
     (href === "/crypto" && pathname === "/meme-coins");
 
   const handleLockedNav = (e: MouseEvent<HTMLAnchorElement>, label: string, href?: string) => {
-    if (!isUnlocked) {
+    if (!isUnlocked && !isPublicRoute(href ?? null)) {
       e.preventDefault();
       e.stopPropagation();
       setDirectoryOpen(false);
