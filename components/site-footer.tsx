@@ -96,10 +96,10 @@ export default function SiteFooter() {
             publishes market analysis and educational material only. Nothing here is a
             recommendation, solicitation or offer to buy or sell any security, token or derivative.
             Quotes are sourced from real-time exchange and public market feeds across equities,
-            digital assets, and global venues. Investing and trading involve
+            digital assets, and global venues.             Investing and trading involve
             substantial risk of loss, including total loss of capital. Past performance does not
             predict future results. Do your own research and consult a licensed adviser where
-            appropriate. Founded in 2001 as an independent, community-driven market research and trading consultancy focused on macroeconomic analysis and disciplined capital protection.
+            appropriate.
           </p>
           <div className="mt-5 flex flex-col gap-3 text-xs text-muted/70 sm:flex-row sm:items-center sm:justify-between">
             <p>© {new Date().getFullYear()} NextWallStreet. All rights reserved.</p>
