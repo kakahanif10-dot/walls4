@@ -304,11 +304,11 @@ export default function FrontpageTriplePoster({
             {top3Signals.map((sig) => (
               <div
                 key={sig.symbol}
-                className="flex flex-col justify-between rounded-xl bg-ink-950/75 p-5"
+                className="flex min-w-0 flex-col justify-between rounded-xl bg-ink-950/75 p-5"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2">
-                    <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex min-w-0 items-center gap-2">
                       <span className="rounded-md bg-ink-900/90 px-2 py-0.5 text-[11px] font-semibold tracking-[0.06em] text-gold-bright tabular-nums">
                         #{sig.rank}
                       </span>
@@ -321,11 +321,11 @@ export default function FrontpageTriplePoster({
                     </span>
                   </div>
 
-                  <p className="mt-1.5 text-xs text-muted truncate">
+                  <p className="mt-1.5 min-w-0 truncate text-xs text-muted">
                     {sig.name} · {sig.group}
                   </p>
 
-                  <div className="mt-4 flex items-baseline justify-between py-2">
+                  <div className="mt-4 flex flex-wrap items-baseline justify-between gap-x-3 py-2">
                     <span className="font-luxury-num text-2xl font-medium tracking-[-0.01em] text-bone tabular-nums">
                       {fmtSpot(sig.price)}
                     </span>
@@ -339,7 +339,7 @@ export default function FrontpageTriplePoster({
                     </span>
                   </div>
 
-                  <div className="mt-3 grid grid-cols-3 gap-2 text-xs">
+                  <div className="mt-3 grid min-w-0 grid-cols-2 gap-2 text-xs sm:grid-cols-3">
                     <div>
                       <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted">
                         Target

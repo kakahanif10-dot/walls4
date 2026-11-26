@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import AboutTrustPage from "@/components/about-trust-page";
 
 export const metadata: Metadata = {
-  title: "Our Heritage & Evolution | About NextWallStreet",
+  title: "About, Heritage & Methodology",
   description:
-    "Discover NextWallStreet's evolution from a family-run market advisory consultancy founded in 2001 to a public digital intelligence platform for quantitative research and risk frameworks.",
+    "Explore NextWallStreet's market research roots since 2001, its analytical timeline, quantitative methodology, risk practices, and educational resources.",
   alternates: { canonical: "/about" },
 };
 

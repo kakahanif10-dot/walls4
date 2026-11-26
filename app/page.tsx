@@ -235,7 +235,7 @@ export default async function HomePage() {
       </div>
 
       <section className="mx-auto max-w-7xl px-5 py-20">
-        <div className="grid items-start gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-16">
           <div>
             <h2 className="font-display text-3xl leading-tight text-bone sm:text-4xl">
               One score. One stance. One invalidation level.
