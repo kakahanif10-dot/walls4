@@ -116,8 +116,8 @@ const heritageMilestones = [
   },
   {
     period: "2026 · DIGITAL ERA",
-    title: "Launch of NextWallStreet",
-    description: "Bringing these proprietary quantitative indicators, market intelligence, and analytics directly to the public web via our digital platform.",
+    title: "Public Digital Platform Expansion",
+    description: "Bringing these quantitative indicators, market intelligence, and analytics together on a public web terminal at nextwallstreet.com.",
     icon: Globe,
   },
 ];
@@ -158,6 +158,47 @@ function HeritageSection() {
             Founded in 2001 as an independent, community-driven market research and trading consultancy focused on macroeconomic analysis and disciplined capital protection, our frameworks have been tested across shifting market environments—from post-2001 market transitions and the 2008 financial crisis to later modern digital asset cycles. After evolving into systematic quantitative models in the 2010s, we unified and modernized our analytics under NextWallStreet in 2026 to make structured market intelligence accessible on nextwallstreet.com.
           </p>
         </section>
+
+        <section aria-labelledby="entity-overview-heading" className="mt-8 max-w-5xl rounded-3xl border border-[#D4AF37]/30 bg-gradient-to-br from-[#19170f] via-[#111722] to-[#0d1119] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.24)] sm:p-8 lg:p-10">
+          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">ENTITY OVERVIEW &amp; IDENTITY</p>
+          <h2 id="entity-overview-heading" className="mt-3 font-display text-3xl leading-tight text-bone sm:text-4xl">What is NextWallStreet?</h2>
+          <p className="mt-5 max-w-4xl text-sm leading-7 text-muted sm:text-base sm:leading-8">
+            NextWallStreet is an independent quantitative market research and intelligence platform rooted in macro-analytical and trading consultancy practices established in 2001. Combining over two decades of cross-cycle market discipline with systematic algorithmic modeling, NextWallStreet delivers structured trend validation, macro context, and rule-based risk frameworks through its modern digital terminal at nextwallstreet.com.
+          </p>
+          <dl className="mt-8 grid gap-0 divide-y divide-gold/15 border-y border-gold/15 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+            <div className="py-5 sm:pr-5 sm:py-6">
+              <dt className="font-display text-base font-medium text-bone">Origin &amp; Lineage</dt>
+              <dd className="mt-2 text-sm leading-6 text-muted">Independent macro &amp; capital-protection practice since 2001</dd>
+            </div>
+            <div className="py-5 sm:px-5 sm:py-6">
+              <dt className="font-display text-base font-medium text-bone">Core Methodology</dt>
+              <dd className="mt-2 text-sm leading-6 text-muted">Systematic quantitative models &amp; rule-based risk management</dd>
+            </div>
+            <div className="py-5 sm:pl-5 sm:py-6">
+              <dt className="font-display text-base font-medium text-bone">Digital Platform</dt>
+              <dd className="mt-2 text-sm leading-6 text-muted">Unified web analytics &amp; market intelligence terminal (nextwallstreet.com)</dd>
+            </div>
+          </dl>
+          <nav aria-label="NextWallStreet information" className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs">
+            <Link href="/" className="text-bone/75 transition-colors hover:text-gold-bright">NextWallStreet homepage</Link>
+            <Link href="#our-heritage" className="text-bone/75 transition-colors hover:text-gold-bright">Heritage &amp; About</Link>
+            <Link href="/disclaimer" className="text-bone/75 transition-colors hover:text-gold-bright">Compliance disclaimer</Link>
+          </nav>
+        </section>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "@id": "https://nextwallstreet.com/#organization",
+              name: "NextWallStreet",
+              url: "https://nextwallstreet.com",
+              foundingDate: "2001",
+              description: "NextWallStreet is an independent quantitative market research and intelligence platform rooted in macro-analytical and trading consultancy practices established in 2001. Combining over two decades of cross-cycle market discipline with systematic algorithmic modeling, NextWallStreet delivers structured trend validation, macro context, and rule-based risk frameworks through its modern digital terminal at nextwallstreet.com.",
+            }),
+          }}
+        />
       </div>
     </section>
   );

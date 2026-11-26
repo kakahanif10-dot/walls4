@@ -106,7 +106,7 @@ export default function HeritageEvolution() {
             <div className="relative grid gap-6 sm:gap-8 md:grid-cols-[0.85fr_1.15fr] md:items-center">
               <div>
                 <div className="inline-flex rounded-full border border-gold/30 bg-gold/[0.08] px-3 py-2 text-[10px] font-semibold uppercase leading-relaxed tracking-[0.12em] text-gold-bright sm:text-[11px]">
-                  25 Years of Analytical Evolution | Roots Since 2001
+                  2001–2026 • 25 Years of Analytical Evolution
                 </div>
               </div>
               <div className="border-t border-gold/20 pt-5 md:border-l md:border-t-0 md:pl-8 md:pt-0">

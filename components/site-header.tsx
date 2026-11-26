@@ -48,6 +48,7 @@ const SIMPLE_LINKS: Array<{ href: string; label: string; live?: boolean }> = [
   { href: "/research", label: "Research" },
   { href: "/academy", label: "Academy" },
   { href: "/community", label: "Community" },
+  { href: "/about", label: "About" },
 ];
 
 export interface MainDirectoryItem {

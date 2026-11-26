@@ -6,6 +6,7 @@ import Sparkline from "@/components/sparkline";
 import { LivePrice, LiveChange } from "@/components/live-price";
 import FrontpageTriplePoster from "@/components/frontpage-triple-poster";
 import HeritageEvolution from "@/components/heritage-evolution";
+import HomepageEntityOverview from "@/components/homepage-entity-overview";
 import { LockedLink } from "@/components/locked-action";
 import { ARTICLES, COURSES } from "@/lib/content";
 import { ASSETS, byKind, marketPulse, rowsFor, stanceColor, type Row } from "@/lib/market";
@@ -229,6 +230,7 @@ export default async function HomePage() {
       <DisclaimerMarquee />
 
       <HeritageEvolution />
+      <HomepageEntityOverview />
 
       <div className="pt-24 sm:pt-36">
         <FrontpageTriplePoster initialData={frontpageBundle} />
@@ -464,6 +466,7 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
     </div>
   );
 }
